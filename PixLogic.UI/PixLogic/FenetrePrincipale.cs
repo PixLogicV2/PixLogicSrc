@@ -18,6 +18,17 @@ namespace PixLogic
         {
             InitializeComponent();
             addEventsOnButtonItem();
+            setTableItem();
+        }
+
+        private void setTableItem()
+        {
+            GetAllItems getter = new GetAllItems();
+            List<Item> list = getter.getItems();
+            foreach(var item in list)
+            {
+                dataGridItem.Rows.Add(item.name, item.quantity, item.price);
+            }
         }
 
         private void addEventsOnButtonItem()
