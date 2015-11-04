@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    public class GetItemsInPack
+    public class ContainItem
     {
         private DataContext context;
 
@@ -14,16 +14,13 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Item> getAllItems()
+        public bool containItem(int idItem  )
         {
             IQueryable<Item> itemQuery = from Item in context.Items
+                                         where Item.ReservableId == idItem
                                          select Item;
-            List<Item> list = new List<Item>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            if (itemQuery.Any()) return true;
+            return false;
 
         }
     }

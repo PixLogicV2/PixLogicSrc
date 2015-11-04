@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    class DeleteItem
+   public class DeleteItem
     {
+        private DataContext context;
+
+        public void setContext(DataContext context)
+        {
+            this.context = context;
+        }
         public void deleteItem(int idToDelete)
         {
-            using (var ctx = new DataContext())
-            {
-                var item = (from s in ctx.Items
-                            where s.ReservableId == idToDelete
-                            select s).FirstOrDefault();
+            var item = (from s in context.Items
+                        where s.ReservableId == idToDelete
+                        select s).FirstOrDefault();
 
-                ctx.Entry(item).State = System.Data.Entity.EntityState.Deleted;
-                ctx.SaveChanges();
-            }
+            context.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+            context.SaveChanges();
         }
     }
 }

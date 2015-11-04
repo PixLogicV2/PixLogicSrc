@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    class PackFactory
+    public class PackFactory
     {
+        public Pack build(String name, String description, bool dispo, float price)
+        {
+            Pack pack = new Pack();
+            pack.name = name;
+            pack.description = description;
+            pack.dispo = dispo;
+            pack.price = price;
+
+            return pack;
+        }
     }
 }
