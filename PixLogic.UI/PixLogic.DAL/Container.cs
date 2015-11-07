@@ -49,6 +49,14 @@ namespace PixLogic.DAL
                     service = new AddPackToItem();
                     service.setContext(this.get("data_context"));
                     break;
+                case "delete_pack_to_item":
+                    service = new DeletePackToItem();
+                    service.setContext(this.get("data_context"));
+                    break;
+                case "contain_item":
+                    service = new ContainItem();
+                    service.setContext(this.get("data_context"));
+                    break;
                 case "update_item":
                     service = new UpdateItem();
                     service.setContext(this.get("data_context"));

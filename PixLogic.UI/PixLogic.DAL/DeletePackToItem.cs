@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    class DeletePackToItem
+   public class DeletePackToItem
     {
+        private DataContext context;
+
+        public void setContext(DataContext context)
+        {
+            this.context = context;
+        }
+        public void deletePackToItem(int itemId)
+        {
+            Item item;
+            item = context.Items.Where(s => s.ReservableId == itemId).FirstOrDefault();
+            item.pack = null;
+            context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+            context.SaveChanges();
+        }
     }
 }
