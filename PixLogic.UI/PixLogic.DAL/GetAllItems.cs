@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    public class GetAllItems
+    public class GetAllPacks
     {
         private DataContext context;
 

@@ -14,9 +14,10 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Item> getAllItems()
+        public List<Item> getItemInPack(int packId)
         {
             IQueryable<Item> itemQuery = from Item in context.Items
+                                         where Item.pack.ReservableId==packId
                                          select Item;
             List<Item> list = new List<Item>();
             foreach (var prod in itemQuery)
