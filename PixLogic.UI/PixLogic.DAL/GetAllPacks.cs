@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    public class GetAllItems
+    class GetAllPacks
     {
         private DataContext context;
 
@@ -14,11 +14,11 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Item> getAllItems()
+        public List<Pack> getAllItems()
         {
-            IQueryable<Item> itemQuery = from Item in context.Items
-                                         select Item;
-            List<Item> list = new List<Item>();
+            IQueryable<Pack> itemQuery = from Pack in context.Packs
+                                         select Pack;
+            List<Pack> list = new List<Pack>();
             foreach (var prod in itemQuery)
             {
                 list.Add(prod);
