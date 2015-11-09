@@ -1,6 +1,6 @@
 ﻿namespace PixLogic
 {
-    partial class FenetrePrincipale
+    partial class MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FenetrePrincipale));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.barreDeMenu = new System.Windows.Forms.MenuStrip();
             this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,27 +40,15 @@
             this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.packToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.réservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panItemPack = new System.Windows.Forms.Panel();
-            this.panTableItem = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelSearch = new System.Windows.Forms.Label();
-            this.dataGridItem = new System.Windows.Forms.DataGridView();
-            this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelListItem = new System.Windows.Forms.Label();
-            this.boutonMenu4 = new PixLogic.BoutonMenu();
-            this.boutonMenu3 = new PixLogic.BoutonMenu();
-            this.boutonMenu2 = new PixLogic.BoutonMenu();
-            this.boutonMenu1 = new PixLogic.BoutonMenu();
-            this.boutonUtilisateur = new PixLogic.BoutonMenu();
+            this.panItemPack1 = new PixLogic.panItemPack();
+            this.boutonMenu4 = new PixLogic.MenuButton();
+            this.boutonMenu3 = new PixLogic.MenuButton();
+            this.boutonMenu2 = new PixLogic.MenuButton();
+            this.boutonMenu1 = new PixLogic.MenuButton();
+            this.boutonUtilisateur = new PixLogic.MenuButton();
             this.barreDeMenu.SuspendLayout();
             this.panMenu.SuspendLayout();
             this.barreDoutils.SuspendLayout();
-            this.panItemPack.SuspendLayout();
-            this.panTableItem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
             this.SuspendLayout();
             // 
             // barreDeMenu
@@ -71,7 +59,7 @@
             this.toolStripMenuItem1});
             this.barreDeMenu.Location = new System.Drawing.Point(0, 0);
             this.barreDeMenu.Name = "barreDeMenu";
-            this.barreDeMenu.Size = new System.Drawing.Size(784, 24);
+            this.barreDeMenu.Size = new System.Drawing.Size(827, 24);
             this.barreDeMenu.TabIndex = 0;
             this.barreDeMenu.Text = "barreDeMenu";
             // 
@@ -100,7 +88,7 @@
             this.panMenu.Controls.Add(this.boutonMenu2);
             this.panMenu.Controls.Add(this.boutonMenu1);
             this.panMenu.Controls.Add(this.boutonUtilisateur);
-            this.panMenu.Location = new System.Drawing.Point(0, 68);
+            this.panMenu.Location = new System.Drawing.Point(0, 61);
             this.panMenu.Name = "panMenu";
             this.panMenu.Size = new System.Drawing.Size(140, 431);
             this.panMenu.TabIndex = 1;
@@ -111,7 +99,7 @@
             this.BoutonNouveauBO});
             this.barreDoutils.Location = new System.Drawing.Point(0, 24);
             this.barreDoutils.Name = "barreDoutils";
-            this.barreDoutils.Size = new System.Drawing.Size(784, 38);
+            this.barreDoutils.Size = new System.Drawing.Size(827, 38);
             this.barreDoutils.TabIndex = 2;
             this.barreDoutils.Text = "barreDoutils";
             // 
@@ -134,124 +122,35 @@
             this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user_icon;
             this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(167, 40);
             this.utilisateurToolStripMenuItem.Text = "Utilisateur";
             // 
             // matérielToolStripMenuItem
             // 
-            this.matérielToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_item_icon;
             this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
-            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(167, 40);
             this.matérielToolStripMenuItem.Text = "Matériel";
             // 
             // packToolStripMenuItem
             // 
             this.packToolStripMenuItem.Name = "packToolStripMenuItem";
-            this.packToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.packToolStripMenuItem.Size = new System.Drawing.Size(167, 40);
             this.packToolStripMenuItem.Text = "Pack";
             // 
             // réservationToolStripMenuItem
             // 
             this.réservationToolStripMenuItem.Name = "réservationToolStripMenuItem";
-            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(167, 40);
             this.réservationToolStripMenuItem.Text = "Réservation";
             // 
-            // panItemPack
+            // panItemPack1
             // 
-            this.panItemPack.Controls.Add(this.labelListItem);
-            this.panItemPack.Controls.Add(this.panTableItem);
-            this.panItemPack.Location = new System.Drawing.Point(139, 64);
-            this.panItemPack.Name = "panItemPack";
-            this.panItemPack.Size = new System.Drawing.Size(644, 428);
-            this.panItemPack.TabIndex = 3;
-            // 
-            // panTableItem
-            // 
-            this.panTableItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panTableItem.Controls.Add(this.buttonCancelSearch);
-            this.panTableItem.Controls.Add(this.textBox1);
-            this.panTableItem.Controls.Add(this.labelSearch);
-            this.panTableItem.Controls.Add(this.dataGridItem);
-            this.panTableItem.Location = new System.Drawing.Point(1, 7);
-            this.panTableItem.Name = "panTableItem";
-            this.panTableItem.Size = new System.Drawing.Size(200, 422);
-            this.panTableItem.TabIndex = 0;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(67, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(2, 19);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(66, 13);
-            this.labelSearch.TabIndex = 1;
-            this.labelSearch.Text = "Recherche :";
-            // 
-            // dataGridItem
-            // 
-            this.dataGridItem.AllowUserToAddRows = false;
-            this.dataGridItem.AllowUserToDeleteRows = false;
-            this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NameItem,
-            this.Quantity,
-            this.Price});
-            this.dataGridItem.Location = new System.Drawing.Point(0, 47);
-            this.dataGridItem.Name = "dataGridItem";
-            this.dataGridItem.ReadOnly = true;
-            this.dataGridItem.RowHeadersVisible = false;
-            this.dataGridItem.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridItem.Size = new System.Drawing.Size(198, 370);
-            this.dataGridItem.TabIndex = 0;
-            // 
-            // NameItem
-            // 
-            this.NameItem.HeaderText = "Libellé";
-            this.NameItem.Name = "NameItem";
-            this.NameItem.ReadOnly = true;
-            this.NameItem.Width = 75;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantité";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 60;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Prix";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 60;
-            // 
-            // labelListItem
-            // 
-            this.labelListItem.AutoSize = true;
-            this.labelListItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListItem.Location = new System.Drawing.Point(11, 2);
-            this.labelListItem.Name = "labelListItem";
-            this.labelListItem.Size = new System.Drawing.Size(102, 13);
-            this.labelListItem.TabIndex = 1;
-            this.labelListItem.Text = "Liste des matériels";
+            this.panItemPack1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panItemPack1.Location = new System.Drawing.Point(140, 64);
+            this.panItemPack1.Name = "panItemPack1";
+            this.panItemPack1.Size = new System.Drawing.Size(690, 423);
+            this.panItemPack1.TabIndex = 3;
             // 
             // boutonMenu4
             // 
@@ -318,28 +217,23 @@
             this.boutonUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.boutonUtilisateur.UseCompatibleTextRendering = true;
             // 
-            // FenetrePrincipale
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 492);
-            this.Controls.Add(this.panItemPack);
+            this.ClientSize = new System.Drawing.Size(827, 489);
+            this.Controls.Add(this.panItemPack1);
             this.Controls.Add(this.barreDoutils);
             this.Controls.Add(this.panMenu);
             this.Controls.Add(this.barreDeMenu);
             this.MainMenuStrip = this.barreDeMenu;
-            this.Name = "FenetrePrincipale";
+            this.Name = "MainWindow";
             this.Text = "CE3P Reservation";
             this.barreDeMenu.ResumeLayout(false);
             this.barreDeMenu.PerformLayout();
             this.panMenu.ResumeLayout(false);
             this.barreDoutils.ResumeLayout(false);
             this.barreDoutils.PerformLayout();
-            this.panItemPack.ResumeLayout(false);
-            this.panItemPack.PerformLayout();
-            this.panTableItem.ResumeLayout(false);
-            this.panTableItem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,26 +247,17 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panMenu;
         private System.Windows.Forms.ToolStrip barreDoutils;
-        private BoutonMenu boutonUtilisateur;
-        private BoutonMenu boutonMenu1;
-        private BoutonMenu boutonMenu2;
-        private BoutonMenu boutonMenu4;
-        private BoutonMenu boutonMenu3;
+        private MenuButton boutonUtilisateur;
+        private MenuButton boutonMenu1;
+        private MenuButton boutonMenu2;
+        private MenuButton boutonMenu4;
+        private MenuButton boutonMenu3;
         private System.Windows.Forms.ToolStripDropDownButton BoutonNouveauBO;
         private System.Windows.Forms.ToolStripMenuItem utilisateurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matérielToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem packToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem réservationToolStripMenuItem;
-        private System.Windows.Forms.Panel panItemPack;
-        private System.Windows.Forms.Panel panTableItem;
-        private System.Windows.Forms.DataGridView dataGridItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.Button buttonCancelSearch;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label labelSearch;
-        private System.Windows.Forms.Label labelListItem;
+        private panItemPack panItemPack1;
     }
 }
 

@@ -117,71 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="script_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\script_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="barreDeMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="boutonMenu4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
+        BCMlGCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMl
+        GCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnB
+        SAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnBSAlG
+        SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="nouveau" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nouveau3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boutonMenu3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
+        BCMlGCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMl
+        GCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnB
+        SAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnBSAlG
+        SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="client_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\client_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boutonMenu2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
+        BCMlGCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMl
+        GCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnB
+        SAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnBSAlG
+        SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="modifier_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modifier_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boutonMenu1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
+        BCMlGCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMl
+        GCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnB
+        SAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnBSAlG
+        SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="add_item_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_item_icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="boutonUtilisateur.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
+        BCMlGCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMl
+        GCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnB
+        SAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnBSAlG
+        SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="annuler_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\annuler_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="barreDoutils.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>144, 17</value>
+  </metadata>
+  <data name="BoutonNouveauBO.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVGhD7ZkxSgNBFED3Eim9gJfwEnaeIJ1NSisPIGgl
+        KVKkSGHKYCEIaqNoadKEEBYSggkhRQpb5YcRluGPg7KZzGzeg9fN5M8b2GwgGQAAAMBe8zRcHZ00B1+a
+        3bd53SyrDgQXJLgKEFyQ4BRoP3+cnffyB5eNm9FYixVP2/2FtufHq/tJy4yJBzmYFlOGciFmTDwkHyzP
+        lU+zdEPSwcPZuqYNtpUvIrOF4DIluGz+E+wj6vcwwQ4J/gWCCxJcJhLj87a/PNYOZtt5nTe0/bYydyfB
+        8sHawG17/Ti9lPnaZYibw22DXQcHh+BAEhwKggNJcCj2Llhe8hLtUw6oHdz24i7vaPttX/L1oTlCnMjF
+        aIG2f/ktHTUEOyQ4VQh2SHCqEOywMsGC/HXi8336eWCWAwAAAEAFybJvM4UuIaHAx9QAAAAASUVORK5C
+        YII=
+</value>
   </data>
-  <data name="add_user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="camera-photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\camera-photo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="general_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\general_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bouton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bouton.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bouton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bouton2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enregistrer_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enregistrer_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="reservation_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reservation_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ajouter_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ajouter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="camera-photo-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\camera-photo-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cancel_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="supprimer_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\supprimer_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="box_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="interface2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\interface2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="historique_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\historique_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="box_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="valider_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\valider_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>37</value>
+  </metadata>
 </root>

@@ -16,9 +16,11 @@ namespace PixLogic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FenetrePrincipale fen = new FenetrePrincipale();
+            MainWindow fen = new MainWindow();
+            
             fen.StartPosition = FormStartPosition.CenterScreen;
             Application.Run(fen);
+            
         }
     }
 }

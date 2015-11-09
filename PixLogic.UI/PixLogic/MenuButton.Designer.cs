@@ -1,6 +1,6 @@
 ﻿namespace PixLogic
 {
-    partial class BoutonMenu
+    partial class MenuButton
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.

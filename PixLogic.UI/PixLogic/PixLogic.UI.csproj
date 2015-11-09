@@ -55,25 +55,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoutonMenu.cs">
+    <Compile Include="MenuButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BoutonMenu.Designer.cs">
-      <DependentUpon>BoutonMenu.cs</DependentUpon>
+    <Compile Include="MenuButton.Designer.cs">
+      <DependentUpon>MenuButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="FenetrePrincipale.cs">
+    <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FenetrePrincipale.Designer.cs">
-      <DependentUpon>FenetrePrincipale.cs</DependentUpon>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panItemPack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panItemPack.Designer.cs">
+      <DependentUpon>panItemPack.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BoutonMenu.resx">
-      <DependentUpon>BoutonMenu.cs</DependentUpon>
+    <Compile Include="WindowItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowItem.Designer.cs">
+      <DependentUpon>WindowItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowPackManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowPackManager.Designer.cs">
+      <DependentUpon>WindowPackManager.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MenuButton.resx">
+      <DependentUpon>MenuButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FenetrePrincipale.resx">
-      <DependentUpon>FenetrePrincipale.cs</DependentUpon>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panItemPack.resx">
+      <DependentUpon>panItemPack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +106,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WindowItem.resx">
+      <DependentUpon>WindowItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowPackManager.resx">
+      <DependentUpon>WindowPackManager.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -158,6 +185,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modifier_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supprimer_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\general_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interface2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enregistrer_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\valider_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

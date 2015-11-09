@@ -10,25 +10,14 @@ using System.Windows.Forms;
 
 namespace PixLogic
 {
-    public partial class FenetrePrincipale : Form
+    public partial class MainWindow : Form
     {
-        private BoutonMenu bouton = null;
+        private MenuButton button = null;
 
-        public FenetrePrincipale()
+        public MainWindow()
         {
             InitializeComponent();
             addEventsOnButtonItem();
-            setTableItem();
-        }
-
-        private void setTableItem()
-        {
-            GetAllItems getter = new GetAllItems();
-            List<Item> list = getter.getItems();
-            foreach(var item in list)
-            {
-                dataGridItem.Rows.Add(item.name, item.quantity, item.price);
-            }
         }
 
         private void addEventsOnButtonItem()
@@ -45,15 +34,17 @@ namespace PixLogic
 
         private void ClickItemButton(object sender, EventArgs e)
         {
-            if (bouton != null)
-                bouton.ActiveEffectButton();
+            MenuButton buttonHelper = button;
 
             if (sender.GetType() != typeof(System.Windows.Forms.Label))
-                bouton = ((BoutonMenu)sender);
+                button = ((MenuButton)sender);
             else
-                bouton = (BoutonMenu)((Control)sender).Parent;
+                button = (MenuButton)((Control)sender).Parent;
 
-            bouton.DesactiveEffectButton();
+            if (buttonHelper != null && buttonHelper != button)
+                buttonHelper.ActiveEffectButton();
+
+            button.DesactiveEffectButton();
 
         }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PixLogic
 {
-    public partial class BoutonMenu : UserControl
+    public partial class MenuButton : UserControl
     {
-        public BoutonMenu()
+        public MenuButton()
         {
             InitializeComponent();
             addEventItemButton();
