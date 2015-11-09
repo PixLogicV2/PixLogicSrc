@@ -7,10 +7,10 @@ using System.Collections.Generic;
 
 namespace PixLogic.DAL
 {
-    public class Container
+    public class ServiceContainer
     {
         Dictionary<string, dynamic> arrayContainer;
-        public Container()
+        public ServiceContainer()
         {
             this.arrayContainer = new Dictionary<string, dynamic>();
         }
