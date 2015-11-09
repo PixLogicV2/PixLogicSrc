@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PixLogic.DAL;
+
 
 namespace PixLogic
 {
     public partial class panItemPack : UserControl
     {
-        Container container = new Container();
+        ServiceContainer container = new ServiceContainer();
         public panItemPack()
         {
             InitializeComponent();
