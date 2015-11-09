@@ -52,6 +52,7 @@
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
     <Compile Include="AjoutItem.cs" />
+    <Compile Include="GetAllPacks.cs" />
     <Compile Include="ServiceContainer.cs" />
     <Compile Include="ContainItem.cs" />
     <Compile Include="DataContext.cs" />
