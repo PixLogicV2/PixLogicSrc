@@ -14,10 +14,10 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Item> getItemInPack(int packId)
+        public List<Item> getItemInPack(string packName)
         {
             IQueryable<Item> itemQuery = from Item in context.Items
-                                         where Item.pack.ReservableId==packId
+                                         where Item.pack.name==packName
                                          select Item;
             List<Item> list = new List<Item>();
             foreach (var prod in itemQuery)
