@@ -26,7 +26,7 @@ namespace PixLogic.DAL
                     break;
 
                 case "add_item":
-                    service = new AjoutItem();
+                    service = new AddItem();
                     service.setContext(this.get("data_context"));
                     break;
                 case "add_pack":
