@@ -2,7 +2,7 @@
 
 namespace PixLogic.DAL
 {
-    public class AjoutItem
+    public class AddItem
     {
         private DataContext context;
 
