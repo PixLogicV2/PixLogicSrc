@@ -48,6 +48,10 @@ namespace PixLogic.DAL
                 case "get_all_items_by_string":
                     service = this.get("get_all_items");
                     break;
+                case "get_item_by_name":
+                    service = new GetItemByName();
+                    service.setContext(this.get("data_context"));
+                    break;
                 case "get_all_packs":
                     service = new GetAllPacks();
                     service.setContext(this.get("data_context"));
