@@ -58,7 +58,7 @@ namespace PixLogic
             valDispo.Text = item.dispo ? "Oui" : "Non";
             valDescription.Text = item.description;
 
-            Image img = item.image;
+            Image img = database.ByteArrayToImage(item.image);
             pictureBoxItem.Image = img;
             if (img.Size.Height < pictureBoxItem.Size.Height
                 && img.Size.Width < pictureBoxItem.Size.Width)

@@ -26,9 +26,9 @@ namespace PixLogic.DAL
         {
             container.get("add_pack_to_item").addPackToItem(itemName, packName);
         }
-        public void ByteArrayToImage(byte[] byteArray)
+        public Image ByteArrayToImage(byte[] byteArray)
         {
-            container.get("byte_array_to_image").byteArrayToImage(byteArray);
+            return container.get("byte_array_to_image").byteArrayToImage(byteArray);
         }
         public bool ContainItem(string itemName)
         {
