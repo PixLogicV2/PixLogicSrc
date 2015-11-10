@@ -24,7 +24,7 @@ namespace PixLogic.DAL
             {
                 list.Add(prod);
             }
-            return list.First<Item>();
+            return list.First();
         }
     }
 }
