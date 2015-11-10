@@ -13,7 +13,8 @@ namespace PixLogic.DAL
             item.description = description;
             item.dispo = dispo;
             item.price = price;
-            item.image = imageToByteArray(image);
+            if (image != null) item.image = imageToByteArray(image);
+            else item.image = null;
             item.reference = reference;
             item.quantity=quantity;
 
