@@ -54,6 +54,17 @@ namespace PixLogic
             valItemName.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
             valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
             valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
+            Item item = database.GetItemByName(valItemName.Text);
+            valDispo.Text = item.dispo ? "Oui" : "Non";
+            valDescription.Text = item.description;
+
+            Image img = database.ByteArrayToImage(item.image);
+            pictureBoxItem.Image = img;
+            if (img.Size.Height < pictureBoxItem.Size.Height
+                && img.Size.Width < pictureBoxItem.Size.Width)
+                pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
+            else
+                pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
         }
         
         private void setComboBoxPack()

@@ -431,7 +431,6 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Panel panNews;
         private System.Windows.Forms.TextBox valDescription;
-        private System.Windows.Forms.Label valItemName;
         private System.Windows.Forms.Label labelListItem;
         private System.Windows.Forms.Panel panTableItem;
         private System.Windows.Forms.Button buttonCancelSearch;
@@ -455,5 +454,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        public System.Windows.Forms.Label valItemName;
     }
 }

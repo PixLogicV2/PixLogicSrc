@@ -10,6 +10,9 @@ namespace PixLogic
 {
     class Helper
     {
+        public static readonly string ADD = "ajouter";
+        public static readonly string DELETE = "supprimer";
+        public static readonly string SET = "modifier";
 
         public static bool fieldsAreEmpty(bool withMessageBox, params string[] args)
         {
@@ -48,10 +51,10 @@ namespace PixLogic
             return result;
         }
 
-        public static bool wantToAdd()
+        public static bool confirmation(string op)
         {
             bool result = false;
-            DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment ajouter cet élément ?",
+            DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment "+op+" cet élément ?",
                 "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             result = (resultBox == DialogResult.Yes) ? true : false;
 
