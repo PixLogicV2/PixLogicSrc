@@ -14,10 +14,10 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public bool containItem(int idItem  )
+        public bool containItem(string name  )
         {
             IQueryable<Item> itemQuery = from Item in context.Items
-                                         where Item.ReservableId == idItem
+                                         where Item.name == name
                                          select Item;
             if (itemQuery.Any()) return true;
             return false;
