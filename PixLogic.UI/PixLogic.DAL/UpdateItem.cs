@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +16,10 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateItem(int id, String nom, String des, bool disp, float prix, byte[] img, String refe, int quant)
+        public void updateItem(String nom, String des, bool disp, float prix, Image image, String refe, int quant)
         {
             Item item;
-            item = context.Items.Where(s => s.ReservableId == id).FirstOrDefault<Item>();
+            item = context.Items.Where(s => s.name == nom).FirstOrDefault<Item>();
 
             if (item != null)
             {
@@ -25,13 +27,20 @@ namespace PixLogic.DAL
                 item.description = des;
                 item.dispo = disp;
                 item.price = prix;
-                item.image = img;
+                if (image != null) item.image = imageToByteArray(image);
+                else item.image = null;
                 item.reference = refe;
                 item.quantity = quant;
                 context.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }
 
+        }
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
         }
     }
 }

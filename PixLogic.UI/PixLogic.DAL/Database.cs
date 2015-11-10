@@ -34,13 +34,17 @@ namespace PixLogic.DAL
         {
            return container.get("contain_item").containItem(itemId);
         }
-        public void DeleteItem(int idToDelete)
+        public void DeleteItem(string nameToDelete)
         {
-            container.get("delete_item").deleteItem(idToDelete);
+            container.get("delete_item").deleteItem(nameToDelete);
         }
         public void DeletePackToItem(int itemId)
         {
             container.get("delete_pack_to_item").deletePackToItem(itemId);
+        }
+        public void GetItemByName(string itemName)
+        {
+            container.get("get_item_by_name").getItemByName(itemName);
         }
         public List<Item> GetAllItems()
         {
@@ -58,7 +62,7 @@ namespace PixLogic.DAL
         {
             return container.get("get_items_in_pack").getItemsInPack(packId);
         }
-        public void UpdateItem(int id, String nom, String des, bool disp, float prix, byte[] img, String refe, int quant)
+        public void UpdateItem(int id, String nom, String des, bool disp, float prix, Image img, String refe, int quant)
         {
             container.get("update_item").updateItem(id, nom, des, disp, prix, img, refe, quant);
         }
