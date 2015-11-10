@@ -41,6 +41,9 @@
             this.valName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
+            this.labelObligatoire = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
@@ -48,6 +51,9 @@
             // 
             // panelGeneral
             // 
+            this.panelGeneral.Controls.Add(this.label2);
+            this.panelGeneral.Controls.Add(this.label1);
+            this.panelGeneral.Controls.Add(this.labelObligatoire);
             this.panelGeneral.Controls.Add(this.buttonCancel);
             this.panelGeneral.Controls.Add(this.buttonValid);
             this.panelGeneral.Controls.Add(this.pictureBoxSelection);
@@ -92,6 +98,7 @@
             this.buttonValid.Text = "Valider";
             this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonValid.UseVisualStyleBackColor = true;
+            this.buttonValid.Click += new System.EventHandler(this.buttonValid_Click);
             // 
             // pictureBoxSelection
             // 
@@ -188,6 +195,39 @@
             this.pictureBoxItem.TabIndex = 0;
             this.pictureBoxItem.TabStop = false;
             // 
+            // labelObligatoire
+            // 
+            this.labelObligatoire.AutoSize = true;
+            this.labelObligatoire.BackColor = System.Drawing.SystemColors.Control;
+            this.labelObligatoire.ForeColor = System.Drawing.Color.Red;
+            this.labelObligatoire.Location = new System.Drawing.Point(261, 208);
+            this.labelObligatoire.Name = "labelObligatoire";
+            this.labelObligatoire.Size = new System.Drawing.Size(11, 13);
+            this.labelObligatoire.TabIndex = 12;
+            this.labelObligatoire.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(261, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(261, 270);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "*";
+            // 
             // WindowItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,5 +262,8 @@
         private System.Windows.Forms.PictureBox pictureBoxSelection;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonValid;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelObligatoire;
     }
 }
