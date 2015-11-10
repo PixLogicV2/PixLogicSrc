@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    public class Class1
+    public class Reservable
     {
+        public Reservable()
+        {
+
+        }
+        public int ReservableId { get; set; }
     }
 }
