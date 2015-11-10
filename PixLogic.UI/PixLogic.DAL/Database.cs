@@ -14,33 +14,33 @@ namespace PixLogic.DAL
         {
             container = new ServiceContainer();
         }
-        public void addItem(string name, string description, bool dispo, float price, Image image, string reference, int quantity)
+        public void AddItem(string name, string description, bool dispo, float price, Image image, string reference, int quantity)
         {
             container.get("add_item").addItem(container.get("item_factory").build(name, description,dispo,price,image,reference,quantity));
         }
-        public void AddPack(String name, String description, bool dispo, float price)
+        public void AddPack(string name, string description, bool dispo, float price)
         {
             container.get("add_pack").addPack(container.get("pack_factory").build(name, description, dispo, price));
         }
-        public void AddPackToItem(int itemId,int packId)
+        public void AddItemToPack(string itemName,string packName)
         {
-            container.get("add_pack_to_item").addPackToItem(itemId, packId);
+            container.get("add_pack_to_item").addPackToItem(itemName, packName);
         }
         public void ByteArrayToImage(byte[] byteArray)
         {
             container.get("byte_array_to_image").byteArrayToImage(byteArray);
         }
-        public bool ContainItem(int itemId)
+        public bool ContainItem(string itemName)
         {
-           return container.get("contain_item").containItem(itemId);
+           return container.get("contain_item").containItem(itemName);
         }
         public void DeleteItem(string nameToDelete)
         {
             container.get("delete_item").deleteItem(nameToDelete);
         }
-        public void DeletePackToItem(int itemId)
+        public void DeleteItemToPack(string itemName)
         {
-            container.get("delete_pack_to_item").deletePackToItem(itemId);
+            container.get("delete_pack_to_item").deletePackToItem(itemName);
         }
         public void GetItemByName(string itemName)
         {
@@ -50,7 +50,7 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_items").getAllItems();
         }
-        public List<Item> GetAllItemsByString(String search)
+        public List<Item> GetAllItemsByString(string search)
         {
             return container.get("get_all_items").getAllItemsByString(search);
         }
@@ -58,13 +58,13 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_packs").getAllPacks();
         }
-        public List<Item> GetItemsInPack(int packId)
+        public List<Item> GetItemsInPack(string packName)
         {
-            return container.get("get_items_in_pack").getItemsInPack(packId);
+            return container.get("get_items_in_pack").getItemsInPack(packName);
         }
-        public void UpdateItem(int id, String nom, String des, bool disp, float prix, Image img, String refe, int quant)
+        public void UpdateItem(string nom, string des, bool disp, float prix, Image img, string refe, int quant)
         {
-            container.get("update_item").updateItem(id, nom, des, disp, prix, img, refe, quant);
+            container.get("update_item").updateItem(nom, des, disp, prix, img, refe, quant);
         }
     }
 }
