@@ -26,5 +26,16 @@ namespace PixLogic.DAL
             return list;
 
         }
+        public List<Item> getAllItemsByString(String search)
+        {
+            List<Item> items = getAllItems();
+            List<Item>results = items.FindAll(
+            delegate (Item item)
+            {
+                return item.name.Contains(search);
+            }
+            );
+            return results;
+        }
     }
 }
