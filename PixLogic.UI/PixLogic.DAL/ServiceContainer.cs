@@ -40,6 +40,9 @@ namespace PixLogic.DAL
                     service = new GetAllItems();
                     service.setContext(this.get("data_context"));
                     break;
+                case "get_all_items_by_string":
+                    service = this.get("get_all_items");
+                    break;
                 case "get_all_packs":
                     service = new GetAllPacks();
                     service.setContext(this.get("data_context"));
@@ -68,6 +71,10 @@ namespace PixLogic.DAL
                     service = new GetItemsInPack();
                     service.setContext(this.get("data_context"));
                     break;
+                case "byte_array_to_image":
+                    service = new ByteArrayToImage();
+                    break;
+
 
             }
             this.arrayContainer[serviceName] = service;

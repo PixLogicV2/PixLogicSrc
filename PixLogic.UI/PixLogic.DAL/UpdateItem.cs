@@ -14,7 +14,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateItem(int id, String nom, String des, bool disp, float prix, String img, String refe, int quant)
+        public void updateItem(int id, String nom, String des, bool disp, float prix, byte[] img, String refe, int quant)
         {
             Item item;
             item = context.Items.Where(s => s.ReservableId == id).FirstOrDefault<Item>();
