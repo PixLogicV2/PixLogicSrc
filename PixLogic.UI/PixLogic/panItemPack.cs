@@ -25,6 +25,7 @@ namespace PixLogic
         public void setTableItem()
         {
             List<Item> list = database.GetAllItems();
+            dataGridItem.Rows.Clear();
             foreach(var item in list)
             {
                 dataGridItem.Rows.Add(item.name, item.quantity, item.price);
