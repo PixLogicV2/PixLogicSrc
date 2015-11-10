@@ -84,7 +84,11 @@ namespace PixLogic
                 float.TryParse(price, out nPrice);
                 int.TryParse(quantity, out nQuantity);
                 if (add)
+<<<<<<< HEAD
                     database.addItem(name, description, true, nPrice, img, reference, nQuantity);
+=======
+                    database.AddItem(name, description, true, nPrice, img, reference, nQuantity);
+>>>>>>> origin/Dev
                 else
                     database.UpdateItem(pan.valItemName.Text, description, true, nPrice, img, reference, nQuantity);
                 //Helper.addSuccess();
