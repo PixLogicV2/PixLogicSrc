@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixLogic.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,9 +76,10 @@ namespace PixLogic
                 && Helper.AreNumbers(true, price, quantity)
                 && Helper.wantToAdd())
             {
-                double nPrice, nQuantity;
-                double.TryParse(price, out nPrice);
-                double.TryParse(quantity, out nQuantity);
+                float nPrice;
+                int nQuantity;
+                float.TryParse(price, out nPrice);
+                int.TryParse(quantity, out nQuantity);
 
                 database.addItem(name, description, true, nPrice, img, reference, nQuantity);
                 Helper.addSuccess();
