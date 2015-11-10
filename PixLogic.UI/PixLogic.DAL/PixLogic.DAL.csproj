@@ -57,6 +57,7 @@
     <Compile Include="ByteArrayToImage.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="GetAllPacks.cs" />
+    <Compile Include="GetItemByName.cs" />
     <Compile Include="ServiceContainer.cs" />
     <Compile Include="ContainItem.cs" />
     <Compile Include="DataContext.cs" />
