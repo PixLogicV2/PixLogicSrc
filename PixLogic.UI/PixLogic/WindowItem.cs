@@ -12,10 +12,15 @@ namespace PixLogic
 {
     public partial class WindowItem : Form
     {
-        public WindowItem()
+        Database database = new Database();
+        panItemPack pan;
+        Image img = null;
+
+        public WindowItem(panItemPack p)
         {
             InitializeComponent();
             this.Text = "Nouveau matériel";
+            pan = p;
         }
         public WindowItem(string image, string name, double price, int quantity, string descrip)
         {
@@ -38,11 +43,11 @@ namespace PixLogic
             {
                 OpenFileDialog f = new OpenFileDialog();
                 f.InitialDirectory = "Images/";
-                f.Filter = "All Files|*.*|JPEGs|*.jpg|Bitmaps|*.bmp|GIFs|*.gif";
+                f.Filter = "Image Files |*.jpg;*.jpeg;*.png;*.gif;";
                 f.FilterIndex = 1;
                 if (f.ShowDialog() == DialogResult.OK)
                 {
-                    Image img = Image.FromFile(f.FileName);
+                    img = Image.FromFile(f.FileName);
                     pictureBoxItem.Image = img;
                     if (img.Size.Height < pictureBoxItem.Size.Height
                         && img.Size.Width < pictureBoxItem.Size.Width)
@@ -56,6 +61,30 @@ namespace PixLogic
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonValid_Click(object sender, EventArgs e)
+        {
+            string name = valName.Text;
+            string price = valPrice.Text;
+            string quantity = valQuantity.Text;
+            string description = valDescription.Text;
+            string reference = "";
+
+            if (!Helper.fieldsAreEmpty(true, name, price, quantity)
+                && Helper.AreNumbers(true, price, quantity)
+                && Helper.wantToAdd())
+            {
+                double nPrice, nQuantity;
+                double.TryParse(price, out nPrice);
+                double.TryParse(quantity, out nQuantity);
+
+                database.addItem(name, description, true, nPrice, img, reference, nQuantity);
+                Helper.addSuccess();
+                pan.setTableItem();
+
+                this.Close();
+            }
         }
     }
 }

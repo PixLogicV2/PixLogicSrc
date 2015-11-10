@@ -14,28 +14,25 @@ namespace PixLogic
 {
     public partial class panItemPack : UserControl
     {
-<<<<<<< HEAD
         ServiceContainer container = new ServiceContainer();
-=======
-        Database database = new Database();
->>>>>>> cf11b349cb06fa96e0a43aa1fc07fd5c6283152a
         public panItemPack()
         {
             InitializeComponent();
             setTableItem();
+            setNewsItem();
             setComboBoxPack();
         }
 
-        public void setTableItem()
+        private void setTableItem()
         {
-            List<Item> list = database.GetAllItems();
+            List<Item> list = container.get("get_all_items").getAllItems();
             foreach(var item in list)
             {
                 dataGridItem.Rows.Add(item.name, item.quantity, item.price);
             }
 
             //AJOUT DES ELEMENTS DANS DATAGRIDVIEW
-            /*for(int i = 1; i < 5; i++)
+           /* for(int i = 1; i < 5; i++)
             {
                 dataGridItem.Rows.Add("Matériel " + i, i * 5, 1.25 * i);
             }*/
@@ -85,7 +82,7 @@ namespace PixLogic
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            WindowItem windowAdd = new WindowItem(this);
+            WindowItem windowAdd = new WindowItem();
             windowAdd.ShowDialog(this);
         }
 
@@ -129,11 +126,6 @@ namespace PixLogic
         {
             WindowPackManager manager = new WindowPackManager();
             manager.ShowDialog();
-        }
-
-        private void buttonTransfert_Click(object sender, EventArgs e)
-        {
-            listBoxItem.Items.Add(valItemName.Text);
         }
     }
 }

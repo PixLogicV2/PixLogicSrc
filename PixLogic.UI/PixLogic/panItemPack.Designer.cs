@@ -39,6 +39,7 @@
             this.valItemName = new System.Windows.Forms.Label();
             this.labelListItem = new System.Windows.Forms.Label();
             this.panTableItem = new System.Windows.Forms.Panel();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
@@ -56,7 +57,6 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -144,6 +144,7 @@
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
+            this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.valDescription.Size = new System.Drawing.Size(118, 96);
             this.valDescription.TabIndex = 25;
             // 
@@ -179,6 +180,15 @@
             this.panTableItem.Name = "panTableItem";
             this.panTableItem.Size = new System.Drawing.Size(200, 411);
             this.panTableItem.TabIndex = 21;
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // textBoxSearch
             // 
@@ -298,6 +308,7 @@
             this.buttonTransfert.TabIndex = 34;
             this.buttonTransfert.Text = ">>";
             this.buttonTransfert.UseVisualStyleBackColor = true;
+            this.buttonTransfert.Click += new System.EventHandler(this.buttonTransfert_Click);
             // 
             // buttonRemoveItemInPack
             // 
@@ -378,15 +389,6 @@
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // panItemPack
             // 
