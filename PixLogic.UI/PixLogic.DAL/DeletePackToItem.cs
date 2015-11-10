@@ -14,10 +14,10 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void deletePackToItem(int itemId)
+        public void deletePackToItem(string itemName)
         {
             Item item;
-            item = context.Items.Where(s => s.ReservableId == itemId).FirstOrDefault();
+            item = context.Items.Where(s => s.name == itemName).FirstOrDefault();
             item.pack = null;
             context.Entry(item).State = System.Data.Entity.EntityState.Modified;
             context.SaveChanges();
