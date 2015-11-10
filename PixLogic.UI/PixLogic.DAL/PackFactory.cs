@@ -8,9 +8,9 @@ namespace PixLogic.DAL
 {
     public class PackFactory
     {
-        public Item build(String name, String description, bool dispo, float price)
+        public Pack build(String name, String description, bool dispo, float price)
         {
-            Item pack = new Item();
+            Pack pack = new Pack();
             pack.name = name;
             pack.description = description;
             pack.dispo = dispo;
