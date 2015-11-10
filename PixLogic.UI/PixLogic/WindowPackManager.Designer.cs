@@ -48,12 +48,12 @@
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelDispo = new System.Windows.Forms.Label();
             this.panPackContain = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.labelListItem = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panTablePack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPack)).BeginInit();
             this.panNews.SuspendLayout();
@@ -179,9 +179,11 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(122, 97);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox1.Size = new System.Drawing.Size(282, 51);
             this.textBox1.TabIndex = 7;
@@ -266,6 +268,14 @@
             this.panPackContain.Size = new System.Drawing.Size(408, 160);
             this.panPackContain.TabIndex = 29;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(-1, -1);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(219, 160);
+            this.listBox1.TabIndex = 1;
+            // 
             // pictureBoxItem
             // 
             this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -323,14 +333,6 @@
             this.buttonAdd.Text = "Ajouter";
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(-1, -1);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(219, 160);
-            this.listBox1.TabIndex = 1;
             // 
             // WindowPackManager
             // 
