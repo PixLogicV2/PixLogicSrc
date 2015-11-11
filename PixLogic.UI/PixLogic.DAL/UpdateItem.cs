@@ -16,14 +16,14 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateItem(String nom, String des, bool disp, float prix, Image image, String refe, int quant)
+        public void updateItem(string nom, string newName, string des, bool disp, float prix, Image image, string refe, int quant)
         {
             Item item;
             item = context.Items.Where(s => s.name == nom).FirstOrDefault<Item>();
 
             if (item != null)
             {
-                item.name = nom;
+                item.name = newName;
                 item.description = des;
                 item.dispo = disp;
                 item.price = prix;

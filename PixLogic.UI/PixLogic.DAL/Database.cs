@@ -62,9 +62,9 @@ namespace PixLogic.DAL
         {
             return container.get("get_items_in_pack").getItemsInPack(packName);
         }
-        public void UpdateItem(string nom, string des, bool disp, float prix, Image img, string refe, int quant)
+        public void UpdateItem(string nom,string newName, string des, bool disp, float prix, Image img, string refe, int quant)
         {
-            container.get("update_item").updateItem(nom, des, disp, prix, img, refe, quant);
+            container.get("update_item").updateItem(nom,newName, des, disp, prix, img, refe, quant);
         }
     }
 }
