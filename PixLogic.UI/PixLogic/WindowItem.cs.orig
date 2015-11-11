@@ -79,17 +79,23 @@ namespace PixLogic
                 && Helper.AreNumbers(true, price, quantity)
                 && Helper.confirmation(option))
             {
+<<<<<<< HEAD
+                double nPrice, nQuantity;
+                double.TryParse(price, out nPrice);
+                double.TryParse(quantity, out nQuantity);
+=======
                 float nPrice;
                 int nQuantity;
                 float.TryParse(price, out nPrice);
                 int.TryParse(quantity, out nQuantity);
+>>>>>>> Dev
                 if (add)
-                    database.AddItem(name, description, true, nPrice, img, reference, nQuantity);
+                    database.addItem(name, description, true, nPrice, img, reference, nQuantity);
                 else
                     database.UpdateItem(pan.valItemName.Text, description, true, nPrice, img, reference, nQuantity);
                 //Helper.addSuccess();
                 pan.setTableItem();
-                //djslfkslfjskdf
+
                 this.Close();
             }
         }
