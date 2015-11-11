@@ -25,10 +25,12 @@ namespace PixLogic
             pan = p;
             add = true;
         }
-        public WindowItem(string image, string name, double price, int quantity, string descrip)
+        public WindowItem(Image image, string name, double price, int quantity, string descrip)
         {
             InitializeComponent();
             this.Text = "Modifier matériel";
+            img = image;
+            putImageInBox(img);
             valName.Text = name;
             valPrice.Text = Convert.ToString(price);
             valQuantity.Text = Convert.ToString(quantity);
@@ -51,14 +53,19 @@ namespace PixLogic
                 if (f.ShowDialog() == DialogResult.OK)
                 {
                     img = Image.FromFile(f.FileName);
-                    pictureBoxItem.Image = img;
-                    if (img.Size.Height < pictureBoxItem.Size.Height
-                        && img.Size.Width < pictureBoxItem.Size.Width)
-                        pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
-                    else
-                        pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
+                    putImageInBox(img);
                 }
             }catch(Exception e) { MessageBox.Show("Error :" + e); }
+        }
+
+        private void putImageInBox(Image image)
+        {
+            pictureBoxItem.Image = image;
+            if (img.Size.Height < pictureBoxItem.Size.Height
+                && img.Size.Width < pictureBoxItem.Size.Width)
+                pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
+            else
+                pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -86,7 +93,7 @@ namespace PixLogic
                 if (add)
                     database.AddItem(name, description, true, nPrice, img, reference, nQuantity);
                 else
-                    database.UpdateItem(pan.valItemName.Text, description, true, nPrice, img, reference, nQuantity);
+                    database.UpdateItem(pan.valItemName.Text, name, description, true, nPrice, img, reference, nQuantity);
                 //Helper.addSuccess();
                 pan.setTableItem();
                 //djslfkslfjskdf
