@@ -129,11 +129,10 @@ namespace PixLogic
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Voulez-vous vraiment supprimer ce matériel ?",
-                "Confirmation", MessageBoxButtons.YesNoCancel);
-            if (result == DialogResult.Yes)
+            if(Helper.confirmation(Helper.DELETE))
             {
-                //...
+                database.DeleteItem(valItemName.Text);
+                setTableItem();
             }
         }
 
