@@ -31,42 +31,66 @@ namespace PixLogic
                 dataGridItem.Rows.Add(item.name, item.quantity, item.price);
             }
 
-            //AJOUT DES ELEMENTS DANS DATAGRIDVIEW
-            /*for(int i = 1; i < 5; i++)
-            {
-                dataGridItem.Rows.Add("Matériel " + i, i * 5, 1.25 * i);
-            }*/
-
             if(dataGridItem.RowCount > 0)
             {
                 dataGridItem.FirstDisplayedScrollingRowIndex = 0;
                 dataGridItem.Refresh();
                 dataGridItem.CurrentCell = dataGridItem.Rows[0].Cells[0];
                 dataGridItem.Rows[0].Selected = true;
-
-                setNewsItem();
             }
-            
+
+            setNewsItem();
+            checkEnableButton();
+        }
+
+        private void checkEnableButton()
+        {
+            if(dataGridItem.RowCount > 0)
+            {
+                buttonModify.Enabled = true;
+                buttonDelete.Enabled = true;
+                buttonTransfert.Enabled = true;
+            }
+            else
+            {
+                buttonModify.Enabled = false;
+                buttonDelete.Enabled = false;
+                buttonTransfert.Enabled = false;
+            }
         }
 
         private void setNewsItem()
         {
-            valItemName.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
-            valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
-            valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
-            Item item = database.GetItemByName(valItemName.Text);
-            valDispo.Text = item.dispo ? "OUI" : "NON";
-            valDescription.Text = item.description;
-
-            Image img = database.ByteArrayToImage(item.image);
-            pictureBoxItem.Image = img;
-            if (img != null)
+            if (dataGridItem.RowCount > 0)
             {
-                if (img.Size.Height < pictureBoxItem.Size.Height
-                    && img.Size.Width < pictureBoxItem.Size.Width)
-                    pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
-                else
-                    pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
+                listBoxItem.AllowDrop = true;
+                valItemName.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
+                valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
+                valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
+                Item item = database.GetItemByName(valItemName.Text);
+                valDispo.Text = item.dispo ? "OUI" : "NON";
+                valDescription.Text = item.description;
+
+                Image img = database.ByteArrayToImage(item.image);
+                pictureBoxItem.Image = img;
+                if (img != null)
+                {
+                    if (img.Size.Height < pictureBoxItem.Size.Height
+                        && img.Size.Width < pictureBoxItem.Size.Width)
+                        pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
+                    else
+                        pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+            else
+            {
+                listBoxItem.AllowDrop = false;
+                valItemName.Text = "-";
+                valQuantity.Text = "-";
+                valPrice.Text = "-";
+                valDispo.Text = "-";
+                valDescription.Text = "-";
+                pictureBoxItem.Image = null;
             }
             
         }
