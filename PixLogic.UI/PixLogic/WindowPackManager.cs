@@ -14,6 +14,7 @@ namespace PixLogic
     public partial class WindowPackManager : Form
     {
         private panItemPack pan;
+        private Database database = new Database();
 
         public WindowPackManager(panItemPack p)
         {
@@ -43,17 +44,20 @@ namespace PixLogic
                 dataGridPack.CurrentCell = dataGridPack.Rows[0].Cells[0];
                 dataGridPack.Rows[0].Selected = true;
 
-                //setNewsItem();
+                setNewsPack();
             }
 
         }
 
-        /*private void setNewsItem()
+        private void setNewsPack()
         {
             valNamePack.Text = dataGridPack.CurrentRow.Cells[0].Value.ToString();
             valPrice.Text = dataGridPack.CurrentRow.Cells[1].Value.ToString();
             valDispo.Text = dataGridPack.CurrentRow.Cells[2].Value.ToString();
-            Item item = database.GetItemByName(valItemName.Text);
+            int nbItemInPack = database.GetItemsInPack(valNamePack.Text).Count;
+            valNbItems.Text = ""+nbItemInPack;
+
+            /*Pack pack = database.GetItemByName(valItemName.Text);
             valDispo.Text = item.dispo ? "OUI" : "NON";
             valDescription.Text = item.description;
 
@@ -67,8 +71,8 @@ namespace PixLogic
                 else
                     pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
             }
-
-        }*/
+            */
+        }
     }
 }
 

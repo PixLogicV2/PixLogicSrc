@@ -39,9 +39,9 @@
             this.Available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNews = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.valDescription = new System.Windows.Forms.TextBox();
             this.labelDescrip = new System.Windows.Forms.Label();
-            this.valQuantity = new System.Windows.Forms.Label();
+            this.valNbItems = new System.Windows.Forms.Label();
             this.valPrice = new System.Windows.Forms.Label();
             this.valDispo = new System.Windows.Forms.Label();
             this.labelNbItems = new System.Windows.Forms.Label();
@@ -165,9 +165,9 @@
             // panNews
             // 
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panNews.Controls.Add(this.textBox1);
+            this.panNews.Controls.Add(this.valDescription);
             this.panNews.Controls.Add(this.labelDescrip);
-            this.panNews.Controls.Add(this.valQuantity);
+            this.panNews.Controls.Add(this.valNbItems);
             this.panNews.Controls.Add(this.valPrice);
             this.panNews.Controls.Add(this.valDispo);
             this.panNews.Controls.Add(this.labelNbItems);
@@ -178,16 +178,16 @@
             this.panNews.Size = new System.Drawing.Size(409, 153);
             this.panNews.TabIndex = 28;
             // 
-            // textBox1
+            // valDescription
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(122, 97);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(282, 51);
-            this.textBox1.TabIndex = 7;
+            this.valDescription.BackColor = System.Drawing.Color.White;
+            this.valDescription.Location = new System.Drawing.Point(122, 97);
+            this.valDescription.Multiline = true;
+            this.valDescription.Name = "valDescription";
+            this.valDescription.ReadOnly = true;
+            this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.valDescription.Size = new System.Drawing.Size(282, 51);
+            this.valDescription.TabIndex = 7;
             // 
             // labelDescrip
             // 
@@ -199,15 +199,15 @@
             this.labelDescrip.TabIndex = 6;
             this.labelDescrip.Text = "Description :";
             // 
-            // valQuantity
+            // valNbItems
             // 
-            this.valQuantity.AutoSize = true;
-            this.valQuantity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valQuantity.Location = new System.Drawing.Point(119, 66);
-            this.valQuantity.Name = "valQuantity";
-            this.valQuantity.Size = new System.Drawing.Size(13, 17);
-            this.valQuantity.TabIndex = 5;
-            this.valQuantity.Text = "-";
+            this.valNbItems.AutoSize = true;
+            this.valNbItems.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valNbItems.Location = new System.Drawing.Point(119, 66);
+            this.valNbItems.Name = "valNbItems";
+            this.valNbItems.Size = new System.Drawing.Size(13, 17);
+            this.valNbItems.TabIndex = 5;
+            this.valNbItems.Text = "-";
             // 
             // valPrice
             // 
@@ -391,13 +391,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Available;
         private System.Windows.Forms.Label labelNews;
         private System.Windows.Forms.Panel panNews;
-        private System.Windows.Forms.Label valQuantity;
+        private System.Windows.Forms.Label valNbItems;
         private System.Windows.Forms.Label valPrice;
         private System.Windows.Forms.Label valDispo;
         private System.Windows.Forms.Label labelNbItems;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelDispo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox valDescription;
         private System.Windows.Forms.Label labelDescrip;
         private System.Windows.Forms.Panel panPackContain;
         private System.Windows.Forms.PictureBox pictureBoxItem;
