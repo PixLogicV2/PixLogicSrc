@@ -14,7 +14,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Pack> getAllItems()
+        public List<Pack> getAllPacks()
         {
             IQueryable<Pack> itemQuery = from Pack in context.Packs
                                          select Pack;

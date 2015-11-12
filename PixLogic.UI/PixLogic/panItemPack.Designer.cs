@@ -189,6 +189,7 @@
             this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
             this.buttonCancelSearch.TabIndex = 3;
             this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 

@@ -74,12 +74,14 @@ namespace PixLogic
         private void setComboBoxPack()
         {
             comboBoxPack.Items.Clear();
+            List<Pack> listPacks = database.GetAllPacks();
 
-            //AJOUT DES ELEMENTS DANS LA COMBOBOX
-            for (int i = 0; i < 4; i++)
-                comboBoxPack.Items.Add("Pack " + i);
-
-            comboBoxPack.SelectedIndex = 0;
+            foreach (var pack in listPacks)
+            {
+                comboBoxPack.Items.Add(pack.name);
+            }
+            if(comboBoxPack.Items.Count > 0)
+                comboBoxPack.SelectedIndex = 0;
         }
 
         private void pictureBoxItem_MouseDown(object sender, MouseEventArgs e)
@@ -120,7 +122,10 @@ namespace PixLogic
 
         private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
         {
-            setTableItem(database.GetAllItemsByString(textBoxSearch.Text));
+            if (textBoxSearch.Text != "")
+                setTableItem(database.GetAllItemsByString(textBoxSearch.Text));
+            else
+                setTableItem(database.GetAllItems());
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -152,6 +157,12 @@ namespace PixLogic
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
         {
             setTableItem(database.GetAllItemsByString(textBoxSearch.Text));
+        }
+
+        private void buttonCancelSearch_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Text = "";
+            setTableItem(database.GetAllItems());
         }
     }
 }
