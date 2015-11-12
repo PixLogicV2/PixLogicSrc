@@ -61,11 +61,14 @@ namespace PixLogic
         private void putImageInBox(Image image)
         {
             pictureBoxItem.Image = image;
-            if (img.Size.Height < pictureBoxItem.Size.Height
-                && img.Size.Width < pictureBoxItem.Size.Width)
-                pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
-            else
-                pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
+            if (img != null)
+            {
+                if (img.Size.Height < pictureBoxItem.Size.Height
+                    && img.Size.Width < pictureBoxItem.Size.Width)
+                    pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
+                else
+                    pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -93,10 +96,11 @@ namespace PixLogic
                 if (add)
                     database.AddItem(name, description, true, nPrice, img, reference, nQuantity);
                 else
+                {
                     database.UpdateItem(pan.valItemName.Text, name, description, true, nPrice, img, reference, nQuantity);
+                }
                 //Helper.addSuccess();
                 pan.setTableItem();
-                //djslfkslfjskdf
                 this.Close();
             }
         }
