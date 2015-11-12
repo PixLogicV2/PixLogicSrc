@@ -55,7 +55,7 @@ namespace PixLogic
             valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
             valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
             Item item = database.GetItemByName(valItemName.Text);
-            valDispo.Text = item.dispo ? "Oui" : "Non";
+            valDispo.Text = item.dispo ? "OUI" : "NON";
             valDescription.Text = item.description;
 
             Image img = database.ByteArrayToImage(item.image);
@@ -123,8 +123,8 @@ namespace PixLogic
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            WindowItem modif = new WindowItem(pictureBoxItem.Image, valItemName.Text, Convert.ToDouble(valPrice.Text), Convert.ToInt32(valQuantity.Text), valDescription.Text);
-            modif.ShowDialog();
+            WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, Convert.ToDouble(valPrice.Text), Convert.ToInt32(valQuantity.Text), valDescription.Text);
+            modif.ShowDialog(this);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

@@ -25,10 +25,11 @@ namespace PixLogic
             pan = p;
             add = true;
         }
-        public WindowItem(Image image, string name, double price, int quantity, string descrip)
+        public WindowItem(panItemPack pa, Image image, string name, double price, int quantity, string descrip)
         {
             InitializeComponent();
             this.Text = "Modifier matériel";
+            pan = pa;
             img = image;
             putImageInBox(img);
             valName.Text = name;
