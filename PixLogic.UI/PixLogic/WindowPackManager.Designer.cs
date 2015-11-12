@@ -323,6 +323,7 @@
             this.buttonModify.Text = "Modifier";
             this.buttonModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonAdd
             // 

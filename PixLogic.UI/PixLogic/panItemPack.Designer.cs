@@ -323,6 +323,7 @@
             this.buttonRemoveItemInPack.Text = "Enlever";
             this.buttonRemoveItemInPack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRemoveItemInPack.UseVisualStyleBackColor = true;
+            this.buttonRemoveItemInPack.Click += new System.EventHandler(this.buttonRemoveItemInPack_Click);
             // 
             // pictureBoxItem
             // 

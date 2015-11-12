@@ -95,6 +95,12 @@ namespace PixLogic
                 Helper.putImageInBox(pictureBoxItem, img);
             }
         }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            WindowPack winpack = new WindowPack(valNamePack.Text, valPrice.Text, valDescription.Text, pan, this);
+            winpack.ShowDialog(this);
+        }
     }
 }
 

@@ -110,7 +110,14 @@ namespace PixLogic
                 listBoxItem.Items.Add(item.name);
             }
             if (listBoxItem.Items.Count > 0)
+            {
                 listBoxItem.SelectedIndex = 0;
+                buttonRemoveItemInPack.Enabled = true;
+            }
+            else
+            {
+                buttonRemoveItemInPack.Enabled = false;
+            }
         }
 
         private void pictureBoxItem_MouseDown(object sender, MouseEventArgs e)
@@ -206,6 +213,11 @@ namespace PixLogic
         private void comboBoxPack_SelectedIndexChanged(object sender, EventArgs e)
         {
             setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
+        }
+
+        private void buttonRemoveItemInPack_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
