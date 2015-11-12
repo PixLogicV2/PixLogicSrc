@@ -88,14 +88,13 @@ namespace PixLogic
 
             if (!Helper.fieldsAreEmpty(true, name, price, quantity)
                 && Helper.AreNumbers(true, price, quantity)
-                && Helper.itemExist(true, name)
                 && Helper.confirmation(option))
             {
                 float nPrice;
                 int nQuantity;
                 float.TryParse(price, out nPrice);
                 int.TryParse(quantity, out nQuantity);
-                if (add)
+                if (add && Helper.itemExist(true, name))
                     database.AddItem(name, description, true, nPrice, img, reference, nQuantity);
                 else
                 {

@@ -74,7 +74,7 @@ namespace PixLogic
             if(database.ContainItem(name))
             {
                 if(withMessageBox)
-                    MessageBox.Show("Le nom du pack renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Le nom du matériel renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             return false;

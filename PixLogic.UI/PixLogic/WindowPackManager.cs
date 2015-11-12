@@ -33,9 +33,9 @@ namespace PixLogic
             dataGridPack.Rows.Clear();
             foreach (var pack in list)
             {
-                dataGridPack.Rows.Add(pack.name, pack.price, pack.dispo?"OUI":"NON");
+                dataGridPack.Rows.Add(pack.name, pack.price, pack.dispo ? "OUI" : "NON");
             }
-            
+
             if (dataGridPack.RowCount > 0)
             {
                 dataGridPack.FirstDisplayedScrollingRowIndex = 0;
@@ -50,9 +50,9 @@ namespace PixLogic
 
         /*private void setNewsItem()
         {
-            valItemName.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
-            valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
-            valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
+            valNamePack.Text = dataGridPack.CurrentRow.Cells[0].Value.ToString();
+            valPrice.Text = dataGridPack.CurrentRow.Cells[1].Value.ToString();
+            valDispo.Text = dataGridPack.CurrentRow.Cells[2].Value.ToString();
             Item item = database.GetItemByName(valItemName.Text);
             valDispo.Text = item.dispo ? "OUI" : "NON";
             valDescription.Text = item.description;
@@ -66,8 +66,9 @@ namespace PixLogic
                     pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
                 else
                     pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
-            }*/
+            }
 
-        }
+        }*/
     }
+}
 
