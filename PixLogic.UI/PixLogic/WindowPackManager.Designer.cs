@@ -48,7 +48,7 @@
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelDispo = new System.Windows.Forms.Label();
             this.panPackContain = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxItemsOfPack = new System.Windows.Forms.ListBox();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.labelListItem = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -130,6 +130,7 @@
             this.dataGridPack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridPack.Size = new System.Drawing.Size(199, 363);
             this.dataGridPack.TabIndex = 0;
+            this.dataGridPack.Click += new System.EventHandler(this.dataGridPack_Click);
             // 
             // NameItem
             // 
@@ -262,20 +263,20 @@
             // panPackContain
             // 
             this.panPackContain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panPackContain.Controls.Add(this.listBox1);
+            this.panPackContain.Controls.Add(this.listBoxItemsOfPack);
             this.panPackContain.Controls.Add(this.pictureBoxItem);
             this.panPackContain.Location = new System.Drawing.Point(210, 22);
             this.panPackContain.Name = "panPackContain";
             this.panPackContain.Size = new System.Drawing.Size(408, 160);
             this.panPackContain.TabIndex = 29;
             // 
-            // listBox1
+            // listBoxItemsOfPack
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(-1, -1);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(219, 160);
-            this.listBox1.TabIndex = 1;
+            this.listBoxItemsOfPack.FormattingEnabled = true;
+            this.listBoxItemsOfPack.Location = new System.Drawing.Point(-1, -1);
+            this.listBoxItemsOfPack.Name = "listBoxItemsOfPack";
+            this.listBoxItemsOfPack.Size = new System.Drawing.Size(219, 160);
+            this.listBoxItemsOfPack.TabIndex = 1;
             // 
             // pictureBoxItem
             // 
@@ -405,7 +406,7 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxItemsOfPack;
         private System.Windows.Forms.Label valNamePack;
     }
 }

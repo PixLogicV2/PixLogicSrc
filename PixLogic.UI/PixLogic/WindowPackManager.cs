@@ -62,17 +62,23 @@ namespace PixLogic
             valDispo.Text = pack.dispo ? "OUI" : "NON";
             valDescription.Text = pack.description;
 
-            /*Image img = database.ByteArrayToImage(item.image);
-            pictureBoxItem.Image = img;
-            if (img != null)
+            setListItemsOfPack(valNamePack.Text);
+        }
+
+        private void setListItemsOfPack(string namePack)
+        {
+            List<Item> items = database.GetItemsInPack(namePack);
+
+            foreach (var item in items)
             {
-                if (img.Size.Height < pictureBoxItem.Size.Height
-                    && img.Size.Width < pictureBoxItem.Size.Width)
-                    pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
-                else
-                    pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
-            }*/
-            
+                listBoxItemsOfPack.Items.Add(item.name);
+            }
+        }
+
+        private void dataGridPack_Click(object sender, EventArgs e)
+        {
+            if (dataGridPack.RowCount > 0)
+                setNewsPack();
         }
     }
 }
