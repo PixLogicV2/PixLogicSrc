@@ -24,15 +24,15 @@ namespace PixLogic.DAL
                 list.Add(prod);
             }
             return list;
-
         }
         public List<Item> getAllItemsByString(string search)
         {
+            search.ToLower();
             List<Item> items = getAllItems();
             List<Item>results = items.FindAll(
             delegate (Item item)
             {
-                return item.name.Contains(search);
+                return item.name.ToLower().Contains(search);
             }
             );
             return results;
