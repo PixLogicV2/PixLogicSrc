@@ -14,14 +14,14 @@ namespace PixLogic
     public partial class WindowPack : Form
     {
         private Database database = new Database();
-        private panItemPack pan;
+        private panItemPack panItemPack;
         private WindowPackManager winpackm;
 
         public WindowPack(panItemPack p, WindowPackManager w)
         {
             InitializeComponent();
             this.Text = "Nouveau Pack";
-            pan = p;
+            panItemPack = p;
             winpackm = w;
         }
 
@@ -33,7 +33,8 @@ namespace PixLogic
                 float price;
                 float.TryParse(valPrice.Text, out price);
                 database.AddPack(valName.Text, valDescription.Text, true, price);
-                pan.setComboBoxPack();
+                winpackm.setTablePacks(database.GetAllPacks());
+                panItemPack.setComboBoxPack();
                 this.Close();
             }
         }

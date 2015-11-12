@@ -20,6 +20,7 @@ namespace PixLogic
         {
             InitializeComponent();
             pan = p;
+            setTablePacks(database.GetAllPacks());
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace PixLogic
             winpack.ShowDialog(this);
         }
 
-        public void setTableItem(List<Pack> l)
+        public void setTablePacks(List<Pack> l)
         {
             List<Pack> list = l;
             dataGridPack.Rows.Clear();
@@ -57,11 +58,11 @@ namespace PixLogic
             int nbItemInPack = database.GetItemsInPack(valNamePack.Text).Count;
             valNbItems.Text = ""+nbItemInPack;
 
-            /*Pack pack = database.GetItemByName(valItemName.Text);
-            valDispo.Text = item.dispo ? "OUI" : "NON";
-            valDescription.Text = item.description;
+            Pack pack = database.GetPackByName(valNamePack.Text);
+            valDispo.Text = pack.dispo ? "OUI" : "NON";
+            valDescription.Text = pack.description;
 
-            Image img = database.ByteArrayToImage(item.image);
+            /*Image img = database.ByteArrayToImage(item.image);
             pictureBoxItem.Image = img;
             if (img != null)
             {
@@ -70,8 +71,8 @@ namespace PixLogic
                     pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
                 else
                     pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
-            }
-            */
+            }*/
+            
         }
     }
 }
