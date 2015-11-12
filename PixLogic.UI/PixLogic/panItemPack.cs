@@ -72,15 +72,7 @@ namespace PixLogic
                 valDescription.Text = item.description;
 
                 Image img = database.ByteArrayToImage(item.image);
-                pictureBoxItem.Image = img;
-                if (img != null)
-                {
-                    if (img.Size.Height < pictureBoxItem.Size.Height
-                        && img.Size.Width < pictureBoxItem.Size.Width)
-                        pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
-                    else
-                        pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
-                }
+                Helper.putImageInBox(pictureBoxItem, img);
             }
             else
             {
@@ -108,6 +100,19 @@ namespace PixLogic
                 comboBoxPack.SelectedIndex = 0;
         }
 
+        private void setListBoxItemsOfPack(string namePack)
+        {
+            listBoxItem.Items.Clear();
+            List<Item> list = database.GetItemsInPack(namePack);
+
+            foreach(var item in list)
+            {
+                listBoxItem.Items.Add(item.name);
+            }
+            if (listBoxItem.Items.Count > 0)
+                listBoxItem.SelectedIndex = 0;
+        }
+
         private void pictureBoxItem_MouseDown(object sender, MouseEventArgs e)
         {
             listBoxItem.DoDragDrop(valItemName.Text, DragDropEffects.Copy | DragDropEffects.Move);
@@ -129,7 +134,15 @@ namespace PixLogic
 
         private void listBoxItem_DragDrop(object sender, DragEventArgs e)
         {
-            listBoxItem.Items.Add(e.Data.GetData(DataFormats.Text).ToString());
+            string itemName = e.Data.GetData(DataFormats.Text).ToString();
+            addingItemInPack(itemName);
+        }
+
+        private void addingItemInPack(string itemName)
+        {
+            string packName = comboBoxPack.SelectedItem.ToString();
+            database.AddItemToPack(itemName, packName);
+            setListBoxItemsOfPack(packName);
         }
 
         private void dataGridItem_Click(object sender, EventArgs e)
@@ -175,7 +188,8 @@ namespace PixLogic
 
         private void buttonTransfert_Click(object sender, EventArgs e)
         {
-            listBoxItem.Items.Add(valItemName.Text);
+            string itemName = valItemName.Text;
+            addingItemInPack(itemName);
         }
 
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
@@ -187,6 +201,11 @@ namespace PixLogic
         {
             textBoxSearch.Text = "";
             setTableItem(database.GetAllItems());
+        }
+
+        private void comboBoxPack_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
         }
     }
 }

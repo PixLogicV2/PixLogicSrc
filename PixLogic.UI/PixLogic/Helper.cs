@@ -1,6 +1,7 @@
 ﻿using PixLogic.DAL;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,6 +80,19 @@ namespace PixLogic
             }
             return false;
                 
+        }
+
+        public static void putImageInBox(PictureBox picBox, Image image)
+        {
+            picBox.Image = image;
+            if (image != null)
+            {
+                if (image.Size.Height < picBox.Size.Height
+                    && image.Size.Width < picBox.Size.Width)
+                    picBox.SizeMode = PictureBoxSizeMode.CenterImage;
+                else
+                    picBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
     }
 }

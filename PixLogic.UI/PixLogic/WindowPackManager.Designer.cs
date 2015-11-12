@@ -277,6 +277,7 @@
             this.listBoxItemsOfPack.Name = "listBoxItemsOfPack";
             this.listBoxItemsOfPack.Size = new System.Drawing.Size(219, 160);
             this.listBoxItemsOfPack.TabIndex = 1;
+            this.listBoxItemsOfPack.SelectedIndexChanged += new System.EventHandler(this.listBoxItemsOfPack_SelectedIndexChanged);
             // 
             // pictureBoxItem
             // 

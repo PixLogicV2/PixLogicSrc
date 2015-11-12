@@ -288,6 +288,7 @@
             this.comboBoxPack.Size = new System.Drawing.Size(150, 21);
             this.comboBoxPack.Sorted = true;
             this.comboBoxPack.TabIndex = 31;
+            this.comboBoxPack.SelectedIndexChanged += new System.EventHandler(this.comboBoxPack_SelectedIndexChanged);
             // 
             // labelPack
             // 

@@ -31,7 +31,7 @@ namespace PixLogic
             this.Text = "Modifier matériel";
             pan = pa;
             img = image;
-            putImageInBox(img);
+            Helper.putImageInBox(pictureBoxItem, img);
             valName.Text = name;
             valPrice.Text = Convert.ToString(price);
             valQuantity.Text = Convert.ToString(quantity);
@@ -54,22 +54,9 @@ namespace PixLogic
                 if (f.ShowDialog() == DialogResult.OK)
                 {
                     img = Image.FromFile(f.FileName);
-                    putImageInBox(img);
+                    Helper.putImageInBox(pictureBoxItem, img);
                 }
             }catch(Exception e) { MessageBox.Show("Error :" + e); }
-        }
-
-        private void putImageInBox(Image image)
-        {
-            pictureBoxItem.Image = image;
-            if (img != null)
-            {
-                if (img.Size.Height < pictureBoxItem.Size.Height
-                    && img.Size.Width < pictureBoxItem.Size.Width)
-                    pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
-                else
-                    pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
-            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
