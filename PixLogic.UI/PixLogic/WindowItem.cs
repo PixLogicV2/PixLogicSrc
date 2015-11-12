@@ -101,7 +101,7 @@ namespace PixLogic
                     database.UpdateItem(pan.valItemName.Text, name, description, true, nPrice, img, reference, nQuantity);
                 }
                 //Helper.addSuccess();
-                pan.setTableItem();
+                pan.setTableItem(database.GetAllItems());
                 this.Close();
             }
         }

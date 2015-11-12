@@ -18,13 +18,13 @@ namespace PixLogic
         public panItemPack()
         {
             InitializeComponent();
-            setTableItem();
+            setTableItem(database.GetAllItems());
             setComboBoxPack();
         }
 
-        public void setTableItem()
+        public void setTableItem(List<Item> l)
         {
-            List<Item> list = database.GetAllItems();
+            List<Item> list = l;
             dataGridItem.Rows.Clear();
             foreach(var item in list)
             {
@@ -108,17 +108,19 @@ namespace PixLogic
 
         private void dataGridItem_Click(object sender, EventArgs e)
         {
-            setNewsItem();
+            if (dataGridItem.RowCount > 0)
+                setNewsItem();
         }
 
         private void dataGridItem_KeyUp(object sender, KeyEventArgs e)
         {
-            setNewsItem();
+            if (dataGridItem.RowCount > 0)
+                setNewsItem();
         }
 
         private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
         {
-
+            setTableItem(database.GetAllItemsByString(textBoxSearch.Text));
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -132,7 +134,7 @@ namespace PixLogic
             if(Helper.confirmation(Helper.DELETE))
             {
                 database.DeleteItem(valItemName.Text);
-                setTableItem();
+                setTableItem(database.GetAllItems());
             }
         }
 
@@ -145,6 +147,11 @@ namespace PixLogic
         private void buttonTransfert_Click(object sender, EventArgs e)
         {
             listBoxItem.Items.Add(valItemName.Text);
+        }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            setTableItem(database.GetAllItemsByString(textBoxSearch.Text));
         }
     }
 }
