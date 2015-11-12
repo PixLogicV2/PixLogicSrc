@@ -14,7 +14,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Item> getItemInPack(string packName)
+        public List<Item> getItemsInPack(string packName)
         {
             IQueryable<Item> itemQuery = from Item in context.Items
                                          where Item.pack.name==packName
