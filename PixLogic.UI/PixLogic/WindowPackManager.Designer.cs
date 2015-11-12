@@ -30,7 +30,6 @@
         {
             this.labelListPack = new System.Windows.Forms.Label();
             this.panTablePack = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridPack = new System.Windows.Forms.DataGridView();
@@ -49,11 +48,12 @@
             this.labelDispo = new System.Windows.Forms.Label();
             this.panPackContain = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.labelListItem = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.panTablePack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPack)).BeginInit();
             this.panNews.SuspendLayout();
@@ -82,15 +82,6 @@
             this.panTablePack.Name = "panTablePack";
             this.panTablePack.Size = new System.Drawing.Size(200, 411);
             this.panTablePack.TabIndex = 23;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // textBoxSearch
             // 
@@ -276,15 +267,6 @@
             this.listBox1.Size = new System.Drawing.Size(219, 160);
             this.listBox1.TabIndex = 1;
             // 
-            // pictureBoxItem
-            // 
-            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxItem.Location = new System.Drawing.Point(224, -1);
-            this.pictureBoxItem.Name = "pictureBoxItem";
-            this.pictureBoxItem.Size = new System.Drawing.Size(183, 166);
-            this.pictureBoxItem.TabIndex = 0;
-            this.pictureBoxItem.TabStop = false;
-            // 
             // labelListItem
             // 
             this.labelListItem.AutoSize = true;
@@ -333,6 +315,25 @@
             this.buttonAdd.Text = "Ajouter";
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // pictureBoxItem
+            // 
+            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxItem.Location = new System.Drawing.Point(224, -1);
+            this.pictureBoxItem.Name = "pictureBoxItem";
+            this.pictureBoxItem.Size = new System.Drawing.Size(183, 166);
+            this.pictureBoxItem.TabIndex = 0;
+            this.pictureBoxItem.TabStop = false;
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // WindowPackManager
             // 

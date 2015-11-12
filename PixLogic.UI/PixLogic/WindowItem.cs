@@ -88,6 +88,7 @@ namespace PixLogic
 
             if (!Helper.fieldsAreEmpty(true, name, price, quantity)
                 && Helper.AreNumbers(true, price, quantity)
+                && Helper.itemExist(true, name)
                 && Helper.confirmation(option))
             {
                 float nPrice;

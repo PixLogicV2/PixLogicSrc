@@ -71,7 +71,7 @@ namespace PixLogic
             
         }
         
-        private void setComboBoxPack()
+        public void setComboBoxPack()
         {
             comboBoxPack.Items.Clear();
             List<Pack> listPacks = database.GetAllPacks();
@@ -145,7 +145,7 @@ namespace PixLogic
 
         private void buttonManagePack_Click(object sender, EventArgs e)
         {
-            WindowPackManager manager = new WindowPackManager();
+            WindowPackManager manager = new WindowPackManager(this);
             manager.ShowDialog();
         }
 

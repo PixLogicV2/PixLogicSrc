@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixLogic.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace PixLogic
 {
     class Helper
     {
+        private static Database database = new Database();
+
         public static readonly string ADD = "ajouter";
         public static readonly string DELETE = "supprimer";
         public static readonly string SET = "modifier";
@@ -64,6 +67,18 @@ namespace PixLogic
         public static void addSuccess()
         {
             MessageBox.Show("L'élément a été bien ajouté !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static bool itemExist(bool withMessageBox, string name)
+        {
+            if(database.ContainItem(name))
+            {
+                if(withMessageBox)
+                    MessageBox.Show("Le nom du pack renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+                
         }
     }
 }
