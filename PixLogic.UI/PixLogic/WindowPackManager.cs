@@ -47,7 +47,7 @@ namespace PixLogic
                 dataGridPack.Rows[0].Selected = true;
             }
             setNewsPack();
-
+            checkEnableButton();
         }
 
         private void setNewsPack()
@@ -76,6 +76,20 @@ namespace PixLogic
                 valDispo.Text = "-";
                 valDescription.Text = "-";
                 pictureBoxItem.Image = null;
+            }
+        }
+
+        private void checkEnableButton()
+        {
+            if (dataGridPack.RowCount > 0)
+            {
+                buttonModify.Enabled = true;
+                buttonDelete.Enabled = true;
+            }
+            else
+            {
+                buttonModify.Enabled = false;
+                buttonDelete.Enabled = false;
             }
         }
 
