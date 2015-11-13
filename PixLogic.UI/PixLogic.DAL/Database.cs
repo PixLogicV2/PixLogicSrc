@@ -62,6 +62,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_packs").getAllPacks();
         }
+        public List<Pack> GetAllPacksByString(string search)
+        {
+            return container.get("get_all_packs").getAllPacksByString(search);
+        }
         public List<Item> GetItemsInPack(string packName)
         {
             return container.get("get_items_in_pack").getItemsInPack(packName);

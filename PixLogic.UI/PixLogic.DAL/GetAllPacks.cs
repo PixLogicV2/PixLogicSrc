@@ -26,5 +26,17 @@ namespace PixLogic.DAL
             return list;
 
         }
+        public List<Pack> getAllPacksByString(string search)
+        {
+            search.ToLower();
+            List<Pack> packs = getAllPacks();
+            List<Pack> results = packs.FindAll(
+            delegate (Pack pack)
+            {
+                return pack.name.ToLower().Contains(search);
+            }
+            );
+            return results;
+        }
     }
 }

@@ -55,6 +55,9 @@ namespace PixLogic.DAL
                     service = new GetAllPacks();
                     service.setContext(this.get("data_context"));
                     break;
+                case "get_all_packs_by_string":
+                    service = this.get("get_all_packs");
+                    break;
                 case "add_pack_to_item":
                     service = new AddPackToItem();
                     service.setContext(this.get("data_context"));
