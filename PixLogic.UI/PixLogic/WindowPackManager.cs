@@ -45,26 +45,38 @@ namespace PixLogic
                 dataGridPack.Refresh();
                 dataGridPack.CurrentCell = dataGridPack.Rows[0].Cells[0];
                 dataGridPack.Rows[0].Selected = true;
-
-                setNewsPack();
             }
+            setNewsPack();
 
         }
 
         private void setNewsPack()
         {
-            valNamePack.Text = dataGridPack.CurrentRow.Cells[0].Value.ToString();
-            valPrice.Text = dataGridPack.CurrentRow.Cells[1].Value.ToString();
-            valDispo.Text = dataGridPack.CurrentRow.Cells[2].Value.ToString();
-            int nbItemInPack = database.GetItemsInPack(valNamePack.Text).Count;
-            valNbItems.Text = ""+nbItemInPack;
+            if (dataGridPack.RowCount > 0)
+            {
+                valNamePack.Text = dataGridPack.CurrentRow.Cells[0].Value.ToString();
+                valPrice.Text = dataGridPack.CurrentRow.Cells[1].Value.ToString();
+                valDispo.Text = dataGridPack.CurrentRow.Cells[2].Value.ToString();
+                int nbItemInPack = database.GetItemsInPack(valNamePack.Text).Count;
+                valNbItems.Text = "" + nbItemInPack;
 
-            Pack packT = database.GetPackByName(valNamePack.Text);
-            valDispo.Text = packT.dispo ? "OUI" : "NON";
-            
-            valDescription.Text = packT.description;
+                Pack packT = database.GetPackByName(valNamePack.Text);
+                valDispo.Text = packT.dispo ? "OUI" : "NON";
 
-            setListItemsOfPack(valNamePack.Text);
+                valDescription.Text = packT.description;
+
+                setListItemsOfPack(valNamePack.Text);
+            }
+            else
+            {
+                listBoxItemsOfPack.Items.Clear();
+                valNamePack.Text = "-";
+                valNbItems.Text = "-";
+                valPrice.Text = "-";
+                valDispo.Text = "-";
+                valDescription.Text = "-";
+                pictureBoxItem.Image = null;
+            }
         }
 
         private void setListItemsOfPack(string namePack)
@@ -111,6 +123,17 @@ namespace PixLogic
                 database.DeletePack(valNamePack.Text);
                 setTablePacks(database.GetAllPacks());
             }
+        }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            setTablePacks(database.GetAllPacksByString(textBoxSearch.Text));
+        }
+
+        private void buttonCancelSearch_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Text = "";
+            setTablePacks(database.GetAllPacks());
         }
     }
 }
