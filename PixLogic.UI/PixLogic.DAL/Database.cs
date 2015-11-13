@@ -80,7 +80,7 @@ namespace PixLogic.DAL
         }
         public void DeletePack(string packName)
         {
-            container.get("update_pack").deletePack(packName);
+            container.get("delete_pack").deletePack(packName);
         }
     }
 }

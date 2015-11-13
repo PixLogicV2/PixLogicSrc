@@ -103,6 +103,15 @@ namespace PixLogic
             WindowPack winpack = new WindowPack(valNamePack.Text, valPrice.Text, valDescription.Text, pan, this);
             winpack.ShowDialog(this);
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (Helper.confirmation(Helper.DELETE))
+            {
+                database.DeletePack(valNamePack.Text);
+                setTablePacks(database.GetAllPacks());
+            }
+        }
     }
 }
 
