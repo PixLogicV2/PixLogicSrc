@@ -36,6 +36,7 @@ namespace PixLogic
             foreach (var pack in list)
             {
                 dataGridPack.Rows.Add(pack.name, pack.price, pack.dispo ? "OUI" : "NON");
+                Console.WriteLine("Description: " + pack.description);
             }
 
             if (dataGridPack.RowCount > 0)
@@ -58,9 +59,10 @@ namespace PixLogic
             int nbItemInPack = database.GetItemsInPack(valNamePack.Text).Count;
             valNbItems.Text = ""+nbItemInPack;
 
-            Pack pack = database.GetPackByName(valNamePack.Text);
-            valDispo.Text = pack.dispo ? "OUI" : "NON";
-            valDescription.Text = pack.description;
+            Pack packT = database.GetPackByName(valNamePack.Text);
+            valDispo.Text = packT.dispo ? "OUI" : "NON";
+            
+            valDescription.Text = packT.description;
 
             setListItemsOfPack(valNamePack.Text);
         }

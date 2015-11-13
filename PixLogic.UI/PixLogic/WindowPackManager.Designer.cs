@@ -409,6 +409,6 @@
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.ListBox listBoxItemsOfPack;
-        private System.Windows.Forms.Label valNamePack;
+        public System.Windows.Forms.Label valNamePack;
     }
 }

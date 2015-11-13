@@ -49,9 +49,10 @@ namespace PixLogic
             {
                 float price;
                 float.TryParse(valPrice.Text, out price);
-                if(add)
+                if (add)
                     database.AddPack(valName.Text, valDescription.Text, true, price);
-                // FAIRE UPDATE PACK
+                else
+                    database.UpdatePack(winpackm.valNamePack.Text, valName.Text, valDescription.Text, true, price);
 
                 winpackm.setTablePacks(database.GetAllPacks());
                 panItemPack.setComboBoxPack();

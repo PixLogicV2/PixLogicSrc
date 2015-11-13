@@ -74,5 +74,13 @@ namespace PixLogic.DAL
         {
             container.get("update_item").updateItem(nom,newName, des, disp, prix, img, refe, quant);
         }
+        public void UpdatePack(string nom, string newName, string des, bool disp, float prix)
+        {
+            container.get("update_pack").updatePack(nom, newName, des, disp, prix);
+        }
+        public void DeletePack(string packName)
+        {
+            container.get("update_pack").deletePack(packName);
+        }
     }
 }
