@@ -136,6 +136,7 @@ namespace PixLogic
             {
                 database.DeletePack(valNamePack.Text);
                 setTablePacks(database.GetAllPacks());
+                pan.setComboBoxPack();
             }
         }
 
