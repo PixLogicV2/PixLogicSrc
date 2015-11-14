@@ -279,10 +279,7 @@
             // 
             this.comboBoxPack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPack.FormattingEnabled = true;
-            this.comboBoxPack.Items.AddRange(new object[] {
-            "BottomPack",
-            "leftPack",
-            "RightPack"});
+            this.comboBoxPack.ItemHeight = 13;
             this.comboBoxPack.Location = new System.Drawing.Point(530, 25);
             this.comboBoxPack.Name = "comboBoxPack";
             this.comboBoxPack.Size = new System.Drawing.Size(150, 21);

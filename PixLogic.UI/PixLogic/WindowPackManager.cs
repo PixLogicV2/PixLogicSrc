@@ -14,7 +14,7 @@ namespace PixLogic
     public partial class WindowPackManager : Form
     {
         private panItemPack pan;
-        private Database database = new Database();
+        private Database database = Helper.database;
 
         public WindowPackManager(panItemPack p)
         {

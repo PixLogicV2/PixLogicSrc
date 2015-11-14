@@ -12,11 +12,12 @@ namespace PixLogic
 {
     class Helper
     {
-        private static Database database = new Database();
+        public static Database database = new Database();
 
         public static readonly string ADD = "ajouter";
         public static readonly string DELETE = "supprimer";
         public static readonly string SET = "modifier";
+        public static readonly string REMOVE = "enlever";
 
         public static bool fieldsAreEmpty(bool withMessageBox, params string[] args)
         {

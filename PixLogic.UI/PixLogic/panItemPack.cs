@@ -14,7 +14,7 @@ namespace PixLogic
 {
     public partial class panItemPack : UserControl
     {
-        Database database = new Database();
+        Database database = Helper.database;
         public panItemPack()
         {
             InitializeComponent();
@@ -109,9 +109,14 @@ namespace PixLogic
             {
                 listBoxItem.Items.Add(item.name);
             }
+            checkButtonRemoveItem(0);
+        }
+
+        private void checkButtonRemoveItem(int index)
+        {
             if (listBoxItem.Items.Count > 0)
             {
-                listBoxItem.SelectedIndex = 0;
+                listBoxItem.SelectedIndex = index;
                 buttonRemoveItemInPack.Enabled = true;
             }
             else
@@ -119,7 +124,6 @@ namespace PixLogic
                 buttonRemoveItemInPack.Enabled = false;
             }
         }
-
         private void pictureBoxItem_MouseDown(object sender, MouseEventArgs e)
         {
             listBoxItem.DoDragDrop(valItemName.Text, DragDropEffects.Copy | DragDropEffects.Move);
@@ -149,8 +153,10 @@ namespace PixLogic
         {
             string packName = comboBoxPack.SelectedItem.ToString();
             database.AddItemToPack(itemName, packName);
-            setListBoxItemsOfPack(packName);
+            listBoxItem.Items.Add(itemName);
+            checkButtonRemoveItem(listBoxItem.Items.Count - 1);
         }
+        
 
         private void dataGridItem_Click(object sender, EventArgs e)
         {
@@ -217,7 +223,11 @@ namespace PixLogic
 
         private void buttonRemoveItemInPack_Click(object sender, EventArgs e)
         {
-            
+            if (Helper.confirmation(Helper.REMOVE))
+            {
+                database.DeleteItemToPack(listBoxItem.SelectedItem.ToString());
+                setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
+            }
         }
     }
 }

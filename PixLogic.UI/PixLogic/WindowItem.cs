@@ -13,7 +13,7 @@ namespace PixLogic
 {
     public partial class WindowItem : Form
     {
-        private Database database = new Database();
+        private Database database = Helper.database;
         private panItemPack pan;
         private Image img = null;
         private bool add;
