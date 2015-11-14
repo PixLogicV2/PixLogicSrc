@@ -9,95 +9,93 @@ namespace PixLogic.DAL
         {
             this.arrayContainer = new Dictionary<string, dynamic>();
         }
+
         public dynamic get(string serviceName)
         {
             if (this.arrayContainer.ContainsKey(serviceName))
             {
-               return this.arrayContainer[serviceName];
+                return this.arrayContainer[serviceName];
             }
-            dynamic service=null;
             switch (serviceName)
             {
                 case "item_factory":
-                    service = new ItemFactory();
+                    this.arrayContainer[serviceName] = new ItemFactory();
                     break;
                 case "pack_factory":
-                    service = new PackFactory();
+                    this.arrayContainer[serviceName] = new PackFactory();
                     break;
 
                 case "add_item":
-                    service = new AddItem();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new AddItem();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "add_pack":
-                    service = new AddPack();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new AddPack();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "data_context":
-                    service = new DataContext();
+                    this.arrayContainer[serviceName] = new DataContext();
                     break;
                 case "get_pack_by_name":
-                    service = new GetPackByName();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new GetPackByName();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_items":
-                    service = new GetAllItems();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new GetAllItems();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_items_by_string":
-                    service = this.get("get_all_items");
+                    this.arrayContainer[serviceName] = this.get("get_all_items");
                     break;
                 case "get_item_by_name":
-                    service = new GetItemByName();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new GetItemByName();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_packs":
-                    service = new GetAllPacks();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new GetAllPacks();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_packs_by_string":
-                    service = this.get("get_all_packs");
+                    this.arrayContainer[serviceName] = this.get("get_all_packs");
                     break;
                 case "add_pack_to_item":
-                    service = new AddPackToItem();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new AddPackToItem();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "delete_pack_to_item":
-                    service = new DeletePackToItem();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new DeletePackToItem();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "contain_item":
-                    service = new ContainItem();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new ContainItem();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "update_item":
-                    service = new UpdateItem();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new UpdateItem();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "update_pack":
-                    service = new UpdatePack();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new UpdatePack();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "delete_item":
-                    service = new DeleteItem();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new DeleteItem();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "delete_pack":
-                    service = new DeletePack();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new DeletePack();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_items_in_pack":
-                    service = new GetItemsInPack();
-                    service.setContext(this.get("data_context"));
+                    this.arrayContainer[serviceName] = new GetItemsInPack();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "byte_array_to_image":
-                    service = new ByteArrayToImage();
+                    this.arrayContainer[serviceName] = new ByteArrayToImage();
                     break;
-
-
+                default:
+                    throw new System.Exception();
             }
-            this.arrayContainer[serviceName] = service;
-
             return this.arrayContainer[serviceName];
         }
     }
