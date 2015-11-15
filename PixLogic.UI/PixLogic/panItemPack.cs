@@ -152,8 +152,8 @@ namespace PixLogic
         private void addingItemInPack(string itemName)
         {
             string packName = comboBoxPack.SelectedItem.ToString();
-            database.AddItemToPack(itemName, packName);
             listBoxItem.Items.Add(itemName);
+            database.AddItemToPack(itemName, packName);
             checkButtonRemoveItem(listBoxItem.Items.Count - 1);
         }
         
