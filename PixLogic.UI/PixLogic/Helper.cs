@@ -37,6 +37,17 @@ namespace PixLogic
             return result;
         }
 
+        public static bool IsInListBox(string name, ListBox list)
+        {
+            foreach(string n in list.Items)
+            {
+                if (n.Equals(name))
+                    return true;
+            }
+
+            return false;
+        }
+
         public static bool AreNumbers(bool withMessageBox, params string[] args)
         {
             bool result = true;
