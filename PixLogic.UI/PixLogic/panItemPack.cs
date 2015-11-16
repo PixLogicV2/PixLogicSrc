@@ -98,6 +98,7 @@ namespace PixLogic
             }
             if(comboBoxPack.Items.Count > 0)
                 comboBoxPack.SelectedIndex = 0;
+            checkButtonRemoveItem(0);
         }
 
         private void setListBoxItemsOfPack(string namePack)
