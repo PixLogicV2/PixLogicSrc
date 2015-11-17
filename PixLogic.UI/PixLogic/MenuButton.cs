@@ -58,6 +58,7 @@ namespace PixLogic
             labelName.MouseEnter -= HoverItemButton;
             this.MouseLeave -= LeaveItemButton;
             labelName.MouseLeave -= LeaveItemButton;
+            this.BackgroundImage = Properties.Resources.Bouton2;
         }
 
 
