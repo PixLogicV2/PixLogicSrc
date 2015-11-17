@@ -81,5 +81,12 @@ namespace PixLogic
             WindowUser windowAdd = new WindowUser(this);
             windowAdd.ShowDialog(this);
         }
+
+        private void dataGridUsers_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridUsers.RowCount > 0)
+                setNewsUsers();
+        }
     }
 }

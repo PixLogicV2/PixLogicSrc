@@ -81,6 +81,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
             this.textBoxSearch.TabIndex = 2;
+            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
             // 
             // labelSearch
             // 
@@ -114,6 +115,7 @@
             this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridUsers.Size = new System.Drawing.Size(259, 447);
             this.dataGridUsers.TabIndex = 0;
+            this.dataGridUsers.Click += new System.EventHandler(this.dataGridUsers_Click);
             // 
             // NameUser
             // 
