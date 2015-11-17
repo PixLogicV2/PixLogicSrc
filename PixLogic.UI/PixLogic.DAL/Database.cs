@@ -94,7 +94,7 @@ namespace PixLogic.DAL
         }
         public List<User> GetAllUsersByString(string search)
         {
-            return container.get("get_all_users").getAllItemsByString(search);
+            return container.get("get_all_users").getAllUsersByString(search);
         }
         public void AddUser(string name, string nickname, string mail, string classe, string phoneNumber, Image image)
         {
