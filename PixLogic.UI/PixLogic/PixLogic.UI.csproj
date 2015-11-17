@@ -106,6 +106,12 @@
     <Compile Include="WindowPackManager.Designer.cs">
       <DependentUpon>WindowPackManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowUser.Designer.cs">
+      <DependentUpon>WindowUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MenuButton.resx">
       <DependentUpon>MenuButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowPackManager.resx">
       <DependentUpon>WindowPackManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowUser.resx">
+      <DependentUpon>WindowUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

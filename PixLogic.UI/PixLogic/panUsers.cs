@@ -75,5 +75,11 @@ namespace PixLogic
             else
                 setTableUsers(database.GetAllUsers());
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            WindowUser windowAdd = new WindowUser(this);
+            windowAdd.ShowDialog(this);
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.labelTel = new System.Windows.Forms.Label();
             this.labelMail = new System.Windows.Forms.Label();
             this.valUserNickName = new System.Windows.Forms.Label();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
@@ -240,10 +241,26 @@
             this.valUserNickName.Text = "Prenom de l\'utilisateur";
             this.valUserNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(283, 474);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(104, 36);
+            this.buttonAdd.TabIndex = 29;
+            this.buttonAdd.Text = "Ajouter";
+            this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // panUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.valUserNickName);
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.valUserName);
@@ -279,5 +296,6 @@
         private System.Windows.Forms.Label labelTel;
         private System.Windows.Forms.Label labelMail;
         public System.Windows.Forms.Label valUserNickName;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
