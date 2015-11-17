@@ -16,5 +16,6 @@ namespace PixLogic.DAL
         public DbSet<Reservable> Reservables { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Pack> Packs { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

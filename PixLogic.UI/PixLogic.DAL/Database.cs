@@ -14,6 +14,9 @@ namespace PixLogic.DAL
         {
             container = new ServiceContainer();
         }
+
+        //------- FONCTION PANNEAU MATERIEL --------//
+
         public void AddItem(string name, string description, bool dispo, float price, Image image, string reference, int quantity)
         {
             container.get("add_item").addItem(container.get("item_factory").build(name, description,dispo,price,image,reference,quantity));
@@ -81,6 +84,17 @@ namespace PixLogic.DAL
         public void DeletePack(string packName)
         {
             container.get("delete_pack").deletePack(packName);
+        }
+
+        //------- FONCTION PANNEAU UTILISATEUR --------//
+
+        public List<User> GetAllUsers()
+        {
+            return container.get("get_all_users").GetAllUsers();
+        }
+        public List<Item> GetAllIUsersByString(string search)
+        {
+            return container.get("get_all_users").getAllItemsByString(search);
         }
     }
 }
