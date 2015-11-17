@@ -74,6 +74,12 @@
     <Compile Include="panItemPack.Designer.cs">
       <DependentUpon>panItemPack.cs</DependentUpon>
     </Compile>
+    <Compile Include="panUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panUsers.Designer.cs">
+      <DependentUpon>panUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WindowItem.cs">
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="panItemPack.resx">
       <DependentUpon>panItemPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panUsers.resx">
+      <DependentUpon>panUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
