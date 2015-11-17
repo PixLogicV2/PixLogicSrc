@@ -13,12 +13,15 @@ namespace PixLogic
 {
     public partial class panUsers : UserControl
     {
-        Database database = Helper.database;
+        Database database;
         public panUsers()
         {
             InitializeComponent();
-            // Helper.testApp();
-            setTableUsers(database.GetAllUsers());
+            if (MainWindow.START)
+            {
+                database = Helper.database;
+                setTableUsers(database.GetAllUsers());
+            }
         }
 
         public void setTableUsers(List<User> l)

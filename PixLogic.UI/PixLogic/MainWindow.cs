@@ -13,6 +13,7 @@ namespace PixLogic
     public partial class MainWindow : Form
     {
         private MenuButton button = null;
+        public static bool START = false;
 
         public MainWindow()
         {

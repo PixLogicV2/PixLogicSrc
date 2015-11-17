@@ -14,12 +14,16 @@ namespace PixLogic
 {
     public partial class panItemPack : UserControl
     {
-        Database database = Helper.database;
+        Database database;
         public panItemPack()
         {
             InitializeComponent();
-            setTableItem(database.GetAllItems());
-            setComboBoxPack();
+            if (MainWindow.START)
+            {
+                database = Helper.database;
+                setTableItem(database.GetAllItems());
+                setComboBoxPack();
+            }
         }
 
         public void setTableItem(List<Item> l)

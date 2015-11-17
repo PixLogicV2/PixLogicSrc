@@ -16,7 +16,9 @@ namespace PixLogic
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            TestWindow fen = new TestWindow();
+
+            MainWindow.START = true;
+            MainWindow fen = new MainWindow();
             
             fen.StartPosition = FormStartPosition.CenterScreen;
             Application.Run(fen);
