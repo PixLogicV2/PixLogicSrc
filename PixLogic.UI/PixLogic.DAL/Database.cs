@@ -96,5 +96,9 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_users").getAllItemsByString(search);
         }
+        public void AddUser(string name, string nickname, string mail, string classe, string phoneNumber, Image image)
+        {
+            container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, classe, phoneNumber, image));
+        }
     }
 }

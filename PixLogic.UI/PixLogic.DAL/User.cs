@@ -15,5 +15,6 @@ namespace PixLogic.DAL
         public string mail { get; set; }
         public string classe { get; set; }
         public string phoneNumber { get; set; }
+        public byte[] image { get; set; }
     }
 }
