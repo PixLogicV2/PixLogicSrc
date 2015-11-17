@@ -66,10 +66,9 @@
             // 
             this.labelListPack.AutoSize = true;
             this.labelListPack.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListPack.Location = new System.Drawing.Point(29, 0);
-            this.labelListPack.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelListPack.Location = new System.Drawing.Point(22, 0);
             this.labelListPack.Name = "labelListPack";
-            this.labelListPack.Size = new System.Drawing.Size(108, 19);
+            this.labelListPack.Size = new System.Drawing.Size(84, 13);
             this.labelListPack.TabIndex = 24;
             this.labelListPack.Text = "Liste des packs";
             // 
@@ -80,29 +79,26 @@
             this.panTablePack.Controls.Add(this.textBoxSearch);
             this.panTablePack.Controls.Add(this.labelSearch);
             this.panTablePack.Controls.Add(this.dataGridPack);
-            this.panTablePack.Location = new System.Drawing.Point(5, 6);
-            this.panTablePack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panTablePack.Location = new System.Drawing.Point(4, 5);
             this.panTablePack.Name = "panTablePack";
-            this.panTablePack.Size = new System.Drawing.Size(266, 505);
+            this.panTablePack.Size = new System.Drawing.Size(200, 411);
             this.panTablePack.TabIndex = 23;
             // 
             // buttonCancelSearch
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(223, 20);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
             this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
             this.buttonCancelSearch.TabIndex = 3;
             this.buttonCancelSearch.UseVisualStyleBackColor = true;
             this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(89, 21);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearch.Location = new System.Drawing.Point(67, 17);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(96, 20);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
@@ -110,10 +106,9 @@
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(3, 23);
-            this.labelSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSearch.Location = new System.Drawing.Point(2, 19);
             this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(78, 19);
+            this.labelSearch.Size = new System.Drawing.Size(66, 13);
             this.labelSearch.TabIndex = 1;
             this.labelSearch.Text = "Recherche :";
             // 
@@ -129,14 +124,13 @@
             this.NameItem,
             this.Price,
             this.Available});
-            this.dataGridPack.Location = new System.Drawing.Point(0, 58);
-            this.dataGridPack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridPack.Location = new System.Drawing.Point(0, 47);
             this.dataGridPack.Name = "dataGridPack";
             this.dataGridPack.ReadOnly = true;
             this.dataGridPack.RowHeadersVisible = false;
-            this.dataGridPack.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridPack.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridPack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPack.Size = new System.Drawing.Size(265, 447);
+            this.dataGridPack.Size = new System.Drawing.Size(199, 363);
             this.dataGridPack.TabIndex = 0;
             this.dataGridPack.Click += new System.EventHandler(this.dataGridPack_Click);
             // 
@@ -165,10 +159,9 @@
             // 
             this.labelNews.AutoSize = true;
             this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(304, 231);
-            this.labelNews.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNews.Location = new System.Drawing.Point(228, 188);
             this.labelNews.Name = "labelNews";
-            this.labelNews.Size = new System.Drawing.Size(41, 19);
+            this.labelNews.Size = new System.Drawing.Size(33, 13);
             this.labelNews.TabIndex = 27;
             this.labelNews.Text = "Infos";
             // 
@@ -183,32 +176,29 @@
             this.panNews.Controls.Add(this.labelNbItems);
             this.panNews.Controls.Add(this.labelPrice);
             this.panNews.Controls.Add(this.labelDispo);
-            this.panNews.Location = new System.Drawing.Point(280, 238);
-            this.panNews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panNews.Location = new System.Drawing.Point(210, 193);
             this.panNews.Name = "panNews";
-            this.panNews.Size = new System.Drawing.Size(545, 188);
+            this.panNews.Size = new System.Drawing.Size(409, 153);
             this.panNews.TabIndex = 28;
             // 
             // valDescription
             // 
             this.valDescription.BackColor = System.Drawing.Color.White;
-            this.valDescription.Location = new System.Drawing.Point(163, 119);
-            this.valDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valDescription.Location = new System.Drawing.Point(122, 97);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
             this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.valDescription.Size = new System.Drawing.Size(375, 62);
+            this.valDescription.Size = new System.Drawing.Size(282, 51);
             this.valDescription.TabIndex = 7;
             // 
             // labelDescrip
             // 
             this.labelDescrip.AutoSize = true;
             this.labelDescrip.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescrip.Location = new System.Drawing.Point(0, 119);
-            this.labelDescrip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDescrip.Location = new System.Drawing.Point(0, 97);
             this.labelDescrip.Name = "labelDescrip";
-            this.labelDescrip.Size = new System.Drawing.Size(85, 19);
+            this.labelDescrip.Size = new System.Drawing.Size(72, 13);
             this.labelDescrip.TabIndex = 6;
             this.labelDescrip.Text = "Description :";
             // 
@@ -216,10 +206,9 @@
             // 
             this.valNbItems.AutoSize = true;
             this.valNbItems.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valNbItems.Location = new System.Drawing.Point(159, 81);
-            this.valNbItems.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valNbItems.Location = new System.Drawing.Point(119, 66);
             this.valNbItems.Name = "valNbItems";
-            this.valNbItems.Size = new System.Drawing.Size(17, 23);
+            this.valNbItems.Size = new System.Drawing.Size(13, 17);
             this.valNbItems.TabIndex = 5;
             this.valNbItems.Text = "-";
             // 
@@ -227,10 +216,9 @@
             // 
             this.valPrice.AutoSize = true;
             this.valPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPrice.Location = new System.Drawing.Point(159, 50);
-            this.valPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valPrice.Location = new System.Drawing.Point(119, 41);
             this.valPrice.Name = "valPrice";
-            this.valPrice.Size = new System.Drawing.Size(17, 23);
+            this.valPrice.Size = new System.Drawing.Size(13, 17);
             this.valPrice.TabIndex = 4;
             this.valPrice.Text = "-";
             // 
@@ -238,10 +226,9 @@
             // 
             this.valDispo.AutoSize = true;
             this.valDispo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDispo.Location = new System.Drawing.Point(159, 20);
-            this.valDispo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valDispo.Location = new System.Drawing.Point(119, 16);
             this.valDispo.Name = "valDispo";
-            this.valDispo.Size = new System.Drawing.Size(15, 19);
+            this.valDispo.Size = new System.Drawing.Size(11, 13);
             this.valDispo.TabIndex = 3;
             this.valDispo.Text = "-";
             // 
@@ -249,10 +236,9 @@
             // 
             this.labelNbItems.AutoSize = true;
             this.labelNbItems.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNbItems.Location = new System.Drawing.Point(0, 85);
-            this.labelNbItems.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNbItems.Location = new System.Drawing.Point(0, 69);
             this.labelNbItems.Name = "labelNbItems";
-            this.labelNbItems.Size = new System.Drawing.Size(110, 19);
+            this.labelNbItems.Size = new System.Drawing.Size(93, 13);
             this.labelNbItems.TabIndex = 2;
             this.labelNbItems.Text = "Matériels inclus :";
             // 
@@ -260,10 +246,9 @@
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(0, 52);
-            this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPrice.Location = new System.Drawing.Point(0, 42);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(66, 19);
+            this.labelPrice.Size = new System.Drawing.Size(52, 13);
             this.labelPrice.TabIndex = 1;
             this.labelPrice.Text = "Prix ( € ) :";
             // 
@@ -271,10 +256,9 @@
             // 
             this.labelDispo.AutoSize = true;
             this.labelDispo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDispo.Location = new System.Drawing.Point(0, 20);
-            this.labelDispo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDispo.Location = new System.Drawing.Point(0, 16);
             this.labelDispo.Name = "labelDispo";
-            this.labelDispo.Size = new System.Drawing.Size(91, 19);
+            this.labelDispo.Size = new System.Drawing.Size(79, 13);
             this.labelDispo.TabIndex = 0;
             this.labelDispo.Text = "Disponibilité :";
             // 
@@ -283,30 +267,27 @@
             this.panPackContain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panPackContain.Controls.Add(this.listBoxItemsOfPack);
             this.panPackContain.Controls.Add(this.pictureBoxItem);
-            this.panPackContain.Location = new System.Drawing.Point(280, 27);
-            this.panPackContain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panPackContain.Location = new System.Drawing.Point(210, 22);
             this.panPackContain.Name = "panPackContain";
-            this.panPackContain.Size = new System.Drawing.Size(543, 196);
+            this.panPackContain.Size = new System.Drawing.Size(408, 160);
             this.panPackContain.TabIndex = 29;
             // 
             // listBoxItemsOfPack
             // 
             this.listBoxItemsOfPack.FormattingEnabled = true;
-            this.listBoxItemsOfPack.ItemHeight = 16;
             this.listBoxItemsOfPack.Location = new System.Drawing.Point(-1, -1);
-            this.listBoxItemsOfPack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxItemsOfPack.Name = "listBoxItemsOfPack";
-            this.listBoxItemsOfPack.Size = new System.Drawing.Size(291, 196);
+            this.listBoxItemsOfPack.ScrollAlwaysVisible = true;
+            this.listBoxItemsOfPack.Size = new System.Drawing.Size(219, 160);
             this.listBoxItemsOfPack.TabIndex = 1;
             this.listBoxItemsOfPack.SelectedIndexChanged += new System.EventHandler(this.listBoxItemsOfPack_SelectedIndexChanged);
             // 
             // pictureBoxItem
             // 
             this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxItem.Location = new System.Drawing.Point(299, -1);
-            this.pictureBoxItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxItem.Location = new System.Drawing.Point(224, -1);
             this.pictureBoxItem.Name = "pictureBoxItem";
-            this.pictureBoxItem.Size = new System.Drawing.Size(243, 204);
+            this.pictureBoxItem.Size = new System.Drawing.Size(183, 166);
             this.pictureBoxItem.TabIndex = 0;
             this.pictureBoxItem.TabStop = false;
             // 
@@ -314,10 +295,9 @@
             // 
             this.labelListItem.AutoSize = true;
             this.labelListItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListItem.Location = new System.Drawing.Point(276, -1);
-            this.labelListItem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelListItem.Location = new System.Drawing.Point(207, -1);
             this.labelListItem.Name = "labelListItem";
-            this.labelListItem.Size = new System.Drawing.Size(215, 23);
+            this.labelListItem.Size = new System.Drawing.Size(171, 17);
             this.labelListItem.TabIndex = 30;
             this.labelListItem.Text = "Liste des matériels du pack";
             // 
@@ -326,10 +306,9 @@
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDelete.Location = new System.Drawing.Point(648, 478);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Location = new System.Drawing.Point(486, 388);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(124, 36);
+            this.buttonDelete.Size = new System.Drawing.Size(93, 29);
             this.buttonDelete.TabIndex = 35;
             this.buttonDelete.Text = "Supprimer";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -341,10 +320,9 @@
             this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModify.Location = new System.Drawing.Point(488, 478);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModify.Location = new System.Drawing.Point(366, 388);
             this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(104, 36);
+            this.buttonModify.Size = new System.Drawing.Size(78, 29);
             this.buttonModify.TabIndex = 34;
             this.buttonModify.Text = "Modifier";
             this.buttonModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -356,10 +334,9 @@
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(328, 478);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdd.Location = new System.Drawing.Point(246, 388);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(104, 36);
+            this.buttonAdd.Size = new System.Drawing.Size(78, 29);
             this.buttonAdd.TabIndex = 33;
             this.buttonAdd.Text = "Ajouter";
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -370,18 +347,17 @@
             // 
             this.valNamePack.AutoSize = true;
             this.valNamePack.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valNamePack.Location = new System.Drawing.Point(512, -1);
-            this.valNamePack.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valNamePack.Location = new System.Drawing.Point(384, -1);
             this.valNamePack.Name = "valNamePack";
-            this.valNamePack.Size = new System.Drawing.Size(17, 23);
+            this.valNamePack.Size = new System.Drawing.Size(13, 17);
             this.valNamePack.TabIndex = 36;
             this.valNamePack.Text = "-";
             // 
             // WindowPackManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 523);
+            this.ClientSize = new System.Drawing.Size(623, 425);
             this.Controls.Add(this.valNamePack);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonModify);
@@ -392,7 +368,6 @@
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.labelListPack);
             this.Controls.Add(this.panTablePack);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowPackManager";

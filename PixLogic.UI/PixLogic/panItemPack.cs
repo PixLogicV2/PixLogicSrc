@@ -235,6 +235,5 @@ namespace PixLogic
                 setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
             }
         }
-        
     }
 }
