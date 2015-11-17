@@ -85,6 +85,14 @@ namespace PixLogic
                 valDescription.Text = "-";
                 pictureBoxItem.Image = null;
             }
+            if(comboBoxPack.Items.Count == 0 || dataGridItem.RowCount == 0)
+            {
+                listBoxItem.AllowDrop = false;
+            }
+            else
+            {
+                listBoxItem.AllowDrop = true;
+            }
             
         }
         
@@ -100,6 +108,15 @@ namespace PixLogic
             if(comboBoxPack.Items.Count > 0)
                 comboBoxPack.SelectedIndex = 0;
             checkButtonRemoveItem(0);
+
+            if (comboBoxPack.Items.Count == 0 || dataGridItem.RowCount == 0)
+            {
+                listBoxItem.AllowDrop = false;
+            }
+            else
+            {
+                listBoxItem.AllowDrop = true;
+            }
         }
 
         private void setListBoxItemsOfPack(string namePack)

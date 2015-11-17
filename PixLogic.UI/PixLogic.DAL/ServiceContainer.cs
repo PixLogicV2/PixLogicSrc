@@ -25,7 +25,7 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new PackFactory();
                     break;
                 case "user_factory":
-                    this.arrayContainer[serviceName] = new PackFactory();
+                    this.arrayContainer[serviceName] = new UserFactory();
                     break;
 
                 case "add_item":
