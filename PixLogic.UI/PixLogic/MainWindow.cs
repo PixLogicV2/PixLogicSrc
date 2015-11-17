@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PixLogic
@@ -14,11 +7,12 @@ namespace PixLogic
     {
         private MenuButton button = null;
         public static bool START = false;
-
         public MainWindow()
         {
             InitializeComponent();
             addEventsOnButtonItem();
+            panItemPack1.Visible = false;
+            panUsers1.Visible = false ;
         }
 
         private void addEventsOnButtonItem()
@@ -46,8 +40,18 @@ namespace PixLogic
                 buttonHelper.ActiveEffectButton();
 
             button.DesactiveEffectButton();
-
         }
 
+        private void boutonUtilisateur_Load(object sender, EventArgs e)
+        {
+            panItemPack1.Visible=false;
+            panUsers1.Visible=true;
+        }
+
+        private void boutonMenu1_Load(object sender, EventArgs e)
+        {
+            panItemPack1.Visible =true;
+            panUsers1.Visible = false;
+        }
     }
 }
