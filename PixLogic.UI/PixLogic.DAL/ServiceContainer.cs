@@ -93,6 +93,13 @@ namespace PixLogic.DAL
                 case "byte_array_to_image":
                     this.arrayContainer[serviceName] = new ByteArrayToImage();
                     break;
+                case "get_all_users":
+                    this.arrayContainer[serviceName] = new GetAllUsers();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_users_by_string":
+                    this.arrayContainer[serviceName] = this.get("get_all_users");
+                    break;
                 default:
                     throw new System.Exception();
             }
