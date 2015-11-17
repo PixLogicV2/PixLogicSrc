@@ -21,9 +21,9 @@ namespace PixLogic
             setTableUsers(database.GetAllUsers());
         }
 
-        public void setTableUsers(List<Users> l)
+        public void setTableUsers(List<User> l)
         {
-            List<Users> list = l;
+            List<User> list = l;
             dataGridUsers.Rows.Clear();
             foreach (var user in list)
             {
@@ -51,7 +51,7 @@ namespace PixLogic
                 valClass.Text = dataGridUsers.CurrentRow.Cells[2].Value.ToString();
                 User user = database.GetUserByName(valUserName.Text);
                 valMail.Text = user.mail;
-                valTel.Text = user.tel;
+                valTel.Text = user.phoneNumber;
 
                // Image img = database.ByteArrayToImage(item.image);
                // Helper.putImageInBox(pictureBoxItem, img);

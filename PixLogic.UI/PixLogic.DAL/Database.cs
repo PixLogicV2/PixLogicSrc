@@ -92,7 +92,7 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_users").GetAllUsers();
         }
-        public List<Item> GetAllIUsersByString(string search)
+        public List<User> GetAllUsersByString(string search)
         {
             return container.get("get_all_users").getAllItemsByString(search);
         }
