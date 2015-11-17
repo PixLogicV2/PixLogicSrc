@@ -18,7 +18,6 @@ namespace PixLogic
         public panItemPack()
         {
             InitializeComponent();
-           // Helper.testApp();
             setTableItem(database.GetAllItems());
             setComboBoxPack();
         }

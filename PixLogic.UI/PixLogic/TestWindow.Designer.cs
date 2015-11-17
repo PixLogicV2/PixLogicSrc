@@ -28,11 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panUsers1 = new PixLogic.panUsers();
+            this.SuspendLayout();
+            // 
+            // panUsers1
+            // 
+            this.panUsers1.Location = new System.Drawing.Point(25, 31);
+            this.panUsers1.Name = "panUsers1";
+            this.panUsers1.Size = new System.Drawing.Size(920, 521);
+            this.panUsers1.TabIndex = 0;
+            // 
+            // TestWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1096, 633);
+            this.Controls.Add(this.panUsers1);
+            this.Name = "TestWindow";
             this.Text = "TestWindow";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private panUsers panUsers1;
     }
 }
