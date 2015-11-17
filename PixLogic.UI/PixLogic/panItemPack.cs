@@ -85,15 +85,22 @@ namespace PixLogic
                 valDescription.Text = "-";
                 pictureBoxItem.Image = null;
             }
-            if(comboBoxPack.Items.Count == 0 || dataGridItem.RowCount == 0)
+
+            checkTransfert();
+        }
+
+        private void checkTransfert()
+        {
+            if (comboBoxPack.Items.Count == 0 || dataGridItem.RowCount == 0)
             {
                 listBoxItem.AllowDrop = false;
+                buttonTransfert.Enabled = false;
             }
             else
             {
                 listBoxItem.AllowDrop = true;
+                buttonTransfert.Enabled = true;
             }
-            
         }
         
         public void setComboBoxPack()
@@ -105,30 +112,33 @@ namespace PixLogic
             {
                 comboBoxPack.Items.Add(pack.name);
             }
-            if(comboBoxPack.Items.Count > 0)
-                comboBoxPack.SelectedIndex = 0;
-            checkButtonRemoveItem(0);
-
-            if (comboBoxPack.Items.Count == 0 || dataGridItem.RowCount == 0)
+            if (comboBoxPack.Items.Count > 0)
             {
-                listBoxItem.AllowDrop = false;
+                comboBoxPack.SelectedIndex = 0;
+                setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
             }
             else
-            {
-                listBoxItem.AllowDrop = true;
-            }
+                setListBoxItemsOfPack("");
+            checkButtonRemoveItem(0);
+
+            checkTransfert();
+            
         }
 
         private void setListBoxItemsOfPack(string namePack)
         {
             listBoxItem.Items.Clear();
-            List<Item> list = database.GetItemsInPack(namePack);
-
-            foreach(var item in list)
+            if(!namePack.Equals(""))
             {
-                listBoxItem.Items.Add(item.name);
+                List<Item> list = database.GetItemsInPack(namePack);
+
+                foreach (var item in list)
+                {
+                    listBoxItem.Items.Add(item.name);
+                }
+                checkButtonRemoveItem(0);
             }
-            checkButtonRemoveItem(0);
+            
         }
 
         private void checkButtonRemoveItem(int index)
@@ -213,6 +223,7 @@ namespace PixLogic
             {
                 database.DeleteItem(valItemName.Text);
                 setTableItem(database.GetAllItems());
+                setComboBoxPack();
             }
         }
 
