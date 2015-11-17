@@ -27,7 +27,7 @@ namespace PixLogic
             dataGridUsers.Rows.Clear();
             foreach (var user in list)
             {
-                dataGridUsers.Rows.Add(user.name, , user.nickname,user.classe);
+                dataGridUsers.Rows.Add(user.name,user.nickname,user.classe);
             }
 
             if (dataGridUsers.RowCount > 0)
