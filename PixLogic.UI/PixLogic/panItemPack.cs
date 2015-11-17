@@ -18,6 +18,7 @@ namespace PixLogic
         public panItemPack()
         {
             InitializeComponent();
+           // Helper.testApp();
             setTableItem(database.GetAllItems());
             setComboBoxPack();
         }
@@ -234,5 +235,6 @@ namespace PixLogic
                 setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
             }
         }
+        
     }
 }

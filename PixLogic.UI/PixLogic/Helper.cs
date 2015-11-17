@@ -93,6 +93,17 @@ namespace PixLogic
             return false;
                 
         }
+        public static bool itemExistModif(bool withMessageBox, string name, string oldName)
+        {
+            if (database.ContainItem(name) && !name.Equals(oldName))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("Le nom du matériel renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+
+        }
 
         public static void putImageInBox(PictureBox picBox, Image image)
         {
@@ -104,6 +115,17 @@ namespace PixLogic
                     picBox.SizeMode = PictureBoxSizeMode.CenterImage;
                 else
                     picBox.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+        }
+        public static void testApp()
+        {
+            foreach (var item in database.GetAllItems())
+            {
+                database.DeleteItem(item.name);
+            }
+           for (int i = 0; i < 2000; i++)
+            {
+                database.AddItem("NameItem " + i, "Description " + i, true, (i * 0.8f), Properties.Resources.camera_photo, "Reference " + 1, i + 1);
             }
         }
     }
