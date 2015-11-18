@@ -40,11 +40,6 @@ namespace PixLogic
             add = false;
         }
 
-        private void pictureBoxSelection_Click(object sender, EventArgs e)
-        {
-            chooseImage();
-        }
-
         private void chooseImage()
         {
             try
@@ -80,18 +75,23 @@ namespace PixLogic
             {
                 if (add)
                 {
-                    database.AddUser(name, nickname, mail, tel, classe,img);
+                    database.AddUser(name, nickname, mail, classe, tel,img);
                 }
                 else if (!add )
                 {
-                    database.UpdateUser(pan.valUserId.Text, name, nickname, mail,tel,classe,img);
+                    database.UpdateUser(Convert.ToInt32(pan.valUserId.Text), name, nickname, mail,tel,classe,img);
                 }
                 //Helper.addSuccess();
                 pan.setTableUsers(database.GetAllUsers());
                 this.Close();
             }
         }
-        
+
+        private void pictureBoxSelection_Click_1(object sender, EventArgs e)
+        {
+            chooseImage();
+        }
+
     }
 }
 

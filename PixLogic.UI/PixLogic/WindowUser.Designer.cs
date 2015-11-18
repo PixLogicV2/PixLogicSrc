@@ -197,6 +197,7 @@
             this.pictureBoxSelection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxSelection.TabIndex = 9;
             this.pictureBoxSelection.TabStop = false;
+            this.pictureBoxSelection.Click += new System.EventHandler(this.pictureBoxSelection_Click_1);
             // 
             // labelMail
             // 

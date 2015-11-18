@@ -42,7 +42,7 @@ namespace PixLogic
             }
 
             setNewsUsers();
-            //checkEnableButton();
+            checkEnableButton();
         }
         private void setNewsUsers()
         {
@@ -104,8 +104,21 @@ namespace PixLogic
         {
             if (Helper.confirmation(Helper.DELETE))
             {
-                database.DeleteUser(valUserName.Text);
+                database.DeleteUser(Convert.ToInt32(valUserId.Text));
                 setTableUsers(database.GetAllUsers());
+            }
+        }
+        private void checkEnableButton()
+        {
+            if (dataGridUsers.RowCount > 0)
+            {
+                buttonModify.Enabled = true;
+                buttonDelete.Enabled = true;
+            }
+            else
+            {
+                buttonModify.Enabled = false;
+                buttonDelete.Enabled = false;
             }
         }
     }

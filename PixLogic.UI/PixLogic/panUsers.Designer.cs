@@ -322,6 +322,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.valUserId);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.pictureBoxUser);
@@ -332,7 +333,7 @@
             this.Controls.Add(this.valUserName);
             this.Controls.Add(this.panTableUsers);
             this.Name = "panUsers";
-            this.Size = new System.Drawing.Size(920, 521);
+            this.Size = new System.Drawing.Size(918, 519);
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
