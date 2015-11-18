@@ -49,6 +49,7 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.valUserId = new System.Windows.Forms.Label();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
@@ -305,10 +306,23 @@
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
+            // valUserId
+            // 
+            this.valUserId.AutoSize = true;
+            this.valUserId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valUserId.Location = new System.Drawing.Point(703, 4);
+            this.valUserId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valUserId.Name = "valUserId";
+            this.valUserId.Size = new System.Drawing.Size(128, 28);
+            this.valUserId.TabIndex = 39;
+            this.valUserId.Text = "ID utilisateur";
+            this.valUserId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.valUserId);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.pictureBoxUser);
             this.Controls.Add(this.buttonModify);
@@ -353,5 +367,6 @@
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.Button buttonDelete;
+        public System.Windows.Forms.Label valUserId;
     }
 }

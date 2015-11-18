@@ -84,7 +84,7 @@ namespace PixLogic
                 }
                 else if (!add )
                 {
-                    database.UpdateUser(pan.valUserName.Text, name, nickname, mail,tel,classe,img);
+                    database.UpdateUser(pan.valUserId.Text, name, nickname, mail,tel,classe,img);
                 }
                 //Helper.addSuccess();
                 pan.setTableUsers(database.GetAllUsers());
