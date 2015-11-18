@@ -23,6 +23,8 @@ namespace PixLogic
             InitializeComponent();
             this.Text = "Nouvel Utilisateur";
             pan = p;
+            img = Properties.Resources.noprofil;
+            Helper.putImageInBox(pictureBoxItem, img);
             add = true;
         }
         public WindowUser(panUsers pa, Image image, string name, string nickname, string mail, string classe,string phone)

@@ -23,6 +23,8 @@ namespace PixLogic
             InitializeComponent();
             this.Text = "Nouveau matériel";
             pan = p;
+            img = Properties.Resources.noitem;
+            Helper.putImageInBox(pictureBoxItem, img);
             add = true;
         }
         public WindowItem(panItemPack pa, Image image, string name, double price, int quantity, string descrip)

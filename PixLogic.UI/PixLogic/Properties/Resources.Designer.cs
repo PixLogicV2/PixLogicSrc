@@ -233,6 +233,26 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap noitem {
+            get {
+                object obj = ResourceManager.GetObject("noitem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noprofil {
+            get {
+                object obj = ResourceManager.GetObject("noprofil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nouveau {
             get {
                 object obj = ResourceManager.GetObject("nouveau", resourceCulture);

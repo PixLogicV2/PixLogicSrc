@@ -55,7 +55,7 @@ namespace PixLogic
                 User user = database.GetUserByName(valUserName.Text);
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
-                valUserId.Text = Convert.ToString(user.UserId);
+                valUserId.Text = user.UserId.ToString("D4");
 
                Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
@@ -72,13 +72,6 @@ namespace PixLogic
                 valUserId.Text = "-";
             }
 
-        }
-        private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (textBoxSearch.Text != "")
-                setTableUsers(database.GetAllUsersByString(textBoxSearch.Text));
-            else
-                setTableUsers(database.GetAllUsers());
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -120,6 +113,17 @@ namespace PixLogic
                 buttonModify.Enabled = false;
                 buttonDelete.Enabled = false;
             }
+        }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            setTableUsers(database.GetAllUsersByString(textBoxSearch.Text));
+        }
+
+        private void buttonCancelSearch_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Text = "";
+            setTableUsers(database.GetAllUsers());
         }
     }
 }

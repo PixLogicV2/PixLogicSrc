@@ -184,4 +184,10 @@
   <data name="valider_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\valider_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="noprofil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noprofil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="noitem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noitem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -39,7 +39,6 @@
             this.valItemName = new System.Windows.Forms.Label();
             this.labelListItem = new System.Windows.Forms.Label();
             this.panTableItem = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
@@ -57,6 +56,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -180,16 +180,6 @@
             this.panTableItem.Name = "panTableItem";
             this.panTableItem.Size = new System.Drawing.Size(200, 411);
             this.panTableItem.TabIndex = 21;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -326,7 +316,7 @@
             // pictureBoxItem
             // 
             this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxItem.Image = global::PixLogic.Properties.Resources.camera_photo;
+            this.pictureBoxItem.Image = global::PixLogic.Properties.Resources.noitem;
             this.pictureBoxItem.InitialImage = null;
             this.pictureBoxItem.Location = new System.Drawing.Point(211, 25);
             this.pictureBoxItem.Name = "pictureBoxItem";
@@ -390,6 +380,16 @@
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // panItemPack
             // 

@@ -74,9 +74,8 @@
             this.panelGeneral.Controls.Add(this.pictureBoxItem);
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 0);
-            this.panelGeneral.Margin = new System.Windows.Forms.Padding(4);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(382, 553);
+            this.panelGeneral.Size = new System.Drawing.Size(286, 449);
             this.panelGeneral.TabIndex = 1;
             // 
             // label3
@@ -84,40 +83,36 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(348, 370);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(261, 301);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 17);
+            this.label3.Size = new System.Drawing.Size(11, 13);
             this.label3.TabIndex = 18;
             this.label3.Text = "*";
             // 
             // valTel
             // 
             this.valTel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valTel.Location = new System.Drawing.Point(132, 415);
-            this.valTel.Margin = new System.Windows.Forms.Padding(4);
+            this.valTel.Location = new System.Drawing.Point(99, 337);
             this.valTel.Name = "valTel";
-            this.valTel.Size = new System.Drawing.Size(207, 29);
+            this.valTel.Size = new System.Drawing.Size(156, 25);
             this.valTel.TabIndex = 17;
             // 
             // labelTel
             // 
             this.labelTel.AutoSize = true;
             this.labelTel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTel.Location = new System.Drawing.Point(16, 421);
-            this.labelTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTel.Location = new System.Drawing.Point(12, 342);
             this.labelTel.Name = "labelTel";
-            this.labelTel.Size = new System.Drawing.Size(39, 23);
+            this.labelTel.Size = new System.Drawing.Size(31, 17);
             this.labelTel.TabIndex = 16;
             this.labelTel.Text = "Tel :";
             // 
             // valMail
             // 
             this.valMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valMail.Location = new System.Drawing.Point(132, 370);
-            this.valMail.Margin = new System.Windows.Forms.Padding(4);
+            this.valMail.Location = new System.Drawing.Point(99, 301);
             this.valMail.Name = "valMail";
-            this.valMail.Size = new System.Drawing.Size(207, 29);
+            this.valMail.Size = new System.Drawing.Size(156, 25);
             this.valMail.TabIndex = 15;
             // 
             // label2
@@ -125,10 +120,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(348, 332);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(261, 270);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 17);
+            this.label2.Size = new System.Drawing.Size(11, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "*";
             // 
@@ -137,10 +131,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(348, 294);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(261, 239);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 17);
+            this.label1.Size = new System.Drawing.Size(11, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "*";
             // 
@@ -149,10 +142,9 @@
             this.labelObligatoire.AutoSize = true;
             this.labelObligatoire.BackColor = System.Drawing.SystemColors.Control;
             this.labelObligatoire.ForeColor = System.Drawing.Color.Red;
-            this.labelObligatoire.Location = new System.Drawing.Point(348, 256);
-            this.labelObligatoire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelObligatoire.Location = new System.Drawing.Point(261, 208);
             this.labelObligatoire.Name = "labelObligatoire";
-            this.labelObligatoire.Size = new System.Drawing.Size(13, 17);
+            this.labelObligatoire.Size = new System.Drawing.Size(11, 13);
             this.labelObligatoire.TabIndex = 12;
             this.labelObligatoire.Text = "*";
             // 
@@ -161,10 +153,9 @@
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(193, 508);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancel.Location = new System.Drawing.Point(145, 413);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(112, 33);
+            this.buttonCancel.Size = new System.Drawing.Size(84, 27);
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Annuler";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -176,10 +167,9 @@
             this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(68, 508);
-            this.buttonValid.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonValid.Location = new System.Drawing.Point(51, 413);
             this.buttonValid.Name = "buttonValid";
-            this.buttonValid.Size = new System.Drawing.Size(112, 33);
+            this.buttonValid.Size = new System.Drawing.Size(84, 27);
             this.buttonValid.TabIndex = 10;
             this.buttonValid.Text = "Valider";
             this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -190,10 +180,9 @@
             // 
             this.pictureBoxSelection.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.pictureBoxSelection.Image = global::PixLogic.Properties.Resources.enregistrer_icon;
-            this.pictureBoxSelection.Location = new System.Drawing.Point(296, 190);
-            this.pictureBoxSelection.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxSelection.Location = new System.Drawing.Point(222, 154);
             this.pictureBoxSelection.Name = "pictureBoxSelection";
-            this.pictureBoxSelection.Size = new System.Drawing.Size(43, 30);
+            this.pictureBoxSelection.Size = new System.Drawing.Size(32, 24);
             this.pictureBoxSelection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxSelection.TabIndex = 9;
             this.pictureBoxSelection.TabStop = false;
@@ -203,90 +192,84 @@
             // 
             this.labelMail.AutoSize = true;
             this.labelMail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMail.Location = new System.Drawing.Point(16, 370);
-            this.labelMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMail.Location = new System.Drawing.Point(12, 301);
             this.labelMail.Name = "labelMail";
-            this.labelMail.Size = new System.Drawing.Size(68, 23);
+            this.labelMail.Size = new System.Drawing.Size(52, 17);
             this.labelMail.TabIndex = 7;
             this.labelMail.Text = "E-Mail :";
             // 
             // valClass
             // 
             this.valClass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valClass.Location = new System.Drawing.Point(132, 329);
-            this.valClass.Margin = new System.Windows.Forms.Padding(4);
+            this.valClass.Location = new System.Drawing.Point(99, 267);
             this.valClass.Name = "valClass";
-            this.valClass.Size = new System.Drawing.Size(207, 29);
+            this.valClass.Size = new System.Drawing.Size(156, 25);
             this.valClass.TabIndex = 6;
             // 
             // labelClass
             // 
             this.labelClass.AutoSize = true;
             this.labelClass.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClass.Location = new System.Drawing.Point(16, 332);
-            this.labelClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelClass.Location = new System.Drawing.Point(12, 270);
             this.labelClass.Name = "labelClass";
-            this.labelClass.Size = new System.Drawing.Size(66, 23);
+            this.labelClass.Size = new System.Drawing.Size(52, 17);
             this.labelClass.TabIndex = 5;
             this.labelClass.Text = "Classe :";
             // 
             // valNickName
             // 
             this.valNickName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valNickName.Location = new System.Drawing.Point(132, 290);
-            this.valNickName.Margin = new System.Windows.Forms.Padding(4);
+            this.valNickName.Location = new System.Drawing.Point(99, 236);
             this.valNickName.Name = "valNickName";
-            this.valNickName.Size = new System.Drawing.Size(207, 29);
+            this.valNickName.Size = new System.Drawing.Size(156, 25);
             this.valNickName.TabIndex = 4;
             // 
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFirstName.Location = new System.Drawing.Point(16, 294);
-            this.labelFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFirstName.Location = new System.Drawing.Point(12, 239);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(79, 23);
+            this.labelFirstName.Size = new System.Drawing.Size(63, 17);
             this.labelFirstName.TabIndex = 3;
             this.labelFirstName.Text = "Prenom :";
             // 
             // valName
             // 
             this.valName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valName.Location = new System.Drawing.Point(132, 252);
-            this.valName.Margin = new System.Windows.Forms.Padding(4);
+            this.valName.Location = new System.Drawing.Point(99, 205);
             this.valName.Name = "valName";
-            this.valName.Size = new System.Drawing.Size(207, 29);
+            this.valName.Size = new System.Drawing.Size(156, 25);
             this.valName.TabIndex = 2;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(16, 256);
-            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelName.Location = new System.Drawing.Point(12, 208);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(57, 23);
+            this.labelName.Size = new System.Drawing.Size(45, 17);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Nom :";
             // 
             // pictureBoxItem
             // 
             this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxItem.Location = new System.Drawing.Point(36, 15);
-            this.pictureBoxItem.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxItem.Location = new System.Drawing.Point(27, 12);
             this.pictureBoxItem.Name = "pictureBoxItem";
-            this.pictureBoxItem.Size = new System.Drawing.Size(303, 205);
+            this.pictureBoxItem.Size = new System.Drawing.Size(228, 167);
             this.pictureBoxItem.TabIndex = 0;
             this.pictureBoxItem.TabStop = false;
             // 
             // WindowUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 553);
+            this.ClientSize = new System.Drawing.Size(286, 449);
             this.Controls.Add(this.panelGeneral);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "WindowUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ajouter un utilisateur";
             this.panelGeneral.ResumeLayout(false);
             this.panelGeneral.PerformLayout();

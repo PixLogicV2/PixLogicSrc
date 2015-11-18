@@ -164,7 +164,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowPack";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "WindowPack";
             this.ResumeLayout(false);
             this.PerformLayout();
