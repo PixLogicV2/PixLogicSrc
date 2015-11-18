@@ -27,7 +27,7 @@ namespace PixLogic.DAL
                 item.description = des;
                 item.dispo = disp;
                 item.price = prix;
-                if (image != null) item.image = imageToByteArray(image);
+                if (image != null) item.image = Helper.imageToByteArray(image);
                 else item.image = null;
                 item.reference = refe;
                 item.quantity = quant;
@@ -36,11 +36,6 @@ namespace PixLogic.DAL
             }
 
         }
-        public byte[] imageToByteArray(System.Drawing.Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-            return ms.ToArray();
-        }
+        
     }
 }

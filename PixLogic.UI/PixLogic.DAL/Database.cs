@@ -104,5 +104,13 @@ namespace PixLogic.DAL
         {
             return container.get("get_user_by_name").getUserByName(itemName);
         }
+        public void UpdateUser(int id, string name, string nickname, string mail, string classe, string phoneNumber, Image image)
+        {
+            container.get("update_user").updateUser(id,  name, nickname, mail, classe, phoneNumber, image);
+        }
+        public void DeleteUser(int id)
+        {
+            container.get("delete_user").deleteUser(id);
+        }
     }
 }

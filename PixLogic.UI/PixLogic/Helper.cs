@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -117,6 +118,7 @@ namespace PixLogic
                     picBox.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
+
         public static void testApp()
         {
             foreach (var item in database.GetAllItems())

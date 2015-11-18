@@ -18,16 +18,10 @@ namespace PixLogic.DAL
             user.mail = mail;
             user.classe = classe;
             user.phoneNumber = phoneNumber;
-            if (image != null) user.image = imageToByteArray(image);
+            if (image != null) user.image = Helper.imageToByteArray(image);
             else user.image = null;
 
             return user;
-        }
-        public byte[] imageToByteArray(System.Drawing.Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            return ms.ToArray();
         }
     }
 }

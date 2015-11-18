@@ -58,11 +58,13 @@
     <Compile Include="ByteArrayToImage.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeletePack.cs" />
+    <Compile Include="DeleteUser.cs" />
     <Compile Include="GetAllPacks.cs" />
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetItemByName.cs" />
     <Compile Include="GetPackByName.cs" />
     <Compile Include="GetUserByName.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="ServiceContainer.cs" />
     <Compile Include="ContainItem.cs" />
     <Compile Include="DataContext.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Reservable.cs" />
     <Compile Include="UpdateItem.cs" />
     <Compile Include="UpdatePack.cs" />
+    <Compile Include="UpdateUser.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserFactory.cs" />
   </ItemGroup>

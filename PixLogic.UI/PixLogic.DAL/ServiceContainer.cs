@@ -85,12 +85,20 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new UpdateItem();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "update_user":
+                    this.arrayContainer[serviceName] = new UpdateUser();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "update_pack":
                     this.arrayContainer[serviceName] = new UpdatePack();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "delete_item":
                     this.arrayContainer[serviceName] = new DeleteItem();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "delete_user":
+                    this.arrayContainer[serviceName] = new DeleteUser();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "delete_pack":

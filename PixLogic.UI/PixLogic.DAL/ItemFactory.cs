@@ -13,18 +13,12 @@ namespace PixLogic.DAL
             item.description = description;
             item.dispo = dispo;
             item.price = price;
-            if (image != null) item.image = imageToByteArray(image);
+            if (image != null) item.image = Helper.imageToByteArray(image);
             else item.image = null;
             item.reference = reference;
             item.quantity=quantity;
 
             return item;
-        }
-        public byte[] imageToByteArray(System.Drawing.Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            return ms.ToArray();
         }
     }
 }
