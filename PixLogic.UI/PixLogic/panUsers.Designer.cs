@@ -46,9 +46,13 @@
             this.labelMail = new System.Windows.Forms.Label();
             this.valUserNickName = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonModify = new System.Windows.Forms.Button();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panTableUsers
@@ -258,10 +262,56 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // buttonModify
+            // 
+            this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
+            this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModify.Location = new System.Drawing.Point(395, 473);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(104, 36);
+            this.buttonModify.TabIndex = 30;
+            this.buttonModify.Text = "Modifier";
+            this.buttonModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
+            // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxUser.Image = global::PixLogic.Properties.Resources.camera_photo;
+            this.pictureBoxUser.InitialImage = null;
+            this.pictureBoxUser.Location = new System.Drawing.Point(283, 33);
+            this.pictureBoxUser.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(351, 204);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUser.TabIndex = 37;
+            this.pictureBoxUser.TabStop = false;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
+            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDelete.Location = new System.Drawing.Point(510, 473);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(124, 36);
+            this.buttonDelete.TabIndex = 38;
+            this.buttonDelete.Text = "Supprimer";
+            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // panUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.pictureBoxUser);
+            this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.valUserNickName);
             this.Controls.Add(this.panNews);
@@ -274,6 +324,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +350,8 @@
         private System.Windows.Forms.Label labelMail;
         public System.Windows.Forms.Label valUserNickName;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.PictureBox pictureBoxUser;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

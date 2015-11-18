@@ -78,11 +78,14 @@ namespace PixLogic
             if (!Helper.fieldsAreEmpty(true, name, nickname, mail,tel,classe)
                 && Helper.confirmation(option))
             {
-                if (add )
+                if (add)
                 {
                     database.AddUser(name, nickname, mail, tel, classe,img);
                 }
-                
+                else if (!add )
+                {
+                    database.UpdateUser(pan.valUserName.Text, name, nickname, mail,tel,classe,img);
+                }
                 //Helper.addSuccess();
                 pan.setTableUsers(database.GetAllUsers());
                 this.Close();

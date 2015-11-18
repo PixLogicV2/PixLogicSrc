@@ -104,7 +104,7 @@ namespace PixLogic
             return false;
 
         }
-
+        
         public static void putImageInBox(PictureBox picBox, Image image)
         {
             picBox.Image = image;

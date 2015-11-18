@@ -56,8 +56,8 @@ namespace PixLogic
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
 
-               // Image img = database.ByteArrayToImage(item.image);
-               // Helper.putImageInBox(pictureBoxItem, img);
+               Image img = database.ByteArrayToImage(user.image);
+               Helper.putImageInBox(pictureBoxUser, img);
             }
             else
             {
@@ -67,7 +67,7 @@ namespace PixLogic
                 valTel.Text = "-";
                 valMail.Text = "-";
                 valUserNickName.Text = "-";
-                //pictureBoxItem.Image = null;
+                pictureBoxUser.Image = null;
             }
 
         }
@@ -90,6 +90,21 @@ namespace PixLogic
 
             if (dataGridUsers.RowCount > 0)
                 setNewsUsers();
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            WindowUser modif = new WindowUser(this, pictureBoxUser.Image, valUserName.Text,valUserNickName.Text,valMail.Text,valClass.Text,valTel.Text);
+            modif.ShowDialog(this);
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (Helper.confirmation(Helper.DELETE))
+            {
+                database.DeleteUser(valUserName.Text);
+                setTableUsers(database.GetAllUsers());
+            }
         }
     }
 }
