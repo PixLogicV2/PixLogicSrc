@@ -55,6 +55,7 @@ namespace PixLogic
                 User user = database.GetUserByName(valUserName.Text);
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
+                valUserId.Text = Convert.ToString(user.UserId);
 
                Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
@@ -68,6 +69,7 @@ namespace PixLogic
                 valMail.Text = "-";
                 valUserNickName.Text = "-";
                 pictureBoxUser.Image = null;
+                valUserId.Text = "-";
             }
 
         }
