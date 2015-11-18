@@ -101,7 +101,7 @@
             this.boutonMenu4.Image = global::PixLogic.Properties.Resources.script_icon2;
             this.boutonMenu4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.boutonMenu4.Location = new System.Drawing.Point(0, 283);
-            this.boutonMenu4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.boutonMenu4.Margin = new System.Windows.Forms.Padding(4);
             this.boutonMenu4.Name = "boutonMenu4";
             this.boutonMenu4.Size = new System.Drawing.Size(140, 70);
             this.boutonMenu4.TabIndex = 4;
@@ -115,7 +115,7 @@
             this.boutonMenu3.Image = global::PixLogic.Properties.Resources.historique_icon2;
             this.boutonMenu3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.boutonMenu3.Location = new System.Drawing.Point(0, 213);
-            this.boutonMenu3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.boutonMenu3.Margin = new System.Windows.Forms.Padding(4);
             this.boutonMenu3.Name = "boutonMenu3";
             this.boutonMenu3.Size = new System.Drawing.Size(140, 70);
             this.boutonMenu3.TabIndex = 3;
@@ -129,7 +129,7 @@
             this.boutonMenu2.Image = global::PixLogic.Properties.Resources.reservation_icon2;
             this.boutonMenu2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.boutonMenu2.Location = new System.Drawing.Point(0, 143);
-            this.boutonMenu2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.boutonMenu2.Margin = new System.Windows.Forms.Padding(4);
             this.boutonMenu2.Name = "boutonMenu2";
             this.boutonMenu2.Size = new System.Drawing.Size(140, 70);
             this.boutonMenu2.TabIndex = 2;
@@ -143,7 +143,7 @@
             this.boutonMateriel.Image = global::PixLogic.Properties.Resources.camera_photo_icon;
             this.boutonMateriel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.boutonMateriel.Location = new System.Drawing.Point(0, 73);
-            this.boutonMateriel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.boutonMateriel.Margin = new System.Windows.Forms.Padding(4);
             this.boutonMateriel.Name = "boutonMateriel";
             this.boutonMateriel.Size = new System.Drawing.Size(140, 70);
             this.boutonMateriel.TabIndex = 1;
@@ -157,7 +157,7 @@
             this.boutonUtilisateur.Image = global::PixLogic.Properties.Resources.client_icon2;
             this.boutonUtilisateur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.boutonUtilisateur.Location = new System.Drawing.Point(0, 3);
-            this.boutonUtilisateur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.boutonUtilisateur.Margin = new System.Windows.Forms.Padding(4);
             this.boutonUtilisateur.Name = "boutonUtilisateur";
             this.boutonUtilisateur.Size = new System.Drawing.Size(140, 70);
             this.boutonUtilisateur.TabIndex = 0;
@@ -221,7 +221,7 @@
             // 
             this.panUsers1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panUsers1.Location = new System.Drawing.Point(137, 66);
-            this.panUsers1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panUsers1.Margin = new System.Windows.Forms.Padding(2);
             this.panUsers1.Name = "panUsers1";
             this.panUsers1.Size = new System.Drawing.Size(690, 424);
             this.panUsers1.TabIndex = 4;
@@ -230,7 +230,7 @@
             // 
             this.panItemPack1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panItemPack1.Location = new System.Drawing.Point(137, 66);
-            this.panItemPack1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panItemPack1.Margin = new System.Windows.Forms.Padding(4);
             this.panItemPack1.Name = "panItemPack1";
             this.panItemPack1.Size = new System.Drawing.Size(690, 423);
             this.panItemPack1.TabIndex = 3;
@@ -246,6 +246,7 @@
             this.Controls.Add(this.panMenu);
             this.Controls.Add(this.barreDeMenu);
             this.MainMenuStrip = this.barreDeMenu;
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "CE3P Reservation";
             this.barreDeMenu.ResumeLayout(false);
