@@ -52,7 +52,7 @@ namespace PixLogic
                 valUserName.Text = dataGridUsers.CurrentRow.Cells[1].Value.ToString();
                 valUserNickName.Text = dataGridUsers.CurrentRow.Cells[2].Value.ToString();
                 valUserId.Text = dataGridUsers.CurrentRow.Cells[0].Value.ToString();
-                User user = database.GetUserById(dataGridUsers.CurrentRow.Cells[0].Value.ToString());
+                User user = database.GetUserById(Convert.ToInt32(dataGridUsers.CurrentRow.Cells[0].Value));
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
                 valClass.Text = user.classe;

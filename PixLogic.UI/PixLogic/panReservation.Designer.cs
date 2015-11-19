@@ -32,16 +32,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panTableUsers = new System.Windows.Forms.Panel();
+            this.labelListReservation = new System.Windows.Forms.Label();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridReservations = new System.Windows.Forms.DataGridView();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
-            this.labelListReservation = new System.Windows.Forms.Label();
             this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameItemReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panNews = new System.Windows.Forms.Panel();
+            this.labelDateDebut = new System.Windows.Forms.Label();
+            this.valDateDebut = new System.Windows.Forms.Label();
+            this.valDateFin = new System.Windows.Forms.Label();
+            this.labelTel = new System.Windows.Forms.Label();
+            this.labelDateFin = new System.Windows.Forms.Label();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
+            this.panNews.SuspendLayout();
             this.SuspendLayout();
             // 
             // panTableUsers
@@ -57,6 +64,27 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(266, 514);
             this.panTableUsers.TabIndex = 23;
+            // 
+            // labelListReservation
+            // 
+            this.labelListReservation.AutoSize = true;
+            this.labelListReservation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListReservation.Location = new System.Drawing.Point(51, -5);
+            this.labelListReservation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelListReservation.Name = "labelListReservation";
+            this.labelListReservation.Size = new System.Drawing.Size(153, 19);
+            this.labelListReservation.TabIndex = 41;
+            this.labelListReservation.Text = "Liste des reservations";
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(223, 20);
+            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // textBoxSearch
             // 
@@ -123,27 +151,6 @@
             this.dataGridReservations.Size = new System.Drawing.Size(259, 447);
             this.dataGridReservations.TabIndex = 0;
             // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(223, 20);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            // 
-            // labelListReservation
-            // 
-            this.labelListReservation.AutoSize = true;
-            this.labelListReservation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListReservation.Location = new System.Drawing.Point(51, -5);
-            this.labelListReservation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelListReservation.Name = "labelListReservation";
-            this.labelListReservation.Size = new System.Drawing.Size(153, 19);
-            this.labelListReservation.TabIndex = 41;
-            this.labelListReservation.Text = "Liste des reservations";
-            // 
             // IdUser
             // 
             this.IdUser.HeaderText = "Id";
@@ -165,16 +172,88 @@
             this.NameItemReservation.ReadOnly = true;
             this.NameItemReservation.Width = 60;
             // 
+            // panNews
+            // 
+            this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panNews.Controls.Add(this.labelDateDebut);
+            this.panNews.Controls.Add(this.valDateDebut);
+            this.panNews.Controls.Add(this.valDateFin);
+            this.panNews.Controls.Add(this.labelTel);
+            this.panNews.Controls.Add(this.labelDateFin);
+            this.panNews.Location = new System.Drawing.Point(303, 225);
+            this.panNews.Margin = new System.Windows.Forms.Padding(4);
+            this.panNews.Name = "panNews";
+            this.panNews.Size = new System.Drawing.Size(351, 139);
+            this.panNews.TabIndex = 28;
+            // 
+            // labelDateDebut
+            // 
+            this.labelDateDebut.AutoSize = true;
+            this.labelDateDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateDebut.Location = new System.Drawing.Point(0, 20);
+            this.labelDateDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDateDebut.Name = "labelDateDebut";
+            this.labelDateDebut.Size = new System.Drawing.Size(85, 19);
+            this.labelDateDebut.TabIndex = 6;
+            this.labelDateDebut.Text = "Date début :";
+            // 
+            // valDateDebut
+            // 
+            this.valDateDebut.AutoSize = true;
+            this.valDateDebut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDateDebut.Location = new System.Drawing.Point(96, 17);
+            this.valDateDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valDateDebut.Name = "valDateDebut";
+            this.valDateDebut.Size = new System.Drawing.Size(17, 23);
+            this.valDateDebut.TabIndex = 39;
+            this.valDateDebut.Text = "-";
+            this.valDateDebut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valDateFin
+            // 
+            this.valDateFin.AutoSize = true;
+            this.valDateFin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDateFin.Location = new System.Drawing.Point(96, 50);
+            this.valDateFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valDateFin.Name = "valDateFin";
+            this.valDateFin.Size = new System.Drawing.Size(17, 23);
+            this.valDateFin.TabIndex = 3;
+            this.valDateFin.Text = "-";
+            // 
+            // labelTel
+            // 
+            this.labelTel.AutoSize = true;
+            this.labelTel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTel.Location = new System.Drawing.Point(0, 84);
+            this.labelTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTel.Name = "labelTel";
+            this.labelTel.Size = new System.Drawing.Size(0, 19);
+            this.labelTel.TabIndex = 1;
+            // 
+            // labelDateFin
+            // 
+            this.labelDateFin.AutoSize = true;
+            this.labelDateFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateFin.Location = new System.Drawing.Point(0, 52);
+            this.labelDateFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDateFin.Name = "labelDateFin";
+            this.labelDateFin.Size = new System.Drawing.Size(83, 19);
+            this.labelDateFin.TabIndex = 0;
+            this.labelDateFin.Text = "Date de fin :";
+            // 
             // panReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableUsers);
             this.Name = "panReservation";
             this.Size = new System.Drawing.Size(917, 519);
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).EndInit();
+            this.panNews.ResumeLayout(false);
+            this.panNews.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -190,5 +269,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameItemReservation;
+        private System.Windows.Forms.Panel panNews;
+        private System.Windows.Forms.Label labelDateDebut;
+        public System.Windows.Forms.Label valDateDebut;
+        private System.Windows.Forms.Label valDateFin;
+        private System.Windows.Forms.Label labelTel;
+        private System.Windows.Forms.Label labelDateFin;
     }
 }

@@ -54,19 +54,19 @@ namespace PixLogic
                 {
                     panUsers1.Visible = false;
                     panItemPack1.Visible = true;
-                    panReservation1.Visible = false;
+                   panReservation1.Visible = false;
                 }
                 else if (button.Text.ToString().Equals(textUtilisateur))
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = true;
-                    panReservation1.Visible = false;
+                   panReservation1.Visible = false;
                 }
                 else if (button.Text.ToString().Equals(textReservation))
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = false;
-                    panReservation1.Visible = true;
+                   panReservation1.Visible = true;
                 }
             }
 

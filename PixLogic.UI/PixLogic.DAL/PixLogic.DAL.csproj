@@ -54,6 +54,7 @@
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
     <Compile Include="AddItem.cs" />
+    <Compile Include="AddReservation.cs" />
     <Compile Include="AddUser.cs" />
     <Compile Include="ByteArrayToImage.cs" />
     <Compile Include="Database.cs" />
@@ -66,6 +67,9 @@
     <Compile Include="GetUserById.cs" />
     <Compile Include="GetUserByName.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ReservationFactory.cs" />
     <Compile Include="ServiceContainer.cs" />
     <Compile Include="ContainItem.cs" />
     <Compile Include="DataContext.cs" />
