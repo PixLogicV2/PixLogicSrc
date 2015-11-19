@@ -27,6 +27,9 @@ namespace PixLogic.DAL
                 case "user_factory":
                     this.arrayContainer[serviceName] = new UserFactory();
                     break;
+                case "reservation_factory":
+                    this.arrayContainer[serviceName] = new ReservationFactory();
+                    break;
 
                 case "add_item":
                     this.arrayContainer[serviceName] = new AddItem();
@@ -38,6 +41,10 @@ namespace PixLogic.DAL
                     break;
                 case "add_user":
                     this.arrayContainer[serviceName] = new AddUser();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "add_reservation":
+                    this.arrayContainer[serviceName] = new AddReservation();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "data_context":

@@ -116,5 +116,14 @@ namespace PixLogic.DAL
         {
             container.get("delete_user").deleteUser(id);
         }
+
+        //***************
+
+        public void AddReservation(bool isPack, DateTime beginDateReservation, DateTime endDateReservation,
+            DateTime beginDateEmprunt, DateTime endDateEmprunt, int idUser, int idElement, int idManager)
+        {
+            container.get("add_reservation").addReservation(container.get("reservation_factory").build(isPack, beginDateReservation, endDateReservation,
+                                                                                                        beginDateEmprunt, endDateEmprunt, idUser, idElement, idManager));
+        }
     }
 }
