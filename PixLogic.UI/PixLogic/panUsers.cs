@@ -30,7 +30,7 @@ namespace PixLogic
             dataGridUsers.Rows.Clear();
             foreach (var user in list)
             {
-                dataGridUsers.Rows.Add(user.name,user.nickname,user.classe);
+                dataGridUsers.Rows.Add(user.name,user.nickname,user.UserId);
             }
 
             if (dataGridUsers.RowCount > 0)
@@ -49,15 +49,15 @@ namespace PixLogic
             if (dataGridUsers.RowCount > 0)
             {
                 //listBoxUsers.AllowDrop = true;
-                valUserName.Text = dataGridUsers.CurrentRow.Cells[0].Value.ToString();
-                valUserNickName.Text = dataGridUsers.CurrentRow.Cells[1].Value.ToString();
-                valClass.Text = dataGridUsers.CurrentRow.Cells[2].Value.ToString();
-                User user = database.GetUserByName(valUserName.Text);
+                valUserName.Text = dataGridUsers.CurrentRow.Cells[1].Value.ToString();
+                valUserNickName.Text = dataGridUsers.CurrentRow.Cells[2].Value.ToString();
+                valUserId.Text = dataGridUsers.CurrentRow.Cells[0].Value.ToString();
+                User user = database.GetUserById(dataGridUsers.CurrentRow.Cells[0].Value.ToString());
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
-                valUserId.Text = user.UserId.ToString("D4");
+                valClass.Text = user.classe;
 
-               Image img = database.ByteArrayToImage(user.image);
+                Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
             }
             else
