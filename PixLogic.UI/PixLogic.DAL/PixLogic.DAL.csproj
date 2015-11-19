@@ -61,6 +61,7 @@
     <Compile Include="DeletePack.cs" />
     <Compile Include="DeleteUser.cs" />
     <Compile Include="GetAllPacks.cs" />
+    <Compile Include="GetAllReservations.cs" />
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetItemByName.cs" />
     <Compile Include="GetPackByName.cs" />

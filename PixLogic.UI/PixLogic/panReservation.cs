@@ -29,7 +29,10 @@ namespace PixLogic
             dataGridReservations.Rows.Clear();
             foreach (var reser in list)
             {
-                dataGridReservations.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name);
+                dataGridReservations.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.ReservableId);
+                /*
+                TODO CHANGER ID EN NAME
+                */
             }
 
             if (dataGridReservations.RowCount > 0)
