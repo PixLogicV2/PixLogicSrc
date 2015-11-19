@@ -100,9 +100,13 @@ namespace PixLogic.DAL
         {
             container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, classe, phoneNumber, image));
         }
-        public User GetUserByName(string itemName)
+        /*public User GetUserByName(string itemName)
         {
             return container.get("get_user_by_name").getUserByName(itemName);
+        }*/
+        public User GetUserById(int id)
+        {
+            return container.get("get_user_by_id").getUserById(id);
         }
         public void UpdateUser(int id, string name, string nickname, string mail, string classe, string phoneNumber, Image image)
         {

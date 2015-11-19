@@ -62,6 +62,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetUserByName();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_user_by_id":
+                    this.arrayContainer[serviceName] = new GetUserById();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "get_all_packs":
                     this.arrayContainer[serviceName] = new GetAllPacks();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));

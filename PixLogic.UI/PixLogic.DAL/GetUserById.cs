@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    public class GetUserByName
+    class GetUserById
     {
         private DataContext context;
 
@@ -14,10 +14,10 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public User getUserByName(string userName)
+        public User getUserById(int id)
         {
             IQueryable<User> userQuery = from User in context.Users
-                                         where User.name == userName
+                                         where User.UserId == id
                                          select User;
             List<User> list = new List<User>();
             foreach (var prod in userQuery)
