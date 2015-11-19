@@ -125,5 +125,9 @@ namespace PixLogic.DAL
             container.get("add_reservation").addReservation(container.get("reservation_factory").build(isPack, beginDateReservation, endDateReservation,
                                                                                                         beginDateEmprunt, endDateEmprunt, idUser, idElement, idManager));
         }
+        public List<Reservation> GetAllReservations()
+        {
+            return container.get("get_all_reservations").getAllReservations();
+        }
     }
 }
