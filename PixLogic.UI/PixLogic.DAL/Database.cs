@@ -129,5 +129,9 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_reservations").getAllReservations();
         }
+        public Reservation GetReservationById(int id)
+        {
+            return container.get("get_reservation_by_id").getReservationById(id);
+        }
     }
 }
