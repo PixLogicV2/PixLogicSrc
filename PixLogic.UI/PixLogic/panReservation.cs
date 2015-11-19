@@ -29,7 +29,10 @@ namespace PixLogic
             dataGridReservations.Rows.Clear();
             foreach (var reser in list)
             {
-                dataGridReservations.Rows.Add(reser.ReservationId, reser.User.name, reser.Item.Name);
+                dataGridReservations.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.ReservableId);
+                /*
+                TODO CHANGER ID EN NAME
+                */
             }
 
             if (dataGridReservations.RowCount > 0)
@@ -40,39 +43,25 @@ namespace PixLogic
                 dataGridReservations.Rows[0].Selected = true;
             }
 
-            setNewsUsers();
+            setNewsReservations();
             //checkEnableButton();
         }
-        /*
-        private void setNewsUsers()
+        
+        private void setNewsReservations()
         {
             if (dataGridReservations.RowCount > 0)
             {
-                //listBoxUsers.AllowDrop = true;
-                valUserName.Text = dataGridUsers.CurrentRow.Cells[1].Value.ToString();
-                valUserNickName.Text = dataGridUsers.CurrentRow.Cells[2].Value.ToString();
-                valReservationId.Text = dataGridUsers.CurrentRow.Cells[0].Value.ToString();
-                User user = database.GetUserById(dataGridUsers.CurrentRow.Cells[0].Value.ToString());
-                valMail.Text = user.mail;
-                valTel.Text = user.phoneNumber;
-                valClass.Text = user.classe;
-
-                Image img = database.ByteArrayToImage(user.image);
-                Helper.putImageInBox(pictureBoxUser, img);
+                Reservation reservation = database.GetReservationById(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
+                valDateFin.Text =Convert.ToString( reservation.beginDateReservation);
+                valDateDebut.Text = Convert.ToString(reservation.endDateReservation);
+                
             }
             else
             {
-                //listBoxUsers.AllowDrop = false;
-                valUserName.Text = "-";
-                valClass.Text = "-";
-                valTel.Text = "-";
-                valMail.Text = "-";
-                valUserNickName.Text = "-";
-                pictureBoxUser.Image = null;
-                valUserId.Text = "-";
+                valDateFin.Text = "-";
+                valDateDebut.Text = "-";
             }
 
         }
-        */
     }
 }
