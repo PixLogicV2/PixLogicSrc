@@ -51,7 +51,7 @@ namespace PixLogic
         {
             if (dataGridReservations.RowCount > 0)
             {
-                Reservation reservation = database.GetReservationById(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
+                Reservation reservation = database.GetReservationById(Convert.ToInt32(dataGridReservations.CurrentRow.Cells[0].Value));
                 valDateFin.Text =Convert.ToString( reservation.beginDateReservation);
                 valDateDebut.Text = Convert.ToString(reservation.endDateReservation);
                 
