@@ -63,6 +63,7 @@
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetItemByName.cs" />
     <Compile Include="GetPackByName.cs" />
+    <Compile Include="GetUserById.cs" />
     <Compile Include="GetUserByName.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="ServiceContainer.cs" />
