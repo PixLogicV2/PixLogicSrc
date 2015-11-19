@@ -74,6 +74,12 @@
     <Compile Include="panItemPack.Designer.cs">
       <DependentUpon>panItemPack.cs</DependentUpon>
     </Compile>
+    <Compile Include="panReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panReservation.Designer.cs">
+      <DependentUpon>panReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="panUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="panItemPack.resx">
       <DependentUpon>panItemPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panReservation.resx">
+      <DependentUpon>panReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="panUsers.resx">
       <DependentUpon>panUsers.cs</DependentUpon>

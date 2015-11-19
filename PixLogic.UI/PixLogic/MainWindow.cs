@@ -8,6 +8,7 @@ namespace PixLogic
         private MenuButton button = null;
         private string textUtilisateur = "         UTILISATEUR";
         private string textMateriel = "         MATERIEL";
+        private string textReservation = "         RESERVATION";
         public static bool START = false;
         public MainWindow()
         {
@@ -20,6 +21,7 @@ namespace PixLogic
         {
             panItemPack1.Visible = false;
             panUsers1.Visible = true;
+            panReservation1.Visible = false;
             button = boutonUtilisateur;
             button.DesactiveEffectButton();
         }
@@ -52,11 +54,19 @@ namespace PixLogic
                 {
                     panUsers1.Visible = false;
                     panItemPack1.Visible = true;
+                    panReservation1.Visible = false;
                 }
                 else if (button.Text.ToString().Equals(textUtilisateur))
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = true;
+                    panReservation1.Visible = false;
+                }
+                else if (button.Text.ToString().Equals(textReservation))
+                {
+                    panItemPack1.Visible = false;
+                    panUsers1.Visible = false;
+                    panReservation1.Visible = true;
                 }
             }
 
