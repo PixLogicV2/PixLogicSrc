@@ -112,6 +112,12 @@
     <Compile Include="WindowPackManager.Designer.cs">
       <DependentUpon>WindowPackManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowReservation.Designer.cs">
+      <DependentUpon>WindowReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowPackManager.resx">
       <DependentUpon>WindowPackManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowReservation.resx">
+      <DependentUpon>WindowReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowUser.resx">
       <DependentUpon>WindowUser.cs</DependentUpon>

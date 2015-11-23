@@ -60,5 +60,12 @@ namespace PixLogic
             }
 
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            /*
+            emprunt
+            */
+        }
     }
 }

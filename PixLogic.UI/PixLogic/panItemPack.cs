@@ -72,6 +72,8 @@ namespace PixLogic
                 valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
                 valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
                 Item item = database.GetItemByName(valItemName.Text);
+
+                valItemId.Text = item.ReservableId.ToString();
                 valDispo.Text = item.dispo ? "OUI" : "NON";
                 valDescription.Text = item.description;
 
@@ -87,6 +89,7 @@ namespace PixLogic
                 valDispo.Text = "-";
                 valDescription.Text = "-";
                 pictureBoxItem.Image = null;
+                valItemId.Text = "-";
             }
 
             checkTransfert();
@@ -265,6 +268,12 @@ namespace PixLogic
                 database.DeleteItemToPack(listBoxItem.SelectedItem.ToString());
                 setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
             }
+        }
+
+        private void buttonReservation_Click(object sender, EventArgs e)
+        {
+            WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text),true);
+            windowRes.ShowDialog(this);
         }
     }
 }
