@@ -26,8 +26,11 @@ namespace PixLogic
         public void setTableReservations(List<Reservation> l)
         {
             List<Reservation> list = l;
+            Console.WriteLine("LA TAILLE DE LA LISTE :" + list.Count);
             dataGridReservations.Rows.Clear();
-            foreach (var reser in list)
+            Reservation u = list.FirstOrDefault<Reservation>();
+            Console.WriteLine("LA USER DE :" +u.user);
+            foreach (Reservation reser in list)
             {
                 dataGridReservations.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name);
             }

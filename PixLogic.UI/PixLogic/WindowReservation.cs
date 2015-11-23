@@ -26,10 +26,11 @@ namespace PixLogic
         public WindowReservation(panItemPack pa, int itemId,bool Pack)
         {
             InitializeComponent();
-            Text = "Modifier Utilisateur";
+            Text = "Nouvelle reservation";
             pan = pa;
             valItemId.Text = itemId.ToString();
             isPack = Pack;
+            setTableUsers(database.GetAllUsers());
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace PixLogic
             dataGridUsersReservation.Rows.Clear();
             foreach (var user in list)
             {
-                dataGridUsersReservation.Rows.Add(user.name, user.nickname, user.UserId);
+                dataGridUsersReservation.Rows.Add(user.UserId,user.name, user.nickname);
             }
 
             if (dataGridUsersReservation.RowCount > 0)
@@ -56,24 +57,23 @@ namespace PixLogic
         }
         private void buttonValid_Click(object sender, EventArgs e)
         {
-            int idElem = Convert.ToInt32(valItemId.Text);
             DateTime? begin =Convert.ToDateTime(valBegin.Text);
             DateTime? end = Convert.ToDateTime(valEnd.Text);
             DateTime? debutEmprunt = null;
             DateTime? endEmprunt= null;
-            int idManag = 0;
-
+            Manager manag = null;
+            Item elem = database.GetItemById(int.Parse(valItemId.Text.ToString()));
             if (!Helper.fieldsAreEmpty(true, valItemId.Text,valBegin.Text,valEnd.Text))
             {
-                User user = database.GetUserById(Convert.ToInt32(dataGridUsersReservation.CurrentRow.Cells[0].Value));
-                int idUser = user.UserId;
+                User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
 
-                database.AddReservation(isPack, begin, end, debutEmprunt, endEmprunt, idUser, idElem,idManag);
+                database.AddReservation(isPack, begin, end, debutEmprunt, endEmprunt, user, elem,manag);
                
                 //Helper.addSuccess();
-                setTableUsers(database.GetAllUsers());
+                //setTableUsers(database.GetAllUsers());
                 this.Close();
             }
         }
+        
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace PixLogic.DAL
 {
@@ -16,7 +17,7 @@ namespace PixLogic.DAL
         }
         public List<Reservation> getAllReservations()
         {
-            IQueryable<Reservation> reservQuery = from Reservation in context.Reservations
+            IQueryable<Reservation> reservQuery = from Reservation in context.Reservations.Include(c => c.reservable).Include(c => c.manager).Include(c => c.user)
                                                   select Reservation;
             List<Reservation> list = new List<Reservation>();
             foreach (var prod in reservQuery)

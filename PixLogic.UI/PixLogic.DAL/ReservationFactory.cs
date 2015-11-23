@@ -15,8 +15,8 @@ namespace PixLogic.DAL
             this.context = context;
         }
 
-        public Reservation build(bool isPack, DateTime beginDateReservation, DateTime endDateReservation,
-            DateTime beginDateEmprunt, DateTime endDateEmprunt, int idUser, int idElement, int idManager)
+        public Reservation build(bool isPack, DateTime? beginDateReservation, DateTime? endDateReservation,
+            DateTime? beginDateEmprunt, DateTime? endDateEmprunt, User user, Item element, Manager manager)
         {
             Reservation reservation = new Reservation();
 
@@ -25,9 +25,9 @@ namespace PixLogic.DAL
             reservation.endDateReservation = endDateReservation;
             reservation.beginDateEmprunt = beginDateEmprunt;
             reservation.endDateEmprunt = endDateEmprunt;
-            reservation.user = context.Users.Where(s => s.UserId == idUser).FirstOrDefault();
-            reservation.reservable = context.Reservables.Where(s => s.ReservableId == idElement).FirstOrDefault();
-            reservation.manager = context.Managers.Where(s => s.ManagerId == idManager).FirstOrDefault();
+            reservation.user = user;
+            reservation.reservable = element;
+            reservation.manager = manager;
 
             return reservation;
         }
