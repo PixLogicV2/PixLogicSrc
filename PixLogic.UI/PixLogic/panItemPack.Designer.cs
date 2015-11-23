@@ -39,6 +39,7 @@
             this.valItemName = new System.Windows.Forms.Label();
             this.labelListItem = new System.Windows.Forms.Label();
             this.panTableItem = new System.Windows.Forms.Panel();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
@@ -56,7 +57,6 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -178,8 +178,18 @@
             this.panTableItem.Controls.Add(this.dataGridItem);
             this.panTableItem.Location = new System.Drawing.Point(5, 3);
             this.panTableItem.Name = "panTableItem";
-            this.panTableItem.Size = new System.Drawing.Size(200, 411);
+            this.panTableItem.Size = new System.Drawing.Size(200, 426);
             this.panTableItem.TabIndex = 21;
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -217,7 +227,7 @@
             this.dataGridItem.RowHeadersVisible = false;
             this.dataGridItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridItem.Size = new System.Drawing.Size(199, 363);
+            this.dataGridItem.Size = new System.Drawing.Size(199, 378);
             this.dataGridItem.TabIndex = 0;
             this.dataGridItem.Click += new System.EventHandler(this.dataGridItem_Click);
             this.dataGridItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridItem_KeyUp);
@@ -330,7 +340,7 @@
             // 
             this.buttonManagePack.Image = global::PixLogic.Properties.Resources.general_icon;
             this.buttonManagePack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonManagePack.Location = new System.Drawing.Point(543, 385);
+            this.buttonManagePack.Location = new System.Drawing.Point(543, 401);
             this.buttonManagePack.Name = "buttonManagePack";
             this.buttonManagePack.Size = new System.Drawing.Size(121, 28);
             this.buttonManagePack.TabIndex = 35;
@@ -344,7 +354,7 @@
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDelete.Location = new System.Drawing.Point(383, 385);
+            this.buttonDelete.Location = new System.Drawing.Point(383, 401);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(93, 29);
             this.buttonDelete.TabIndex = 29;
@@ -358,7 +368,7 @@
             this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModify.Location = new System.Drawing.Point(298, 385);
+            this.buttonModify.Location = new System.Drawing.Point(298, 401);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(78, 29);
             this.buttonModify.TabIndex = 28;
@@ -372,7 +382,7 @@
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(212, 385);
+            this.buttonAdd.Location = new System.Drawing.Point(212, 401);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(78, 29);
             this.buttonAdd.TabIndex = 27;
@@ -380,16 +390,6 @@
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // panItemPack
             // 
@@ -413,7 +413,7 @@
             this.Controls.Add(this.labelListItem);
             this.Controls.Add(this.panTableItem);
             this.Name = "panItemPack";
-            this.Size = new System.Drawing.Size(690, 423);
+            this.Size = new System.Drawing.Size(690, 452);
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
             this.panTableItem.ResumeLayout(false);

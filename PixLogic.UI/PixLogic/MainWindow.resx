@@ -121,6 +121,16 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="menuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
+        BCMlGCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMl
+        GCnBSAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnB
+        SAlGSjBSgpESjJRgpAQjJRgpwUgJRkowUoKREoyUYKQEIyUYKcFICUZKMFKCkRKMlGCkBCMlGCnBSAlG
+        SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="boutonMenu4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -177,7 +187,7 @@
   <data name="BoutonNouveauBO.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE7SURBVGhD7ZkxSgNBFED3Eim9gJfwEnaeIJ1NSisPIGgl
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVGhD7ZkxSgNBFED3Eim9gJfwEnaeIJ1NSisPIGgl
         KVKkSGHKYCEIaqNoadKEEBYSggkhRQpb5YcRluGPg7KZzGzeg9fN5M8b2GwgGQAAAMBe8zRcHZ00B1+a
         3bd53SyrDgQXJLgKEFyQ4BRoP3+cnffyB5eNm9FYixVP2/2FtufHq/tJy4yJBzmYFlOGciFmTDwkHyzP
         lU+zdEPSwcPZuqYNtpUvIrOF4DIluGz+E+wj6vcwwQ4J/gWCCxJcJhLj87a/PNYOZtt5nTe0/bYydyfB

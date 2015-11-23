@@ -34,6 +34,9 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
+            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valUserName = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
             this.labelIdentifiant = new System.Windows.Forms.Label();
@@ -51,9 +54,6 @@
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
@@ -67,29 +67,26 @@
             this.panTableUsers.Controls.Add(this.textBoxSearch);
             this.panTableUsers.Controls.Add(this.labelSearch);
             this.panTableUsers.Controls.Add(this.dataGridUsers);
-            this.panTableUsers.Location = new System.Drawing.Point(7, 4);
-            this.panTableUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.panTableUsers.Location = new System.Drawing.Point(5, 3);
             this.panTableUsers.Name = "panTableUsers";
-            this.panTableUsers.Size = new System.Drawing.Size(266, 505);
+            this.panTableUsers.Size = new System.Drawing.Size(196, 428);
             this.panTableUsers.TabIndex = 22;
             // 
             // buttonCancelSearch
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(223, 20);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
             this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
             this.buttonCancelSearch.TabIndex = 3;
             this.buttonCancelSearch.UseVisualStyleBackColor = true;
             this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(89, 21);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSearch.Location = new System.Drawing.Point(67, 17);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(96, 20);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
@@ -97,10 +94,9 @@
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(3, 23);
-            this.labelSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSearch.Location = new System.Drawing.Point(2, 19);
             this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(78, 19);
+            this.labelSearch.Size = new System.Drawing.Size(66, 13);
             this.labelSearch.TabIndex = 1;
             this.labelSearch.Text = "Recherche :";
             // 
@@ -116,226 +112,15 @@
             this.IdUser,
             this.NameUser,
             this.NickNameUser});
-            this.dataGridUsers.Location = new System.Drawing.Point(0, 58);
-            this.dataGridUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridUsers.Location = new System.Drawing.Point(0, 47);
             this.dataGridUsers.Name = "dataGridUsers";
             this.dataGridUsers.ReadOnly = true;
             this.dataGridUsers.RowHeadersVisible = false;
             this.dataGridUsers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsers.Size = new System.Drawing.Size(259, 447);
+            this.dataGridUsers.Size = new System.Drawing.Size(194, 379);
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.Click += new System.EventHandler(this.dataGridUsers_Click);
-            // 
-            // valUserName
-            // 
-            this.valUserName.AutoSize = true;
-            this.valUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valUserName.Location = new System.Drawing.Point(276, 1);
-            this.valUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.valUserName.Name = "valUserName";
-            this.valUserName.Size = new System.Drawing.Size(57, 28);
-            this.valUserName.TabIndex = 24;
-            this.valUserName.Text = "Nom";
-            this.valUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panNews
-            // 
-            this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panNews.Controls.Add(this.labelIdentifiant);
-            this.panNews.Controls.Add(this.valClass);
-            this.panNews.Controls.Add(this.valUserId);
-            this.panNews.Controls.Add(this.valTel);
-            this.panNews.Controls.Add(this.valMail);
-            this.panNews.Controls.Add(this.labelClass);
-            this.panNews.Controls.Add(this.labelTel);
-            this.panNews.Controls.Add(this.labelMail);
-            this.panNews.Location = new System.Drawing.Point(281, 242);
-            this.panNews.Margin = new System.Windows.Forms.Padding(4);
-            this.panNews.Name = "panNews";
-            this.panNews.Size = new System.Drawing.Size(351, 139);
-            this.panNews.TabIndex = 27;
-            // 
-            // labelIdentifiant
-            // 
-            this.labelIdentifiant.AutoSize = true;
-            this.labelIdentifiant.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIdentifiant.Location = new System.Drawing.Point(0, 20);
-            this.labelIdentifiant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelIdentifiant.Name = "labelIdentifiant";
-            this.labelIdentifiant.Size = new System.Drawing.Size(78, 19);
-            this.labelIdentifiant.TabIndex = 6;
-            this.labelIdentifiant.Text = "Identifiant :";
-            // 
-            // valClass
-            // 
-            this.valClass.AutoSize = true;
-            this.valClass.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valClass.Location = new System.Drawing.Point(96, 113);
-            this.valClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.valClass.Name = "valClass";
-            this.valClass.Size = new System.Drawing.Size(17, 23);
-            this.valClass.TabIndex = 5;
-            this.valClass.Text = "-";
-            // 
-            // valUserId
-            // 
-            this.valUserId.AutoSize = true;
-            this.valUserId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valUserId.Location = new System.Drawing.Point(96, 17);
-            this.valUserId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.valUserId.Name = "valUserId";
-            this.valUserId.Size = new System.Drawing.Size(17, 23);
-            this.valUserId.TabIndex = 39;
-            this.valUserId.Text = "-";
-            this.valUserId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // valTel
-            // 
-            this.valTel.AutoSize = true;
-            this.valTel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valTel.Location = new System.Drawing.Point(96, 81);
-            this.valTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.valTel.Name = "valTel";
-            this.valTel.Size = new System.Drawing.Size(17, 23);
-            this.valTel.TabIndex = 4;
-            this.valTel.Text = "-";
-            // 
-            // valMail
-            // 
-            this.valMail.AutoSize = true;
-            this.valMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valMail.Location = new System.Drawing.Point(96, 50);
-            this.valMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.valMail.Name = "valMail";
-            this.valMail.Size = new System.Drawing.Size(17, 23);
-            this.valMail.TabIndex = 3;
-            this.valMail.Text = "-";
-            // 
-            // labelClass
-            // 
-            this.labelClass.AutoSize = true;
-            this.labelClass.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClass.Location = new System.Drawing.Point(0, 117);
-            this.labelClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelClass.Name = "labelClass";
-            this.labelClass.Size = new System.Drawing.Size(54, 19);
-            this.labelClass.TabIndex = 2;
-            this.labelClass.Text = "Classe :";
-            // 
-            // labelTel
-            // 
-            this.labelTel.AutoSize = true;
-            this.labelTel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTel.Location = new System.Drawing.Point(0, 84);
-            this.labelTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTel.Name = "labelTel";
-            this.labelTel.Size = new System.Drawing.Size(31, 19);
-            this.labelTel.TabIndex = 1;
-            this.labelTel.Text = "tel :";
-            // 
-            // labelMail
-            // 
-            this.labelMail.AutoSize = true;
-            this.labelMail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMail.Location = new System.Drawing.Point(0, 52);
-            this.labelMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelMail.Name = "labelMail";
-            this.labelMail.Size = new System.Drawing.Size(42, 19);
-            this.labelMail.TabIndex = 0;
-            this.labelMail.Text = "Mail :";
-            // 
-            // valUserNickName
-            // 
-            this.valUserNickName.AutoSize = true;
-            this.valUserNickName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valUserNickName.Location = new System.Drawing.Point(476, 1);
-            this.valUserNickName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.valUserNickName.Name = "valUserNickName";
-            this.valUserNickName.Size = new System.Drawing.Size(84, 28);
-            this.valUserNickName.TabIndex = 28;
-            this.valUserNickName.Text = "Prénom";
-            this.valUserNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelListUser
-            // 
-            this.labelListUser.AutoSize = true;
-            this.labelListUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListUser.Location = new System.Drawing.Point(31, -2);
-            this.labelListUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelListUser.Name = "labelListUser";
-            this.labelListUser.Size = new System.Drawing.Size(142, 19);
-            this.labelListUser.TabIndex = 40;
-            this.labelListUser.Text = "Liste des utilisateurs";
-            // 
-            // labelNews
-            // 
-            this.labelNews.AutoSize = true;
-            this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(311, 238);
-            this.labelNews.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelNews.Name = "labelNews";
-            this.labelNews.Size = new System.Drawing.Size(41, 19);
-            this.labelNews.TabIndex = 41;
-            this.labelNews.Text = "Infos";
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
-            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDelete.Location = new System.Drawing.Point(509, 474);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(124, 36);
-            this.buttonDelete.TabIndex = 38;
-            this.buttonDelete.Text = "Supprimer";
-            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // pictureBoxUser
-            // 
-            this.pictureBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUser.Image")));
-            this.pictureBoxUser.InitialImage = null;
-            this.pictureBoxUser.Location = new System.Drawing.Point(281, 31);
-            this.pictureBoxUser.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxUser.Name = "pictureBoxUser";
-            this.pictureBoxUser.Size = new System.Drawing.Size(351, 204);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxUser.TabIndex = 37;
-            this.pictureBoxUser.TabStop = false;
-            // 
-            // buttonModify
-            // 
-            this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
-            this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModify.Location = new System.Drawing.Point(395, 474);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(104, 36);
-            this.buttonModify.TabIndex = 30;
-            this.buttonModify.Text = "Modifier";
-            this.buttonModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonModify.UseVisualStyleBackColor = true;
-            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(283, 474);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(104, 36);
-            this.buttonAdd.TabIndex = 29;
-            this.buttonAdd.Text = "Ajouter";
-            this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // IdUser
             // 
@@ -358,9 +143,202 @@
             this.NickNameUser.ReadOnly = true;
             this.NickNameUser.Width = 60;
             // 
+            // valUserName
+            // 
+            this.valUserName.AutoSize = true;
+            this.valUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valUserName.Location = new System.Drawing.Point(207, 1);
+            this.valUserName.Name = "valUserName";
+            this.valUserName.Size = new System.Drawing.Size(46, 21);
+            this.valUserName.TabIndex = 24;
+            this.valUserName.Text = "Nom";
+            this.valUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panNews
+            // 
+            this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panNews.Controls.Add(this.labelIdentifiant);
+            this.panNews.Controls.Add(this.valClass);
+            this.panNews.Controls.Add(this.valUserId);
+            this.panNews.Controls.Add(this.valTel);
+            this.panNews.Controls.Add(this.valMail);
+            this.panNews.Controls.Add(this.labelClass);
+            this.panNews.Controls.Add(this.labelTel);
+            this.panNews.Controls.Add(this.labelMail);
+            this.panNews.Location = new System.Drawing.Point(211, 197);
+            this.panNews.Name = "panNews";
+            this.panNews.Size = new System.Drawing.Size(264, 113);
+            this.panNews.TabIndex = 27;
+            // 
+            // labelIdentifiant
+            // 
+            this.labelIdentifiant.AutoSize = true;
+            this.labelIdentifiant.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIdentifiant.Location = new System.Drawing.Point(0, 16);
+            this.labelIdentifiant.Name = "labelIdentifiant";
+            this.labelIdentifiant.Size = new System.Drawing.Size(67, 13);
+            this.labelIdentifiant.TabIndex = 6;
+            this.labelIdentifiant.Text = "Identifiant :";
+            // 
+            // valClass
+            // 
+            this.valClass.AutoSize = true;
+            this.valClass.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valClass.Location = new System.Drawing.Point(72, 92);
+            this.valClass.Name = "valClass";
+            this.valClass.Size = new System.Drawing.Size(13, 17);
+            this.valClass.TabIndex = 5;
+            this.valClass.Text = "-";
+            // 
+            // valUserId
+            // 
+            this.valUserId.AutoSize = true;
+            this.valUserId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valUserId.Location = new System.Drawing.Point(72, 14);
+            this.valUserId.Name = "valUserId";
+            this.valUserId.Size = new System.Drawing.Size(13, 17);
+            this.valUserId.TabIndex = 39;
+            this.valUserId.Text = "-";
+            this.valUserId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valTel
+            // 
+            this.valTel.AutoSize = true;
+            this.valTel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valTel.Location = new System.Drawing.Point(72, 66);
+            this.valTel.Name = "valTel";
+            this.valTel.Size = new System.Drawing.Size(13, 17);
+            this.valTel.TabIndex = 4;
+            this.valTel.Text = "-";
+            // 
+            // valMail
+            // 
+            this.valMail.AutoSize = true;
+            this.valMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valMail.Location = new System.Drawing.Point(72, 41);
+            this.valMail.Name = "valMail";
+            this.valMail.Size = new System.Drawing.Size(13, 17);
+            this.valMail.TabIndex = 3;
+            this.valMail.Text = "-";
+            // 
+            // labelClass
+            // 
+            this.labelClass.AutoSize = true;
+            this.labelClass.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClass.Location = new System.Drawing.Point(0, 95);
+            this.labelClass.Name = "labelClass";
+            this.labelClass.Size = new System.Drawing.Size(45, 13);
+            this.labelClass.TabIndex = 2;
+            this.labelClass.Text = "Classe :";
+            // 
+            // labelTel
+            // 
+            this.labelTel.AutoSize = true;
+            this.labelTel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTel.Location = new System.Drawing.Point(0, 68);
+            this.labelTel.Name = "labelTel";
+            this.labelTel.Size = new System.Drawing.Size(26, 13);
+            this.labelTel.TabIndex = 1;
+            this.labelTel.Text = "tel :";
+            // 
+            // labelMail
+            // 
+            this.labelMail.AutoSize = true;
+            this.labelMail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMail.Location = new System.Drawing.Point(0, 42);
+            this.labelMail.Name = "labelMail";
+            this.labelMail.Size = new System.Drawing.Size(35, 13);
+            this.labelMail.TabIndex = 0;
+            this.labelMail.Text = "Mail :";
+            // 
+            // valUserNickName
+            // 
+            this.valUserNickName.AutoSize = true;
+            this.valUserNickName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valUserNickName.Location = new System.Drawing.Point(357, 1);
+            this.valUserNickName.Name = "valUserNickName";
+            this.valUserNickName.Size = new System.Drawing.Size(67, 21);
+            this.valUserNickName.TabIndex = 28;
+            this.valUserNickName.Text = "Prénom";
+            this.valUserNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelListUser
+            // 
+            this.labelListUser.AutoSize = true;
+            this.labelListUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListUser.Location = new System.Drawing.Point(23, -2);
+            this.labelListUser.Name = "labelListUser";
+            this.labelListUser.Size = new System.Drawing.Size(112, 13);
+            this.labelListUser.TabIndex = 40;
+            this.labelListUser.Text = "Liste des utilisateurs";
+            // 
+            // labelNews
+            // 
+            this.labelNews.AutoSize = true;
+            this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNews.Location = new System.Drawing.Point(233, 193);
+            this.labelNews.Name = "labelNews";
+            this.labelNews.Size = new System.Drawing.Size(33, 13);
+            this.labelNews.TabIndex = 41;
+            this.labelNews.Text = "Infos";
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
+            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDelete.Location = new System.Drawing.Point(382, 403);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(93, 29);
+            this.buttonDelete.TabIndex = 38;
+            this.buttonDelete.Text = "Supprimer";
+            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUser.Image")));
+            this.pictureBoxUser.InitialImage = null;
+            this.pictureBoxUser.Location = new System.Drawing.Point(211, 25);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(264, 166);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUser.TabIndex = 37;
+            this.pictureBoxUser.TabStop = false;
+            // 
+            // buttonModify
+            // 
+            this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
+            this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModify.Location = new System.Drawing.Point(296, 403);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(78, 29);
+            this.buttonModify.TabIndex = 30;
+            this.buttonModify.Text = "Modifier";
+            this.buttonModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
+            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAdd.Location = new System.Drawing.Point(212, 403);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(78, 29);
+            this.buttonAdd.TabIndex = 29;
+            this.buttonAdd.Text = "Ajouter";
+            this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // panUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelNews);
@@ -373,9 +351,9 @@
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.valUserName);
             this.Controls.Add(this.panTableUsers);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "panUsers";
-            this.Size = new System.Drawing.Size(917, 519);
+            this.Size = new System.Drawing.Size(688, 452);
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
