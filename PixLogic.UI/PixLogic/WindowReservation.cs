@@ -39,18 +39,18 @@ namespace PixLogic
         public void setTableUsers(List<User> l)
         {
             List<User> list = l;
-            dataGridUsers.Rows.Clear();
+            dataGridUsersReservation.Rows.Clear();
             foreach (var user in list)
             {
-                dataGridUsers.Rows.Add(user.name, user.nickname, user.UserId);
+                dataGridUsersReservation.Rows.Add(user.name, user.nickname, user.UserId);
             }
 
-            if (dataGridUsers.RowCount > 0)
+            if (dataGridUsersReservation.RowCount > 0)
             {
-                dataGridUsers.FirstDisplayedScrollingRowIndex = 0;
-                dataGridUsers.Refresh();
-                dataGridUsers.CurrentCell = dataGridUsers.Rows[0].Cells[0];
-                dataGridUsers.Rows[0].Selected = true;
+                dataGridUsersReservation.FirstDisplayedScrollingRowIndex = 0;
+                dataGridUsersReservation.Refresh();
+                dataGridUsersReservation.CurrentCell = dataGridUsersReservation.Rows[0].Cells[0];
+                dataGridUsersReservation.Rows[0].Selected = true;
             }
             
         }
@@ -65,7 +65,7 @@ namespace PixLogic
 
             if (!Helper.fieldsAreEmpty(true, valItemId.Text,valBegin.Text,valEnd.Text))
             {
-                User user = database.GetUserById(Convert.ToInt32(dataGridUsers.CurrentRow.Cells[0].Value));
+                User user = database.GetUserById(Convert.ToInt32(dataGridUsersReservation.CurrentRow.Cells[0].Value));
                 int idUser = user.UserId;
 
                 database.AddReservation(isPack, begin, end, debutEmprunt, endEmprunt, idUser, idElem,idManag);

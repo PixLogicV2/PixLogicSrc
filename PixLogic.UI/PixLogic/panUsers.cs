@@ -30,7 +30,7 @@ namespace PixLogic
             dataGridUsers.Rows.Clear();
             foreach (var user in list)
             {
-                dataGridUsers.Rows.Add(user.name,user.nickname,user.UserId);
+                dataGridUsers.Rows.Add(user.UserId,user.name,user.nickname);
             }
 
             if (dataGridUsers.RowCount > 0)
@@ -52,13 +52,14 @@ namespace PixLogic
                 valUserName.Text = dataGridUsers.CurrentRow.Cells[1].Value.ToString();
                 valUserNickName.Text = dataGridUsers.CurrentRow.Cells[2].Value.ToString();
                 valUserId.Text = dataGridUsers.CurrentRow.Cells[0].Value.ToString();
-                User user = database.GetUserById(Convert.ToInt32(dataGridUsers.CurrentRow.Cells[0].Value));
+               User user = database.GetUserById(Convert.ToInt32(valUserId.Text));
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
                 valClass.Text = user.classe;
-
+                
                 Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
+               
             }
             else
             {
