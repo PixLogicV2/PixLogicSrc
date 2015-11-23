@@ -11,7 +11,6 @@ namespace PixLogic.DAL
     [Table("Item")]
     public class  Item : Reservable
     {
-        public String name { get; set; }
         public String description { get; set; }
         public bool dispo { get; set; }
         public float price { get; set; }

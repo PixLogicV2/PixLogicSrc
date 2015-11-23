@@ -15,5 +15,6 @@ namespace PixLogic.DAL
 
         }
         public int ReservableId { get; set; }
+        public String name { get; set; }
     }
 }
