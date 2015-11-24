@@ -281,10 +281,13 @@
     <None Include="Resources\aa.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\reserver.png" />
+    <None Include="Resources\filter.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\filter.png" />
+    <None Include="Resources\emprunter2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reinit_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

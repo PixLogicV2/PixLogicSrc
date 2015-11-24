@@ -24,9 +24,14 @@ namespace PixLogic
             if (MainWindow.START)
             {
                 database = Helper.database;
-                setRadioButton();
-                setTableReservations(database.GetAllReservations());
+                start();
             }
+        }
+
+        private void start()
+        {
+            setRadioButton();
+            setTableReservations(database.GetAllReservations());
         }
         public void setTableReservations(List<Reservation> l)
         {
@@ -35,7 +40,7 @@ namespace PixLogic
             foreach (Reservation reser in list)
             {
                 dataGridReservations.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name,
-                    reser.beginDateReservation, reser.endDateReservation);
+                    reser.beginDateReservation.Value.ToString("d"), reser.endDateReservation.Value.ToString("d"));
             }
 
             if (dataGridReservations.RowCount > 0)
@@ -190,6 +195,18 @@ namespace PixLogic
         private void buttonCancelReserv_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureReinit_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureReinit, "Réinitialiser le filtre.");
+            pictureReinit.Cursor = Cursors.Hand;
+        }
+
+        private void pictureReinit_Click(object sender, EventArgs e)
+        {
+            start();
         }
     }
 }
