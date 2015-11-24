@@ -55,7 +55,7 @@
             this.labelDateFin = new System.Windows.Forms.Label();
             this.labelListReservation = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panFiltres = new System.Windows.Forms.Panel();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panFiltres.SuspendLayout();
             this.SuspendLayout();
             // 
             // panTableUsers
@@ -352,38 +352,39 @@
             this.labelNews.TabIndex = 43;
             this.labelNews.Text = "Infos";
             // 
-            // panel1
+            // panFiltres
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.buttonFilter);
-            this.panel1.Controls.Add(this.checkBoxPack);
-            this.panel1.Controls.Add(this.labelTypeElementFiltre);
-            this.panel1.Controls.Add(this.checkBoxItem);
-            this.panel1.Controls.Add(this.radioAll);
-            this.panel1.Controls.Add(this.dateTimeEnd);
-            this.panel1.Controls.Add(this.dateTimeBegin);
-            this.panel1.Controls.Add(this.radioBetween);
-            this.panel1.Controls.Add(this.radioOfPastSevenDays);
-            this.panel1.Controls.Add(this.labelListeFiltre);
-            this.panel1.Controls.Add(this.radioToday);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Location = new System.Drawing.Point(427, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 285);
-            this.panel1.TabIndex = 43;
+            this.panFiltres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panFiltres.Controls.Add(this.buttonFilter);
+            this.panFiltres.Controls.Add(this.checkBoxPack);
+            this.panFiltres.Controls.Add(this.labelTypeElementFiltre);
+            this.panFiltres.Controls.Add(this.checkBoxItem);
+            this.panFiltres.Controls.Add(this.radioAll);
+            this.panFiltres.Controls.Add(this.dateTimeEnd);
+            this.panFiltres.Controls.Add(this.dateTimeBegin);
+            this.panFiltres.Controls.Add(this.radioBetween);
+            this.panFiltres.Controls.Add(this.radioOfPastSevenDays);
+            this.panFiltres.Controls.Add(this.labelListeFiltre);
+            this.panFiltres.Controls.Add(this.radioToday);
+            this.panFiltres.Controls.Add(this.label8);
+            this.panFiltres.Location = new System.Drawing.Point(427, 3);
+            this.panFiltres.Name = "panFiltres";
+            this.panFiltres.Size = new System.Drawing.Size(256, 285);
+            this.panFiltres.TabIndex = 43;
             // 
             // buttonFilter
             // 
             this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
             this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFilter.Location = new System.Drawing.Point(90, 254);
+            this.buttonFilter.Location = new System.Drawing.Point(36, 254);
             this.buttonFilter.Name = "buttonFilter";
             this.buttonFilter.Size = new System.Drawing.Size(67, 26);
             this.buttonFilter.TabIndex = 47;
             this.buttonFilter.Text = "Filtrer";
             this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // checkBoxPack
             // 
@@ -556,7 +557,7 @@
             this.Controls.Add(this.labelFiltres);
             this.Controls.Add(this.buttonCancelReserv);
             this.Controls.Add(this.buttonModif);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panFiltres);
             this.Controls.Add(this.labelNews);
             this.Controls.Add(this.buttonEmprunt);
             this.Controls.Add(this.labelListReservation);
@@ -570,8 +571,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panFiltres.ResumeLayout(false);
+            this.panFiltres.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,7 +602,7 @@
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.Label labelNameUser;
         private System.Windows.Forms.Label labelNews;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panFiltres;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonModif;
         private System.Windows.Forms.Button buttonCancelReserv;

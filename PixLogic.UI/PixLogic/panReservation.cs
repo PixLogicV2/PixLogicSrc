@@ -24,6 +24,7 @@ namespace PixLogic
             if (MainWindow.START)
             {
                 database = Helper.database;
+                setRadioButton();
                 setTableReservations(database.GetAllReservations());
             }
         }
@@ -90,11 +91,87 @@ namespace PixLogic
                 setNewsReservations();
         }
 
-        private void buttonFiltrer_Click(object sender, EventArgs e)
+        private void buttonFilter_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Date debut: {0}\nDate fin: {1}", dateTimeBegin.Text, dateTimeEnd.Text);
-            List<Reservation> list = database.GetAllReservationsByDate(DateTime.Parse(dateTimeBegin.Text), DateTime.Parse(dateTimeEnd.Text));
+            filtrer();
+        }
+
+        private void addEventRadioButton()
+        {
+            foreach(Control c in panFiltres.Controls)
+            {
+                if(c.GetType().Equals(radioAll.GetType()))
+                {
+                    c.MouseClick += ClickRadioButton;
+                }
+            }
+        }
+        private void ClickRadioButton(object sender, EventArgs e)
+        {
+            if(((RadioButton)sender).Name.ToString().Equals("radioBetween"))
+                enableDateTime();
+            else
+                disableDateTime();
+        }
+
+        private void disableDateTime()
+        {
+            dateTimeBegin.Enabled = false;
+            dateTimeEnd.Enabled = false;
+        }
+        private void enableDateTime()
+        {
+            dateTimeBegin.Enabled = true;
+            dateTimeEnd.Enabled = true;
+        }
+
+        private void setRadioButton()
+        {
+            addEventRadioButton();
+            radioAll.Checked = true;
+            disableDateTime();
+        }
+
+        private void filtrer()
+        {
+            DateTime debut = new DateTime();
+            DateTime fin = new DateTime();
+            List<Reservation> list = new List<Reservation>();
+
+            if (radioToday.Checked)
+            {
+                debut = DateTime.Now;
+                fin = debut;
+            }
+            else if (radioOfPastSevenDays.Checked)
+            {
+                debut = DateTime.Now;
+                //fin
+            }
+            else if (radioBetween.Checked)
+            {
+                debut = DateTime.Parse(dateTimeBegin.Text);
+                debut = DateTime.Parse(dateTimeBegin.Text);
+            }
+            else if (radioAll.Checked)
+                list = database.GetAllReservations();
+
+
+            if (checkBoxItem.Checked && checkBoxPack.Checked)
+                list = database.GetAllReservationsByDate(debut, fin);
+
+            else if (checkBoxItem.Checked || checkBoxPack.Checked)
+            {
+                if (checkBoxPack.Checked)
+                    list = database.GetAllPackReservations(list);
+                else
+                    list = database.GetAllItemReservations(list);
+            }
+            else
+                list = new List<Reservation>();
+
             setTableReservations(list);
         }
+      
     }
 }
