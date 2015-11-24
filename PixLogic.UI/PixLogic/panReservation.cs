@@ -129,6 +129,8 @@ namespace PixLogic
         {
             addEventRadioButton();
             radioAll.Checked = true;
+            checkBoxItem.Checked = true;
+            checkBoxPack.Checked = true;
             disableDateTime();
         }
 
@@ -138,36 +140,43 @@ namespace PixLogic
             DateTime fin = new DateTime();
             List<Reservation> list = new List<Reservation>();
 
-            if (radioToday.Checked)
+            if (radioAll.Checked)
             {
-                debut = DateTime.Now;
+                list = database.GetAllReservations();
+            }
+
+            else if (radioToday.Checked)
+            {
+                debut = DateTime.Today;
                 fin = debut;
+                list = database.GetAllReservationsByDate(debut, fin);
             }
             else if (radioOfPastSevenDays.Checked)
             {
-                debut = DateTime.Now;
-                //fin
+                fin = DateTime.Today;
+                debut = fin.AddDays(-7);
+                list = database.GetAllReservationsByDate(debut, fin);
             }
             else if (radioBetween.Checked)
             {
                 debut = DateTime.Parse(dateTimeBegin.Text);
-                debut = DateTime.Parse(dateTimeBegin.Text);
-            }
-            else if (radioAll.Checked)
-                list = database.GetAllReservations();
-
-
-            if (checkBoxItem.Checked && checkBoxPack.Checked)
+                fin = DateTime.Parse(dateTimeEnd.Text);
                 list = database.GetAllReservationsByDate(debut, fin);
 
-            else if (checkBoxItem.Checked || checkBoxPack.Checked)
+            }
+
+
+            
+
+            if ((checkBoxItem.Checked && !checkBoxPack.Checked) || (checkBoxPack.Checked && !checkBoxItem.Checked))
             {
                 if (checkBoxPack.Checked)
                     list = database.GetAllPackReservations(list);
                 else
                     list = database.GetAllItemReservations(list);
+                Console.WriteLine("DANS LE OUI ou PAS");
             }
-            else
+            else if(!checkBoxPack.Checked && !checkBoxItem.Checked)
                 list = new List<Reservation>();
 
             setTableReservations(list);
