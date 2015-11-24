@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panTableUsers = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridReservations = new System.Windows.Forms.DataGridView();
-            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameItemReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panNews = new System.Windows.Forms.Panel();
             this.labelDateDebut = new System.Windows.Forms.Label();
             this.valDateDebut = new System.Windows.Forms.Label();
@@ -46,10 +42,39 @@
             this.labelTel = new System.Windows.Forms.Label();
             this.labelDateFin = new System.Windows.Forms.Label();
             this.labelListReservation = new System.Windows.Forms.Label();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.labelNews = new System.Windows.Forms.Label();
+            this.labelNameUser = new System.Windows.Forms.Label();
+            this.labelType = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debutResersation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonCancelReserv = new System.Windows.Forms.Button();
+            this.buttonModif = new System.Windows.Forms.Button();
+            this.buttonEmprunt = new System.Windows.Forms.Button();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
+            this.labelFiltres = new System.Windows.Forms.Label();
+            this.radioToday = new System.Windows.Forms.RadioButton();
+            this.labelListeFiltre = new System.Windows.Forms.Label();
+            this.radioOfPastSevenDays = new System.Windows.Forms.RadioButton();
+            this.radioBetween = new System.Windows.Forms.RadioButton();
+            this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
+            this.radioAll = new System.Windows.Forms.RadioButton();
+            this.labelTypeDansFiltre = new System.Windows.Forms.Label();
+            this.checkBoxItem = new System.Windows.Forms.CheckBox();
+            this.checkBoxPack = new System.Windows.Forms.CheckBox();
+            this.valNomUser = new System.Windows.Forms.Label();
+            this.valNomReservable = new System.Windows.Forms.Label();
+            this.valType = new System.Windows.Forms.Label();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panTableUsers
@@ -59,38 +84,25 @@
             this.panTableUsers.Controls.Add(this.textBoxSearch);
             this.panTableUsers.Controls.Add(this.labelSearch);
             this.panTableUsers.Controls.Add(this.dataGridReservations);
-            this.panTableUsers.Location = new System.Drawing.Point(7, 4);
-            this.panTableUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panTableUsers.Location = new System.Drawing.Point(9, 3);
             this.panTableUsers.Name = "panTableUsers";
-            this.panTableUsers.Size = new System.Drawing.Size(262, 524);
+            this.panTableUsers.Size = new System.Drawing.Size(412, 285);
             this.panTableUsers.TabIndex = 23;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(223, 20);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(89, 21);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearch.Location = new System.Drawing.Point(74, 16);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(96, 20);
             this.textBoxSearch.TabIndex = 2;
             // 
             // labelSearch
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(3, 23);
-            this.labelSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSearch.Location = new System.Drawing.Point(9, 18);
             this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(78, 19);
+            this.labelSearch.Size = new System.Drawing.Size(66, 13);
             this.labelSearch.TabIndex = 1;
             this.labelSearch.Text = "Recherche :";
             // 
@@ -101,44 +113,164 @@
             this.dataGridReservations.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridReservations.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridReservations.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridReservations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdUser,
             this.NameUserReservation,
-            this.NameItemReservation});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReservations.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridReservations.Location = new System.Drawing.Point(0, 58);
-            this.dataGridReservations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameReservable,
+            this.debutResersation,
+            this.finReservation});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReservations.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridReservations.Location = new System.Drawing.Point(-1, 47);
             this.dataGridReservations.Name = "dataGridReservations";
             this.dataGridReservations.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservations.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservations.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridReservations.RowHeadersVisible = false;
             this.dataGridReservations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridReservations.Size = new System.Drawing.Size(259, 460);
+            this.dataGridReservations.Size = new System.Drawing.Size(412, 234);
             this.dataGridReservations.TabIndex = 0;
+            // 
+            // panNews
+            // 
+            this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panNews.Controls.Add(this.valType);
+            this.panNews.Controls.Add(this.valNomReservable);
+            this.panNews.Controls.Add(this.valNomUser);
+            this.panNews.Controls.Add(this.label1);
+            this.panNews.Controls.Add(this.labelType);
+            this.panNews.Controls.Add(this.labelNameUser);
+            this.panNews.Controls.Add(this.labelDateDebut);
+            this.panNews.Controls.Add(this.valDateDebut);
+            this.panNews.Controls.Add(this.valDateFin);
+            this.panNews.Controls.Add(this.labelTel);
+            this.panNews.Controls.Add(this.labelDateFin);
+            this.panNews.Location = new System.Drawing.Point(9, 298);
+            this.panNews.Name = "panNews";
+            this.panNews.Size = new System.Drawing.Size(674, 96);
+            this.panNews.TabIndex = 28;
+            // 
+            // labelDateDebut
+            // 
+            this.labelDateDebut.AutoSize = true;
+            this.labelDateDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateDebut.Location = new System.Drawing.Point(365, 16);
+            this.labelDateDebut.Name = "labelDateDebut";
+            this.labelDateDebut.Size = new System.Drawing.Size(71, 13);
+            this.labelDateDebut.TabIndex = 6;
+            this.labelDateDebut.Text = "Date début :";
+            // 
+            // valDateDebut
+            // 
+            this.valDateDebut.AutoSize = true;
+            this.valDateDebut.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDateDebut.Location = new System.Drawing.Point(455, 12);
+            this.valDateDebut.Name = "valDateDebut";
+            this.valDateDebut.Size = new System.Drawing.Size(13, 17);
+            this.valDateDebut.TabIndex = 39;
+            this.valDateDebut.Text = "-";
+            this.valDateDebut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valDateFin
+            // 
+            this.valDateFin.AutoSize = true;
+            this.valDateFin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDateFin.Location = new System.Drawing.Point(455, 41);
+            this.valDateFin.Name = "valDateFin";
+            this.valDateFin.Size = new System.Drawing.Size(13, 17);
+            this.valDateFin.TabIndex = 3;
+            this.valDateFin.Text = "-";
+            // 
+            // labelTel
+            // 
+            this.labelTel.AutoSize = true;
+            this.labelTel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTel.Location = new System.Drawing.Point(0, 68);
+            this.labelTel.Name = "labelTel";
+            this.labelTel.Size = new System.Drawing.Size(0, 13);
+            this.labelTel.TabIndex = 1;
+            // 
+            // labelDateFin
+            // 
+            this.labelDateFin.AutoSize = true;
+            this.labelDateFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateFin.Location = new System.Drawing.Point(365, 42);
+            this.labelDateFin.Name = "labelDateFin";
+            this.labelDateFin.Size = new System.Drawing.Size(70, 13);
+            this.labelDateFin.TabIndex = 0;
+            this.labelDateFin.Text = "Date de fin :";
+            // 
+            // labelListReservation
+            // 
+            this.labelListReservation.AutoSize = true;
+            this.labelListReservation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListReservation.Location = new System.Drawing.Point(30, -1);
+            this.labelListReservation.Name = "labelListReservation";
+            this.labelListReservation.Size = new System.Drawing.Size(118, 13);
+            this.labelListReservation.TabIndex = 41;
+            this.labelListReservation.Text = "Liste des reservations";
+            // 
+            // labelNews
+            // 
+            this.labelNews.AutoSize = true;
+            this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNews.Location = new System.Drawing.Point(31, 293);
+            this.labelNews.Name = "labelNews";
+            this.labelNews.Size = new System.Drawing.Size(33, 13);
+            this.labelNews.TabIndex = 43;
+            this.labelNews.Text = "Infos";
+            // 
+            // labelNameUser
+            // 
+            this.labelNameUser.AutoSize = true;
+            this.labelNameUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameUser.Location = new System.Drawing.Point(3, 16);
+            this.labelNameUser.Name = "labelNameUser";
+            this.labelNameUser.Size = new System.Drawing.Size(92, 13);
+            this.labelNameUser.TabIndex = 40;
+            this.labelNameUser.Text = "Nom utilisateur :";
+            // 
+            // labelType
+            // 
+            this.labelType.AutoSize = true;
+            this.labelType.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.Location = new System.Drawing.Point(3, 68);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(35, 13);
+            this.labelType.TabIndex = 41;
+            this.labelType.Text = "Type :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Nom du reservable :";
             // 
             // IdUser
             // 
@@ -152,127 +284,277 @@
             this.NameUserReservation.HeaderText = "Utilisateur";
             this.NameUserReservation.Name = "NameUserReservation";
             this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 77;
+            this.NameUserReservation.Width = 82;
             // 
-            // NameItemReservation
+            // NameReservable
             // 
-            this.NameItemReservation.HeaderText = "Item";
-            this.NameItemReservation.Name = "NameItemReservation";
-            this.NameItemReservation.ReadOnly = true;
-            this.NameItemReservation.Width = 60;
+            this.NameReservable.HeaderText = "Reservable";
+            this.NameReservable.Name = "NameReservable";
+            this.NameReservable.ReadOnly = true;
+            this.NameReservable.Width = 90;
             // 
-            // panNews
+            // debutResersation
             // 
-            this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panNews.Controls.Add(this.labelDateDebut);
-            this.panNews.Controls.Add(this.valDateDebut);
-            this.panNews.Controls.Add(this.valDateFin);
-            this.panNews.Controls.Add(this.labelTel);
-            this.panNews.Controls.Add(this.labelDateFin);
-            this.panNews.Location = new System.Drawing.Point(303, 225);
-            this.panNews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panNews.Name = "panNews";
-            this.panNews.Size = new System.Drawing.Size(351, 139);
-            this.panNews.TabIndex = 28;
+            this.debutResersation.HeaderText = "Début Réservation";
+            this.debutResersation.Name = "debutResersation";
+            this.debutResersation.ReadOnly = true;
+            this.debutResersation.Width = 90;
             // 
-            // labelDateDebut
+            // finReservation
             // 
-            this.labelDateDebut.AutoSize = true;
-            this.labelDateDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateDebut.Location = new System.Drawing.Point(0, 20);
-            this.labelDateDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDateDebut.Name = "labelDateDebut";
-            this.labelDateDebut.Size = new System.Drawing.Size(85, 19);
-            this.labelDateDebut.TabIndex = 6;
-            this.labelDateDebut.Text = "Date début :";
+            this.finReservation.HeaderText = "Fin Reservation";
+            this.finReservation.Name = "finReservation";
+            this.finReservation.ReadOnly = true;
+            this.finReservation.Width = 90;
             // 
-            // valDateDebut
+            // panel1
             // 
-            this.valDateDebut.AutoSize = true;
-            this.valDateDebut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateDebut.Location = new System.Drawing.Point(96, 17);
-            this.valDateDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.valDateDebut.Name = "valDateDebut";
-            this.valDateDebut.Size = new System.Drawing.Size(17, 23);
-            this.valDateDebut.TabIndex = 39;
-            this.valDateDebut.Text = "-";
-            this.valDateDebut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.checkBoxPack);
+            this.panel1.Controls.Add(this.checkBoxItem);
+            this.panel1.Controls.Add(this.labelTypeDansFiltre);
+            this.panel1.Controls.Add(this.radioAll);
+            this.panel1.Controls.Add(this.dateTimeEnd);
+            this.panel1.Controls.Add(this.dateTimeBegin);
+            this.panel1.Controls.Add(this.radioBetween);
+            this.panel1.Controls.Add(this.radioOfPastSevenDays);
+            this.panel1.Controls.Add(this.labelListeFiltre);
+            this.panel1.Controls.Add(this.radioToday);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(427, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(256, 285);
+            this.panel1.TabIndex = 43;
             // 
-            // valDateFin
+            // label8
             // 
-            this.valDateFin.AutoSize = true;
-            this.valDateFin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateFin.Location = new System.Drawing.Point(96, 50);
-            this.valDateFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.valDateFin.Name = "valDateFin";
-            this.valDateFin.Size = new System.Drawing.Size(17, 23);
-            this.valDateFin.TabIndex = 3;
-            this.valDateFin.Text = "-";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(0, 68);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 1;
             // 
-            // labelTel
+            // buttonCancelReserv
             // 
-            this.labelTel.AutoSize = true;
-            this.labelTel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTel.Location = new System.Drawing.Point(0, 84);
-            this.labelTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTel.Name = "labelTel";
-            this.labelTel.Size = new System.Drawing.Size(0, 19);
-            this.labelTel.TabIndex = 1;
+            this.buttonCancelReserv.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelReserv.Image = global::PixLogic.Properties.Resources.supprimer_icon;
+            this.buttonCancelReserv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCancelReserv.Location = new System.Drawing.Point(414, 405);
+            this.buttonCancelReserv.Name = "buttonCancelReserv";
+            this.buttonCancelReserv.Size = new System.Drawing.Size(95, 32);
+            this.buttonCancelReserv.TabIndex = 45;
+            this.buttonCancelReserv.Text = "Annuler";
+            this.buttonCancelReserv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCancelReserv.UseVisualStyleBackColor = true;
             // 
-            // labelDateFin
+            // buttonModif
             // 
-            this.labelDateFin.AutoSize = true;
-            this.labelDateFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateFin.Location = new System.Drawing.Point(0, 52);
-            this.labelDateFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDateFin.Name = "labelDateFin";
-            this.labelDateFin.Size = new System.Drawing.Size(83, 19);
-            this.labelDateFin.TabIndex = 0;
-            this.labelDateFin.Text = "Date de fin :";
+            this.buttonModif.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModif.Image = global::PixLogic.Properties.Resources.modifier_icon;
+            this.buttonModif.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModif.Location = new System.Drawing.Point(284, 405);
+            this.buttonModif.Name = "buttonModif";
+            this.buttonModif.Size = new System.Drawing.Size(95, 32);
+            this.buttonModif.TabIndex = 44;
+            this.buttonModif.Text = "Modifier";
+            this.buttonModif.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonModif.UseVisualStyleBackColor = true;
             // 
-            // labelListReservation
+            // buttonEmprunt
             // 
-            this.labelListReservation.AutoSize = true;
-            this.labelListReservation.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListReservation.Location = new System.Drawing.Point(32, -1);
-            this.labelListReservation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelListReservation.Name = "labelListReservation";
-            this.labelListReservation.Size = new System.Drawing.Size(153, 19);
-            this.labelListReservation.TabIndex = 41;
-            this.labelListReservation.Text = "Liste des reservations";
+            this.buttonEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEmprunt.Image = global::PixLogic.Properties.Resources.reserver;
+            this.buttonEmprunt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEmprunt.Location = new System.Drawing.Point(154, 405);
+            this.buttonEmprunt.Name = "buttonEmprunt";
+            this.buttonEmprunt.Size = new System.Drawing.Size(95, 32);
+            this.buttonEmprunt.TabIndex = 42;
+            this.buttonEmprunt.Text = "Emprunter";
+            this.buttonEmprunt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonEmprunt.UseVisualStyleBackColor = true;
+            this.buttonEmprunt.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // buttonAdd
+            // buttonCancelSearch
             // 
-            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
-            this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(285, 492);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(104, 36);
-            this.buttonAdd.TabIndex = 42;
-            this.buttonAdd.Text = "Ajouter";
-            this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            // 
+            // labelFiltres
+            // 
+            this.labelFiltres.AutoSize = true;
+            this.labelFiltres.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFiltres.Location = new System.Drawing.Point(446, -1);
+            this.labelFiltres.Name = "labelFiltres";
+            this.labelFiltres.Size = new System.Drawing.Size(38, 13);
+            this.labelFiltres.TabIndex = 46;
+            this.labelFiltres.Text = "Filtres";
+            // 
+            // radioToday
+            // 
+            this.radioToday.AutoSize = true;
+            this.radioToday.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioToday.Location = new System.Drawing.Point(21, 38);
+            this.radioToday.Name = "radioToday";
+            this.radioToday.Size = new System.Drawing.Size(90, 17);
+            this.radioToday.TabIndex = 2;
+            this.radioToday.TabStop = true;
+            this.radioToday.Text = "D\'aujourdhui";
+            this.radioToday.UseVisualStyleBackColor = true;
+            // 
+            // labelListeFiltre
+            // 
+            this.labelListeFiltre.AutoSize = true;
+            this.labelListeFiltre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListeFiltre.Location = new System.Drawing.Point(3, 19);
+            this.labelListeFiltre.Name = "labelListeFiltre";
+            this.labelListeFiltre.Size = new System.Drawing.Size(133, 15);
+            this.labelListeFiltre.TabIndex = 3;
+            this.labelListeFiltre.Text = "Liste des réservations :";
+            // 
+            // radioOfPastSevenDays
+            // 
+            this.radioOfPastSevenDays.AutoSize = true;
+            this.radioOfPastSevenDays.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioOfPastSevenDays.Location = new System.Drawing.Point(21, 61);
+            this.radioOfPastSevenDays.Name = "radioOfPastSevenDays";
+            this.radioOfPastSevenDays.Size = new System.Drawing.Size(103, 17);
+            this.radioOfPastSevenDays.TabIndex = 4;
+            this.radioOfPastSevenDays.TabStop = true;
+            this.radioOfPastSevenDays.Text = "Depuis 07 jours";
+            this.radioOfPastSevenDays.UseVisualStyleBackColor = true;
+            // 
+            // radioBetween
+            // 
+            this.radioBetween.AutoSize = true;
+            this.radioBetween.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBetween.Location = new System.Drawing.Point(21, 84);
+            this.radioBetween.Name = "radioBetween";
+            this.radioBetween.Size = new System.Drawing.Size(57, 17);
+            this.radioBetween.TabIndex = 5;
+            this.radioBetween.TabStop = true;
+            this.radioBetween.Text = "Entre :";
+            this.radioBetween.UseVisualStyleBackColor = true;
+            // 
+            // dateTimeBegin
+            // 
+            this.dateTimeBegin.Location = new System.Drawing.Point(51, 107);
+            this.dateTimeBegin.Name = "dateTimeBegin";
+            this.dateTimeBegin.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeBegin.TabIndex = 6;
+            // 
+            // dateTimeEnd
+            // 
+            this.dateTimeEnd.Location = new System.Drawing.Point(51, 138);
+            this.dateTimeEnd.Name = "dateTimeEnd";
+            this.dateTimeEnd.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeEnd.TabIndex = 7;
+            // 
+            // radioAll
+            // 
+            this.radioAll.AutoSize = true;
+            this.radioAll.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioAll.Location = new System.Drawing.Point(21, 172);
+            this.radioAll.Name = "radioAll";
+            this.radioAll.Size = new System.Drawing.Size(48, 17);
+            this.radioAll.TabIndex = 8;
+            this.radioAll.TabStop = true;
+            this.radioAll.Text = "Tous";
+            this.radioAll.UseVisualStyleBackColor = true;
+            // 
+            // labelTypeDansFiltre
+            // 
+            this.labelTypeDansFiltre.AutoSize = true;
+            this.labelTypeDansFiltre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTypeDansFiltre.Location = new System.Drawing.Point(3, 203);
+            this.labelTypeDansFiltre.Name = "labelTypeDansFiltre";
+            this.labelTypeDansFiltre.Size = new System.Drawing.Size(100, 15);
+            this.labelTypeDansFiltre.TabIndex = 9;
+            this.labelTypeDansFiltre.Text = "Type d\'élément :";
+            // 
+            // checkBoxItem
+            // 
+            this.checkBoxItem.AutoSize = true;
+            this.checkBoxItem.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxItem.Location = new System.Drawing.Point(21, 229);
+            this.checkBoxItem.Name = "checkBoxItem";
+            this.checkBoxItem.Size = new System.Drawing.Size(73, 17);
+            this.checkBoxItem.TabIndex = 10;
+            this.checkBoxItem.Text = "Matériels";
+            this.checkBoxItem.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPack
+            // 
+            this.checkBoxPack.AutoSize = true;
+            this.checkBoxPack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPack.Location = new System.Drawing.Point(20, 252);
+            this.checkBoxPack.Name = "checkBoxPack";
+            this.checkBoxPack.Size = new System.Drawing.Size(54, 17);
+            this.checkBoxPack.TabIndex = 11;
+            this.checkBoxPack.Text = "Packs";
+            this.checkBoxPack.UseVisualStyleBackColor = true;
+            // 
+            // valNomUser
+            // 
+            this.valNomUser.AutoSize = true;
+            this.valNomUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valNomUser.Location = new System.Drawing.Point(142, 13);
+            this.valNomUser.Name = "valNomUser";
+            this.valNomUser.Size = new System.Drawing.Size(13, 17);
+            this.valNomUser.TabIndex = 43;
+            this.valNomUser.Text = "-";
+            this.valNomUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valNomReservable
+            // 
+            this.valNomReservable.AutoSize = true;
+            this.valNomReservable.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valNomReservable.Location = new System.Drawing.Point(142, 39);
+            this.valNomReservable.Name = "valNomReservable";
+            this.valNomReservable.Size = new System.Drawing.Size(13, 17);
+            this.valNomReservable.TabIndex = 44;
+            this.valNomReservable.Text = "-";
+            this.valNomReservable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valType
+            // 
+            this.valType.AutoSize = true;
+            this.valType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valType.Location = new System.Drawing.Point(142, 65);
+            this.valType.Name = "valType";
+            this.valType.Size = new System.Drawing.Size(13, 17);
+            this.valType.TabIndex = 45;
+            this.valType.Text = "-";
+            this.valType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panReservation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.labelFiltres);
+            this.Controls.Add(this.buttonCancelReserv);
+            this.Controls.Add(this.buttonModif);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelNews);
+            this.Controls.Add(this.buttonEmprunt);
             this.Controls.Add(this.labelListReservation);
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableUsers);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "panReservation";
-            this.Size = new System.Drawing.Size(915, 554);
+            this.Size = new System.Drawing.Size(686, 450);
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,9 +567,6 @@
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridReservations;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameItemReservation;
         private System.Windows.Forms.Panel panNews;
         private System.Windows.Forms.Label labelDateDebut;
         public System.Windows.Forms.Label valDateDebut;
@@ -295,6 +574,33 @@
         private System.Windows.Forms.Label labelTel;
         private System.Windows.Forms.Label labelDateFin;
         private System.Windows.Forms.Label labelListReservation;
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonEmprunt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn debutResersation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn finReservation;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelType;
+        private System.Windows.Forms.Label labelNameUser;
+        private System.Windows.Forms.Label labelNews;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonModif;
+        private System.Windows.Forms.Button buttonCancelReserv;
+        private System.Windows.Forms.Label labelFiltres;
+        private System.Windows.Forms.RadioButton radioAll;
+        private System.Windows.Forms.DateTimePicker dateTimeEnd;
+        private System.Windows.Forms.DateTimePicker dateTimeBegin;
+        private System.Windows.Forms.RadioButton radioBetween;
+        private System.Windows.Forms.RadioButton radioOfPastSevenDays;
+        private System.Windows.Forms.Label labelListeFiltre;
+        private System.Windows.Forms.RadioButton radioToday;
+        private System.Windows.Forms.CheckBox checkBoxPack;
+        private System.Windows.Forms.CheckBox checkBoxItem;
+        private System.Windows.Forms.Label labelTypeDansFiltre;
+        public System.Windows.Forms.Label valType;
+        public System.Windows.Forms.Label valNomReservable;
+        public System.Windows.Forms.Label valNomUser;
     }
 }
