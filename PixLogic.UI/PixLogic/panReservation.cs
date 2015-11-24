@@ -77,5 +77,24 @@ namespace PixLogic
             emprunt
             */
         }
+
+        private void dataGridReservations_Click(object sender, EventArgs e)
+        {
+            if (dataGridReservations.RowCount > 0)
+                setNewsReservations();
+        }
+
+        private void dataGridReservations_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridReservations.RowCount > 0)
+                setNewsReservations();
+        }
+
+        private void buttonFiltrer_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Date debut: {0}\nDate fin: {1}", dateTimeBegin.Text, dateTimeEnd.Text);
+            List<Reservation> list = database.GetAllReservationsByDate(DateTime.Parse(dateTimeBegin.Text), DateTime.Parse(dateTimeEnd.Text));
+            setTableReservations(list);
+        }
     }
 }

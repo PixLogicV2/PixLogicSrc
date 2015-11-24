@@ -20,7 +20,7 @@ namespace PixLogic.DAL
                                                   in context.Reservations.Include(c => c.reservable).Include(c => c.manager).Include(c => c.user)
                                                   where Reservation.beginDateEmprunt == null
                                                   where DateTime.Compare(Reservation.beginDateReservation.Value, dateDebut) >= 0
-                                                  where DateTime.Compare(Reservation.endDateEmprunt.Value, dateFin) < 0
+                                                  where DateTime.Compare(Reservation.endDateReservation.Value, dateFin) <= 0
                                                   select Reservation;
             List<Reservation> list = new List<Reservation>();
             foreach (var prod in reservQuery)
