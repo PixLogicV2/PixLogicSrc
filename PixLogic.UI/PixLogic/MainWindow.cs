@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixLogic.DAL;
+using System;
 using System.Windows.Forms;
 
 namespace PixLogic
@@ -10,6 +11,7 @@ namespace PixLogic
         private string textMateriel = "         MATERIEL";
         private string textReservation = "         RESERVATION";
         public static bool START = false;
+        private Database database = Helper.database;
         public MainWindow()
         {
             InitializeComponent();
@@ -67,6 +69,7 @@ namespace PixLogic
                     panItemPack1.Visible = false;
                     panUsers1.Visible = false;
                    panReservation1.Visible = true;
+                    panReservation1.setTableReservations(database.GetAllReservations());
                 }
             }
 

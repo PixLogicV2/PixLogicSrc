@@ -65,6 +65,7 @@
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
+    <Compile Include="GetPackById.cs" />
     <Compile Include="GetPackByName.cs" />
     <Compile Include="GetReservationById.cs" />
     <Compile Include="GetUserById.cs" />

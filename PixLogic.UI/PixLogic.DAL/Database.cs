@@ -53,6 +53,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_item_by_id").getItemById(itemId);
         }
+        public Pack GetPackById(int itemId)
+        {
+            return container.get("get_pack_by_id").getPackById(itemId);
+        }
         public Pack GetPackByName(string packName)
         {
             return container.get("get_pack_by_name").getPackByName(packName);
@@ -124,7 +128,7 @@ namespace PixLogic.DAL
         //***************
 
         public void AddReservation(bool isPack, DateTime? beginDateReservation, DateTime? endDateReservation,
-            DateTime? beginDateEmprunt, DateTime? endDateEmprunt, User user, Item element, Manager manager)
+            DateTime? beginDateEmprunt, DateTime? endDateEmprunt, User user, Reservable element, Manager manager)
         {
             container.get("add_reservation").addReservation(container.get("reservation_factory").build(isPack, beginDateReservation, endDateReservation,
                                                                                                         beginDateEmprunt, endDateEmprunt, user, element, manager));

@@ -26,6 +26,7 @@ namespace PixLogic
         public void setTableReservations(List<Reservation> l)
         {
             List<Reservation> list = l;
+            dataGridReservations.Rows.Clear();
             foreach (Reservation reser in list)
             {
                 dataGridReservations.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name);

@@ -14,21 +14,31 @@ namespace PixLogic
     public partial class WindowReservation : Form
     {
         private Database database = Helper.database;
-        private panItemPack pan;
+        private panItemPack panItem;
         private bool isPack;
+        private WindowPackManager panPack;
 
         public WindowReservation(panItemPack p)
         {
             InitializeComponent();
             this.Text = "Nouvelle reservation";
-            pan = p;
+            panItem = p;
         }
         public WindowReservation(panItemPack pa, int itemId,bool Pack)
         {
             InitializeComponent();
             Text = "Nouvelle reservation";
-            pan = pa;
+            panItem = pa;
             valItemId.Text = itemId.ToString();
+            isPack = Pack;
+            setTableUsers(database.GetAllUsers());
+        }
+        public WindowReservation(WindowPackManager pa, int packId, bool Pack)
+        {
+            InitializeComponent();
+            Text = "Nouvelle reservation";
+            panPack = pa;
+            valItemId.Text = packId.ToString();
             isPack = Pack;
             setTableUsers(database.GetAllUsers());
         }
@@ -62,18 +72,25 @@ namespace PixLogic
             DateTime? debutEmprunt = null;
             DateTime? endEmprunt= null;
             Manager manag = null;
-            Item elem = database.GetItemById(int.Parse(valItemId.Text.ToString()));
+            Reservable elem;
+            if (isPack == false)
+            {
+                elem = database.GetItemById(int.Parse(valItemId.Text.ToString()));
+            }
+            else
+            {
+                elem = database.GetPackById(int.Parse(valItemId.Text.ToString()));
+            }
             if (!Helper.fieldsAreEmpty(true, valItemId.Text,valBegin.Text,valEnd.Text))
             {
                 User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
 
                 database.AddReservation(isPack, begin, end, debutEmprunt, endEmprunt, user, elem,manag);
-               
+
                 //Helper.addSuccess();
                 //setTableUsers(database.GetAllUsers());
                 this.Close();
             }
-        }
-        
+        }   
     }
 }

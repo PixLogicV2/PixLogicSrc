@@ -54,12 +54,14 @@ namespace PixLogic
                 buttonModify.Enabled = true;
                 buttonDelete.Enabled = true;
                 buttonTransfert.Enabled = true;
+                buttonReservation.Enabled = true;
             }
             else
             {
                 buttonModify.Enabled = false;
                 buttonDelete.Enabled = false;
                 buttonTransfert.Enabled = false;
+                buttonReservation.Enabled = false;
             }
         }
 

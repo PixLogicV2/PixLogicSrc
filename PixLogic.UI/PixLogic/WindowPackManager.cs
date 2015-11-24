@@ -62,10 +62,9 @@ namespace PixLogic
 
                 Pack packT = database.GetPackByName(valNamePack.Text);
                 valDispo.Text = packT.dispo ? "OUI" : "NON";
-
                 valDescription.Text = packT.description;
-
                 setListItemsOfPack(valNamePack.Text);
+                valPackId.Text = packT.ReservableId.ToString();
             }
             else
             {
@@ -76,6 +75,7 @@ namespace PixLogic
                 valDispo.Text = "-";
                 valDescription.Text = "-";
                 pictureBoxItem.Image = null;
+                valPackId.Text = "-";
             }
         }
 
@@ -149,6 +149,12 @@ namespace PixLogic
         {
             textBoxSearch.Text = "";
             setTablePacks(database.GetAllPacks());
+        }
+
+        private void buttonReservation_Click(object sender, EventArgs e)
+        {
+            WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valPackId.Text), true);
+            windowRes.ShowDialog(this);
         }
     }
 }

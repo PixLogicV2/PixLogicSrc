@@ -16,7 +16,7 @@ namespace PixLogic.DAL
         }
 
         public Reservation build(bool isPack, DateTime? beginDateReservation, DateTime? endDateReservation,
-            DateTime? beginDateEmprunt, DateTime? endDateEmprunt, User user, Item element, Manager manager)
+            DateTime? beginDateEmprunt, DateTime? endDateEmprunt, User user, Reservable element, Manager manager)
         {
             Reservation reservation = new Reservation();
 
