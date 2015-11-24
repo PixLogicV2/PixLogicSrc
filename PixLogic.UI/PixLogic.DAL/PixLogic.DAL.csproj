@@ -62,6 +62,8 @@
     <Compile Include="DeleteReservation.cs" />
     <Compile Include="DeleteUser.cs" />
     <Compile Include="GetAllEmprunts.cs" />
+    <Compile Include="GetAllItemReservations.cs" />
+    <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
     <Compile Include="GetAllReservations.cs" />
     <Compile Include="GetAllReservationsByDate.cs" />
