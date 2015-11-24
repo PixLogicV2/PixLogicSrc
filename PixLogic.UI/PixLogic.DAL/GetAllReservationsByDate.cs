@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-
 namespace PixLogic.DAL
 {
-    public class GetAllReservations
+    public class GetAllReservationsByDate
     {
         private DataContext context;
 
@@ -15,11 +14,13 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Reservation> getAllReservations()
+        public List<Reservation> getAllReservationsByDate(DateTime dateDebut,DateTime dateFin)
         {
             IQueryable<Reservation> reservQuery = from Reservation
                                                   in context.Reservations.Include(c => c.reservable).Include(c => c.manager).Include(c => c.user)
-                                                  where Reservation.beginDateEmprunt ==null 
+                                                  where Reservation.beginDateEmprunt == null
+                                                  where DateTime.Compare(Reservation.beginDateReservation.Value, dateDebut) >= 0
+                                                  where DateTime.Compare(Reservation.endDateEmprunt.Value, dateFin) < 0
                                                   select Reservation;
             List<Reservation> list = new List<Reservation>();
             foreach (var prod in reservQuery)

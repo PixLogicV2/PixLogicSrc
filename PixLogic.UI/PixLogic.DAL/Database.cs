@@ -137,9 +137,25 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_reservations").getAllReservations();
         }
+        public List<Reservation> GetAllReservationsByDate()
+        {
+            return container.get("get_all_reservations_by_date").getAllReservationsByDate();
+        }
+        public List<Reservation> GetAllEmprunts()
+        {
+            return container.get("get_all_emprunts").getAllEmprunts();
+        }
         public Reservation GetReservationById(int id)
         {
             return container.get("get_reservation_by_id").getReservationById(id);
+        }
+        public void DeleteReservation(int id)
+        {
+            container.get("delete_reservation").deleteReservation(id);
+        }
+        public void UpdateReservation(int id,DateTime? DateDebut,DateTime? DateFin)
+        {
+            container.get("update_reservation").updateReservation(id, DateDebut, DateFin);
         }
     }
 }
