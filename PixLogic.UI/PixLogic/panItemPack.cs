@@ -274,7 +274,7 @@ namespace PixLogic
 
         private void buttonReservation_Click(object sender, EventArgs e)
         {
-            WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text),true);
+            WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text),false);
             windowRes.ShowDialog(this);
         }
     }
