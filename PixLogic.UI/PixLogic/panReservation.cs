@@ -181,6 +181,15 @@ namespace PixLogic
 
             setTableReservations(list);
         }
-      
+
+        private void buttonModif_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCancelReserv_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
