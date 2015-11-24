@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using PixLogic.DAL;
 
 namespace PixLogic
@@ -21,18 +22,44 @@ namespace PixLogic
 
         private void ExecuteBtn_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    using (var datacontext = new DataContext())
+            //    {
+            //        var result = datacontext.Database.SqlQuery<string>(QueryRTB.Text).ToList();
+            //        ResultDGV.DataSource = result;
+            //    }
+            //}
+            //catch(Exception exept)
+            //{
+            //    MessageBox.Show(exept.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            var datacontext = new DataContext();
+
+            string connectionString = datacontext.Database.Connection.ConnectionString;
+
+            string query = QueryRTB.Text;
+
             try
             {
-                using (var datacontext = new DataContext())
+                using (SqlConnection connect = new SqlConnection(connectionString))
                 {
-                    var result = datacontext.Database.SqlQuery<string>(QueryRTB.Text).ToList();
-                    ResultDGV.DataSource = result;
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
+
+                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    ResultDGV.DataSource = table;
+
+                    ResultDGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
                 }
             }
-            catch(Exception exept)
+            catch(Exception ex)
             {
-                MessageBox.Show(exept.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            datacontext.Dispose();
         }
     }
 }
