@@ -25,7 +25,7 @@ namespace PixLogic
             {
                 using (var datacontext = new DataContext())
                 {
-                    var result = datacontext.Database.SqlQuery<IEnumerable<string>>(QueryRTB.Text).ToList();
+                    var result = datacontext.Database.SqlQuery<string>(QueryRTB.Text).ToList();
                     ResultDGV.DataSource = result;
                 }
             }
