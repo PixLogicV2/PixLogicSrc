@@ -59,9 +59,12 @@
     <Compile Include="ByteArrayToImage.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeletePack.cs" />
+    <Compile Include="DeleteReservation.cs" />
     <Compile Include="DeleteUser.cs" />
+    <Compile Include="GetAllEmprunts.cs" />
     <Compile Include="GetAllPacks.cs" />
     <Compile Include="GetAllReservations.cs" />
+    <Compile Include="GetAllReservationsByDate.cs" />
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Reservable.cs" />
     <Compile Include="UpdateItem.cs" />
     <Compile Include="UpdatePack.cs" />
+    <Compile Include="UpdateReservation.cs" />
     <Compile Include="UpdateUser.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserFactory.cs" />
