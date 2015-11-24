@@ -9,6 +9,7 @@ namespace PixLogic
         private string textUtilisateur = "         UTILISATEUR";
         private string textMateriel = "         MATERIEL";
         private string textReservation = "         RESERVATION";
+        private string textScript = "         SCRIPT";
         public static bool START = false;
         public MainWindow()
         {
@@ -50,23 +51,33 @@ namespace PixLogic
             if (buttonHelper != null && buttonHelper != button)
             {
                 buttonHelper.ActiveEffectButton();
-                if(button.Text.ToString().Equals(textMateriel))
+                if (button.Text.ToString().Equals(textMateriel))
                 {
+                    panScript1.Visible = false;
                     panUsers1.Visible = false;
                     panItemPack1.Visible = true;
-                   panReservation1.Visible = false;
+                    panReservation1.Visible = false;
                 }
                 else if (button.Text.ToString().Equals(textUtilisateur))
                 {
+                    panScript1.Visible = false;
                     panItemPack1.Visible = false;
                     panUsers1.Visible = true;
-                   panReservation1.Visible = false;
+                    panReservation1.Visible = false;
                 }
                 else if (button.Text.ToString().Equals(textReservation))
                 {
+                    panScript1.Visible = false;
                     panItemPack1.Visible = false;
                     panUsers1.Visible = false;
-                   panReservation1.Visible = true;
+                    panReservation1.Visible = true;
+                }
+                else if (button.Text.ToString().Equals(textScript))
+                {
+                    panScript1.Visible = true;
+                    panItemPack1.Visible = false;
+                    panUsers1.Visible = false;
+                    panReservation1.Visible = false;
                 }
             }
 

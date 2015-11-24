@@ -40,6 +40,7 @@
             this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.packToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.réservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panScript1 = new PixLogic.panScript();
             this.panReservation1 = new PixLogic.panReservation();
             this.panItemPack1 = new PixLogic.panItemPack();
             this.panUsers1 = new PixLogic.panUsers();
@@ -150,11 +151,18 @@
             this.réservationToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
             this.réservationToolStripMenuItem.Text = "Réservation";
             // 
+            // panScript1
+            // 
+            this.panScript1.Location = new System.Drawing.Point(139, 68);
+            this.panScript1.Name = "panScript1";
+            this.panScript1.Size = new System.Drawing.Size(690, 452);
+            this.panScript1.TabIndex = 6;
+            // 
             // panReservation1
             // 
             this.panReservation1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panReservation1.Location = new System.Drawing.Point(138, 66);
-            this.panReservation1.Margin = new System.Windows.Forms.Padding(2);
+            this.panReservation1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panReservation1.Name = "panReservation1";
             this.panReservation1.Size = new System.Drawing.Size(688, 452);
             this.panReservation1.TabIndex = 5;
@@ -271,6 +279,7 @@
             this.Controls.Add(this.barreDoutils);
             this.Controls.Add(this.panMenu);
             this.Controls.Add(this.barreDeMenu);
+            this.Controls.Add(this.panScript1);
             this.MainMenuStrip = this.barreDeMenu;
             this.MaximizeBox = false;
             this.Name = "MainWindow";
@@ -307,6 +316,7 @@
         private panUsers panUsers1;
         private panItemPack panItemPack1;
         private panReservation panReservation1;
+        private panScript panScript1;
     }
 }
 
