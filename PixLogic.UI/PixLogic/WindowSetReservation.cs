@@ -21,6 +21,7 @@ namespace PixLogic
             InitializeComponent();
             idReservation = id;
             setInfos();
+            setTableDateReservation(database.GetAllReservationsByReservableId(idReservation));
         }
 
         private void setInfos()
@@ -37,9 +38,22 @@ namespace PixLogic
             }
         }
         
-        private void setTableDateReservation()
+        private void setTableDateReservation(List<Reservation> l)
         {
+            List<Reservation> list = l;
+            dataGridReservAvenir.Rows.Clear();
+            foreach (Reservation reser in list)
+            {
+                dataGridReservAvenir.Rows.Add(reser.beginDateReservation.Value.ToString("d"), reser.endDateReservation.Value.ToString("d"));
+            }
 
+            if (dataGridReservAvenir.RowCount > 0)
+            {
+                dataGridReservAvenir.FirstDisplayedScrollingRowIndex = 0;
+                dataGridReservAvenir.Refresh();
+                dataGridReservAvenir.CurrentCell = dataGridReservAvenir.Rows[0].Cells[0];
+                dataGridReservAvenir.Rows[0].Selected = true;
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

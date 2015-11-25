@@ -40,6 +40,7 @@
             this.valItemName = new System.Windows.Forms.Label();
             this.labelListItem = new System.Windows.Forms.Label();
             this.panTableItem = new System.Windows.Forms.Panel();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
@@ -58,7 +59,6 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
@@ -185,6 +185,16 @@
             this.panTableItem.Size = new System.Drawing.Size(200, 426);
             this.panTableItem.TabIndex = 21;
             // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
+            // 
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(67, 17);
@@ -216,6 +226,7 @@
             this.Quantity,
             this.Price});
             this.dataGridItem.Location = new System.Drawing.Point(0, 47);
+            this.dataGridItem.MultiSelect = false;
             this.dataGridItem.Name = "dataGridItem";
             this.dataGridItem.ReadOnly = true;
             this.dataGridItem.RowHeadersVisible = false;
@@ -395,16 +406,6 @@
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // pictureReserver
             // 

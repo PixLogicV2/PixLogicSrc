@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.labelInfos = new System.Windows.Forms.Label();
-            this.valType = new System.Windows.Forms.Label();
-            this.valNomReservable = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelType = new System.Windows.Forms.Label();
             this.labelDateDebut = new System.Windows.Forms.Label();
             this.valDateDebut = new System.Windows.Forms.Label();
             this.valDateFin = new System.Windows.Forms.Label();
             this.labelDateFin = new System.Windows.Forms.Label();
+            this.valType = new System.Windows.Forms.Label();
+            this.valNomReservable = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelType = new System.Windows.Forms.Label();
+            this.labelInfos = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelPresent = new System.Windows.Forms.Label();
             this.dataGridReservAvenir = new System.Windows.Forms.DataGridView();
-            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.dateDebut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelModifierDate = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelModifierDate = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonValid = new System.Windows.Forms.Button();
             this.panelInfo.SuspendLayout();
@@ -74,15 +74,46 @@
             this.panelInfo.Size = new System.Drawing.Size(248, 116);
             this.panelInfo.TabIndex = 0;
             // 
-            // labelInfos
+            // labelDateDebut
             // 
-            this.labelInfos.AutoSize = true;
-            this.labelInfos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfos.Location = new System.Drawing.Point(28, 8);
-            this.labelInfos.Name = "labelInfos";
-            this.labelInfos.Size = new System.Drawing.Size(33, 13);
-            this.labelInfos.TabIndex = 1;
-            this.labelInfos.Text = "Infos";
+            this.labelDateDebut.AutoSize = true;
+            this.labelDateDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateDebut.Location = new System.Drawing.Point(3, 67);
+            this.labelDateDebut.Name = "labelDateDebut";
+            this.labelDateDebut.Size = new System.Drawing.Size(71, 13);
+            this.labelDateDebut.TabIndex = 52;
+            this.labelDateDebut.Text = "Date début :";
+            // 
+            // valDateDebut
+            // 
+            this.valDateDebut.AutoSize = true;
+            this.valDateDebut.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDateDebut.Location = new System.Drawing.Point(80, 64);
+            this.valDateDebut.Name = "valDateDebut";
+            this.valDateDebut.Size = new System.Drawing.Size(12, 15);
+            this.valDateDebut.TabIndex = 53;
+            this.valDateDebut.Text = "-";
+            this.valDateDebut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // valDateFin
+            // 
+            this.valDateFin.AutoSize = true;
+            this.valDateFin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDateFin.Location = new System.Drawing.Point(80, 93);
+            this.valDateFin.Name = "valDateFin";
+            this.valDateFin.Size = new System.Drawing.Size(12, 15);
+            this.valDateFin.TabIndex = 51;
+            this.valDateFin.Text = "-";
+            // 
+            // labelDateFin
+            // 
+            this.labelDateFin.AutoSize = true;
+            this.labelDateFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateFin.Location = new System.Drawing.Point(3, 93);
+            this.labelDateFin.Name = "labelDateFin";
+            this.labelDateFin.Size = new System.Drawing.Size(70, 13);
+            this.labelDateFin.TabIndex = 50;
+            this.labelDateFin.Text = "Date de fin :";
             // 
             // valType
             // 
@@ -126,46 +157,15 @@
             this.labelType.TabIndex = 46;
             this.labelType.Text = "Type :";
             // 
-            // labelDateDebut
+            // labelInfos
             // 
-            this.labelDateDebut.AutoSize = true;
-            this.labelDateDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateDebut.Location = new System.Drawing.Point(3, 67);
-            this.labelDateDebut.Name = "labelDateDebut";
-            this.labelDateDebut.Size = new System.Drawing.Size(71, 13);
-            this.labelDateDebut.TabIndex = 52;
-            this.labelDateDebut.Text = "Date début :";
-            // 
-            // valDateDebut
-            // 
-            this.valDateDebut.AutoSize = true;
-            this.valDateDebut.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateDebut.Location = new System.Drawing.Point(80, 64);
-            this.valDateDebut.Name = "valDateDebut";
-            this.valDateDebut.Size = new System.Drawing.Size(12, 15);
-            this.valDateDebut.TabIndex = 53;
-            this.valDateDebut.Text = "-";
-            this.valDateDebut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // valDateFin
-            // 
-            this.valDateFin.AutoSize = true;
-            this.valDateFin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateFin.Location = new System.Drawing.Point(80, 93);
-            this.valDateFin.Name = "valDateFin";
-            this.valDateFin.Size = new System.Drawing.Size(12, 15);
-            this.valDateFin.TabIndex = 51;
-            this.valDateFin.Text = "-";
-            // 
-            // labelDateFin
-            // 
-            this.labelDateFin.AutoSize = true;
-            this.labelDateFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateFin.Location = new System.Drawing.Point(3, 93);
-            this.labelDateFin.Name = "labelDateFin";
-            this.labelDateFin.Size = new System.Drawing.Size(70, 13);
-            this.labelDateFin.TabIndex = 50;
-            this.labelDateFin.Text = "Date de fin :";
+            this.labelInfos.AutoSize = true;
+            this.labelInfos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfos.Location = new System.Drawing.Point(28, 8);
+            this.labelInfos.Name = "labelInfos";
+            this.labelInfos.Size = new System.Drawing.Size(33, 13);
+            this.labelInfos.TabIndex = 1;
+            this.labelInfos.Text = "Infos";
             // 
             // panel1
             // 
@@ -189,27 +189,21 @@
             // 
             this.dataGridReservAvenir.AllowUserToAddRows = false;
             this.dataGridReservAvenir.AllowUserToDeleteRows = false;
+            this.dataGridReservAvenir.AllowUserToResizeRows = false;
             this.dataGridReservAvenir.BackgroundColor = System.Drawing.Color.White;
             this.dataGridReservAvenir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReservAvenir.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dateDebut,
             this.dateFin});
             this.dataGridReservAvenir.Location = new System.Drawing.Point(12, 161);
+            this.dataGridReservAvenir.MultiSelect = false;
             this.dataGridReservAvenir.Name = "dataGridReservAvenir";
             this.dataGridReservAvenir.ReadOnly = true;
             this.dataGridReservAvenir.RowHeadersVisible = false;
             this.dataGridReservAvenir.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridReservAvenir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridReservAvenir.Size = new System.Drawing.Size(379, 116);
             this.dataGridReservAvenir.TabIndex = 0;
-            // 
-            // pictureBoxItem
-            // 
-            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxItem.Location = new System.Drawing.Point(257, 12);
-            this.pictureBoxItem.Name = "pictureBoxItem";
-            this.pictureBoxItem.Size = new System.Drawing.Size(135, 116);
-            this.pictureBoxItem.TabIndex = 2;
-            this.pictureBoxItem.TabStop = false;
             // 
             // dateDebut
             // 
@@ -225,6 +219,15 @@
             this.dateFin.ReadOnly = true;
             this.dateFin.Width = 188;
             // 
+            // pictureBoxItem
+            // 
+            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxItem.Location = new System.Drawing.Point(257, 12);
+            this.pictureBoxItem.Name = "pictureBoxItem";
+            this.pictureBoxItem.Size = new System.Drawing.Size(135, 116);
+            this.pictureBoxItem.TabIndex = 2;
+            this.pictureBoxItem.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -237,25 +240,19 @@
             this.panel2.Size = new System.Drawing.Size(379, 92);
             this.panel2.TabIndex = 5;
             // 
-            // labelModifierDate
+            // dateTimeEnd
             // 
-            this.labelModifierDate.AutoSize = true;
-            this.labelModifierDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelModifierDate.Location = new System.Drawing.Point(28, 286);
-            this.labelModifierDate.Name = "labelModifierDate";
-            this.labelModifierDate.Size = new System.Drawing.Size(100, 13);
-            this.labelModifierDate.TabIndex = 6;
-            this.labelModifierDate.Text = "Modifier les dates";
+            this.dateTimeEnd.Location = new System.Drawing.Point(92, 57);
+            this.dateTimeEnd.Name = "dateTimeEnd";
+            this.dateTimeEnd.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeEnd.TabIndex = 56;
             // 
-            // label2
+            // dateTimeBegin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 53;
-            this.label2.Text = "Date début :";
+            this.dateTimeBegin.Location = new System.Drawing.Point(92, 21);
+            this.dateTimeBegin.Name = "dateTimeBegin";
+            this.dateTimeBegin.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeBegin.TabIndex = 55;
             // 
             // label3
             // 
@@ -267,19 +264,25 @@
             this.label3.TabIndex = 54;
             this.label3.Text = "Date de fin :";
             // 
-            // dateTimeBegin
+            // label2
             // 
-            this.dateTimeBegin.Location = new System.Drawing.Point(92, 21);
-            this.dateTimeBegin.Name = "dateTimeBegin";
-            this.dateTimeBegin.Size = new System.Drawing.Size(179, 20);
-            this.dateTimeBegin.TabIndex = 55;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "Date début :";
             // 
-            // dateTimeEnd
+            // labelModifierDate
             // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(92, 57);
-            this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(179, 20);
-            this.dateTimeEnd.TabIndex = 56;
+            this.labelModifierDate.AutoSize = true;
+            this.labelModifierDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelModifierDate.Location = new System.Drawing.Point(28, 286);
+            this.labelModifierDate.Name = "labelModifierDate";
+            this.labelModifierDate.Size = new System.Drawing.Size(100, 13);
+            this.labelModifierDate.TabIndex = 6;
+            this.labelModifierDate.Text = "Modifier les dates";
             // 
             // buttonCancel
             // 
