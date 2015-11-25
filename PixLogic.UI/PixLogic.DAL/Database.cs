@@ -165,5 +165,10 @@ namespace PixLogic.DAL
         {
             container.get("update_reservation").updateReservation(id, DateDebut, DateFin);
         }
+
+        public void EmpruntReservation(int id)
+        {
+            container.get("emprunt_reservation").empruntReservation(id);
+        }
     }
 }

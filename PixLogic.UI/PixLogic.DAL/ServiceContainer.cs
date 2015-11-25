@@ -170,8 +170,14 @@ namespace PixLogic.DAL
                 case "get_all_users_by_string":
                     this.arrayContainer[serviceName] = this.get("get_all_users");
                     break;
+                case "emprunt_reservation":
+                    this.arrayContainer[serviceName] = new EmpruntReservation();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 default:
                     throw new System.Exception();
+
+                
             }
             return this.arrayContainer[serviceName];
         }
