@@ -28,5 +28,18 @@ namespace PixLogic.DAL
             }
             return list;
         }
+        public List<Reservation> getAllReservationsByString(string search)
+        {
+            search.ToLower();
+            List<Reservation> reservations = getAllReservations();
+            List<Reservation> results = reservations.FindAll(
+            delegate (Reservation reservation)
+            {
+                if (reservation.reservable.name.ToLower().Contains(search)) return reservation.reservable.name.ToLower().Contains(search);
+                else return reservation.user.name.ToLower().Contains(search);
+            }
+            );
+            return results;
+        }
     }
 }
