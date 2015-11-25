@@ -68,6 +68,7 @@
     <Compile Include="GetAllPacks.cs" />
     <Compile Include="GetAllReservations.cs" />
     <Compile Include="GetAllReservationsByDate.cs" />
+    <Compile Include="GetAllReservationsByReservableId.cs" />
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
