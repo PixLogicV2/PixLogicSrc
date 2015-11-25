@@ -63,7 +63,15 @@ namespace PixLogic
                 dataGridUsersReservation.CurrentCell = dataGridUsersReservation.Rows[0].Cells[0];
                 dataGridUsersReservation.Rows[0].Selected = true;
             }
-            
+            checkEnableButton();
+        }
+
+        private void checkEnableButton()
+        {
+            if (dataGridUsersReservation.RowCount > 0)
+                buttonValid.Enabled = true;
+            else
+                buttonValid.Enabled = false;
         }
         private void buttonValid_Click(object sender, EventArgs e)
         {

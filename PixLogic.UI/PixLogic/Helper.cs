@@ -19,6 +19,8 @@ namespace PixLogic
         public static readonly string DELETE = "supprimer";
         public static readonly string SET = "modifier";
         public static readonly string REMOVE = "enlever";
+        public static readonly string PACK = "Pack";
+        public static readonly string ITEM = "Matériel";
 
         public static bool fieldsAreEmpty(bool withMessageBox, params string[] args)
         {
@@ -36,6 +38,19 @@ namespace PixLogic
             }
 
             return result;
+        }
+
+        public static bool beginBeforeEndDate(bool withMessageBox, DateTime begin, DateTime end)
+        {
+            if (begin.CompareTo(end) < 0)
+                return true;
+            else
+            {
+                if(withMessageBox)
+                    MessageBox.Show("La date de debut est supérieure à celle de fin!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
         }
 
         public static bool IsInListBox(string name, ListBox list)

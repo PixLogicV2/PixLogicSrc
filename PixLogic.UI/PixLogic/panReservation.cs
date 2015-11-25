@@ -15,8 +15,6 @@ namespace PixLogic
     public partial class panReservation : UserControl
     {
         Database database;
-        private readonly string PACK = "Pack";
-        private readonly string ITEM = "Matériel";
 
         public panReservation()
         {
@@ -52,9 +50,25 @@ namespace PixLogic
             }
 
             setNewsReservations();
-            //checkEnableButton();
+            checkEnableButton();
         }
         
+        private void checkEnableButton()
+        {
+            if(dataGridReservations.RowCount > 0)
+            {
+                buttonEmprunt.Enabled = true;
+                buttonModif.Enabled = true;
+                buttonCancelReserv.Enabled = true;
+            }
+            else
+            {
+                buttonEmprunt.Enabled = false;
+                buttonModif.Enabled = false;
+                buttonCancelReserv.Enabled = false;
+            }
+        }
+
         private void setNewsReservations()
         {
             if (dataGridReservations.RowCount > 0)
@@ -64,7 +78,7 @@ namespace PixLogic
                 valDateDebut.Text = ((DateTime)reservation.endDateReservation).ToString("D");
                 valNomUser.Text = reservation.user.name;
                 valNomReservable.Text = reservation.reservable.name;
-                valType.Text = reservation.isPack ? PACK : ITEM;
+                valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
             }
             else
             {
@@ -189,7 +203,9 @@ namespace PixLogic
 
         private void buttonModif_Click(object sender, EventArgs e)
         {
-
+            int id = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
+            WindowSetReservation set = new WindowSetReservation(id);
+            set.ShowDialog(this);
         }
 
         private void buttonCancelReserv_Click(object sender, EventArgs e)
