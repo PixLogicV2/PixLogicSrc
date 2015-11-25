@@ -153,6 +153,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_reservations_by_reservable_id").getAllReservationsByReservableId(idReservable);
         }
+        public List<Reservation> GetAllReservationsByString(string search)
+        {
+            return container.get("get_all_reservations_by_string").getAllReservationsByString(search);
+        }
         public List<Reservation> GetAllEmprunts()
         {
             return container.get("get_all_emprunts").getAllEmprunts();
