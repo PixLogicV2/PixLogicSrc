@@ -54,14 +54,14 @@ namespace PixLogic
                 buttonModify.Enabled = true;
                 buttonDelete.Enabled = true;
                 buttonTransfert.Enabled = true;
-                buttonReservation.Enabled = true;
+                pictureReserver.Enabled = true;
             }
             else
             {
                 buttonModify.Enabled = false;
                 buttonDelete.Enabled = false;
                 buttonTransfert.Enabled = false;
-                buttonReservation.Enabled = false;
+                pictureReserver.Enabled = false;
             }
         }
 
@@ -272,10 +272,17 @@ namespace PixLogic
             }
         }
 
-        private void buttonReservation_Click(object sender, EventArgs e)
+        private void pictureReserver_Click(object sender, EventArgs e)
         {
-            WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text),false);
+            WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text), false);
             windowRes.ShowDialog(this);
+        }
+
+        private void pictureReserver_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureReserver, "Réserver ce matériel.");
+            pictureReserver.Cursor = Cursors.Hand;
         }
     }
 }
