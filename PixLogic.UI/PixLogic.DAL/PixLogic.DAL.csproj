@@ -61,12 +61,14 @@
     <Compile Include="DeletePack.cs" />
     <Compile Include="DeleteReservation.cs" />
     <Compile Include="DeleteUser.cs" />
+    <Compile Include="EmpruntReservation.cs" />
     <Compile Include="GetAllEmprunts.cs" />
     <Compile Include="GetAllItemReservations.cs" />
     <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
     <Compile Include="GetAllReservations.cs" />
     <Compile Include="GetAllReservationsByDate.cs" />
+    <Compile Include="GetAllReservationsByReservableId.cs" />
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />

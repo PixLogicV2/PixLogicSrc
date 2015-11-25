@@ -74,6 +74,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllReservationsByDate();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_all_reservations_by_reservable_id":
+                    this.arrayContainer[serviceName] = new GetAllReservationsByReservableId();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "get_all_items_by_string":
                     this.arrayContainer[serviceName] = this.get("get_all_items");
                     break;
@@ -170,8 +174,14 @@ namespace PixLogic.DAL
                 case "get_all_users_by_string":
                     this.arrayContainer[serviceName] = this.get("get_all_users");
                     break;
+                case "emprunt_reservation":
+                    this.arrayContainer[serviceName] = new EmpruntReservation();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 default:
                     throw new System.Exception();
+
+                
             }
             return this.arrayContainer[serviceName];
         }

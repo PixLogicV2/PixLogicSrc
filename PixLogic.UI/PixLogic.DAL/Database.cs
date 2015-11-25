@@ -149,6 +149,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_reservations_by_date").getAllReservationsByDate(dateDebut,dateFin);
         }
+        public List<Reservation> GetAllReservationsByReservableId(int idReservable)
+        {
+            return container.get("get_all_reservations_by_reservable_id").getAllReservationsByReservableId(idReservable);
+        }
         public List<Reservation> GetAllEmprunts()
         {
             return container.get("get_all_emprunts").getAllEmprunts();
@@ -164,6 +168,11 @@ namespace PixLogic.DAL
         public void UpdateReservation(int id,DateTime? DateDebut,DateTime? DateFin)
         {
             container.get("update_reservation").updateReservation(id, DateDebut, DateFin);
+        }
+
+        public void EmpruntReservation(int id)
+        {
+            container.get("emprunt_reservation").empruntReservation(id);
         }
     }
 }
