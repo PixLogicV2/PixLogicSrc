@@ -145,5 +145,14 @@ namespace PixLogic
                 database.AddItem("NameItem " + i, "Description " + i, true, (i * 0.8f), Properties.Resources.camera_photo, "Reference " + 1, i + 1);
             }
         }
+        public static bool GetDispoReservableByDate(int idReservable, DateTime dateDebut,DateTime dateFin)
+        {
+            List<Reservation> reservations = database.GetAllReservationsByDate(dateDebut, dateFin);
+            foreach(Reservation reservation in reservations)
+            {
+                if (reservation.reservable.ReservableId == idReservable) return false;
+            }
+            return true;
+        }
     }
 }
