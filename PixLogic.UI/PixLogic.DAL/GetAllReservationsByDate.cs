@@ -21,12 +21,14 @@ namespace PixLogic.DAL
                                                   where Reservation.beginDateEmprunt == null
                                                   where DateTime.Compare(Reservation.beginDateReservation.Value, dateDebut) >= 0
                                                   where DateTime.Compare(Reservation.endDateReservation.Value, dateFin) <= 0
+                                                  orderby Reservation.beginDateReservation
                                                   select Reservation;
             List<Reservation> list = new List<Reservation>();
             foreach (var prod in reservQuery)
             {
                 list.Add(prod);
             }
+            
             return list;
         }
     }
