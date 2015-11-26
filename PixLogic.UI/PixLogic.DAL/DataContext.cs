@@ -19,5 +19,6 @@ namespace PixLogic.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Categorie> Categories { get; set; }
     }
 }

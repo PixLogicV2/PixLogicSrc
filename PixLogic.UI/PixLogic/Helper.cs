@@ -156,6 +156,7 @@ namespace PixLogic
                         MessageBox.Show("Les dates pour lesquelles pour vous réservez ne sont plus disponible.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
+                Console.Write(reservation.reservable.name);
             }
             return true;
         }
