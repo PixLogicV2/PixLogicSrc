@@ -19,5 +19,6 @@ namespace PixLogic.DAL
         public int quantity { get; set; }
         
         public Pack pack { get; set; }
+        public Categorie categorie { get; set; }
     }
 }

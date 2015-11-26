@@ -51,12 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategorie.cs" />
+    <Compile Include="AddCategorieToItem.cs" />
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
     <Compile Include="AddItem.cs" />
     <Compile Include="AddReservation.cs" />
     <Compile Include="AddUser.cs" />
     <Compile Include="ByteArrayToImage.cs" />
+    <Compile Include="Categorie.cs" />
+    <Compile Include="CategorieFactory.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeletePack.cs" />
     <Compile Include="DeleteReservation.cs" />

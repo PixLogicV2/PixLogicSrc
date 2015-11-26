@@ -178,5 +178,17 @@ namespace PixLogic.DAL
         {
             container.get("emprunt_reservation").empruntReservation(id);
         }
+
+        /*
+        *Categorie
+        */
+            public void AddCategorie(string name, int level)
+        {
+            container.get("add_categorie").addCategorie(container.get("categorie_factory").build(name, level));
+        }
+        public void AddCategorieToItem(string itemName, string packName)
+        {
+            container.get("add_categorie_to_item").addCategorieToItem(itemName, packName);
+        }
     }
 }
