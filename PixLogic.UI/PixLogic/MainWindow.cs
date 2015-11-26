@@ -32,10 +32,13 @@ namespace PixLogic
         {
            foreach(Control ctrl in panMenu.Controls)
             {
-                ctrl.MouseClick += ClickItemButton;
-                foreach(Control c in ctrl.Controls)
+                if (!ctrl.Name.Equals("buttonMenu"))
                 {
-                    c.MouseClick += ClickItemButton;
+                    ctrl.MouseClick += ClickItemButton;
+                    foreach (Control c in ctrl.Controls)
+                    {
+                        c.MouseClick += ClickItemButton;
+                    }
                 }
             }
         }
