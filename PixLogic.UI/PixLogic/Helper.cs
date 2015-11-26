@@ -42,7 +42,7 @@ namespace PixLogic
 
         public static bool beginBeforeEndDate(bool withMessageBox, DateTime begin, DateTime end)
         {
-            if (begin.CompareTo(end) < 0)
+            if (begin.CompareTo(end) <= 0)
                 return true;
             else
             {
@@ -147,17 +147,24 @@ namespace PixLogic
         }
         public static bool getDispoReservableByDate(bool withMessageBox, int idReservable, DateTime dateDebut,DateTime dateFin)
         {
-            List<Reservation> reservations = database.GetAllReservationsByDate(dateDebut, dateFin);
+            List<Reservation> reservations = database.GetAllReservationsByReservableId(idReservable);
+
             foreach(Reservation reservation in reservations)
             {
-                if (reservation.reservable.ReservableId == idReservable)
+                if((reservation.beginDateReservation.Value.Date <= dateDebut.Date
+                    && reservation.endDateReservation.Value.Date >= dateDebut.Date)
+                    ||
+                    (reservation.beginDateReservation.Value.Date <= dateFin.Date
+                    && reservation.endDateReservation.Value.Date >= dateFin.Date))
                 {
-                    if(withMessageBox)
-                        MessageBox.Show("Les dates pour lesquelles pour vous réservez ne sont plus disponible.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (withMessageBox)
+                        MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
+                
             }
             return true;
+            
         }
     }
 }

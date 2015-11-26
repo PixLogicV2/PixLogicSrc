@@ -204,7 +204,9 @@ namespace PixLogic
         private void buttonModif_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
-            WindowSetReservation set = new WindowSetReservation(id);
+            Reservation reservation = database.GetReservationById(id);
+            
+            WindowSetReservation set = new WindowSetReservation(reservation.reservable.ReservableId);
             set.ShowDialog(this);
         }
 

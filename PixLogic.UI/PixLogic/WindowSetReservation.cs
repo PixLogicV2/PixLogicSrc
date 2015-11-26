@@ -13,20 +13,20 @@ namespace PixLogic
 {
     public partial class WindowSetReservation : Form
     {
-        private int idReservation;
+        private int idReservable;
         private Database database = Helper.database;
 
         public WindowSetReservation(int id)
         {
             InitializeComponent();
-            idReservation = id;
+            idReservable = id;
             setInfos();
-            setTableDateReservation(database.GetAllReservationsByReservableId(idReservation));
+            setTableDateReservation(database.GetAllReservationsByReservableId(idReservable));
         }
 
         private void setInfos()
         {
-            Reservation reserv = database.GetReservationById(idReservation);
+            Reservation reserv = database.GetReservationById(idReservable);
 
             valNomReservable.Text = reserv.reservable.name;
             valType.Text = reserv.isPack ? Helper.PACK : Helper.ITEM;
@@ -65,10 +65,9 @@ namespace PixLogic
         {
             DateTime debut = DateTime.Parse(dateTimeBegin.Value.ToString());
             DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
-            int id = (database.GetReservationById(idReservation)).reservable.ReservableId;
 
             if (Helper.beginBeforeEndDate(true, debut, fin)
-                && Helper.getDispoReservableByDate(true, id, debut, fin))
+                && Helper.getDispoReservableByDate(true, idReservable, debut, fin))
             {
 
             }
