@@ -92,6 +92,15 @@ namespace PixLogic
 
             return result;
         }
+        public static bool confirmationReservation(string op)
+        {
+            bool result = false;
+            DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment " + op + " cette réservation ?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = (resultBox == DialogResult.Yes) ? true : false;
+
+            return result;
+        }
 
         public static void addSuccess()
         {

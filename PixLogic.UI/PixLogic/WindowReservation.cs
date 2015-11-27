@@ -17,6 +17,7 @@ namespace PixLogic
         private panItemPack panItem;
         private bool isPack;
         private WindowPackManager panPack;
+        private int idElement;
 
         public WindowReservation(panItemPack p)
         {
@@ -29,8 +30,9 @@ namespace PixLogic
             InitializeComponent();
             Text = "Nouvelle reservation";
             panItem = pa;
-            valItemId.Text = itemId.ToString();
+            idElement = itemId;
             isPack = Pack;
+            setInfos();
             setTableUsers(database.GetAllUsers());
         }
         public WindowReservation(WindowPackManager pa, int packId, bool Pack)
@@ -38,9 +40,28 @@ namespace PixLogic
             InitializeComponent();
             Text = "Nouvelle reservation";
             panPack = pa;
-            valItemId.Text = packId.ToString();
+            idElement = packId;
             isPack = Pack;
+            setInfos();
             setTableUsers(database.GetAllUsers());
+        }
+
+        private void setInfos()
+        {
+            Reservable r;
+            if (isPack)
+                r = database.GetPackById(idElement);
+            else
+            {
+                r = database.GetItemById(idElement);
+                Helper.putImageInBox(pictureBoxItem, database.ByteArrayToImage(((Item)r).image));
+            }
+
+            valIdReservable.Text = idElement.ToString();
+            valNomReservable.Text = r.name;
+            valType.Text = isPack ? Helper.PACK : Helper.ITEM;
+
+            setTableDateReservation(database.GetAllReservationsByReservableId(idElement));
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -66,6 +87,24 @@ namespace PixLogic
             checkEnableButton();
         }
 
+        private void setTableDateReservation(List<Reservation> l)
+        {
+            List<Reservation> list = l;
+            dataGridReservAvenir.Rows.Clear();
+            foreach (Reservation reser in list)
+            {
+                dataGridReservAvenir.Rows.Add(reser.beginDateReservation.Value.ToString("d"), reser.endDateReservation.Value.ToString("d"));
+            }
+
+            if (dataGridReservAvenir.RowCount > 0)
+            {
+                dataGridReservAvenir.FirstDisplayedScrollingRowIndex = 0;
+                dataGridReservAvenir.Refresh();
+                dataGridReservAvenir.CurrentCell = dataGridReservAvenir.Rows[0].Cells[0];
+                dataGridReservAvenir.Rows[0].Selected = true;
+            }
+        }
+
         private void checkEnableButton()
         {
             if (dataGridUsersReservation.RowCount > 0)
@@ -75,28 +114,28 @@ namespace PixLogic
         }
         private void buttonValid_Click(object sender, EventArgs e)
         {
-            DateTime? begin =Convert.ToDateTime(valBegin.Text);
-            DateTime? end = Convert.ToDateTime(valEnd.Text);
+            DateTime debut = DateTime.Parse(dateTimeBegin.Value.ToString());
+            DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
             DateTime? debutEmprunt = null;
             DateTime? endEmprunt= null;
             Manager manag = null;
             Reservable elem;
             if (isPack == false)
             {
-                elem = database.GetItemById(int.Parse(valItemId.Text.ToString()));
+                elem = database.GetItemById(int.Parse(valIdReservable.Text.ToString()));
             }
             else
             {
-                elem = database.GetPackById(int.Parse(valItemId.Text.ToString()));
+                elem = database.GetPackById(int.Parse(valIdReservable.Text.ToString()));
             }
-            if (!Helper.fieldsAreEmpty(true, valItemId.Text,valBegin.Text,valEnd.Text))
+            if (Helper.beginBeforeEndDate(true, debut, fin)
+                && Helper.getDispoReservableByDate(true, idElement, debut, fin)
+                && Helper.confirmationReservation(Helper.ADD))
             {
                 User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
 
-                database.AddReservation(isPack, begin, end, debutEmprunt, endEmprunt, user, elem,manag);
+                database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem,manag);
 
-                //Helper.addSuccess();
-                //setTableUsers(database.GetAllUsers());
                 this.Close();
             }
         }   

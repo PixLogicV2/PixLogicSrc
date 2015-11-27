@@ -67,7 +67,8 @@ namespace PixLogic
             DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
 
             if (Helper.beginBeforeEndDate(true, debut, fin)
-                && Helper.getDispoReservableByDate(true, idReservable, debut, fin))
+                && Helper.getDispoReservableByDate(true, idReservable, debut, fin)
+                && Helper.confirmationReservation(Helper.SET))
             {
 
             }

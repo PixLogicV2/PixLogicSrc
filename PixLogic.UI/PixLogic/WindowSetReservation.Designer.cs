@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowSetReservation));
             this.panelInfo = new System.Windows.Forms.Panel();
             this.labelDateDebut = new System.Windows.Forms.Label();
             this.valDateDebut = new System.Windows.Forms.Label();
@@ -327,6 +328,7 @@
             this.Controls.Add(this.pictureBoxItem);
             this.Controls.Add(this.labelInfos);
             this.Controls.Add(this.panelInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowSetReservation";

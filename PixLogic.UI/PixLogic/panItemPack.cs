@@ -192,7 +192,7 @@ namespace PixLogic
             if (!Helper.IsInListBox(itemName, listBoxItem))
             {
                 database.AddItemToPack(itemName, packName);
-                listBoxItem.Items.Add(itemName);
+                setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
 
                 checkButtonRemoveItem(listBoxItem.Items.Count - 1);
             }

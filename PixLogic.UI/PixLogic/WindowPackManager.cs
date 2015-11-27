@@ -85,11 +85,13 @@ namespace PixLogic
             {
                 buttonModify.Enabled = true;
                 buttonDelete.Enabled = true;
+                pictureReserver.Enabled = true;
             }
             else
             {
                 buttonModify.Enabled = false;
                 buttonDelete.Enabled = false;
+                pictureReserver.Enabled = false;
             }
         }
 
@@ -153,8 +155,19 @@ namespace PixLogic
 
         private void buttonReservation_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void pictureReserver_Click(object sender, EventArgs e)
+        {
             WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valPackId.Text), true);
             windowRes.ShowDialog(this);
+        }
+        private void pictureReserver_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureReserver, "Réserver ce pack.");
+            pictureReserver.Cursor = Cursors.Hand;
         }
     }
 }

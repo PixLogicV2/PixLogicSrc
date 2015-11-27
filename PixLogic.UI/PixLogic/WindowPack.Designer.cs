@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowPack));
             this.label1 = new System.Windows.Forms.Label();
             this.labelObligatoire = new System.Windows.Forms.Label();
             this.valPrice = new System.Windows.Forms.TextBox();
@@ -161,6 +162,7 @@
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.valName);
             this.Controls.Add(this.labelName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowPack";
