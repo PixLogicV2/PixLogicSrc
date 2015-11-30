@@ -178,6 +178,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_all_logs":
+                    this.arrayContainer[serviceName] = new GetAllLogs();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "get_all_users_by_string":
                     this.arrayContainer[serviceName] = this.get("get_all_users");
                     break;
@@ -191,6 +195,22 @@ namespace PixLogic.DAL
                     break;
                 case "add_categorie_to_item":
                     this.arrayContainer[serviceName] = new AddCategorieToItem();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_emprunts_by_date":
+                    this.arrayContainer[serviceName] = new GetAllEmprunts();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_emprunts_by_string":
+                    this.arrayContainer[serviceName] = new GetAllEmprunts();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_items_emprunts":
+                    this.arrayContainer[serviceName] = new GetAllItemsEmprunts();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_pack_emprunts":
+                    this.arrayContainer[serviceName] = new GetAllPacksEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 default:

@@ -16,6 +16,7 @@ namespace PixLogic.DAL
         public DateTime ? endDateReservation { get; set; }
         public DateTime ? beginDateEmprunt { get; set; }
         public DateTime ? endDateEmprunt { get; set; }
+        public DateTime ? dateRendu { get; set; }
         public User user { get; set; }
         public Reservable reservable { get; set; }
         public Manager manager { get; set; }

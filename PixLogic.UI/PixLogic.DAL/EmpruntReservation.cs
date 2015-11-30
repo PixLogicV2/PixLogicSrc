@@ -23,6 +23,8 @@ namespace PixLogic.DAL
             {
                 reservation.beginDateEmprunt = reservation.beginDateReservation;
                 reservation.endDateEmprunt = reservation.endDateReservation;
+                reservation.beginDateReservation = null;
+                reservation.endDateReservation = null;
                 context.Entry(reservation).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }

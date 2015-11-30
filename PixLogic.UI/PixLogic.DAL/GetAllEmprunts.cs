@@ -14,11 +14,12 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Reservation> getAllReservations()
+        public List<Reservation> getAllEmprunts()
         {
             IQueryable<Reservation> reservQuery = from Reservation
                                                   in context.Reservations.Include(c => c.reservable).Include(c => c.manager).Include(c => c.user)
                                                   where Reservation.beginDateReservation == null
+                                                  where Reservation.dateRendu == null
                                                   select Reservation;
             List<Reservation> list = new List<Reservation>();
             foreach (var prod in reservQuery)
@@ -26,6 +27,37 @@ namespace PixLogic.DAL
                 list.Add(prod);
             }
             return list;
+        }
+        public List<Reservation> getAllEmpruntsByDate(DateTime dateDebut, DateTime dateFin)
+        {
+            IQueryable<Reservation> reservQuery = from Reservation
+                                                  in context.Reservations.Include(c => c.reservable).Include(c => c.manager).Include(c => c.user)
+                                                  where Reservation.beginDateReservation == null
+                                                  where Reservation.dateRendu==null
+                                                  where DateTime.Compare(Reservation.beginDateEmprunt.Value, dateDebut) >= 0
+                                                  where DateTime.Compare(Reservation.endDateEmprunt.Value, dateFin) <= 0
+                                                  orderby Reservation.beginDateReservation
+                                                  select Reservation;
+            List<Reservation> list = new List<Reservation>();
+            foreach (var prod in reservQuery)
+            {
+                list.Add(prod);
+            }
+
+            return list;
+        }
+        public List<Reservation> getAllEmpruntsByString(string search)
+        {
+            search.ToLower();
+            List<Reservation> reservations = getAllEmprunts();
+            List<Reservation> results = reservations.FindAll(
+            delegate (Reservation reservation)
+            {
+                if (reservation.reservable.name.ToLower().Contains(search)) return reservation.reservable.name.ToLower().Contains(search);
+                else return reservation.user.name.ToLower().Contains(search);
+            }
+            );
+            return results;
         }
     }
 }

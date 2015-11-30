@@ -28,6 +28,7 @@ namespace PixLogic.DAL
             reservation.user = user;
             reservation.reservable = element;
             reservation.manager = manager;
+            reservation.dateRendu = null;
 
             return reservation;
         }

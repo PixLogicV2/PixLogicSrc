@@ -68,8 +68,11 @@
     <Compile Include="EmpruntReservation.cs" />
     <Compile Include="GetAllEmprunts.cs" />
     <Compile Include="GetAllItemReservations.cs" />
+    <Compile Include="GetAllItemsEmprunts.cs" />
+    <Compile Include="GetAllLogs.cs" />
     <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
+    <Compile Include="GetAllPacksEmprunts.cs" />
     <Compile Include="GetAllReservations.cs" />
     <Compile Include="GetAllReservationsByDate.cs" />
     <Compile Include="GetAllReservationsByReservableId.cs" />
