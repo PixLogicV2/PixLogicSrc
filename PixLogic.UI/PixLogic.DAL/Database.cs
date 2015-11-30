@@ -178,21 +178,21 @@ namespace PixLogic.DAL
         {
             container.get("emprunt_reservation").empruntReservation(id);
         }
-        public void GetAllEmpruntsByDate(DateTime debut,DateTime fin)
+        public List<Reservation> GetAllEmpruntsByDate(DateTime debut,DateTime fin)
         {
-            container.get("get_all_emprunts_by_date").getAllEmpruntsByDate(debut, fin);
+            return container.get("get_all_emprunts_by_date").getAllEmpruntsByDate(debut, fin);
         }
-        public void GetAllEmpruntsByString(string search)
+        public List<Reservation> GetAllEmpruntsByString(string search)
         {
-            container.get("get_all_emprunts_by_date").getAllEmpruntsByString(search);
+           return container.get("get_all_emprunts_by_date").getAllEmpruntsByString(search);
         }
-        public void GetAllItemsEmprunts(List<Reservation> list)
+        public List<Reservation> GetAllItemsEmprunts(List<Reservation> list)
         {
-            container.get("get_all_items_emprunts").getAllItemsEmprunts(list);
+            return container.get("get_all_items_emprunts").getAllItemsEmprunts(list);
         }
-        public void GetAllPacksEmprunts(List<Reservation> list)
+        public List<Reservation> GetAllPacksEmprunts(List<Reservation> list)
         {
-            container.get("get_all_items_emprunts").getAllPacksEmprunts(list);
+            return container.get("get_all_items_emprunts").getAllPacksEmprunts(list);
         }
         /*
         *LOG
