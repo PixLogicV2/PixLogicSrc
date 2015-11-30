@@ -31,11 +31,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panReservation));
             this.panTableUsers = new System.Windows.Forms.Panel();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridReservations = new System.Windows.Forms.DataGridView();
+            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debutResersation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panNews = new System.Windows.Forms.Panel();
             this.valType = new System.Windows.Forms.Label();
             this.valNomReservable = new System.Windows.Forms.Label();
@@ -51,6 +58,8 @@
             this.labelListReservation = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
+            this.pictureReinit = new System.Windows.Forms.PictureBox();
+            this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
             this.checkBoxItem = new System.Windows.Forms.CheckBox();
@@ -65,15 +74,7 @@
             this.labelFiltres = new System.Windows.Forms.Label();
             this.buttonCancelReserv = new System.Windows.Forms.Button();
             this.buttonModif = new System.Windows.Forms.Button();
-            this.pictureReinit = new System.Windows.Forms.PictureBox();
-            this.buttonFilter = new System.Windows.Forms.Button();
             this.buttonPret = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
-            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debutResersation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
@@ -92,6 +93,16 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(412, 285);
             this.panTableUsers.TabIndex = 23;
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -115,17 +126,19 @@
             // 
             this.dataGridReservations.AllowUserToAddRows = false;
             this.dataGridReservations.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridReservations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridReservations.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridReservations.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridReservations.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridReservations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdReservation,
@@ -133,26 +146,26 @@
             this.NameReservable,
             this.debutResersation,
             this.finReservation});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReservations.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReservations.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridReservations.Location = new System.Drawing.Point(-1, 47);
             this.dataGridReservations.MultiSelect = false;
             this.dataGridReservations.Name = "dataGridReservations";
             this.dataGridReservations.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservations.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservations.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridReservations.RowHeadersVisible = false;
             this.dataGridReservations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -160,6 +173,41 @@
             this.dataGridReservations.TabIndex = 0;
             this.dataGridReservations.Click += new System.EventHandler(this.dataGridReservations_Click);
             this.dataGridReservations.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridReservations_KeyUp);
+            // 
+            // IdReservation
+            // 
+            this.IdReservation.HeaderText = "Id";
+            this.IdReservation.Name = "IdReservation";
+            this.IdReservation.ReadOnly = true;
+            this.IdReservation.Width = 40;
+            // 
+            // NameUserReservation
+            // 
+            this.NameUserReservation.HeaderText = "Utilisateur";
+            this.NameUserReservation.Name = "NameUserReservation";
+            this.NameUserReservation.ReadOnly = true;
+            this.NameUserReservation.Width = 82;
+            // 
+            // NameReservable
+            // 
+            this.NameReservable.HeaderText = "Réservable";
+            this.NameReservable.Name = "NameReservable";
+            this.NameReservable.ReadOnly = true;
+            this.NameReservable.Width = 90;
+            // 
+            // debutResersation
+            // 
+            this.debutResersation.HeaderText = "Début Réservation";
+            this.debutResersation.Name = "debutResersation";
+            this.debutResersation.ReadOnly = true;
+            this.debutResersation.Width = 105;
+            // 
+            // finReservation
+            // 
+            this.finReservation.HeaderText = "Fin Réservation";
+            this.finReservation.Name = "finReservation";
+            this.finReservation.ReadOnly = true;
+            this.finReservation.Width = 95;
             // 
             // panNews
             // 
@@ -334,6 +382,31 @@
             this.panFiltres.Size = new System.Drawing.Size(256, 285);
             this.panFiltres.TabIndex = 43;
             // 
+            // pictureReinit
+            // 
+            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
+            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
+            this.pictureReinit.Name = "pictureReinit";
+            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
+            this.pictureReinit.TabIndex = 48;
+            this.pictureReinit.TabStop = false;
+            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
+            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
+            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFilter.Location = new System.Drawing.Point(86, 252);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
+            this.buttonFilter.TabIndex = 47;
+            this.buttonFilter.Text = "Filtrer";
+            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
             // checkBoxPack
             // 
             this.checkBoxPack.AutoSize = true;
@@ -485,31 +558,6 @@
             this.buttonModif.UseVisualStyleBackColor = true;
             this.buttonModif.Click += new System.EventHandler(this.buttonModif_Click);
             // 
-            // pictureReinit
-            // 
-            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
-            this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
-            this.pictureReinit.TabIndex = 48;
-            this.pictureReinit.TabStop = false;
-            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
-            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
-            // 
-            // buttonFilter
-            // 
-            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
-            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFilter.Location = new System.Drawing.Point(86, 252);
-            this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
-            this.buttonFilter.TabIndex = 47;
-            this.buttonFilter.Text = "Filtrer";
-            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonFilter.UseVisualStyleBackColor = true;
-            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
-            // 
             // buttonPret
             // 
             this.buttonPret.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -523,51 +571,6 @@
             this.buttonPret.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonPret.UseVisualStyleBackColor = true;
             this.buttonPret.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
-            // 
-            // IdReservation
-            // 
-            this.IdReservation.HeaderText = "Id";
-            this.IdReservation.Name = "IdReservation";
-            this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 40;
-            // 
-            // NameUserReservation
-            // 
-            this.NameUserReservation.HeaderText = "Utilisateur";
-            this.NameUserReservation.Name = "NameUserReservation";
-            this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 82;
-            // 
-            // NameReservable
-            // 
-            this.NameReservable.HeaderText = "Réservable";
-            this.NameReservable.Name = "NameReservable";
-            this.NameReservable.ReadOnly = true;
-            this.NameReservable.Width = 90;
-            // 
-            // debutResersation
-            // 
-            this.debutResersation.HeaderText = "Début Réservation";
-            this.debutResersation.Name = "debutResersation";
-            this.debutResersation.ReadOnly = true;
-            this.debutResersation.Width = 105;
-            // 
-            // finReservation
-            // 
-            this.finReservation.HeaderText = "Fin Réservation";
-            this.finReservation.Name = "finReservation";
-            this.finReservation.ReadOnly = true;
-            this.finReservation.Width = 95;
             // 
             // panReservation
             // 

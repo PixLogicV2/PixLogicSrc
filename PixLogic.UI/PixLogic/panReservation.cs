@@ -74,8 +74,8 @@ namespace PixLogic
             if (dataGridReservations.RowCount > 0)
             {
                 Reservation reservation = database.GetReservationById(Convert.ToInt32(dataGridReservations.CurrentRow.Cells[0].Value));
-                valDateFin.Text = ((DateTime)reservation.beginDateReservation).ToString("D");
-                valDateDebut.Text = ((DateTime)reservation.endDateReservation).ToString("D");
+                valDateFin.Text = ((DateTime)reservation.endDateReservation).ToString("D");
+                valDateDebut.Text = ((DateTime)reservation.beginDateReservation).ToString("D");
                 valNomUser.Text = reservation.user.name;
                 valNomReservable.Text = reservation.reservable.name;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
