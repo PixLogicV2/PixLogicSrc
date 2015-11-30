@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowPackManager));
             this.labelListPack = new System.Windows.Forms.Label();
             this.panTablePack = new System.Windows.Forms.Panel();
@@ -120,6 +121,8 @@
             // 
             this.dataGridPack.AllowUserToAddRows = false;
             this.dataGridPack.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridPack.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridPack.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridPack.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridPack.BorderStyle = System.Windows.Forms.BorderStyle.None;
