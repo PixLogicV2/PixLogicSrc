@@ -93,9 +93,13 @@ namespace PixLogic
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            /*
-            emprunt
-            */
+            int idReservation = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
+            if(Helper.confirmationEmprunt(idReservation))
+            {
+                database.EmpruntReservation(idReservation);
+                setTableReservations(database.GetAllReservations());
+            }
+            
         }
 
         private void dataGridReservations_Click(object sender, EventArgs e)
@@ -203,16 +207,17 @@ namespace PixLogic
 
         private void buttonModif_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
-            Reservation reservation = database.GetReservationById(id);
-            
-            WindowSetReservation set = new WindowSetReservation(reservation.reservable.ReservableId);
+            int idReservation = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
+            Reservation reservation = database.GetReservationById(idReservation);
+            int idReservable = reservation.reservable.ReservableId;
+
+            WindowSetReservation set = new WindowSetReservation(idReservation, idReservable, this);
             set.ShowDialog(this);
         }
 
         private void buttonCancelReserv_Click(object sender, EventArgs e)
         {
-            if (Helper.confirmation(Helper.DELETE))
+            if (Helper.confirmationReservation(Helper.CANCEL))
             {
                 database.DeleteReservation(int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString()));
                 setTableReservations(database.GetAllReservations());

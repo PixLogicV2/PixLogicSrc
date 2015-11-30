@@ -14,12 +14,16 @@ namespace PixLogic
     public partial class WindowSetReservation : Form
     {
         private int idReservable;
+        private int idReservation;
+        panReservation pan;
         private Database database = Helper.database;
 
-        public WindowSetReservation(int id)
+        public WindowSetReservation(int idR, int idr, panReservation p)
         {
             InitializeComponent();
-            idReservable = id;
+            idReservable = idr;
+            idReservation = idR;
+            pan = p;
             setInfos();
             setTableDateReservation(database.GetAllReservationsByReservableId(idReservable));
         }
@@ -66,11 +70,14 @@ namespace PixLogic
             DateTime debut = DateTime.Parse(dateTimeBegin.Value.ToString());
             DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
 
-            if (Helper.beginBeforeEndDate(true, debut, fin)
-                && Helper.getDispoReservableByDate(true, idReservable, debut, fin)
+            if (Helper.reservationStartMinimumToday(true, debut)
+                && Helper.beginBeforeEndDate(true, debut, fin)
+                && Helper.getDispoReservableByDateForModif(true, idReservable, idReservation, debut, fin)
                 && Helper.confirmationReservation(Helper.SET))
             {
-
+                database.UpdateReservation(idReservation, debut, fin);
+                pan.setTableReservations(database.GetAllReservations());
+                this.Close();
             }
         }
     }
