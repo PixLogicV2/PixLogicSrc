@@ -19,7 +19,8 @@ namespace PixLogic.DAL
         {
             IQueryable<Reservation> reservQuery = from Reservation
                                                   in context.Reservations.Include(c => c.reservable).Include(c => c.manager).Include(c => c.user)
-                                                  where Reservation.beginDateEmprunt ==null 
+                                                  where Reservation.beginDateEmprunt ==null
+                                                  where Reservation.endDateReservation>=DateTime.Today
                                                   select Reservation;
             List<Reservation> list = new List<Reservation>();
             foreach (var prod in reservQuery)
