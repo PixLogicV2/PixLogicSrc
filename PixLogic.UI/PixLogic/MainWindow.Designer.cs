@@ -67,26 +67,27 @@
             this.toolStripMenuItem1});
             this.barreDeMenu.Location = new System.Drawing.Point(0, 0);
             this.barreDeMenu.Name = "barreDeMenu";
-            this.barreDeMenu.Size = new System.Drawing.Size(827, 24);
+            this.barreDeMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.barreDeMenu.Size = new System.Drawing.Size(1103, 28);
             this.barreDeMenu.TabIndex = 0;
             this.barreDeMenu.Text = "barreDeMenu";
             // 
             // connexionToolStripMenuItem
             // 
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
-            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.connexionToolStripMenuItem.Text = "Connexion";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(28, 24);
             this.toolStripMenuItem1.Text = "?";
             // 
             // panMenu
@@ -98,9 +99,10 @@
             this.panMenu.Controls.Add(this.boutonMenu2);
             this.panMenu.Controls.Add(this.boutonMateriel);
             this.panMenu.Controls.Add(this.boutonUtilisateur);
-            this.panMenu.Location = new System.Drawing.Point(0, 61);
+            this.panMenu.Location = new System.Drawing.Point(0, 75);
+            this.panMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panMenu.Name = "panMenu";
-            this.panMenu.Size = new System.Drawing.Size(140, 458);
+            this.panMenu.Size = new System.Drawing.Size(187, 564);
             this.panMenu.TabIndex = 1;
             // 
             // buttonMenu
@@ -109,9 +111,10 @@
             this.buttonMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonMenu.Controls.Add(this.labelMainMenu);
             this.buttonMenu.Controls.Add(this.labelFleche);
-            this.buttonMenu.Location = new System.Drawing.Point(0, 423);
+            this.buttonMenu.Location = new System.Drawing.Point(0, 521);
+            this.buttonMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(140, 34);
+            this.buttonMenu.Size = new System.Drawing.Size(186, 41);
             this.buttonMenu.TabIndex = 6;
             // 
             // labelMainMenu
@@ -119,9 +122,10 @@
             this.labelMainMenu.AutoSize = true;
             this.labelMainMenu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMainMenu.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelMainMenu.Location = new System.Drawing.Point(15, 13);
+            this.labelMainMenu.Location = new System.Drawing.Point(20, 16);
+            this.labelMainMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMainMenu.Name = "labelMainMenu";
-            this.labelMainMenu.Size = new System.Drawing.Size(104, 15);
+            this.labelMainMenu.Size = new System.Drawing.Size(135, 20);
             this.labelMainMenu.TabIndex = 0;
             this.labelMainMenu.Text = "MENU PRINCIPAL";
             // 
@@ -130,9 +134,10 @@
             this.labelFleche.AutoSize = true;
             this.labelFleche.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFleche.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelFleche.Location = new System.Drawing.Point(60, 2);
+            this.labelFleche.Location = new System.Drawing.Point(80, 2);
+            this.labelFleche.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFleche.Name = "labelFleche";
-            this.labelFleche.Size = new System.Drawing.Size(16, 20);
+            this.labelFleche.Size = new System.Drawing.Size(19, 25);
             this.labelFleche.TabIndex = 1;
             this.labelFleche.Text = "^";
             // 
@@ -141,10 +146,10 @@
             this.menuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuButton1.BackgroundImage")));
             this.menuButton1.Image = global::PixLogic.Properties.Resources.aa;
             this.menuButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuButton1.Location = new System.Drawing.Point(0, 213);
-            this.menuButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.menuButton1.Location = new System.Drawing.Point(0, 262);
+            this.menuButton1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.menuButton1.Name = "menuButton1";
-            this.menuButton1.Size = new System.Drawing.Size(140, 70);
+            this.menuButton1.Size = new System.Drawing.Size(187, 86);
             this.menuButton1.TabIndex = 5;
             this.menuButton1.Text = "         EMPRUNT";
             this.menuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,10 +160,10 @@
             this.boutonMenu4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMenu4.BackgroundImage")));
             this.boutonMenu4.Image = global::PixLogic.Properties.Resources.script_icon2;
             this.boutonMenu4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonMenu4.Location = new System.Drawing.Point(0, 353);
-            this.boutonMenu4.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonMenu4.Location = new System.Drawing.Point(0, 434);
+            this.boutonMenu4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.boutonMenu4.Name = "boutonMenu4";
-            this.boutonMenu4.Size = new System.Drawing.Size(140, 70);
+            this.boutonMenu4.Size = new System.Drawing.Size(187, 86);
             this.boutonMenu4.TabIndex = 4;
             this.boutonMenu4.Text = "         SCRIPT";
             this.boutonMenu4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,10 +174,10 @@
             this.boutonMenu3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMenu3.BackgroundImage")));
             this.boutonMenu3.Image = global::PixLogic.Properties.Resources.historique_icon2;
             this.boutonMenu3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonMenu3.Location = new System.Drawing.Point(0, 283);
-            this.boutonMenu3.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonMenu3.Location = new System.Drawing.Point(0, 348);
+            this.boutonMenu3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.boutonMenu3.Name = "boutonMenu3";
-            this.boutonMenu3.Size = new System.Drawing.Size(140, 70);
+            this.boutonMenu3.Size = new System.Drawing.Size(187, 86);
             this.boutonMenu3.TabIndex = 3;
             this.boutonMenu3.Text = "         HISTORIQUE";
             this.boutonMenu3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,10 +188,10 @@
             this.boutonMenu2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMenu2.BackgroundImage")));
             this.boutonMenu2.Image = global::PixLogic.Properties.Resources.reservation_icon2;
             this.boutonMenu2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonMenu2.Location = new System.Drawing.Point(0, 143);
-            this.boutonMenu2.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonMenu2.Location = new System.Drawing.Point(0, 176);
+            this.boutonMenu2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.boutonMenu2.Name = "boutonMenu2";
-            this.boutonMenu2.Size = new System.Drawing.Size(140, 70);
+            this.boutonMenu2.Size = new System.Drawing.Size(187, 86);
             this.boutonMenu2.TabIndex = 2;
             this.boutonMenu2.Text = "         RESERVATION";
             this.boutonMenu2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -197,10 +202,10 @@
             this.boutonMateriel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMateriel.BackgroundImage")));
             this.boutonMateriel.Image = global::PixLogic.Properties.Resources.camera_photo_icon;
             this.boutonMateriel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonMateriel.Location = new System.Drawing.Point(0, 73);
-            this.boutonMateriel.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonMateriel.Location = new System.Drawing.Point(0, 90);
+            this.boutonMateriel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.boutonMateriel.Name = "boutonMateriel";
-            this.boutonMateriel.Size = new System.Drawing.Size(140, 70);
+            this.boutonMateriel.Size = new System.Drawing.Size(187, 86);
             this.boutonMateriel.TabIndex = 1;
             this.boutonMateriel.Text = "         MATERIEL";
             this.boutonMateriel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,10 +216,10 @@
             this.boutonUtilisateur.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonUtilisateur.BackgroundImage")));
             this.boutonUtilisateur.Image = global::PixLogic.Properties.Resources.client_icon2;
             this.boutonUtilisateur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonUtilisateur.Location = new System.Drawing.Point(0, 3);
-            this.boutonUtilisateur.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonUtilisateur.Location = new System.Drawing.Point(0, 4);
+            this.boutonUtilisateur.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.boutonUtilisateur.Name = "boutonUtilisateur";
-            this.boutonUtilisateur.Size = new System.Drawing.Size(140, 70);
+            this.boutonUtilisateur.Size = new System.Drawing.Size(187, 86);
             this.boutonUtilisateur.TabIndex = 0;
             this.boutonUtilisateur.Text = "         UTILISATEUR";
             this.boutonUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +230,9 @@
             this.barreDoutils.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.barreDoutils.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BoutonActionBO});
-            this.barreDoutils.Location = new System.Drawing.Point(0, 24);
+            this.barreDoutils.Location = new System.Drawing.Point(0, 28);
             this.barreDoutils.Name = "barreDoutils";
-            this.barreDoutils.Size = new System.Drawing.Size(827, 42);
+            this.barreDoutils.Size = new System.Drawing.Size(1103, 47);
             this.barreDoutils.TabIndex = 2;
             this.barreDoutils.Text = "barreDoutils";
             // 
@@ -241,7 +246,7 @@
             this.BoutonActionBO.Image = ((System.Drawing.Image)(resources.GetObject("BoutonActionBO.Image")));
             this.BoutonActionBO.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BoutonActionBO.Name = "BoutonActionBO";
-            this.BoutonActionBO.Size = new System.Drawing.Size(68, 39);
+            this.BoutonActionBO.Size = new System.Drawing.Size(82, 44);
             this.BoutonActionBO.Text = "Nouveau";
             this.BoutonActionBO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -250,59 +255,60 @@
             this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user_icon;
             this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(192, 40);
             this.utilisateurToolStripMenuItem.Text = "Utilisateur";
             // 
             // matérielToolStripMenuItem
             // 
             this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
-            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(192, 40);
             this.matérielToolStripMenuItem.Text = "Matériel";
             // 
             // packToolStripMenuItem
             // 
             this.packToolStripMenuItem.Name = "packToolStripMenuItem";
-            this.packToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.packToolStripMenuItem.Size = new System.Drawing.Size(192, 40);
             this.packToolStripMenuItem.Text = "Pack";
             // 
             // réservationToolStripMenuItem
             // 
             this.réservationToolStripMenuItem.Name = "réservationToolStripMenuItem";
-            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(192, 40);
             this.réservationToolStripMenuItem.Text = "Réservation";
             // 
             // panReservation1
             // 
             this.panReservation1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panReservation1.Location = new System.Drawing.Point(138, 66);
-            this.panReservation1.Margin = new System.Windows.Forms.Padding(2);
+            this.panReservation1.Location = new System.Drawing.Point(184, 81);
+            this.panReservation1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panReservation1.Name = "panReservation1";
-            this.panReservation1.Size = new System.Drawing.Size(688, 452);
+            this.panReservation1.Size = new System.Drawing.Size(917, 556);
             this.panReservation1.TabIndex = 5;
             // 
             // panItemPack1
             // 
             this.panItemPack1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panItemPack1.Location = new System.Drawing.Point(139, 66);
+            this.panItemPack1.Location = new System.Drawing.Point(185, 81);
+            this.panItemPack1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.panItemPack1.Name = "panItemPack1";
-            this.panItemPack1.Size = new System.Drawing.Size(690, 452);
+            this.panItemPack1.Size = new System.Drawing.Size(919, 556);
             this.panItemPack1.TabIndex = 4;
             // 
             // panUsers1
             // 
             this.panUsers1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panUsers1.Location = new System.Drawing.Point(139, 66);
-            this.panUsers1.Margin = new System.Windows.Forms.Padding(2);
+            this.panUsers1.Location = new System.Drawing.Point(185, 81);
+            this.panUsers1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panUsers1.Name = "panUsers1";
-            this.panUsers1.Size = new System.Drawing.Size(688, 452);
+            this.panUsers1.Size = new System.Drawing.Size(917, 556);
             this.panUsers1.TabIndex = 3;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 519);
+            this.ClientSize = new System.Drawing.Size(1103, 639);
             this.Controls.Add(this.panReservation1);
             this.Controls.Add(this.panItemPack1);
             this.Controls.Add(this.panUsers1);
@@ -311,6 +317,7 @@
             this.Controls.Add(this.barreDeMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.barreDeMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "CE3P Reservation";
