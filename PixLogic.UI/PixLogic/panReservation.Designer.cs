@@ -33,15 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panReservation));
             this.panTableUsers = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridReservations = new System.Windows.Forms.DataGridView();
-            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debutResersation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panNews = new System.Windows.Forms.Panel();
             this.valType = new System.Windows.Forms.Label();
             this.valNomReservable = new System.Windows.Forms.Label();
@@ -57,8 +51,6 @@
             this.labelListReservation = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
-            this.pictureReinit = new System.Windows.Forms.PictureBox();
-            this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
             this.checkBoxItem = new System.Windows.Forms.CheckBox();
@@ -73,7 +65,15 @@
             this.labelFiltres = new System.Windows.Forms.Label();
             this.buttonCancelReserv = new System.Windows.Forms.Button();
             this.buttonModif = new System.Windows.Forms.Button();
+            this.pictureReinit = new System.Windows.Forms.PictureBox();
+            this.buttonFilter = new System.Windows.Forms.Button();
             this.buttonPret = new System.Windows.Forms.Button();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
+            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debutResersation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
@@ -92,16 +92,6 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(412, 285);
             this.panTableUsers.TabIndex = 23;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -170,41 +160,6 @@
             this.dataGridReservations.TabIndex = 0;
             this.dataGridReservations.Click += new System.EventHandler(this.dataGridReservations_Click);
             this.dataGridReservations.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridReservations_KeyUp);
-            // 
-            // IdReservation
-            // 
-            this.IdReservation.HeaderText = "Id";
-            this.IdReservation.Name = "IdReservation";
-            this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 60;
-            // 
-            // NameUserReservation
-            // 
-            this.NameUserReservation.HeaderText = "Utilisateur";
-            this.NameUserReservation.Name = "NameUserReservation";
-            this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 82;
-            // 
-            // NameReservable
-            // 
-            this.NameReservable.HeaderText = "Reservable";
-            this.NameReservable.Name = "NameReservable";
-            this.NameReservable.ReadOnly = true;
-            this.NameReservable.Width = 90;
-            // 
-            // debutResersation
-            // 
-            this.debutResersation.HeaderText = "Début Réservation";
-            this.debutResersation.Name = "debutResersation";
-            this.debutResersation.ReadOnly = true;
-            this.debutResersation.Width = 90;
-            // 
-            // finReservation
-            // 
-            this.finReservation.HeaderText = "Fin Reservation";
-            this.finReservation.Name = "finReservation";
-            this.finReservation.ReadOnly = true;
-            this.finReservation.Width = 90;
             // 
             // panNews
             // 
@@ -379,31 +334,6 @@
             this.panFiltres.Size = new System.Drawing.Size(256, 285);
             this.panFiltres.TabIndex = 43;
             // 
-            // pictureReinit
-            // 
-            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
-            this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
-            this.pictureReinit.TabIndex = 48;
-            this.pictureReinit.TabStop = false;
-            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
-            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
-            // 
-            // buttonFilter
-            // 
-            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
-            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFilter.Location = new System.Drawing.Point(86, 252);
-            this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
-            this.buttonFilter.TabIndex = 47;
-            this.buttonFilter.Text = "Filtrer";
-            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonFilter.UseVisualStyleBackColor = true;
-            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
-            // 
             // checkBoxPack
             // 
             this.checkBoxPack.AutoSize = true;
@@ -555,6 +485,31 @@
             this.buttonModif.UseVisualStyleBackColor = true;
             this.buttonModif.Click += new System.EventHandler(this.buttonModif_Click);
             // 
+            // pictureReinit
+            // 
+            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
+            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
+            this.pictureReinit.Name = "pictureReinit";
+            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
+            this.pictureReinit.TabIndex = 48;
+            this.pictureReinit.TabStop = false;
+            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
+            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
+            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFilter.Location = new System.Drawing.Point(86, 252);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
+            this.buttonFilter.TabIndex = 47;
+            this.buttonFilter.Text = "Filtrer";
+            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
             // buttonPret
             // 
             this.buttonPret.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -568,6 +523,51 @@
             this.buttonPret.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonPret.UseVisualStyleBackColor = true;
             this.buttonPret.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
+            // 
+            // IdReservation
+            // 
+            this.IdReservation.HeaderText = "Id";
+            this.IdReservation.Name = "IdReservation";
+            this.IdReservation.ReadOnly = true;
+            this.IdReservation.Width = 40;
+            // 
+            // NameUserReservation
+            // 
+            this.NameUserReservation.HeaderText = "Utilisateur";
+            this.NameUserReservation.Name = "NameUserReservation";
+            this.NameUserReservation.ReadOnly = true;
+            this.NameUserReservation.Width = 82;
+            // 
+            // NameReservable
+            // 
+            this.NameReservable.HeaderText = "Réservable";
+            this.NameReservable.Name = "NameReservable";
+            this.NameReservable.ReadOnly = true;
+            this.NameReservable.Width = 90;
+            // 
+            // debutResersation
+            // 
+            this.debutResersation.HeaderText = "Début Réservation";
+            this.debutResersation.Name = "debutResersation";
+            this.debutResersation.ReadOnly = true;
+            this.debutResersation.Width = 105;
+            // 
+            // finReservation
+            // 
+            this.finReservation.HeaderText = "Fin Réservation";
+            this.finReservation.Name = "finReservation";
+            this.finReservation.ReadOnly = true;
+            this.finReservation.Width = 95;
             // 
             // panReservation
             // 
@@ -583,7 +583,7 @@
             this.Controls.Add(this.labelListReservation);
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableUsers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "panReservation";
             this.Size = new System.Drawing.Size(686, 450);
             this.panTableUsers.ResumeLayout(false);
