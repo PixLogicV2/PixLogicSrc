@@ -65,13 +65,13 @@ namespace PixLogic
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = true;
-                   panReservation1.Visible = false;
+                    panReservation1.Visible = false;
                 }
                 else if (button.Text.ToString().Equals(textReservation))
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = false;
-                   panReservation1.Visible = true;
+                    panReservation1.Visible = true;
                     panReservation1.setTableReservations(database.GetAllReservations());
                 }
             }
