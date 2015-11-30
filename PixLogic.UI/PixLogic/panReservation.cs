@@ -57,13 +57,13 @@ namespace PixLogic
         {
             if(dataGridReservations.RowCount > 0)
             {
-                buttonEmprunt.Enabled = true;
+                buttonPret.Enabled = true;
                 buttonModif.Enabled = true;
                 buttonCancelReserv.Enabled = true;
             }
             else
             {
-                buttonEmprunt.Enabled = false;
+                buttonPret.Enabled = false;
                 buttonModif.Enabled = false;
                 buttonCancelReserv.Enabled = false;
             }
