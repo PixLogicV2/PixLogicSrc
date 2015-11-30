@@ -212,7 +212,11 @@ namespace PixLogic
 
         private void buttonCancelReserv_Click(object sender, EventArgs e)
         {
-
+            if (Helper.confirmation(Helper.DELETE))
+            {
+                database.DeleteReservation(int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString()));
+                setTableReservations(database.GetAllReservations());
+            }
         }
 
         private void pictureReinit_MouseEnter(object sender, EventArgs e)
@@ -225,6 +229,17 @@ namespace PixLogic
         private void pictureReinit_Click(object sender, EventArgs e)
         {
             start();
+        }
+
+        private void buttonCancelSearch_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Text = "";
+            setTableReservations(database.GetAllReservations());
+        }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            setTableReservations(database.GetAllReservationsByString(textBoxSearch.Text));
         }
     }
 }

@@ -284,5 +284,6 @@ namespace PixLogic
             info.SetToolTip(pictureReserver, "Réserver ce matériel.");
             pictureReserver.Cursor = Cursors.Hand;
         }
+        
     }
 }
