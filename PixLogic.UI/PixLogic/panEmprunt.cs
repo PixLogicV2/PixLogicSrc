@@ -84,7 +84,6 @@ namespace PixLogic
                 valNomReservable.Text = reservation.reservable.name;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
                 dataGridEmprunts.CurrentRow.DefaultCellStyle.BackColor = Color.Green;
-                MessageBox.Show("kdsdf");
             }
             else
             {
