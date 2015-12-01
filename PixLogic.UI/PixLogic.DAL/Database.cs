@@ -212,5 +212,9 @@ namespace PixLogic.DAL
         {
             container.get("add_categorie_to_item").addCategorieToItem(itemName, packName);
         }
+        public bool ContainReservationByUserId(int id)
+        {
+           return container.get("contain_reservation_by_user_id").containReservationByUserId(id);
+        }
     }
 }

@@ -197,6 +197,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new AddCategorieToItem();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "add_reservation_by_user_id":
+                    this.arrayContainer[serviceName] = new ContainReservationByUserId();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "get_all_emprunts_by_date":
                     this.arrayContainer[serviceName] = new GetAllEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
