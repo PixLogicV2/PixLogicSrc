@@ -4,9 +4,13 @@ using System.Windows.Forms;
 
 namespace PixLogic
 {
+
     public partial class MainWindow : Form
     {
         private MenuButton button = null;
+
+        
+
         private string textUtilisateur = "         UTILISATEUR";
         private string textMateriel = "         MATERIEL";
         private string textReservation = "         RESERVATION";
