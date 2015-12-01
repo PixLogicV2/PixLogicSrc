@@ -10,6 +10,7 @@ namespace PixLogic
         private string textUtilisateur = "         UTILISATEUR";
         private string textMateriel = "         MATERIEL";
         private string textReservation = "         RESERVATION";
+        private string textEmprunt = "         EMPRUNT";
         public static bool START = false;
         private Database database = Helper.database;
         public MainWindow()
@@ -24,6 +25,7 @@ namespace PixLogic
             panItemPack1.Visible = false;
             panUsers1.Visible = true;
             panReservation1.Visible = false;
+            panEmprunt1.Visible = false;
             button = boutonUtilisateur;
             button.DesactiveEffectButton();
         }
@@ -60,19 +62,29 @@ namespace PixLogic
                     panUsers1.Visible = false;
                     panItemPack1.Visible = true;
                    panReservation1.Visible = false;
+                    panEmprunt1.Visible = false;
                 }
                 else if (button.Text.ToString().Equals(textUtilisateur))
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = true;
                    panReservation1.Visible = false;
+                    panEmprunt1.Visible = false;
                 }
                 else if (button.Text.ToString().Equals(textReservation))
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = false;
                    panReservation1.Visible = true;
+                    panEmprunt1.Visible = false;
                     panReservation1.setTableReservations(database.GetAllReservations());
+                }
+                else if (button.Text.ToString().Equals(textEmprunt))
+                {
+                    panItemPack1.Visible = false;
+                    panUsers1.Visible = false;
+                    panReservation1.Visible = false;
+                    panEmprunt1.Visible = true;
                 }
             }
 
