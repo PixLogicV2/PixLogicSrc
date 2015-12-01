@@ -43,12 +43,12 @@ namespace PixLogic
                     ResultDGV.DataSource = table;
 
                     //resizing columns for clearer results
-                    ResultDGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+                    ResultDGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 }
             }
-            catch(Exception ex)
+            catch(SqlException ex)
             {
-                //catch all exceptions
+                //catch Sql exceptions
                 MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -62,7 +62,7 @@ namespace PixLogic
                 try
                 {
                     //get the content of the file to feed the richTextBox, path access issue here, fixing pending
-                    string fileQuery = File.ReadAllText(Path.GetDirectoryName(openFileDialog.FileName));
+                    string fileQuery = File.ReadAllText(Path.GetFullPath(openFileDialog.FileName));
                     QueryRTB.Text = fileQuery;
                 }
                 catch(Exception ex)
@@ -71,6 +71,11 @@ namespace PixLogic
                     MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
