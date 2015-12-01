@@ -44,10 +44,10 @@
             this.packToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.réservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAllPan = new System.Windows.Forms.Panel();
-            this.menuButton1 = new PixLogic.MenuButton();
-            this.boutonMenu4 = new PixLogic.MenuButton();
-            this.boutonMenu3 = new PixLogic.MenuButton();
-            this.boutonMenu2 = new PixLogic.MenuButton();
+            this.boutonEmprunt = new PixLogic.MenuButton();
+            this.boutonScript = new PixLogic.MenuButton();
+            this.boutonHistorique = new PixLogic.MenuButton();
+            this.boutonReservation = new PixLogic.MenuButton();
             this.boutonMateriel = new PixLogic.MenuButton();
             this.boutonUtilisateur = new PixLogic.MenuButton();
             this.panEmprunt1 = new PixLogic.panEmprunt();
@@ -95,10 +95,10 @@
             // panMenu
             // 
             this.panMenu.Controls.Add(this.buttonMenu);
-            this.panMenu.Controls.Add(this.menuButton1);
-            this.panMenu.Controls.Add(this.boutonMenu4);
-            this.panMenu.Controls.Add(this.boutonMenu3);
-            this.panMenu.Controls.Add(this.boutonMenu2);
+            this.panMenu.Controls.Add(this.boutonEmprunt);
+            this.panMenu.Controls.Add(this.boutonScript);
+            this.panMenu.Controls.Add(this.boutonHistorique);
+            this.panMenu.Controls.Add(this.boutonReservation);
             this.panMenu.Controls.Add(this.boutonMateriel);
             this.panMenu.Controls.Add(this.boutonUtilisateur);
             this.panMenu.Location = new System.Drawing.Point(0, 61);
@@ -202,61 +202,61 @@
             this.panelAllPan.Size = new System.Drawing.Size(690, 455);
             this.panelAllPan.TabIndex = 3;
             // 
-            // menuButton1
+            // boutonEmprunt
             // 
-            this.menuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuButton1.BackgroundImage")));
-            this.menuButton1.Image = global::PixLogic.Properties.Resources.aa;
-            this.menuButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuButton1.Location = new System.Drawing.Point(0, 213);
-            this.menuButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.menuButton1.Name = "menuButton1";
-            this.menuButton1.Size = new System.Drawing.Size(140, 70);
-            this.menuButton1.TabIndex = 5;
-            this.menuButton1.Text = "         EMPRUNT";
-            this.menuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.menuButton1.UseCompatibleTextRendering = true;
+            this.boutonEmprunt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonEmprunt.BackgroundImage")));
+            this.boutonEmprunt.Image = global::PixLogic.Properties.Resources.aa;
+            this.boutonEmprunt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonEmprunt.Location = new System.Drawing.Point(0, 213);
+            this.boutonEmprunt.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonEmprunt.Name = "boutonEmprunt";
+            this.boutonEmprunt.Size = new System.Drawing.Size(140, 70);
+            this.boutonEmprunt.TabIndex = 5;
+            this.boutonEmprunt.Text = "         EMPRUNT";
+            this.boutonEmprunt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonEmprunt.UseCompatibleTextRendering = true;
             // 
-            // boutonMenu4
+            // boutonScript
             // 
-            this.boutonMenu4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMenu4.BackgroundImage")));
-            this.boutonMenu4.Image = global::PixLogic.Properties.Resources.script_icon2;
-            this.boutonMenu4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonMenu4.Location = new System.Drawing.Point(0, 353);
-            this.boutonMenu4.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonMenu4.Name = "boutonMenu4";
-            this.boutonMenu4.Size = new System.Drawing.Size(140, 70);
-            this.boutonMenu4.TabIndex = 4;
-            this.boutonMenu4.Text = "         SCRIPT";
-            this.boutonMenu4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonMenu4.UseCompatibleTextRendering = true;
+            this.boutonScript.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonScript.BackgroundImage")));
+            this.boutonScript.Image = global::PixLogic.Properties.Resources.script_icon2;
+            this.boutonScript.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonScript.Location = new System.Drawing.Point(0, 353);
+            this.boutonScript.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonScript.Name = "boutonScript";
+            this.boutonScript.Size = new System.Drawing.Size(140, 70);
+            this.boutonScript.TabIndex = 4;
+            this.boutonScript.Text = "         SCRIPT";
+            this.boutonScript.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonScript.UseCompatibleTextRendering = true;
             // 
-            // boutonMenu3
+            // boutonHistorique
             // 
-            this.boutonMenu3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMenu3.BackgroundImage")));
-            this.boutonMenu3.Image = global::PixLogic.Properties.Resources.historique_icon2;
-            this.boutonMenu3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonMenu3.Location = new System.Drawing.Point(0, 283);
-            this.boutonMenu3.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonMenu3.Name = "boutonMenu3";
-            this.boutonMenu3.Size = new System.Drawing.Size(140, 70);
-            this.boutonMenu3.TabIndex = 3;
-            this.boutonMenu3.Text = "         HISTORIQUE";
-            this.boutonMenu3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonMenu3.UseCompatibleTextRendering = true;
+            this.boutonHistorique.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonHistorique.BackgroundImage")));
+            this.boutonHistorique.Image = global::PixLogic.Properties.Resources.historique_icon2;
+            this.boutonHistorique.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonHistorique.Location = new System.Drawing.Point(0, 283);
+            this.boutonHistorique.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonHistorique.Name = "boutonHistorique";
+            this.boutonHistorique.Size = new System.Drawing.Size(140, 70);
+            this.boutonHistorique.TabIndex = 3;
+            this.boutonHistorique.Text = "         HISTORIQUE";
+            this.boutonHistorique.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonHistorique.UseCompatibleTextRendering = true;
             // 
-            // boutonMenu2
+            // boutonReservation
             // 
-            this.boutonMenu2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMenu2.BackgroundImage")));
-            this.boutonMenu2.Image = global::PixLogic.Properties.Resources.reservation_icon2;
-            this.boutonMenu2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonMenu2.Location = new System.Drawing.Point(0, 143);
-            this.boutonMenu2.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonMenu2.Name = "boutonMenu2";
-            this.boutonMenu2.Size = new System.Drawing.Size(140, 70);
-            this.boutonMenu2.TabIndex = 2;
-            this.boutonMenu2.Text = "         RESERVATION";
-            this.boutonMenu2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonMenu2.UseCompatibleTextRendering = true;
+            this.boutonReservation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonReservation.BackgroundImage")));
+            this.boutonReservation.Image = global::PixLogic.Properties.Resources.reservation_icon2;
+            this.boutonReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonReservation.Location = new System.Drawing.Point(0, 143);
+            this.boutonReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonReservation.Name = "boutonReservation";
+            this.boutonReservation.Size = new System.Drawing.Size(140, 70);
+            this.boutonReservation.TabIndex = 2;
+            this.boutonReservation.Text = "         RESERVATION";
+            this.boutonReservation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonReservation.UseCompatibleTextRendering = true;
             // 
             // boutonMateriel
             // 
@@ -359,15 +359,15 @@
         private System.Windows.Forms.ToolStrip barreDoutils;
         private MenuButton boutonUtilisateur;
         private MenuButton boutonMateriel;
-        private MenuButton boutonMenu2;
-        private MenuButton boutonMenu4;
-        private MenuButton boutonMenu3;
+        private MenuButton boutonReservation;
+        private MenuButton boutonScript;
+        private MenuButton boutonHistorique;
         private System.Windows.Forms.ToolStripDropDownButton BoutonActionBO;
         private System.Windows.Forms.ToolStripMenuItem utilisateurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matérielToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem packToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem réservationToolStripMenuItem;
-        private MenuButton menuButton1;
+        private MenuButton boutonEmprunt;
         private System.Windows.Forms.Panel buttonMenu;
         private System.Windows.Forms.Label labelMainMenu;
         private System.Windows.Forms.Label labelFleche;

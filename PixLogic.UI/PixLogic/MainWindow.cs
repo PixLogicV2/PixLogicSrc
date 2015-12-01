@@ -15,6 +15,7 @@ namespace PixLogic
         private string textMateriel = "         MATERIEL";
         private string textReservation = "         RESERVATION";
         private string textEmprunt = "         EMPRUNT";
+
         public static bool START = false;
         private Database database = Helper.database;
         public MainWindow()
@@ -23,6 +24,7 @@ namespace PixLogic
             addEventsOnButtonItem();
             setPanUserVisible();
         }
+        
 
         private void setPanUserVisible()
         {
@@ -49,6 +51,28 @@ namespace PixLogic
             }
         }
 
+        private void selectPan(string buttonName)
+        {
+            string namePan = "";
+            switch(buttonName)
+            {
+                case "boutonUtilisateur": namePan = "panUtilisateur1"; break;
+                case "boutonMateriel": namePan = "panMateriel1"; break;
+                case "boutonReservation": namePan = "panReservation1"; break;
+                case "boutonEmprunt": namePan = "panEmprunt1"; break;
+                case "boutonHistorique": namePan = "panHistorique1"; break;
+                case "boutonScript": namePan = "panScript1"; break;
+            }
+
+            foreach (Control c in panelAllPan.Controls)
+            {
+                if (c.Name.Equals(namePan))
+                    c.Visible = true;
+                else
+                    c.Visible = false;
+            }
+        }
+
         private void ClickItemButton(object sender, EventArgs e)
         {
             MenuButton buttonHelper = button;
@@ -61,7 +85,8 @@ namespace PixLogic
             if (buttonHelper != null && buttonHelper != button)
             {
                 buttonHelper.ActiveEffectButton();
-                if(button.Text.ToString().Equals(textMateriel))
+                selectPan(button.Text);
+                /*if(button.Text.ToString().Equals(textMateriel))
                 {
                     panUsers1.Visible = false;
                     panItemPack1.Visible = true;
@@ -89,7 +114,7 @@ namespace PixLogic
                     panUsers1.Visible = false;
                     panReservation1.Visible = false;
                     panEmprunt1.Visible = true;
-                }
+                }*/
             }
 
             button.DesactiveEffectButton();

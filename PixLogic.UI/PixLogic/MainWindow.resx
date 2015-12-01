@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="menuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="boutonEmprunt.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
@@ -131,7 +131,7 @@
         SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="boutonMenu4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="boutonScript.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
@@ -141,7 +141,7 @@
         SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="boutonMenu3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="boutonHistorique.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
@@ -151,7 +151,7 @@
         SjBSgpESjJRgpF6wmYHA3B/D1SbuysJb2gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="boutonMenu2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="boutonReservation.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJgAAABUCAYAAAB+6P7uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAAPNJREFUeF7t0jERACEQALE3cj0lZvAvhZ/Bw3Yp4iDfOefODCResL03JF6wtRYk
