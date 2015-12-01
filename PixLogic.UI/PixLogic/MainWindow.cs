@@ -1,7 +1,6 @@
-﻿using PixLogic.DAL;
-using System;
+﻿using System;
 using System.Windows.Forms;
-
+using PixLogic.DAL;
 namespace PixLogic
 {
 
@@ -9,7 +8,7 @@ namespace PixLogic
     {
         private MenuButton button = null;
 
-        
+
 
         private string textUtilisateur = "         UTILISATEUR";
         private string textMateriel = "         MATERIEL";
@@ -24,7 +23,7 @@ namespace PixLogic
             addEventsOnButtonItem();
             setPanUserVisible();
         }
-        
+
 
         private void setPanUserVisible()
         {
@@ -38,7 +37,7 @@ namespace PixLogic
 
         private void addEventsOnButtonItem()
         {
-           foreach(Control ctrl in panMenu.Controls)
+            foreach (Control ctrl in panMenu.Controls)
             {
                 if (!ctrl.Name.Equals("buttonMenu"))
                 {
@@ -54,22 +53,24 @@ namespace PixLogic
         private void selectPan(string buttonName)
         {
             string namePan = "";
-            switch(buttonName)
+            switch (buttonName)
             {
-                case "boutonUtilisateur": namePan = "panUtilisateur1"; break;
-                case "boutonMateriel": namePan = "panMateriel1"; break;
+                case "boutonUtilisateur": namePan = "panUsers1"; break;
+                case "boutonMateriel": namePan = "panItemPack1"; break;
                 case "boutonReservation": namePan = "panReservation1"; break;
                 case "boutonEmprunt": namePan = "panEmprunt1"; break;
-                case "boutonHistorique": namePan = "panHistorique1"; break;
-                case "boutonScript": namePan = "panScript1"; break;
+                    /* case "boutonHistorique": namePan = "panHistorique1"; break;
+                     case "boutonScript": namePan = "panScript1"; break;*/
             }
-
+            Console.WriteLine("Nom Bouton : " + buttonName.ToUpper());
+            Console.WriteLine("Nom Select : " + namePan.ToUpper());
             foreach (Control c in panelAllPan.Controls)
             {
                 if (c.Name.Equals(namePan))
                     c.Visible = true;
                 else
                     c.Visible = false;
+                Console.WriteLine("Nom panneau : " + c.Name);
             }
         }
 
@@ -81,40 +82,11 @@ namespace PixLogic
                 button = ((MenuButton)sender);
             else
                 button = (MenuButton)((Control)sender).Parent;
-
+            //d
             if (buttonHelper != null && buttonHelper != button)
             {
                 buttonHelper.ActiveEffectButton();
-                selectPan(button.Text);
-                /*if(button.Text.ToString().Equals(textMateriel))
-                {
-                    panUsers1.Visible = false;
-                    panItemPack1.Visible = true;
-                   panReservation1.Visible = false;
-                    panEmprunt1.Visible = false;
-                }
-                else if (button.Text.ToString().Equals(textUtilisateur))
-                {
-                    panItemPack1.Visible = false;
-                    panUsers1.Visible = true;
-                    panReservation1.Visible = false;
-                    panEmprunt1.Visible = false;
-                }
-                else if (button.Text.ToString().Equals(textReservation))
-                {
-                    panItemPack1.Visible = false;
-                    panUsers1.Visible = false;
-                    panReservation1.Visible = true;
-                    panEmprunt1.Visible = false;
-                    panReservation1.setTableReservations(database.GetAllReservations());
-                }
-                else if (button.Text.ToString().Equals(textEmprunt))
-                {
-                    panItemPack1.Visible = false;
-                    panUsers1.Visible = false;
-                    panReservation1.Visible = false;
-                    panEmprunt1.Visible = true;
-                }*/
+                selectPan(button.NameButton);
             }
 
             button.DesactiveEffectButton();

@@ -25,6 +25,10 @@ namespace PixLogic
             ActiveEffectButton();
         }
 
+        public string NameButton
+        {
+            get { return this.Name; }
+        }
         private void ClickItemButton(object sender, EventArgs e)
         {
             Console.WriteLine("Boutonnnnnnnnnnn");
