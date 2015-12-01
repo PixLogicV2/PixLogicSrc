@@ -61,15 +61,11 @@ namespace PixLogic
         {
             if (dataGridEmprunts.RowCount > 0)
             {
-                buttonPret.Enabled = true;
-                buttonModif.Enabled = true;
-                buttonCancelReserv.Enabled = true;
+                buttonRendre.Enabled = true;
             }
             else
             {
-                buttonPret.Enabled = false;
-                buttonModif.Enabled = false;
-                buttonCancelReserv.Enabled = false;
+                buttonRendre.Enabled = false;
             }
         }
 
@@ -83,7 +79,6 @@ namespace PixLogic
                 valNomUser.Text = reservation.user.name;
                 valNomReservable.Text = reservation.reservable.name;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
-                dataGridEmprunts.CurrentRow.DefaultCellStyle.BackColor = Color.Green;
             }
             else
             {
@@ -115,7 +110,7 @@ namespace PixLogic
 
         private void buttonFilter_Click(object sender, EventArgs e)
         {
-            //filtrer();
+            filtrer();
         }
 
         private void addEventRadioButton()
@@ -236,7 +231,7 @@ namespace PixLogic
         private void buttonCancelSearch_Click(object sender, EventArgs e)
         {
             textBoxSearch.Text = "";
-            setTableEmprunts(database.GetAllReservations());
+            setTableEmprunts(database.GetAllEmprunts());
         }
 
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)

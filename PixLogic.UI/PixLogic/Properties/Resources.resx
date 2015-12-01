@@ -154,6 +154,9 @@
   <data name="interface2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\interface2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="reserver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reserver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="client_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\client_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,7 +205,7 @@
   <data name="general_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\general_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reserver" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reserver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rendre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rendre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

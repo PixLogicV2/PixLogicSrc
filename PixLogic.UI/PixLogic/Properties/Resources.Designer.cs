@@ -303,6 +303,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rendre {
+            get {
+                object obj = ResourceManager.GetObject("rendre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reservation_icon2 {
             get {
                 object obj = ResourceManager.GetObject("reservation_icon2", resourceCulture);

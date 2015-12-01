@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panEmprunt));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelFiltres = new System.Windows.Forms.Label();
-            this.buttonCancelReserv = new System.Windows.Forms.Button();
-            this.buttonModif = new System.Windows.Forms.Button();
             this.panFiltres = new System.Windows.Forms.Panel();
             this.pictureReinit = new System.Windows.Forms.PictureBox();
             this.buttonFilter = new System.Windows.Forms.Button();
@@ -51,7 +48,7 @@
             this.radioToday = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
-            this.buttonPret = new System.Windows.Forms.Button();
+            this.buttonRendre = new System.Windows.Forms.Button();
             this.labelListEmprunt = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
             this.valDateRetourEff = new System.Windows.Forms.Label();
@@ -72,12 +69,12 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridEmprunts = new System.Windows.Forms.DataGridView();
-            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetourEffectif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panFiltres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.panNews.SuspendLayout();
@@ -94,32 +91,6 @@
             this.labelFiltres.Size = new System.Drawing.Size(38, 13);
             this.labelFiltres.TabIndex = 55;
             this.labelFiltres.Text = "Filtres";
-            // 
-            // buttonCancelReserv
-            // 
-            this.buttonCancelReserv.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelReserv.Image = global::PixLogic.Properties.Resources.supprimer_icon;
-            this.buttonCancelReserv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancelReserv.Location = new System.Drawing.Point(415, 409);
-            this.buttonCancelReserv.Name = "buttonCancelReserv";
-            this.buttonCancelReserv.Size = new System.Drawing.Size(95, 28);
-            this.buttonCancelReserv.TabIndex = 54;
-            this.buttonCancelReserv.Text = "Annuler";
-            this.buttonCancelReserv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonCancelReserv.UseVisualStyleBackColor = true;
-            // 
-            // buttonModif
-            // 
-            this.buttonModif.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModif.Image = global::PixLogic.Properties.Resources.modifier_icon;
-            this.buttonModif.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModif.Location = new System.Drawing.Point(285, 409);
-            this.buttonModif.Name = "buttonModif";
-            this.buttonModif.Size = new System.Drawing.Size(95, 28);
-            this.buttonModif.TabIndex = 53;
-            this.buttonModif.Text = "Modifier";
-            this.buttonModif.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonModif.UseVisualStyleBackColor = true;
             // 
             // panFiltres
             // 
@@ -150,6 +121,8 @@
             this.pictureReinit.Size = new System.Drawing.Size(25, 21);
             this.pictureReinit.TabIndex = 48;
             this.pictureReinit.TabStop = false;
+            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
+            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
             // 
             // buttonFilter
             // 
@@ -163,6 +136,7 @@
             this.buttonFilter.Text = "Filtrer";
             this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // checkBoxPack
             // 
@@ -287,18 +261,18 @@
             this.labelNews.TabIndex = 52;
             this.labelNews.Text = "Infos";
             // 
-            // buttonPret
+            // buttonRendre
             // 
-            this.buttonPret.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPret.Image = ((System.Drawing.Image)(resources.GetObject("buttonPret.Image")));
-            this.buttonPret.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPret.Location = new System.Drawing.Point(155, 409);
-            this.buttonPret.Name = "buttonPret";
-            this.buttonPret.Size = new System.Drawing.Size(95, 28);
-            this.buttonPret.TabIndex = 50;
-            this.buttonPret.Text = "Prêter";
-            this.buttonPret.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonPret.UseVisualStyleBackColor = true;
+            this.buttonRendre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRendre.Image = global::PixLogic.Properties.Resources.rendre;
+            this.buttonRendre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRendre.Location = new System.Drawing.Point(173, 409);
+            this.buttonRendre.Name = "buttonRendre";
+            this.buttonRendre.Size = new System.Drawing.Size(95, 28);
+            this.buttonRendre.TabIndex = 50;
+            this.buttonRendre.Text = "Rendre";
+            this.buttonRendre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonRendre.UseVisualStyleBackColor = true;
             // 
             // labelListEmprunt
             // 
@@ -484,6 +458,7 @@
             this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
             this.buttonCancelSearch.TabIndex = 3;
             this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -491,6 +466,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(96, 20);
             this.textBoxSearch.TabIndex = 2;
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
             // labelSearch
             // 
@@ -554,33 +530,11 @@
             this.dataGridEmprunts.TabIndex = 0;
             this.dataGridEmprunts.Click += new System.EventHandler(this.dataGridEmprunts_Click);
             // 
-            // IdReservation
+            // dateRetourEffectif
             // 
-            this.IdReservation.HeaderText = "Id";
-            this.IdReservation.Name = "IdReservation";
-            this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 30;
-            // 
-            // NameUserReservation
-            // 
-            this.NameUserReservation.HeaderText = "Utilisateur";
-            this.NameUserReservation.Name = "NameUserReservation";
-            this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 60;
-            // 
-            // NameReservable
-            // 
-            this.NameReservable.HeaderText = "Réservable";
-            this.NameReservable.Name = "NameReservable";
-            this.NameReservable.ReadOnly = true;
-            this.NameReservable.Width = 65;
-            // 
-            // dateEmprunt
-            // 
-            this.dateEmprunt.HeaderText = "Date Emprunt";
-            this.dateEmprunt.Name = "dateEmprunt";
-            this.dateEmprunt.ReadOnly = true;
-            this.dateEmprunt.Width = 80;
+            this.dateRetourEffectif.HeaderText = "Date Retour (Eff)";
+            this.dateRetourEffectif.Name = "dateRetourEffectif";
+            this.dateRetourEffectif.ReadOnly = true;
             // 
             // dateRetour
             // 
@@ -589,11 +543,33 @@
             this.dateRetour.ReadOnly = true;
             this.dateRetour.Width = 80;
             // 
-            // dateRetourEffectif
+            // dateEmprunt
             // 
-            this.dateRetourEffectif.HeaderText = "Date Retour (Eff)";
-            this.dateRetourEffectif.Name = "dateRetourEffectif";
-            this.dateRetourEffectif.ReadOnly = true;
+            this.dateEmprunt.HeaderText = "Date Emprunt";
+            this.dateEmprunt.Name = "dateEmprunt";
+            this.dateEmprunt.ReadOnly = true;
+            this.dateEmprunt.Width = 80;
+            // 
+            // NameReservable
+            // 
+            this.NameReservable.HeaderText = "Réservable";
+            this.NameReservable.Name = "NameReservable";
+            this.NameReservable.ReadOnly = true;
+            this.NameReservable.Width = 65;
+            // 
+            // NameUserReservation
+            // 
+            this.NameUserReservation.HeaderText = "Utilisateur";
+            this.NameUserReservation.Name = "NameUserReservation";
+            this.NameUserReservation.ReadOnly = true;
+            this.NameUserReservation.Width = 60;
+            // 
+            // IdReservation
+            // 
+            this.IdReservation.HeaderText = "Id";
+            this.IdReservation.Name = "IdReservation";
+            this.IdReservation.ReadOnly = true;
+            this.IdReservation.Width = 30;
             // 
             // panEmprunt
             // 
@@ -601,11 +577,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelFiltres);
-            this.Controls.Add(this.buttonCancelReserv);
-            this.Controls.Add(this.buttonModif);
             this.Controls.Add(this.panFiltres);
             this.Controls.Add(this.labelNews);
-            this.Controls.Add(this.buttonPret);
+            this.Controls.Add(this.buttonRendre);
             this.Controls.Add(this.labelListEmprunt);
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableUsers);
@@ -627,8 +601,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelFiltres;
-        private System.Windows.Forms.Button buttonCancelReserv;
-        private System.Windows.Forms.Button buttonModif;
         private System.Windows.Forms.Panel panFiltres;
         private System.Windows.Forms.PictureBox pictureReinit;
         private System.Windows.Forms.Button buttonFilter;
@@ -644,7 +616,7 @@
         private System.Windows.Forms.RadioButton radioToday;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelNews;
-        private System.Windows.Forms.Button buttonPret;
+        private System.Windows.Forms.Button buttonRendre;
         private System.Windows.Forms.Label labelListEmprunt;
         private System.Windows.Forms.Panel panNews;
         public System.Windows.Forms.Label valType;
@@ -663,13 +635,13 @@
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridEmprunts;
+        private System.Windows.Forms.Label valDateRetourEff;
+        private System.Windows.Forms.Label labelDateRetourEff;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetourEffectif;
-        private System.Windows.Forms.Label valDateRetourEff;
-        private System.Windows.Forms.Label labelDateRetourEff;
     }
 }
