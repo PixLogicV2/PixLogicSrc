@@ -14,5 +14,7 @@ namespace PixLogic.DAL
         public int port { get; set; }
         public string email { get; set; }
         public string mdp { get; set; }
+
+        public int MailConfigId { get; set; }
     }
 }
