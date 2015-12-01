@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="AddCategorie.cs" />
     <Compile Include="AddCategorieToItem.cs" />
+    <Compile Include="AddMailConfig.cs" />
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
     <Compile Include="AddItem.cs" />
@@ -84,12 +85,14 @@
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
+    <Compile Include="GetMailConfig.cs" />
     <Compile Include="GetPackById.cs" />
     <Compile Include="GetPackByName.cs" />
     <Compile Include="GetReservationById.cs" />
     <Compile Include="GetUserById.cs" />
     <Compile Include="GetUserByName.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="ReservationFactory.cs" />
@@ -108,6 +111,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservable.cs" />
     <Compile Include="UpdateItem.cs" />
+    <Compile Include="UpdateMailConfig.cs" />
     <Compile Include="UpdatePack.cs" />
     <Compile Include="UpdateReservation.cs" />
     <Compile Include="UpdateUser.cs" />

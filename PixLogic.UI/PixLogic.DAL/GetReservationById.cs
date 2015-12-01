@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    class GetReservationById
+    public class GetReservationById
     {
         private DataContext context;
 
