@@ -110,6 +110,12 @@
     <Compile Include="WindowItem.Designer.cs">
       <DependentUpon>WindowItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowMail.Designer.cs">
+      <DependentUpon>WindowMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowPack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowItem.resx">
       <DependentUpon>WindowItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowMail.resx">
+      <DependentUpon>WindowMail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowPack.resx">
       <DependentUpon>WindowPack.cs</DependentUpon>
