@@ -312,13 +312,98 @@
             this.boutonUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.boutonUtilisateur.UseCompatibleTextRendering = true;
             // 
+<<<<<<< HEAD
+=======
+            // barreDoutils
+            // 
+            this.barreDoutils.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.barreDoutils.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BoutonActionBO});
+            this.barreDoutils.Location = new System.Drawing.Point(0, 28);
+            this.barreDoutils.Name = "barreDoutils";
+            this.barreDoutils.Size = new System.Drawing.Size(1103, 47);
+            this.barreDoutils.TabIndex = 2;
+            this.barreDoutils.Text = "barreDoutils";
+            // 
+            // BoutonActionBO
+            // 
+            this.BoutonActionBO.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.utilisateurToolStripMenuItem,
+            this.matérielToolStripMenuItem,
+            this.packToolStripMenuItem,
+            this.réservationToolStripMenuItem});
+            this.BoutonActionBO.Image = ((System.Drawing.Image)(resources.GetObject("BoutonActionBO.Image")));
+            this.BoutonActionBO.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BoutonActionBO.Name = "BoutonActionBO";
+            this.BoutonActionBO.Size = new System.Drawing.Size(82, 44);
+            this.BoutonActionBO.Text = "Nouveau";
+            this.BoutonActionBO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // utilisateurToolStripMenuItem
+            // 
+            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user_icon;
+            this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(192, 40);
+            this.utilisateurToolStripMenuItem.Text = "Utilisateur";
+            // 
+            // matérielToolStripMenuItem
+            // 
+            this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
+            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(192, 40);
+            this.matérielToolStripMenuItem.Text = "Matériel";
+            // 
+            // packToolStripMenuItem
+            // 
+            this.packToolStripMenuItem.Name = "packToolStripMenuItem";
+            this.packToolStripMenuItem.Size = new System.Drawing.Size(192, 40);
+            this.packToolStripMenuItem.Text = "Pack";
+            // 
+            // réservationToolStripMenuItem
+            // 
+            this.réservationToolStripMenuItem.Name = "réservationToolStripMenuItem";
+            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(192, 40);
+            this.réservationToolStripMenuItem.Text = "Réservation";
+            // 
+            // panReservation1
+            // 
+            this.panReservation1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panReservation1.Location = new System.Drawing.Point(184, 81);
+            this.panReservation1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panReservation1.Name = "panReservation1";
+            this.panReservation1.Size = new System.Drawing.Size(917, 556);
+            this.panReservation1.TabIndex = 5;
+            // 
+            // panItemPack1
+            // 
+            this.panItemPack1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panItemPack1.Location = new System.Drawing.Point(185, 81);
             this.panItemPack1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panItemPack1.Name = "panItemPack1";
+            this.panItemPack1.Size = new System.Drawing.Size(919, 556);
+            this.panItemPack1.TabIndex = 4;
+            // 
+            // panUsers1
+            // 
+            this.panUsers1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panUsers1.Location = new System.Drawing.Point(185, 81);
+            this.panUsers1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panUsers1.Name = "panUsers1";
+            this.panUsers1.Size = new System.Drawing.Size(917, 556);
+            this.panUsers1.TabIndex = 3;
+            // 
+>>>>>>> 314daeda52cd54e029f5bd97c154ce6655041192
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 639);
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(827, 519);
             this.Controls.Add(this.panEmprunt1);
+=======
+            this.ClientSize = new System.Drawing.Size(1103, 639);
+>>>>>>> 314daeda52cd54e029f5bd97c154ce6655041192
             this.Controls.Add(this.panReservation1);
             this.Controls.Add(this.panItemPack1);
             this.Controls.Add(this.panUsers1);

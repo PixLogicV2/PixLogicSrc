@@ -54,6 +54,8 @@
             this.buttonPret = new System.Windows.Forms.Button();
             this.labelListEmprunt = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
+            this.valDateRetourEff = new System.Windows.Forms.Label();
+            this.labelDateRetourEff = new System.Windows.Forms.Label();
             this.valType = new System.Windows.Forms.Label();
             this.valNomReservable = new System.Windows.Forms.Label();
             this.valNomUser = new System.Windows.Forms.Label();
@@ -64,7 +66,7 @@
             this.valDateDebut = new System.Windows.Forms.Label();
             this.valDateFin = new System.Windows.Forms.Label();
             this.labelTel = new System.Windows.Forms.Label();
-            this.labelDateFin = new System.Windows.Forms.Label();
+            this.labelDateRetour = new System.Windows.Forms.Label();
             this.panTableUsers = new System.Windows.Forms.Panel();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
@@ -75,6 +77,7 @@
             this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateRetourEffectif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panFiltres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.panNews.SuspendLayout();
@@ -310,6 +313,8 @@
             // panNews
             // 
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panNews.Controls.Add(this.valDateRetourEff);
+            this.panNews.Controls.Add(this.labelDateRetourEff);
             this.panNews.Controls.Add(this.valType);
             this.panNews.Controls.Add(this.valNomReservable);
             this.panNews.Controls.Add(this.valNomUser);
@@ -320,11 +325,31 @@
             this.panNews.Controls.Add(this.valDateDebut);
             this.panNews.Controls.Add(this.valDateFin);
             this.panNews.Controls.Add(this.labelTel);
-            this.panNews.Controls.Add(this.labelDateFin);
+            this.panNews.Controls.Add(this.labelDateRetour);
             this.panNews.Location = new System.Drawing.Point(10, 299);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(674, 96);
             this.panNews.TabIndex = 48;
+            // 
+            // valDateRetourEff
+            // 
+            this.valDateRetourEff.AutoSize = true;
+            this.valDateRetourEff.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDateRetourEff.Location = new System.Drawing.Point(472, 65);
+            this.valDateRetourEff.Name = "valDateRetourEff";
+            this.valDateRetourEff.Size = new System.Drawing.Size(13, 17);
+            this.valDateRetourEff.TabIndex = 47;
+            this.valDateRetourEff.Text = "-";
+            // 
+            // labelDateRetourEff
+            // 
+            this.labelDateRetourEff.AutoSize = true;
+            this.labelDateRetourEff.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateRetourEff.Location = new System.Drawing.Point(355, 68);
+            this.labelDateRetourEff.Name = "labelDateRetourEff";
+            this.labelDateRetourEff.Size = new System.Drawing.Size(111, 13);
+            this.labelDateRetourEff.TabIndex = 46;
+            this.labelDateRetourEff.Text = "Date retour effectif :";
             // 
             // valType
             // 
@@ -393,7 +418,7 @@
             // 
             this.labelDateDebut.AutoSize = true;
             this.labelDateDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateDebut.Location = new System.Drawing.Point(365, 16);
+            this.labelDateDebut.Location = new System.Drawing.Point(355, 16);
             this.labelDateDebut.Name = "labelDateDebut";
             this.labelDateDebut.Size = new System.Drawing.Size(71, 13);
             this.labelDateDebut.TabIndex = 6;
@@ -403,7 +428,7 @@
             // 
             this.valDateDebut.AutoSize = true;
             this.valDateDebut.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateDebut.Location = new System.Drawing.Point(455, 12);
+            this.valDateDebut.Location = new System.Drawing.Point(472, 12);
             this.valDateDebut.Name = "valDateDebut";
             this.valDateDebut.Size = new System.Drawing.Size(13, 17);
             this.valDateDebut.TabIndex = 39;
@@ -414,7 +439,7 @@
             // 
             this.valDateFin.AutoSize = true;
             this.valDateFin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateFin.Location = new System.Drawing.Point(455, 41);
+            this.valDateFin.Location = new System.Drawing.Point(472, 41);
             this.valDateFin.Name = "valDateFin";
             this.valDateFin.Size = new System.Drawing.Size(13, 17);
             this.valDateFin.TabIndex = 3;
@@ -429,15 +454,15 @@
             this.labelTel.Size = new System.Drawing.Size(0, 13);
             this.labelTel.TabIndex = 1;
             // 
-            // labelDateFin
+            // labelDateRetour
             // 
-            this.labelDateFin.AutoSize = true;
-            this.labelDateFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateFin.Location = new System.Drawing.Point(365, 42);
-            this.labelDateFin.Name = "labelDateFin";
-            this.labelDateFin.Size = new System.Drawing.Size(70, 13);
-            this.labelDateFin.TabIndex = 0;
-            this.labelDateFin.Text = "Date de fin :";
+            this.labelDateRetour.AutoSize = true;
+            this.labelDateRetour.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateRetour.Location = new System.Drawing.Point(355, 42);
+            this.labelDateRetour.Name = "labelDateRetour";
+            this.labelDateRetour.Size = new System.Drawing.Size(72, 13);
+            this.labelDateRetour.TabIndex = 0;
+            this.labelDateRetour.Text = "Date retour :";
             // 
             // panTableUsers
             // 
@@ -481,7 +506,7 @@
             // 
             this.dataGridEmprunts.AllowUserToAddRows = false;
             this.dataGridEmprunts.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dataGridEmprunts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridEmprunts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridEmprunts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -500,7 +525,8 @@
             this.NameUserReservation,
             this.NameReservable,
             this.dateEmprunt,
-            this.dateRetour});
+            this.dateRetour,
+            this.dateRetourEffectif});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -526,46 +552,54 @@
             this.dataGridEmprunts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridEmprunts.Size = new System.Drawing.Size(412, 234);
             this.dataGridEmprunts.TabIndex = 0;
+            this.dataGridEmprunts.Click += new System.EventHandler(this.dataGridEmprunts_Click);
             // 
             // IdReservation
             // 
             this.IdReservation.HeaderText = "Id";
             this.IdReservation.Name = "IdReservation";
             this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 40;
+            this.IdReservation.Width = 30;
             // 
             // NameUserReservation
             // 
             this.NameUserReservation.HeaderText = "Utilisateur";
             this.NameUserReservation.Name = "NameUserReservation";
             this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 82;
+            this.NameUserReservation.Width = 60;
             // 
             // NameReservable
             // 
             this.NameReservable.HeaderText = "Réservable";
             this.NameReservable.Name = "NameReservable";
             this.NameReservable.ReadOnly = true;
-            this.NameReservable.Width = 90;
+            this.NameReservable.Width = 65;
             // 
             // dateEmprunt
             // 
             this.dateEmprunt.HeaderText = "Date Emprunt";
             this.dateEmprunt.Name = "dateEmprunt";
             this.dateEmprunt.ReadOnly = true;
-            this.dateEmprunt.Width = 105;
+            this.dateEmprunt.Width = 80;
             // 
             // dateRetour
             // 
             this.dateRetour.HeaderText = "Date Retour";
             this.dateRetour.Name = "dateRetour";
             this.dateRetour.ReadOnly = true;
-            this.dateRetour.Width = 95;
+            this.dateRetour.Width = 80;
+            // 
+            // dateRetourEffectif
+            // 
+            this.dateRetourEffectif.HeaderText = "Date Retour (Eff)";
+            this.dateRetourEffectif.Name = "dateRetourEffectif";
+            this.dateRetourEffectif.ReadOnly = true;
             // 
             // panEmprunt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelFiltres);
             this.Controls.Add(this.buttonCancelReserv);
             this.Controls.Add(this.buttonModif);
@@ -576,7 +610,7 @@
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableUsers);
             this.Name = "panEmprunt";
-            this.Size = new System.Drawing.Size(686, 450);
+            this.Size = new System.Drawing.Size(684, 448);
             this.panFiltres.ResumeLayout(false);
             this.panFiltres.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
@@ -623,7 +657,7 @@
         public System.Windows.Forms.Label valDateDebut;
         private System.Windows.Forms.Label valDateFin;
         private System.Windows.Forms.Label labelTel;
-        private System.Windows.Forms.Label labelDateFin;
+        private System.Windows.Forms.Label labelDateRetour;
         private System.Windows.Forms.Panel panTableUsers;
         private System.Windows.Forms.Button buttonCancelSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
@@ -634,5 +668,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateRetourEffectif;
+        private System.Windows.Forms.Label valDateRetourEff;
+        private System.Windows.Forms.Label labelDateRetourEff;
     }
 }

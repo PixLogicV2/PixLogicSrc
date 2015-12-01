@@ -68,15 +68,23 @@ namespace PixLogic
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = true;
-                    panReservation1.Visible = false;
+<<<<<<< HEAD
+                   panReservation1.Visible = false;
                     panEmprunt1.Visible = false;
+=======
+                    panReservation1.Visible = false;
+>>>>>>> 314daeda52cd54e029f5bd97c154ce6655041192
                 }
                 else if (button.Text.ToString().Equals(textReservation))
                 {
                     panItemPack1.Visible = false;
                     panUsers1.Visible = false;
-                    panReservation1.Visible = true;
+<<<<<<< HEAD
+                   panReservation1.Visible = true;
                     panEmprunt1.Visible = false;
+=======
+                    panReservation1.Visible = true;
+>>>>>>> 314daeda52cd54e029f5bd97c154ce6655041192
                     panReservation1.setTableReservations(database.GetAllReservations());
                 }
                 else if (button.Text.ToString().Equals(textEmprunt))

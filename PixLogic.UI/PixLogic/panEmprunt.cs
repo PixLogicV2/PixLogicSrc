@@ -38,6 +38,11 @@ namespace PixLogic
             {
                 dataGridEmprunts.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name,
                     reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"));
+
+                if (reser.endDateEmprunt.Value.Date < DateTime.Today.Date)
+                    dataGridEmprunts.Rows[dataGridEmprunts.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
+                else
+                    dataGridEmprunts.Rows[dataGridEmprunts.RowCount - 1].DefaultCellStyle.BackColor = Color.White;
             }
 
             if (dataGridEmprunts.RowCount > 0)
@@ -78,6 +83,8 @@ namespace PixLogic
                 valNomUser.Text = reservation.user.name;
                 valNomReservable.Text = reservation.reservable.name;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
+                dataGridEmprunts.CurrentRow.DefaultCellStyle.BackColor = Color.Green;
+                MessageBox.Show("kdsdf");
             }
             else
             {
@@ -99,12 +106,6 @@ namespace PixLogic
                 setTableEmprunts(database.GetAllReservations());
             }
 
-        }
-
-        private void dataGridReservations_Click(object sender, EventArgs e)
-        {
-            if (dataGridEmprunts.RowCount > 0)
-                setNewsEmprunts();
         }
 
         private void dataGridReservations_KeyUp(object sender, KeyEventArgs e)
@@ -155,7 +156,7 @@ namespace PixLogic
             checkBoxPack.Checked = true;
             disableDateTime();
         }
-/*
+
         private void filtrer()
         {
             DateTime debut = new DateTime();
@@ -193,9 +194,9 @@ namespace PixLogic
             if ((checkBoxItem.Checked && !checkBoxPack.Checked) || (checkBoxPack.Checked && !checkBoxItem.Checked))
             {
                 if (checkBoxPack.Checked)
-                    list = database.GetAllPackEmprunts(list);
+                    list = database.GetAllPacksEmprunts(list);
                 else
-                    list = database.GetAllItemEmprunts(list);
+                    list = database.GetAllItemsEmprunts(list);
                 Console.WriteLine("DANS LE OUI ou PAS");
             }
             else if (!checkBoxPack.Checked && !checkBoxItem.Checked)
@@ -209,9 +210,7 @@ namespace PixLogic
             int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
             Reservation reservation = database.GetReservationById(idReservation);
             int idReservable = reservation.reservable.ReservableId;
-
-            WindowSetReservation set = new WindowSetReservation(idReservation, idReservable, this);
-            set.ShowDialog(this);
+            
         }
 
         private void buttonCancelReserv_Click(object sender, EventArgs e)
@@ -243,7 +242,13 @@ namespace PixLogic
 
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            setTableEmprunts(database.GetAllReservationsByString(textBoxSearch.Text));
-        }*/
+            setTableEmprunts(database.GetAllEmpruntsByString(textBoxSearch.Text));
+        }
+
+        private void dataGridEmprunts_Click(object sender, EventArgs e)
+        {
+            if (dataGridEmprunts.RowCount > 0)
+                setNewsEmprunts();
+        }
     }
 }
