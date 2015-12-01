@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper.cs" />
+    <Compile Include="iTextSharp\text.cs" />
     <Compile Include="MenuButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
