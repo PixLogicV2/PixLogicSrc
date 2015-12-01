@@ -217,6 +217,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllPacksEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "retour_emprunt":
+                    this.arrayContainer[serviceName] = new RetourEmprunt();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 default:
                     throw new System.Exception();
 
