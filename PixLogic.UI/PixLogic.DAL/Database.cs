@@ -216,5 +216,9 @@ namespace PixLogic.DAL
         {
            return container.get("contain_reservation_by_user_id").containReservationByUserId(id);
         }
+        public void RetourEmprunt(int id,DateTime? retour)
+        {
+            container.get("retour_emprunt").retourEmprunt(id, retour);
+        }
     }
 }
