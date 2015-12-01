@@ -221,6 +221,18 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new RetourEmprunt();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "add_mail_config":
+                    this.arrayContainer[serviceName] = new AddMailConfig();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "update_mail_config":
+                    this.arrayContainer[serviceName] = new UpdateMailConfig();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_mail_config":
+                    this.arrayContainer[serviceName] = new GetMailConfig();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 default:
                     throw new System.Exception();
 
