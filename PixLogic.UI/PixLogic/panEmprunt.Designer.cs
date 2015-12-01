@@ -51,8 +51,6 @@
             this.buttonRendre = new System.Windows.Forms.Button();
             this.labelListEmprunt = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
-            this.valDateRetourEff = new System.Windows.Forms.Label();
-            this.labelDateRetourEff = new System.Windows.Forms.Label();
             this.valType = new System.Windows.Forms.Label();
             this.valNomReservable = new System.Windows.Forms.Label();
             this.valNomUser = new System.Windows.Forms.Label();
@@ -69,12 +67,11 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridEmprunts = new System.Windows.Forms.DataGridView();
-            this.dateRetourEffectif = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panFiltres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.panNews.SuspendLayout();
@@ -273,6 +270,7 @@
             this.buttonRendre.Text = "Rendre";
             this.buttonRendre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRendre.UseVisualStyleBackColor = true;
+            this.buttonRendre.Click += new System.EventHandler(this.buttonRendre_Click);
             // 
             // labelListEmprunt
             // 
@@ -287,8 +285,6 @@
             // panNews
             // 
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panNews.Controls.Add(this.valDateRetourEff);
-            this.panNews.Controls.Add(this.labelDateRetourEff);
             this.panNews.Controls.Add(this.valType);
             this.panNews.Controls.Add(this.valNomReservable);
             this.panNews.Controls.Add(this.valNomUser);
@@ -304,26 +300,6 @@
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(674, 96);
             this.panNews.TabIndex = 48;
-            // 
-            // valDateRetourEff
-            // 
-            this.valDateRetourEff.AutoSize = true;
-            this.valDateRetourEff.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateRetourEff.Location = new System.Drawing.Point(472, 65);
-            this.valDateRetourEff.Name = "valDateRetourEff";
-            this.valDateRetourEff.Size = new System.Drawing.Size(13, 17);
-            this.valDateRetourEff.TabIndex = 47;
-            this.valDateRetourEff.Text = "-";
-            // 
-            // labelDateRetourEff
-            // 
-            this.labelDateRetourEff.AutoSize = true;
-            this.labelDateRetourEff.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateRetourEff.Location = new System.Drawing.Point(355, 68);
-            this.labelDateRetourEff.Name = "labelDateRetourEff";
-            this.labelDateRetourEff.Size = new System.Drawing.Size(111, 13);
-            this.labelDateRetourEff.TabIndex = 46;
-            this.labelDateRetourEff.Text = "Date retour effectif :";
             // 
             // valType
             // 
@@ -501,8 +477,7 @@
             this.NameUserReservation,
             this.NameReservable,
             this.dateEmprunt,
-            this.dateRetour,
-            this.dateRetourEffectif});
+            this.dateRetour});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -529,47 +504,42 @@
             this.dataGridEmprunts.Size = new System.Drawing.Size(412, 234);
             this.dataGridEmprunts.TabIndex = 0;
             this.dataGridEmprunts.Click += new System.EventHandler(this.dataGridEmprunts_Click);
-            // 
-            // dateRetourEffectif
-            // 
-            this.dateRetourEffectif.HeaderText = "Date Retour (Eff)";
-            this.dateRetourEffectif.Name = "dateRetourEffectif";
-            this.dateRetourEffectif.ReadOnly = true;
-            // 
-            // dateRetour
-            // 
-            this.dateRetour.HeaderText = "Date Retour";
-            this.dateRetour.Name = "dateRetour";
-            this.dateRetour.ReadOnly = true;
-            this.dateRetour.Width = 80;
-            // 
-            // dateEmprunt
-            // 
-            this.dateEmprunt.HeaderText = "Date Emprunt";
-            this.dateEmprunt.Name = "dateEmprunt";
-            this.dateEmprunt.ReadOnly = true;
-            this.dateEmprunt.Width = 80;
-            // 
-            // NameReservable
-            // 
-            this.NameReservable.HeaderText = "Réservable";
-            this.NameReservable.Name = "NameReservable";
-            this.NameReservable.ReadOnly = true;
-            this.NameReservable.Width = 65;
-            // 
-            // NameUserReservation
-            // 
-            this.NameUserReservation.HeaderText = "Utilisateur";
-            this.NameUserReservation.Name = "NameUserReservation";
-            this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 60;
+            this.dataGridEmprunts.DoubleClick += new System.EventHandler(this.dataGridEmprunts_DoubleClick);
             // 
             // IdReservation
             // 
             this.IdReservation.HeaderText = "Id";
             this.IdReservation.Name = "IdReservation";
             this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 30;
+            this.IdReservation.Width = 40;
+            // 
+            // NameUserReservation
+            // 
+            this.NameUserReservation.HeaderText = "Utilisateur";
+            this.NameUserReservation.Name = "NameUserReservation";
+            this.NameUserReservation.ReadOnly = true;
+            this.NameUserReservation.Width = 80;
+            // 
+            // NameReservable
+            // 
+            this.NameReservable.HeaderText = "Réservable";
+            this.NameReservable.Name = "NameReservable";
+            this.NameReservable.ReadOnly = true;
+            this.NameReservable.Width = 80;
+            // 
+            // dateEmprunt
+            // 
+            this.dateEmprunt.HeaderText = "Date Emprunt";
+            this.dateEmprunt.Name = "dateEmprunt";
+            this.dateEmprunt.ReadOnly = true;
+            this.dateEmprunt.Width = 105;
+            // 
+            // dateRetour
+            // 
+            this.dateRetour.HeaderText = "Date Retour";
+            this.dateRetour.Name = "dateRetour";
+            this.dateRetour.ReadOnly = true;
+            this.dateRetour.Width = 105;
             // 
             // panEmprunt
             // 
@@ -635,13 +605,10 @@
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridEmprunts;
-        private System.Windows.Forms.Label valDateRetourEff;
-        private System.Windows.Forms.Label labelDateRetourEff;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateRetourEffectif;
     }
 }

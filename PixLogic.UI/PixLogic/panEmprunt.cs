@@ -61,7 +61,13 @@ namespace PixLogic
         {
             if (dataGridEmprunts.RowCount > 0)
             {
-                buttonRendre.Enabled = true;
+                int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
+                Reservation reservation = database.GetReservationById(idReservation);
+
+                /*if(reservation.dateRendu.Value.ToString().Equals(""))
+                    buttonRendre.Enabled = true;
+                else
+                    buttonRendre.Enabled = false;*/
             }
             else
             {
@@ -243,6 +249,24 @@ namespace PixLogic
         {
             if (dataGridEmprunts.RowCount > 0)
                 setNewsEmprunts();
+        }
+
+        private void buttonRendre_Click(object sender, EventArgs e)
+        {
+            int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
+            if(Helper.confirmationRemise(idReservation))
+            {
+                database.RetourEmprunt(idReservation, DateTime.Today.Date);
+                setTableEmprunts(database.GetAllEmprunts());
+            }
+            
+        }
+
+        private void dataGridEmprunts_DoubleClick(object sender, EventArgs e)
+        {
+            int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
+            Reservation r = database.GetReservationById(idReservation);
+            MessageBox.Show(r.user.name + " => " + r.reservable.name);
         }
     }
 }

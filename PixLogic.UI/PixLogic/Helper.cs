@@ -117,6 +117,22 @@ namespace PixLogic
             return result;
         }
 
+        public static bool confirmationRemise(int idReservation)
+        {
+            bool result = false;
+            Reservation reservation = database.GetReservationById(idReservation);
+            string nameReservable = reservation.reservable.name;
+            string type = reservation.isPack ? PACK : ITEM;
+            string user = reservation.user.name + " " + reservation.user.nickname;
+
+            DialogResult resultBox = MessageBox.Show("Rendre le " + type.ToLower() + " "+nameReservable.ToUpper()+" emprunté par l'utilisateur " + user.ToUpper() + " ?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = (resultBox == DialogResult.Yes) ? true : false;
+
+            return result;
+        }
+
+
         public static void addSuccess()
         {
             MessageBox.Show("L'élément a été bien ajouté !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -202,6 +218,8 @@ namespace PixLogic
             return true;
             
         }
+
+
 
         public static bool getDispoReservableByDateForModif(bool withMessageBox, int idReservable, int idReservation, DateTime dateDebut, DateTime dateFin)
         {
