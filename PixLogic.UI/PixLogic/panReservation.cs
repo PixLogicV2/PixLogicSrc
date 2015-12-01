@@ -288,6 +288,5 @@ namespace PixLogic
                 stream.Close();
             }
         }
-
     }
 }
