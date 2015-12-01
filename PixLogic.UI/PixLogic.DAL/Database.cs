@@ -220,5 +220,21 @@ namespace PixLogic.DAL
         {
             container.get("retour_emprunt").retourEmprunt(id, retour);
         }
+        /*
+        *mailconfig
+        */
+        public void AddMailConfig(MailConfig mailConfig)
+        {
+            container.get("add_mail_config").addMailConfig(mailConfig);
+        }
+        public void UpdateMailConfig()
+        {
+            container.get("update_mail_config").upDateMailConfig();
+        }
+        public MailConfig GetMailConfig()
+        {
+            return container.get("get_mail_config").getMailConfig();
+        }
+
     }
 }

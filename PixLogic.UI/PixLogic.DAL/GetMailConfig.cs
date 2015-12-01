@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PixLogic.DAL
 {
-    public class GetUserById
+    public class GetMailConfig
     {
         private DataContext context;
 
@@ -14,12 +14,12 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public User getUserById(int id)
+        public MailConfig getMailConfig()
         {
-            IQueryable<User> userQuery = from User in context.Users
-                                         where User.UserId == id
-                                         select User;
-            List<User> list = new List<User>();
+            IQueryable<MailConfig> userQuery =  from MailConfig 
+                                                in context.MailConfigs
+                                                select MailConfig;
+            List<MailConfig> list = new List<MailConfig>();
             foreach (var prod in userQuery)
             {
                 list.Add(prod);
