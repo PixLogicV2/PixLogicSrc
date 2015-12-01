@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using PixLogic.DAL;
+using System.IO;
 
 namespace PixLogic
 {
@@ -22,21 +23,9 @@ namespace PixLogic
 
         private void ExecuteBtn_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    using (var datacontext = new DataContext())
-            //    {
-            //        var result = datacontext.Database.SqlQuery<string>(QueryRTB.Text).ToList();
-            //        ResultDGV.DataSource = result;
-            //    }
-            //}
-            //catch(Exception exept)
-            //{
-            //    MessageBox.Show(exept.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            var datacontext = new DataContext();
 
-            string connectionString = datacontext.Database.Connection.ConnectionString;
+            //this connectionString use a specific login to send select request ONLY
+            string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=PixLogic.DAL.DataContext;User Id=SelectOnly;Password=a;";
 
             string query = QueryRTB.Text;
 
@@ -44,6 +33,7 @@ namespace PixLogic
             {
                 using (SqlConnection connect = new SqlConnection(connectionString))
                 {
+                    //feed of the datagridview
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connect);
 
                     SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
@@ -52,14 +42,35 @@ namespace PixLogic
                     adapter.Fill(table);
                     ResultDGV.DataSource = table;
 
+                    //resizing columns for clearer results
                     ResultDGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
                 }
             }
             catch(Exception ex)
             {
+                //catch all exceptions
                 MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            datacontext.Dispose();
+        }
+
+        private void BrowseBtn_Click(object sender, EventArgs e)
+        {
+            //open a dialog for browsing through file
+            DialogResult result = openFileDialog.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                try
+                {
+                    //get the content of the file to feed the richTextBox, path access issue here, fixing pending
+                    string fileQuery = File.ReadAllText(Path.GetDirectoryName(openFileDialog.FileName));
+                    QueryRTB.Text = fileQuery;
+                }
+                catch(Exception ex)
+                {
+                    //catch all exceptions
+                    MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

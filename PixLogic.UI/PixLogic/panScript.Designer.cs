@@ -33,6 +33,9 @@
             this.ExecuteBtn = new System.Windows.Forms.Button();
             this.ResultDGV = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.PathTextBox = new System.Windows.Forms.TextBox();
+            this.BrowseBtn = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ResultDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +60,7 @@
             // 
             this.ExecuteBtn.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.ExecuteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExecuteBtn.Location = new System.Drawing.Point(526, 178);
+            this.ExecuteBtn.Location = new System.Drawing.Point(490, 178);
             this.ExecuteBtn.Name = "ExecuteBtn";
             this.ExecuteBtn.Size = new System.Drawing.Size(78, 31);
             this.ExecuteBtn.TabIndex = 4;
@@ -83,10 +86,33 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Résultat : ";
             // 
+            // PathTextBox
+            // 
+            this.PathTextBox.Location = new System.Drawing.Point(490, 152);
+            this.PathTextBox.Name = "PathTextBox";
+            this.PathTextBox.Size = new System.Drawing.Size(197, 20);
+            this.PathTextBox.TabIndex = 7;
+            // 
+            // BrowseBtn
+            // 
+            this.BrowseBtn.Location = new System.Drawing.Point(490, 123);
+            this.BrowseBtn.Name = "BrowseBtn";
+            this.BrowseBtn.Size = new System.Drawing.Size(75, 23);
+            this.BrowseBtn.TabIndex = 8;
+            this.BrowseBtn.Text = "Parcourir";
+            this.BrowseBtn.UseVisualStyleBackColor = true;
+            this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            // 
             // panScript
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BrowseBtn);
+            this.Controls.Add(this.PathTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ResultDGV);
             this.Controls.Add(this.ExecuteBtn);
@@ -107,5 +133,8 @@
         private System.Windows.Forms.Button ExecuteBtn;
         private System.Windows.Forms.DataGridView ResultDGV;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox PathTextBox;
+        private System.Windows.Forms.Button BrowseBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
