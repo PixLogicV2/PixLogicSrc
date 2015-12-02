@@ -212,6 +212,14 @@ namespace PixLogic.DAL
         {
             container.get("add_categorie_to_item").addCategorieToItem(itemName, packName);
         }
+        public void UpdateCategorie(string nom,string newnom,int id)
+        {
+            container.get("update_categorie").upDateCategorie(nom,newnom,id);
+        }
+        public void DeleteCategorie(string name)
+        {
+            container.get("delete_categorie").deleteCategorie(name);
+        }
         public bool ContainReservationByUserId(int id)
         {
            return container.get("contain_reservation_by_user_id").containReservationByUserId(id);

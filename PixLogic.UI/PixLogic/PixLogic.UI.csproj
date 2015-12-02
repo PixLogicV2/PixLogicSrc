@@ -94,6 +94,12 @@
     <Compile Include="panReservation.Designer.cs">
       <DependentUpon>panReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="panScript.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panScript.Designer.cs">
+      <DependentUpon>panScript.cs</DependentUpon>
+    </Compile>
     <Compile Include="panUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="panReservation.resx">
       <DependentUpon>panReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panScript.resx">
+      <DependentUpon>panScript.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="panUsers.resx">
       <DependentUpon>panUsers.cs</DependentUpon>
