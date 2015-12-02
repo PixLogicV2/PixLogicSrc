@@ -30,14 +30,21 @@
         {
             this.tabControlSettings = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.labelNews = new System.Windows.Forms.Label();
+            this.panNews = new System.Windows.Forms.Panel();
+            this.valDescription = new System.Windows.Forms.TextBox();
+            this.labelDescrip = new System.Windows.Forms.Label();
+            this.labelLibelle = new System.Windows.Forms.Label();
+            this.valLibelle = new System.Windows.Forms.Label();
             this.labelListCategory = new System.Windows.Forms.Label();
             this.panelListCategory = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.libelleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
             this.valInfo = new System.Windows.Forms.Label();
             this.labelIdentifiant = new System.Windows.Forms.Label();
@@ -52,26 +59,19 @@
             this.valServeur = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelServer = new System.Windows.Forms.Label();
-            this.labelNews = new System.Windows.Forms.Label();
-            this.panNews = new System.Windows.Forms.Panel();
-            this.labelLibelle = new System.Windows.Forms.Label();
-            this.valLibelle = new System.Windows.Forms.Label();
-            this.labelDescrip = new System.Windows.Forms.Label();
-            this.valDescription = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.libelleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.tabControlSettings.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panNews.SuspendLayout();
             this.panelListCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panNews.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlSettings
@@ -102,6 +102,70 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Catégorie";
             // 
+            // labelNews
+            // 
+            this.labelNews.AutoSize = true;
+            this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNews.Location = new System.Drawing.Point(262, 10);
+            this.labelNews.Name = "labelNews";
+            this.labelNews.Size = new System.Drawing.Size(33, 13);
+            this.labelNews.TabIndex = 43;
+            this.labelNews.Text = "Infos";
+            // 
+            // panNews
+            // 
+            this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panNews.Controls.Add(this.valDescription);
+            this.panNews.Controls.Add(this.labelDescrip);
+            this.panNews.Controls.Add(this.labelLibelle);
+            this.panNews.Controls.Add(this.valLibelle);
+            this.panNews.Location = new System.Drawing.Point(240, 14);
+            this.panNews.Name = "panNews";
+            this.panNews.Size = new System.Drawing.Size(320, 193);
+            this.panNews.TabIndex = 42;
+            // 
+            // valDescription
+            // 
+            this.valDescription.Location = new System.Drawing.Point(84, 57);
+            this.valDescription.Multiline = true;
+            this.valDescription.Name = "valDescription";
+            this.valDescription.ReadOnly = true;
+            this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.valDescription.Size = new System.Drawing.Size(231, 131);
+            this.valDescription.TabIndex = 41;
+            this.valDescription.WordWrap = false;
+            // 
+            // labelDescrip
+            // 
+            this.labelDescrip.AutoSize = true;
+            this.labelDescrip.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescrip.Location = new System.Drawing.Point(6, 49);
+            this.labelDescrip.Name = "labelDescrip";
+            this.labelDescrip.Size = new System.Drawing.Size(72, 13);
+            this.labelDescrip.TabIndex = 40;
+            this.labelDescrip.Text = "Description :";
+            // 
+            // labelLibelle
+            // 
+            this.labelLibelle.AutoSize = true;
+            this.labelLibelle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLibelle.Location = new System.Drawing.Point(6, 19);
+            this.labelLibelle.Name = "labelLibelle";
+            this.labelLibelle.Size = new System.Drawing.Size(46, 13);
+            this.labelLibelle.TabIndex = 6;
+            this.labelLibelle.Text = "Libellé :";
+            // 
+            // valLibelle
+            // 
+            this.valLibelle.AutoSize = true;
+            this.valLibelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valLibelle.Location = new System.Drawing.Point(78, 17);
+            this.valLibelle.Name = "valLibelle";
+            this.valLibelle.Size = new System.Drawing.Size(13, 17);
+            this.valLibelle.TabIndex = 39;
+            this.valLibelle.Text = "-";
+            this.valLibelle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // labelListCategory
             // 
             this.labelListCategory.AutoSize = true;
@@ -123,15 +187,6 @@
             this.panelListCategory.Name = "panelListCategory";
             this.panelListCategory.Size = new System.Drawing.Size(228, 305);
             this.panelListCategory.TabIndex = 0;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(177, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 6;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // textBoxSearch
             // 
@@ -166,6 +221,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(228, 251);
             this.dataGridView1.TabIndex = 0;
             // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "Id";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Width = 40;
+            // 
+            // libelleCol
+            // 
+            this.libelleCol.HeaderText = "Libellé";
+            this.libelleCol.Name = "libelleCol";
+            this.libelleCol.ReadOnly = true;
+            this.libelleCol.Width = 95;
+            // 
+            // descriptCol
+            // 
+            this.descriptCol.HeaderText = "Description";
+            this.descriptCol.Name = "descriptCol";
+            this.descriptCol.ReadOnly = true;
+            this.descriptCol.Width = 90;
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
@@ -183,19 +259,6 @@
             this.tabPage1.Size = new System.Drawing.Size(566, 325);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Envoi e-mail";
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.Image = global::PixLogic.Properties.Resources.valider_icon;
-            this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSave.Location = new System.Drawing.Point(222, 292);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(93, 27);
-            this.buttonSave.TabIndex = 11;
-            this.buttonSave.Text = "Enregistrer";
-            this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonSave.UseVisualStyleBackColor = true;
             // 
             // labelInfo
             // 
@@ -331,70 +394,6 @@
             this.labelServer.TabIndex = 0;
             this.labelServer.Text = "Serveur SMTP :";
             // 
-            // labelNews
-            // 
-            this.labelNews.AutoSize = true;
-            this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(262, 10);
-            this.labelNews.Name = "labelNews";
-            this.labelNews.Size = new System.Drawing.Size(33, 13);
-            this.labelNews.TabIndex = 43;
-            this.labelNews.Text = "Infos";
-            // 
-            // panNews
-            // 
-            this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panNews.Controls.Add(this.valDescription);
-            this.panNews.Controls.Add(this.labelDescrip);
-            this.panNews.Controls.Add(this.labelLibelle);
-            this.panNews.Controls.Add(this.valLibelle);
-            this.panNews.Location = new System.Drawing.Point(240, 14);
-            this.panNews.Name = "panNews";
-            this.panNews.Size = new System.Drawing.Size(320, 193);
-            this.panNews.TabIndex = 42;
-            // 
-            // labelLibelle
-            // 
-            this.labelLibelle.AutoSize = true;
-            this.labelLibelle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLibelle.Location = new System.Drawing.Point(6, 19);
-            this.labelLibelle.Name = "labelLibelle";
-            this.labelLibelle.Size = new System.Drawing.Size(46, 13);
-            this.labelLibelle.TabIndex = 6;
-            this.labelLibelle.Text = "Libellé :";
-            // 
-            // valLibelle
-            // 
-            this.valLibelle.AutoSize = true;
-            this.valLibelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valLibelle.Location = new System.Drawing.Point(78, 17);
-            this.valLibelle.Name = "valLibelle";
-            this.valLibelle.Size = new System.Drawing.Size(13, 17);
-            this.valLibelle.TabIndex = 39;
-            this.valLibelle.Text = "-";
-            this.valLibelle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelDescrip
-            // 
-            this.labelDescrip.AutoSize = true;
-            this.labelDescrip.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescrip.Location = new System.Drawing.Point(6, 49);
-            this.labelDescrip.Name = "labelDescrip";
-            this.labelDescrip.Size = new System.Drawing.Size(72, 13);
-            this.labelDescrip.TabIndex = 40;
-            this.labelDescrip.Text = "Description :";
-            // 
-            // valDescription
-            // 
-            this.valDescription.Location = new System.Drawing.Point(84, 57);
-            this.valDescription.Multiline = true;
-            this.valDescription.Name = "valDescription";
-            this.valDescription.ReadOnly = true;
-            this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.valDescription.Size = new System.Drawing.Size(231, 131);
-            this.valDescription.TabIndex = 41;
-            this.valDescription.WordWrap = false;
-            // 
             // buttonDelete
             // 
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -433,27 +432,29 @@
             this.buttonAdd.Text = "Ajouter";
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // idCol
+            // buttonCancelSearch
             // 
-            this.idCol.HeaderText = "Id";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Width = 40;
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(177, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 6;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
-            // libelleCol
+            // buttonSave
             // 
-            this.libelleCol.HeaderText = "Libellé";
-            this.libelleCol.Name = "libelleCol";
-            this.libelleCol.ReadOnly = true;
-            this.libelleCol.Width = 95;
-            // 
-            // descriptCol
-            // 
-            this.descriptCol.HeaderText = "Description";
-            this.descriptCol.Name = "descriptCol";
-            this.descriptCol.ReadOnly = true;
-            this.descriptCol.Width = 90;
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.Image = global::PixLogic.Properties.Resources.valider_icon;
+            this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSave.Location = new System.Drawing.Point(222, 292);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(93, 27);
+            this.buttonSave.TabIndex = 11;
+            this.buttonSave.Text = "Enregistrer";
+            this.buttonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSave.UseVisualStyleBackColor = true;
             // 
             // WindowSettings
             // 
@@ -465,10 +466,12 @@
             this.MinimizeBox = false;
             this.Name = "WindowSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Paramètres de configuration";
+            this.Text = "Paramètres";
             this.tabControlSettings.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panNews.ResumeLayout(false);
+            this.panNews.PerformLayout();
             this.panelListCategory.ResumeLayout(false);
             this.panelListCategory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -478,8 +481,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panNews.ResumeLayout(false);
-            this.panNews.PerformLayout();
             this.ResumeLayout(false);
 
         }

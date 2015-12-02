@@ -108,6 +108,12 @@
     <Compile Include="TestWindow.Designer.cs">
       <DependentUpon>TestWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowCategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowCategorie.Designer.cs">
+      <DependentUpon>WindowCategorie.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </Compile>
     <EmbeddedResource Include="TestWindow.resx">
       <DependentUpon>TestWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowCategorie.resx">
+      <DependentUpon>WindowCategorie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowItem.resx">
       <DependentUpon>WindowItem.cs</DependentUpon>

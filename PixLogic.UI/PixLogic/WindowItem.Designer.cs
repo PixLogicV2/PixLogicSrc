@@ -155,6 +155,7 @@
             this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.valDescription.Size = new System.Drawing.Size(156, 98);
             this.valDescription.TabIndex = 8;
+            this.valDescription.WordWrap = false;
             // 
             // labelDescrip
             // 

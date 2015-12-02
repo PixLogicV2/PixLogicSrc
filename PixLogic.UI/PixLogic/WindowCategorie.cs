@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace PixLogic
 {
-    public partial class WindowSettings : Form
+    public partial class WindowCategorie : Form
     {
-        public WindowSettings()
+        public WindowCategorie()
         {
             InitializeComponent();
-        }
-
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-            WindowCategorie categorie = new WindowCategorie();
-            categorie.Show(this);
         }
     }
 }
