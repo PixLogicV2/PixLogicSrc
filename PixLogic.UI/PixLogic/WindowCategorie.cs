@@ -16,6 +16,7 @@ namespace PixLogic
         Database database = Helper.database;
         private WindowSettings settings;
         private bool add;
+        private int idCategorie;
 
         public WindowCategorie(WindowSettings w)
         {
@@ -28,6 +29,8 @@ namespace PixLogic
             InitializeComponent();
             settings = w;
             add = false;
+            this.idCategorie = idCategorie;
+
             Categorie c = database.GetCategorieById(idCategorie);
 
             valLibelle.Text = c.name;
@@ -43,10 +46,11 @@ namespace PixLogic
                 && Helper.AreNumbers(true, valLevel.Text)
                 && Helper.confirmation(op))
             {
-                if(add)
-                    database.AddCategorie(valLibelle.Text, (int)double.Parse(valLevel.Text));
+                if (add)
+                    database.AddCategorie(valLibelle.Text, (int)double.Parse(valLevel.Text), valDescription.Text);
                 else
-                    //database.UpdateCategorie()
+                    database.UpdateCategorie(idCategorie, valLibelle.Text, (int)double.Parse(valLevel.Text), valDescription.Text);
+
                 settings.setTableCategories(database.GetAllCategorie());
                 this.Close();
             }

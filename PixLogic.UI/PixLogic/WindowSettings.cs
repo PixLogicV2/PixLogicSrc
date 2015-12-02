@@ -13,9 +13,12 @@ namespace PixLogic
 {
     public partial class WindowSettings : Form
     {
+        Database database = Helper.database;
+
         public WindowSettings()
         {
             InitializeComponent();
+            setTableCategories(database.GetAllCategorie());
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -78,7 +81,7 @@ namespace PixLogic
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(dataGridCategories.CurrentRow.Cells[1].Value.ToString());
+            int id = int.Parse(dataGridCategories.CurrentRow.Cells[0].Value.ToString());
             WindowCategorie categorieM = new WindowCategorie(this, id);
             categorieM.Show(this);
         }
