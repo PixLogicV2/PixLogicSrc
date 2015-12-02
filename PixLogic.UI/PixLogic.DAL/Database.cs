@@ -216,6 +216,11 @@ namespace PixLogic.DAL
         {
             container.get("update_categorie").upDateCategorie(nom,newnom,id);
         }
+        public List<Categorie>GetAllCategorie()
+        {
+            return container.get("get_all_categorie").getAllCategorie();
+        }
+
         public void DeleteCategorie(string name)
         {
             container.get("delete_categorie").deleteCategorie(name);

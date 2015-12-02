@@ -73,6 +73,7 @@
     <Compile Include="DeleteReservation.cs" />
     <Compile Include="DeleteUser.cs" />
     <Compile Include="EmpruntReservation.cs" />
+    <Compile Include="GetAllCategorie.cs" />
     <Compile Include="GetAllEmprunts.cs" />
     <Compile Include="GetAllItemReservations.cs" />
     <Compile Include="GetAllItemsEmprunts.cs" />
