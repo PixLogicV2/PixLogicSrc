@@ -218,7 +218,7 @@ namespace PixLogic.DAL
         }
         public Categorie GetCategorieById(int id)
         {
-            return container.get("update_categorie").upDateCategorie(id);
+            return container.get("get_categorie_by_id").getCategorieById(id);
         }
         public List<Categorie>GetAllCategorie()
         {
