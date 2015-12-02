@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowPackManager));
             this.labelListPack = new System.Windows.Forms.Label();
             this.panTablePack = new System.Windows.Forms.Panel();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
@@ -55,11 +57,14 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.valNamePack = new System.Windows.Forms.Label();
+            this.valPackId = new System.Windows.Forms.Label();
+            this.pictureReserver = new System.Windows.Forms.PictureBox();
             this.panTablePack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPack)).BeginInit();
             this.panNews.SuspendLayout();
             this.panPackContain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).BeginInit();
             this.SuspendLayout();
             // 
             // labelListPack
@@ -81,7 +86,7 @@
             this.panTablePack.Controls.Add(this.dataGridPack);
             this.panTablePack.Location = new System.Drawing.Point(4, 5);
             this.panTablePack.Name = "panTablePack";
-            this.panTablePack.Size = new System.Drawing.Size(200, 411);
+            this.panTablePack.Size = new System.Drawing.Size(200, 427);
             this.panTablePack.TabIndex = 23;
             // 
             // buttonCancelSearch
@@ -116,6 +121,8 @@
             // 
             this.dataGridPack.AllowUserToAddRows = false;
             this.dataGridPack.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridPack.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridPack.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridPack.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridPack.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -125,12 +132,13 @@
             this.Price,
             this.Available});
             this.dataGridPack.Location = new System.Drawing.Point(0, 47);
+            this.dataGridPack.MultiSelect = false;
             this.dataGridPack.Name = "dataGridPack";
             this.dataGridPack.ReadOnly = true;
             this.dataGridPack.RowHeadersVisible = false;
             this.dataGridPack.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridPack.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPack.Size = new System.Drawing.Size(199, 363);
+            this.dataGridPack.Size = new System.Drawing.Size(199, 379);
             this.dataGridPack.TabIndex = 0;
             this.dataGridPack.Click += new System.EventHandler(this.dataGridPack_Click);
             // 
@@ -306,7 +314,7 @@
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDelete.Location = new System.Drawing.Point(486, 388);
+            this.buttonDelete.Location = new System.Drawing.Point(486, 405);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(93, 29);
             this.buttonDelete.TabIndex = 35;
@@ -320,7 +328,7 @@
             this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModify.Location = new System.Drawing.Point(366, 388);
+            this.buttonModify.Location = new System.Drawing.Point(366, 405);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(78, 29);
             this.buttonModify.TabIndex = 34;
@@ -334,7 +342,7 @@
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(246, 388);
+            this.buttonAdd.Location = new System.Drawing.Point(246, 405);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(78, 29);
             this.buttonAdd.TabIndex = 33;
@@ -349,15 +357,39 @@
             this.valNamePack.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valNamePack.Location = new System.Drawing.Point(384, -1);
             this.valNamePack.Name = "valNamePack";
-            this.valNamePack.Size = new System.Drawing.Size(13, 17);
+            this.valNamePack.Size = new System.Drawing.Size(72, 17);
             this.valNamePack.TabIndex = 36;
-            this.valNamePack.Text = "-";
+            this.valNamePack.Text = "packName";
+            // 
+            // valPackId
+            // 
+            this.valPackId.AutoSize = true;
+            this.valPackId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valPackId.Location = new System.Drawing.Point(459, -4);
+            this.valPackId.Name = "valPackId";
+            this.valPackId.Size = new System.Drawing.Size(64, 21);
+            this.valPackId.TabIndex = 40;
+            this.valPackId.Text = "ID pack";
+            this.valPackId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureReserver
+            // 
+            this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
+            this.pictureReserver.Image = ((System.Drawing.Image)(resources.GetObject("pictureReserver.Image")));
+            this.pictureReserver.Location = new System.Drawing.Point(597, 343);
+            this.pictureReserver.Name = "pictureReserver";
+            this.pictureReserver.Size = new System.Drawing.Size(23, 23);
+            this.pictureReserver.TabIndex = 42;
+            this.pictureReserver.TabStop = false;
+            this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
+            this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
             // WindowPackManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 425);
+            this.ClientSize = new System.Drawing.Size(633, 444);
+            this.Controls.Add(this.valPackId);
             this.Controls.Add(this.valNamePack);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonModify);
@@ -368,6 +400,8 @@
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.labelListPack);
             this.Controls.Add(this.panTablePack);
+            this.Controls.Add(this.pictureReserver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowPackManager";
@@ -380,6 +414,7 @@
             this.panNews.PerformLayout();
             this.panPackContain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,5 +449,7 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.ListBox listBoxItemsOfPack;
         public System.Windows.Forms.Label valNamePack;
+        public System.Windows.Forms.Label valPackId;
+        private System.Windows.Forms.PictureBox pictureReserver;
     }
 }

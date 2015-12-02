@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,27 +55,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategorie.cs" />
+    <Compile Include="AddCategorieToItem.cs" />
+    <Compile Include="AddMailConfig.cs" />
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
     <Compile Include="AddItem.cs" />
     <Compile Include="AddReservation.cs" />
     <Compile Include="AddUser.cs" />
     <Compile Include="ByteArrayToImage.cs" />
+    <Compile Include="Categorie.cs" />
+    <Compile Include="CategorieFactory.cs" />
+    <Compile Include="ContainReservationByUserId.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeletePack.cs" />
+    <Compile Include="DeleteReservation.cs" />
     <Compile Include="DeleteUser.cs" />
+    <Compile Include="EmpruntReservation.cs" />
+    <Compile Include="GetAllEmprunts.cs" />
+    <Compile Include="GetAllItemReservations.cs" />
+    <Compile Include="GetAllItemsEmprunts.cs" />
+    <Compile Include="GetAllLogs.cs" />
+    <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
+    <Compile Include="GetAllPacksEmprunts.cs" />
     <Compile Include="GetAllReservations.cs" />
+    <Compile Include="GetAllReservationsByDate.cs" />
+    <Compile Include="GetAllReservationsByReservableId.cs" />
     <Compile Include="GetAllUsers.cs" />
+    <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
+    <Compile Include="GetMailConfig.cs" />
+    <Compile Include="GetPackById.cs" />
     <Compile Include="GetPackByName.cs" />
     <Compile Include="GetReservationById.cs" />
     <Compile Include="GetUserById.cs" />
     <Compile Include="GetUserByName.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="ReservationFactory.cs" />
+    <Compile Include="RetourEmprunt.cs" />
     <Compile Include="ServiceContainer.cs" />
     <Compile Include="ContainItem.cs" />
     <Compile Include="DataContext.cs" />
@@ -86,7 +111,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservable.cs" />
     <Compile Include="UpdateItem.cs" />
+    <Compile Include="UpdateMailConfig.cs" />
     <Compile Include="UpdatePack.cs" />
+    <Compile Include="UpdateReservation.cs" />
     <Compile Include="UpdateUser.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserFactory.cs" />

@@ -49,6 +49,14 @@ namespace PixLogic.DAL
         {
             return container.get("get_item_by_name").getItemByName(itemName);
         }
+        public Item GetItemById(int itemId)
+        {
+            return container.get("get_item_by_id").getItemById(itemId);
+        }
+        public Pack GetPackById(int itemId)
+        {
+            return container.get("get_pack_by_id").getPackById(itemId);
+        }
         public Pack GetPackByName(string packName)
         {
             return container.get("get_pack_by_name").getPackByName(packName);
@@ -120,18 +128,113 @@ namespace PixLogic.DAL
         //***************
 
         public void AddReservation(bool isPack, DateTime? beginDateReservation, DateTime? endDateReservation,
-            DateTime? beginDateEmprunt, DateTime? endDateEmprunt, int idUser, int idElement, int idManager)
+            DateTime? beginDateEmprunt, DateTime? endDateEmprunt, User user, Reservable element, Manager manager)
         {
             container.get("add_reservation").addReservation(container.get("reservation_factory").build(isPack, beginDateReservation, endDateReservation,
-                                                                                                        beginDateEmprunt, endDateEmprunt, idUser, idElement, idManager));
+                                                                                                        beginDateEmprunt, endDateEmprunt, user, element, manager));
         }
         public List<Reservation> GetAllReservations()
         {
             return container.get("get_all_reservations").getAllReservations();
         }
+        public List<Reservation> GetAllItemReservations(List<Reservation> l)
+        {
+            return container.get("get_all_item_reservations").getAllItemReservations(l);
+        }
+        public List<Reservation> GetAllPackReservations(List<Reservation> l)
+        {
+            return container.get("get_all_pack_reservations").getAllPackReservations(l);
+        }
+        public List<Reservation> GetAllReservationsByDate(DateTime dateDebut,DateTime dateFin)
+        {
+            return container.get("get_all_reservations_by_date").getAllReservationsByDate(dateDebut,dateFin);
+        }
+        public List<Reservation> GetAllReservationsByReservableId(int idReservable)
+        {
+            return container.get("get_all_reservations_by_reservable_id").getAllReservationsByReservableId(idReservable);
+        }
+        public List<Reservation> GetAllReservationsByString(string search)
+        {
+            return container.get("get_all_reservations_by_string").getAllReservationsByString(search);
+        }
+        public List<Reservation> GetAllEmprunts()
+        {
+            return container.get("get_all_emprunts").getAllEmprunts();
+        }
         public Reservation GetReservationById(int id)
         {
             return container.get("get_reservation_by_id").getReservationById(id);
         }
+        public void DeleteReservation(int id)
+        {
+            container.get("delete_reservation").deleteReservation(id);
+        }
+        public void UpdateReservation(int id,DateTime? DateDebut,DateTime? DateFin)
+        {
+            container.get("update_reservation").updateReservation(id, DateDebut, DateFin);
+        }
+
+        public void EmpruntReservation(int id)
+        {
+            container.get("emprunt_reservation").empruntReservation(id);
+        }
+        public List<Reservation> GetAllEmpruntsByDate(DateTime debut,DateTime fin)
+        {
+            return container.get("get_all_emprunts_by_date").getAllEmpruntsByDate(debut, fin);
+        }
+        public List<Reservation> GetAllEmpruntsByString(string search)
+        {
+           return container.get("get_all_emprunts_by_date").getAllEmpruntsByString(search);
+        }
+        public List<Reservation> GetAllItemsEmprunts(List<Reservation> list)
+        {
+            return container.get("get_all_items_emprunts").getAllItemsEmprunts(list);
+        }
+        public List<Reservation> GetAllPacksEmprunts(List<Reservation> list)
+        {
+            return container.get("get_all_items_emprunts").getAllPacksEmprunts(list);
+        }
+        /*
+        *LOG
+        */
+        public List<Reservation> GetAllLogs()
+        {
+            return container.get("get_all_logs").getAllLogs();
+        }
+        /*
+        *Categorie
+        */
+        public void AddCategorie(string name, int level)
+        {
+            container.get("add_categorie").addCategorie(container.get("categorie_factory").build(name, level));
+        }
+        public void AddCategorieToItem(string itemName, string packName)
+        {
+            container.get("add_categorie_to_item").addCategorieToItem(itemName, packName);
+        }
+        public bool ContainReservationByUserId(int id)
+        {
+           return container.get("contain_reservation_by_user_id").containReservationByUserId(id);
+        }
+        public void RetourEmprunt(int id,DateTime? retour)
+        {
+            container.get("retour_emprunt").retourEmprunt(id, retour);
+        }
+        /*
+        *mailconfig
+        */
+        public void AddMailConfig(MailConfig mailConfig)
+        {
+            container.get("add_mail_config").addMailConfig(mailConfig);
+        }
+        public void UpdateMailConfig()
+        {
+            container.get("update_mail_config").upDateMailConfig();
+        }
+        public MailConfig GetMailConfig()
+        {
+            return container.get("get_mail_config").getMailConfig();
+        }
+
     }
 }

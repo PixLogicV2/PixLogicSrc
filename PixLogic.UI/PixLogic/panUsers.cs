@@ -28,6 +28,7 @@ namespace PixLogic
         {
             List<User> list = l;
             dataGridUsers.Rows.Clear();
+            //dataGridUsers.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
             foreach (var user in list)
             {
                 dataGridUsers.Rows.Add(user.UserId,user.name,user.nickname);

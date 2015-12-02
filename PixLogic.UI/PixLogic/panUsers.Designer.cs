@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panUsers));
             this.panTableUsers = new System.Windows.Forms.Panel();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
@@ -104,6 +105,8 @@
             // 
             this.dataGridUsers.AllowUserToAddRows = false;
             this.dataGridUsers.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridUsers.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -113,6 +116,7 @@
             this.NameUser,
             this.NickNameUser});
             this.dataGridUsers.Location = new System.Drawing.Point(0, 47);
+            this.dataGridUsers.MultiSelect = false;
             this.dataGridUsers.Name = "dataGridUsers";
             this.dataGridUsers.ReadOnly = true;
             this.dataGridUsers.RowHeadersVisible = false;
@@ -351,7 +355,7 @@
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.valUserName);
             this.Controls.Add(this.panTableUsers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "panUsers";
             this.Size = new System.Drawing.Size(688, 452);
             this.panTableUsers.ResumeLayout(false);

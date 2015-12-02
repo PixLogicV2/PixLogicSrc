@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using PixLogic.DAL;
 namespace PixLogic
 {
+
     public partial class MainWindow : Form
     {
         private MenuButton button = null;
+
+
+
         private string textUtilisateur = "         UTILISATEUR";
         private string textMateriel = "         MATERIEL";
         private string textReservation = "         RESERVATION";
         private string textScript = "         SCRIPT";
+        private string textEmprunt = "         EMPRUNT";
+
         public static bool START = false;
+        private Database database = Helper.database;
         public MainWindow()
         {
             InitializeComponent();
@@ -18,24 +25,53 @@ namespace PixLogic
             setPanUserVisible();
         }
 
+
         private void setPanUserVisible()
         {
             panItemPack1.Visible = false;
             panUsers1.Visible = true;
             panReservation1.Visible = false;
+            panEmprunt1.Visible = false;
             button = boutonUtilisateur;
             button.DesactiveEffectButton();
         }
 
         private void addEventsOnButtonItem()
         {
-           foreach(Control ctrl in panMenu.Controls)
+            foreach (Control ctrl in panMenu.Controls)
             {
-                ctrl.MouseClick += ClickItemButton;
-                foreach(Control c in ctrl.Controls)
+                if (!ctrl.Name.Equals("buttonMenu"))
                 {
-                    c.MouseClick += ClickItemButton;
+                    ctrl.MouseClick += ClickItemButton;
+                    foreach (Control c in ctrl.Controls)
+                    {
+                        c.MouseClick += ClickItemButton;
+                    }
                 }
+            }
+        }
+
+        private void selectPan(string buttonName)
+        {
+            string namePan = "";
+            switch (buttonName)
+            {
+                case "boutonUtilisateur": namePan = "panUsers1"; break;
+                case "boutonMateriel": namePan = "panItemPack1"; break;
+                case "boutonReservation": namePan = "panReservation1";panReservation1.setTableReservations(database.GetAllReservations()); break;
+                case "boutonEmprunt": namePan = "panEmprunt1"; panEmprunt1.setTableEmprunts(database.GetAllEmprunts()); break;
+                    /* case "boutonHistorique": namePan = "panHistorique1"; break;
+                     case "boutonScript": namePan = "panScript1"; break;*/
+            }
+            Console.WriteLine("Nom Bouton : " + buttonName.ToUpper());
+            Console.WriteLine("Nom Select : " + namePan.ToUpper());
+            foreach (Control c in panelAllPan.Controls)
+            {
+                if (c.Name.Equals(namePan))
+                    c.Visible = true;
+                else
+                    c.Visible = false;
+                Console.WriteLine("Nom panneau : " + c.Name);
             }
         }
 
@@ -47,29 +83,17 @@ namespace PixLogic
                 button = ((MenuButton)sender);
             else
                 button = (MenuButton)((Control)sender).Parent;
-
+            //d
             if (buttonHelper != null && buttonHelper != button)
             {
                 buttonHelper.ActiveEffectButton();
                 if (button.Text.ToString().Equals(textMateriel))
-                {
+                selectPan(button.NameButton);
                     panScript1.Visible = false;
-                    panUsers1.Visible = false;
-                    panItemPack1.Visible = true;
                     panReservation1.Visible = false;
-                }
-                else if (button.Text.ToString().Equals(textUtilisateur))
-                {
                     panScript1.Visible = false;
-                    panItemPack1.Visible = false;
-                    panUsers1.Visible = true;
                     panReservation1.Visible = false;
-                }
-                else if (button.Text.ToString().Equals(textReservation))
-                {
                     panScript1.Visible = false;
-                    panItemPack1.Visible = false;
-                    panUsers1.Visible = false;
                     panReservation1.Visible = true;
                 }
                 else if (button.Text.ToString().Equals(textScript))
@@ -78,11 +102,15 @@ namespace PixLogic
                     panItemPack1.Visible = false;
                     panUsers1.Visible = false;
                     panReservation1.Visible = false;
-                }
             }
 
             button.DesactiveEffectButton();
         }
 
+        private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowSettings settings = new WindowSettings();
+            settings.ShowDialog();
+        }
     }
 }
