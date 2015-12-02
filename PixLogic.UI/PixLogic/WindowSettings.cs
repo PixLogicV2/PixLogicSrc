@@ -19,7 +19,7 @@ namespace PixLogic
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            WindowCategorie categorie = new WindowCategorie();
+            WindowCategorie categorie = new WindowCategorie(dataGridCategorie);
             categorie.Show(this);
         }
     }
