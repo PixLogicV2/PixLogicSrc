@@ -224,6 +224,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_categorie").getAllCategorie();
         }
+        public List<Categorie> GetAllCategorieByString()
+        {
+            return container.get("get_all_categorie").getAllCategorieByString();
+        }
 
         public void DeleteCategorie(int id)
         {
