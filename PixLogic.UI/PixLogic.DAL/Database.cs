@@ -225,9 +225,9 @@ namespace PixLogic.DAL
             return container.get("get_all_categorie").getAllCategorie();
         }
 
-        public void DeleteCategorie(string name)
+        public void DeleteCategorie(int id)
         {
-            container.get("delete_categorie").deleteCategorie(name);
+            container.get("delete_categorie").deleteCategorie(id);
         }
         public bool ContainReservationByUserId(int id)
         {

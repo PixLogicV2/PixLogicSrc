@@ -14,10 +14,10 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void deleteCategorie(string nameToDelete)
+        public void deleteCategorie(int id)
         {
             var cat = (from s in context.Categories
-                        where s.name == nameToDelete
+                        where s.CategorieId == id
                         select s).FirstOrDefault();
 
             context.Entry(cat).State = System.Data.Entity.EntityState.Deleted;

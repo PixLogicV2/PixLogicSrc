@@ -7,17 +7,9 @@ namespace PixLogic
     public partial class MainWindow : Form
     {
         private MenuButton button = null;
-
-
-
-        private string textUtilisateur = "         UTILISATEUR";
-        private string textMateriel = "         MATERIEL";
-        private string textReservation = "         RESERVATION";
-        private string textScript = "         SCRIPT";
-        private string textEmprunt = "         EMPRUNT";
-
         public static bool START = false;
         private Database database = Helper.database;
+
         public MainWindow()
         {
             InitializeComponent();

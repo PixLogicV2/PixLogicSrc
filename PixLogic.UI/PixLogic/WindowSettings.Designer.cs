@@ -117,6 +117,7 @@
             this.buttonDelete.Text = "Supprimer";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonModify
             // 
@@ -264,6 +265,7 @@
             // 
             this.dataGridCategories.AllowUserToAddRows = false;
             this.dataGridCategories.AllowUserToDeleteRows = false;
+            this.dataGridCategories.BackgroundColor = System.Drawing.Color.White;
             this.dataGridCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
@@ -273,6 +275,7 @@
             this.dataGridCategories.Name = "dataGridCategories";
             this.dataGridCategories.ReadOnly = true;
             this.dataGridCategories.RowHeadersVisible = false;
+            this.dataGridCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridCategories.Size = new System.Drawing.Size(247, 251);
             this.dataGridCategories.TabIndex = 0;
             // 

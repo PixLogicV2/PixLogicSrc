@@ -85,5 +85,15 @@ namespace PixLogic
             WindowCategorie categorieM = new WindowCategorie(this, id);
             categorieM.Show(this);
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if(Helper.confirmation(Helper.DELETE))
+            {
+                int id = int.Parse(dataGridCategories.CurrentRow.Cells[0].Value.ToString());
+                database.DeleteCategorie(id);
+                setTableCategories(database.GetAllCategorie());
+            }
+        }
     }
 }
