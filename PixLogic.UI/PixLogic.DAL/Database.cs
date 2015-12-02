@@ -214,7 +214,7 @@ namespace PixLogic.DAL
         }
         public void UpdateCategorie(int id,string nom,int lvl,string description)
         {
-            container.get("update_categorie").upDateCategorie(id,nom,lvl,description);
+            container.get("update_categorie").updateCategorie(id,nom,lvl,description);
         }
         public Categorie GetCategorieById(int id)
         {
