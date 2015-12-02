@@ -95,5 +95,15 @@ namespace PixLogic
                 setTableCategories(database.GetAllCategorie());
             }
         }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            setTableCategories(database.GetAllCategorieByString(textBoxSearch.Text));
+        }
+
+        private void buttonCancelSearch_Click(object sender, EventArgs e)
+        {
+            setTableCategories(database.GetAllCategorie());
+        }
     }
 }
