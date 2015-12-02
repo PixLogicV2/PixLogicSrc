@@ -14,54 +14,47 @@ namespace PixLogic
     public partial class WindowCategorie : Form
     {
         Database database = Helper.database;
-        private DataGridView dataGridCategories;
+        private WindowSettings settings;
+        private bool add;
 
-        public WindowCategorie(DataGridView d)
+        public WindowCategorie(WindowSettings w)
         {
             InitializeComponent();
-            dataGridCategories = d;
+            settings = w;
+            add = true;
+        }
+        public WindowCategorie(WindowSettings w, int idCategorie)
+        {
+            InitializeComponent();
+            settings = w;
+            add = false;
+            Categorie c = database.GetCategorieById(idCategorie);
+
+            valLibelle.Text = c.name;
+            valLevel.Text = c.level.ToString();
+            valDescription.Text = c.description;
         }
 
         private void buttonValid_Click(object sender, EventArgs e)
         {
+            string op = add ? Helper.ADD : Helper.SET;
+
             if(!Helper.fieldsAreEmpty(true, valLibelle.Text)
                 && Helper.AreNumbers(true, valLevel.Text)
-                && Helper.confirmation(Helper.ADD))
+                && Helper.confirmation(op))
             {
-                database.AddCategorie(valLibelle.Text, int.Parse(valLevel.Text));
+                if(add)
+                    database.AddCategorie(valLibelle.Text, (int)double.Parse(valLevel.Text));
+                else
+                    //database.UpdateCategorie()
+                settings.setTableCategories(database.GetAllCategorie());
+                this.Close();
             }
         }
-        
-        private void setTableCategories(List<Categorie> l)
+
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
-            List<Categorie> list = l;
-            dataGridCategories.Rows.Clear();
-            //dataGridUsers.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
-            foreach (var cat in list)
-            {
-                dataGridCategories.Rows.Add(cat.CategorieId, cat.name, cat.level);
-            }
-
-            if (dataGridCategories.RowCount > 0)
-            {
-                dataGridCategories.FirstDisplayedScrollingRowIndex = 0;
-                dataGridCategories.Refresh();
-                dataGridCategories.CurrentCell = dataGridCategories.Rows[0].Cells[0];
-                dataGridCategories.Rows[0].Selected = true;
-            }
-
-            setNewsCategories();
-            checkEnableButton();
-        }
-
-        private void setNewsCategories()
-        {
-
-        }
-
-        private void checkEnableButton()
-        {
-
+            this.Close();
         }
     }
 }
