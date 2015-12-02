@@ -45,7 +45,7 @@
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
-            this.dataGridCategorie = new System.Windows.Forms.DataGridView();
+            this.dataGridCategories = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             this.panCategorie.SuspendLayout();
             this.panNews.SuspendLayout();
             this.panelListCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCategorie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCategories)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -130,6 +130,7 @@
             this.buttonModify.Text = "Modifier";
             this.buttonModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonAdd
             // 
@@ -171,7 +172,7 @@
             // 
             // valDescription
             // 
-            this.valDescription.Location = new System.Drawing.Point(84, 92);
+            this.valDescription.Location = new System.Drawing.Point(84, 88);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
@@ -227,7 +228,7 @@
             this.panelListCategory.Controls.Add(this.buttonCancelSearch);
             this.panelListCategory.Controls.Add(this.textBoxSearch);
             this.panelListCategory.Controls.Add(this.labelSearch);
-            this.panelListCategory.Controls.Add(this.dataGridCategorie);
+            this.panelListCategory.Controls.Add(this.dataGridCategories);
             this.panelListCategory.Location = new System.Drawing.Point(6, 14);
             this.panelListCategory.Name = "panelListCategory";
             this.panelListCategory.Size = new System.Drawing.Size(247, 305);
@@ -259,21 +260,21 @@
             this.labelSearch.TabIndex = 4;
             this.labelSearch.Text = "Recherche :";
             // 
-            // dataGridCategorie
+            // dataGridCategories
             // 
-            this.dataGridCategorie.AllowUserToAddRows = false;
-            this.dataGridCategorie.AllowUserToDeleteRows = false;
-            this.dataGridCategorie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCategorie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridCategories.AllowUserToAddRows = false;
+            this.dataGridCategories.AllowUserToDeleteRows = false;
+            this.dataGridCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
             this.libelleCol,
             this.levelCol});
-            this.dataGridCategorie.Location = new System.Drawing.Point(-1, 49);
-            this.dataGridCategorie.Name = "dataGridCategorie";
-            this.dataGridCategorie.ReadOnly = true;
-            this.dataGridCategorie.RowHeadersVisible = false;
-            this.dataGridCategorie.Size = new System.Drawing.Size(247, 251);
-            this.dataGridCategorie.TabIndex = 0;
+            this.dataGridCategories.Location = new System.Drawing.Point(-1, 49);
+            this.dataGridCategories.Name = "dataGridCategories";
+            this.dataGridCategories.ReadOnly = true;
+            this.dataGridCategories.RowHeadersVisible = false;
+            this.dataGridCategories.Size = new System.Drawing.Size(247, 251);
+            this.dataGridCategories.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -501,7 +502,7 @@
             this.panNews.PerformLayout();
             this.panelListCategory.ResumeLayout(false);
             this.panelListCategory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCategorie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCategories)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -516,7 +517,6 @@
 
         private System.Windows.Forms.TabControl tabControlSettings;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage panCategorie;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelConfiguration;
         private System.Windows.Forms.Label labelServer;
@@ -534,7 +534,7 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label labelListCategory;
         private System.Windows.Forms.Panel panelListCategory;
-        private System.Windows.Forms.DataGridView dataGridCategorie;
+        private System.Windows.Forms.DataGridView dataGridCategories;
         private System.Windows.Forms.Button buttonCancelSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
@@ -552,5 +552,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn levelCol;
         private System.Windows.Forms.Label labelAccessLevel;
         public System.Windows.Forms.Label valLevel;
+        public System.Windows.Forms.TabPage panCategorie;
     }
 }
