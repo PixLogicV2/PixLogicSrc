@@ -144,6 +144,12 @@
     <Compile Include="WindowSetReservation.Designer.cs">
       <DependentUpon>WindowSetReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowSettings.Designer.cs">
+      <DependentUpon>WindowSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowSetReservation.resx">
       <DependentUpon>WindowSetReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowSettings.resx">
+      <DependentUpon>WindowSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowUser.resx">
       <DependentUpon>WindowUser.cs</DependentUpon>

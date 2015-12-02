@@ -128,7 +128,8 @@ namespace PixLogic
             {
                 elem = database.GetPackById(int.Parse(valIdReservable.Text.ToString()));
             }
-            if (Helper.beginBeforeEndDate(true, debut, fin)
+            if (Helper.reservationStartMinimumToday(true, debut)
+                && Helper.beginBeforeEndDate(true, debut, fin)
                 && Helper.getDispoReservableByDate(true, idElement, debut, fin)
                 && Helper.confirmationReservation(Helper.ADD))
             {
@@ -138,6 +139,16 @@ namespace PixLogic
 
                 this.Close();
             }
-        }   
+        }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            setTableUsers(database.GetAllUsersByString(textBoxSearch.Text));
+        }
+
+        private void buttonCancelSearch_Click(object sender, EventArgs e)
+        {
+            setTableUsers(database.GetAllUsers());
+        }
     }
 }

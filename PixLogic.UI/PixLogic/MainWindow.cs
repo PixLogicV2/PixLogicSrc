@@ -57,8 +57,8 @@ namespace PixLogic
             {
                 case "boutonUtilisateur": namePan = "panUsers1"; break;
                 case "boutonMateriel": namePan = "panItemPack1"; break;
-                case "boutonReservation": namePan = "panReservation1"; break;
-                case "boutonEmprunt": namePan = "panEmprunt1"; break;
+                case "boutonReservation": namePan = "panReservation1";panReservation1.setTableReservations(database.GetAllReservations()); break;
+                case "boutonEmprunt": namePan = "panEmprunt1"; panEmprunt1.setTableEmprunts(database.GetAllEmprunts()); break;
                     /* case "boutonHistorique": namePan = "panHistorique1"; break;
                      case "boutonScript": namePan = "panScript1"; break;*/
             }
@@ -92,5 +92,10 @@ namespace PixLogic
             button.DesactiveEffectButton();
         }
 
+        private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowSettings settings = new WindowSettings();
+            settings.ShowDialog();
+        }
     }
 }
