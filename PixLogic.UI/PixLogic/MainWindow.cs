@@ -32,6 +32,7 @@ namespace PixLogic
             panUsers1.Visible = true;
             panReservation1.Visible = false;
             panEmprunt1.Visible = false;
+            panScript1.Visible = false;
             button = boutonUtilisateur;
             button.DesactiveEffectButton();
         }
@@ -60,8 +61,8 @@ namespace PixLogic
                 case "boutonMateriel": namePan = "panItemPack1"; break;
                 case "boutonReservation": namePan = "panReservation1";panReservation1.setTableReservations(database.GetAllReservations()); break;
                 case "boutonEmprunt": namePan = "panEmprunt1"; panEmprunt1.setTableEmprunts(database.GetAllEmprunts()); break;
-                    /* case "boutonHistorique": namePan = "panHistorique1"; break;
-                     case "boutonScript": namePan = "panScript1"; break;*/
+                //case "boutonHistorique": namePan = "panHistorique1"; break;
+                case "boutonScript": namePan = "panScript1"; break;
             }
             Console.WriteLine("Nom Bouton : " + buttonName.ToUpper());
             Console.WriteLine("Nom Select : " + namePan.ToUpper());
@@ -83,25 +84,11 @@ namespace PixLogic
                 button = ((MenuButton)sender);
             else
                 button = (MenuButton)((Control)sender).Parent;
-            //d
+
             if (buttonHelper != null && buttonHelper != button)
             {
                 buttonHelper.ActiveEffectButton();
-                if (button.Text.ToString().Equals(textMateriel))
                 selectPan(button.NameButton);
-                    panScript1.Visible = false;
-                    panReservation1.Visible = false;
-                    panScript1.Visible = false;
-                    panReservation1.Visible = false;
-                    panScript1.Visible = false;
-                    panReservation1.Visible = true;
-                }
-                else if (button.Text.ToString().Equals(textScript))
-                {
-                    panScript1.Visible = true;
-                    panItemPack1.Visible = false;
-                    panUsers1.Visible = false;
-                    panReservation1.Visible = false;
             }
 
             button.DesactiveEffectButton();
