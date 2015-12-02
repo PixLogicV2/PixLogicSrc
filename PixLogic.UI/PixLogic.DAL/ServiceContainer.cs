@@ -233,6 +233,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetMailConfig();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_all_categorie":
+                    this.arrayContainer[serviceName] = new GetAllCategorie();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "update_categorie":
                     this.arrayContainer[serviceName] = new UpdateCategorie();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
