@@ -12,7 +12,7 @@ namespace PixLogic.DAL
     {
         public string name { get; set; }
         public int level { get; set; }
-
+        public string description { get; set; }
         public int CategorieId { get; set; }
     }
 }

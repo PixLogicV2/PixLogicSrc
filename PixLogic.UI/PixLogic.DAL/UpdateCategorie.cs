@@ -14,7 +14,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateCategorie(string nom,string newnom, int lvl)
+        public void updateCategorie(string nom,string newnom, int lvl,string description)
         {
             Categorie cat;
             cat = context.Categories.Where(s => s.name == nom).FirstOrDefault<Categorie>();
@@ -23,6 +23,7 @@ namespace PixLogic.DAL
             {
                 cat.name = newnom;
                 cat.level = lvl;
+                cat.description = description;
                 context.Entry(cat).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }

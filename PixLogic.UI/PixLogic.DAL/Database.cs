@@ -212,9 +212,13 @@ namespace PixLogic.DAL
         {
             container.get("add_categorie_to_item").addCategorieToItem(itemName, packName);
         }
-        public void UpdateCategorie(string nom,string newnom,int id)
+        public void UpdateCategorie(string nom,string newnom,int id,string description)
         {
-            container.get("update_categorie").upDateCategorie(nom,newnom,id);
+            container.get("update_categorie").upDateCategorie(nom,newnom,id,description);
+        }
+        public Categorie GetCategorieById(int id)
+        {
+            return container.get("update_categorie").upDateCategorie(id);
         }
         public List<Categorie>GetAllCategorie()
         {
