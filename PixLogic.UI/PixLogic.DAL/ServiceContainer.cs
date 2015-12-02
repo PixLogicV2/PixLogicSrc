@@ -233,6 +233,15 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetMailConfig();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "update_categorie":
+                    this.arrayContainer[serviceName] = new UpdateCategorie();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "delete_categorie":
+                    this.arrayContainer[serviceName] = new DeleteCategorie();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+
                 default:
                     throw new System.Exception();
 

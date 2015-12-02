@@ -77,18 +77,20 @@
             this.panNews.Controls.Add(this.labelQuantity);
             this.panNews.Controls.Add(this.labelPrice);
             this.panNews.Controls.Add(this.labelDispo);
-            this.panNews.Location = new System.Drawing.Point(335, 197);
+            this.panNews.Location = new System.Drawing.Point(447, 242);
+            this.panNews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panNews.Name = "panNews";
-            this.panNews.Size = new System.Drawing.Size(140, 96);
+            this.panNews.Size = new System.Drawing.Size(186, 118);
             this.panNews.TabIndex = 26;
             // 
             // valQuantity
             // 
             this.valQuantity.AutoSize = true;
             this.valQuantity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valQuantity.Location = new System.Drawing.Point(80, 66);
+            this.valQuantity.Location = new System.Drawing.Point(107, 81);
+            this.valQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valQuantity.Name = "valQuantity";
-            this.valQuantity.Size = new System.Drawing.Size(13, 17);
+            this.valQuantity.Size = new System.Drawing.Size(17, 23);
             this.valQuantity.TabIndex = 5;
             this.valQuantity.Text = "-";
             // 
@@ -96,9 +98,10 @@
             // 
             this.valPrice.AutoSize = true;
             this.valPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPrice.Location = new System.Drawing.Point(80, 41);
+            this.valPrice.Location = new System.Drawing.Point(107, 50);
+            this.valPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valPrice.Name = "valPrice";
-            this.valPrice.Size = new System.Drawing.Size(13, 17);
+            this.valPrice.Size = new System.Drawing.Size(17, 23);
             this.valPrice.TabIndex = 4;
             this.valPrice.Text = "-";
             // 
@@ -106,9 +109,10 @@
             // 
             this.valDispo.AutoSize = true;
             this.valDispo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDispo.Location = new System.Drawing.Point(80, 16);
+            this.valDispo.Location = new System.Drawing.Point(107, 20);
+            this.valDispo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valDispo.Name = "valDispo";
-            this.valDispo.Size = new System.Drawing.Size(11, 13);
+            this.valDispo.Size = new System.Drawing.Size(15, 19);
             this.valDispo.TabIndex = 3;
             this.valDispo.Text = "-";
             // 
@@ -116,9 +120,10 @@
             // 
             this.labelQuantity.AutoSize = true;
             this.labelQuantity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantity.Location = new System.Drawing.Point(0, 69);
+            this.labelQuantity.Location = new System.Drawing.Point(0, 85);
+            this.labelQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelQuantity.Name = "labelQuantity";
-            this.labelQuantity.Size = new System.Drawing.Size(58, 13);
+            this.labelQuantity.Size = new System.Drawing.Size(70, 19);
             this.labelQuantity.TabIndex = 2;
             this.labelQuantity.Text = "Quantité :";
             // 
@@ -126,9 +131,10 @@
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(0, 42);
+            this.labelPrice.Location = new System.Drawing.Point(0, 52);
+            this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(52, 13);
+            this.labelPrice.Size = new System.Drawing.Size(66, 19);
             this.labelPrice.TabIndex = 1;
             this.labelPrice.Text = "Prix ( € ) :";
             // 
@@ -136,30 +142,33 @@
             // 
             this.labelDispo.AutoSize = true;
             this.labelDispo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDispo.Location = new System.Drawing.Point(0, 16);
+            this.labelDispo.Location = new System.Drawing.Point(0, 20);
+            this.labelDispo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDispo.Name = "labelDispo";
-            this.labelDispo.Size = new System.Drawing.Size(79, 13);
+            this.labelDispo.Size = new System.Drawing.Size(91, 19);
             this.labelDispo.TabIndex = 0;
             this.labelDispo.Text = "Disponibilité :";
             // 
             // valDescription
             // 
             this.valDescription.BackColor = System.Drawing.Color.White;
-            this.valDescription.Location = new System.Drawing.Point(211, 197);
+            this.valDescription.Location = new System.Drawing.Point(281, 242);
+            this.valDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
             this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.valDescription.Size = new System.Drawing.Size(118, 96);
+            this.valDescription.Size = new System.Drawing.Size(156, 117);
             this.valDescription.TabIndex = 25;
             // 
             // valItemName
             // 
             this.valItemName.AutoSize = true;
             this.valItemName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valItemName.Location = new System.Drawing.Point(207, 1);
+            this.valItemName.Location = new System.Drawing.Point(276, 1);
+            this.valItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valItemName.Name = "valItemName";
-            this.valItemName.Size = new System.Drawing.Size(133, 21);
+            this.valItemName.Size = new System.Drawing.Size(167, 28);
             this.valItemName.TabIndex = 23;
             this.valItemName.Text = "Nom du matériel";
             this.valItemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,9 +177,10 @@
             // 
             this.labelListItem.AutoSize = true;
             this.labelListItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListItem.Location = new System.Drawing.Point(23, -2);
+            this.labelListItem.Location = new System.Drawing.Point(31, -2);
+            this.labelListItem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelListItem.Name = "labelListItem";
-            this.labelListItem.Size = new System.Drawing.Size(102, 13);
+            this.labelListItem.Size = new System.Drawing.Size(132, 19);
             this.labelListItem.TabIndex = 22;
             this.labelListItem.Text = "Liste des matériels";
             // 
@@ -181,26 +191,29 @@
             this.panTableItem.Controls.Add(this.textBoxSearch);
             this.panTableItem.Controls.Add(this.labelSearch);
             this.panTableItem.Controls.Add(this.dataGridItem);
-            this.panTableItem.Location = new System.Drawing.Point(5, 3);
+            this.panTableItem.Location = new System.Drawing.Point(7, 4);
+            this.panTableItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panTableItem.Name = "panTableItem";
-            this.panTableItem.Size = new System.Drawing.Size(200, 426);
+            this.panTableItem.Size = new System.Drawing.Size(266, 524);
             this.panTableItem.TabIndex = 21;
             // 
             // buttonCancelSearch
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Location = new System.Drawing.Point(223, 20);
+            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
             this.buttonCancelSearch.TabIndex = 3;
             this.buttonCancelSearch.UseVisualStyleBackColor = true;
             this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(67, 17);
+            this.textBoxSearch.Location = new System.Drawing.Point(89, 21);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(96, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
@@ -208,9 +221,10 @@
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(2, 19);
+            this.labelSearch.Location = new System.Drawing.Point(3, 23);
+            this.labelSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(66, 13);
+            this.labelSearch.Size = new System.Drawing.Size(78, 19);
             this.labelSearch.TabIndex = 1;
             this.labelSearch.Text = "Recherche :";
             // 
@@ -228,14 +242,15 @@
             this.NameItem,
             this.Quantity,
             this.Price});
-            this.dataGridItem.Location = new System.Drawing.Point(0, 47);
+            this.dataGridItem.Location = new System.Drawing.Point(0, 58);
+            this.dataGridItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridItem.MultiSelect = false;
             this.dataGridItem.Name = "dataGridItem";
             this.dataGridItem.ReadOnly = true;
             this.dataGridItem.RowHeadersVisible = false;
             this.dataGridItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridItem.Size = new System.Drawing.Size(199, 378);
+            this.dataGridItem.Size = new System.Drawing.Size(265, 465);
             this.dataGridItem.TabIndex = 0;
             this.dataGridItem.Click += new System.EventHandler(this.dataGridItem_Click);
             this.dataGridItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridItem_KeyUp);
@@ -265,9 +280,10 @@
             // 
             this.labelNews.AutoSize = true;
             this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(353, 192);
+            this.labelNews.Location = new System.Drawing.Point(471, 236);
+            this.labelNews.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNews.Name = "labelNews";
-            this.labelNews.Size = new System.Drawing.Size(33, 13);
+            this.labelNews.Size = new System.Drawing.Size(41, 19);
             this.labelNews.TabIndex = 0;
             this.labelNews.Text = "Infos";
             // 
@@ -276,10 +292,12 @@
             this.listBoxItem.AllowDrop = true;
             this.listBoxItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxItem.FormattingEnabled = true;
-            this.listBoxItem.Location = new System.Drawing.Point(530, 55);
+            this.listBoxItem.ItemHeight = 19;
+            this.listBoxItem.Location = new System.Drawing.Point(707, 68);
+            this.listBoxItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxItem.Name = "listBoxItem";
             this.listBoxItem.ScrollAlwaysVisible = true;
-            this.listBoxItem.Size = new System.Drawing.Size(150, 225);
+            this.listBoxItem.Size = new System.Drawing.Size(199, 270);
             this.listBoxItem.TabIndex = 30;
             this.listBoxItem.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBoxItem_DragDrop);
             this.listBoxItem.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBoxItem_DragEnter);
@@ -288,10 +306,11 @@
             // 
             this.comboBoxPack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPack.FormattingEnabled = true;
-            this.comboBoxPack.ItemHeight = 13;
-            this.comboBoxPack.Location = new System.Drawing.Point(530, 25);
+            this.comboBoxPack.ItemHeight = 16;
+            this.comboBoxPack.Location = new System.Drawing.Point(707, 31);
+            this.comboBoxPack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxPack.Name = "comboBoxPack";
-            this.comboBoxPack.Size = new System.Drawing.Size(150, 21);
+            this.comboBoxPack.Size = new System.Drawing.Size(199, 24);
             this.comboBoxPack.Sorted = true;
             this.comboBoxPack.TabIndex = 31;
             this.comboBoxPack.SelectedIndexChanged += new System.EventHandler(this.comboBoxPack_SelectedIndexChanged);
@@ -300,9 +319,10 @@
             // 
             this.labelPack.AutoSize = true;
             this.labelPack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPack.Location = new System.Drawing.Point(530, 9);
+            this.labelPack.Location = new System.Drawing.Point(707, 11);
+            this.labelPack.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPack.Name = "labelPack";
-            this.labelPack.Size = new System.Drawing.Size(36, 13);
+            this.labelPack.Size = new System.Drawing.Size(45, 19);
             this.labelPack.TabIndex = 32;
             this.labelPack.Text = "Pack :";
             // 
@@ -310,9 +330,10 @@
             // 
             this.buttonTransfert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTransfert.ForeColor = System.Drawing.Color.Blue;
-            this.buttonTransfert.Location = new System.Drawing.Point(481, 168);
+            this.buttonTransfert.Location = new System.Drawing.Point(641, 207);
+            this.buttonTransfert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonTransfert.Name = "buttonTransfert";
-            this.buttonTransfert.Size = new System.Drawing.Size(43, 23);
+            this.buttonTransfert.Size = new System.Drawing.Size(57, 28);
             this.buttonTransfert.TabIndex = 34;
             this.buttonTransfert.Text = ">>";
             this.buttonTransfert.UseVisualStyleBackColor = true;
@@ -322,9 +343,10 @@
             // 
             this.valItemId.AutoSize = true;
             this.valItemId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valItemId.Location = new System.Drawing.Point(349, 2);
+            this.valItemId.Location = new System.Drawing.Point(465, 2);
+            this.valItemId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valItemId.Name = "valItemId";
-            this.valItemId.Size = new System.Drawing.Size(90, 21);
+            this.valItemId.Size = new System.Drawing.Size(112, 28);
             this.valItemId.TabIndex = 39;
             this.valItemId.Text = "ID matériel";
             this.valItemId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -333,9 +355,10 @@
             // 
             this.buttonRemoveItemInPack.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonRemoveItemInPack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRemoveItemInPack.Location = new System.Drawing.Point(572, 299);
+            this.buttonRemoveItemInPack.Location = new System.Drawing.Point(763, 368);
+            this.buttonRemoveItemInPack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonRemoveItemInPack.Name = "buttonRemoveItemInPack";
-            this.buttonRemoveItemInPack.Size = new System.Drawing.Size(75, 30);
+            this.buttonRemoveItemInPack.Size = new System.Drawing.Size(100, 37);
             this.buttonRemoveItemInPack.TabIndex = 37;
             this.buttonRemoveItemInPack.Text = "Enlever";
             this.buttonRemoveItemInPack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -347,9 +370,10 @@
             this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxItem.Image = global::PixLogic.Properties.Resources.noitem;
             this.pictureBoxItem.InitialImage = null;
-            this.pictureBoxItem.Location = new System.Drawing.Point(211, 25);
+            this.pictureBoxItem.Location = new System.Drawing.Point(281, 31);
+            this.pictureBoxItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxItem.Name = "pictureBoxItem";
-            this.pictureBoxItem.Size = new System.Drawing.Size(264, 166);
+            this.pictureBoxItem.Size = new System.Drawing.Size(351, 204);
             this.pictureBoxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxItem.TabIndex = 36;
             this.pictureBoxItem.TabStop = false;
@@ -359,9 +383,10 @@
             // 
             this.buttonManagePack.Image = global::PixLogic.Properties.Resources.general_icon;
             this.buttonManagePack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonManagePack.Location = new System.Drawing.Point(543, 401);
+            this.buttonManagePack.Location = new System.Drawing.Point(724, 494);
+            this.buttonManagePack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonManagePack.Name = "buttonManagePack";
-            this.buttonManagePack.Size = new System.Drawing.Size(121, 28);
+            this.buttonManagePack.Size = new System.Drawing.Size(161, 34);
             this.buttonManagePack.TabIndex = 35;
             this.buttonManagePack.Text = "Gérer les packs";
             this.buttonManagePack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -373,9 +398,10 @@
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDelete.Location = new System.Drawing.Point(383, 401);
+            this.buttonDelete.Location = new System.Drawing.Point(511, 494);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(93, 29);
+            this.buttonDelete.Size = new System.Drawing.Size(124, 36);
             this.buttonDelete.TabIndex = 29;
             this.buttonDelete.Text = "Supprimer";
             this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -387,9 +413,10 @@
             this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModify.Location = new System.Drawing.Point(298, 401);
+            this.buttonModify.Location = new System.Drawing.Point(397, 494);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(78, 29);
+            this.buttonModify.Size = new System.Drawing.Size(104, 36);
             this.buttonModify.TabIndex = 28;
             this.buttonModify.Text = "Modifier";
             this.buttonModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -401,9 +428,10 @@
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(212, 401);
+            this.buttonAdd.Location = new System.Drawing.Point(283, 494);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(78, 29);
+            this.buttonAdd.Size = new System.Drawing.Size(104, 36);
             this.buttonAdd.TabIndex = 27;
             this.buttonAdd.Text = "Ajouter";
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -414,9 +442,10 @@
             // 
             this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
             this.pictureReserver.Image = ((System.Drawing.Image)(resources.GetObject("pictureReserver.Image")));
-            this.pictureReserver.Location = new System.Drawing.Point(452, 291);
+            this.pictureReserver.Location = new System.Drawing.Point(603, 358);
+            this.pictureReserver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureReserver.Name = "pictureReserver";
-            this.pictureReserver.Size = new System.Drawing.Size(23, 23);
+            this.pictureReserver.Size = new System.Drawing.Size(31, 28);
             this.pictureReserver.TabIndex = 41;
             this.pictureReserver.TabStop = false;
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
@@ -424,7 +453,7 @@
             // 
             // panItemPack
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.valItemId);
@@ -445,8 +474,9 @@
             this.Controls.Add(this.labelListItem);
             this.Controls.Add(this.panTableItem);
             this.Controls.Add(this.pictureReserver);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "panItemPack";
-            this.Size = new System.Drawing.Size(690, 452);
+            this.Size = new System.Drawing.Size(920, 556);
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
             this.panTableItem.ResumeLayout(false);
