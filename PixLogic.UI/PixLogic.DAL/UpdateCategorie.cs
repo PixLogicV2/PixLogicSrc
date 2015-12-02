@@ -14,14 +14,14 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateCategorie(string nom,string newnom, int lvl,string description)
+        public void updateCategorie(int id,string nom, int lvl,string description)
         {
             Categorie cat;
-            cat = context.Categories.Where(s => s.name == nom).FirstOrDefault<Categorie>();
+            cat = context.Categories.Where(s => s.CategorieId == id).FirstOrDefault<Categorie>();
 
             if (cat != null)
             {
-                cat.name = newnom;
+                cat.name = nom;
                 cat.level = lvl;
                 cat.description = description;
                 context.Entry(cat).State = System.Data.Entity.EntityState.Modified;
