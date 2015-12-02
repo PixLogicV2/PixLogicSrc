@@ -42,13 +42,11 @@ namespace PixLogic
                     adapter.Fill(table);
                     ResultDGV.DataSource = table;
 
-                    //resizing columns for clearer results
                     ResultDGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 }
             }
             catch(SqlException ex)
             {
-                //catch Sql exceptions
                 MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -67,7 +65,6 @@ namespace PixLogic
                 }
                 catch(Exception ex)
                 {
-                    //catch all exceptions
                     MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
