@@ -204,17 +204,17 @@ namespace PixLogic.DAL
         /*
         *Categorie
         */
-        public void AddCategorie(string name, int level)
+        public void AddCategorie(string name, int level,string description)
         {
-            container.get("add_categorie").addCategorie(container.get("categorie_factory").build(name, level));
+            container.get("add_categorie").addCategorie(container.get("categorie_factory").build(name, level,description));
         }
         public void AddCategorieToItem(string itemName, string packName)
         {
             container.get("add_categorie_to_item").addCategorieToItem(itemName, packName);
         }
-        public void UpdateCategorie(string nom,string newnom,int id,string description)
+        public void UpdateCategorie(int id,string nom,int lvl,string description)
         {
-            container.get("update_categorie").upDateCategorie(nom,newnom,id,description);
+            container.get("update_categorie").upDateCategorie(id,nom,lvl,description);
         }
         public Categorie GetCategorieById(int id)
         {
