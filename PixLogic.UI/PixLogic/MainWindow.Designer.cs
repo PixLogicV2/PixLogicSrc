@@ -37,24 +37,24 @@
             this.buttonMenu = new System.Windows.Forms.Panel();
             this.labelMainMenu = new System.Windows.Forms.Label();
             this.labelFleche = new System.Windows.Forms.Label();
+            this.barreDoutils = new System.Windows.Forms.ToolStrip();
+            this.panelAllPan = new System.Windows.Forms.Panel();
+            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BoutonActionBO = new System.Windows.Forms.ToolStripDropDownButton();
+            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.packToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.réservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boutonEmprunt = new PixLogic.MenuButton();
             this.boutonScript = new PixLogic.MenuButton();
             this.boutonHistorique = new PixLogic.MenuButton();
             this.boutonReservation = new PixLogic.MenuButton();
             this.boutonMateriel = new PixLogic.MenuButton();
             this.boutonUtilisateur = new PixLogic.MenuButton();
-            this.barreDoutils = new System.Windows.Forms.ToolStrip();
-            this.BoutonActionBO = new System.Windows.Forms.ToolStripDropDownButton();
-            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.packToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.réservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelAllPan = new System.Windows.Forms.Panel();
             this.panEmprunt1 = new PixLogic.panEmprunt();
             this.panReservation1 = new PixLogic.panReservation();
             this.panItemPack1 = new PixLogic.panItemPack();
             this.panUsers1 = new PixLogic.panUsers();
-            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barreDeMenu.SuspendLayout();
             this.panMenu.SuspendLayout();
             this.buttonMenu.SuspendLayout();
@@ -142,6 +142,78 @@
             this.labelFleche.TabIndex = 1;
             this.labelFleche.Text = "^";
             // 
+            // barreDoutils
+            // 
+            this.barreDoutils.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.barreDoutils.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BoutonActionBO});
+            this.barreDoutils.Location = new System.Drawing.Point(0, 24);
+            this.barreDoutils.Name = "barreDoutils";
+            this.barreDoutils.Size = new System.Drawing.Size(827, 42);
+            this.barreDoutils.TabIndex = 2;
+            this.barreDoutils.Text = "barreDoutils";
+            // 
+            // panelAllPan
+            // 
+            this.panelAllPan.Controls.Add(this.panEmprunt1);
+            this.panelAllPan.Controls.Add(this.panReservation1);
+            this.panelAllPan.Controls.Add(this.panItemPack1);
+            this.panelAllPan.Controls.Add(this.panUsers1);
+            this.panelAllPan.Location = new System.Drawing.Point(137, 64);
+            this.panelAllPan.Name = "panelAllPan";
+            this.panelAllPan.Size = new System.Drawing.Size(690, 455);
+            this.panelAllPan.TabIndex = 3;
+            // 
+            // paramètresToolStripMenuItem
+            // 
+            this.paramètresToolStripMenuItem.Image = global::PixLogic.Properties.Resources.parametres_icon;
+            this.paramètresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
+            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.paramètresToolStripMenuItem.Text = "Paramètres";
+            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
+            // 
+            // BoutonActionBO
+            // 
+            this.BoutonActionBO.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.utilisateurToolStripMenuItem,
+            this.matérielToolStripMenuItem,
+            this.packToolStripMenuItem,
+            this.réservationToolStripMenuItem});
+            this.BoutonActionBO.Image = ((System.Drawing.Image)(resources.GetObject("BoutonActionBO.Image")));
+            this.BoutonActionBO.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BoutonActionBO.Name = "BoutonActionBO";
+            this.BoutonActionBO.Size = new System.Drawing.Size(68, 39);
+            this.BoutonActionBO.Text = "Nouveau";
+            this.BoutonActionBO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // utilisateurToolStripMenuItem
+            // 
+            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user_icon;
+            this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.utilisateurToolStripMenuItem.Text = "Utilisateur";
+            // 
+            // matérielToolStripMenuItem
+            // 
+            this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
+            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.matérielToolStripMenuItem.Text = "Matériel";
+            // 
+            // packToolStripMenuItem
+            // 
+            this.packToolStripMenuItem.Name = "packToolStripMenuItem";
+            this.packToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.packToolStripMenuItem.Text = "Pack";
+            // 
+            // réservationToolStripMenuItem
+            // 
+            this.réservationToolStripMenuItem.Name = "réservationToolStripMenuItem";
+            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.réservationToolStripMenuItem.Text = "Réservation";
+            // 
             // boutonEmprunt
             // 
             this.boutonEmprunt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonEmprunt.BackgroundImage")));
@@ -226,69 +298,6 @@
             this.boutonUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.boutonUtilisateur.UseCompatibleTextRendering = true;
             // 
-            // barreDoutils
-            // 
-            this.barreDoutils.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.barreDoutils.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BoutonActionBO});
-            this.barreDoutils.Location = new System.Drawing.Point(0, 24);
-            this.barreDoutils.Name = "barreDoutils";
-            this.barreDoutils.Size = new System.Drawing.Size(827, 42);
-            this.barreDoutils.TabIndex = 2;
-            this.barreDoutils.Text = "barreDoutils";
-            // 
-            // BoutonActionBO
-            // 
-            this.BoutonActionBO.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.utilisateurToolStripMenuItem,
-            this.matérielToolStripMenuItem,
-            this.packToolStripMenuItem,
-            this.réservationToolStripMenuItem});
-            this.BoutonActionBO.Image = ((System.Drawing.Image)(resources.GetObject("BoutonActionBO.Image")));
-            this.BoutonActionBO.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BoutonActionBO.Name = "BoutonActionBO";
-            this.BoutonActionBO.Size = new System.Drawing.Size(68, 39);
-            this.BoutonActionBO.Text = "Nouveau";
-            this.BoutonActionBO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // utilisateurToolStripMenuItem
-            // 
-            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user_icon;
-            this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
-            this.utilisateurToolStripMenuItem.Text = "Utilisateur";
-            // 
-            // matérielToolStripMenuItem
-            // 
-            this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
-            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
-            this.matérielToolStripMenuItem.Text = "Matériel";
-            // 
-            // packToolStripMenuItem
-            // 
-            this.packToolStripMenuItem.Name = "packToolStripMenuItem";
-            this.packToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
-            this.packToolStripMenuItem.Text = "Pack";
-            // 
-            // réservationToolStripMenuItem
-            // 
-            this.réservationToolStripMenuItem.Name = "réservationToolStripMenuItem";
-            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
-            this.réservationToolStripMenuItem.Text = "Réservation";
-            // 
-            // panelAllPan
-            // 
-            this.panelAllPan.Controls.Add(this.panEmprunt1);
-            this.panelAllPan.Controls.Add(this.panReservation1);
-            this.panelAllPan.Controls.Add(this.panItemPack1);
-            this.panelAllPan.Controls.Add(this.panUsers1);
-            this.panelAllPan.Location = new System.Drawing.Point(137, 64);
-            this.panelAllPan.Name = "panelAllPan";
-            this.panelAllPan.Size = new System.Drawing.Size(690, 455);
-            this.panelAllPan.TabIndex = 3;
-            // 
             // panEmprunt1
             // 
             this.panEmprunt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -324,13 +333,6 @@
             this.panUsers1.Name = "panUsers1";
             this.panUsers1.Size = new System.Drawing.Size(688, 453);
             this.panUsers1.TabIndex = 7;
-            // 
-            // paramètresToolStripMenuItem
-            // 
-            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.paramètresToolStripMenuItem.Text = "Paramètres";
-            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
             // MainWindow
             // 
