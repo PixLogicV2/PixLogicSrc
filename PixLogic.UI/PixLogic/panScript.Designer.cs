@@ -33,10 +33,7 @@
             this.ExecuteBtn = new System.Windows.Forms.Button();
             this.ResultDGV = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.PathTextBox = new System.Windows.Forms.TextBox();
-            this.BrowseBtn = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.SaveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ResultDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,46 +85,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Résultat : ";
             // 
-            // PathTextBox
-            // 
-            this.PathTextBox.Location = new System.Drawing.Point(490, 146);
-            this.PathTextBox.Name = "PathTextBox";
-            this.PathTextBox.Size = new System.Drawing.Size(197, 20);
-            this.PathTextBox.TabIndex = 7;
-            // 
-            // BrowseBtn
-            // 
-            this.BrowseBtn.Image = global::PixLogic.Properties.Resources.box_icon2;
-            this.BrowseBtn.Location = new System.Drawing.Point(490, 108);
-            this.BrowseBtn.Name = "BrowseBtn";
-            this.BrowseBtn.Size = new System.Drawing.Size(88, 32);
-            this.BrowseBtn.TabIndex = 8;
-            this.BrowseBtn.Text = "Parcourir";
-            this.BrowseBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BrowseBtn.UseVisualStyleBackColor = true;
-            this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
-            // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Location = new System.Drawing.Point(584, 108);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(88, 32);
-            this.SaveBtn.TabIndex = 9;
-            this.SaveBtn.Text = "Sauvegarder";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // panScript
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.SaveBtn);
-            this.Controls.Add(this.BrowseBtn);
-            this.Controls.Add(this.PathTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ResultDGV);
             this.Controls.Add(this.ExecuteBtn);
@@ -148,9 +113,6 @@
         private System.Windows.Forms.Button ExecuteBtn;
         private System.Windows.Forms.DataGridView ResultDGV;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox PathTextBox;
-        private System.Windows.Forms.Button BrowseBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.Button SaveBtn;
     }
 }
