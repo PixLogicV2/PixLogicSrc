@@ -25,6 +25,7 @@ namespace PixLogic
                 database = Helper.database;
                 setTableItem(database.GetAllItems());
                 setComboBoxPack();
+                setComboBoxCategorie();
             }
         }
 
@@ -134,6 +135,22 @@ namespace PixLogic
 
             checkTransfert();
             
+        }
+
+        private void setComboBoxCategorie()
+        {
+            comboBoxCategorie.Items.Clear();
+            List<Categorie> list = database.GetAllCategorie();
+
+            comboBoxCategorie.Items.Add("");
+            foreach (var pack in list)
+            {
+                comboBoxCategorie.Items.Add(pack.name);
+            }
+            if (comboBoxCategorie.Items.Count > 0)
+            {
+                comboBoxCategorie.SelectedIndex = 0;
+            }
         }
 
         private void setListBoxItemsOfPack(string namePack)
@@ -322,6 +339,16 @@ namespace PixLogic
                 pdfDoc.Close();
                 stream.Close();
             }
+        }
+
+        private void comboBoxCategorie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //setTableItem(database.GetAllItemsInCategorie(comboBoxCategorie.SelectedItem.ToString()));
+        }
+
+        private void comboBoxCategorie_MouseDown(object sender, MouseEventArgs e)
+        {
+            setComboBoxCategorie();
         }
     }
 }
