@@ -88,7 +88,7 @@ namespace PixLogic
 
         private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WindowSettings settings = new WindowSettings();
+            WindowSettings settings = new WindowSettings(panItemPack1);
             settings.ShowDialog();
         }
     }

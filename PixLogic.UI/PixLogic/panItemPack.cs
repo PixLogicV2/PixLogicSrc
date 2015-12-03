@@ -137,7 +137,7 @@ namespace PixLogic
             
         }
 
-        private void setComboBoxCategorie()
+        public void setComboBoxCategorie()
         {
             comboBoxCategorie.Items.Clear();
             List<Categorie> list = database.GetAllCategorie();
@@ -275,6 +275,9 @@ namespace PixLogic
         private void buttonCancelSearch_Click(object sender, EventArgs e)
         {
             textBoxSearch.Text = "";
+            if(comboBoxCategorie.Items.Count > 0)
+                comboBoxCategorie.SelectedIndex = 0;
+
             setTableItem(database.GetAllItems());
         }
 
@@ -343,12 +346,16 @@ namespace PixLogic
 
         private void comboBoxCategorie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //setTableItem(database.GetAllItemsInCategorie(comboBoxCategorie.SelectedItem.ToString()));
+            if (!comboBoxCategorie.SelectedItem.ToString().Equals(""))
+                setTableItem(database.GetAllItemsInCategorie(comboBoxCategorie.SelectedItem.ToString()));
+            else
+                setTableItem(database.GetAllItems());
+
         }
 
         private void comboBoxCategorie_MouseDown(object sender, MouseEventArgs e)
         {
-            setComboBoxCategorie();
+            
         }
     }
 }
