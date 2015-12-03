@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
             this.valQuantity = new System.Windows.Forms.Label();
@@ -64,6 +64,8 @@
             this.buttonExportPdf = new System.Windows.Forms.Button();
             this.labelCategorie = new System.Windows.Forms.Label();
             this.valCategorie = new System.Windows.Forms.Label();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.labelCat = new System.Windows.Forms.Label();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -182,6 +184,8 @@
             // panTableItem
             // 
             this.panTableItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panTableItem.Controls.Add(this.labelCat);
+            this.panTableItem.Controls.Add(this.comboBoxCategorie);
             this.panTableItem.Controls.Add(this.buttonCancelSearch);
             this.panTableItem.Controls.Add(this.textBoxSearch);
             this.panTableItem.Controls.Add(this.labelSearch);
@@ -223,8 +227,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -233,14 +237,14 @@
             this.NameItem,
             this.Quantity,
             this.Price});
-            this.dataGridItem.Location = new System.Drawing.Point(0, 47);
+            this.dataGridItem.Location = new System.Drawing.Point(0, 76);
             this.dataGridItem.MultiSelect = false;
             this.dataGridItem.Name = "dataGridItem";
             this.dataGridItem.ReadOnly = true;
             this.dataGridItem.RowHeadersVisible = false;
             this.dataGridItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridItem.Size = new System.Drawing.Size(199, 378);
+            this.dataGridItem.Size = new System.Drawing.Size(199, 349);
             this.dataGridItem.TabIndex = 0;
             this.dataGridItem.Click += new System.EventHandler(this.dataGridItem_Click);
             this.dataGridItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridItem_KeyUp);
@@ -460,6 +464,29 @@
             this.valCategorie.Size = new System.Drawing.Size(0, 13);
             this.valCategorie.TabIndex = 7;
             // 
+            // comboBoxCategorie
+            // 
+            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.ItemHeight = 13;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(67, 49);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(127, 21);
+            this.comboBoxCategorie.Sorted = true;
+            this.comboBoxCategorie.TabIndex = 33;
+            this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
+            this.comboBoxCategorie.MouseDown += new System.Windows.Forms.MouseEventHandler(this.comboBoxCategorie_MouseDown);
+            // 
+            // labelCat
+            // 
+            this.labelCat.AutoSize = true;
+            this.labelCat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCat.Location = new System.Drawing.Point(2, 52);
+            this.labelCat.Name = "labelCat";
+            this.labelCat.Size = new System.Drawing.Size(63, 13);
+            this.labelCat.TabIndex = 34;
+            this.labelCat.Text = "Catégorie :";
+            // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,5 +561,7 @@
         private System.Windows.Forms.Button buttonExportPdf;
         private System.Windows.Forms.Label valCategorie;
         private System.Windows.Forms.Label labelCategorie;
+        private System.Windows.Forms.Label labelCat;
+        private System.Windows.Forms.ComboBox comboBoxCategorie;
     }
 }
