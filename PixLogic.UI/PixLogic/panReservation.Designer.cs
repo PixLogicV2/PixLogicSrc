@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panReservation));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panReservation));
             this.panTableUsers = new System.Windows.Forms.Panel();
+            this.buttonExportCsv = new System.Windows.Forms.Button();
             this.buttonExportPdf = new System.Windows.Forms.Button();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
@@ -76,7 +77,6 @@
             this.buttonCancelReserv = new System.Windows.Forms.Button();
             this.buttonModif = new System.Windows.Forms.Button();
             this.buttonPret = new System.Windows.Forms.Button();
-            this.buttonExportCsv = new System.Windows.Forms.Button();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
@@ -98,6 +98,21 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(549, 350);
             this.panTableUsers.TabIndex = 23;
+            // 
+            // buttonExportCsv
+            // 
+            this.buttonExportCsv.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExportCsv.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportCsv.Image")));
+            this.buttonExportCsv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonExportCsv.Location = new System.Drawing.Point(416, 16);
+            this.buttonExportCsv.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonExportCsv.Name = "buttonExportCsv";
+            this.buttonExportCsv.Size = new System.Drawing.Size(127, 34);
+            this.buttonExportCsv.TabIndex = 44;
+            this.buttonExportCsv.Text = "Exporter Excel";
+            this.buttonExportCsv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonExportCsv.UseVisualStyleBackColor = true;
+            this.buttonExportCsv.Click += new System.EventHandler(this.buttonExportCsv_Click);
             // 
             // buttonExportPdf
             // 
@@ -627,21 +642,6 @@
             this.buttonPret.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonPret.UseVisualStyleBackColor = true;
             this.buttonPret.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonExportCsv
-            // 
-            this.buttonExportCsv.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportCsv.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportCsv.Image")));
-            this.buttonExportCsv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExportCsv.Location = new System.Drawing.Point(416, 16);
-            this.buttonExportCsv.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExportCsv.Name = "buttonExportCsv";
-            this.buttonExportCsv.Size = new System.Drawing.Size(127, 34);
-            this.buttonExportCsv.TabIndex = 44;
-            this.buttonExportCsv.Text = "Exporter Excel";
-            this.buttonExportCsv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExportCsv.UseVisualStyleBackColor = true;
-            this.buttonExportCsv.Click += new System.EventHandler(this.buttonExportCsv_Click);
             // 
             // panReservation
             // 

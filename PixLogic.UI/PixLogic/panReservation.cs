@@ -253,7 +253,6 @@ namespace PixLogic
             pdfTable.WidthPercentage = 30;
             pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
             pdfTable.DefaultCell.BorderWidth = 1;
-
             //Adding Header row
             foreach (DataGridViewColumn column in dataGridReservations.Columns)
             {
@@ -261,7 +260,6 @@ namespace PixLogic
                 //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                 pdfTable.AddCell(cell);
             }
-
             //Adding DataRow
             foreach (DataGridViewRow row in dataGridReservations.Rows)
             {
@@ -270,7 +268,6 @@ namespace PixLogic
                     pdfTable.AddCell(cell.Value.ToString());
                 }
             }
-
             //Exporting to PDF
             string folderPath = "C:\\PDFs\\";
             if (!Directory.Exists(folderPath))
