@@ -80,6 +80,7 @@ namespace PixLogic
                 valItemId.Text = item.ReservableId.ToString();
                 valDispo.Text = item.dispo ? "OUI" : "NON";
                 valDescription.Text = item.description;
+                valCategorie.Text = item.categorie.name;
 
                 System.Drawing.Image img = database.ByteArrayToImage(item.image);
                 Helper.putImageInBox(pictureBoxItem, img);
@@ -223,7 +224,7 @@ namespace PixLogic
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, Convert.ToDouble(valPrice.Text), Convert.ToInt32(valQuantity.Text), valDescription.Text);
+            WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, Convert.ToDouble(valPrice.Text), Convert.ToInt32(valQuantity.Text), valDescription.Text, valCategorie.Text);
             modif.ShowDialog(this);
         }
 
