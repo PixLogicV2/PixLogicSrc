@@ -105,5 +105,17 @@ namespace PixLogic
         {
             setTableCategories(database.GetAllCategorie());
         }
+
+        private void dataGridCategories_Click(object sender, EventArgs e)
+        {
+            if (dataGridCategories.RowCount > 0)
+                setNewsCategories();
+        }
+
+        private void dataGridCategories_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridCategories.RowCount > 0)
+                setNewsCategories();
+        }
     }
 }
