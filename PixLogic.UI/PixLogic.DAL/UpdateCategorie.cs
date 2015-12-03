@@ -27,6 +27,15 @@ namespace PixLogic.DAL
                 context.Entry(cat).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }
+            List<Item> items;
+            GetAllItemsInCategorie getter = new GetAllItemsInCategorie();
+            items =getter.getAllItemsInCategorie(nom);
+            foreach(Item i in items)
+            {
+                i.categorie = cat;
+                context.Entry(cat).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
 
         }
     }
