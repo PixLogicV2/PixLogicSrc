@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.Entity;
 namespace PixLogic.DAL
 {
     public class GetAllItemsInCategorie
@@ -16,7 +16,7 @@ namespace PixLogic.DAL
         }
         public List<Item> getAllItemsInCategorie(string categorieName)
         {
-            IQueryable<Item> itemQuery = from Item in context.Items
+            IQueryable<Item> itemQuery = from Item in context.Items.Include(c => c.pack).Include(c => c.categorie)
                                          where Item.categorie.name == categorieName
                                          select Item;
             List<Item> list = new List<Item>();

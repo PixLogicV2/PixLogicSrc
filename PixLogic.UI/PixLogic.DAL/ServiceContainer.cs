@@ -221,7 +221,7 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllItemsInCategorie();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
-                case "get_all_pack_emprunts":
+                case "get_all_packs_emprunts":
                     this.arrayContainer[serviceName] = new GetAllPacksEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;

@@ -200,7 +200,7 @@ namespace PixLogic.DAL
         }
         public List<Reservation> GetAllPacksEmprunts(List<Reservation> list)
         {
-            return container.get("get_all_items_emprunts").getAllPacksEmprunts(list);
+            return container.get("get_all_packs_emprunts").getAllPacksEmprunts(list);
         }
         /*
         *LOG
