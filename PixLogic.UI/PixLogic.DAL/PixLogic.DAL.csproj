@@ -87,6 +87,7 @@
     <Compile Include="GetAllReservationsByReservableId.cs" />
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetCategorieById.cs" />
+    <Compile Include="GetIdCategorie.cs" />
     <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
     <Compile Include="GetMailConfig.cs" />
