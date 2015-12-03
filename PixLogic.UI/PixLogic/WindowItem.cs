@@ -17,6 +17,7 @@ namespace PixLogic
         private panItemPack pan;
         private Image img = null;
         private bool add;
+        private string cat = "";
 
         public WindowItem(panItemPack p)
         {
@@ -26,8 +27,9 @@ namespace PixLogic
             img = Properties.Resources.noitem;
             Helper.putImageInBox(pictureBoxItem, img);
             add = true;
+            setComboBoxCategorie(cat);
         }
-        public WindowItem(panItemPack pa, Image image, string name, double price, int quantity, string descrip)
+        public WindowItem(panItemPack pa, Image image, string name, double price, int quantity, string descrip, string ca)
         {
             InitializeComponent();
             this.Text = "Modifier matériel";
@@ -39,6 +41,36 @@ namespace PixLogic
             valQuantity.Text = Convert.ToString(quantity);
             valDescription.Text = descrip;
             add = false;
+            this.cat = ca;
+            setComboBoxCategorie(cat);
+        }
+
+        private void setComboBoxCategorie(string cat)
+        {
+            comboBoxCategorie.Items.Clear();
+            List<Categorie> list= database.GetAllCategorie();
+
+            comboBoxCategorie.Items.Add("");
+            foreach (var pack in list)
+            {
+                comboBoxCategorie.Items.Add(pack.name);
+            }
+            if (comboBoxCategorie.Items.Count > 0)
+            {
+                if (add)
+                    comboBoxCategorie.SelectedIndex = 0;
+                else
+                {
+                    int index = 0;
+                    foreach(var i in comboBoxCategorie.Items)
+                    {
+                        if (i.Equals(cat))
+                            break;
+                        index++;
+                    }
+                    comboBoxCategorie.SelectedIndex = index;
+                }
+            }
         }
 
         private void pictureBoxSelection_Click(object sender, EventArgs e)
@@ -73,9 +105,10 @@ namespace PixLogic
             string quantity = valQuantity.Text;
             string description = valDescription.Text;
             string reference = "";
+            string nameCategorie = comboBoxCategorie.SelectedItem.ToString();
             string option = add ? Helper.ADD : Helper.SET;
 
-            if (!Helper.fieldsAreEmpty(true, name, price, quantity)
+            if (!Helper.fieldsAreEmpty(true, name, price, quantity, nameCategorie)
                 && Helper.AreNumbers(true, price, quantity)
                 && Helper.confirmation(option))
             {
@@ -86,10 +119,12 @@ namespace PixLogic
                 if (add && !Helper.itemExist(true, name))
                 {
                     database.AddItem(name, description, true, nPrice, img, reference, nQuantity);
+                    database.AddCategorieToItem(name, nameCategorie);
                 }
                 else if(!add && !Helper.itemExistModif(true, name, pan.valItemName.Text))
                 {
                     database.UpdateItem(pan.valItemName.Text, name, description, true, nPrice, img, reference, nQuantity);
+                    database.AddCategorieToItem(name, nameCategorie);
                 }
                 //Helper.addSuccess();
                 pan.setTableItem(database.GetAllItems());

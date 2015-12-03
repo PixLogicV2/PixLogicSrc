@@ -45,6 +45,9 @@
             this.valName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
+            this.labelCategorie = new System.Windows.Forms.Label();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
@@ -52,6 +55,9 @@
             // 
             // panelGeneral
             // 
+            this.panelGeneral.Controls.Add(this.label3);
+            this.panelGeneral.Controls.Add(this.comboBoxCategorie);
+            this.panelGeneral.Controls.Add(this.labelCategorie);
             this.panelGeneral.Controls.Add(this.label2);
             this.panelGeneral.Controls.Add(this.label1);
             this.panelGeneral.Controls.Add(this.labelObligatoire);
@@ -70,7 +76,7 @@
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 0);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(284, 446);
+            this.panelGeneral.Size = new System.Drawing.Size(284, 481);
             this.panelGeneral.TabIndex = 0;
             // 
             // label2
@@ -111,7 +117,7 @@
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(145, 413);
+            this.buttonCancel.Location = new System.Drawing.Point(145, 448);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
             this.buttonCancel.TabIndex = 11;
@@ -125,7 +131,7 @@
             this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(51, 413);
+            this.buttonValid.Location = new System.Drawing.Point(51, 448);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
             this.buttonValid.TabIndex = 10;
@@ -149,7 +155,7 @@
             // valDescription
             // 
             this.valDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDescription.Location = new System.Drawing.Point(99, 298);
+            this.valDescription.Location = new System.Drawing.Point(99, 333);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -161,7 +167,7 @@
             // 
             this.labelDescrip.AutoSize = true;
             this.labelDescrip.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescrip.Location = new System.Drawing.Point(12, 301);
+            this.labelDescrip.Location = new System.Drawing.Point(12, 336);
             this.labelDescrip.Name = "labelDescrip";
             this.labelDescrip.Size = new System.Drawing.Size(83, 17);
             this.labelDescrip.TabIndex = 7;
@@ -230,11 +236,43 @@
             this.pictureBoxItem.TabIndex = 0;
             this.pictureBoxItem.TabStop = false;
             // 
+            // labelCategorie
+            // 
+            this.labelCategorie.AutoSize = true;
+            this.labelCategorie.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCategorie.Location = new System.Drawing.Point(12, 302);
+            this.labelCategorie.Name = "labelCategorie";
+            this.labelCategorie.Size = new System.Drawing.Size(73, 17);
+            this.labelCategorie.TabIndex = 15;
+            this.labelCategorie.Text = "Catégorie :";
+            // 
+            // comboBoxCategorie
+            // 
+            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.ItemHeight = 13;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(99, 302);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxCategorie.Sorted = true;
+            this.comboBoxCategorie.TabIndex = 32;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(261, 302);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "*";
+            // 
             // WindowItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 446);
+            this.ClientSize = new System.Drawing.Size(284, 481);
             this.Controls.Add(this.panelGeneral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -268,5 +306,8 @@
         private System.Windows.Forms.Label labelObligatoire;
         private System.Windows.Forms.PictureBox pictureBoxSelection;
         private System.Windows.Forms.PictureBox pictureBoxItem;
+        private System.Windows.Forms.Label labelCategorie;
+        private System.Windows.Forms.ComboBox comboBoxCategorie;
+        private System.Windows.Forms.Label label3;
     }
 }
