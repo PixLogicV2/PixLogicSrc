@@ -249,6 +249,14 @@ namespace PixLogic.DAL
         {
             container.get("retour_emprunt").retourEmprunt(id, retour);
         }
+        public bool ContainCategorie(string name)
+        {
+            return container.get("contain_categorie").containCategorie(name);
+        }
+        public int GetIdCategorie(string name)
+        {
+            return container.get("get_id_categorie").getIdCategorie(name);
+        }
         /*
         *mailconfig
         */

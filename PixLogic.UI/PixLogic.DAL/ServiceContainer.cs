@@ -225,6 +225,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllPacksEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_id_categorie":
+                    this.arrayContainer[serviceName] = new GetIdCategorie();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "retour_emprunt":
                     this.arrayContainer[serviceName] = new RetourEmprunt();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
@@ -235,6 +239,10 @@ namespace PixLogic.DAL
                     break;
                 case "update_mail_config":
                     this.arrayContainer[serviceName] = new UpdateMailConfig();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "contain_categorie":
+                    this.arrayContainer[serviceName] = new ContainCategorie();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_categorie_by_id":

@@ -66,6 +66,7 @@
     <Compile Include="ByteArrayToImage.cs" />
     <Compile Include="Categorie.cs" />
     <Compile Include="CategorieFactory.cs" />
+    <Compile Include="ContainCategorie.cs" />
     <Compile Include="ContainReservationByUserId.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeleteCategorie.cs" />
