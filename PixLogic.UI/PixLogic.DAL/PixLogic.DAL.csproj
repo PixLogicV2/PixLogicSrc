@@ -97,6 +97,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="Requete.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="ReservationFactory.cs" />
     <Compile Include="RetourEmprunt.cs" />

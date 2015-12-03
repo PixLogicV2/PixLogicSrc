@@ -213,7 +213,21 @@ namespace PixLogic
                         MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (reservation.isPack == true)
+            List<Reservation> emprunts = database.GetAllEmpruntsByReservableId(idReservable);
+                foreach (Reservation emprunt in emprunts)
+                {
+                    if ((emprunt.beginDateEmprunt.Value.Date <= dateDebut.Date
+                        && emprunt.endDateEmprunt.Value.Date >= dateDebut.Date)
+                        ||
+                        (emprunt.beginDateEmprunt.Value.Date <= dateFin.Date
+                        && emprunt.endDateEmprunt.Value.Date >= dateFin.Date))
+                    {
+                        if (withMessageBox)
+                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                    if (reservation.isPack == true)
                 {
                     List<Item> items = database.GetItemsInPack(reservation.reservable.name);
                     foreach (Item i in items)
@@ -224,7 +238,6 @@ namespace PixLogic
                                 MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return false;
                         }
-
                     }
                 }
                 if (reservation.isPack == false)
