@@ -188,7 +188,7 @@ namespace PixLogic.DAL
         }
         public List<Reservation> GetAllEmpruntsByReservableId(int idReservable)
         {
-            return container.get("get_all_emprunts_by_reservable_id").getAllEmpruntsByString(idReservable);
+            return container.get("get_all_emprunts_by_reservable_id").getAllEmpruntsByReservableId(idReservable);
         }
         public List<Reservation> GetAllItemsEmprunts(List<Reservation> list)
         {
