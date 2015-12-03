@@ -186,13 +186,21 @@ namespace PixLogic.DAL
         {
            return container.get("get_all_emprunts_by_date").getAllEmpruntsByString(search);
         }
+        public List<Reservation> GetAllEmpruntsByReservableId(int idReservable)
+        {
+            return container.get("get_all_emprunts_by_reservable_id").getAllEmpruntsByReservableId(idReservable);
+        }
         public List<Reservation> GetAllItemsEmprunts(List<Reservation> list)
         {
             return container.get("get_all_items_emprunts").getAllItemsEmprunts(list);
         }
+        public List<Reservation> GetAllItemsInCategorie(string categorieName)
+        {
+            return container.get("get_all_items_in_categorie").getAllItemsInCategorie(categorieName);
+        }
         public List<Reservation> GetAllPacksEmprunts(List<Reservation> list)
         {
-            return container.get("get_all_items_emprunts").getAllPacksEmprunts(list);
+            return container.get("get_all_packs_emprunts").getAllPacksEmprunts(list);
         }
         /*
         *LOG

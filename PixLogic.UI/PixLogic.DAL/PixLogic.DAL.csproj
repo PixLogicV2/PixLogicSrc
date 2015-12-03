@@ -77,6 +77,7 @@
     <Compile Include="GetAllEmprunts.cs" />
     <Compile Include="GetAllItemReservations.cs" />
     <Compile Include="GetAllItemsEmprunts.cs" />
+    <Compile Include="GetAllItemsInCategorie.cs" />
     <Compile Include="GetAllLogs.cs" />
     <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="Requete.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="ReservationFactory.cs" />
     <Compile Include="RetourEmprunt.cs" />
