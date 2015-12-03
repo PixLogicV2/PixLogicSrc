@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -150,6 +151,12 @@
     <Compile Include="WindowReservation.Designer.cs">
       <DependentUpon>WindowReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowScriptResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowScriptResult.Designer.cs">
+      <DependentUpon>WindowScriptResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowSetReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowReservation.resx">
       <DependentUpon>WindowReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowScriptResult.resx">
+      <DependentUpon>WindowScriptResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowSetReservation.resx">
       <DependentUpon>WindowSetReservation.cs</DependentUpon>

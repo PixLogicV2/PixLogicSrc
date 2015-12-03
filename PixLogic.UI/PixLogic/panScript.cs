@@ -40,9 +40,12 @@ namespace PixLogic
 
                     DataTable table = new DataTable();
                     adapter.Fill(table);
-                    ResultDGV.DataSource = table;
 
-                    ResultDGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                    using (WindowScriptResult Res = new WindowScriptResult())
+                    {
+                        Res.Queryresult = table;
+                        Res.ShowDialog();
+                    }  
                 }
             }
             catch(SqlException ex)
