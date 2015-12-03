@@ -61,6 +61,7 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
+            this.buttonExportPdf = new System.Windows.Forms.Button();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -78,7 +79,7 @@
             this.panNews.Controls.Add(this.labelPrice);
             this.panNews.Controls.Add(this.labelDispo);
             this.panNews.Location = new System.Drawing.Point(447, 242);
-            this.panNews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panNews.Margin = new System.Windows.Forms.Padding(4);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(186, 118);
             this.panNews.TabIndex = 26;
@@ -153,7 +154,7 @@
             // 
             this.valDescription.BackColor = System.Drawing.Color.White;
             this.valDescription.Location = new System.Drawing.Point(281, 242);
-            this.valDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valDescription.Margin = new System.Windows.Forms.Padding(4);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
@@ -192,7 +193,7 @@
             this.panTableItem.Controls.Add(this.labelSearch);
             this.panTableItem.Controls.Add(this.dataGridItem);
             this.panTableItem.Location = new System.Drawing.Point(7, 4);
-            this.panTableItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panTableItem.Margin = new System.Windows.Forms.Padding(4);
             this.panTableItem.Name = "panTableItem";
             this.panTableItem.Size = new System.Drawing.Size(266, 524);
             this.panTableItem.TabIndex = 21;
@@ -201,7 +202,7 @@
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancelSearch.Location = new System.Drawing.Point(223, 20);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelSearch.Name = "buttonCancelSearch";
             this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
             this.buttonCancelSearch.TabIndex = 3;
@@ -211,7 +212,7 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(89, 21);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
             this.textBoxSearch.TabIndex = 2;
@@ -243,7 +244,7 @@
             this.Quantity,
             this.Price});
             this.dataGridItem.Location = new System.Drawing.Point(0, 58);
-            this.dataGridItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridItem.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridItem.MultiSelect = false;
             this.dataGridItem.Name = "dataGridItem";
             this.dataGridItem.ReadOnly = true;
@@ -294,7 +295,7 @@
             this.listBoxItem.FormattingEnabled = true;
             this.listBoxItem.ItemHeight = 19;
             this.listBoxItem.Location = new System.Drawing.Point(707, 68);
-            this.listBoxItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxItem.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxItem.Name = "listBoxItem";
             this.listBoxItem.ScrollAlwaysVisible = true;
             this.listBoxItem.Size = new System.Drawing.Size(199, 270);
@@ -308,7 +309,7 @@
             this.comboBoxPack.FormattingEnabled = true;
             this.comboBoxPack.ItemHeight = 16;
             this.comboBoxPack.Location = new System.Drawing.Point(707, 31);
-            this.comboBoxPack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxPack.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPack.Name = "comboBoxPack";
             this.comboBoxPack.Size = new System.Drawing.Size(199, 24);
             this.comboBoxPack.Sorted = true;
@@ -331,7 +332,7 @@
             this.buttonTransfert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTransfert.ForeColor = System.Drawing.Color.Blue;
             this.buttonTransfert.Location = new System.Drawing.Point(641, 207);
-            this.buttonTransfert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTransfert.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTransfert.Name = "buttonTransfert";
             this.buttonTransfert.Size = new System.Drawing.Size(57, 28);
             this.buttonTransfert.TabIndex = 34;
@@ -356,7 +357,7 @@
             this.buttonRemoveItemInPack.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonRemoveItemInPack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRemoveItemInPack.Location = new System.Drawing.Point(763, 368);
-            this.buttonRemoveItemInPack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRemoveItemInPack.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemoveItemInPack.Name = "buttonRemoveItemInPack";
             this.buttonRemoveItemInPack.Size = new System.Drawing.Size(100, 37);
             this.buttonRemoveItemInPack.TabIndex = 37;
@@ -371,7 +372,7 @@
             this.pictureBoxItem.Image = global::PixLogic.Properties.Resources.noitem;
             this.pictureBoxItem.InitialImage = null;
             this.pictureBoxItem.Location = new System.Drawing.Point(281, 31);
-            this.pictureBoxItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxItem.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxItem.Name = "pictureBoxItem";
             this.pictureBoxItem.Size = new System.Drawing.Size(351, 204);
             this.pictureBoxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -384,7 +385,7 @@
             this.buttonManagePack.Image = global::PixLogic.Properties.Resources.general_icon;
             this.buttonManagePack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonManagePack.Location = new System.Drawing.Point(724, 494);
-            this.buttonManagePack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonManagePack.Margin = new System.Windows.Forms.Padding(4);
             this.buttonManagePack.Name = "buttonManagePack";
             this.buttonManagePack.Size = new System.Drawing.Size(161, 34);
             this.buttonManagePack.TabIndex = 35;
@@ -399,7 +400,7 @@
             this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDelete.Location = new System.Drawing.Point(511, 494);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(124, 36);
             this.buttonDelete.TabIndex = 29;
@@ -414,7 +415,7 @@
             this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonModify.Location = new System.Drawing.Point(397, 494);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(104, 36);
             this.buttonModify.TabIndex = 28;
@@ -429,7 +430,7 @@
             this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAdd.Location = new System.Drawing.Point(283, 494);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(104, 36);
             this.buttonAdd.TabIndex = 27;
@@ -443,7 +444,7 @@
             this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
             this.pictureReserver.Image = ((System.Drawing.Image)(resources.GetObject("pictureReserver.Image")));
             this.pictureReserver.Location = new System.Drawing.Point(603, 358);
-            this.pictureReserver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureReserver.Margin = new System.Windows.Forms.Padding(4);
             this.pictureReserver.Name = "pictureReserver";
             this.pictureReserver.Size = new System.Drawing.Size(31, 28);
             this.pictureReserver.TabIndex = 41;
@@ -451,11 +452,27 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
+            // buttonExportPdf
+            // 
+            this.buttonExportPdf.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExportPdf.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportPdf.Image")));
+            this.buttonExportPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonExportPdf.Location = new System.Drawing.Point(283, 427);
+            this.buttonExportPdf.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonExportPdf.Name = "buttonExportPdf";
+            this.buttonExportPdf.Size = new System.Drawing.Size(104, 59);
+            this.buttonExportPdf.TabIndex = 44;
+            this.buttonExportPdf.Text = "Exporter PDF";
+            this.buttonExportPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonExportPdf.UseVisualStyleBackColor = true;
+            this.buttonExportPdf.Click += new System.EventHandler(this.buttonExportPdf_Click);
+            // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.buttonExportPdf);
             this.Controls.Add(this.valItemId);
             this.Controls.Add(this.buttonRemoveItemInPack);
             this.Controls.Add(this.pictureBoxItem);
@@ -474,7 +491,7 @@
             this.Controls.Add(this.labelListItem);
             this.Controls.Add(this.panTableItem);
             this.Controls.Add(this.pictureReserver);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "panItemPack";
             this.Size = new System.Drawing.Size(920, 556);
             this.panNews.ResumeLayout(false);
@@ -522,5 +539,6 @@
         public System.Windows.Forms.Label valItemName;
         public System.Windows.Forms.Label valItemId;
         private System.Windows.Forms.PictureBox pictureReserver;
+        private System.Windows.Forms.Button buttonExportPdf;
     }
 }

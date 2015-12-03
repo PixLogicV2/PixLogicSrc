@@ -218,13 +218,24 @@ namespace PixLogic
                     List<Item> items = database.GetItemsInPack(reservation.reservable.name);
                     foreach (Item i in items)
                     {
-                        if (getDispoReservableByDate(true, i.ReservableId, dateDebut, dateFin) == false) return false;
+                        if (getDispoReservableByDate(true, i.ReservableId, dateDebut, dateFin) == false)
+                        {
+                            if (withMessageBox)
+                                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+
                     }
                 }
                 if (reservation.isPack == false)
                 {
                     Item i = database.GetItemById(reservation.reservable.ReservableId);
-                    if (getDispoReservableByDate(true, i.pack.ReservableId, dateDebut, dateFin) == false) return false;
+                    if (getDispoReservableByDate(true, i.pack.ReservableId, dateDebut, dateFin) == false)
+                    {
+                        if (withMessageBox)
+                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                 } 
             }
             return true;     
