@@ -22,7 +22,7 @@ namespace PixLogic.DAL
             {
                 List<Item> items;
                 GetAllItemsInCategorie getter = new GetAllItemsInCategorie();
-                items = getter.getAllItemsInCategorie(nom);
+                items = getter.getAllItemsInCategorie(id);
                 foreach (Item i in items)
                 {
                     i.categorie = cat;
