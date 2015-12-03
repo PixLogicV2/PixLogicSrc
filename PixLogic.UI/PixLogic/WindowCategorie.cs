@@ -47,6 +47,7 @@ namespace PixLogic
 
             if(!Helper.fieldsAreEmpty(true, valLibelle.Text)
                 && Helper.AreNumbers(true, valLevel.Text)
+                && Helper.categorieExist(true, valLibelle.Text)
                 && Helper.confirmation(op))
             {
                 if (add)
