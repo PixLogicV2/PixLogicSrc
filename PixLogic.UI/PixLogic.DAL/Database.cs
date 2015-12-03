@@ -208,9 +208,9 @@ namespace PixLogic.DAL
         {
             container.get("add_categorie").addCategorie(container.get("categorie_factory").build(name, level,description));
         }
-        public void AddCategorieToItem(string itemName, string packName)
+        public void AddCategorieToItem(string itemName, string catName)
         {
-            container.get("add_categorie_to_item").addCategorieToItem(itemName, packName);
+            container.get("add_categorie_to_item").addCategorieToItem(itemName, catName);
         }
         public void UpdateCategorie(int id,string nom,int lvl,string description)
         {

@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PixLogic.DAL;
-
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
 
 namespace PixLogic
 {
@@ -79,7 +81,7 @@ namespace PixLogic
                 valDispo.Text = item.dispo ? "OUI" : "NON";
                 valDescription.Text = item.description;
 
-                Image img = database.ByteArrayToImage(item.image);
+                System.Drawing.Image img = database.ByteArrayToImage(item.image);
                 Helper.putImageInBox(pictureBoxItem, img);
             }
             else
@@ -284,6 +286,41 @@ namespace PixLogic
             info.SetToolTip(pictureReserver, "Réserver ce matériel.");
             pictureReserver.Cursor = Cursors.Hand;
         }
-        
+
+        private void buttonExportPdf_Click(object sender, EventArgs e)
+        {
+            PdfPTable pdfTable = new PdfPTable(dataGridItem.ColumnCount);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 30;
+            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.DefaultCell.BorderWidth = 1;
+            foreach (DataGridViewColumn column in dataGridItem.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                pdfTable.AddCell(cell);
+            }
+            foreach (DataGridViewRow row in dataGridItem.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    pdfTable.AddCell(cell.Value.ToString());
+                }
+            }
+            string folderPath = "C:\\PDFs\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (FileStream stream = new FileStream(folderPath + "ListeDesItems" + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".pdf", FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+                stream.Close();
+            }
+        }
     }
 }
