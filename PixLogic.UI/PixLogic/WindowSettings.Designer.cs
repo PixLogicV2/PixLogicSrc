@@ -36,6 +36,8 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.labelNews = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
+            this.labelAccessLevel = new System.Windows.Forms.Label();
+            this.valLevel = new System.Windows.Forms.Label();
             this.valDescription = new System.Windows.Forms.TextBox();
             this.labelDescrip = new System.Windows.Forms.Label();
             this.labelLibelle = new System.Windows.Forms.Label();
@@ -46,6 +48,9 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridCategories = new System.Windows.Forms.DataGridView();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.libelleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
@@ -62,11 +67,6 @@
             this.valServeur = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelServer = new System.Windows.Forms.Label();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.libelleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.levelCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelAccessLevel = new System.Windows.Forms.Label();
-            this.valLevel = new System.Windows.Forms.Label();
             this.tabControlSettings.SuspendLayout();
             this.panCategorie.SuspendLayout();
             this.panNews.SuspendLayout();
@@ -171,9 +171,30 @@
             this.panNews.Size = new System.Drawing.Size(301, 230);
             this.panNews.TabIndex = 42;
             // 
+            // labelAccessLevel
+            // 
+            this.labelAccessLevel.AutoSize = true;
+            this.labelAccessLevel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAccessLevel.Location = new System.Drawing.Point(6, 49);
+            this.labelAccessLevel.Name = "labelAccessLevel";
+            this.labelAccessLevel.Size = new System.Drawing.Size(48, 13);
+            this.labelAccessLevel.TabIndex = 42;
+            this.labelAccessLevel.Text = "Niveau :";
+            // 
+            // valLevel
+            // 
+            this.valLevel.AutoSize = true;
+            this.valLevel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valLevel.Location = new System.Drawing.Point(78, 47);
+            this.valLevel.Name = "valLevel";
+            this.valLevel.Size = new System.Drawing.Size(13, 17);
+            this.valLevel.TabIndex = 43;
+            this.valLevel.Text = "-";
+            this.valLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // valDescription
             // 
-            this.valDescription.Location = new System.Drawing.Point(84, 88);
+            this.valDescription.Location = new System.Drawing.Point(84, 82);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
@@ -267,6 +288,7 @@
             // 
             this.dataGridCategories.AllowUserToAddRows = false;
             this.dataGridCategories.AllowUserToDeleteRows = false;
+            this.dataGridCategories.AllowUserToResizeRows = false;
             this.dataGridCategories.BackgroundColor = System.Drawing.Color.White;
             this.dataGridCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -280,6 +302,29 @@
             this.dataGridCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridCategories.Size = new System.Drawing.Size(247, 251);
             this.dataGridCategories.TabIndex = 0;
+            this.dataGridCategories.Click += new System.EventHandler(this.dataGridCategories_Click);
+            this.dataGridCategories.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridCategories_KeyUp);
+            // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "Id";
+            this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
+            this.idCol.Width = 40;
+            // 
+            // libelleCol
+            // 
+            this.libelleCol.HeaderText = "Libellé";
+            this.libelleCol.Name = "libelleCol";
+            this.libelleCol.ReadOnly = true;
+            this.libelleCol.Width = 90;
+            // 
+            // levelCol
+            // 
+            this.levelCol.HeaderText = "Niveau d\'accès";
+            this.levelCol.Name = "levelCol";
+            this.levelCol.ReadOnly = true;
+            this.levelCol.Width = 114;
             // 
             // tabPage1
             // 
@@ -445,48 +490,6 @@
             this.labelServer.Size = new System.Drawing.Size(82, 13);
             this.labelServer.TabIndex = 0;
             this.labelServer.Text = "Serveur SMTP :";
-            // 
-            // idCol
-            // 
-            this.idCol.HeaderText = "Id";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Width = 40;
-            // 
-            // libelleCol
-            // 
-            this.libelleCol.HeaderText = "Libellé";
-            this.libelleCol.Name = "libelleCol";
-            this.libelleCol.ReadOnly = true;
-            this.libelleCol.Width = 90;
-            // 
-            // levelCol
-            // 
-            this.levelCol.HeaderText = "Niveau d\'accès";
-            this.levelCol.Name = "levelCol";
-            this.levelCol.ReadOnly = true;
-            this.levelCol.Width = 114;
-            // 
-            // labelAccessLevel
-            // 
-            this.labelAccessLevel.AutoSize = true;
-            this.labelAccessLevel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccessLevel.Location = new System.Drawing.Point(6, 49);
-            this.labelAccessLevel.Name = "labelAccessLevel";
-            this.labelAccessLevel.Size = new System.Drawing.Size(48, 13);
-            this.labelAccessLevel.TabIndex = 42;
-            this.labelAccessLevel.Text = "Niveau :";
-            // 
-            // valLevel
-            // 
-            this.valLevel.AutoSize = true;
-            this.valLevel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valLevel.Location = new System.Drawing.Point(78, 47);
-            this.valLevel.Name = "valLevel";
-            this.valLevel.Size = new System.Drawing.Size(13, 17);
-            this.valLevel.TabIndex = 43;
-            this.valLevel.Text = "-";
-            this.valLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WindowSettings
             // 

@@ -18,9 +18,17 @@ namespace PixLogic.DAL
         {
             Categorie cat;
             cat = context.Categories.Where(s => s.CategorieId == id).FirstOrDefault<Categorie>();
-
             if (cat != null)
             {
+                List<Item> items;
+                GetAllItemsInCategorie getter = new GetAllItemsInCategorie();
+                items = getter.getAllItemsInCategorie(id);
+                foreach (Item i in items)
+                {
+                    i.categorie = cat;
+                    context.Entry(cat).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+                }
                 cat.name = nom;
                 cat.level = lvl;
                 cat.description = description;

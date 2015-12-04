@@ -20,7 +20,7 @@ namespace PixLogic.DAL
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Categorie> Categories { get; set; }
-
+        public DbSet<Requete> Requetes { get; set; }
         public DbSet<MailConfig> MailConfigs { get; set; }
     }
 }

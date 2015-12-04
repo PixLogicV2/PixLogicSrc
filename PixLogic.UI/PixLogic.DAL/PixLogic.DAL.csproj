@@ -66,6 +66,7 @@
     <Compile Include="ByteArrayToImage.cs" />
     <Compile Include="Categorie.cs" />
     <Compile Include="CategorieFactory.cs" />
+    <Compile Include="ContainCategorie.cs" />
     <Compile Include="ContainReservationByUserId.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeleteCategorie.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="GetAllEmprunts.cs" />
     <Compile Include="GetAllItemReservations.cs" />
     <Compile Include="GetAllItemsEmprunts.cs" />
+    <Compile Include="GetAllItemsInCategorie.cs" />
     <Compile Include="GetAllLogs.cs" />
     <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="GetAllReservationsByReservableId.cs" />
     <Compile Include="GetAllUsers.cs" />
     <Compile Include="GetCategorieById.cs" />
+    <Compile Include="GetIdCategorie.cs" />
     <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
     <Compile Include="GetMailConfig.cs" />
@@ -97,6 +100,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="Requete.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="ReservationFactory.cs" />
     <Compile Include="RetourEmprunt.cs" />

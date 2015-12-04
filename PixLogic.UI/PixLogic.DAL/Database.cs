@@ -186,13 +186,21 @@ namespace PixLogic.DAL
         {
            return container.get("get_all_emprunts_by_date").getAllEmpruntsByString(search);
         }
+        public List<Reservation> GetAllEmpruntsByReservableId(int idReservable)
+        {
+            return container.get("get_all_emprunts_by_reservable_id").getAllEmpruntsByReservableId(idReservable);
+        }
         public List<Reservation> GetAllItemsEmprunts(List<Reservation> list)
         {
             return container.get("get_all_items_emprunts").getAllItemsEmprunts(list);
         }
+        public List<Item> GetAllItemsInCategorie(int id)
+        {
+            return container.get("get_all_items_in_categorie").getAllItemsInCategorie(id);
+        }
         public List<Reservation> GetAllPacksEmprunts(List<Reservation> list)
         {
-            return container.get("get_all_items_emprunts").getAllPacksEmprunts(list);
+            return container.get("get_all_packs_emprunts").getAllPacksEmprunts(list);
         }
         /*
         *LOG
@@ -208,9 +216,9 @@ namespace PixLogic.DAL
         {
             container.get("add_categorie").addCategorie(container.get("categorie_factory").build(name, level,description));
         }
-        public void AddCategorieToItem(string itemName, string packName)
+        public void AddCategorieToItem(string itemName, string catName)
         {
-            container.get("add_categorie_to_item").addCategorieToItem(itemName, packName);
+            container.get("add_categorie_to_item").addCategorieToItem(itemName, catName);
         }
         public void UpdateCategorie(int id,string nom,int lvl,string description)
         {
@@ -240,6 +248,14 @@ namespace PixLogic.DAL
         public void RetourEmprunt(int id,DateTime? retour)
         {
             container.get("retour_emprunt").retourEmprunt(id, retour);
+        }
+        public bool ContainCategorie(string name)
+        {
+            return container.get("contain_categorie").containCategorie(name);
+        }
+        public int GetIdCategorie(string name)
+        {
+            return container.get("get_id_categorie").getIdCategorie(name);
         }
         /*
         *mailconfig

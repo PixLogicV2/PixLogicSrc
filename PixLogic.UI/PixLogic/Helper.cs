@@ -149,6 +149,19 @@ namespace PixLogic
             return false;
                 
         }
+
+        public static bool categorieExist(bool withMessageBox, string name)
+        {
+            if (database.ContainCategorie(name))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("Le nom de la catégorie renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+
+        }
+
         public static bool itemExistModif(bool withMessageBox, string name, string oldName)
         {
             if (database.ContainItem(name) && !name.Equals(oldName))
@@ -213,18 +226,42 @@ namespace PixLogic
                         MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (reservation.isPack == true)
+            List<Reservation> emprunts = database.GetAllEmpruntsByReservableId(idReservable);
+                foreach (Reservation emprunt in emprunts)
+                {
+                    if ((emprunt.beginDateEmprunt.Value.Date <= dateDebut.Date
+                        && emprunt.endDateEmprunt.Value.Date >= dateDebut.Date)
+                        ||
+                        (emprunt.beginDateEmprunt.Value.Date <= dateFin.Date
+                        && emprunt.endDateEmprunt.Value.Date >= dateFin.Date))
+                    {
+                        if (withMessageBox)
+                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                    if (reservation.isPack == true)
                 {
                     List<Item> items = database.GetItemsInPack(reservation.reservable.name);
                     foreach (Item i in items)
                     {
-                        if (getDispoReservableByDate(true, i.ReservableId, dateDebut, dateFin) == false) return false;
+                        if (getDispoReservableByDate(true, i.ReservableId, dateDebut, dateFin) == false)
+                        {
+                            if (withMessageBox)
+                                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
                     }
                 }
                 if (reservation.isPack == false)
                 {
                     Item i = database.GetItemById(reservation.reservable.ReservableId);
-                    if (getDispoReservableByDate(true, i.pack.ReservableId, dateDebut, dateFin) == false) return false;
+                    if (getDispoReservableByDate(true, i.pack.ReservableId, dateDebut, dateFin) == false)
+                    {
+                        if (withMessageBox)
+                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                 } 
             }
             return true;     

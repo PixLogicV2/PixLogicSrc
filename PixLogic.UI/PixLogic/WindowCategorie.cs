@@ -17,18 +17,21 @@ namespace PixLogic
         private WindowSettings settings;
         private bool add;
         private int idCategorie;
+        private panItemPack panIP;
 
-        public WindowCategorie(WindowSettings w)
+        public WindowCategorie(WindowSettings w, panItemPack pan)
         {
             InitializeComponent();
             settings = w;
+            panIP = pan;
             add = true;
         }
-        public WindowCategorie(WindowSettings w, int idCategorie)
+        public WindowCategorie(WindowSettings w, panItemPack pan, int idCategorie)
         {
             InitializeComponent();
             settings = w;
             add = false;
+            panIP = pan;
             this.idCategorie = idCategorie;
 
             Categorie c = database.GetCategorieById(idCategorie);
@@ -44,6 +47,7 @@ namespace PixLogic
 
             if(!Helper.fieldsAreEmpty(true, valLibelle.Text)
                 && Helper.AreNumbers(true, valLevel.Text)
+                && Helper.categorieExist(true, valLibelle.Text)
                 && Helper.confirmation(op))
             {
                 if (add)
@@ -52,6 +56,8 @@ namespace PixLogic
                     database.UpdateCategorie(idCategorie, valLibelle.Text, (int)double.Parse(valLevel.Text), valDescription.Text);
 
                 settings.setTableCategories(database.GetAllCategorie());
+                panIP.setTableItem(database.GetAllItems());
+                panIP.setComboBoxCategorie();
                 this.Close();
             }
         }

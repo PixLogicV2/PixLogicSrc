@@ -209,12 +209,24 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_all_emprunts_by_reservable_id":
+                    this.arrayContainer[serviceName] = new GetAllEmprunts();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "get_all_items_emprunts":
                     this.arrayContainer[serviceName] = new GetAllItemsEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
-                case "get_all_pack_emprunts":
+                case "get_all_items_in_categorie":
+                    this.arrayContainer[serviceName] = new GetAllItemsInCategorie();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_packs_emprunts":
                     this.arrayContainer[serviceName] = new GetAllPacksEmprunts();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_id_categorie":
+                    this.arrayContainer[serviceName] = new GetIdCategorie();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "retour_emprunt":
@@ -227,6 +239,10 @@ namespace PixLogic.DAL
                     break;
                 case "update_mail_config":
                     this.arrayContainer[serviceName] = new UpdateMailConfig();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "contain_categorie":
+                    this.arrayContainer[serviceName] = new ContainCategorie();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_categorie_by_id":
