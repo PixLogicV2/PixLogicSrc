@@ -14,10 +14,10 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public int getIdCategorie(string itemName)
+        public int getIdCategorie(string name)
         {
             IQueryable<Categorie> itemQuery = from Categorie in context.Categories
-                                         where Categorie.name == itemName
+                                         where Categorie.name == name
                                          select Categorie;
             List<Categorie> list = new List<Categorie>();
             foreach (var prod in itemQuery)

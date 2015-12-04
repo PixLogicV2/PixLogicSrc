@@ -236,7 +236,7 @@ namespace PixLogic
                         && emprunt.endDateEmprunt.Value.Date >= dateFin.Date))
                     {
                         if (withMessageBox)
-                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles (materiel emprunté.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                 }
@@ -248,7 +248,7 @@ namespace PixLogic
                         if (getDispoReservableByDate(true, i.ReservableId, dateDebut, dateFin) == false)
                         {
                             if (withMessageBox)
-                                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles (deja reservé).", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return false;
                         }
                     }
@@ -259,7 +259,7 @@ namespace PixLogic
                     if (getDispoReservableByDate(true, i.pack.ReservableId, dateDebut, dateFin) == false)
                     {
                         if (withMessageBox)
-                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles (deja reservé).", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                 } 
