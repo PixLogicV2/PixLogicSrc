@@ -346,9 +346,12 @@ namespace PixLogic
 
         private void comboBoxCategorie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idCat = database.GetIdCategorie(comboBoxCategorie.SelectedItem.ToString());
+            int idCat;
             if (!comboBoxCategorie.SelectedItem.ToString().Equals(""))
+            {
+                idCat = database.GetIdCategorie(comboBoxCategorie.SelectedItem.ToString());
                 setTableItem(database.GetAllItemsInCategorie(idCat));
+            }
             else
                 setTableItem(database.GetAllItems());
 
