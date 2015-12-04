@@ -45,7 +45,7 @@ namespace PixLogic
         {
             string op = add ? Helper.ADD : Helper.SET;
 
-            if(!Helper.fieldsAreEmpty(true, valLibelle.Text)
+            if(!Helper.fieldsAreEmpty(false, valLibelle.Text)
                 && Helper.AreNumbers(true, valLevel.Text)
                 && Helper.categorieExist(true, valLibelle.Text)
                 && Helper.confirmation(op))
