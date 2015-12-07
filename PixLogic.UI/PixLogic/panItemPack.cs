@@ -335,7 +335,7 @@ namespace PixLogic
             }
             using (FileStream stream = new FileStream(folderPath + "ListeDesItems" + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".pdf", FileMode.Create))
             {
-                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
                 PdfWriter.GetInstance(pdfDoc, stream);
                 pdfDoc.Open();
                 pdfDoc.Add(pdfTable);
