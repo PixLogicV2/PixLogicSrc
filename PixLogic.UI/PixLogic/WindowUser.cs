@@ -72,7 +72,7 @@ namespace PixLogic
             string classe = valClass.Text;
             string option = add ? Helper.ADD : Helper.SET;
 
-            if (!Helper.fieldsAreEmpty(true, name, nickname, mail,tel,classe)
+            if (!Helper.fieldsAreEmpty(true, name, nickname, mail, classe)
                 && Helper.confirmation(option))
             {
                 if (add)
