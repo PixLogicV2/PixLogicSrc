@@ -14,7 +14,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public List<Reservation> getAllItemEmprunts(List<Reservation> list)
+        public List<Reservation> getAllPacksEmprunts(List<Reservation> list)
         {
             List<Reservation> result = new List<Reservation>();
             foreach (var l in list)
