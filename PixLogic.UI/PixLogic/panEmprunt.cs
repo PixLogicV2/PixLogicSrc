@@ -61,13 +61,7 @@ namespace PixLogic
         {
             if (dataGridEmprunts.RowCount > 0)
             {
-                int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
-                Reservation reservation = database.GetReservationById(idReservation);
-
-                /*if(reservation.dateRendu.Value.ToString().Equals(""))
-                    buttonRendre.Enabled = true;
-                else
-                    buttonRendre.Enabled = false;*/
+                buttonRendre.Enabled = true;
             }
             else
             {
