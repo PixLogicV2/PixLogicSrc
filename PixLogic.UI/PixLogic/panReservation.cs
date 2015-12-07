@@ -305,6 +305,18 @@ namespace PixLogic
             xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
             */
         }
-        
+
+        private void pictureExport_Click(object sender, EventArgs e)
+        {
+            WindowExport export = new WindowExport(dataGridReservations);
+            export.ShowDialog();
+        }
+
+        private void pictureExport_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureExport, "Exporter la liste.");
+            pictureExport.Cursor = Cursors.Hand;
+        }
     }
 }
