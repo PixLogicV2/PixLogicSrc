@@ -236,7 +236,16 @@ namespace PixLogic
             List<Reservation> emprunts = database.GetAllEmpruntsByReservableId(idReservable);
             foreach (Reservation emprunt in emprunts)
             {
-                if(isDispo(true,emprunt, dateDebut, dateFin)== false) return false;
+                if ((emprunt.beginDateEmprunt.Value.Date <= dateDebut.Date
+                    && emprunt.endDateEmprunt.Value.Date >= dateDebut.Date)
+                    ||
+                    (emprunt.beginDateEmprunt.Value.Date <= dateFin.Date
+                    && emprunt.endDateEmprunt.Value.Date >= dateFin.Date))
+                {
+                    if (withMessageBox)
+                        MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             Reservation res = reservations.FirstOrDefault();
             if (res.isPack == true)
