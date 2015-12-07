@@ -320,16 +320,23 @@ namespace PixLogic
                 }
             }
 
-            //Exporting to PDF
-            using (FileStream stream = new FileStream(path, FileMode.Create))
+            try
             {
-                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
-                pdfDoc.Add(pdfTable);
-                pdfDoc.Close();
-                stream.Close();
+                //Exporting to PDF
+                using (FileStream stream = new FileStream(path, FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    pdfDoc.Add(pdfTable);
+                    pdfDoc.Close();
+                    stream.Close();
+                }
             }
+            catch(Exception e) {
+                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
             return false;
         }
