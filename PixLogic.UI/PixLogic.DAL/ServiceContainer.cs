@@ -185,6 +185,12 @@ namespace PixLogic.DAL
                 case "get_all_users_by_string":
                     this.arrayContainer[serviceName] = this.get("get_all_users");
                     break;
+                case "get_all_logs_by_string":
+                    this.arrayContainer[serviceName] = this.get("get_all_logs");
+                    break;
+                case "get_all_logs_by_date":
+                    this.arrayContainer[serviceName] = this.get("get_all_logs");
+                    break;
                 case "emprunt_reservation":
                     this.arrayContainer[serviceName] = new EmpruntReservation();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));

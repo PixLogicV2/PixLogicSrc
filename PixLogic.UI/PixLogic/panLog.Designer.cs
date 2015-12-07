@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panLog));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelFiltres = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
+            this.pictureReinit = new System.Windows.Forms.PictureBox();
+            this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
             this.checkBoxItem = new System.Windows.Forms.CheckBox();
@@ -60,7 +62,9 @@
             this.valDateFin = new System.Windows.Forms.Label();
             this.labelTel = new System.Windows.Forms.Label();
             this.labelDateRetour = new System.Windows.Forms.Label();
-            this.panTableUsers = new System.Windows.Forms.Panel();
+            this.panTableLogs = new System.Windows.Forms.Panel();
+            this.buttonExport = new System.Windows.Forms.Button();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridLogs = new System.Windows.Forms.DataGridView();
@@ -69,15 +73,11 @@
             this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureReinit = new System.Windows.Forms.PictureBox();
-            this.buttonFilter = new System.Windows.Forms.Button();
-            this.buttonExport = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.panFiltres.SuspendLayout();
-            this.panNews.SuspendLayout();
-            this.panTableUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridLogs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
+            this.panNews.SuspendLayout();
+            this.panTableLogs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLogs)).BeginInit();
             this.SuspendLayout();
             // 
             // labelFiltres
@@ -107,11 +107,37 @@
             this.panFiltres.Controls.Add(this.labelListeFiltre);
             this.panFiltres.Controls.Add(this.radioToday);
             this.panFiltres.Controls.Add(this.label8);
-            this.panFiltres.Location = new System.Drawing.Point(581, 4);
+            this.panFiltres.Location = new System.Drawing.Point(571, 5);
             this.panFiltres.Margin = new System.Windows.Forms.Padding(4);
             this.panFiltres.Name = "panFiltres";
             this.panFiltres.Size = new System.Drawing.Size(332, 360);
             this.panFiltres.TabIndex = 60;
+            // 
+            // pictureReinit
+            // 
+            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
+            this.pictureReinit.Location = new System.Drawing.Point(295, 7);
+            this.pictureReinit.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureReinit.Name = "pictureReinit";
+            this.pictureReinit.Size = new System.Drawing.Size(33, 26);
+            this.pictureReinit.TabIndex = 48;
+            this.pictureReinit.TabStop = false;
+            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
+            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFilter.Location = new System.Drawing.Point(115, 310);
+            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(89, 32);
+            this.buttonFilter.TabIndex = 47;
+            this.buttonFilter.Text = "Filtrer";
+            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // checkBoxPack
             // 
@@ -241,7 +267,7 @@
             // 
             this.labelNews.AutoSize = true;
             this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(44, 371);
+            this.labelNews.Location = new System.Drawing.Point(43, 362);
             this.labelNews.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNews.Name = "labelNews";
             this.labelNews.Size = new System.Drawing.Size(41, 19);
@@ -252,7 +278,7 @@
             // 
             this.labelListEmprunt.AutoSize = true;
             this.labelListEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListEmprunt.Location = new System.Drawing.Point(42, 9);
+            this.labelListEmprunt.Location = new System.Drawing.Point(41, 0);
             this.labelListEmprunt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelListEmprunt.Name = "labelListEmprunt";
             this.labelListEmprunt.Size = new System.Drawing.Size(133, 19);
@@ -273,7 +299,7 @@
             this.panNews.Controls.Add(this.valDateFin);
             this.panNews.Controls.Add(this.labelTel);
             this.panNews.Controls.Add(this.labelDateRetour);
-            this.panNews.Location = new System.Drawing.Point(23, 367);
+            this.panNews.Location = new System.Drawing.Point(13, 368);
             this.panNews.Margin = new System.Windows.Forms.Padding(4);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(889, 128);
@@ -403,19 +429,44 @@
             this.labelDateRetour.TabIndex = 0;
             this.labelDateRetour.Text = "Date retour :";
             // 
-            // panTableUsers
+            // panTableLogs
             // 
-            this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panTableUsers.Controls.Add(this.buttonExport);
-            this.panTableUsers.Controls.Add(this.buttonCancelSearch);
-            this.panTableUsers.Controls.Add(this.textBoxSearch);
-            this.panTableUsers.Controls.Add(this.labelSearch);
-            this.panTableUsers.Controls.Add(this.dataGridLogs);
-            this.panTableUsers.Location = new System.Drawing.Point(23, 4);
-            this.panTableUsers.Margin = new System.Windows.Forms.Padding(4);
-            this.panTableUsers.Name = "panTableUsers";
-            this.panTableUsers.Size = new System.Drawing.Size(540, 360);
-            this.panTableUsers.TabIndex = 56;
+            this.panTableLogs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panTableLogs.Controls.Add(this.buttonExport);
+            this.panTableLogs.Controls.Add(this.buttonCancelSearch);
+            this.panTableLogs.Controls.Add(this.textBoxSearch);
+            this.panTableLogs.Controls.Add(this.labelSearch);
+            this.panTableLogs.Controls.Add(this.dataGridLogs);
+            this.panTableLogs.Location = new System.Drawing.Point(13, 5);
+            this.panTableLogs.Margin = new System.Windows.Forms.Padding(4);
+            this.panTableLogs.Name = "panTableLogs";
+            this.panTableLogs.Size = new System.Drawing.Size(540, 360);
+            this.panTableLogs.TabIndex = 56;
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExport.Image = ((System.Drawing.Image)(resources.GetObject("buttonExport.Image")));
+            this.buttonExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonExport.Location = new System.Drawing.Point(285, 14);
+            this.buttonExport.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(127, 34);
+            this.buttonExport.TabIndex = 44;
+            this.buttonExport.Text = "Exporter";
+            this.buttonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(232, 18);
+            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // textBoxSearch
             // 
@@ -424,6 +475,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
             this.textBoxSearch.TabIndex = 2;
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
             // labelSearch
             // 
@@ -440,19 +492,19 @@
             // 
             this.dataGridLogs.AllowUserToAddRows = false;
             this.dataGridLogs.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dataGridLogs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            this.dataGridLogs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridLogs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridLogs.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridLogs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdReservation,
@@ -460,32 +512,35 @@
             this.NameReservable,
             this.dateEmprunt,
             this.dateRetour});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridLogs.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridLogs.DefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridLogs.Location = new System.Drawing.Point(4, 54);
             this.dataGridLogs.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridLogs.MultiSelect = false;
             this.dataGridLogs.Name = "dataGridLogs";
             this.dataGridLogs.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridLogs.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLogs.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridLogs.RowHeadersVisible = false;
             this.dataGridLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridLogs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridLogs.Size = new System.Drawing.Size(549, 288);
             this.dataGridLogs.TabIndex = 0;
+            this.dataGridLogs.Click += new System.EventHandler(this.dataGridLogs_Click);
+            this.dataGridLogs.DoubleClick += new System.EventHandler(this.dataGridLogs_DoubleClick);
+            this.dataGridLogs.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridLogs_KeyUp);
             // 
             // IdReservation
             // 
@@ -522,54 +577,6 @@
             this.dateRetour.ReadOnly = true;
             this.dateRetour.Width = 105;
             // 
-            // pictureReinit
-            // 
-            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(295, 7);
-            this.pictureReinit.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(33, 26);
-            this.pictureReinit.TabIndex = 48;
-            this.pictureReinit.TabStop = false;
-            // 
-            // buttonFilter
-            // 
-            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
-            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFilter.Location = new System.Drawing.Point(115, 310);
-            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(89, 32);
-            this.buttonFilter.TabIndex = 47;
-            this.buttonFilter.Text = "Filtrer";
-            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonFilter.UseVisualStyleBackColor = true;
-            // 
-            // buttonExport
-            // 
-            this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExport.Image = ((System.Drawing.Image)(resources.GetObject("buttonExport.Image")));
-            this.buttonExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExport.Location = new System.Drawing.Point(285, 14);
-            this.buttonExport.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(127, 34);
-            this.buttonExport.TabIndex = 44;
-            this.buttonExport.Text = "Exporter";
-            this.buttonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExport.UseVisualStyleBackColor = true;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(232, 18);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            // 
             // panLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -579,17 +586,17 @@
             this.Controls.Add(this.labelNews);
             this.Controls.Add(this.labelListEmprunt);
             this.Controls.Add(this.panNews);
-            this.Controls.Add(this.panTableUsers);
+            this.Controls.Add(this.panTableLogs);
             this.Name = "panLog";
             this.Size = new System.Drawing.Size(912, 551);
             this.panFiltres.ResumeLayout(false);
             this.panFiltres.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
-            this.panTableUsers.ResumeLayout(false);
-            this.panTableUsers.PerformLayout();
+            this.panTableLogs.ResumeLayout(false);
+            this.panTableLogs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLogs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -626,7 +633,7 @@
         private System.Windows.Forms.Label valDateFin;
         private System.Windows.Forms.Label labelTel;
         private System.Windows.Forms.Label labelDateRetour;
-        private System.Windows.Forms.Panel panTableUsers;
+        private System.Windows.Forms.Panel panTableLogs;
         private System.Windows.Forms.Button buttonExport;
         private System.Windows.Forms.Button buttonCancelSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
