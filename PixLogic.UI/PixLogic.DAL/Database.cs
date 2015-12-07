@@ -192,7 +192,7 @@ namespace PixLogic.DAL
         }
         public List<Reservation> GetAllItemsEmprunts(List<Reservation> list)
         {
-            return container.get("get_all_items_emprunts").getAllItemsEmprunts(list);
+            return container.get("get_all_items_emprunts").getAllItemEmprunts(list);
         }
         public List<Item> GetAllItemsInCategorie(int id)
         {
