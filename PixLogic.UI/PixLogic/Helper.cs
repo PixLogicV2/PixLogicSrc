@@ -3,6 +3,7 @@ using iTextSharp.text.pdf;
 using PixLogic.DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -338,10 +339,42 @@ namespace PixLogic
             }
             catch(Exception e) {
                 MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+        public static bool exportCSV(DataGridView table, string path)
+        {
+            try
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, false, Encoding.Unicode))
+                {
+                    string line = "";
+                    foreach (DataGridViewColumn col in table.Columns)
+                    {
+                        line += col.HeaderText.ToString() + ";";
+                    }
+                    file.WriteLine(line);
+
+                    foreach (DataGridViewRow row in table.Rows)
+                    {
+                        line = "";
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            line += cell.Value.ToString() + ";";
+                        }
+
+                        file.WriteLine(line);
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             
-
-            return false;
+            return true;
         }
     }
 }

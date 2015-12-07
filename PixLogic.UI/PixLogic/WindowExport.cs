@@ -39,7 +39,51 @@ namespace PixLogic
             panCsv.Cursor = Cursors.Hand;
         }
 
+        private void auClickPdf()
+        {
+            saveFileDialog = new SaveFileDialog();
+            saveFileDialog.DefaultExt = ".pdf";
+            saveFileDialog.Filter = "Pdf documents|*.pdf";
+            saveFileDialog.AddExtension = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                buttonExporter.Enabled = true;
+                valChemin.Text = saveFileDialog.FileName;
+            }
+        }
+        private void auClickCsv()
+        {
+            saveFileDialog = new SaveFileDialog();
+            saveFileDialog.DefaultExt = ".csv";
+            saveFileDialog.Filter = "Csv documents|*.Csv";
+            saveFileDialog.AddExtension = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                buttonExporter.Enabled = true;
+                valChemin.Text = saveFileDialog.FileName;
+            }
+        }
 
+        private void buttonValid_Click(object sender, EventArgs e)
+        {
+            string chemin = valChemin.Text;
+            if (chemin.EndsWith(".pdf") || chemin.EndsWith(".PDF"))
+                Helper.exportPDF(table, valChemin.Text);
+            else
+                Helper.exportCSV(table, valChemin.Text);
+
+            Process process = new Process();
+            if (checkBoxOpen.Checked)
+            {
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.Arguments = "/c " + valChemin.Text;
+                process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                process.Start();
+                process.Dispose();
+            }
+            this.Close();
+            process.Close();
+        }
 
         private void panPdf_Click(object sender, EventArgs e)
         {
@@ -55,36 +99,22 @@ namespace PixLogic
             auClickPdf();
         }
 
-        private void auClickPdf()
+        private void panCsv_Click(object sender, EventArgs e)
         {
-            saveFileDialog = new SaveFileDialog();
-            saveFileDialog.DefaultExt = ".pdf";
-            saveFileDialog.Filter = "Pdf documents|*.pdf";
-            saveFileDialog.AddExtension = true;
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                buttonExporter.Enabled = true;
-                valChemin.Text = saveFileDialog.FileName;
-            }
+            auClickCsv();
         }
 
-        private void buttonValid_Click(object sender, EventArgs e)
+        private void labelExportCsv_Click(object sender, EventArgs e)
         {
-            Helper.exportPDF(table, valChemin.Text);
-            Process process = new Process();
-            if (checkBoxOpen.Checked)
-            {
-                process.StartInfo.FileName = "cmd.exe";
-                process.StartInfo.Arguments = "/c " + valChemin.Text;
-                process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                process.Start();
-                process.Dispose();
-            }
-            this.Close();
-            process.Close();
+            auClickCsv();
         }
 
-        
+        private void pictureBoxCSV_Click(object sender, EventArgs e)
+        {
+            auClickCsv();
+        }
+
+
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {

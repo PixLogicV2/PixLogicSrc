@@ -195,7 +195,6 @@ namespace PixLogic
                     list = database.GetAllPackReservations(list);
                 else
                     list = database.GetAllItemReservations(list);
-                Console.WriteLine("DANS LE OUI ou PAS");
             }
             else if(!checkBoxPack.Checked && !checkBoxItem.Checked)
                 list = new List<Reservation>();
@@ -245,67 +244,7 @@ namespace PixLogic
             setTableReservations(database.GetAllReservationsByString(textBoxSearch.Text));
         }
 
-        private void buttonExport_Click(object sender, EventArgs e)
-        {
-            //Creating iTextSharp Table from the DataTable data
-            PdfPTable pdfTable = new PdfPTable(dataGridReservations.ColumnCount);
-            pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 30;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdfTable.DefaultCell.BorderWidth = 1;
-            //Adding Header row
-            foreach (DataGridViewColumn column in dataGridReservations.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                pdfTable.AddCell(cell);
-            }
-            //Adding DataRow
-            foreach (DataGridViewRow row in dataGridReservations.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    pdfTable.AddCell(cell.Value.ToString());
-                }
-            }
-            //Exporting to PDF
-            string folderPath = "C:\\PDFs\\";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            using (FileStream stream = new FileStream(folderPath + "ListeDesReservations"+DateTime.Now.Minute.ToString()+ DateTime.Now.Second.ToString()+".pdf", FileMode.Create))
-            {
-                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
-                pdfDoc.Add(pdfTable);
-                pdfDoc.Close();
-                stream.Close();
-            }
-        }
-        
-        private void buttonExportCsv_Click(object sender, EventArgs e)
-        {
-            /*
-            dataGridReservations.SelectAll();
-            DataObject dataObj = dataGridReservations.GetClipboardContent();
-            if (dataObj != null)
-                Clipboard.SetDataObject(dataObj);
-            Microsoft.Office.Interop.Excel.Application xlexcel;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlexcel = new Excel.Application();
-            xlexcel.Visible = true;
-            xlWorkBook = xlexcel.Workbooks.Add(misValue);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-            Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];
-            CR.Select();
-            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-            */
-        }
-
+      
         private void pictureExport_Click(object sender, EventArgs e)
         {
             WindowExport export = new WindowExport(dataGridReservations);

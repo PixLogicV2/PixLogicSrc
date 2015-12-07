@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panReservation));
             this.panTableUsers = new System.Windows.Forms.Panel();
+            this.pictureExport = new System.Windows.Forms.PictureBox();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridReservations = new System.Windows.Forms.DataGridView();
@@ -57,6 +59,8 @@
             this.labelListReservation = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
+            this.pictureReinit = new System.Windows.Forms.PictureBox();
+            this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
             this.checkBoxItem = new System.Windows.Forms.CheckBox();
@@ -71,27 +75,19 @@
             this.labelFiltres = new System.Windows.Forms.Label();
             this.buttonCancelReserv = new System.Windows.Forms.Button();
             this.buttonModif = new System.Windows.Forms.Button();
-            this.pictureReinit = new System.Windows.Forms.PictureBox();
-            this.buttonFilter = new System.Windows.Forms.Button();
             this.buttonPret = new System.Windows.Forms.Button();
-            this.pictureExport = new System.Windows.Forms.PictureBox();
-            this.buttonExportCsv = new System.Windows.Forms.Button();
-            this.buttonExportPdf = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.panTableUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
             this.panFiltres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             this.SuspendLayout();
             // 
             // panTableUsers
             // 
             this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panTableUsers.Controls.Add(this.pictureExport);
-            this.panTableUsers.Controls.Add(this.buttonExportCsv);
-            this.panTableUsers.Controls.Add(this.buttonExportPdf);
             this.panTableUsers.Controls.Add(this.buttonCancelSearch);
             this.panTableUsers.Controls.Add(this.textBoxSearch);
             this.panTableUsers.Controls.Add(this.labelSearch);
@@ -100,6 +96,27 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(412, 285);
             this.panTableUsers.TabIndex = 23;
+            // 
+            // pictureExport
+            // 
+            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
+            this.pictureExport.Location = new System.Drawing.Point(382, 6);
+            this.pictureExport.Name = "pictureExport";
+            this.pictureExport.Size = new System.Drawing.Size(25, 21);
+            this.pictureExport.TabIndex = 49;
+            this.pictureExport.TabStop = false;
+            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
+            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -123,19 +140,19 @@
             // 
             this.dataGridReservations.AllowUserToAddRows = false;
             this.dataGridReservations.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridReservations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridReservations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridReservations.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridReservations.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridReservations.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservations.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridReservations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdReservation,
@@ -143,26 +160,26 @@
             this.NameReservable,
             this.debutResersation,
             this.finReservation});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReservations.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReservations.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridReservations.Location = new System.Drawing.Point(-1, 47);
             this.dataGridReservations.MultiSelect = false;
             this.dataGridReservations.Name = "dataGridReservations";
             this.dataGridReservations.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservations.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservations.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridReservations.RowHeadersVisible = false;
             this.dataGridReservations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -379,6 +396,31 @@
             this.panFiltres.Size = new System.Drawing.Size(256, 285);
             this.panFiltres.TabIndex = 43;
             // 
+            // pictureReinit
+            // 
+            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
+            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
+            this.pictureReinit.Name = "pictureReinit";
+            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
+            this.pictureReinit.TabIndex = 48;
+            this.pictureReinit.TabStop = false;
+            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
+            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
+            // 
+            // buttonFilter
+            // 
+            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
+            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFilter.Location = new System.Drawing.Point(86, 252);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
+            this.buttonFilter.TabIndex = 47;
+            this.buttonFilter.Text = "Filtrer";
+            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
+            // 
             // checkBoxPack
             // 
             this.checkBoxPack.AutoSize = true;
@@ -530,31 +572,6 @@
             this.buttonModif.UseVisualStyleBackColor = true;
             this.buttonModif.Click += new System.EventHandler(this.buttonModif_Click);
             // 
-            // pictureReinit
-            // 
-            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
-            this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
-            this.pictureReinit.TabIndex = 48;
-            this.pictureReinit.TabStop = false;
-            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
-            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
-            // 
-            // buttonFilter
-            // 
-            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
-            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFilter.Location = new System.Drawing.Point(86, 252);
-            this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
-            this.buttonFilter.TabIndex = 47;
-            this.buttonFilter.Text = "Filtrer";
-            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonFilter.UseVisualStyleBackColor = true;
-            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
-            // 
             // buttonPret
             // 
             this.buttonPret.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -568,55 +585,6 @@
             this.buttonPret.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonPret.UseVisualStyleBackColor = true;
             this.buttonPret.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // pictureExport
-            // 
-            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
-            this.pictureExport.Location = new System.Drawing.Point(382, 6);
-            this.pictureExport.Name = "pictureExport";
-            this.pictureExport.Size = new System.Drawing.Size(25, 21);
-            this.pictureExport.TabIndex = 49;
-            this.pictureExport.TabStop = false;
-            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
-            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
-            // 
-            // buttonExportCsv
-            // 
-            this.buttonExportCsv.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportCsv.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportCsv.Image")));
-            this.buttonExportCsv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExportCsv.Location = new System.Drawing.Point(261, 13);
-            this.buttonExportCsv.Name = "buttonExportCsv";
-            this.buttonExportCsv.Size = new System.Drawing.Size(28, 28);
-            this.buttonExportCsv.TabIndex = 44;
-            this.buttonExportCsv.Text = "Exporter Excel";
-            this.buttonExportCsv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExportCsv.UseVisualStyleBackColor = true;
-            this.buttonExportCsv.Click += new System.EventHandler(this.buttonExportCsv_Click);
-            // 
-            // buttonExportPdf
-            // 
-            this.buttonExportPdf.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportPdf.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportPdf.Image")));
-            this.buttonExportPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExportPdf.Location = new System.Drawing.Point(214, 13);
-            this.buttonExportPdf.Name = "buttonExportPdf";
-            this.buttonExportPdf.Size = new System.Drawing.Size(41, 28);
-            this.buttonExportPdf.TabIndex = 43;
-            this.buttonExportPdf.Text = "Exporter PDF";
-            this.buttonExportPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExportPdf.UseVisualStyleBackColor = true;
-            this.buttonExportPdf.Click += new System.EventHandler(this.buttonExport_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // panReservation
             // 
@@ -632,18 +600,18 @@
             this.Controls.Add(this.labelListReservation);
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableUsers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "panReservation";
             this.Size = new System.Drawing.Size(686, 450);
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
             this.panFiltres.ResumeLayout(false);
             this.panFiltres.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,8 +661,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn debutResersation;
         private System.Windows.Forms.DataGridViewTextBoxColumn finReservation;
-        private System.Windows.Forms.Button buttonExportPdf;
-        private System.Windows.Forms.Button buttonExportCsv;
         private System.Windows.Forms.PictureBox pictureExport;
     }
 }
