@@ -40,39 +40,18 @@ namespace PixLogic
 
                     DataTable table = new DataTable();
                     adapter.Fill(table);
-                    ResultDGV.DataSource = table;
 
-                    ResultDGV.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                    using (WindowScriptResult Res = new WindowScriptResult())
+                    {
+                        Res.Queryresult = table;
+                        Res.ShowDialog();
+                    }  
                 }
             }
             catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void BrowseBtn_Click(object sender, EventArgs e)
-        {
-            //open a dialog for browsing through file
-            DialogResult result = openFileDialog.ShowDialog();
-            if(result == DialogResult.OK)
-            {
-                try
-                {
-                    //get the content of the file to feed the richTextBox, path access issue here, fixing pending
-                    string fileQuery = File.ReadAllText(Path.GetFullPath(openFileDialog.FileName));
-                    QueryRTB.Text = fileQuery;
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void SaveBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
