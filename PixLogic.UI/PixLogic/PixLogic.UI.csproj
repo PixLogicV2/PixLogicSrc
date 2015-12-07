@@ -126,6 +126,12 @@
     <Compile Include="WindowCategorie.Designer.cs">
       <DependentUpon>WindowCategorie.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowExport.Designer.cs">
+      <DependentUpon>WindowExport.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowCategorie.resx">
       <DependentUpon>WindowCategorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowExport.resx">
+      <DependentUpon>WindowExport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowItem.resx">
       <DependentUpon>WindowItem.cs</DependentUpon>
@@ -368,6 +377,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\parametres_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf_export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\csv_export.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

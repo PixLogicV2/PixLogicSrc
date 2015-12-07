@@ -193,6 +193,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap csv_export {
+            get {
+                object obj = ResourceManager.GetObject("csv_export", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap emprunter2 {
             get {
                 object obj = ResourceManager.GetObject("emprunter2", resourceCulture);
@@ -206,6 +216,16 @@ namespace PixLogic.Properties {
         internal static System.Drawing.Bitmap enregistrer_icon {
             get {
                 object obj = ResourceManager.GetObject("enregistrer_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap export {
+            get {
+                object obj = ResourceManager.GetObject("export", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +316,16 @@ namespace PixLogic.Properties {
         internal static System.Drawing.Bitmap parametres_icon {
             get {
                 object obj = ResourceManager.GetObject("parametres_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pdf_export {
+            get {
+                object obj = ResourceManager.GetObject("pdf_export", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

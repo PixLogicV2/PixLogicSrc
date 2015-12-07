@@ -1,4 +1,6 @@
-﻿using PixLogic.DAL;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using PixLogic.DAL;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -174,7 +176,7 @@ namespace PixLogic
 
         }
         
-        public static void putImageInBox(PictureBox picBox, Image image)
+        public static void putImageInBox(PictureBox picBox, System.Drawing.Image image)
         {
             picBox.Image = image;
             if (image != null)
@@ -292,6 +294,44 @@ namespace PixLogic
             }
             return true;
 
+        }
+
+        public static bool exportPDF(DataGridView table, string path)
+        {
+            //Creating iTextSharp Table from the DataTable data
+            PdfPTable pdfTable = new PdfPTable(table.ColumnCount);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 30;
+            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.DefaultCell.BorderWidth = 1;
+            //Adding Header row
+            foreach (DataGridViewColumn column in table.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                pdfTable.AddCell(cell);
+            }
+            //Adding DataRow
+            foreach (DataGridViewRow row in table.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    pdfTable.AddCell(cell.Value.ToString());
+                }
+            }
+
+            //Exporting to PDF
+            using (FileStream stream = new FileStream(path, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+                stream.Close();
+            }
+
+            return false;
         }
     }
 }
