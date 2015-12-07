@@ -256,11 +256,14 @@ namespace PixLogic
                 if (reservation.isPack == false)
                 {
                     Item i = database.GetItemById(reservation.reservable.ReservableId);
-                    if (getDispoReservableByDate(true, i.pack.ReservableId, dateDebut, dateFin) == false)
+                    if (i.pack != null)
                     {
-                        if (withMessageBox)
-                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles (deja reservé).", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
+                        if (getDispoReservableByDate(true, i.pack.ReservableId, dateDebut, dateFin) == false)
+                        {
+                            if (withMessageBox)
+                                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles (deja reservé).", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
                     }
                 } 
             }

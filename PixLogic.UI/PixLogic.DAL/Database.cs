@@ -209,6 +209,14 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_logs").getAllLogs();
         }
+        public List<Reservation> GetAllLogsByString(string search)
+        {
+            return container.get("get_all_logs").getAllLogsByString(search);
+        }
+        public List<Reservation> GetAllLogsByDate(DateTime debut,DateTime fin)
+        {
+            return container.get("get_all_logs").getAllLogsByDate(debut,fin);
+        }
         /*
         *Categorie
         */

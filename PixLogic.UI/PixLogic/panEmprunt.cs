@@ -102,12 +102,6 @@ namespace PixLogic
 
         }
 
-        private void dataGridReservations_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (dataGridEmprunts.RowCount > 0)
-                setNewsEmprunts();
-        }
-
         private void buttonFilter_Click(object sender, EventArgs e)
         {
             filtrer();
@@ -307,5 +301,11 @@ namespace PixLogic
             }
         }
 
+        private void dataGridEmprunts_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            if (dataGridEmprunts.RowCount > 0)
+                setNewsEmprunts();
+        }
+        
     }
 }
