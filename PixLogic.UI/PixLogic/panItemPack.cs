@@ -247,7 +247,7 @@ namespace PixLogic
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if(Helper.confirmation(Helper.DELETE))
+            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationReservable(true, Convert.ToInt32(valItemId.Text)) == false)
             {
                 database.DeleteItem(valItemName.Text);
                 setTableItem(database.GetAllItems());

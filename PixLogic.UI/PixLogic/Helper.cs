@@ -382,11 +382,21 @@ namespace PixLogic
         }
         public static bool existReservationUser(bool withMessageBox,int userId)
         {
-            List<Reservation> res = database.GetAllReservationsByUserId(userId);
-            if (res == null) return false;
+            bool emp = database.ContainReservationByUserId(userId);
+            if (emp==false) return false;
             else
             {
                 if (withMessageBox) MessageBox.Show("Cet utilisateur possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+        }
+        public static bool existReservationReservable(bool withMessageBox, int reservableId)
+        {
+            bool emp = database.ContainReservationByReservableId(reservableId);
+            if (emp == false) return false;
+            else
+            {
+                if (withMessageBox) MessageBox.Show("Ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
         }
