@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panEmprunt));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -64,7 +63,6 @@
             this.labelTel = new System.Windows.Forms.Label();
             this.labelDateRetour = new System.Windows.Forms.Label();
             this.panTableUsers = new System.Windows.Forms.Panel();
-            this.buttonExport = new System.Windows.Forms.Button();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
@@ -74,21 +72,22 @@
             this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.panFiltres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.panNews.SuspendLayout();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmprunts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             this.SuspendLayout();
             // 
             // labelFiltres
             // 
             this.labelFiltres.AutoSize = true;
             this.labelFiltres.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFiltres.Location = new System.Drawing.Point(596, 0);
-            this.labelFiltres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFiltres.Location = new System.Drawing.Point(447, 0);
             this.labelFiltres.Name = "labelFiltres";
-            this.labelFiltres.Size = new System.Drawing.Size(49, 19);
+            this.labelFiltres.Size = new System.Drawing.Size(38, 13);
             this.labelFiltres.TabIndex = 55;
             this.labelFiltres.Text = "Filtres";
             // 
@@ -108,19 +107,17 @@
             this.panFiltres.Controls.Add(this.labelListeFiltre);
             this.panFiltres.Controls.Add(this.radioToday);
             this.panFiltres.Controls.Add(this.label8);
-            this.panFiltres.Location = new System.Drawing.Point(571, 5);
-            this.panFiltres.Margin = new System.Windows.Forms.Padding(4);
+            this.panFiltres.Location = new System.Drawing.Point(428, 4);
             this.panFiltres.Name = "panFiltres";
-            this.panFiltres.Size = new System.Drawing.Size(341, 350);
+            this.panFiltres.Size = new System.Drawing.Size(256, 285);
             this.panFiltres.TabIndex = 51;
             // 
             // pictureReinit
             // 
             this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(295, 7);
-            this.pictureReinit.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
             this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(33, 26);
+            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
             this.pictureReinit.TabIndex = 48;
             this.pictureReinit.TabStop = false;
             this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
@@ -131,10 +128,9 @@
             this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
             this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFilter.Location = new System.Drawing.Point(115, 310);
-            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFilter.Location = new System.Drawing.Point(86, 252);
             this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(89, 32);
+            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
             this.buttonFilter.TabIndex = 47;
             this.buttonFilter.Text = "Filtrer";
             this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -145,10 +141,9 @@
             // 
             this.checkBoxPack.AutoSize = true;
             this.checkBoxPack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxPack.Location = new System.Drawing.Point(251, 251);
-            this.checkBoxPack.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxPack.Location = new System.Drawing.Point(188, 204);
             this.checkBoxPack.Name = "checkBoxPack";
-            this.checkBoxPack.Size = new System.Drawing.Size(66, 23);
+            this.checkBoxPack.Size = new System.Drawing.Size(54, 17);
             this.checkBoxPack.TabIndex = 11;
             this.checkBoxPack.Text = "Packs";
             this.checkBoxPack.UseVisualStyleBackColor = true;
@@ -157,10 +152,9 @@
             // 
             this.labelTypeElementFiltre.AutoSize = true;
             this.labelTypeElementFiltre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTypeElementFiltre.Location = new System.Drawing.Point(4, 251);
-            this.labelTypeElementFiltre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTypeElementFiltre.Location = new System.Drawing.Point(3, 204);
             this.labelTypeElementFiltre.Name = "labelTypeElementFiltre";
-            this.labelTypeElementFiltre.Size = new System.Drawing.Size(124, 20);
+            this.labelTypeElementFiltre.Size = new System.Drawing.Size(100, 15);
             this.labelTypeElementFiltre.TabIndex = 10;
             this.labelTypeElementFiltre.Text = "Type d\'élément :";
             // 
@@ -168,10 +162,9 @@
             // 
             this.checkBoxItem.AutoSize = true;
             this.checkBoxItem.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxItem.Location = new System.Drawing.Point(145, 251);
-            this.checkBoxItem.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxItem.Location = new System.Drawing.Point(109, 204);
             this.checkBoxItem.Name = "checkBoxItem";
-            this.checkBoxItem.Size = new System.Drawing.Size(89, 23);
+            this.checkBoxItem.Size = new System.Drawing.Size(73, 17);
             this.checkBoxItem.TabIndex = 10;
             this.checkBoxItem.Text = "Matériels";
             this.checkBoxItem.UseVisualStyleBackColor = true;
@@ -180,10 +173,9 @@
             // 
             this.radioAll.AutoSize = true;
             this.radioAll.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioAll.Location = new System.Drawing.Point(28, 46);
-            this.radioAll.Margin = new System.Windows.Forms.Padding(4);
+            this.radioAll.Location = new System.Drawing.Point(21, 37);
             this.radioAll.Name = "radioAll";
-            this.radioAll.Size = new System.Drawing.Size(59, 23);
+            this.radioAll.Size = new System.Drawing.Size(48, 17);
             this.radioAll.TabIndex = 8;
             this.radioAll.TabStop = true;
             this.radioAll.Text = "Tous";
@@ -191,28 +183,25 @@
             // 
             // dateTimeEnd
             // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(68, 199);
-            this.dateTimeEnd.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimeEnd.Location = new System.Drawing.Point(51, 162);
             this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(265, 22);
+            this.dateTimeEnd.Size = new System.Drawing.Size(200, 20);
             this.dateTimeEnd.TabIndex = 7;
             // 
             // dateTimeBegin
             // 
-            this.dateTimeBegin.Location = new System.Drawing.Point(68, 161);
-            this.dateTimeBegin.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimeBegin.Location = new System.Drawing.Point(51, 131);
             this.dateTimeBegin.Name = "dateTimeBegin";
-            this.dateTimeBegin.Size = new System.Drawing.Size(265, 22);
+            this.dateTimeBegin.Size = new System.Drawing.Size(200, 20);
             this.dateTimeBegin.TabIndex = 6;
             // 
             // radioBetween
             // 
             this.radioBetween.AutoSize = true;
             this.radioBetween.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBetween.Location = new System.Drawing.Point(28, 130);
-            this.radioBetween.Margin = new System.Windows.Forms.Padding(4);
+            this.radioBetween.Location = new System.Drawing.Point(21, 106);
             this.radioBetween.Name = "radioBetween";
-            this.radioBetween.Size = new System.Drawing.Size(69, 23);
+            this.radioBetween.Size = new System.Drawing.Size(57, 17);
             this.radioBetween.TabIndex = 5;
             this.radioBetween.TabStop = true;
             this.radioBetween.Text = "Entre :";
@@ -222,10 +211,9 @@
             // 
             this.radioOfPastSevenDays.AutoSize = true;
             this.radioOfPastSevenDays.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioOfPastSevenDays.Location = new System.Drawing.Point(28, 102);
-            this.radioOfPastSevenDays.Margin = new System.Windows.Forms.Padding(4);
+            this.radioOfPastSevenDays.Location = new System.Drawing.Point(21, 83);
             this.radioOfPastSevenDays.Name = "radioOfPastSevenDays";
-            this.radioOfPastSevenDays.Size = new System.Drawing.Size(182, 23);
+            this.radioOfPastSevenDays.Size = new System.Drawing.Size(148, 17);
             this.radioOfPastSevenDays.TabIndex = 4;
             this.radioOfPastSevenDays.TabStop = true;
             this.radioOfPastSevenDays.Text = "à rendre dans les 7 jours";
@@ -235,10 +223,9 @@
             // 
             this.labelListeFiltre.AutoSize = true;
             this.labelListeFiltre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListeFiltre.Location = new System.Drawing.Point(4, 23);
-            this.labelListeFiltre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelListeFiltre.Location = new System.Drawing.Point(3, 19);
             this.labelListeFiltre.Name = "labelListeFiltre";
-            this.labelListeFiltre.Size = new System.Drawing.Size(150, 20);
+            this.labelListeFiltre.Size = new System.Drawing.Size(118, 15);
             this.labelListeFiltre.TabIndex = 3;
             this.labelListeFiltre.Text = "Liste des emprunts :";
             // 
@@ -246,10 +233,9 @@
             // 
             this.radioToday.AutoSize = true;
             this.radioToday.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioToday.Location = new System.Drawing.Point(28, 74);
-            this.radioToday.Margin = new System.Windows.Forms.Padding(4);
+            this.radioToday.Location = new System.Drawing.Point(21, 60);
             this.radioToday.Name = "radioToday";
-            this.radioToday.Size = new System.Drawing.Size(153, 23);
+            this.radioToday.Size = new System.Drawing.Size(124, 17);
             this.radioToday.TabIndex = 2;
             this.radioToday.TabStop = true;
             this.radioToday.Text = "à rendre aujourdhui";
@@ -259,20 +245,18 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(0, 84);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(0, 68);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 19);
+            this.label8.Size = new System.Drawing.Size(0, 13);
             this.label8.TabIndex = 1;
             // 
             // labelNews
             // 
             this.labelNews.AutoSize = true;
             this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(43, 362);
-            this.labelNews.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNews.Location = new System.Drawing.Point(32, 294);
             this.labelNews.Name = "labelNews";
-            this.labelNews.Size = new System.Drawing.Size(41, 19);
+            this.labelNews.Size = new System.Drawing.Size(33, 13);
             this.labelNews.TabIndex = 52;
             this.labelNews.Text = "Infos";
             // 
@@ -281,10 +265,9 @@
             this.buttonRendre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRendre.Image = global::PixLogic.Properties.Resources.rendre;
             this.buttonRendre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRendre.Location = new System.Drawing.Point(231, 503);
-            this.buttonRendre.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRendre.Location = new System.Drawing.Point(173, 409);
             this.buttonRendre.Name = "buttonRendre";
-            this.buttonRendre.Size = new System.Drawing.Size(127, 34);
+            this.buttonRendre.Size = new System.Drawing.Size(95, 28);
             this.buttonRendre.TabIndex = 50;
             this.buttonRendre.Text = "Rendre";
             this.buttonRendre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -295,10 +278,9 @@
             // 
             this.labelListEmprunt.AutoSize = true;
             this.labelListEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListEmprunt.Location = new System.Drawing.Point(41, 0);
-            this.labelListEmprunt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelListEmprunt.Location = new System.Drawing.Point(31, 0);
             this.labelListEmprunt.Name = "labelListEmprunt";
-            this.labelListEmprunt.Size = new System.Drawing.Size(133, 19);
+            this.labelListEmprunt.Size = new System.Drawing.Size(105, 13);
             this.labelListEmprunt.TabIndex = 49;
             this.labelListEmprunt.Text = "Liste des emprunts";
             // 
@@ -316,20 +298,18 @@
             this.panNews.Controls.Add(this.valDateFin);
             this.panNews.Controls.Add(this.labelTel);
             this.panNews.Controls.Add(this.labelDateRetour);
-            this.panNews.Location = new System.Drawing.Point(13, 368);
-            this.panNews.Margin = new System.Windows.Forms.Padding(4);
+            this.panNews.Location = new System.Drawing.Point(10, 299);
             this.panNews.Name = "panNews";
-            this.panNews.Size = new System.Drawing.Size(898, 118);
+            this.panNews.Size = new System.Drawing.Size(674, 96);
             this.panNews.TabIndex = 48;
             // 
             // valType
             // 
             this.valType.AutoSize = true;
             this.valType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valType.Location = new System.Drawing.Point(189, 80);
-            this.valType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valType.Location = new System.Drawing.Point(142, 65);
             this.valType.Name = "valType";
-            this.valType.Size = new System.Drawing.Size(17, 23);
+            this.valType.Size = new System.Drawing.Size(13, 17);
             this.valType.TabIndex = 45;
             this.valType.Text = "-";
             this.valType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -338,10 +318,9 @@
             // 
             this.valNomReservable.AutoSize = true;
             this.valNomReservable.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valNomReservable.Location = new System.Drawing.Point(189, 48);
-            this.valNomReservable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valNomReservable.Location = new System.Drawing.Point(142, 39);
             this.valNomReservable.Name = "valNomReservable";
-            this.valNomReservable.Size = new System.Drawing.Size(17, 23);
+            this.valNomReservable.Size = new System.Drawing.Size(13, 17);
             this.valNomReservable.TabIndex = 44;
             this.valNomReservable.Text = "-";
             this.valNomReservable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,10 +329,9 @@
             // 
             this.valNomUser.AutoSize = true;
             this.valNomUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valNomUser.Location = new System.Drawing.Point(189, 16);
-            this.valNomUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valNomUser.Location = new System.Drawing.Point(142, 13);
             this.valNomUser.Name = "valNomUser";
-            this.valNomUser.Size = new System.Drawing.Size(17, 23);
+            this.valNomUser.Size = new System.Drawing.Size(13, 17);
             this.valNomUser.TabIndex = 43;
             this.valNomUser.Text = "-";
             this.valNomUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -362,10 +340,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 19);
+            this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 42;
             this.label1.Text = "Nom du reservable :";
             // 
@@ -373,10 +350,9 @@
             // 
             this.labelType.AutoSize = true;
             this.labelType.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelType.Location = new System.Drawing.Point(4, 84);
-            this.labelType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelType.Location = new System.Drawing.Point(3, 68);
             this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(45, 19);
+            this.labelType.Size = new System.Drawing.Size(35, 13);
             this.labelType.TabIndex = 41;
             this.labelType.Text = "Type :";
             // 
@@ -384,10 +360,9 @@
             // 
             this.labelNameUser.AutoSize = true;
             this.labelNameUser.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameUser.Location = new System.Drawing.Point(4, 20);
-            this.labelNameUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNameUser.Location = new System.Drawing.Point(3, 16);
             this.labelNameUser.Name = "labelNameUser";
-            this.labelNameUser.Size = new System.Drawing.Size(110, 19);
+            this.labelNameUser.Size = new System.Drawing.Size(92, 13);
             this.labelNameUser.TabIndex = 40;
             this.labelNameUser.Text = "Nom utilisateur :";
             // 
@@ -395,10 +370,9 @@
             // 
             this.labelDateDebut.AutoSize = true;
             this.labelDateDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateDebut.Location = new System.Drawing.Point(473, 20);
-            this.labelDateDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDateDebut.Location = new System.Drawing.Point(355, 16);
             this.labelDateDebut.Name = "labelDateDebut";
-            this.labelDateDebut.Size = new System.Drawing.Size(85, 19);
+            this.labelDateDebut.Size = new System.Drawing.Size(71, 13);
             this.labelDateDebut.TabIndex = 6;
             this.labelDateDebut.Text = "Date début :";
             // 
@@ -406,10 +380,9 @@
             // 
             this.valDateDebut.AutoSize = true;
             this.valDateDebut.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateDebut.Location = new System.Drawing.Point(629, 15);
-            this.valDateDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valDateDebut.Location = new System.Drawing.Point(472, 12);
             this.valDateDebut.Name = "valDateDebut";
-            this.valDateDebut.Size = new System.Drawing.Size(17, 23);
+            this.valDateDebut.Size = new System.Drawing.Size(13, 17);
             this.valDateDebut.TabIndex = 39;
             this.valDateDebut.Text = "-";
             this.valDateDebut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -418,10 +391,9 @@
             // 
             this.valDateFin.AutoSize = true;
             this.valDateFin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDateFin.Location = new System.Drawing.Point(629, 50);
-            this.valDateFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.valDateFin.Location = new System.Drawing.Point(472, 41);
             this.valDateFin.Name = "valDateFin";
-            this.valDateFin.Size = new System.Drawing.Size(17, 23);
+            this.valDateFin.Size = new System.Drawing.Size(13, 17);
             this.valDateFin.TabIndex = 3;
             this.valDateFin.Text = "-";
             // 
@@ -429,69 +401,49 @@
             // 
             this.labelTel.AutoSize = true;
             this.labelTel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTel.Location = new System.Drawing.Point(0, 84);
-            this.labelTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTel.Location = new System.Drawing.Point(0, 68);
             this.labelTel.Name = "labelTel";
-            this.labelTel.Size = new System.Drawing.Size(0, 19);
+            this.labelTel.Size = new System.Drawing.Size(0, 13);
             this.labelTel.TabIndex = 1;
             // 
             // labelDateRetour
             // 
             this.labelDateRetour.AutoSize = true;
             this.labelDateRetour.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateRetour.Location = new System.Drawing.Point(473, 52);
-            this.labelDateRetour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDateRetour.Location = new System.Drawing.Point(355, 42);
             this.labelDateRetour.Name = "labelDateRetour";
-            this.labelDateRetour.Size = new System.Drawing.Size(87, 19);
+            this.labelDateRetour.Size = new System.Drawing.Size(72, 13);
             this.labelDateRetour.TabIndex = 0;
             this.labelDateRetour.Text = "Date retour :";
             // 
             // panTableUsers
             // 
             this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panTableUsers.Controls.Add(this.buttonExport);
+            this.panTableUsers.Controls.Add(this.pictureExport);
             this.panTableUsers.Controls.Add(this.buttonCancelSearch);
             this.panTableUsers.Controls.Add(this.textBoxSearch);
             this.panTableUsers.Controls.Add(this.labelSearch);
             this.panTableUsers.Controls.Add(this.dataGridEmprunts);
-            this.panTableUsers.Location = new System.Drawing.Point(13, 5);
-            this.panTableUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.panTableUsers.Location = new System.Drawing.Point(10, 4);
             this.panTableUsers.Name = "panTableUsers";
-            this.panTableUsers.Size = new System.Drawing.Size(549, 350);
+            this.panTableUsers.Size = new System.Drawing.Size(412, 285);
             this.panTableUsers.TabIndex = 47;
-            // 
-            // buttonExport
-            // 
-            this.buttonExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExport.Image = ((System.Drawing.Image)(resources.GetObject("buttonExport.Image")));
-            this.buttonExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExport.Location = new System.Drawing.Point(285, 14);
-            this.buttonExport.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExport.Name = "buttonExport";
-            this.buttonExport.Size = new System.Drawing.Size(127, 34);
-            this.buttonExport.TabIndex = 44;
-            this.buttonExport.Text = "Exporter";
-            this.buttonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExport.UseVisualStyleBackColor = true;
-            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // buttonCancelSearch
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(232, 18);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
             this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
             this.buttonCancelSearch.TabIndex = 3;
             this.buttonCancelSearch.UseVisualStyleBackColor = true;
             this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(99, 20);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSearch.Location = new System.Drawing.Point(74, 16);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
+            this.textBoxSearch.Size = new System.Drawing.Size(96, 20);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
@@ -499,10 +451,9 @@
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(12, 22);
-            this.labelSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelSearch.Location = new System.Drawing.Point(9, 18);
             this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(78, 19);
+            this.labelSearch.Size = new System.Drawing.Size(66, 13);
             this.labelSearch.TabIndex = 1;
             this.labelSearch.Text = "Recherche :";
             // 
@@ -538,8 +489,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridEmprunts.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridEmprunts.Location = new System.Drawing.Point(-1, 58);
-            this.dataGridEmprunts.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridEmprunts.Location = new System.Drawing.Point(-1, 47);
             this.dataGridEmprunts.MultiSelect = false;
             this.dataGridEmprunts.Name = "dataGridEmprunts";
             this.dataGridEmprunts.ReadOnly = true;
@@ -554,7 +504,7 @@
             this.dataGridEmprunts.RowHeadersVisible = false;
             this.dataGridEmprunts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridEmprunts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridEmprunts.Size = new System.Drawing.Size(549, 288);
+            this.dataGridEmprunts.Size = new System.Drawing.Size(412, 234);
             this.dataGridEmprunts.TabIndex = 0;
             this.dataGridEmprunts.Click += new System.EventHandler(this.dataGridEmprunts_Click);
             this.dataGridEmprunts.DoubleClick += new System.EventHandler(this.dataGridEmprunts_DoubleClick);
@@ -595,9 +545,20 @@
             this.dateRetour.ReadOnly = true;
             this.dateRetour.Width = 105;
             // 
+            // pictureExport
+            // 
+            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
+            this.pictureExport.Location = new System.Drawing.Point(382, 6);
+            this.pictureExport.Name = "pictureExport";
+            this.pictureExport.Size = new System.Drawing.Size(25, 21);
+            this.pictureExport.TabIndex = 50;
+            this.pictureExport.TabStop = false;
+            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
+            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
+            // 
             // panEmprunt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelFiltres);
@@ -607,9 +568,8 @@
             this.Controls.Add(this.labelListEmprunt);
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableUsers);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "panEmprunt";
-            this.Size = new System.Drawing.Size(912, 551);
+            this.Size = new System.Drawing.Size(684, 448);
             this.panFiltres.ResumeLayout(false);
             this.panFiltres.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
@@ -618,6 +578,7 @@
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmprunts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -665,6 +626,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
-        private System.Windows.Forms.Button buttonExport;
+        private System.Windows.Forms.PictureBox pictureExport;
     }
 }

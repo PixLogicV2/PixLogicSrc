@@ -252,55 +252,24 @@ namespace PixLogic
             wMail.ShowDialog();
         }
 
-        private void buttonExport_Click(object sender, EventArgs e)
-        {
-
-            //Creating iTextSharp Table from the DataTable data
-            PdfPTable pdfTable = new PdfPTable(dataGridEmprunts.ColumnCount);
-            pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 30;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdfTable.DefaultCell.BorderWidth = 1;
-
-            //Adding Header row
-            foreach (DataGridViewColumn column in dataGridEmprunts.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                pdfTable.AddCell(cell);
-            }
-
-            //Adding DataRow
-            foreach (DataGridViewRow row in dataGridEmprunts.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    pdfTable.AddCell(cell.Value.ToString());
-                }
-            }
-
-            //Exporting to PDF
-            string folderPath = "C:\\PDFs\\";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            using (FileStream stream = new FileStream(folderPath + "ListeDesEmprunts" + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".pdf", FileMode.Create))
-            {
-                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
-                pdfDoc.Add(pdfTable);
-                pdfDoc.Close();
-                stream.Close();
-            }
-        }
-
+       
         private void dataGridEmprunts_KeyUp_1(object sender, KeyEventArgs e)
         {
             if (dataGridEmprunts.RowCount > 0)
                 setNewsEmprunts();
         }
-        
+
+        private void pictureExport_Click(object sender, EventArgs e)
+        {
+            WindowExport export = new WindowExport(dataGridEmprunts);
+            export.ShowDialog();
+        }
+
+        private void pictureExport_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureExport, "Exporter la liste.");
+            pictureExport.Cursor = Cursors.Hand;
+        }
     }
 }

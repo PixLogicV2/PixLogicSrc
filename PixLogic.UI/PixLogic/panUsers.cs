@@ -127,5 +127,18 @@ namespace PixLogic
             textBoxSearch.Text = "";
             setTableUsers(database.GetAllUsers());
         }
+
+        private void pictureExport_Click(object sender, EventArgs e)
+        {
+            WindowExport export = new WindowExport(dataGridUsers);
+            export.ShowDialog();
+        }
+
+        private void pictureExport_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureExport, "Exporter la liste.");
+            pictureExport.Cursor = Cursors.Hand;
+        }
     }
 }
