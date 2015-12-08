@@ -208,14 +208,18 @@ namespace PixLogic
 
         private void addingItemInPack(string itemName)
         {
-            string packName = comboBoxPack.SelectedItem.ToString();
-            if (!Helper.IsInListBox(itemName, listBoxItem))
+            if (comboBoxPack.Items.Count > 0)
             {
-                database.AddItemToPack(itemName, packName);
-                setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
+                string packName = comboBoxPack.SelectedItem.ToString();
+                if (!Helper.IsInListBox(itemName, listBoxItem))
+                {
+                    database.AddItemToPack(itemName, packName);
+                    setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
 
-                checkButtonRemoveItem(listBoxItem.Items.Count - 1);
+                    checkButtonRemoveItem(listBoxItem.Items.Count - 1);
+                }
             }
+            
         }
         
 
@@ -357,9 +361,17 @@ namespace PixLogic
 
         }
 
-        private void comboBoxCategorie_MouseDown(object sender, MouseEventArgs e)
+        private void pictureExport_Click(object sender, EventArgs e)
         {
-            
+            WindowExport export = new WindowExport(dataGridItem);
+            export.ShowDialog();
+        }
+
+        private void pictureExport_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureExport, "Exporter la liste.");
+            pictureExport.Cursor = Cursors.Hand;
         }
     }
 }
