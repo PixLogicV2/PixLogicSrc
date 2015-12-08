@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
             this.valCategorie = new System.Windows.Forms.Label();
@@ -65,7 +65,6 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
-            this.buttonExportPdf = new System.Windows.Forms.Button();
             this.pictureExport = new System.Windows.Forms.PictureBox();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
@@ -270,8 +269,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -385,7 +384,7 @@
             // 
             this.buttonRemoveItemInPack.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonRemoveItemInPack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRemoveItemInPack.Location = new System.Drawing.Point(572, 299);
+            this.buttonRemoveItemInPack.Location = new System.Drawing.Point(566, 273);
             this.buttonRemoveItemInPack.Name = "buttonRemoveItemInPack";
             this.buttonRemoveItemInPack.Size = new System.Drawing.Size(75, 30);
             this.buttonRemoveItemInPack.TabIndex = 37;
@@ -474,24 +473,10 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
-            // buttonExportPdf
-            // 
-            this.buttonExportPdf.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportPdf.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportPdf.Image")));
-            this.buttonExportPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExportPdf.Location = new System.Drawing.Point(212, 347);
-            this.buttonExportPdf.Name = "buttonExportPdf";
-            this.buttonExportPdf.Size = new System.Drawing.Size(78, 48);
-            this.buttonExportPdf.TabIndex = 44;
-            this.buttonExportPdf.Text = "Exporter PDF";
-            this.buttonExportPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExportPdf.UseVisualStyleBackColor = true;
-            this.buttonExportPdf.Click += new System.EventHandler(this.buttonExportPdf_Click);
-            // 
             // pictureExport
             // 
             this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
-            this.pictureExport.Location = new System.Drawing.Point(481, 3);
+            this.pictureExport.Location = new System.Drawing.Point(451, 3);
             this.pictureExport.Name = "pictureExport";
             this.pictureExport.Size = new System.Drawing.Size(25, 21);
             this.pictureExport.TabIndex = 50;
@@ -505,7 +490,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.pictureExport);
-            this.Controls.Add(this.buttonExportPdf);
             this.Controls.Add(this.valItemId);
             this.Controls.Add(this.buttonRemoveItemInPack);
             this.Controls.Add(this.pictureBoxItem);
@@ -572,7 +556,6 @@
         public System.Windows.Forms.Label valItemName;
         public System.Windows.Forms.Label valItemId;
         private System.Windows.Forms.PictureBox pictureReserver;
-        private System.Windows.Forms.Button buttonExportPdf;
         private System.Windows.Forms.Label valCategorie;
         private System.Windows.Forms.Label labelCategorie;
         private System.Windows.Forms.Label labelCat;
