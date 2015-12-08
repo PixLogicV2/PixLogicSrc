@@ -246,14 +246,14 @@
             this.dateTimeEnd.Location = new System.Drawing.Point(92, 57);
             this.dateTimeEnd.Name = "dateTimeEnd";
             this.dateTimeEnd.Size = new System.Drawing.Size(179, 20);
-            this.dateTimeEnd.TabIndex = 56;
+            this.dateTimeEnd.TabIndex = 3;
             // 
             // dateTimeBegin
             // 
             this.dateTimeBegin.Location = new System.Drawing.Point(92, 21);
             this.dateTimeBegin.Name = "dateTimeBegin";
             this.dateTimeBegin.Size = new System.Drawing.Size(179, 20);
-            this.dateTimeBegin.TabIndex = 55;
+            this.dateTimeBegin.TabIndex = 2;
             // 
             // label3
             // 
@@ -293,7 +293,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(206, 396);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 13;
+            this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Annuler";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -307,7 +307,7 @@
             this.buttonValid.Location = new System.Drawing.Point(112, 396);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
-            this.buttonValid.TabIndex = 12;
+            this.buttonValid.TabIndex = 4;
             this.buttonValid.Text = "Valider";
             this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonValid.UseVisualStyleBackColor = true;

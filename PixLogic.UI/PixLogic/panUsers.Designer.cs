@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panUsers));
             this.panTableUsers = new System.Windows.Forms.Panel();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
-            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valUserName = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
             this.labelIdentifiant = new System.Windows.Forms.Label();
@@ -56,6 +53,9 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureExport = new System.Windows.Forms.PictureBox();
+            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
@@ -72,7 +72,7 @@
             this.panTableUsers.Controls.Add(this.dataGridUsers);
             this.panTableUsers.Location = new System.Drawing.Point(5, 3);
             this.panTableUsers.Name = "panTableUsers";
-            this.panTableUsers.Size = new System.Drawing.Size(196, 428);
+            this.panTableUsers.Size = new System.Drawing.Size(212, 428);
             this.panTableUsers.TabIndex = 22;
             // 
             // buttonCancelSearch
@@ -107,8 +107,8 @@
             // 
             this.dataGridUsers.AllowUserToAddRows = false;
             this.dataGridUsers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridUsers.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -124,36 +124,15 @@
             this.dataGridUsers.RowHeadersVisible = false;
             this.dataGridUsers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsers.Size = new System.Drawing.Size(194, 379);
+            this.dataGridUsers.Size = new System.Drawing.Size(211, 379);
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.Click += new System.EventHandler(this.dataGridUsers_Click);
-            // 
-            // IdUser
-            // 
-            this.IdUser.HeaderText = "Id";
-            this.IdUser.Name = "IdUser";
-            this.IdUser.ReadOnly = true;
-            this.IdUser.Width = 60;
-            // 
-            // NameUser
-            // 
-            this.NameUser.HeaderText = "Nom";
-            this.NameUser.Name = "NameUser";
-            this.NameUser.ReadOnly = true;
-            this.NameUser.Width = 77;
-            // 
-            // NickNameUser
-            // 
-            this.NickNameUser.HeaderText = "Prenom";
-            this.NickNameUser.Name = "NickNameUser";
-            this.NickNameUser.ReadOnly = true;
-            this.NickNameUser.Width = 60;
             // 
             // valUserName
             // 
             this.valUserName.AutoSize = true;
             this.valUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valUserName.Location = new System.Drawing.Point(207, 1);
+            this.valUserName.Location = new System.Drawing.Point(223, 1);
             this.valUserName.Name = "valUserName";
             this.valUserName.Size = new System.Drawing.Size(46, 21);
             this.valUserName.TabIndex = 24;
@@ -171,7 +150,7 @@
             this.panNews.Controls.Add(this.labelClass);
             this.panNews.Controls.Add(this.labelTel);
             this.panNews.Controls.Add(this.labelMail);
-            this.panNews.Location = new System.Drawing.Point(211, 197);
+            this.panNews.Location = new System.Drawing.Point(227, 197);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(264, 113);
             this.panNews.TabIndex = 27;
@@ -261,7 +240,7 @@
             // 
             this.valUserNickName.AutoSize = true;
             this.valUserNickName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valUserNickName.Location = new System.Drawing.Point(357, 1);
+            this.valUserNickName.Location = new System.Drawing.Point(373, 1);
             this.valUserNickName.Name = "valUserNickName";
             this.valUserNickName.Size = new System.Drawing.Size(67, 21);
             this.valUserNickName.TabIndex = 28;
@@ -282,7 +261,7 @@
             // 
             this.labelNews.AutoSize = true;
             this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(233, 193);
+            this.labelNews.Location = new System.Drawing.Point(249, 193);
             this.labelNews.Name = "labelNews";
             this.labelNews.Size = new System.Drawing.Size(33, 13);
             this.labelNews.TabIndex = 41;
@@ -293,7 +272,7 @@
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDelete.Location = new System.Drawing.Point(382, 403);
+            this.buttonDelete.Location = new System.Drawing.Point(398, 403);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(93, 29);
             this.buttonDelete.TabIndex = 38;
@@ -307,7 +286,7 @@
             this.pictureBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUser.Image")));
             this.pictureBoxUser.InitialImage = null;
-            this.pictureBoxUser.Location = new System.Drawing.Point(211, 25);
+            this.pictureBoxUser.Location = new System.Drawing.Point(227, 25);
             this.pictureBoxUser.Name = "pictureBoxUser";
             this.pictureBoxUser.Size = new System.Drawing.Size(264, 166);
             this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -319,7 +298,7 @@
             this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModify.Location = new System.Drawing.Point(296, 403);
+            this.buttonModify.Location = new System.Drawing.Point(312, 403);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(78, 29);
             this.buttonModify.TabIndex = 30;
@@ -333,7 +312,7 @@
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdd.Location = new System.Drawing.Point(212, 403);
+            this.buttonAdd.Location = new System.Drawing.Point(228, 403);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(78, 29);
             this.buttonAdd.TabIndex = 29;
@@ -345,13 +324,34 @@
             // pictureExport
             // 
             this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
-            this.pictureExport.Location = new System.Drawing.Point(510, 3);
+            this.pictureExport.Location = new System.Drawing.Point(526, 3);
             this.pictureExport.Name = "pictureExport";
             this.pictureExport.Size = new System.Drawing.Size(25, 21);
             this.pictureExport.TabIndex = 50;
             this.pictureExport.TabStop = false;
             this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
             this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
+            // 
+            // IdUser
+            // 
+            this.IdUser.HeaderText = "Id";
+            this.IdUser.Name = "IdUser";
+            this.IdUser.ReadOnly = true;
+            this.IdUser.Width = 60;
+            // 
+            // NameUser
+            // 
+            this.NameUser.HeaderText = "Nom";
+            this.NameUser.Name = "NameUser";
+            this.NameUser.ReadOnly = true;
+            this.NameUser.Width = 75;
+            // 
+            // NickNameUser
+            // 
+            this.NickNameUser.HeaderText = "Prenom";
+            this.NickNameUser.Name = "NickNameUser";
+            this.NickNameUser.ReadOnly = true;
+            this.NickNameUser.Width = 75;
             // 
             // panUsers
             // 
@@ -408,9 +408,9 @@
         private System.Windows.Forms.Label labelListUser;
         private System.Windows.Forms.Label labelNews;
         private System.Windows.Forms.Label labelIdentifiant;
+        private System.Windows.Forms.PictureBox pictureExport;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn NickNameUser;
-        private System.Windows.Forms.PictureBox pictureExport;
     }
 }

@@ -34,8 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelFiltres = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
-            this.pictureReinit = new System.Windows.Forms.PictureBox();
-            this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
             this.checkBoxItem = new System.Windows.Forms.CheckBox();
@@ -55,37 +53,34 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelType = new System.Windows.Forms.Label();
             this.labelNameUser = new System.Windows.Forms.Label();
-            this.labelDateDebutR = new System.Windows.Forms.Label();
-            this.valDebutReservation = new System.Windows.Forms.Label();
-            this.valFinReservation = new System.Windows.Forms.Label();
             this.labelTel = new System.Windows.Forms.Label();
-            this.labelDateRetourR = new System.Windows.Forms.Label();
             this.panTableLogs = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridLogs = new System.Windows.Forms.DataGridView();
             this.labelListEmprunt = new System.Windows.Forms.Label();
-            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDebutReserv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateRetourEff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.labelDebutEmprunt = new System.Windows.Forms.Label();
             this.valDebutEmprunt = new System.Windows.Forms.Label();
             this.valFinEmprunt = new System.Windows.Forms.Label();
             this.labelFinEmprunt = new System.Windows.Forms.Label();
             this.labelRetourEff = new System.Windows.Forms.Label();
             this.valRetour = new System.Windows.Forms.Label();
+            this.pictureReinit = new System.Windows.Forms.PictureBox();
+            this.buttonFilter = new System.Windows.Forms.Button();
+            this.pictureExport = new System.Windows.Forms.PictureBox();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
+            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateRetourEff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panFiltres.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.panNews.SuspendLayout();
             this.panTableLogs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLogs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,30 +114,6 @@
             this.panFiltres.Name = "panFiltres";
             this.panFiltres.Size = new System.Drawing.Size(674, 90);
             this.panFiltres.TabIndex = 60;
-            // 
-            // pictureReinit
-            // 
-            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(635, 3);
-            this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
-            this.pictureReinit.TabIndex = 48;
-            this.pictureReinit.TabStop = false;
-            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
-            // 
-            // buttonFilter
-            // 
-            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
-            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFilter.Location = new System.Drawing.Point(481, 58);
-            this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
-            this.buttonFilter.TabIndex = 47;
-            this.buttonFilter.Text = "Filtrer";
-            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonFilter.UseVisualStyleBackColor = true;
-            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // checkBoxPack
             // 
@@ -282,11 +253,7 @@
             this.panNews.Controls.Add(this.label1);
             this.panNews.Controls.Add(this.labelType);
             this.panNews.Controls.Add(this.labelNameUser);
-            this.panNews.Controls.Add(this.labelDateDebutR);
-            this.panNews.Controls.Add(this.valDebutReservation);
-            this.panNews.Controls.Add(this.valFinReservation);
             this.panNews.Controls.Add(this.labelTel);
-            this.panNews.Controls.Add(this.labelDateRetourR);
             this.panNews.Location = new System.Drawing.Point(3, 343);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(674, 104);
@@ -355,37 +322,6 @@
             this.labelNameUser.TabIndex = 40;
             this.labelNameUser.Text = "Nom utilisateur :";
             // 
-            // labelDateDebutR
-            // 
-            this.labelDateDebutR.AutoSize = true;
-            this.labelDateDebutR.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateDebutR.Location = new System.Drawing.Point(241, 15);
-            this.labelDateDebutR.Name = "labelDateDebutR";
-            this.labelDateDebutR.Size = new System.Drawing.Size(105, 13);
-            this.labelDateDebutR.TabIndex = 6;
-            this.labelDateDebutR.Text = "Début réservation :";
-            // 
-            // valDebutReservation
-            // 
-            this.valDebutReservation.AutoSize = true;
-            this.valDebutReservation.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDebutReservation.Location = new System.Drawing.Point(348, 13);
-            this.valDebutReservation.Name = "valDebutReservation";
-            this.valDebutReservation.Size = new System.Drawing.Size(13, 17);
-            this.valDebutReservation.TabIndex = 39;
-            this.valDebutReservation.Text = "-";
-            this.valDebutReservation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // valFinReservation
-            // 
-            this.valFinReservation.AutoSize = true;
-            this.valFinReservation.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valFinReservation.Location = new System.Drawing.Point(546, 14);
-            this.valFinReservation.Name = "valFinReservation";
-            this.valFinReservation.Size = new System.Drawing.Size(13, 17);
-            this.valFinReservation.TabIndex = 3;
-            this.valFinReservation.Text = "-";
-            // 
             // labelTel
             // 
             this.labelTel.AutoSize = true;
@@ -394,16 +330,6 @@
             this.labelTel.Name = "labelTel";
             this.labelTel.Size = new System.Drawing.Size(0, 13);
             this.labelTel.TabIndex = 1;
-            // 
-            // labelDateRetourR
-            // 
-            this.labelDateRetourR.AutoSize = true;
-            this.labelDateRetourR.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDateRetourR.Location = new System.Drawing.Point(456, 15);
-            this.labelDateRetourR.Name = "labelDateRetourR";
-            this.labelDateRetourR.Size = new System.Drawing.Size(89, 13);
-            this.labelDateRetourR.TabIndex = 0;
-            this.labelDateRetourR.Text = "Fin réservation :";
             // 
             // panTableLogs
             // 
@@ -417,15 +343,6 @@
             this.panTableLogs.Name = "panTableLogs";
             this.panTableLogs.Size = new System.Drawing.Size(674, 229);
             this.panTableLogs.TabIndex = 56;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
             // textBoxSearch
             // 
@@ -467,8 +384,7 @@
             this.IdReservation,
             this.NameUserReservation,
             this.NameReservable,
-            this.dateDebutReserv,
-            this.finReservation,
+            this.typeReservable,
             this.dateEmprunt,
             this.dateRetour,
             this.dateRetourEff});
@@ -511,59 +427,90 @@
             this.labelListEmprunt.TabIndex = 63;
             this.labelListEmprunt.Text = "Liste des emprunts";
             // 
-            // IdReservation
+            // labelDebutEmprunt
             // 
-            this.IdReservation.HeaderText = "Id";
-            this.IdReservation.Name = "IdReservation";
-            this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 30;
+            this.labelDebutEmprunt.AutoSize = true;
+            this.labelDebutEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDebutEmprunt.Location = new System.Drawing.Point(381, 17);
+            this.labelDebutEmprunt.Name = "labelDebutEmprunt";
+            this.labelDebutEmprunt.Size = new System.Drawing.Size(92, 13);
+            this.labelDebutEmprunt.TabIndex = 48;
+            this.labelDebutEmprunt.Text = "Début emprunt :";
             // 
-            // NameUserReservation
+            // valDebutEmprunt
             // 
-            this.NameUserReservation.HeaderText = "Utilisateur";
-            this.NameUserReservation.Name = "NameUserReservation";
-            this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 80;
+            this.valDebutEmprunt.AutoSize = true;
+            this.valDebutEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDebutEmprunt.Location = new System.Drawing.Point(488, 15);
+            this.valDebutEmprunt.Name = "valDebutEmprunt";
+            this.valDebutEmprunt.Size = new System.Drawing.Size(11, 13);
+            this.valDebutEmprunt.TabIndex = 49;
+            this.valDebutEmprunt.Text = "-";
+            this.valDebutEmprunt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // NameReservable
+            // valFinEmprunt
             // 
-            this.NameReservable.HeaderText = "Réservable";
-            this.NameReservable.Name = "NameReservable";
-            this.NameReservable.ReadOnly = true;
-            this.NameReservable.Width = 80;
+            this.valFinEmprunt.AutoSize = true;
+            this.valFinEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valFinEmprunt.Location = new System.Drawing.Point(488, 42);
+            this.valFinEmprunt.Name = "valFinEmprunt";
+            this.valFinEmprunt.Size = new System.Drawing.Size(11, 13);
+            this.valFinEmprunt.TabIndex = 47;
+            this.valFinEmprunt.Text = "-";
             // 
-            // dateDebutReserv
+            // labelFinEmprunt
             // 
-            this.dateDebutReserv.HeaderText = "Début Réservation";
-            this.dateDebutReserv.Name = "dateDebutReserv";
-            this.dateDebutReserv.ReadOnly = true;
-            this.dateDebutReserv.Width = 110;
+            this.labelFinEmprunt.AutoSize = true;
+            this.labelFinEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFinEmprunt.Location = new System.Drawing.Point(381, 43);
+            this.labelFinEmprunt.Name = "labelFinEmprunt";
+            this.labelFinEmprunt.Size = new System.Drawing.Size(76, 13);
+            this.labelFinEmprunt.TabIndex = 46;
+            this.labelFinEmprunt.Text = "Fin emprunt :";
             // 
-            // finReservation
+            // labelRetourEff
             // 
-            this.finReservation.HeaderText = "Fin Réservation";
-            this.finReservation.Name = "finReservation";
-            this.finReservation.ReadOnly = true;
+            this.labelRetourEff.AutoSize = true;
+            this.labelRetourEff.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRetourEff.Location = new System.Drawing.Point(381, 68);
+            this.labelRetourEff.Name = "labelRetourEff";
+            this.labelRetourEff.Size = new System.Drawing.Size(48, 13);
+            this.labelRetourEff.TabIndex = 50;
+            this.labelRetourEff.Text = "Retour :";
             // 
-            // dateEmprunt
+            // valRetour
             // 
-            this.dateEmprunt.HeaderText = "Date Emprunt";
-            this.dateEmprunt.Name = "dateEmprunt";
-            this.dateEmprunt.ReadOnly = true;
-            this.dateEmprunt.Width = 90;
+            this.valRetour.AutoSize = true;
+            this.valRetour.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valRetour.Location = new System.Drawing.Point(488, 68);
+            this.valRetour.Name = "valRetour";
+            this.valRetour.Size = new System.Drawing.Size(11, 13);
+            this.valRetour.TabIndex = 51;
+            this.valRetour.Text = "-";
             // 
-            // dateRetour
+            // pictureReinit
             // 
-            this.dateRetour.HeaderText = "Date Retour";
-            this.dateRetour.Name = "dateRetour";
-            this.dateRetour.ReadOnly = true;
-            this.dateRetour.Width = 90;
+            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
+            this.pictureReinit.Location = new System.Drawing.Point(635, 3);
+            this.pictureReinit.Name = "pictureReinit";
+            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
+            this.pictureReinit.TabIndex = 48;
+            this.pictureReinit.TabStop = false;
+            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
             // 
-            // dateRetourEff
+            // buttonFilter
             // 
-            this.dateRetourEff.HeaderText = "Retour Effectif";
-            this.dateRetourEff.Name = "dateRetourEff";
-            this.dateRetourEff.ReadOnly = true;
+            this.buttonFilter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
+            this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFilter.Location = new System.Drawing.Point(481, 58);
+            this.buttonFilter.Name = "buttonFilter";
+            this.buttonFilter.Size = new System.Drawing.Size(67, 26);
+            this.buttonFilter.TabIndex = 47;
+            this.buttonFilter.Text = "Filtrer";
+            this.buttonFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // pictureExport
             // 
@@ -576,66 +523,61 @@
             this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
             this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
             // 
-            // labelDebutEmprunt
+            // buttonCancelSearch
             // 
-            this.labelDebutEmprunt.AutoSize = true;
-            this.labelDebutEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDebutEmprunt.Location = new System.Drawing.Point(241, 43);
-            this.labelDebutEmprunt.Name = "labelDebutEmprunt";
-            this.labelDebutEmprunt.Size = new System.Drawing.Size(92, 13);
-            this.labelDebutEmprunt.TabIndex = 48;
-            this.labelDebutEmprunt.Text = "Début emprunt :";
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(174, 15);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
             // 
-            // valDebutEmprunt
+            // IdReservation
             // 
-            this.valDebutEmprunt.AutoSize = true;
-            this.valDebutEmprunt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDebutEmprunt.Location = new System.Drawing.Point(348, 41);
-            this.valDebutEmprunt.Name = "valDebutEmprunt";
-            this.valDebutEmprunt.Size = new System.Drawing.Size(13, 17);
-            this.valDebutEmprunt.TabIndex = 49;
-            this.valDebutEmprunt.Text = "-";
-            this.valDebutEmprunt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.IdReservation.HeaderText = "Id";
+            this.IdReservation.Name = "IdReservation";
+            this.IdReservation.ReadOnly = true;
+            this.IdReservation.Width = 40;
             // 
-            // valFinEmprunt
+            // NameUserReservation
             // 
-            this.valFinEmprunt.AutoSize = true;
-            this.valFinEmprunt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valFinEmprunt.Location = new System.Drawing.Point(546, 42);
-            this.valFinEmprunt.Name = "valFinEmprunt";
-            this.valFinEmprunt.Size = new System.Drawing.Size(13, 17);
-            this.valFinEmprunt.TabIndex = 47;
-            this.valFinEmprunt.Text = "-";
+            this.NameUserReservation.HeaderText = "Utilisateur";
+            this.NameUserReservation.Name = "NameUserReservation";
+            this.NameUserReservation.ReadOnly = true;
             // 
-            // labelFinEmprunt
+            // NameReservable
             // 
-            this.labelFinEmprunt.AutoSize = true;
-            this.labelFinEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFinEmprunt.Location = new System.Drawing.Point(456, 43);
-            this.labelFinEmprunt.Name = "labelFinEmprunt";
-            this.labelFinEmprunt.Size = new System.Drawing.Size(76, 13);
-            this.labelFinEmprunt.TabIndex = 46;
-            this.labelFinEmprunt.Text = "Fin emprunt :";
+            this.NameReservable.HeaderText = "Réservable";
+            this.NameReservable.Name = "NameReservable";
+            this.NameReservable.ReadOnly = true;
+            this.NameReservable.Width = 105;
             // 
-            // labelRetourEff
+            // typeReservable
             // 
-            this.labelRetourEff.AutoSize = true;
-            this.labelRetourEff.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRetourEff.Location = new System.Drawing.Point(456, 68);
-            this.labelRetourEff.Name = "labelRetourEff";
-            this.labelRetourEff.Size = new System.Drawing.Size(48, 13);
-            this.labelRetourEff.TabIndex = 50;
-            this.labelRetourEff.Text = "Retour :";
+            this.typeReservable.HeaderText = "Type";
+            this.typeReservable.Name = "typeReservable";
+            this.typeReservable.ReadOnly = true;
             // 
-            // valRetour
+            // dateEmprunt
             // 
-            this.valRetour.AutoSize = true;
-            this.valRetour.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valRetour.Location = new System.Drawing.Point(546, 68);
-            this.valRetour.Name = "valRetour";
-            this.valRetour.Size = new System.Drawing.Size(13, 17);
-            this.valRetour.TabIndex = 51;
-            this.valRetour.Text = "-";
+            this.dateEmprunt.HeaderText = "Date Emprunt";
+            this.dateEmprunt.Name = "dateEmprunt";
+            this.dateEmprunt.ReadOnly = true;
+            this.dateEmprunt.Width = 105;
+            // 
+            // dateRetour
+            // 
+            this.dateRetour.HeaderText = "Date Retour";
+            this.dateRetour.Name = "dateRetour";
+            this.dateRetour.ReadOnly = true;
+            this.dateRetour.Width = 105;
+            // 
+            // dateRetourEff
+            // 
+            this.dateRetourEff.HeaderText = "Retour Effectif";
+            this.dateRetourEff.Name = "dateRetourEff";
+            this.dateRetourEff.ReadOnly = true;
+            this.dateRetourEff.Width = 120;
             // 
             // panLog
             // 
@@ -652,12 +594,12 @@
             this.Size = new System.Drawing.Size(686, 450);
             this.panFiltres.ResumeLayout(false);
             this.panFiltres.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
             this.panTableLogs.ResumeLayout(false);
             this.panTableLogs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLogs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -689,25 +631,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.Label labelNameUser;
-        private System.Windows.Forms.Label labelDateDebutR;
-        public System.Windows.Forms.Label valDebutReservation;
-        private System.Windows.Forms.Label valFinReservation;
         private System.Windows.Forms.Label labelTel;
-        private System.Windows.Forms.Label labelDateRetourR;
         private System.Windows.Forms.Panel panTableLogs;
         private System.Windows.Forms.Button buttonCancelSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridLogs;
         private System.Windows.Forms.Label labelListEmprunt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdReservation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDebutReserv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn finReservation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateRetourEff;
         private System.Windows.Forms.PictureBox pictureExport;
         private System.Windows.Forms.Label labelRetourEff;
         private System.Windows.Forms.Label labelDebutEmprunt;
@@ -715,5 +645,12 @@
         private System.Windows.Forms.Label valFinEmprunt;
         private System.Windows.Forms.Label labelFinEmprunt;
         private System.Windows.Forms.Label valRetour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdReservation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeReservable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateRetourEff;
     }
 }

@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowItem));
             this.panelGeneral = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.labelCategorie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelObligatoire = new System.Windows.Forms.Label();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonValid = new System.Windows.Forms.Button();
-            this.pictureBoxSelection = new System.Windows.Forms.PictureBox();
             this.valDescription = new System.Windows.Forms.TextBox();
             this.labelDescrip = new System.Windows.Forms.Label();
             this.valQuantity = new System.Windows.Forms.TextBox();
@@ -44,10 +44,11 @@
             this.labelPrice = new System.Windows.Forms.Label();
             this.valName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
+            this.buttonAddCategorie = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonValid = new System.Windows.Forms.Button();
+            this.pictureBoxSelection = new System.Windows.Forms.PictureBox();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
-            this.labelCategorie = new System.Windows.Forms.Label();
-            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panelGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
@@ -55,6 +56,7 @@
             // 
             // panelGeneral
             // 
+            this.panelGeneral.Controls.Add(this.buttonAddCategorie);
             this.panelGeneral.Controls.Add(this.label3);
             this.panelGeneral.Controls.Add(this.comboBoxCategorie);
             this.panelGeneral.Controls.Add(this.labelCategorie);
@@ -76,8 +78,41 @@
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 0);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(284, 481);
+            this.panelGeneral.Size = new System.Drawing.Size(302, 481);
             this.panelGeneral.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(261, 302);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "*";
+            // 
+            // comboBoxCategorie
+            // 
+            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.ItemHeight = 13;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(99, 302);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxCategorie.Sorted = true;
+            this.comboBoxCategorie.TabIndex = 5;
+            this.comboBoxCategorie.Click += new System.EventHandler(this.comboBoxCategorie_Click);
+            // 
+            // labelCategorie
+            // 
+            this.labelCategorie.AutoSize = true;
+            this.labelCategorie.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCategorie.Location = new System.Drawing.Point(12, 302);
+            this.labelCategorie.Name = "labelCategorie";
+            this.labelCategorie.Size = new System.Drawing.Size(73, 17);
+            this.labelCategorie.TabIndex = 15;
+            this.labelCategorie.Text = "Catégorie :";
             // 
             // label2
             // 
@@ -112,46 +147,6 @@
             this.labelObligatoire.TabIndex = 12;
             this.labelObligatoire.Text = "*";
             // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(145, 448);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 11;
-            this.buttonCancel.Text = "Annuler";
-            this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // buttonValid
-            // 
-            this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
-            this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(51, 448);
-            this.buttonValid.Name = "buttonValid";
-            this.buttonValid.Size = new System.Drawing.Size(84, 27);
-            this.buttonValid.TabIndex = 10;
-            this.buttonValid.Text = "Valider";
-            this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonValid.UseVisualStyleBackColor = true;
-            this.buttonValid.Click += new System.EventHandler(this.buttonValid_Click);
-            // 
-            // pictureBoxSelection
-            // 
-            this.pictureBoxSelection.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pictureBoxSelection.Image = global::PixLogic.Properties.Resources.enregistrer_icon;
-            this.pictureBoxSelection.Location = new System.Drawing.Point(222, 154);
-            this.pictureBoxSelection.Name = "pictureBoxSelection";
-            this.pictureBoxSelection.Size = new System.Drawing.Size(32, 24);
-            this.pictureBoxSelection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxSelection.TabIndex = 9;
-            this.pictureBoxSelection.TabStop = false;
-            this.pictureBoxSelection.Click += new System.EventHandler(this.pictureBoxSelection_Click);
-            // 
             // valDescription
             // 
             this.valDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,7 +155,7 @@
             this.valDescription.Name = "valDescription";
             this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.valDescription.Size = new System.Drawing.Size(156, 98);
-            this.valDescription.TabIndex = 8;
+            this.valDescription.TabIndex = 7;
             this.valDescription.WordWrap = false;
             // 
             // labelDescrip
@@ -179,7 +174,7 @@
             this.valQuantity.Location = new System.Drawing.Point(99, 267);
             this.valQuantity.Name = "valQuantity";
             this.valQuantity.Size = new System.Drawing.Size(156, 25);
-            this.valQuantity.TabIndex = 6;
+            this.valQuantity.TabIndex = 4;
             // 
             // labelQuantity
             // 
@@ -197,7 +192,7 @@
             this.valPrice.Location = new System.Drawing.Point(99, 236);
             this.valPrice.Name = "valPrice";
             this.valPrice.Size = new System.Drawing.Size(156, 25);
-            this.valPrice.TabIndex = 4;
+            this.valPrice.TabIndex = 3;
             // 
             // labelPrice
             // 
@@ -227,6 +222,57 @@
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Nom :";
             // 
+            // buttonAddCategorie
+            // 
+            this.buttonAddCategorie.Image = global::PixLogic.Properties.Resources.categorie_racAdd;
+            this.buttonAddCategorie.Location = new System.Drawing.Point(274, 302);
+            this.buttonAddCategorie.Name = "buttonAddCategorie";
+            this.buttonAddCategorie.Size = new System.Drawing.Size(22, 21);
+            this.buttonAddCategorie.TabIndex = 6;
+            this.buttonAddCategorie.UseVisualStyleBackColor = true;
+            this.buttonAddCategorie.Click += new System.EventHandler(this.buttonAddCategorie_Click);
+            this.buttonAddCategorie.MouseEnter += new System.EventHandler(this.buttonAddCategorie_MouseEnter);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCancel.Location = new System.Drawing.Point(181, 448);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(84, 27);
+            this.buttonCancel.TabIndex = 9;
+            this.buttonCancel.Text = "Annuler";
+            this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonValid
+            // 
+            this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
+            this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonValid.Location = new System.Drawing.Point(87, 448);
+            this.buttonValid.Name = "buttonValid";
+            this.buttonValid.Size = new System.Drawing.Size(84, 27);
+            this.buttonValid.TabIndex = 8;
+            this.buttonValid.Text = "Valider";
+            this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonValid.UseVisualStyleBackColor = true;
+            this.buttonValid.Click += new System.EventHandler(this.buttonValid_Click);
+            // 
+            // pictureBoxSelection
+            // 
+            this.pictureBoxSelection.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBoxSelection.Image = global::PixLogic.Properties.Resources.enregistrer_icon;
+            this.pictureBoxSelection.Location = new System.Drawing.Point(222, 154);
+            this.pictureBoxSelection.Name = "pictureBoxSelection";
+            this.pictureBoxSelection.Size = new System.Drawing.Size(32, 24);
+            this.pictureBoxSelection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxSelection.TabIndex = 9;
+            this.pictureBoxSelection.TabStop = false;
+            this.pictureBoxSelection.Click += new System.EventHandler(this.pictureBoxSelection_Click);
+            // 
             // pictureBoxItem
             // 
             this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -236,43 +282,11 @@
             this.pictureBoxItem.TabIndex = 0;
             this.pictureBoxItem.TabStop = false;
             // 
-            // labelCategorie
-            // 
-            this.labelCategorie.AutoSize = true;
-            this.labelCategorie.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategorie.Location = new System.Drawing.Point(12, 302);
-            this.labelCategorie.Name = "labelCategorie";
-            this.labelCategorie.Size = new System.Drawing.Size(73, 17);
-            this.labelCategorie.TabIndex = 15;
-            this.labelCategorie.Text = "Catégorie :";
-            // 
-            // comboBoxCategorie
-            // 
-            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCategorie.FormattingEnabled = true;
-            this.comboBoxCategorie.ItemHeight = 13;
-            this.comboBoxCategorie.Location = new System.Drawing.Point(99, 302);
-            this.comboBoxCategorie.Name = "comboBoxCategorie";
-            this.comboBoxCategorie.Size = new System.Drawing.Size(156, 21);
-            this.comboBoxCategorie.Sorted = true;
-            this.comboBoxCategorie.TabIndex = 32;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(261, 302);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "*";
-            // 
             // WindowItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 481);
+            this.ClientSize = new System.Drawing.Size(302, 481);
             this.Controls.Add(this.panelGeneral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -309,5 +323,6 @@
         private System.Windows.Forms.Label labelCategorie;
         private System.Windows.Forms.ComboBox comboBoxCategorie;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonAddCategorie;
     }
 }

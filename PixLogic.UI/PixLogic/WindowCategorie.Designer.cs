@@ -49,7 +49,7 @@
             this.valDescription.Name = "valDescription";
             this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.valDescription.Size = new System.Drawing.Size(156, 98);
-            this.valDescription.TabIndex = 12;
+            this.valDescription.TabIndex = 4;
             this.valDescription.WordWrap = false;
             // 
             // labelDescrip
@@ -68,7 +68,7 @@
             this.valLibelle.Location = new System.Drawing.Point(123, 20);
             this.valLibelle.Name = "valLibelle";
             this.valLibelle.Size = new System.Drawing.Size(156, 25);
-            this.valLibelle.TabIndex = 10;
+            this.valLibelle.TabIndex = 2;
             // 
             // labelLibelle
             // 
@@ -99,7 +99,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(158, 218);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 15;
+            this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Annuler";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@
             this.buttonValid.Location = new System.Drawing.Point(64, 218);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
-            this.buttonValid.TabIndex = 14;
+            this.buttonValid.TabIndex = 5;
             this.buttonValid.Text = "Valider";
             this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonValid.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@
             this.valLevel.Location = new System.Drawing.Point(123, 51);
             this.valLevel.Name = "valLevel";
             this.valLevel.Size = new System.Drawing.Size(156, 25);
-            this.valLevel.TabIndex = 17;
+            this.valLevel.TabIndex = 3;
             // 
             // labelAccessLevel
             // 

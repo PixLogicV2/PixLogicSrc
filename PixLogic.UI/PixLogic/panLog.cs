@@ -17,6 +17,7 @@ namespace PixLogic
     public partial class panLog : UserControl
     {
         Database database;
+
         public panLog()
         {
             InitializeComponent();
@@ -74,8 +75,10 @@ namespace PixLogic
             dataGridLogs.Rows.Clear();
             foreach (Reservation reser in list)
             {
+                string typ = reser.isPack ? Helper.PACK : Helper.ITEM;
                 dataGridLogs.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name,
-                    reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"));
+                    typ, reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"),
+                     reser.dateRendu.Value.ToString("d"));
 
                 if (reser.endDateEmprunt.Value.Date < DateTime.Today.Date)
                     dataGridLogs.Rows[dataGridLogs.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
@@ -92,77 +95,31 @@ namespace PixLogic
             }
 
             setNewsLogs();
-            checkEnableButton();
         }
         private void setNewsLogs()
         {
             if (dataGridLogs.RowCount > 0)
             {
                 Reservation reservation = database.GetReservationById(Convert.ToInt32(dataGridLogs.CurrentRow.Cells[0].Value));
-                valFinReservation.Text = ((DateTime)reservation.endDateEmprunt).ToString("D");
-                valDebutReservation.Text = ((DateTime)reservation.beginDateEmprunt).ToString("D");
-                valNomUser.Text = reservation.user.name;
+
+                valDebutEmprunt.Text = ((DateTime)reservation.beginDateEmprunt).ToString("D");
+                valFinEmprunt.Text = ((DateTime)reservation.endDateEmprunt).ToString("D");
+                valRetour.Text = ((DateTime)reservation.dateRendu).ToString("D"); ;
+
+                valNomUser.Text = reservation.user.name +" "+reservation.user.nickname;
                 valNomReservable.Text = reservation.reservable.name;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
             }
             else
             {
-                valFinReservation.Text = "-";
-                valDebutReservation.Text = "-";
+                valDebutEmprunt.Text = "-";
+                valFinEmprunt.Text = "-";
+                valRetour.Text = "-";
                 valNomUser.Text = "-";
                 valNomReservable.Text = "-";
                 valType.Text = "-";
             }
 
-        }
-        private void checkEnableButton()
-        {
-            if (dataGridLogs.RowCount > 0)
-            {
-                int idReservation = int.Parse(dataGridLogs.CurrentRow.Cells[0].Value.ToString());
-                Reservation reservation = database.GetReservationById(idReservation);
-
-                /*if(reservation.dateRendu.Value.ToString().Equals(""))
-                    buttonRendre.Enabled = true;
-                else
-                    buttonRendre.Enabled = false;*/
-            }
-        }
-
-        private void buttonExport_Click(object sender, EventArgs e)
-        {
-            PdfPTable pdfTable = new PdfPTable(dataGridLogs.ColumnCount);
-            pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 30;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdfTable.DefaultCell.BorderWidth = 1;
-            foreach (DataGridViewColumn column in dataGridLogs.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                pdfTable.AddCell(cell);
-            }
-            foreach (DataGridViewRow row in dataGridLogs.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    pdfTable.AddCell(cell.Value.ToString());
-                }
-            }
-            string folderPath = "C:\\PDFs\\";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            using (FileStream stream = new FileStream(folderPath + "ListeDesLogs" + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".pdf", FileMode.Create))
-            {
-                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
-                pdfDoc.Add(pdfTable);
-                pdfDoc.Close();
-                stream.Close();
-            }
         }
 
         private void dataGridLogs_Click(object sender, EventArgs e)

@@ -56,14 +56,12 @@ namespace PixLogic
             {
                 buttonModify.Enabled = true;
                 buttonDelete.Enabled = true;
-                buttonTransfert.Enabled = true;
                 pictureReserver.Enabled = true;
             }
             else
             {
                 buttonModify.Enabled = false;
                 buttonDelete.Enabled = false;
-                buttonTransfert.Enabled = false;
                 pictureReserver.Enabled = false;
             }
         }
@@ -73,6 +71,7 @@ namespace PixLogic
             if (dataGridItem.RowCount > 0)
             {
                 listBoxItem.AllowDrop = true;
+                buttonTransfert.Enabled = true;
                 valItemName.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
                 valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
                 valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
@@ -89,6 +88,7 @@ namespace PixLogic
             else
             {
                 listBoxItem.AllowDrop = false;
+                buttonTransfert.Enabled = false;
                 valItemName.Text = "-";
                 valQuantity.Text = "-";
                 valPrice.Text = "-";
@@ -336,6 +336,11 @@ namespace PixLogic
             ToolTip info = new ToolTip();
             info.SetToolTip(pictureExport, "Exporter la liste.");
             pictureExport.Cursor = Cursors.Hand;
+        }
+
+        private void comboBoxCategorie_Click(object sender, EventArgs e)
+        {
+            setComboBoxCategorie();
         }
     }
 }

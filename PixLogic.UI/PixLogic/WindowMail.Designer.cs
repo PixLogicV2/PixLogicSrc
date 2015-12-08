@@ -189,7 +189,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox1.Size = new System.Drawing.Size(296, 150);
-            this.textBox1.TabIndex = 50;
+            this.textBox1.TabIndex = 3;
             this.textBox1.WordWrap = false;
             // 
             // labelMessage
@@ -208,7 +208,7 @@
             this.valSubject.Location = new System.Drawing.Point(91, 24);
             this.valSubject.Name = "valSubject";
             this.valSubject.Size = new System.Drawing.Size(296, 25);
-            this.valSubject.TabIndex = 48;
+            this.valSubject.TabIndex = 2;
             // 
             // labelSubject
             // 
@@ -238,7 +238,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(220, 394);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 60;
+            this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Annuler";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -252,7 +252,7 @@
             this.buttonSend.Location = new System.Drawing.Point(126, 394);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(84, 27);
-            this.buttonSend.TabIndex = 59;
+            this.buttonSend.TabIndex = 4;
             this.buttonSend.Text = "Envoyer";
             this.buttonSend.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonSend.UseVisualStyleBackColor = true;
