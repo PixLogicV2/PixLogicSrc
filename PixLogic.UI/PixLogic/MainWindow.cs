@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using PixLogic.DAL;
+
 namespace PixLogic
 {
 

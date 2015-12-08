@@ -246,7 +246,8 @@ namespace PixLogic
       
         private void pictureExport_Click(object sender, EventArgs e)
         {
-            WindowExport export = new WindowExport(dataGridReservations);
+            string title = "Liste des réservations";
+            WindowExport export = new WindowExport(dataGridReservations, title);
             export.ShowDialog();
         }
 

@@ -327,7 +327,8 @@ namespace PixLogic
 
         private void pictureExport_Click(object sender, EventArgs e)
         {
-            WindowExport export = new WindowExport(dataGridItem);
+            string title = "Liste des matériels";
+            WindowExport export = new WindowExport(dataGridItem, title);
             export.ShowDialog();
         }
 

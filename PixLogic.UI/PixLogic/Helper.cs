@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CsvHelper;
 
 
 namespace PixLogic
@@ -308,36 +309,42 @@ namespace PixLogic
 
         }
 
-        public static bool exportPDF(DataGridView table, string path)
+        public static bool exportPDF(DataGridView table, string path, string title)
         {
-            //Creating iTextSharp Table from the DataTable data
             PdfPTable pdfTable = new PdfPTable(table.ColumnCount);
             pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 30;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.WidthPercentage = 90;
+            pdfTable.HorizontalAlignment = 1;
             pdfTable.DefaultCell.BorderWidth = 1;
+
+            //Adding title of Pdf
+            PdfPCell cellTitle = new PdfPCell(new Phrase(title.ToUpper()));
+            cellTitle.Colspan = table.ColumnCount;
+            cellTitle.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            cellTitle.PaddingBottom = 10;
+            pdfTable.AddCell(cellTitle);
+
             //Adding Header row
             foreach (DataGridViewColumn column in table.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                //cell.BackgroundColor = new iTextSharp.text.BaseColor(Color.Violet);
                 pdfTable.AddCell(cell);
             }
             //Adding DataRow
             foreach (DataGridViewRow row in table.Rows)
             {
-                foreach (DataGridViewCell cell in row.Cells)
+                foreach (DataGridViewCell c in row.Cells)
                 {
-                    pdfTable.AddCell(cell.Value.ToString());
+                    pdfTable.AddCell(c.Value.ToString());
                 }
             }
-
             try
             {
                 //Exporting to PDF
                 using (FileStream stream = new FileStream(path, FileMode.Create))
                 {
-                    Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
                     PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
                     pdfDoc.Add(pdfTable);
@@ -345,10 +352,12 @@ namespace PixLogic
                     stream.Close();
                 }
             }
-            catch(Exception e) {
+            catch (Exception e)
+            {
                 MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
             return true;
         }
         public static bool exportCSV(DataGridView table, string path)
@@ -357,24 +366,25 @@ namespace PixLogic
             {
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, false, Encoding.Unicode))
                 {
-                    string line = "";
+                    //string line = "";
+                    var csv = new CsvWriter(file);
                     foreach (DataGridViewColumn col in table.Columns)
                     {
-                        line += col.HeaderText.ToString() + ";";
+                        csv.WriteField(col.HeaderText.ToString());
                     }
-                    file.WriteLine(line);
+                    csv.NextRecord();
 
                     foreach (DataGridViewRow row in table.Rows)
                     {
-                        line = "";
+                        //line = "";
                         foreach (DataGridViewCell cell in row.Cells)
                         {
-                            line += cell.Value.ToString() + ";";
+                            csv.WriteField(cell.Value.ToString());
                         }
-
-                        file.WriteLine(line);
+                        csv.NextRecord();
                     }
                 }
+
             }
             catch(Exception e)
             {

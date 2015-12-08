@@ -130,7 +130,8 @@ namespace PixLogic
 
         private void pictureExport_Click(object sender, EventArgs e)
         {
-            WindowExport export = new WindowExport(dataGridUsers);
+            string title = "Liste des utilisateurs";
+            WindowExport export = new WindowExport(dataGridUsers, title);
             export.ShowDialog();
         }
 

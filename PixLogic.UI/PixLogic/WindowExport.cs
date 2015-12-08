@@ -17,12 +17,13 @@ namespace PixLogic
     public partial class WindowExport : Form
     {
         private DataGridView table;
-
-        public WindowExport(DataGridView t)
+        private string title;
+        public WindowExport(DataGridView ta, string ti)
         {
             InitializeComponent();
             buttonExporter.Enabled = false;
-            table = t;
+            table = ta;
+            title = ti;
         }
 
         private void panPdf_MouseEnter(object sender, EventArgs e)
@@ -68,7 +69,7 @@ namespace PixLogic
         {
             string chemin = valChemin.Text;
             if (chemin.EndsWith(".pdf") || chemin.EndsWith(".PDF"))
-                Helper.exportPDF(table, valChemin.Text);
+                Helper.exportPDF(table, valChemin.Text, title);
             else
                 Helper.exportCSV(table, valChemin.Text);
 

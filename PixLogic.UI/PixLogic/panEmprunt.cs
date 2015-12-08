@@ -261,7 +261,8 @@ namespace PixLogic
 
         private void pictureExport_Click(object sender, EventArgs e)
         {
-            WindowExport export = new WindowExport(dataGridEmprunts);
+            string title = "Liste des emprunts";
+            WindowExport export = new WindowExport(dataGridEmprunts, title);
             export.ShowDialog();
         }
 

@@ -201,7 +201,8 @@ namespace PixLogic
 
         private void pictureExport_Click(object sender, EventArgs e)
         {
-            WindowExport export = new WindowExport(dataGridLogs);
+            string title = "Historique";
+            WindowExport export = new WindowExport(dataGridLogs, title);
             export.ShowDialog();
         }
 

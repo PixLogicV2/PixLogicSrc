@@ -30,21 +30,21 @@
         {
             this.panPdf = new System.Windows.Forms.Panel();
             this.labelExporterPDF = new System.Windows.Forms.Label();
-            this.pictureBoxPdf = new System.Windows.Forms.PictureBox();
             this.panCsv = new System.Windows.Forms.Panel();
             this.labelExportCsv = new System.Windows.Forms.Label();
-            this.pictureBoxCSV = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.valChemin = new System.Windows.Forms.TextBox();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonExporter = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.checkBoxOpen = new System.Windows.Forms.CheckBox();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonExporter = new System.Windows.Forms.Button();
+            this.pictureBoxCSV = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPdf = new System.Windows.Forms.PictureBox();
             this.panPdf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPdf)).BeginInit();
             this.panCsv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCSV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPdf)).BeginInit();
             this.SuspendLayout();
             // 
             // panPdf
@@ -72,16 +72,6 @@
             this.labelExporterPDF.Text = "Exporter en PDF";
             this.labelExporterPDF.Click += new System.EventHandler(this.labelExporterPDF_Click);
             // 
-            // pictureBoxPdf
-            // 
-            this.pictureBoxPdf.Image = global::PixLogic.Properties.Resources.pdf_export;
-            this.pictureBoxPdf.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBoxPdf.Name = "pictureBoxPdf";
-            this.pictureBoxPdf.Size = new System.Drawing.Size(57, 67);
-            this.pictureBoxPdf.TabIndex = 0;
-            this.pictureBoxPdf.TabStop = false;
-            this.pictureBoxPdf.Click += new System.EventHandler(this.pictureBoxPdf_Click);
-            // 
             // panCsv
             // 
             this.panCsv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(174)))), ((int)(((byte)(74)))));
@@ -106,16 +96,6 @@
             this.labelExportCsv.TabIndex = 1;
             this.labelExportCsv.Text = "Exporter en CSV";
             this.labelExportCsv.Click += new System.EventHandler(this.labelExportCsv_Click);
-            // 
-            // pictureBoxCSV
-            // 
-            this.pictureBoxCSV.Image = global::PixLogic.Properties.Resources.csv_export;
-            this.pictureBoxCSV.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBoxCSV.Name = "pictureBoxCSV";
-            this.pictureBoxCSV.Size = new System.Drawing.Size(57, 67);
-            this.pictureBoxCSV.TabIndex = 0;
-            this.pictureBoxCSV.TabStop = false;
-            this.pictureBoxCSV.Click += new System.EventHandler(this.pictureBoxCSV_Click);
             // 
             // label2
             // 
@@ -147,6 +127,17 @@
             this.valChemin.Size = new System.Drawing.Size(240, 20);
             this.valChemin.TabIndex = 4;
             // 
+            // checkBoxOpen
+            // 
+            this.checkBoxOpen.AutoSize = true;
+            this.checkBoxOpen.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxOpen.Location = new System.Drawing.Point(192, 247);
+            this.checkBoxOpen.Name = "checkBoxOpen";
+            this.checkBoxOpen.Size = new System.Drawing.Size(123, 17);
+            this.checkBoxOpen.TabIndex = 14;
+            this.checkBoxOpen.Text = "Ouvrir le document";
+            this.checkBoxOpen.UseVisualStyleBackColor = true;
+            // 
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,16 +166,25 @@
             this.buttonExporter.UseVisualStyleBackColor = true;
             this.buttonExporter.Click += new System.EventHandler(this.buttonValid_Click);
             // 
-            // checkBoxOpen
+            // pictureBoxCSV
             // 
-            this.checkBoxOpen.AutoSize = true;
-            this.checkBoxOpen.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxOpen.Location = new System.Drawing.Point(192, 247);
-            this.checkBoxOpen.Name = "checkBoxOpen";
-            this.checkBoxOpen.Size = new System.Drawing.Size(123, 17);
-            this.checkBoxOpen.TabIndex = 14;
-            this.checkBoxOpen.Text = "Ouvrir le document";
-            this.checkBoxOpen.UseVisualStyleBackColor = true;
+            this.pictureBoxCSV.Image = global::PixLogic.Properties.Resources.csv_export;
+            this.pictureBoxCSV.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBoxCSV.Name = "pictureBoxCSV";
+            this.pictureBoxCSV.Size = new System.Drawing.Size(57, 67);
+            this.pictureBoxCSV.TabIndex = 0;
+            this.pictureBoxCSV.TabStop = false;
+            this.pictureBoxCSV.Click += new System.EventHandler(this.pictureBoxCSV_Click);
+            // 
+            // pictureBoxPdf
+            // 
+            this.pictureBoxPdf.Image = global::PixLogic.Properties.Resources.pdf_export;
+            this.pictureBoxPdf.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBoxPdf.Name = "pictureBoxPdf";
+            this.pictureBoxPdf.Size = new System.Drawing.Size(57, 67);
+            this.pictureBoxPdf.TabIndex = 0;
+            this.pictureBoxPdf.TabStop = false;
+            this.pictureBoxPdf.Click += new System.EventHandler(this.pictureBoxPdf_Click);
             // 
             // WindowExport
             // 
@@ -206,10 +206,10 @@
             this.Text = "Exporter";
             this.panPdf.ResumeLayout(false);
             this.panPdf.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPdf)).EndInit();
             this.panCsv.ResumeLayout(false);
             this.panCsv.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCSV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPdf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
