@@ -99,16 +99,16 @@ namespace PixLogic
             if (dataGridLogs.RowCount > 0)
             {
                 Reservation reservation = database.GetReservationById(Convert.ToInt32(dataGridLogs.CurrentRow.Cells[0].Value));
-                valDateFin.Text = ((DateTime)reservation.endDateEmprunt).ToString("D");
-                valDateDebut.Text = ((DateTime)reservation.beginDateEmprunt).ToString("D");
+                valFinReservation.Text = ((DateTime)reservation.endDateEmprunt).ToString("D");
+                valDebutReservation.Text = ((DateTime)reservation.beginDateEmprunt).ToString("D");
                 valNomUser.Text = reservation.user.name;
                 valNomReservable.Text = reservation.reservable.name;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
             }
             else
             {
-                valDateFin.Text = "-";
-                valDateDebut.Text = "-";
+                valFinReservation.Text = "-";
+                valDebutReservation.Text = "-";
                 valNomUser.Text = "-";
                 valNomReservable.Text = "-";
                 valType.Text = "-";
@@ -240,6 +240,19 @@ namespace PixLogic
         private void buttonFilter_Click(object sender, EventArgs e)
         {
             filtrer();
+        }
+
+        private void pictureExport_Click(object sender, EventArgs e)
+        {
+            WindowExport export = new WindowExport(dataGridLogs);
+            export.ShowDialog();
+        }
+
+        private void pictureExport_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureExport, "Exporter la liste.");
+            pictureExport.Cursor = Cursors.Hand;
         }
     }
 }
