@@ -236,9 +236,19 @@ namespace PixLogic
             List<Reservation> emprunts = database.GetAllEmpruntsByReservableId(idReservable);
             foreach (Reservation emprunt in emprunts)
             {
-                if(isDispo(true,emprunt, dateDebut, dateFin)== false) return false;
+                if ((emprunt.beginDateEmprunt.Value.Date <= dateDebut.Date
+                    && emprunt.endDateEmprunt.Value.Date >= dateDebut.Date)
+                    ||
+                    (emprunt.beginDateEmprunt.Value.Date <= dateFin.Date
+                    && emprunt.endDateEmprunt.Value.Date >= dateFin.Date))
+                {
+                    if (withMessageBox)
+                        MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             Reservation res = reservations.FirstOrDefault();
+            if(res != null) { 
             if (res.isPack == true)
                 {
                     List<Item> items = database.GetItemsInPack(res.reservable.name);
@@ -251,15 +261,16 @@ namespace PixLogic
                         }
                     }
                 }
-            if (res.isPack == false)
+                if (res.isPack == false)
                 {
                     Item i = database.GetItemById(res.reservable.ReservableId);
                     if (i.pack != null)
                     {
-                    List<Reservation> rese = database.GetAllReservationsByReservableId(i.pack.ReservableId);
-                    foreach (Reservation reservation in rese)
-                    {
-                        if (isDispo(true, reservation, dateDebut, dateFin) == false) return false;
+                        List<Reservation> rese = database.GetAllReservationsByReservableId(i.pack.ReservableId);
+                        foreach (Reservation reservation in rese)
+                        {
+                            if (isDispo(true, reservation, dateDebut, dateFin) == false) return false;
+                        }
                     }
                 }
             }
@@ -368,6 +379,26 @@ namespace PixLogic
             }
             
             return true;
+        }
+        public static bool existReservationUser(bool withMessageBox,int userId)
+        {
+            bool emp = database.ContainReservationByUserId(userId);
+            if (emp==false) return false;
+            else
+            {
+                if (withMessageBox) MessageBox.Show("Cet utilisateur possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+        }
+        public static bool existReservationReservable(bool withMessageBox, int reservableId)
+        {
+            bool emp = database.ContainReservationByReservableId(reservableId);
+            if (emp == false) return false;
+            else
+            {
+                if (withMessageBox) MessageBox.Show("Ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
         }
     }
 }

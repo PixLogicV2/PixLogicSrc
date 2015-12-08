@@ -169,13 +169,12 @@ namespace PixLogic
             else if (radioToday.Checked)
             {
                 debut = DateTime.Today;
-                fin = debut;
-                list = database.GetAllReservationsByDate(debut, fin);
+                list = database.GetAllReservationsByDateDebut(debut);
             }
             else if (radioOfPastSevenDays.Checked)
             {
-                fin = DateTime.Today;
-                debut = fin.AddDays(-7);
+                debut = DateTime.Today;
+                fin = debut.AddDays(7);
                 list = database.GetAllReservationsByDate(debut, fin);
             }
             else if (radioBetween.Checked)

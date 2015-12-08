@@ -223,10 +223,6 @@ namespace PixLogic
                 list = database.GetAllLogsByDate(debut, fin);
 
             }
-
-
-
-
             if ((checkBoxItem.Checked && !checkBoxPack.Checked) || (checkBoxPack.Checked && !checkBoxItem.Checked))
             {
                 if (checkBoxPack.Checked)
