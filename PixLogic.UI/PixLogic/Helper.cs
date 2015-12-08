@@ -400,5 +400,21 @@ namespace PixLogic
                 return true;
             }
         }
+        public static void initBase()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, "user" + i, null);
+            }
+            for (int k = 0; k < 5; k++)
+            {
+                database.AddCategorie("categorie" + k, k, "des" + k);
+            }
+            for (int j = 0; j < 200; j++)
+            {
+                database.AddItem("itemname" + j, "itemdes" + j, true, j, null, "ref" + j, 1);
+                database.AddCategorieToItem("itemname" + j, "categorie1");
+            }
+        }
     }
 }
