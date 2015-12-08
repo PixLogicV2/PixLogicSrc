@@ -263,8 +263,11 @@ namespace PixLogic
 
         private void buttonTransfert_Click(object sender, EventArgs e)
         {
-            string itemName = valItemName.Text;
-            addingItemInPack(itemName);
+            if (comboBoxPack.Items.Count > 0)
+            {
+                string itemName = valItemName.Text;
+                addingItemInPack(itemName);
+            }
         }
 
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
