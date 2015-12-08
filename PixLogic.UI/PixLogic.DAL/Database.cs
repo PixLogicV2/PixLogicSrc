@@ -149,9 +149,17 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_reservations_by_date").getAllReservationsByDate(dateDebut,dateFin);
         }
+        public List<Reservation> GetAllReservationsByDateDebut(DateTime dateDebut)
+        {
+            return container.get("get_all_reservations_by_date_debut").getAllReservationsByDateDebut(dateDebut);
+        }
         public List<Reservation> GetAllReservationsByReservableId(int idReservable)
         {
             return container.get("get_all_reservations_by_reservable_id").getAllReservationsByReservableId(idReservable);
+        }
+        public List<Reservation> GetAllReservationsByUserId(int idReservable)
+        {
+            return container.get("get_all_reservations_by_user_id").getAllReservationsByUserId(idReservable);
         }
         public List<Reservation> GetAllReservationsByString(string search)
         {
@@ -181,6 +189,10 @@ namespace PixLogic.DAL
         public List<Reservation> GetAllEmpruntsByDate(DateTime debut,DateTime fin)
         {
             return container.get("get_all_emprunts_by_date").getAllEmpruntsByDate(debut, fin);
+        }
+        public List<Reservation> GetAllEmpruntsByDateFin(DateTime fin)
+        {
+            return container.get("get_all_emprunts_by_date_fin").getAllEmpruntsByDateFin(fin);
         }
         public List<Reservation> GetAllEmpruntsByString(string search)
         {

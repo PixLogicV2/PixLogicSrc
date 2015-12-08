@@ -158,9 +158,8 @@ namespace PixLogic
 
             else if (radioToday.Checked)
             {
-                debut = DateTime.Today;
-                fin = debut;
-                list = database.GetAllEmpruntsByDate(debut, fin);
+                fin = DateTime.Today ;
+                list = database.GetAllEmpruntsByDateFin(fin);
             }
             else if (radioOfPastSevenDays.Checked)
             {
@@ -175,10 +174,6 @@ namespace PixLogic
                 list = database.GetAllEmpruntsByDate(debut, fin);
 
             }
-
-
-
-
             if ((checkBoxItem.Checked && !checkBoxPack.Checked) || (checkBoxPack.Checked && !checkBoxItem.Checked))
             {
                 if (checkBoxPack.Checked)

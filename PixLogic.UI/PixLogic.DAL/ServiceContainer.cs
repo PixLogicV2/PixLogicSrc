@@ -81,8 +81,16 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllReservationsByDate();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_all_reservations_by_date_debut":
+                    this.arrayContainer[serviceName] = new GetAllReservationsByDate();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "get_all_reservations_by_reservable_id":
                     this.arrayContainer[serviceName] = new GetAllReservationsByReservableId();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_reservations_by_user_id":
+                    this.arrayContainer[serviceName] = new GetAllReservations();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_items_by_string":
@@ -208,6 +216,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_emprunts_by_date":
+                    this.arrayContainer[serviceName] = new GetAllEmprunts();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_emprunts_by_date_fin":
                     this.arrayContainer[serviceName] = new GetAllEmprunts();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
