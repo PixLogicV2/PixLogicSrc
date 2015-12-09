@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CsvHelper;
-
+using System.Globalization;
 
 namespace PixLogic
 {
@@ -394,6 +394,55 @@ namespace PixLogic
             
             return true;
         }
+
+        public static bool importCSV(string path, bool virgule, bool entete)
+        {
+            try
+            {
+                using (System.IO.StreamReader file = new System.IO.StreamReader(path))
+                {
+                    
+                    if(!entete)
+                    {
+                        var csv = new CsvReader(file);
+                        csv.Configuration.Delimiter = virgule ? "," : ";";
+                        while (csv.Read())
+                        {
+                            foreach (string h in csv.FieldHeaders)
+                            {
+                                Console.Write(h + " | ");
+                            }
+                            break;
+                        }
+                        csv.Dispose();
+                    }
+                    
+                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path))
+                    {
+                        var csv2 = new CsvReader(fi);
+                        csv2.Configuration.Delimiter = virgule ? "," : ";";
+                        while (csv2.Read())
+                        {
+                            var id = csv2.GetField(0);
+                            var nom = csv2.GetField(1);
+                            var prenom = csv2.GetField(2);
+                            Console.WriteLine(id + " | " + nom + " | " + prenom);
+                        }
+                        csv2.Dispose();
+                    }
+                    
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
         public static bool existReservationUser(bool withMessageBox,int userId)
         {
             bool emp = database.ContainReservationByUserId(userId);
