@@ -272,6 +272,28 @@ namespace PixLogic.DAL
         {
             return container.get("get_mail_config").getMailConfig();
         }
+        
+        /*
+        *Requete
+        */
+        public void AddRequete(string name, string text)
+        {
+            container.get("add_requete").addCategorie(container.get("requete_factory").build(name, text));
+        }
 
+        public void DeleteRequete(string queryToDelete)
+        {
+            container.get("delete_requete").deleteRequete(queryToDelete);
+        }
+
+        public void UpdateRequete(Requete query)
+        {
+            container.get("update_requete").updateRequete();
+        }
+
+        public List<Requete> GetAllRequete()
+        {
+            return container.get("get_all_requete").getAllRequete();
+        }
     }
 }

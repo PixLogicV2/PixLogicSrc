@@ -10,8 +10,8 @@ namespace PixLogic.DAL
     [Table("Requete")]
     public class Requete
     {
-        public string name;
-        public string text;
+        public string name { get; set; }
+        public string text { get; set; }
         
         public int RequeteId { get; set; }
     }

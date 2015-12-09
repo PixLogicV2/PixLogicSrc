@@ -61,6 +61,7 @@
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
     <Compile Include="AddItem.cs" />
+    <Compile Include="AddRequete.cs" />
     <Compile Include="AddReservation.cs" />
     <Compile Include="AddUser.cs" />
     <Compile Include="ByteArrayToImage.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Database.cs" />
     <Compile Include="DeleteCategorie.cs" />
     <Compile Include="DeletePack.cs" />
+    <Compile Include="DeleteRequete.cs" />
     <Compile Include="DeleteReservation.cs" />
     <Compile Include="DeleteUser.cs" />
     <Compile Include="EmpruntReservation.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
     <Compile Include="GetAllPacksEmprunts.cs" />
+    <Compile Include="GetAllRequete.cs" />
     <Compile Include="GetAllReservations.cs" />
     <Compile Include="GetAllReservationsByDate.cs" />
     <Compile Include="GetAllReservationsByReservableId.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Requete.cs" />
+    <Compile Include="RequeteFactory.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="ReservationFactory.cs" />
     <Compile Include="RetourEmprunt.cs" />
@@ -121,6 +125,7 @@
     <Compile Include="UpdateItem.cs" />
     <Compile Include="UpdateMailConfig.cs" />
     <Compile Include="UpdatePack.cs" />
+    <Compile Include="UpdateRequete.cs" />
     <Compile Include="UpdateReservation.cs" />
     <Compile Include="UpdateUser.cs" />
     <Compile Include="User.cs" />

@@ -33,6 +33,9 @@ namespace PixLogic.DAL
                 case "reservation_factory":
                     this.arrayContainer[serviceName] = new ReservationFactory();
                     break;
+                case "requete_factory":
+                    this.arrayContainer[serviceName] = new RequeteFactory();
+                    break;
 
                 case "add_item":
                     this.arrayContainer[serviceName] = new AddItem();
@@ -263,6 +266,29 @@ namespace PixLogic.DAL
                     break;
                 case "delete_categorie":
                     this.arrayContainer[serviceName] = new DeleteCategorie();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+
+                    /*
+                    *Requete
+                    */
+                case "add_requete":
+                    this.arrayContainer[serviceName] = new AddRequete();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+
+                case "delete_requete":
+                    this.arrayContainer[serviceName] = new DeleteRequete();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+
+                case "update_requete":
+                    this.arrayContainer[serviceName] = new UpdateRequete();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+
+                case "get_all_requete":
+                    this.arrayContainer[serviceName] = new GetAllRequete();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
 
