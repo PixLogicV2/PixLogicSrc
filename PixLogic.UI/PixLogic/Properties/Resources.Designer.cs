@@ -243,6 +243,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exporter {
+            get {
+                object obj = ResourceManager.GetObject("exporter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap filter {
             get {
                 object obj = ResourceManager.GetObject("filter", resourceCulture);
@@ -266,6 +276,16 @@ namespace PixLogic.Properties {
         internal static System.Drawing.Bitmap historique_icon2 {
             get {
                 object obj = ResourceManager.GetObject("historique_icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap importer {
+            get {
+                object obj = ResourceManager.GetObject("importer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
