@@ -158,7 +158,7 @@ namespace PixLogic
 
             else if (radioToday.Checked)
             {
-                fin = DateTime.Today ;
+                fin = DateTime.Today.Date ;
                 list = database.GetAllEmpruntsByDateFin(fin);
             }
             else if (radioOfPastSevenDays.Checked)
