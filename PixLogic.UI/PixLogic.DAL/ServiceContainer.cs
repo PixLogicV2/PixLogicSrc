@@ -30,6 +30,9 @@ namespace PixLogic.DAL
                 case "user_factory":
                     this.arrayContainer[serviceName] = new UserFactory();
                     break;
+                case "log_factory":
+                    this.arrayContainer[serviceName] = new LogFactory();
+                    break;
                 case "reservation_factory":
                     this.arrayContainer[serviceName] = new ReservationFactory();
                     break;
@@ -49,8 +52,20 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new AddUser();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_all_pack_logs":
+                    this.arrayContainer[serviceName] = new GetAllPackLogs();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_all_item_logs":
+                    this.arrayContainer[serviceName] = new GetAllPackLogs();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "add_reservation":
                     this.arrayContainer[serviceName] = new AddReservation();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "add_log":
+                    this.arrayContainer[serviceName] = new AddLog();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "data_context":
@@ -94,6 +109,10 @@ namespace PixLogic.DAL
                     break;
                 case "get_all_reservations_by_date_debut":
                     this.arrayContainer[serviceName] = new GetAllReservationsByDate();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_reservable_by_id":
+                    this.arrayContainer[serviceName] = new GetReservableById();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_reservations_by_reservable_id":
@@ -201,6 +220,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllLogs();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_log_by_id":
+                    this.arrayContainer[serviceName] = new GetLogById();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "get_all_users_by_string":
                     this.arrayContainer[serviceName] = this.get("get_all_users");
                     break;
@@ -256,10 +279,6 @@ namespace PixLogic.DAL
                     break;
                 case "get_id_categorie":
                     this.arrayContainer[serviceName] = new GetIdCategorie();
-                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
-                    break;
-                case "retour_emprunt":
-                    this.arrayContainer[serviceName] = new RetourEmprunt();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "add_mail_config":

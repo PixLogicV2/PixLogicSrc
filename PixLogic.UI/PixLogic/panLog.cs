@@ -69,16 +69,15 @@ namespace PixLogic
             checkBoxPack.Checked = true;
             disableDateTime();
         }
-        public void setTableLogs(List<Reservation> l)
+        public void setTableLogs(List<Log> l)
         {
-            List<Reservation> list = l;
+            List<Log> list = l;
             dataGridLogs.Rows.Clear();
-            foreach (Reservation reser in list)
+            foreach (Log reser in list)
             {
                 string typ = reser.isPack ? Helper.PACK : Helper.ITEM;
-                dataGridLogs.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name,
-                    typ, reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"),
-                     reser.dateRendu.Value.ToString("d"));
+                dataGridLogs.Rows.Add(reser.LogId, reser.userName, reser.reservableName,
+                    typ, reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"));
 
                 if (reser.endDateEmprunt.Value.Date < DateTime.Today.Date)
                     dataGridLogs.Rows[dataGridLogs.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
@@ -100,21 +99,21 @@ namespace PixLogic
         {
             if (dataGridLogs.RowCount > 0)
             {
-                Reservation reservation = database.GetReservationById(Convert.ToInt32(dataGridLogs.CurrentRow.Cells[0].Value));
+                Log reservation = database.GetLogById(Convert.ToInt32(dataGridLogs.CurrentRow.Cells[0].Value));
 
                 valDebutEmprunt.Text = ((DateTime)reservation.beginDateEmprunt).ToString("D");
                 valFinEmprunt.Text = ((DateTime)reservation.endDateEmprunt).ToString("D");
-                valRetour.Text = ((DateTime)reservation.dateRendu).ToString("D"); ;
+                valPhone.Text = (reservation.userPhoneNumber);
 
-                valNomUser.Text = reservation.user.name +" "+reservation.user.nickname;
-                valNomReservable.Text = reservation.reservable.name;
+                valNomUser.Text = reservation.userName +" "+reservation.userNickname;
+                valNomReservable.Text = reservation.reservableName;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
             }
             else
             {
                 valDebutEmprunt.Text = "-";
                 valFinEmprunt.Text = "-";
-                valRetour.Text = "-";
+                valPhone.Text = "-";
                 valNomUser.Text = "-";
                 valNomReservable.Text = "-";
                 valType.Text = "-";
@@ -154,7 +153,7 @@ namespace PixLogic
         {
             DateTime debut = new DateTime();
             DateTime fin = new DateTime();
-            List<Reservation> list = new List<Reservation>();
+            List<Log> list = new List<Log>();
 
             if (radioAll.Checked)
             {
@@ -183,13 +182,13 @@ namespace PixLogic
             if ((checkBoxItem.Checked && !checkBoxPack.Checked) || (checkBoxPack.Checked && !checkBoxItem.Checked))
             {
                 if (checkBoxPack.Checked)
-                    list = database.GetAllPacksEmprunts(list);
+                    list = database.GetAllPackLogs();
                 else
-                    list = database.GetAllItemsEmprunts(list);
+                    list = database.GetAllItemLogs();
                 Console.WriteLine("DANS LE OUI ou PAS");
             }
             else if (!checkBoxPack.Checked && !checkBoxItem.Checked)
-                list = new List<Reservation>();
+                list = new List<Log>();
 
             setTableLogs(list);
         }
