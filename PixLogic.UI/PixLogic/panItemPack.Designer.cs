@@ -45,7 +45,6 @@
             this.panTableItem = new System.Windows.Forms.Panel();
             this.labelCat = new System.Windows.Forms.Label();
             this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
@@ -58,20 +57,23 @@
             this.labelPack = new System.Windows.Forms.Label();
             this.buttonTransfert = new System.Windows.Forms.Button();
             this.valItemId = new System.Windows.Forms.Label();
+            this.pictureImporter = new System.Windows.Forms.PictureBox();
+            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.buttonRemoveItemInPack = new System.Windows.Forms.Button();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.buttonManagePack = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
-            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureImporter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             this.SuspendLayout();
             // 
             // panNews
@@ -85,7 +87,7 @@
             this.panNews.Controls.Add(this.labelQuantity);
             this.panNews.Controls.Add(this.labelPrice);
             this.panNews.Controls.Add(this.labelDispo);
-            this.panNews.Location = new System.Drawing.Point(335, 197);
+            this.panNews.Location = new System.Drawing.Point(335, 200);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(140, 115);
             this.panNews.TabIndex = 26;
@@ -172,7 +174,7 @@
             // valDescription
             // 
             this.valDescription.BackColor = System.Drawing.Color.White;
-            this.valDescription.Location = new System.Drawing.Point(211, 197);
+            this.valDescription.Location = new System.Drawing.Point(211, 200);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
@@ -237,16 +239,6 @@
             this.comboBoxCategorie.TabIndex = 33;
             this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
             this.comboBoxCategorie.Click += new System.EventHandler(this.comboBoxCategorie_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -317,7 +309,7 @@
             // 
             this.labelNews.AutoSize = true;
             this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(353, 192);
+            this.labelNews.Location = new System.Drawing.Point(353, 195);
             this.labelNews.Name = "labelNews";
             this.labelNews.Size = new System.Drawing.Size(33, 13);
             this.labelNews.TabIndex = 0;
@@ -362,7 +354,7 @@
             // 
             this.buttonTransfert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTransfert.ForeColor = System.Drawing.Color.Blue;
-            this.buttonTransfert.Location = new System.Drawing.Point(481, 168);
+            this.buttonTransfert.Location = new System.Drawing.Point(481, 171);
             this.buttonTransfert.Name = "buttonTransfert";
             this.buttonTransfert.Size = new System.Drawing.Size(43, 23);
             this.buttonTransfert.TabIndex = 34;
@@ -376,10 +368,32 @@
             this.valItemId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valItemId.Location = new System.Drawing.Point(349, 2);
             this.valItemId.Name = "valItemId";
-            this.valItemId.Size = new System.Drawing.Size(90, 21);
+            this.valItemId.Size = new System.Drawing.Size(25, 21);
             this.valItemId.TabIndex = 39;
-            this.valItemId.Text = "ID matériel";
+            this.valItemId.Text = "Id";
             this.valItemId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureImporter
+            // 
+            this.pictureImporter.Image = ((System.Drawing.Image)(resources.GetObject("pictureImporter.Image")));
+            this.pictureImporter.Location = new System.Drawing.Point(437, 0);
+            this.pictureImporter.Name = "pictureImporter";
+            this.pictureImporter.Size = new System.Drawing.Size(30, 27);
+            this.pictureImporter.TabIndex = 51;
+            this.pictureImporter.TabStop = false;
+            this.pictureImporter.Click += new System.EventHandler(this.pictureImporter_Click);
+            this.pictureImporter.MouseEnter += new System.EventHandler(this.pictureImporter_MouseEnter);
+            // 
+            // pictureExport
+            // 
+            this.pictureExport.Image = ((System.Drawing.Image)(resources.GetObject("pictureExport.Image")));
+            this.pictureExport.Location = new System.Drawing.Point(403, 1);
+            this.pictureExport.Name = "pictureExport";
+            this.pictureExport.Size = new System.Drawing.Size(30, 27);
+            this.pictureExport.TabIndex = 50;
+            this.pictureExport.TabStop = false;
+            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
+            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
             // 
             // buttonRemoveItemInPack
             // 
@@ -399,7 +413,7 @@
             this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxItem.Image = global::PixLogic.Properties.Resources.noitem;
             this.pictureBoxItem.InitialImage = null;
-            this.pictureBoxItem.Location = new System.Drawing.Point(211, 25);
+            this.pictureBoxItem.Location = new System.Drawing.Point(211, 28);
             this.pictureBoxItem.Name = "pictureBoxItem";
             this.pictureBoxItem.Size = new System.Drawing.Size(264, 166);
             this.pictureBoxItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -462,11 +476,21 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
+            // 
             // pictureReserver
             // 
             this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
             this.pictureReserver.Image = ((System.Drawing.Image)(resources.GetObject("pictureReserver.Image")));
-            this.pictureReserver.Location = new System.Drawing.Point(452, 308);
+            this.pictureReserver.Location = new System.Drawing.Point(452, 311);
             this.pictureReserver.Name = "pictureReserver";
             this.pictureReserver.Size = new System.Drawing.Size(23, 23);
             this.pictureReserver.TabIndex = 41;
@@ -474,22 +498,12 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
-            // pictureExport
-            // 
-            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
-            this.pictureExport.Location = new System.Drawing.Point(451, 3);
-            this.pictureExport.Name = "pictureExport";
-            this.pictureExport.Size = new System.Drawing.Size(25, 21);
-            this.pictureExport.TabIndex = 50;
-            this.pictureExport.TabStop = false;
-            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
-            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
-            // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.pictureImporter);
             this.Controls.Add(this.pictureExport);
             this.Controls.Add(this.valItemId);
             this.Controls.Add(this.buttonRemoveItemInPack);
@@ -516,9 +530,10 @@
             this.panTableItem.ResumeLayout(false);
             this.panTableItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureImporter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,5 +577,6 @@
         private System.Windows.Forms.Label labelCat;
         private System.Windows.Forms.ComboBox comboBoxCategorie;
         private System.Windows.Forms.PictureBox pictureExport;
+        private System.Windows.Forms.PictureBox pictureImporter;
     }
 }

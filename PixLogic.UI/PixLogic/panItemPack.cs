@@ -343,5 +343,18 @@ namespace PixLogic
         {
             setComboBoxCategorie();
         }
+
+        private void pictureImporter_Click(object sender, EventArgs e)
+        {
+            WindowImport import = new WindowImport();
+            import.ShowDialog();
+        }
+
+        private void pictureImporter_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureImporter, "Importer une liste.");
+            pictureImporter.Cursor = Cursors.Hand;
+        }
     }
 }
