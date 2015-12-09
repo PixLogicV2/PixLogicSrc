@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="AddCategorie.cs" />
     <Compile Include="AddCategorieToItem.cs" />
+    <Compile Include="AddLog.cs" />
     <Compile Include="AddMailConfig.cs" />
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="GetAllItemsEmprunts.cs" />
     <Compile Include="GetAllItemsInCategorie.cs" />
     <Compile Include="GetAllLogs.cs" />
+    <Compile Include="GetAllPackLogs.cs" />
     <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
     <Compile Include="GetAllPacksEmprunts.cs" />
@@ -92,19 +94,22 @@
     <Compile Include="GetIdCategorie.cs" />
     <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
+    <Compile Include="GetLogById.cs" />
     <Compile Include="GetMailConfig.cs" />
     <Compile Include="GetPackById.cs" />
     <Compile Include="GetPackByName.cs" />
+    <Compile Include="GetReservableById.cs" />
     <Compile Include="GetReservationById.cs" />
     <Compile Include="GetUserById.cs" />
     <Compile Include="GetUserByName.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="LogFactory.cs" />
     <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Requete.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="ReservationFactory.cs" />
-    <Compile Include="RetourEmprunt.cs" />
     <Compile Include="ServiceContainer.cs" />
     <Compile Include="ContainItem.cs" />
     <Compile Include="DataContext.cs" />
