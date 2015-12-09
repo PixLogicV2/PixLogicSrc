@@ -217,17 +217,45 @@ namespace PixLogic.DAL
         /*
         *LOG
         */
-        public List<Reservation> GetAllLogs()
+        public List<Log> GetAllLogs()
         {
             return container.get("get_all_logs").getAllLogs();
         }
-        public List<Reservation> GetAllLogsByString(string search)
+        public List<Log> GetAllLogsByString(string search)
         {
             return container.get("get_all_logs").getAllLogsByString(search);
         }
-        public List<Reservation> GetAllLogsByDate(DateTime debut,DateTime fin)
+        public List<Log> GetAllLogsByDate(DateTime debut,DateTime fin)
         {
             return container.get("get_all_logs").getAllLogsByDate(debut,fin);
+        }
+        public Reservable GetReservableById(int id)
+        {
+            return container.get("get_reservable_by_id").getReservableById(id);
+        }
+        public Log GetLogById(int id)
+        {
+            return container.get("get_log_by_id").getLogById(id);
+        }
+        public void AddLog(bool isPack,DateTime? beginDateEmprunt, DateTime? endDateEmprunt,string userName,string userNickname ,string userMail,string userClasse,string userPhoneNumber,string reservableName)
+        {
+            container.get("add_log").addLog(container.get("log_factory").build(isPack, beginDateEmprunt, endDateEmprunt,userName,userNickname,userMail,userClasse,userPhoneNumber,reservableName));
+        }
+        public void RetourEmprunt(int id, DateTime? retour)
+        {
+            Reservation reservation = GetReservationById(id);
+            User user = GetUserById(reservation.user.UserId);
+            Reservable reservable = GetReservableById(reservation.reservable.ReservableId);
+            AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname,user.mail,user.classe,user.phoneNumber,reservable.name);
+            container.get("delete_reservation").deleteReservation(reservation.ReservationId);
+        }
+        public List<Log> GetAllPackLogs()
+        {
+            return container.get("get_all__pack_logs").getAllPackLogs();
+        }
+        public List<Log> GetAllItemLogs()
+        {
+            return container.get("get_all_item_logs").getAllItemLogs();
         }
         /*
         *Categorie
@@ -268,10 +296,6 @@ namespace PixLogic.DAL
         public bool ContainReservationByReservableId(int id)
         {
             return container.get("contain_reservation_by_reservable_id").containReservationByReservableId(id);
-        }
-        public void RetourEmprunt(int id,DateTime? retour)
-        {
-            container.get("retour_emprunt").retourEmprunt(id, retour);
         }
         public bool ContainCategorie(string name)
         {
