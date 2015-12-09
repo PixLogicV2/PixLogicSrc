@@ -42,5 +42,20 @@ namespace PixLogic.DAL
             );
             return results;
         }
+        public List<Reservation> getAllReservationsByUserId(int id)
+        {
+            IQueryable<Reservation> reservQuery = from Reservation
+                                                  in context.Reservations.Include(c => c.reservable).Include(c => c.manager).Include(c => c.user)
+                                                  where Reservation.beginDateEmprunt == null
+                                                  where Reservation.user.UserId == id
+                                                  orderby (Reservation.beginDateReservation)
+                                                  select Reservation;
+            List<Reservation> list = new List<Reservation>();
+            foreach (var prod in reservQuery)
+            {
+                list.Add(prod);
+            }
+            return list;
+        }
     }
 }

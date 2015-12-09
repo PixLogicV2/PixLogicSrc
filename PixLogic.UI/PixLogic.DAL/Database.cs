@@ -149,9 +149,17 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_reservations_by_date").getAllReservationsByDate(dateDebut,dateFin);
         }
+        public List<Reservation> GetAllReservationsByDateDebut(DateTime dateDebut)
+        {
+            return container.get("get_all_reservations_by_date_debut").getAllReservationsByDateDebut(dateDebut);
+        }
         public List<Reservation> GetAllReservationsByReservableId(int idReservable)
         {
             return container.get("get_all_reservations_by_reservable_id").getAllReservationsByReservableId(idReservable);
+        }
+        public List<Reservation> GetAllReservationsByUserId(int idReservable)
+        {
+            return container.get("get_all_reservations_by_user_id").getAllReservationsByUserId(idReservable);
         }
         public List<Reservation> GetAllReservationsByString(string search)
         {
@@ -182,6 +190,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_emprunts_by_date").getAllEmpruntsByDate(debut, fin);
         }
+        public List<Reservation> GetAllEmpruntsByDateFin(DateTime fin)
+        {
+            return container.get("get_all_emprunts_by_date_fin").getAllEmpruntsByDateFin(fin);
+        }
         public List<Reservation> GetAllEmpruntsByString(string search)
         {
            return container.get("get_all_emprunts_by_date").getAllEmpruntsByString(search);
@@ -192,7 +204,7 @@ namespace PixLogic.DAL
         }
         public List<Reservation> GetAllItemsEmprunts(List<Reservation> list)
         {
-            return container.get("get_all_items_emprunts").getAllItemsEmprunts(list);
+            return container.get("get_all_items_emprunts").getAllItemEmprunts(list);
         }
         public List<Item> GetAllItemsInCategorie(int id)
         {
@@ -208,6 +220,14 @@ namespace PixLogic.DAL
         public List<Reservation> GetAllLogs()
         {
             return container.get("get_all_logs").getAllLogs();
+        }
+        public List<Reservation> GetAllLogsByString(string search)
+        {
+            return container.get("get_all_logs").getAllLogsByString(search);
+        }
+        public List<Reservation> GetAllLogsByDate(DateTime debut,DateTime fin)
+        {
+            return container.get("get_all_logs").getAllLogsByDate(debut,fin);
         }
         /*
         *Categorie
@@ -244,6 +264,10 @@ namespace PixLogic.DAL
         public bool ContainReservationByUserId(int id)
         {
            return container.get("contain_reservation_by_user_id").containReservationByUserId(id);
+        }
+        public bool ContainReservationByReservableId(int id)
+        {
+            return container.get("contain_reservation_by_reservable_id").containReservationByReservableId(id);
         }
         public void RetourEmprunt(int id,DateTime? retour)
         {

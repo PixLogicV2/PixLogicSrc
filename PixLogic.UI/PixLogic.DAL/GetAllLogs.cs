@@ -40,5 +40,22 @@ namespace PixLogic.DAL
             );
             return results;
         }
+        public List<Reservation> getAllLogsByDate(DateTime dateDebut, DateTime dateFin)
+        {
+            IQueryable<Reservation> reservQuery = from Reservation
+                                                  in context.Reservations.Include(c => c.reservable).Include(c => c.manager).Include(c => c.user)
+                                                  where Reservation.dateRendu != null
+                                                  where DateTime.Compare(Reservation.beginDateEmprunt.Value, dateDebut) >= 0
+                                                  where DateTime.Compare(Reservation.endDateEmprunt.Value, dateFin) <= 0
+                                                  orderby Reservation.beginDateReservation
+                                                  select Reservation;
+            List<Reservation> list = new List<Reservation>();
+            foreach (var prod in reservQuery)
+            {
+                list.Add(prod);
+            }
+
+            return list;
+        }
     }
 }

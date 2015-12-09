@@ -76,7 +76,7 @@
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 0);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(286, 449);
+            this.panelGeneral.Size = new System.Drawing.Size(286, 421);
             this.panelGeneral.TabIndex = 1;
             // 
             // label3
@@ -96,7 +96,7 @@
             this.valTel.Location = new System.Drawing.Point(99, 337);
             this.valTel.Name = "valTel";
             this.valTel.Size = new System.Drawing.Size(156, 25);
-            this.valTel.TabIndex = 17;
+            this.valTel.TabIndex = 6;
             // 
             // labelTel
             // 
@@ -114,7 +114,7 @@
             this.valMail.Location = new System.Drawing.Point(99, 301);
             this.valMail.Name = "valMail";
             this.valMail.Size = new System.Drawing.Size(156, 25);
-            this.valMail.TabIndex = 15;
+            this.valMail.TabIndex = 5;
             // 
             // label2
             // 
@@ -154,10 +154,10 @@
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(145, 413);
+            this.buttonCancel.Location = new System.Drawing.Point(151, 387);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 11;
+            this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Annuler";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -168,10 +168,10 @@
             this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(51, 413);
+            this.buttonValid.Location = new System.Drawing.Point(57, 387);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
-            this.buttonValid.TabIndex = 10;
+            this.buttonValid.TabIndex = 7;
             this.buttonValid.Text = "Valider";
             this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonValid.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@
             this.valClass.Location = new System.Drawing.Point(99, 267);
             this.valClass.Name = "valClass";
             this.valClass.Size = new System.Drawing.Size(156, 25);
-            this.valClass.TabIndex = 6;
+            this.valClass.TabIndex = 4;
             // 
             // labelClass
             // 
@@ -223,7 +223,7 @@
             this.valNickName.Location = new System.Drawing.Point(99, 236);
             this.valNickName.Name = "valNickName";
             this.valNickName.Size = new System.Drawing.Size(156, 25);
-            this.valNickName.TabIndex = 4;
+            this.valNickName.TabIndex = 3;
             // 
             // labelFirstName
             // 
@@ -266,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 449);
+            this.ClientSize = new System.Drawing.Size(286, 421);
             this.Controls.Add(this.panelGeneral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);

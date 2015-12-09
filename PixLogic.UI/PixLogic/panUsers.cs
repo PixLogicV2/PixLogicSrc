@@ -97,10 +97,10 @@ namespace PixLogic
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if (Helper.confirmation(Helper.DELETE))
+            if (Helper.confirmation(Helper.DELETE) && Helper.existReservationUser(true, Convert.ToInt32(valUserId.Text)) == false)
             {
-                database.DeleteUser(Convert.ToInt32(valUserId.Text));
-                setTableUsers(database.GetAllUsers());
+                    database.DeleteUser(Convert.ToInt32(valUserId.Text));
+                    setTableUsers(database.GetAllUsers());
             }
         }
         private void checkEnableButton()
@@ -126,6 +126,20 @@ namespace PixLogic
         {
             textBoxSearch.Text = "";
             setTableUsers(database.GetAllUsers());
+        }
+
+        private void pictureExport_Click(object sender, EventArgs e)
+        {
+            string title = "Liste des utilisateurs";
+            WindowExport export = new WindowExport(dataGridUsers, title);
+            export.ShowDialog();
+        }
+
+        private void pictureExport_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureExport, "Exporter la liste.");
+            pictureExport.Cursor = Cursors.Hand;
         }
     }
 }

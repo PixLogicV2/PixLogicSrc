@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using PixLogic.DAL;
+
 namespace PixLogic
 {
 
@@ -25,6 +26,7 @@ namespace PixLogic
             panReservation1.Visible = false;
             panEmprunt1.Visible = false;
             panScript1.Visible = false;
+            panLog1.Visible = false;
             button = boutonUtilisateur;
             button.DesactiveEffectButton();
         }
@@ -53,7 +55,7 @@ namespace PixLogic
                 case "boutonMateriel": namePan = "panItemPack1"; break;
                 case "boutonReservation": namePan = "panReservation1";panReservation1.setTableReservations(database.GetAllReservations()); break;
                 case "boutonEmprunt": namePan = "panEmprunt1"; panEmprunt1.setTableEmprunts(database.GetAllEmprunts()); break;
-                //case "boutonHistorique": namePan = "panHistorique1"; break;
+                case "boutonHistorique": namePan = "panLog1"; panLog1.setTableLogs(database.GetAllLogs()); break;
                 case "boutonScript": namePan = "panScript1"; break;
             }
             Console.WriteLine("Nom Bouton : " + buttonName.ToUpper());

@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panReservation));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panReservation));
             this.panTableUsers = new System.Windows.Forms.Panel();
-            this.buttonExportCsv = new System.Windows.Forms.Button();
-            this.buttonExportPdf = new System.Windows.Forms.Button();
+            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
@@ -78,6 +77,7 @@
             this.buttonModif = new System.Windows.Forms.Button();
             this.buttonPret = new System.Windows.Forms.Button();
             this.panTableUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
             this.panFiltres.SuspendLayout();
@@ -87,53 +87,34 @@
             // panTableUsers
             // 
             this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panTableUsers.Controls.Add(this.buttonExportCsv);
-            this.panTableUsers.Controls.Add(this.buttonExportPdf);
+            this.panTableUsers.Controls.Add(this.pictureExport);
             this.panTableUsers.Controls.Add(this.buttonCancelSearch);
             this.panTableUsers.Controls.Add(this.textBoxSearch);
             this.panTableUsers.Controls.Add(this.labelSearch);
             this.panTableUsers.Controls.Add(this.dataGridReservations);
             this.panTableUsers.Location = new System.Drawing.Point(12, 4);
-            this.panTableUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.panTableUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(549, 350);
             this.panTableUsers.TabIndex = 23;
             // 
-            // buttonExportCsv
+            // pictureExport
             // 
-            this.buttonExportCsv.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportCsv.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportCsv.Image")));
-            this.buttonExportCsv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExportCsv.Location = new System.Drawing.Point(416, 16);
-            this.buttonExportCsv.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExportCsv.Name = "buttonExportCsv";
-            this.buttonExportCsv.Size = new System.Drawing.Size(127, 34);
-            this.buttonExportCsv.TabIndex = 44;
-            this.buttonExportCsv.Text = "Exporter Excel";
-            this.buttonExportCsv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExportCsv.UseVisualStyleBackColor = true;
-            this.buttonExportCsv.Click += new System.EventHandler(this.buttonExportCsv_Click);
-            // 
-            // buttonExportPdf
-            // 
-            this.buttonExportPdf.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportPdf.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportPdf.Image")));
-            this.buttonExportPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExportPdf.Location = new System.Drawing.Point(286, 16);
-            this.buttonExportPdf.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonExportPdf.Name = "buttonExportPdf";
-            this.buttonExportPdf.Size = new System.Drawing.Size(127, 34);
-            this.buttonExportPdf.TabIndex = 43;
-            this.buttonExportPdf.Text = "Exporter PDF";
-            this.buttonExportPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExportPdf.UseVisualStyleBackColor = true;
-            this.buttonExportPdf.Click += new System.EventHandler(this.buttonExport_Click);
+            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
+            this.pictureExport.Location = new System.Drawing.Point(509, 7);
+            this.pictureExport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureExport.Name = "pictureExport";
+            this.pictureExport.Size = new System.Drawing.Size(33, 26);
+            this.pictureExport.TabIndex = 49;
+            this.pictureExport.TabStop = false;
+            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
+            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
             // 
             // buttonCancelSearch
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancelSearch.Location = new System.Drawing.Point(232, 18);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancelSearch.Name = "buttonCancelSearch";
             this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
             this.buttonCancelSearch.TabIndex = 3;
@@ -143,7 +124,7 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(99, 20);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(127, 22);
             this.textBoxSearch.TabIndex = 2;
@@ -193,7 +174,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridReservations.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridReservations.Location = new System.Drawing.Point(-1, 58);
-            this.dataGridReservations.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridReservations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridReservations.MultiSelect = false;
             this.dataGridReservations.Name = "dataGridReservations";
             this.dataGridReservations.ReadOnly = true;
@@ -263,7 +244,7 @@
             this.panNews.Controls.Add(this.labelTel);
             this.panNews.Controls.Add(this.labelDateFin);
             this.panNews.Location = new System.Drawing.Point(12, 367);
-            this.panNews.Margin = new System.Windows.Forms.Padding(4);
+            this.panNews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(898, 118);
             this.panNews.TabIndex = 28;
@@ -431,7 +412,7 @@
             this.panFiltres.Controls.Add(this.radioToday);
             this.panFiltres.Controls.Add(this.label8);
             this.panFiltres.Location = new System.Drawing.Point(569, 4);
-            this.panFiltres.Margin = new System.Windows.Forms.Padding(4);
+            this.panFiltres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panFiltres.Name = "panFiltres";
             this.panFiltres.Size = new System.Drawing.Size(341, 350);
             this.panFiltres.TabIndex = 43;
@@ -440,7 +421,7 @@
             // 
             this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
             this.pictureReinit.Location = new System.Drawing.Point(295, 7);
-            this.pictureReinit.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureReinit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureReinit.Name = "pictureReinit";
             this.pictureReinit.Size = new System.Drawing.Size(33, 26);
             this.pictureReinit.TabIndex = 48;
@@ -454,7 +435,7 @@
             this.buttonFilter.Image = global::PixLogic.Properties.Resources.filter;
             this.buttonFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonFilter.Location = new System.Drawing.Point(115, 310);
-            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonFilter.Name = "buttonFilter";
             this.buttonFilter.Size = new System.Drawing.Size(89, 32);
             this.buttonFilter.TabIndex = 47;
@@ -468,7 +449,7 @@
             this.checkBoxPack.AutoSize = true;
             this.checkBoxPack.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPack.Location = new System.Drawing.Point(251, 251);
-            this.checkBoxPack.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxPack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxPack.Name = "checkBoxPack";
             this.checkBoxPack.Size = new System.Drawing.Size(66, 23);
             this.checkBoxPack.TabIndex = 11;
@@ -491,7 +472,7 @@
             this.checkBoxItem.AutoSize = true;
             this.checkBoxItem.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxItem.Location = new System.Drawing.Point(145, 251);
-            this.checkBoxItem.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxItem.Name = "checkBoxItem";
             this.checkBoxItem.Size = new System.Drawing.Size(89, 23);
             this.checkBoxItem.TabIndex = 10;
@@ -503,7 +484,7 @@
             this.radioAll.AutoSize = true;
             this.radioAll.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioAll.Location = new System.Drawing.Point(28, 46);
-            this.radioAll.Margin = new System.Windows.Forms.Padding(4);
+            this.radioAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioAll.Name = "radioAll";
             this.radioAll.Size = new System.Drawing.Size(59, 23);
             this.radioAll.TabIndex = 8;
@@ -514,7 +495,7 @@
             // dateTimeEnd
             // 
             this.dateTimeEnd.Location = new System.Drawing.Point(68, 199);
-            this.dateTimeEnd.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimeEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimeEnd.Name = "dateTimeEnd";
             this.dateTimeEnd.Size = new System.Drawing.Size(265, 22);
             this.dateTimeEnd.TabIndex = 7;
@@ -522,7 +503,7 @@
             // dateTimeBegin
             // 
             this.dateTimeBegin.Location = new System.Drawing.Point(68, 161);
-            this.dateTimeBegin.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimeBegin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimeBegin.Name = "dateTimeBegin";
             this.dateTimeBegin.Size = new System.Drawing.Size(265, 22);
             this.dateTimeBegin.TabIndex = 6;
@@ -532,7 +513,7 @@
             this.radioBetween.AutoSize = true;
             this.radioBetween.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBetween.Location = new System.Drawing.Point(28, 130);
-            this.radioBetween.Margin = new System.Windows.Forms.Padding(4);
+            this.radioBetween.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioBetween.Name = "radioBetween";
             this.radioBetween.Size = new System.Drawing.Size(69, 23);
             this.radioBetween.TabIndex = 5;
@@ -545,12 +526,12 @@
             this.radioOfPastSevenDays.AutoSize = true;
             this.radioOfPastSevenDays.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioOfPastSevenDays.Location = new System.Drawing.Point(28, 102);
-            this.radioOfPastSevenDays.Margin = new System.Windows.Forms.Padding(4);
+            this.radioOfPastSevenDays.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioOfPastSevenDays.Name = "radioOfPastSevenDays";
-            this.radioOfPastSevenDays.Size = new System.Drawing.Size(128, 23);
+            this.radioOfPastSevenDays.Size = new System.Drawing.Size(129, 23);
             this.radioOfPastSevenDays.TabIndex = 4;
             this.radioOfPastSevenDays.TabStop = true;
-            this.radioOfPastSevenDays.Text = "Depuis 07 jours";
+            this.radioOfPastSevenDays.Text = "Dans les 7 jours";
             this.radioOfPastSevenDays.UseVisualStyleBackColor = true;
             // 
             // labelListeFiltre
@@ -569,7 +550,7 @@
             this.radioToday.AutoSize = true;
             this.radioToday.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioToday.Location = new System.Drawing.Point(28, 74);
-            this.radioToday.Margin = new System.Windows.Forms.Padding(4);
+            this.radioToday.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioToday.Name = "radioToday";
             this.radioToday.Size = new System.Drawing.Size(112, 23);
             this.radioToday.TabIndex = 2;
@@ -604,7 +585,7 @@
             this.buttonCancelReserv.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonCancelReserv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCancelReserv.Location = new System.Drawing.Point(552, 502);
-            this.buttonCancelReserv.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancelReserv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancelReserv.Name = "buttonCancelReserv";
             this.buttonCancelReserv.Size = new System.Drawing.Size(127, 34);
             this.buttonCancelReserv.TabIndex = 45;
@@ -619,7 +600,7 @@
             this.buttonModif.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModif.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonModif.Location = new System.Drawing.Point(379, 502);
-            this.buttonModif.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonModif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonModif.Name = "buttonModif";
             this.buttonModif.Size = new System.Drawing.Size(127, 34);
             this.buttonModif.TabIndex = 44;
@@ -634,7 +615,7 @@
             this.buttonPret.Image = ((System.Drawing.Image)(resources.GetObject("buttonPret.Image")));
             this.buttonPret.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPret.Location = new System.Drawing.Point(205, 502);
-            this.buttonPret.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonPret.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonPret.Name = "buttonPret";
             this.buttonPret.Size = new System.Drawing.Size(127, 34);
             this.buttonPret.TabIndex = 42;
@@ -662,6 +643,7 @@
             this.Size = new System.Drawing.Size(915, 554);
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
@@ -717,7 +699,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn debutResersation;
         private System.Windows.Forms.DataGridViewTextBoxColumn finReservation;
-        private System.Windows.Forms.Button buttonExportPdf;
-        private System.Windows.Forms.Button buttonExportCsv;
+        private System.Windows.Forms.PictureBox pictureExport;
     }
 }

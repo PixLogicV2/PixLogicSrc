@@ -45,7 +45,7 @@ namespace PixLogic
             setComboBoxCategorie(cat);
         }
 
-        private void setComboBoxCategorie(string cat)
+        private void setComboBoxCategorie(string cat = "")
         {
             comboBoxCategorie.Items.Clear();
             List<Categorie> list= database.GetAllCategorie();
@@ -130,6 +130,23 @@ namespace PixLogic
                 pan.setTableItem(database.GetAllItems());
                 this.Close();
             }
+        }
+
+        private void buttonAddCategorie_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(buttonAddCategorie, "Ajouter une catégorie.");
+        }
+
+        private void buttonAddCategorie_Click(object sender, EventArgs e)
+        {
+            WindowCategorie addCat = new WindowCategorie();
+            addCat.ShowDialog();
+        }
+
+        private void comboBoxCategorie_Click(object sender, EventArgs e)
+        {
+            setComboBoxCategorie();
         }
     }
 }

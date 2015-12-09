@@ -56,14 +56,12 @@ namespace PixLogic
             {
                 buttonModify.Enabled = true;
                 buttonDelete.Enabled = true;
-                buttonTransfert.Enabled = true;
                 pictureReserver.Enabled = true;
             }
             else
             {
                 buttonModify.Enabled = false;
                 buttonDelete.Enabled = false;
-                buttonTransfert.Enabled = false;
                 pictureReserver.Enabled = false;
             }
         }
@@ -73,6 +71,7 @@ namespace PixLogic
             if (dataGridItem.RowCount > 0)
             {
                 listBoxItem.AllowDrop = true;
+                buttonTransfert.Enabled = true;
                 valItemName.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
                 valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
                 valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
@@ -89,6 +88,7 @@ namespace PixLogic
             else
             {
                 listBoxItem.AllowDrop = false;
+                buttonTransfert.Enabled = false;
                 valItemName.Text = "-";
                 valQuantity.Text = "-";
                 valPrice.Text = "-";
@@ -208,14 +208,18 @@ namespace PixLogic
 
         private void addingItemInPack(string itemName)
         {
-            string packName = comboBoxPack.SelectedItem.ToString();
-            if (!Helper.IsInListBox(itemName, listBoxItem))
+            if (comboBoxPack.Items.Count > 0)
             {
-                database.AddItemToPack(itemName, packName);
-                setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
+                string packName = comboBoxPack.SelectedItem.ToString();
+                if (!Helper.IsInListBox(itemName, listBoxItem))
+                {
+                    database.AddItemToPack(itemName, packName);
+                    setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
 
-                checkButtonRemoveItem(listBoxItem.Items.Count - 1);
+                    checkButtonRemoveItem(listBoxItem.Items.Count - 1);
+                }
             }
+            
         }
         
 
@@ -247,7 +251,7 @@ namespace PixLogic
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if(Helper.confirmation(Helper.DELETE))
+            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationReservable(true, Convert.ToInt32(valItemId.Text)) == false)
             {
                 database.DeleteItem(valItemName.Text);
                 setTableItem(database.GetAllItems());
@@ -308,42 +312,6 @@ namespace PixLogic
             pictureReserver.Cursor = Cursors.Hand;
         }
 
-        private void buttonExportPdf_Click(object sender, EventArgs e)
-        {
-            PdfPTable pdfTable = new PdfPTable(dataGridItem.ColumnCount);
-            pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 30;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdfTable.DefaultCell.BorderWidth = 1;
-            foreach (DataGridViewColumn column in dataGridItem.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                pdfTable.AddCell(cell);
-            }
-            foreach (DataGridViewRow row in dataGridItem.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    pdfTable.AddCell(cell.Value.ToString());
-                }
-            }
-            string folderPath = "C:\\PDFs\\";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            using (FileStream stream = new FileStream(folderPath + "ListeDesItems" + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".pdf", FileMode.Create))
-            {
-                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
-                pdfDoc.Add(pdfTable);
-                pdfDoc.Close();
-                stream.Close();
-            }
-        }
-
         private void comboBoxCategorie_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idCat;
@@ -357,9 +325,23 @@ namespace PixLogic
 
         }
 
-        private void comboBoxCategorie_MouseDown(object sender, MouseEventArgs e)
+        private void pictureExport_Click(object sender, EventArgs e)
         {
-            
+            string title = "Liste des matériels";
+            WindowExport export = new WindowExport(dataGridItem, title);
+            export.ShowDialog();
+        }
+
+        private void pictureExport_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureExport, "Exporter la liste.");
+            pictureExport.Cursor = Cursors.Hand;
+        }
+
+        private void comboBoxCategorie_Click(object sender, EventArgs e)
+        {
+            setComboBoxCategorie();
         }
     }
 }

@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
+            this.valCategorie = new System.Windows.Forms.Label();
+            this.labelCategorie = new System.Windows.Forms.Label();
             this.valQuantity = new System.Windows.Forms.Label();
             this.valPrice = new System.Windows.Forms.Label();
             this.valDispo = new System.Windows.Forms.Label();
@@ -41,6 +43,8 @@
             this.valItemName = new System.Windows.Forms.Label();
             this.labelListItem = new System.Windows.Forms.Label();
             this.panTableItem = new System.Windows.Forms.Panel();
+            this.labelCat = new System.Windows.Forms.Label();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
@@ -61,16 +65,13 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
-            this.buttonExportPdf = new System.Windows.Forms.Button();
-            this.labelCategorie = new System.Windows.Forms.Label();
-            this.valCategorie = new System.Windows.Forms.Label();
-            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
-            this.labelCat = new System.Windows.Forms.Label();
+            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             this.SuspendLayout();
             // 
             // panNews
@@ -88,6 +89,25 @@
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(140, 115);
             this.panNews.TabIndex = 26;
+            // 
+            // valCategorie
+            // 
+            this.valCategorie.AutoSize = true;
+            this.valCategorie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valCategorie.Location = new System.Drawing.Point(65, 94);
+            this.valCategorie.Name = "valCategorie";
+            this.valCategorie.Size = new System.Drawing.Size(0, 13);
+            this.valCategorie.TabIndex = 7;
+            // 
+            // labelCategorie
+            // 
+            this.labelCategorie.AutoSize = true;
+            this.labelCategorie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCategorie.Location = new System.Drawing.Point(0, 95);
+            this.labelCategorie.Name = "labelCategorie";
+            this.labelCategorie.Size = new System.Drawing.Size(63, 13);
+            this.labelCategorie.TabIndex = 6;
+            this.labelCategorie.Text = "Catégorie :";
             // 
             // valQuantity
             // 
@@ -195,6 +215,29 @@
             this.panTableItem.Size = new System.Drawing.Size(200, 426);
             this.panTableItem.TabIndex = 21;
             // 
+            // labelCat
+            // 
+            this.labelCat.AutoSize = true;
+            this.labelCat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCat.Location = new System.Drawing.Point(2, 52);
+            this.labelCat.Name = "labelCat";
+            this.labelCat.Size = new System.Drawing.Size(63, 13);
+            this.labelCat.TabIndex = 34;
+            this.labelCat.Text = "Catégorie :";
+            // 
+            // comboBoxCategorie
+            // 
+            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.ItemHeight = 13;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(67, 49);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(127, 21);
+            this.comboBoxCategorie.Sorted = true;
+            this.comboBoxCategorie.TabIndex = 33;
+            this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
+            this.comboBoxCategorie.Click += new System.EventHandler(this.comboBoxCategorie_Click);
+            // 
             // buttonCancelSearch
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
@@ -227,8 +270,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -342,7 +385,7 @@
             // 
             this.buttonRemoveItemInPack.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonRemoveItemInPack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRemoveItemInPack.Location = new System.Drawing.Point(572, 299);
+            this.buttonRemoveItemInPack.Location = new System.Drawing.Point(566, 273);
             this.buttonRemoveItemInPack.Name = "buttonRemoveItemInPack";
             this.buttonRemoveItemInPack.Size = new System.Drawing.Size(75, 30);
             this.buttonRemoveItemInPack.TabIndex = 37;
@@ -431,68 +474,23 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
-            // buttonExportPdf
+            // pictureExport
             // 
-            this.buttonExportPdf.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportPdf.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportPdf.Image")));
-            this.buttonExportPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExportPdf.Location = new System.Drawing.Point(212, 347);
-            this.buttonExportPdf.Name = "buttonExportPdf";
-            this.buttonExportPdf.Size = new System.Drawing.Size(78, 48);
-            this.buttonExportPdf.TabIndex = 44;
-            this.buttonExportPdf.Text = "Exporter PDF";
-            this.buttonExportPdf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonExportPdf.UseVisualStyleBackColor = true;
-            this.buttonExportPdf.Click += new System.EventHandler(this.buttonExportPdf_Click);
-            // 
-            // labelCategorie
-            // 
-            this.labelCategorie.AutoSize = true;
-            this.labelCategorie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategorie.Location = new System.Drawing.Point(0, 95);
-            this.labelCategorie.Name = "labelCategorie";
-            this.labelCategorie.Size = new System.Drawing.Size(63, 13);
-            this.labelCategorie.TabIndex = 6;
-            this.labelCategorie.Text = "Catégorie :";
-            // 
-            // valCategorie
-            // 
-            this.valCategorie.AutoSize = true;
-            this.valCategorie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valCategorie.Location = new System.Drawing.Point(65, 94);
-            this.valCategorie.Name = "valCategorie";
-            this.valCategorie.Size = new System.Drawing.Size(0, 13);
-            this.valCategorie.TabIndex = 7;
-            // 
-            // comboBoxCategorie
-            // 
-            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCategorie.FormattingEnabled = true;
-            this.comboBoxCategorie.ItemHeight = 13;
-            this.comboBoxCategorie.Location = new System.Drawing.Point(67, 49);
-            this.comboBoxCategorie.Name = "comboBoxCategorie";
-            this.comboBoxCategorie.Size = new System.Drawing.Size(127, 21);
-            this.comboBoxCategorie.Sorted = true;
-            this.comboBoxCategorie.TabIndex = 33;
-            this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
-            this.comboBoxCategorie.MouseDown += new System.Windows.Forms.MouseEventHandler(this.comboBoxCategorie_MouseDown);
-            // 
-            // labelCat
-            // 
-            this.labelCat.AutoSize = true;
-            this.labelCat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCat.Location = new System.Drawing.Point(2, 52);
-            this.labelCat.Name = "labelCat";
-            this.labelCat.Size = new System.Drawing.Size(63, 13);
-            this.labelCat.TabIndex = 34;
-            this.labelCat.Text = "Catégorie :";
+            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
+            this.pictureExport.Location = new System.Drawing.Point(451, 3);
+            this.pictureExport.Name = "pictureExport";
+            this.pictureExport.Size = new System.Drawing.Size(25, 21);
+            this.pictureExport.TabIndex = 50;
+            this.pictureExport.TabStop = false;
+            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
+            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
             // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.buttonExportPdf);
+            this.Controls.Add(this.pictureExport);
             this.Controls.Add(this.valItemId);
             this.Controls.Add(this.buttonRemoveItemInPack);
             this.Controls.Add(this.pictureBoxItem);
@@ -520,6 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,10 +557,10 @@
         public System.Windows.Forms.Label valItemName;
         public System.Windows.Forms.Label valItemId;
         private System.Windows.Forms.PictureBox pictureReserver;
-        private System.Windows.Forms.Button buttonExportPdf;
         private System.Windows.Forms.Label valCategorie;
         private System.Windows.Forms.Label labelCategorie;
         private System.Windows.Forms.Label labelCat;
         private System.Windows.Forms.ComboBox comboBoxCategorie;
+        private System.Windows.Forms.PictureBox pictureExport;
     }
 }

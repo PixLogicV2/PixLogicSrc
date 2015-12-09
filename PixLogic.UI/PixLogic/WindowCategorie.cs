@@ -16,8 +16,16 @@ namespace PixLogic
         Database database = Helper.database;
         private WindowSettings settings;
         private bool add;
+        private bool quickAdd;
         private int idCategorie;
         private panItemPack panIP;
+
+        public WindowCategorie()
+        {
+            InitializeComponent();
+            add = true;
+            quickAdd = true;
+        }
 
         public WindowCategorie(WindowSettings w, panItemPack pan)
         {
@@ -25,12 +33,14 @@ namespace PixLogic
             settings = w;
             panIP = pan;
             add = true;
+            quickAdd = false;
         }
         public WindowCategorie(WindowSettings w, panItemPack pan, int idCategorie)
         {
             InitializeComponent();
             settings = w;
             add = false;
+            quickAdd = false;
             panIP = pan;
             this.idCategorie = idCategorie;
 
@@ -44,10 +54,10 @@ namespace PixLogic
         private void buttonValid_Click(object sender, EventArgs e)
         {
             string op = add ? Helper.ADD : Helper.SET;
-
+            Console.WriteLine("oooooooooko");
             if(!Helper.fieldsAreEmpty(true, valLibelle.Text)
                 && Helper.AreNumbers(true, valLevel.Text)
-                && Helper.categorieExist(true, valLibelle.Text)
+                && !Helper.categorieExist(true, valLibelle.Text)
                 && Helper.confirmation(op))
             {
                 if (add)
@@ -55,9 +65,16 @@ namespace PixLogic
                 else
                     database.UpdateCategorie(idCategorie, valLibelle.Text, (int)double.Parse(valLevel.Text), valDescription.Text);
 
-                settings.setTableCategories(database.GetAllCategorie());
-                panIP.setTableItem(database.GetAllItems());
-                panIP.setComboBoxCategorie();
+                if (!quickAdd)
+                {
+                    settings.setTableCategories(database.GetAllCategorie());
+                    panIP.setTableItem(database.GetAllItems());
+                    panIP.setComboBoxCategorie();
+                }
+                else
+                {
+
+                }
                 this.Close();
             }
         }

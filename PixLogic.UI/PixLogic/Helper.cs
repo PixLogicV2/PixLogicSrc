@@ -1,12 +1,16 @@
-﻿using PixLogic.DAL;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using PixLogic.DAL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CsvHelper;
 
 
 namespace PixLogic
@@ -174,7 +178,7 @@ namespace PixLogic
 
         }
         
-        public static void putImageInBox(PictureBox picBox, Image image)
+        public static void putImageInBox(PictureBox picBox, System.Drawing.Image image)
         {
             picBox.Image = image;
             if (image != null)
@@ -209,60 +213,71 @@ namespace PixLogic
                 return false;
             }
         }
-
+        public static bool isDispo(bool withMessageBox,Reservation reservation,DateTime dateDebut,DateTime dateFin)
+        {
+            if ((reservation.endDateReservation.Value.Date <= dateDebut.Date) || 
+                (reservation.beginDateReservation.Value.Date >= dateFin.Date)/* ||
+                (reservation.endDateReservation.Value.Date>=dateDebut.Date && reservation.endDateReservation.Value.Date<=dateFin.Date) ||
+                (reservation.beginDateReservation.Value.Date >= dateDebut.Date && reservation.beginDateReservation.Value.Date <= dateFin.Date)*/)
+            {
+                return true;
+            }
+            if (withMessageBox)
+                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        public static bool isDispoEmprunt(bool withMessageBox, Reservation reservation, DateTime dateDebut, DateTime dateFin)
+        {
+            if ((reservation.endDateEmprunt.Value.Date <= dateDebut.Date) ||
+                (reservation.beginDateEmprunt.Value.Date >= dateFin.Date)/* ||
+                (reservation.endDateReservation.Value.Date>=dateDebut.Date && reservation.endDateReservation.Value.Date<=dateFin.Date) ||
+                (reservation.beginDateReservation.Value.Date >= dateDebut.Date && reservation.beginDateReservation.Value.Date <= dateFin.Date)*/)
+            {
+                return true;
+            }
+            if (withMessageBox)
+                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
         public static bool getDispoReservableByDate(bool withMessageBox, int idReservable, DateTime dateDebut,DateTime dateFin)
         {
             List<Reservation> reservations = database.GetAllReservationsByReservableId(idReservable);
-
-            foreach(Reservation reservation in reservations)
+            foreach (Reservation reservation in reservations)
             {
-                if((reservation.beginDateReservation.Value.Date <= dateDebut.Date
-                    && reservation.endDateReservation.Value.Date >= dateDebut.Date)
-                    ||
-                    (reservation.beginDateReservation.Value.Date <= dateFin.Date
-                    && reservation.endDateReservation.Value.Date >= dateFin.Date))
-                {
-                    if (withMessageBox)
-                        MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+                if(isDispo(true, reservation, dateDebut, dateFin)==false)return false;
+            }
             List<Reservation> emprunts = database.GetAllEmpruntsByReservableId(idReservable);
-                foreach (Reservation emprunt in emprunts)
+            foreach (Reservation emprunt in emprunts)
+            {
+                if (isDispoEmprunt(true, emprunt, dateDebut, dateFin) == false) return false;
+            }
+            Reservation res = reservations.FirstOrDefault();
+            if (res == null) res = emprunts.FirstOrDefault();
+            if(res != null) { 
+            if (res.isPack == true)
                 {
-                    if ((emprunt.beginDateEmprunt.Value.Date <= dateDebut.Date
-                        && emprunt.endDateEmprunt.Value.Date >= dateDebut.Date)
-                        ||
-                        (emprunt.beginDateEmprunt.Value.Date <= dateFin.Date
-                        && emprunt.endDateEmprunt.Value.Date >= dateFin.Date))
-                    {
-                        if (withMessageBox)
-                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles (materiel emprunté.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                }
-                    if (reservation.isPack == true)
-                {
-                    List<Item> items = database.GetItemsInPack(reservation.reservable.name);
+                    List<Item> items = database.GetItemsInPack(res.reservable.name);
                     foreach (Item i in items)
                     {
-                        if (getDispoReservableByDate(true, i.ReservableId, dateDebut, dateFin) == false)
+                        List<Reservation> reser= database.GetAllReservationsByReservableId(i.ReservableId);
+                        foreach (Reservation reservation in reser)
                         {
-                            if (withMessageBox)
-                                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles (deja reservé).", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return false;
+                            if (isDispo(true, reservation, dateDebut, dateFin) == false) return false;
                         }
                     }
                 }
-                if (reservation.isPack == false)
+            if (res.isPack == false)
                 {
-                    Item i = database.GetItemById(reservation.reservable.ReservableId);
-                    if (getDispoReservableByDate(true, i.pack.ReservableId, dateDebut, dateFin) == false)
+                    Item i = database.GetItemById(res.reservable.ReservableId);
+                    if (i.pack != null)
                     {
-                        if (withMessageBox)
-                            MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles (deja reservé).", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
+                        List<Reservation> rese = database.GetAllReservationsByReservableId(i.pack.ReservableId);
+                        foreach (Reservation reservation in rese)
+                        {
+                            if (isDispo(true, reservation, dateDebut, dateFin) == false) return false;
+                        }
                     }
-                } 
+                }
             }
             return true;     
         }
@@ -292,6 +307,128 @@ namespace PixLogic
             }
             return true;
 
+        }
+
+        public static bool exportPDF(DataGridView table, string path, string title)
+        {
+            PdfPTable pdfTable = new PdfPTable(table.ColumnCount);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 90;
+            pdfTable.HorizontalAlignment = 1;
+            pdfTable.DefaultCell.BorderWidth = 1;
+
+            //Adding title of Pdf
+            PdfPCell cellTitle = new PdfPCell(new Phrase(title.ToUpper()));
+            cellTitle.Colspan = table.ColumnCount;
+            cellTitle.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            cellTitle.PaddingBottom = 10;
+            pdfTable.AddCell(cellTitle);
+
+            //Adding Header row
+            foreach (DataGridViewColumn column in table.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                //cell.BackgroundColor = new iTextSharp.text.BaseColor(Color.Violet);
+                pdfTable.AddCell(cell);
+            }
+            //Adding DataRow
+            foreach (DataGridViewRow row in table.Rows)
+            {
+                foreach (DataGridViewCell c in row.Cells)
+                {
+                    pdfTable.AddCell(c.Value.ToString());
+                }
+            }
+            try
+            {
+                //Exporting to PDF
+                using (FileStream stream = new FileStream(path, FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    pdfDoc.Add(pdfTable);
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+        public static bool exportCSV(DataGridView table, string path)
+        {
+            try
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, false, Encoding.Unicode))
+                {
+                    //string line = "";
+                    var csv = new CsvWriter(file);
+                    foreach (DataGridViewColumn col in table.Columns)
+                    {
+                        csv.WriteField(col.HeaderText.ToString());
+                    }
+                    csv.NextRecord();
+
+                    foreach (DataGridViewRow row in table.Rows)
+                    {
+                        //line = "";
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            csv.WriteField(cell.Value.ToString());
+                        }
+                        csv.NextRecord();
+                    }
+                }
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
+            return true;
+        }
+        public static bool existReservationUser(bool withMessageBox,int userId)
+        {
+            bool emp = database.ContainReservationByUserId(userId);
+            if (emp==false) return false;
+            else
+            {
+                if (withMessageBox) MessageBox.Show("Cet utilisateur possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+        }
+        public static bool existReservationReservable(bool withMessageBox, int reservableId)
+        {
+            bool emp = database.ContainReservationByReservableId(reservableId);
+            if (emp == false) return false;
+            else
+            {
+                if (withMessageBox) MessageBox.Show("Ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+        }
+        public static void initBase()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, "user" + i, null);
+            }
+            for (int k = 0; k < 5; k++)
+            {
+                database.AddCategorie("categorie" + k, k, "des" + k);
+            }
+            for (int j = 0; j < 200; j++)
+            {
+                database.AddItem("itemname" + j, "itemdes" + j, true, j, null, "ref" + j, 1);
+                database.AddCategorieToItem("itemname" + j, "categorie1");
+            }
         }
     }
 }
