@@ -57,7 +57,7 @@ namespace PixLogic
                 valNamePack.Text = dataGridPack.CurrentRow.Cells[0].Value.ToString();
                 valPrice.Text = dataGridPack.CurrentRow.Cells[1].Value.ToString();
                 valDispo.Text = dataGridPack.CurrentRow.Cells[2].Value.ToString();
-                int nbItemInPack = database.GetItemsInPack(valNamePack.Text).Count;
+                int nbItemInPack = database.GetItemsInPackByName(valNamePack.Text).Count;
                 valNbItems.Text = "" + nbItemInPack;
 
                 Pack packT = database.GetPackByName(valNamePack.Text);
@@ -98,7 +98,7 @@ namespace PixLogic
         private void setListItemsOfPack(string namePack)
         {
             listBoxItemsOfPack.Items.Clear();
-            List<Item> items = database.GetItemsInPack(namePack);
+            List<Item> items = database.GetItemsInPackByName(namePack);
 
             foreach (var item in items)
             {
@@ -128,13 +128,16 @@ namespace PixLogic
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            WindowPack winpack = new WindowPack(valNamePack.Text, valPrice.Text, valDescription.Text, pan, this);
-            winpack.ShowDialog(this);
+            if (Helper.existReservationPack(true, Convert.ToInt32(valPackId.Text)) == false)
+            {
+                WindowPack winpack = new WindowPack(valNamePack.Text, valPrice.Text, valDescription.Text, pan, this);
+                winpack.ShowDialog(this);
+            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if (Helper.confirmation(Helper.DELETE))
+            if (Helper.confirmation(Helper.DELETE) && (Helper.existReservationPack(true, Convert.ToInt32(valPackId.Text)) == false))
             {
                 database.DeletePack(valNamePack.Text);
                 setTablePacks(database.GetAllPacks());
