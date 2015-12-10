@@ -43,7 +43,7 @@
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
             this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
             this.radioBetween = new System.Windows.Forms.RadioButton();
-            this.radioOfPastSevenDays = new System.Windows.Forms.RadioButton();
+            this.radioOfNextSevenDays = new System.Windows.Forms.RadioButton();
             this.labelListeFiltre = new System.Windows.Forms.Label();
             this.radioToday = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.labelTel = new System.Windows.Forms.Label();
             this.labelDateRetour = new System.Windows.Forms.Label();
             this.panTableUsers = new System.Windows.Forms.Panel();
+            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
@@ -72,13 +73,12 @@
             this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.panFiltres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.panNews.SuspendLayout();
             this.panTableUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmprunts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmprunts)).BeginInit();
             this.SuspendLayout();
             // 
             // labelFiltres
@@ -103,7 +103,7 @@
             this.panFiltres.Controls.Add(this.dateTimeEnd);
             this.panFiltres.Controls.Add(this.dateTimeBegin);
             this.panFiltres.Controls.Add(this.radioBetween);
-            this.panFiltres.Controls.Add(this.radioOfPastSevenDays);
+            this.panFiltres.Controls.Add(this.radioOfNextSevenDays);
             this.panFiltres.Controls.Add(this.labelListeFiltre);
             this.panFiltres.Controls.Add(this.radioToday);
             this.panFiltres.Controls.Add(this.label8);
@@ -207,17 +207,17 @@
             this.radioBetween.Text = "Entre :";
             this.radioBetween.UseVisualStyleBackColor = true;
             // 
-            // radioOfPastSevenDays
+            // radioOfNextSevenDays
             // 
-            this.radioOfPastSevenDays.AutoSize = true;
-            this.radioOfPastSevenDays.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioOfPastSevenDays.Location = new System.Drawing.Point(21, 83);
-            this.radioOfPastSevenDays.Name = "radioOfPastSevenDays";
-            this.radioOfPastSevenDays.Size = new System.Drawing.Size(148, 17);
-            this.radioOfPastSevenDays.TabIndex = 4;
-            this.radioOfPastSevenDays.TabStop = true;
-            this.radioOfPastSevenDays.Text = "à rendre dans les 7 jours";
-            this.radioOfPastSevenDays.UseVisualStyleBackColor = true;
+            this.radioOfNextSevenDays.AutoSize = true;
+            this.radioOfNextSevenDays.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioOfNextSevenDays.Location = new System.Drawing.Point(21, 83);
+            this.radioOfNextSevenDays.Name = "radioOfNextSevenDays";
+            this.radioOfNextSevenDays.Size = new System.Drawing.Size(148, 17);
+            this.radioOfNextSevenDays.TabIndex = 4;
+            this.radioOfNextSevenDays.TabStop = true;
+            this.radioOfNextSevenDays.Text = "à rendre dans les 7 jours";
+            this.radioOfNextSevenDays.UseVisualStyleBackColor = true;
             // 
             // labelListeFiltre
             // 
@@ -429,6 +429,17 @@
             this.panTableUsers.Size = new System.Drawing.Size(412, 285);
             this.panTableUsers.TabIndex = 47;
             // 
+            // pictureExport
+            // 
+            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
+            this.pictureExport.Location = new System.Drawing.Point(382, 6);
+            this.pictureExport.Name = "pictureExport";
+            this.pictureExport.Size = new System.Drawing.Size(25, 21);
+            this.pictureExport.TabIndex = 50;
+            this.pictureExport.TabStop = false;
+            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
+            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
+            // 
             // buttonCancelSearch
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
@@ -545,17 +556,6 @@
             this.dateRetour.ReadOnly = true;
             this.dateRetour.Width = 105;
             // 
-            // pictureExport
-            // 
-            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
-            this.pictureExport.Location = new System.Drawing.Point(382, 6);
-            this.pictureExport.Name = "pictureExport";
-            this.pictureExport.Size = new System.Drawing.Size(25, 21);
-            this.pictureExport.TabIndex = 50;
-            this.pictureExport.TabStop = false;
-            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
-            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
-            // 
             // panEmprunt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -577,8 +577,8 @@
             this.panNews.PerformLayout();
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmprunts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmprunts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -597,7 +597,7 @@
         private System.Windows.Forms.DateTimePicker dateTimeEnd;
         private System.Windows.Forms.DateTimePicker dateTimeBegin;
         private System.Windows.Forms.RadioButton radioBetween;
-        private System.Windows.Forms.RadioButton radioOfPastSevenDays;
+        private System.Windows.Forms.RadioButton radioOfNextSevenDays;
         private System.Windows.Forms.Label labelListeFiltre;
         private System.Windows.Forms.RadioButton radioToday;
         private System.Windows.Forms.Label label8;

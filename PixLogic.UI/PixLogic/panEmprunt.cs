@@ -161,10 +161,10 @@ namespace PixLogic
                 fin = DateTime.Today.Date ;
                 list = database.GetAllEmpruntsByDateFin(fin);
             }
-            else if (radioOfPastSevenDays.Checked)
+            else if (radioOfNextSevenDays.Checked)
             {
-                fin = DateTime.Today.Date;
-                debut = fin.AddDays(-7);
+                debut = DateTime.Today.Date;
+                fin = debut.AddDays(7);
                 list = database.GetAllEmpruntsByDate(debut, fin);
             }
             else if (radioBetween.Checked)
