@@ -30,7 +30,7 @@ namespace PixLogic
 
         private void setInfos()
         {
-            Reservation reserv = database.GetReservationById(idReservable);
+            Reservation reserv = database.GetReservationById(idReservation);
 
             valNomReservable.Text = reserv.reservable.name;
             valType.Text = reserv.isPack ? Helper.PACK : Helper.ITEM;

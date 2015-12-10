@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CsvHelper;
-
+using System.Globalization;
 
 namespace PixLogic
 {
@@ -222,8 +222,6 @@ namespace PixLogic
             {
                 return true;
             }
-            if (withMessageBox)
-                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
         public static bool isDispoEmprunt(bool withMessageBox, Reservation reservation, DateTime dateDebut, DateTime dateFin)
@@ -235,8 +233,7 @@ namespace PixLogic
             {
                 return true;
             }
-            if (withMessageBox)
-                MessageBox.Show("Les dates pour lesquelles vous désirez réserver ne sont plus disponibles.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+           
             return false;
         }
         public static bool getDispoReservableByDate(bool withMessageBox, int idReservable, DateTime dateDebut,DateTime dateFin)
@@ -244,12 +241,23 @@ namespace PixLogic
             List<Reservation> reservations = database.GetAllReservationsByReservableId(idReservable);
             foreach (Reservation reservation in reservations)
             {
-                if(isDispo(true, reservation, dateDebut, dateFin)==false)return false;
+                if (isDispo(true, reservation, dateDebut, dateFin) == false)
+                {
+                    if (withMessageBox)
+                        MessageBox.Show("Une reservation est deja présente à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             List<Reservation> emprunts = database.GetAllEmpruntsByReservableId(idReservable);
             foreach (Reservation emprunt in emprunts)
             {
-                if (isDispoEmprunt(true, emprunt, dateDebut, dateFin) == false) return false;
+                if (isDispoEmprunt(true, emprunt, dateDebut, dateFin) == false)
+                {
+                    if (withMessageBox)
+                        MessageBox.Show("Un emprunt est deja présent à cette date", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return false;
+                }
             }
             Reservation res = reservations.FirstOrDefault();
             if (res == null) res = emprunts.FirstOrDefault();
@@ -262,7 +270,13 @@ namespace PixLogic
                         List<Reservation> reser= database.GetAllReservationsByReservableId(i.ReservableId);
                         foreach (Reservation reservation in reser)
                         {
-                            if (isDispo(true, reservation, dateDebut, dateFin) == false) return false;
+                            if (isDispo(true, reservation, dateDebut, dateFin) == false)
+                            {
+                                if (withMessageBox)
+                                    MessageBox.Show("Un materiel du pack est deja reservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                return false;
+                            }
                         }
                     }
                 }
@@ -274,7 +288,12 @@ namespace PixLogic
                         List<Reservation> rese = database.GetAllReservationsByReservableId(i.pack.ReservableId);
                         foreach (Reservation reservation in rese)
                         {
-                            if (isDispo(true, reservation, dateDebut, dateFin) == false) return false;
+                            if (isDispo(true, reservation, dateDebut, dateFin) == false)
+                            {
+                                if (withMessageBox)
+                                    MessageBox.Show("Le pack contenant ce materiel est deja reservé à cette date", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return false;
+                            }
                         }
                     }
                 }
@@ -282,8 +301,7 @@ namespace PixLogic
             return true;     
         }
 
-
-
+        
         public static bool getDispoReservableByDateForModif(bool withMessageBox, int idReservable, int idReservation, DateTime dateDebut, DateTime dateFin)
         {
             List<Reservation> reservations = database.GetAllReservationsByReservableId(idReservable);
@@ -394,6 +412,55 @@ namespace PixLogic
             
             return true;
         }
+
+        public static bool importCSV(string path, bool virgule, bool entete)
+        {
+            try
+            {
+                using (System.IO.StreamReader file = new System.IO.StreamReader(path))
+                {
+                    
+                    if(!entete)
+                    {
+                        var csv = new CsvReader(file);
+                        csv.Configuration.Delimiter = virgule ? "," : ";";
+                        while (csv.Read())
+                        {
+                            foreach (string h in csv.FieldHeaders)
+                            {
+                                Console.Write(h + " | ");
+                            }
+                            break;
+                        }
+                        csv.Dispose();
+                    }
+                    
+                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path))
+                    {
+                        var csv2 = new CsvReader(fi);
+                        csv2.Configuration.Delimiter = virgule ? "," : ";";
+                        while (csv2.Read())
+                        {
+                            var id = csv2.GetField(0);
+                            var nom = csv2.GetField(1);
+                            var prenom = csv2.GetField(2);
+                            Console.WriteLine(id + " | " + nom + " | " + prenom);
+                        }
+                        csv2.Dispose();
+                    }
+                    
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
         public static bool existReservationUser(bool withMessageBox,int userId)
         {
             bool emp = database.ContainReservationByUserId(userId);
@@ -416,7 +483,7 @@ namespace PixLogic
         }
         public static void initBase()
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 500; i++)
             {
                 database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, "user" + i, null);
             }
@@ -424,7 +491,11 @@ namespace PixLogic
             {
                 database.AddCategorie("categorie" + k, k, "des" + k);
             }
-            for (int j = 0; j < 200; j++)
+            for (int k = 0; k < 20; k++)
+            {
+                database.AddPack("packname" + k, "des" + k,true,k);
+            }
+            for (int j = 0; j < 500; j++)
             {
                 database.AddItem("itemname" + j, "itemdes" + j, true, j, null, "ref" + j, 1);
                 database.AddCategorieToItem("itemname" + j, "categorie1");

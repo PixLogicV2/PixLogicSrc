@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CsvHelper;
 
 namespace PixLogic
 {
@@ -15,6 +16,13 @@ namespace PixLogic
         public WindowImport()
         {
             InitializeComponent();
+            init();
+        }
+
+        private void init()
+        {
+            radioPointVirgule.Checked = true;
+            radioNo.Checked = true;
         }
 
         private void buttonBrowse_Click(object sender, EventArgs e)
@@ -26,6 +34,7 @@ namespace PixLogic
             {
                 //buttonExporter.Enabled = true;
                 valChemin.Text = openFileDialog.FileName;
+                Helper.importCSV(valChemin.Text, radioVirgule.Checked, radioYes.Checked);
             }
         }
     }
