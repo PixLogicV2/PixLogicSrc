@@ -182,9 +182,9 @@ namespace PixLogic
             if ((checkBoxItem.Checked && !checkBoxPack.Checked) || (checkBoxPack.Checked && !checkBoxItem.Checked))
             {
                 if (checkBoxPack.Checked)
-                    list = database.GetAllPackLogs();
+                    list = database.GetAllPackLogs(list);
                 else
-                    list = database.GetAllItemLogs();
+                    list = database.GetAllItemLogs(list);
                 Console.WriteLine("DANS LE OUI ou PAS");
             }
             else if (!checkBoxPack.Checked && !checkBoxItem.Checked)

@@ -253,13 +253,13 @@ namespace PixLogic.DAL
             AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname,user.mail,user.classe,user.phoneNumber,reservable.name);
             container.get("delete_reservation").deleteReservation(reservation.ReservationId);
         }
-        public List<Log> GetAllPackLogs()
+        public List<Log> GetAllPackLogs(List<Log> list)
         {
-            return container.get("get_all__pack_logs").getAllPackLogs();
+            return container.get("get_all_pack_logs").getAllPackLogs(list);
         }
-        public List<Log> GetAllItemLogs()
+        public List<Log> GetAllItemLogs(List<Log> list)
         {
-            return container.get("get_all_item_logs").getAllItemLogs();
+            return container.get("get_all_item_logs").getAllItemLogs(list);
         }
         /*
         *Categorie
