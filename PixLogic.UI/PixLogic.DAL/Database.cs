@@ -77,9 +77,13 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_packs").getAllPacksByString(search);
         }
-        public List<Item> GetItemsInPack(string packName)
+        public List<Item> GetItemsInPack(int packId)
         {
-            return container.get("get_items_in_pack").getItemsInPack(packName);
+            return container.get("get_items_in_pack").getItemsInPack(packId);
+        }
+        public List<Item> GetItemsInPackByName(string name)
+        {
+            return container.get("get_items_in_pack_by_name").getItemsInPackByName(name);
         }
         public void UpdateItem(string nom,string newName, string des, bool disp, float prix, Image img, string refe, int quant)
         {

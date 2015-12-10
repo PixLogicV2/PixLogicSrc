@@ -202,6 +202,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetItemsInPack();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_items_in_pack_by_name":
+                    this.arrayContainer[serviceName] = new GetItemsInPack();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "byte_array_to_image":
                     this.arrayContainer[serviceName] = new ByteArrayToImage();
                     break;

@@ -215,8 +215,8 @@ namespace PixLogic
         }
         public static bool isDispo(bool withMessageBox,Reservation reservation,DateTime dateDebut,DateTime dateFin)
         {
-            if ((reservation.endDateReservation.Value.Date <= dateDebut.Date) || 
-                (reservation.beginDateReservation.Value.Date >= dateFin.Date)/* ||
+            if ((reservation.endDateReservation.Value.Date < dateDebut.Date) || 
+                (reservation.beginDateReservation.Value.Date > dateFin.Date)/* ||
                 (reservation.endDateReservation.Value.Date>=dateDebut.Date && reservation.endDateReservation.Value.Date<=dateFin.Date) ||
                 (reservation.beginDateReservation.Value.Date >= dateDebut.Date && reservation.beginDateReservation.Value.Date <= dateFin.Date)*/)
             {
@@ -226,8 +226,8 @@ namespace PixLogic
         }
         public static bool isDispoEmprunt(bool withMessageBox, Reservation reservation, DateTime dateDebut, DateTime dateFin)
         {
-            if ((reservation.endDateEmprunt.Value.Date <= dateDebut.Date) ||
-                (reservation.beginDateEmprunt.Value.Date >= dateFin.Date)/* ||
+            if ((reservation.endDateEmprunt.Value.Date <dateDebut.Date) ||
+                (reservation.beginDateEmprunt.Value.Date > dateFin.Date)/* ||
                 (reservation.endDateReservation.Value.Date>=dateDebut.Date && reservation.endDateReservation.Value.Date<=dateFin.Date) ||
                 (reservation.beginDateReservation.Value.Date >= dateDebut.Date && reservation.beginDateReservation.Value.Date <= dateFin.Date)*/)
             {
@@ -264,7 +264,7 @@ namespace PixLogic
             if(res != null) { 
             if (res.isPack == true)
                 {
-                    List<Item> items = database.GetItemsInPack(res.reservable.name);
+                    List<Item> items = database.GetItemsInPack(res.reservable.ReservableId);
                     foreach (Item i in items)
                     {
                         List<Reservation> reser= database.GetAllReservationsByReservableId(i.ReservableId);
@@ -471,15 +471,46 @@ namespace PixLogic
                 return true;
             }
         }
-        public static bool existReservationReservable(bool withMessageBox, int reservableId)
+        public static bool existReservationItem(bool withMessageBox, int reservableId)
         {
             bool emp = database.ContainReservationByReservableId(reservableId);
-            if (emp == false) return false;
-            else
+            if (emp == true)
+            { 
+                if (withMessageBox) MessageBox.Show("Ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            Item item = database.GetItemById(reservableId);
+            if (item.pack != null)
+            {
+                bool empPack = database.ContainReservationByReservableId(item.pack.ReservableId);
+                if (empPack == true)
+                {
+                    if (withMessageBox) MessageBox.Show("Un pack contenant ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool existReservationPack(bool withMessageBox, int reservableId)
+        {
+            bool emp = database.ContainReservationByReservableId(reservableId);
+            if (emp == true)
             {
                 if (withMessageBox) MessageBox.Show("Ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
+            Pack pack = database.GetPackById(reservableId);
+            List<Item> items = database.GetItemsInPack(reservableId);
+            foreach (Item i in items)
+            {
+                bool res = database.ContainReservationByReservableId(i.ReservableId);
+                if (res== true)
+                {
+                    if (withMessageBox) MessageBox.Show("Un materiel de ce pack possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
         }
         public static void initBase()
         {
