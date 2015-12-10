@@ -53,5 +53,21 @@ namespace PixLogic
                 MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void panScript_Load(object sender, EventArgs e)
+        {
+            DAL.Database dt = new DAL.Database();
+            QueryListBox.DataSource = dt.GetAllRequete();
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

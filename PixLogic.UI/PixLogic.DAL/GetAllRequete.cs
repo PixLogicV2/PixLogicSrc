@@ -15,7 +15,7 @@ namespace PixLogic.DAL
             this.context = context;
         }
 
-        public List<Requete> getAllItems()
+        public List<Requete> getAllRequete()
         {
             IQueryable<Requete> requeteQuery = from Requete in context.Requetes
                                                select Requete;
