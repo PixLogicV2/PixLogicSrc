@@ -32,24 +32,32 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelListToImport = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridImport = new System.Windows.Forms.DataGridView();
             this.labelChemin = new System.Windows.Forms.Label();
             this.valChemin = new System.Windows.Forms.TextBox();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelDelimiteur = new System.Windows.Forms.Label();
-            this.labelHeader = new System.Windows.Forms.Label();
-            this.labelOption = new System.Windows.Forms.Label();
-            this.radioPointVirgule = new System.Windows.Forms.RadioButton();
-            this.radioVirgule = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioYes = new System.Windows.Forms.RadioButton();
             this.radioNo = new System.Windows.Forms.RadioButton();
+            this.radioYes = new System.Windows.Forms.RadioButton();
+            this.radioVirgule = new System.Windows.Forms.RadioButton();
+            this.radioPointVirgule = new System.Windows.Forms.RadioButton();
+            this.labelHeader = new System.Windows.Forms.Label();
+            this.labelDelimiteur = new System.Windows.Forms.Label();
+            this.labelOption = new System.Windows.Forms.Label();
+            this.panelChamps = new System.Windows.Forms.Panel();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.valImport = new System.Windows.Forms.Label();
+            this.champs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aCocher = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buttonOk = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridImport)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panelChamps.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonImporter
@@ -57,7 +65,7 @@
             this.buttonImporter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonImporter.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonImporter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImporter.Location = new System.Drawing.Point(162, 378);
+            this.buttonImporter.Location = new System.Drawing.Point(162, 510);
             this.buttonImporter.Name = "buttonImporter";
             this.buttonImporter.Size = new System.Drawing.Size(84, 27);
             this.buttonImporter.TabIndex = 10;
@@ -70,7 +78,7 @@
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(256, 378);
+            this.buttonCancel.Location = new System.Drawing.Point(256, 510);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
             this.buttonCancel.TabIndex = 11;
@@ -82,7 +90,7 @@
             // 
             this.labelListToImport.AutoSize = true;
             this.labelListToImport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListToImport.Location = new System.Drawing.Point(26, 163);
+            this.labelListToImport.Location = new System.Drawing.Point(26, 295);
             this.labelListToImport.Name = "labelListToImport";
             this.labelListToImport.Size = new System.Drawing.Size(88, 13);
             this.labelListToImport.TabIndex = 32;
@@ -91,19 +99,21 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(12, 167);
+            this.panel1.Controls.Add(this.dataGridImport);
+            this.panel1.Location = new System.Drawing.Point(12, 299);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(469, 205);
             this.panel1.TabIndex = 31;
             // 
-            // dataGridView1
+            // dataGridImport
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(469, 183);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridImport.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridImport.Location = new System.Drawing.Point(-1, 21);
+            this.dataGridImport.Name = "dataGridImport";
+            this.dataGridImport.RowHeadersVisible = false;
+            this.dataGridImport.Size = new System.Drawing.Size(469, 183);
+            this.dataGridImport.TabIndex = 0;
             // 
             // labelChemin
             // 
@@ -150,60 +160,6 @@
             this.panel2.Size = new System.Drawing.Size(467, 89);
             this.panel2.TabIndex = 38;
             // 
-            // labelDelimiteur
-            // 
-            this.labelDelimiteur.AutoSize = true;
-            this.labelDelimiteur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDelimiteur.Location = new System.Drawing.Point(3, 16);
-            this.labelDelimiteur.Name = "labelDelimiteur";
-            this.labelDelimiteur.Size = new System.Drawing.Size(68, 15);
-            this.labelDelimiteur.TabIndex = 34;
-            this.labelDelimiteur.Text = "Délimiteur :";
-            // 
-            // labelHeader
-            // 
-            this.labelHeader.AutoSize = true;
-            this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeader.Location = new System.Drawing.Point(241, 16);
-            this.labelHeader.Name = "labelHeader";
-            this.labelHeader.Size = new System.Drawing.Size(46, 15);
-            this.labelHeader.TabIndex = 37;
-            this.labelHeader.Text = "Entête :";
-            // 
-            // labelOption
-            // 
-            this.labelOption.AutoSize = true;
-            this.labelOption.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOption.Location = new System.Drawing.Point(28, 7);
-            this.labelOption.Name = "labelOption";
-            this.labelOption.Size = new System.Drawing.Size(48, 13);
-            this.labelOption.TabIndex = 40;
-            this.labelOption.Text = "Options";
-            // 
-            // radioPointVirgule
-            // 
-            this.radioPointVirgule.AutoSize = true;
-            this.radioPointVirgule.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioPointVirgule.Location = new System.Drawing.Point(77, 14);
-            this.radioPointVirgule.Name = "radioPointVirgule";
-            this.radioPointVirgule.Size = new System.Drawing.Size(112, 19);
-            this.radioPointVirgule.TabIndex = 40;
-            this.radioPointVirgule.TabStop = true;
-            this.radioPointVirgule.Text = "Point virgule ( ; )";
-            this.radioPointVirgule.UseVisualStyleBackColor = true;
-            // 
-            // radioVirgule
-            // 
-            this.radioVirgule.AutoSize = true;
-            this.radioVirgule.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioVirgule.Location = new System.Drawing.Point(77, 38);
-            this.radioVirgule.Name = "radioVirgule";
-            this.radioVirgule.Size = new System.Drawing.Size(83, 19);
-            this.radioVirgule.TabIndex = 41;
-            this.radioVirgule.TabStop = true;
-            this.radioVirgule.Text = "Virgule ( , )";
-            this.radioVirgule.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.radioNo);
@@ -212,18 +168,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(85, 43);
             this.panel3.TabIndex = 42;
-            // 
-            // radioYes
-            // 
-            this.radioYes.AutoSize = true;
-            this.radioYes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioYes.Location = new System.Drawing.Point(0, 0);
-            this.radioYes.Name = "radioYes";
-            this.radioYes.Size = new System.Drawing.Size(44, 19);
-            this.radioYes.TabIndex = 42;
-            this.radioYes.TabStop = true;
-            this.radioYes.Text = "Oui";
-            this.radioYes.UseVisualStyleBackColor = true;
             // 
             // radioNo
             // 
@@ -237,11 +181,137 @@
             this.radioNo.Text = "Non";
             this.radioNo.UseVisualStyleBackColor = true;
             // 
+            // radioYes
+            // 
+            this.radioYes.AutoSize = true;
+            this.radioYes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioYes.Location = new System.Drawing.Point(0, 0);
+            this.radioYes.Name = "radioYes";
+            this.radioYes.Size = new System.Drawing.Size(44, 19);
+            this.radioYes.TabIndex = 42;
+            this.radioYes.TabStop = true;
+            this.radioYes.Text = "Oui";
+            this.radioYes.UseVisualStyleBackColor = true;
+            // 
+            // radioVirgule
+            // 
+            this.radioVirgule.AutoSize = true;
+            this.radioVirgule.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioVirgule.Location = new System.Drawing.Point(77, 38);
+            this.radioVirgule.Name = "radioVirgule";
+            this.radioVirgule.Size = new System.Drawing.Size(83, 19);
+            this.radioVirgule.TabIndex = 41;
+            this.radioVirgule.TabStop = true;
+            this.radioVirgule.Text = "Virgule ( , )";
+            this.radioVirgule.UseVisualStyleBackColor = true;
+            // 
+            // radioPointVirgule
+            // 
+            this.radioPointVirgule.AutoSize = true;
+            this.radioPointVirgule.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioPointVirgule.Location = new System.Drawing.Point(77, 14);
+            this.radioPointVirgule.Name = "radioPointVirgule";
+            this.radioPointVirgule.Size = new System.Drawing.Size(112, 19);
+            this.radioPointVirgule.TabIndex = 40;
+            this.radioPointVirgule.TabStop = true;
+            this.radioPointVirgule.Text = "Point virgule ( ; )";
+            this.radioPointVirgule.UseVisualStyleBackColor = true;
+            // 
+            // labelHeader
+            // 
+            this.labelHeader.AutoSize = true;
+            this.labelHeader.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeader.Location = new System.Drawing.Point(241, 16);
+            this.labelHeader.Name = "labelHeader";
+            this.labelHeader.Size = new System.Drawing.Size(46, 15);
+            this.labelHeader.TabIndex = 37;
+            this.labelHeader.Text = "Entête :";
+            // 
+            // labelDelimiteur
+            // 
+            this.labelDelimiteur.AutoSize = true;
+            this.labelDelimiteur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDelimiteur.Location = new System.Drawing.Point(3, 16);
+            this.labelDelimiteur.Name = "labelDelimiteur";
+            this.labelDelimiteur.Size = new System.Drawing.Size(68, 15);
+            this.labelDelimiteur.TabIndex = 34;
+            this.labelDelimiteur.Text = "Délimiteur :";
+            // 
+            // labelOption
+            // 
+            this.labelOption.AutoSize = true;
+            this.labelOption.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOption.Location = new System.Drawing.Point(28, 7);
+            this.labelOption.Name = "labelOption";
+            this.labelOption.Size = new System.Drawing.Size(48, 13);
+            this.labelOption.TabIndex = 40;
+            this.labelOption.Text = "Options";
+            // 
+            // panelChamps
+            // 
+            this.panelChamps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelChamps.Controls.Add(this.valImport);
+            this.panelChamps.Controls.Add(this.dataGrid);
+            this.panelChamps.Location = new System.Drawing.Point(12, 153);
+            this.panelChamps.Name = "panelChamps";
+            this.panelChamps.Size = new System.Drawing.Size(206, 139);
+            this.panelChamps.TabIndex = 41;
+            // 
+            // dataGrid
+            // 
+            this.dataGrid.AllowUserToAddRows = false;
+            this.dataGrid.AllowUserToDeleteRows = false;
+            this.dataGrid.BackgroundColor = System.Drawing.Color.White;
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.champs,
+            this.aCocher});
+            this.dataGrid.Location = new System.Drawing.Point(-1, 24);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowHeadersVisible = false;
+            this.dataGrid.Size = new System.Drawing.Size(206, 114);
+            this.dataGrid.TabIndex = 0;
+            // 
+            // valImport
+            // 
+            this.valImport.AutoSize = true;
+            this.valImport.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valImport.Location = new System.Drawing.Point(2, 4);
+            this.valImport.Name = "valImport";
+            this.valImport.Size = new System.Drawing.Size(11, 13);
+            this.valImport.TabIndex = 1;
+            this.valImport.Text = "-";
+            // 
+            // champs
+            // 
+            this.champs.HeaderText = "Champs";
+            this.champs.Name = "champs";
+            this.champs.ReadOnly = true;
+            this.champs.Width = 103;
+            // 
+            // aCocher
+            // 
+            this.aCocher.HeaderText = "Pris en compte";
+            this.aCocher.Name = "aCocher";
+            this.aCocher.ReadOnly = true;
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.Location = new System.Drawing.Point(225, 269);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(49, 23);
+            this.buttonOk.TabIndex = 42;
+            this.buttonOk.Text = "Ok";
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            // 
             // WindowImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 413);
+            this.ClientSize = new System.Drawing.Size(493, 549);
+            this.Controls.Add(this.buttonOk);
+            this.Controls.Add(this.panelChamps);
             this.Controls.Add(this.labelOption);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.buttonBrowse);
@@ -257,11 +327,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Import";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridImport)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panelChamps.ResumeLayout(false);
+            this.panelChamps.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,7 +345,7 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelListToImport;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridImport;
         private System.Windows.Forms.Label labelChemin;
         private System.Windows.Forms.TextBox valChemin;
         private System.Windows.Forms.Button buttonBrowse;
@@ -286,5 +359,11 @@
         private System.Windows.Forms.Label labelHeader;
         private System.Windows.Forms.Label labelDelimiteur;
         private System.Windows.Forms.Label labelOption;
+        private System.Windows.Forms.Panel panelChamps;
+        private System.Windows.Forms.Label valImport;
+        private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn champs;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn aCocher;
+        private System.Windows.Forms.Button buttonOk;
     }
 }

@@ -413,8 +413,9 @@ namespace PixLogic
             return true;
         }
 
-        public static bool importCSV(string path, bool virgule, bool entete)
+        public static List<User> importCSV(string path, bool virgule, bool entete)
         {
+            List<User> users = new List<User>();
             try
             {
                 using (System.IO.StreamReader file = new System.IO.StreamReader(path))
@@ -426,10 +427,17 @@ namespace PixLogic
                         csv.Configuration.Delimiter = virgule ? "," : ";";
                         while (csv.Read())
                         {
+                            List<String> headers = new List<string>();
                             foreach (string h in csv.FieldHeaders)
                             {
-                                Console.Write(h + " | ");
+                                //Console.Write(h + " | ");
+                                headers.Add(h);
+                                
                             }
+                            User u = new User();
+                            u.name = headers.ElementAt<string>(0); u.nickname = headers.ElementAt<string>(1);
+                            u.classe = headers.ElementAt<string>(2); ; u.mail = headers.ElementAt<string>(3); ; u.phoneNumber = headers.ElementAt<string>(4); ;
+                            users.Add(u);
                             break;
                         }
                         csv.Dispose();
@@ -441,10 +449,15 @@ namespace PixLogic
                         csv2.Configuration.Delimiter = virgule ? "," : ";";
                         while (csv2.Read())
                         {
-                            var id = csv2.GetField(0);
-                            var nom = csv2.GetField(1);
-                            var prenom = csv2.GetField(2);
-                            Console.WriteLine(id + " | " + nom + " | " + prenom);
+                            var nom = csv2.GetField(0);
+                            var prenom = csv2.GetField(1);
+                            var classe = csv2.GetField(2);
+                            var mail = csv2.GetField(3);
+                            var tel = csv2.GetField(4);
+                            User u = new User();
+                            u.name = nom; u.nickname = prenom; u.classe = classe; u.mail = mail; u.phoneNumber = tel;
+                            users.Add(u);
+                            //Console.WriteLine(id + " | " + nom + " | " + prenom);
                         }
                         csv2.Dispose();
                     }
@@ -455,10 +468,10 @@ namespace PixLogic
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                
             }
 
-            return true;
+            return users;
         }
 
         public static bool existReservationUser(bool withMessageBox,int userId)
