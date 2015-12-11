@@ -392,6 +392,7 @@
             this.buttonModifierClasse.Text = "Modifier";
             this.buttonModifierClasse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonModifierClasse.UseVisualStyleBackColor = true;
+            this.buttonModifierClasse.Click += new System.EventHandler(this.buttonModifierClasse_Click);
             // 
             // buttonAjouterClasse
             // 

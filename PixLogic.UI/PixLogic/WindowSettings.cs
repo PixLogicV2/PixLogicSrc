@@ -96,7 +96,7 @@ namespace PixLogic
             {
                 dataGridUserClass.FirstDisplayedScrollingRowIndex = 0;
                 dataGridUserClass.Refresh();
-                dataGridUserClass.CurrentCell = dataGridCategories.Rows[0].Cells[0];
+                dataGridUserClass.CurrentCell = dataGridUserClass.Rows[0].Cells[0];
                 dataGridUserClass.Rows[0].Selected = true;
             }
 
@@ -120,7 +120,7 @@ namespace PixLogic
 
         private void checkEnableButtonClasse()
         {
-            if (dataGridCategories.RowCount > 0)
+            if (dataGridUserClass.RowCount > 0)
             {
                 buttonModifierClasse.Enabled = true;
                 buttonSuppClasse.Enabled = true;
@@ -174,6 +174,13 @@ namespace PixLogic
         private void buttonAjouterClasse_Click(object sender, EventArgs e)
         {
             WindowClasse winClasse = new WindowClasse(this);
+            winClasse.ShowDialog();
+        }
+
+        private void buttonModifierClasse_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridUserClass.CurrentRow.Cells[0].Value.ToString());
+            WindowClasse winClasse = new WindowClasse(this, id);
             winClasse.ShowDialog();
         }
     }
