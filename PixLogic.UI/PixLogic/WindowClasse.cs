@@ -18,7 +18,6 @@ namespace PixLogic
         private bool add;
         private bool quickAdd;
         private int idClasse;
-        private panItemPack panIP;
 
         public WindowClasse()
         {
@@ -27,32 +26,48 @@ namespace PixLogic
             quickAdd = true;
         }
 
-        public WindowClasse(WindowSettings w, panItemPack pan)
+        public WindowClasse(WindowSettings w)
         {
             InitializeComponent();
             settings = w;
-            panIP = pan;
             add = true;
             quickAdd = false;
         }
-        public WindowClasse(WindowSettings w, panItemPack pan, int idClasse)
+        public WindowClasse(WindowSettings w, int idClasse)
         {
             InitializeComponent();
             settings = w;
             add = false;
             quickAdd = false;
-            panIP = pan;
             this.idClasse = idClasse;
 
-            /*ClassUser c = database.GetCategorieById(idCategorie);
-
+            UserClass c = database.GetUserClassById(idClasse);
             valLibelle.Text = c.name;
-            valLevel.Text = c.level.ToString();
-            valDescription.Text = c.description;*/
+            valCredit.Text = c.credits.ToString();
         }
         private void buttonValid_Click(object sender, EventArgs e)
         {
+            string op = add ? Helper.ADD : Helper.SET;
+            if (!Helper.fieldsAreEmpty(true, valLibelle.Text)
+                && Helper.AreNumbers(true, valCredit.Text)
+                && !Helper.userClassExist(true, valLibelle.Text)
+                && Helper.confirmation(op))
+            {
+                if (add)
+                    database.AddUserClass(valLibelle.Text, (int)double.Parse(valCredit.Text));
+                else
+                    database.UpdateUserClass(idClasse, valLibelle.Text, (int)double.Parse(valCredit.Text));
 
+                if (!quickAdd)
+                {
+                    settings.setTableUserClass(database.GetAllUserClass());
+                }
+                else
+                {
+
+                }
+                this.Close();
+            }
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

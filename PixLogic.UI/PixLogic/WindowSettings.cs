@@ -81,6 +81,56 @@ namespace PixLogic
             }
         }
 
+        public void setTableUserClass(List<UserClass> l)
+        {
+            List<UserClass> list = l;
+            dataGridUserClass.Rows.Clear();
+            //dataGridUsers.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+            foreach (var classe in list)
+            {
+                dataGridUserClass.Rows.Add(classe.UserClassId, classe.name, classe.credits);
+            }
+
+            if (dataGridUserClass.RowCount > 0)
+            {
+                dataGridUserClass.FirstDisplayedScrollingRowIndex = 0;
+                dataGridUserClass.Refresh();
+                dataGridUserClass.CurrentCell = dataGridCategories.Rows[0].Cells[0];
+                dataGridUserClass.Rows[0].Selected = true;
+            }
+
+            setNewsUserClass();
+            checkEnableButtonClasse();
+        }
+
+        private void setNewsUserClass()
+        {
+            if (dataGridUserClass.RowCount > 0)
+            {
+                valLibelleClasse.Text = dataGridUserClass.CurrentRow.Cells[1].Value.ToString();
+                valCredit.Text = dataGridUserClass.CurrentRow.Cells[2].Value.ToString();
+            }
+            else
+            {
+                valLibelleClasse.Text = "-";
+                valCredit.Text = "-";
+            }
+        }
+
+        private void checkEnableButtonClasse()
+        {
+            if (dataGridCategories.RowCount > 0)
+            {
+                buttonModifierClasse.Enabled = true;
+                buttonSuppClasse.Enabled = true;
+            }
+            else
+            {
+                buttonModifierClasse.Enabled = false;
+                buttonSuppClasse.Enabled = false;
+            }
+        }
+
         private void buttonModify_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dataGridCategories.CurrentRow.Cells[0].Value.ToString());
