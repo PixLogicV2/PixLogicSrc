@@ -21,6 +21,7 @@ namespace PixLogic.DAL
             if (image != null) user.image = Helper.imageToByteArray(image);
             else user.image = null;
 
+            user.credits = 100;
             return user;
         }
     }
