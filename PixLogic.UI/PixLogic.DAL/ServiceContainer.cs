@@ -182,6 +182,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new UpdateUser();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "get_userclass":
+                    this.arrayContainer[serviceName] = new GetUserClass();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "update_userclass":
                     this.arrayContainer[serviceName] = new AddUserClass();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));

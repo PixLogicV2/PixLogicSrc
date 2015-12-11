@@ -103,6 +103,7 @@
     <Compile Include="GetReservationById.cs" />
     <Compile Include="GetUserById.cs" />
     <Compile Include="GetUserByName.cs" />
+    <Compile Include="GetUserClass.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogFactory.cs" />
