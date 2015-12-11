@@ -54,7 +54,6 @@ namespace PixLogic
         private void buttonValid_Click(object sender, EventArgs e)
         {
             string op = add ? Helper.ADD : Helper.SET;
-            Console.WriteLine("oooooooooko");
             if(!Helper.fieldsAreEmpty(true, valLibelle.Text)
                 && Helper.AreNumbers(true, valLevel.Text)
                 && !Helper.categorieExist(true, valLibelle.Text)

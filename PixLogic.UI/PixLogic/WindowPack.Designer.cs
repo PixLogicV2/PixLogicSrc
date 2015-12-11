@@ -77,9 +77,9 @@
             this.labelPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrice.Location = new System.Drawing.Point(10, 83);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(65, 17);
+            this.labelPrice.Size = new System.Drawing.Size(92, 17);
             this.labelPrice.TabIndex = 16;
-            this.labelPrice.Text = "Prix ( € ) :";
+            this.labelPrice.Text = "Prix (Crédits) :";
             // 
             // valName
             // 
