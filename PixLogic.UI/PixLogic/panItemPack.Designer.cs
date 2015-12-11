@@ -45,6 +45,7 @@
             this.panTableItem = new System.Windows.Forms.Panel();
             this.labelCat = new System.Windows.Forms.Label();
             this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
@@ -65,7 +66,6 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
@@ -240,6 +240,16 @@
             this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
             this.comboBoxCategorie.Click += new System.EventHandler(this.comboBoxCategorie_Click);
             // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
+            // 
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(67, 17);
@@ -376,9 +386,9 @@
             // pictureImporter
             // 
             this.pictureImporter.Image = ((System.Drawing.Image)(resources.GetObject("pictureImporter.Image")));
-            this.pictureImporter.Location = new System.Drawing.Point(437, 0);
+            this.pictureImporter.Location = new System.Drawing.Point(456, 0);
             this.pictureImporter.Name = "pictureImporter";
-            this.pictureImporter.Size = new System.Drawing.Size(30, 27);
+            this.pictureImporter.Size = new System.Drawing.Size(29, 27);
             this.pictureImporter.TabIndex = 51;
             this.pictureImporter.TabStop = false;
             this.pictureImporter.Click += new System.EventHandler(this.pictureImporter_Click);
@@ -387,7 +397,7 @@
             // pictureExport
             // 
             this.pictureExport.Image = ((System.Drawing.Image)(resources.GetObject("pictureExport.Image")));
-            this.pictureExport.Location = new System.Drawing.Point(403, 1);
+            this.pictureExport.Location = new System.Drawing.Point(422, 1);
             this.pictureExport.Name = "pictureExport";
             this.pictureExport.Size = new System.Drawing.Size(30, 27);
             this.pictureExport.TabIndex = 50;
@@ -475,16 +485,6 @@
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // pictureReserver
             // 

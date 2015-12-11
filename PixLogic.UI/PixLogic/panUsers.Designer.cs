@@ -372,10 +372,10 @@
             // 
             // pictureExport
             // 
-            this.pictureExport.Image = global::PixLogic.Properties.Resources.export;
-            this.pictureExport.Location = new System.Drawing.Point(526, 3);
+            this.pictureExport.Image = global::PixLogic.Properties.Resources.exporter;
+            this.pictureExport.Location = new System.Drawing.Point(521, 1);
             this.pictureExport.Name = "pictureExport";
-            this.pictureExport.Size = new System.Drawing.Size(25, 21);
+            this.pictureExport.Size = new System.Drawing.Size(25, 26);
             this.pictureExport.TabIndex = 50;
             this.pictureExport.TabStop = false;
             this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
