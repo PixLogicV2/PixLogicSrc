@@ -35,6 +35,9 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
+            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valUserName = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
             this.labelIdentifiant = new System.Windows.Forms.Label();
@@ -53,9 +56,6 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureExport = new System.Windows.Forms.PictureBox();
-            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
@@ -65,6 +65,8 @@
             // 
             // panTableUsers
             // 
+            this.panTableUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panTableUsers.Controls.Add(this.buttonCancelSearch);
             this.panTableUsers.Controls.Add(this.textBoxSearch);
@@ -109,6 +111,8 @@
             this.dataGridUsers.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
             this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridUsers.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -128,6 +132,27 @@
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.Click += new System.EventHandler(this.dataGridUsers_Click);
             // 
+            // IdUser
+            // 
+            this.IdUser.HeaderText = "Id";
+            this.IdUser.Name = "IdUser";
+            this.IdUser.ReadOnly = true;
+            this.IdUser.Width = 60;
+            // 
+            // NameUser
+            // 
+            this.NameUser.HeaderText = "Nom";
+            this.NameUser.Name = "NameUser";
+            this.NameUser.ReadOnly = true;
+            this.NameUser.Width = 75;
+            // 
+            // NickNameUser
+            // 
+            this.NickNameUser.HeaderText = "Prenom";
+            this.NickNameUser.Name = "NickNameUser";
+            this.NickNameUser.ReadOnly = true;
+            this.NickNameUser.Width = 75;
+            // 
             // valUserName
             // 
             this.valUserName.AutoSize = true;
@@ -141,6 +166,9 @@
             // 
             // panNews
             // 
+            this.panNews.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panNews.Controls.Add(this.labelIdentifiant);
             this.panNews.Controls.Add(this.valClass);
@@ -157,6 +185,8 @@
             // 
             // labelIdentifiant
             // 
+            this.labelIdentifiant.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelIdentifiant.AutoSize = true;
             this.labelIdentifiant.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIdentifiant.Location = new System.Drawing.Point(0, 16);
@@ -167,6 +197,8 @@
             // 
             // valClass
             // 
+            this.valClass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.valClass.AutoSize = true;
             this.valClass.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valClass.Location = new System.Drawing.Point(72, 92);
@@ -177,6 +209,8 @@
             // 
             // valUserId
             // 
+            this.valUserId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.valUserId.AutoSize = true;
             this.valUserId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valUserId.Location = new System.Drawing.Point(72, 14);
@@ -188,6 +222,8 @@
             // 
             // valTel
             // 
+            this.valTel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.valTel.AutoSize = true;
             this.valTel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valTel.Location = new System.Drawing.Point(72, 66);
@@ -198,6 +234,8 @@
             // 
             // valMail
             // 
+            this.valMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.valMail.AutoSize = true;
             this.valMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valMail.Location = new System.Drawing.Point(72, 41);
@@ -208,6 +246,8 @@
             // 
             // labelClass
             // 
+            this.labelClass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelClass.AutoSize = true;
             this.labelClass.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClass.Location = new System.Drawing.Point(0, 95);
@@ -218,6 +258,8 @@
             // 
             // labelTel
             // 
+            this.labelTel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelTel.AutoSize = true;
             this.labelTel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTel.Location = new System.Drawing.Point(0, 68);
@@ -228,6 +270,8 @@
             // 
             // labelMail
             // 
+            this.labelMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.labelMail.AutoSize = true;
             this.labelMail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMail.Location = new System.Drawing.Point(0, 42);
@@ -269,6 +313,7 @@
             // 
             // buttonDelete
             // 
+            this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,6 +328,8 @@
             // 
             // pictureBoxUser
             // 
+            this.pictureBoxUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxUser.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUser.Image")));
             this.pictureBoxUser.InitialImage = null;
@@ -295,6 +342,7 @@
             // 
             // buttonModify
             // 
+            this.buttonModify.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonModify.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -309,6 +357,7 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -331,27 +380,6 @@
             this.pictureExport.TabStop = false;
             this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
             this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
-            // 
-            // IdUser
-            // 
-            this.IdUser.HeaderText = "Id";
-            this.IdUser.Name = "IdUser";
-            this.IdUser.ReadOnly = true;
-            this.IdUser.Width = 60;
-            // 
-            // NameUser
-            // 
-            this.NameUser.HeaderText = "Nom";
-            this.NameUser.Name = "NameUser";
-            this.NameUser.ReadOnly = true;
-            this.NameUser.Width = 75;
-            // 
-            // NickNameUser
-            // 
-            this.NickNameUser.HeaderText = "Prenom";
-            this.NickNameUser.Name = "NickNameUser";
-            this.NickNameUser.ReadOnly = true;
-            this.NickNameUser.Width = 75;
             // 
             // panUsers
             // 
