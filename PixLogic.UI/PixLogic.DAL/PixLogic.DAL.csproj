@@ -71,6 +71,7 @@
     <Compile Include="ContainCategorie.cs" />
     <Compile Include="ContainReservationByReservableId.cs" />
     <Compile Include="ContainReservationByUserId.cs" />
+    <Compile Include="ContainUserClass.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeleteCategorie.cs" />
     <Compile Include="DeletePack.cs" />
