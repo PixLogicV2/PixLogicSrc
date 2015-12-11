@@ -45,6 +45,12 @@ namespace PixLogic
             valLibelle.Text = c.name;
             valCredit.Text = c.credits.ToString();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void buttonValid_Click(object sender, EventArgs e)
         {
             string op = add ? Helper.ADD : Helper.SET;
@@ -68,11 +74,6 @@ namespace PixLogic
                 }
                 this.Close();
             }
-        }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

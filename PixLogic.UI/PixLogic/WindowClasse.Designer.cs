@@ -63,9 +63,9 @@
             this.labelNbCredit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNbCredit.Location = new System.Drawing.Point(5, 58);
             this.labelNbCredit.Name = "labelNbCredit";
-            this.labelNbCredit.Size = new System.Drawing.Size(79, 17);
+            this.labelNbCredit.Size = new System.Drawing.Size(77, 17);
             this.labelNbCredit.TabIndex = 23;
-            this.labelNbCredit.Text = "Nb Crédits :";
+            this.labelNbCredit.Text = "Nb crédits :";
             // 
             // labelObligatoire
             // 
@@ -140,6 +140,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowClasse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "WindowClasse";
             this.ResumeLayout(false);
             this.PerformLayout();

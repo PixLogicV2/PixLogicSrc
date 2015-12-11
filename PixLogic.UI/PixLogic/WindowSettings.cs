@@ -21,6 +21,7 @@ namespace PixLogic
             InitializeComponent();
             pan = p;
             setTableCategories(database.GetAllCategorie());
+            setTableUserClass(database.GetAllUserClass());
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -168,6 +169,12 @@ namespace PixLogic
         {
             if (dataGridCategories.RowCount > 0)
                 setNewsCategories();
+        }
+
+        private void buttonAjouterClasse_Click(object sender, EventArgs e)
+        {
+            WindowClasse winClasse = new WindowClasse(this);
+            winClasse.ShowDialog();
         }
     }
 }

@@ -166,6 +166,18 @@ namespace PixLogic
 
         }
 
+        public static bool userClassExist(bool withMessageBox, string name)
+        {
+            if (database.ContainUserClass(name))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("Le nom de la classe renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+
+        }
+
         public static bool itemExistModif(bool withMessageBox, string name, string oldName)
         {
             if (database.ContainItem(name) && !name.Equals(oldName))

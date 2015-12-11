@@ -324,7 +324,7 @@
             this.dataGridCategories.ReadOnly = true;
             this.dataGridCategories.RowHeadersVisible = false;
             this.dataGridCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridCategories.Size = new System.Drawing.Size(247, 251);
+            this.dataGridCategories.Size = new System.Drawing.Size(247, 255);
             this.dataGridCategories.TabIndex = 0;
             this.dataGridCategories.Click += new System.EventHandler(this.dataGridCategories_Click);
             this.dataGridCategories.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridCategories_KeyUp);
@@ -405,6 +405,7 @@
             this.buttonAjouterClasse.Text = "Ajouter";
             this.buttonAjouterClasse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAjouterClasse.UseVisualStyleBackColor = true;
+            this.buttonAjouterClasse.Click += new System.EventHandler(this.buttonAjouterClasse_Click);
             // 
             // label2
             // 
@@ -534,7 +535,7 @@
             this.dataGridUserClass.ReadOnly = true;
             this.dataGridUserClass.RowHeadersVisible = false;
             this.dataGridUserClass.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUserClass.Size = new System.Drawing.Size(247, 251);
+            this.dataGridUserClass.Size = new System.Drawing.Size(247, 255);
             this.dataGridUserClass.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
