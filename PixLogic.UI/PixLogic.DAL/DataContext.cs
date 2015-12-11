@@ -23,5 +23,6 @@ namespace PixLogic.DAL
         public DbSet<Requete> Requetes { get; set; }
         public DbSet<MailConfig> MailConfigs { get; set; }
         public DbSet<Log> Logs { get; set; }
+        public DbSet<UserClass> UserClasses { get; set; }
     }
 }
