@@ -14,11 +14,5 @@ namespace PixLogic.DAL
             public int credits { get; set; }
             public int UserClassId { get; set; }
             
-            public UserClass(string name, int credits)
-             {
-            this.name = name;
-            this.credits = credits;
-
-             }
         }
 }

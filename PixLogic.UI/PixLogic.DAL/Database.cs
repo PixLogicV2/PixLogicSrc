@@ -130,7 +130,7 @@ namespace PixLogic.DAL
         }
         public void AddUserClass(string name,int credits)
         {
-            container.get("add_userclass").addUserClass(new UserClass(name,credits));
+            container.get("add_userclass").addUserClass(container.get("userclass_factory").build(name,credits));
         }
         public void AddUserClassToUser(int userId,int userClassId)
         {

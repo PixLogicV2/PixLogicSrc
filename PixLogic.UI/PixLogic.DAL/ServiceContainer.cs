@@ -30,6 +30,9 @@ namespace PixLogic.DAL
                 case "user_factory":
                     this.arrayContainer[serviceName] = new UserFactory();
                     break;
+                case "userclass_factory":
+                    this.arrayContainer[serviceName] = new UserClassFactory();
+                    break;
                 case "log_factory":
                     this.arrayContainer[serviceName] = new LogFactory();
                     break;

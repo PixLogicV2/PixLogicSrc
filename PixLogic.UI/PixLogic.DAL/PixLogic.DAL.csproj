@@ -134,6 +134,7 @@
     <Compile Include="UpdateUser.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserClass.cs" />
+    <Compile Include="UserClassFactory.cs" />
     <Compile Include="UserFactory.cs" />
   </ItemGroup>
   <ItemGroup>
