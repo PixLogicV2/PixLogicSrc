@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
             this.valCategorie = new System.Windows.Forms.Label();
@@ -125,7 +125,7 @@
             // 
             this.valPrice.AutoSize = true;
             this.valPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPrice.Location = new System.Drawing.Point(65, 41);
+            this.valPrice.Location = new System.Drawing.Point(81, 41);
             this.valPrice.Name = "valPrice";
             this.valPrice.Size = new System.Drawing.Size(13, 17);
             this.valPrice.TabIndex = 4;
@@ -157,9 +157,9 @@
             this.labelPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrice.Location = new System.Drawing.Point(0, 42);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(52, 13);
+            this.labelPrice.Size = new System.Drawing.Size(76, 13);
             this.labelPrice.TabIndex = 1;
-            this.labelPrice.Text = "Prix ( € ) :";
+            this.labelPrice.Text = "Prix (Crédits) :";
             // 
             // labelDispo
             // 
@@ -272,8 +272,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;

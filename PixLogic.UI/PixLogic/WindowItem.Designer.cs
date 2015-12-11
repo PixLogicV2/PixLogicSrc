@@ -30,12 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowItem));
             this.panelGeneral = new System.Windows.Forms.Panel();
+            this.buttonAddCategorie = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
             this.labelCategorie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelObligatoire = new System.Windows.Forms.Label();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonValid = new System.Windows.Forms.Button();
+            this.pictureBoxSelection = new System.Windows.Forms.PictureBox();
             this.valDescription = new System.Windows.Forms.TextBox();
             this.labelDescrip = new System.Windows.Forms.Label();
             this.valQuantity = new System.Windows.Forms.TextBox();
@@ -44,10 +48,6 @@
             this.labelPrice = new System.Windows.Forms.Label();
             this.valName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
-            this.buttonAddCategorie = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonValid = new System.Windows.Forms.Button();
-            this.pictureBoxSelection = new System.Windows.Forms.PictureBox();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.panelGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelection)).BeginInit();
@@ -81,6 +81,17 @@
             this.panelGeneral.Size = new System.Drawing.Size(302, 481);
             this.panelGeneral.TabIndex = 0;
             // 
+            // buttonAddCategorie
+            // 
+            this.buttonAddCategorie.Image = global::PixLogic.Properties.Resources.categorie_racAdd;
+            this.buttonAddCategorie.Location = new System.Drawing.Point(274, 302);
+            this.buttonAddCategorie.Name = "buttonAddCategorie";
+            this.buttonAddCategorie.Size = new System.Drawing.Size(22, 21);
+            this.buttonAddCategorie.TabIndex = 6;
+            this.buttonAddCategorie.UseVisualStyleBackColor = true;
+            this.buttonAddCategorie.Click += new System.EventHandler(this.buttonAddCategorie_Click);
+            this.buttonAddCategorie.MouseEnter += new System.EventHandler(this.buttonAddCategorie_MouseEnter);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -108,7 +119,7 @@
             // 
             this.labelCategorie.AutoSize = true;
             this.labelCategorie.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategorie.Location = new System.Drawing.Point(12, 302);
+            this.labelCategorie.Location = new System.Drawing.Point(10, 302);
             this.labelCategorie.Name = "labelCategorie";
             this.labelCategorie.Size = new System.Drawing.Size(73, 17);
             this.labelCategorie.TabIndex = 15;
@@ -146,92 +157,6 @@
             this.labelObligatoire.Size = new System.Drawing.Size(11, 13);
             this.labelObligatoire.TabIndex = 12;
             this.labelObligatoire.Text = "*";
-            // 
-            // valDescription
-            // 
-            this.valDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDescription.Location = new System.Drawing.Point(99, 333);
-            this.valDescription.Multiline = true;
-            this.valDescription.Name = "valDescription";
-            this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.valDescription.Size = new System.Drawing.Size(156, 98);
-            this.valDescription.TabIndex = 7;
-            this.valDescription.WordWrap = false;
-            // 
-            // labelDescrip
-            // 
-            this.labelDescrip.AutoSize = true;
-            this.labelDescrip.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescrip.Location = new System.Drawing.Point(12, 336);
-            this.labelDescrip.Name = "labelDescrip";
-            this.labelDescrip.Size = new System.Drawing.Size(83, 17);
-            this.labelDescrip.TabIndex = 7;
-            this.labelDescrip.Text = "Description :";
-            // 
-            // valQuantity
-            // 
-            this.valQuantity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valQuantity.Location = new System.Drawing.Point(99, 267);
-            this.valQuantity.Name = "valQuantity";
-            this.valQuantity.Size = new System.Drawing.Size(156, 25);
-            this.valQuantity.TabIndex = 4;
-            // 
-            // labelQuantity
-            // 
-            this.labelQuantity.AutoSize = true;
-            this.labelQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantity.Location = new System.Drawing.Point(12, 270);
-            this.labelQuantity.Name = "labelQuantity";
-            this.labelQuantity.Size = new System.Drawing.Size(68, 17);
-            this.labelQuantity.TabIndex = 5;
-            this.labelQuantity.Text = "Quantité :";
-            // 
-            // valPrice
-            // 
-            this.valPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPrice.Location = new System.Drawing.Point(99, 236);
-            this.valPrice.Name = "valPrice";
-            this.valPrice.Size = new System.Drawing.Size(156, 25);
-            this.valPrice.TabIndex = 3;
-            // 
-            // labelPrice
-            // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(12, 239);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(65, 17);
-            this.labelPrice.TabIndex = 3;
-            this.labelPrice.Text = "Prix ( € ) :";
-            // 
-            // valName
-            // 
-            this.valName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valName.Location = new System.Drawing.Point(99, 205);
-            this.valName.Name = "valName";
-            this.valName.Size = new System.Drawing.Size(156, 25);
-            this.valName.TabIndex = 2;
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(12, 208);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(45, 17);
-            this.labelName.TabIndex = 1;
-            this.labelName.Text = "Nom :";
-            // 
-            // buttonAddCategorie
-            // 
-            this.buttonAddCategorie.Image = global::PixLogic.Properties.Resources.categorie_racAdd;
-            this.buttonAddCategorie.Location = new System.Drawing.Point(274, 302);
-            this.buttonAddCategorie.Name = "buttonAddCategorie";
-            this.buttonAddCategorie.Size = new System.Drawing.Size(22, 21);
-            this.buttonAddCategorie.TabIndex = 6;
-            this.buttonAddCategorie.UseVisualStyleBackColor = true;
-            this.buttonAddCategorie.Click += new System.EventHandler(this.buttonAddCategorie_Click);
-            this.buttonAddCategorie.MouseEnter += new System.EventHandler(this.buttonAddCategorie_MouseEnter);
             // 
             // buttonCancel
             // 
@@ -272,6 +197,81 @@
             this.pictureBoxSelection.TabIndex = 9;
             this.pictureBoxSelection.TabStop = false;
             this.pictureBoxSelection.Click += new System.EventHandler(this.pictureBoxSelection_Click);
+            // 
+            // valDescription
+            // 
+            this.valDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valDescription.Location = new System.Drawing.Point(99, 333);
+            this.valDescription.Multiline = true;
+            this.valDescription.Name = "valDescription";
+            this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.valDescription.Size = new System.Drawing.Size(156, 98);
+            this.valDescription.TabIndex = 7;
+            this.valDescription.WordWrap = false;
+            // 
+            // labelDescrip
+            // 
+            this.labelDescrip.AutoSize = true;
+            this.labelDescrip.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDescrip.Location = new System.Drawing.Point(10, 336);
+            this.labelDescrip.Name = "labelDescrip";
+            this.labelDescrip.Size = new System.Drawing.Size(83, 17);
+            this.labelDescrip.TabIndex = 7;
+            this.labelDescrip.Text = "Description :";
+            // 
+            // valQuantity
+            // 
+            this.valQuantity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valQuantity.Location = new System.Drawing.Point(99, 267);
+            this.valQuantity.Name = "valQuantity";
+            this.valQuantity.Size = new System.Drawing.Size(156, 25);
+            this.valQuantity.TabIndex = 4;
+            // 
+            // labelQuantity
+            // 
+            this.labelQuantity.AutoSize = true;
+            this.labelQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuantity.Location = new System.Drawing.Point(10, 270);
+            this.labelQuantity.Name = "labelQuantity";
+            this.labelQuantity.Size = new System.Drawing.Size(68, 17);
+            this.labelQuantity.TabIndex = 5;
+            this.labelQuantity.Text = "Quantité :";
+            // 
+            // valPrice
+            // 
+            this.valPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valPrice.Location = new System.Drawing.Point(99, 236);
+            this.valPrice.Name = "valPrice";
+            this.valPrice.Size = new System.Drawing.Size(156, 25);
+            this.valPrice.TabIndex = 3;
+            // 
+            // labelPrice
+            // 
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrice.Location = new System.Drawing.Point(10, 239);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(92, 17);
+            this.labelPrice.TabIndex = 3;
+            this.labelPrice.Text = "Prix (Crédits) :";
+            // 
+            // valName
+            // 
+            this.valName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valName.Location = new System.Drawing.Point(99, 205);
+            this.valName.Name = "valName";
+            this.valName.Size = new System.Drawing.Size(156, 25);
+            this.valName.TabIndex = 2;
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Location = new System.Drawing.Point(10, 208);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(45, 17);
+            this.labelName.TabIndex = 1;
+            this.labelName.Text = "Nom :";
             // 
             // pictureBoxItem
             // 

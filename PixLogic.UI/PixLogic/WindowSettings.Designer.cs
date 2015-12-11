@@ -51,7 +51,7 @@
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.libelleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panEmail = new System.Windows.Forms.TabPage();
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
             this.valInfo = new System.Windows.Forms.Label();
@@ -67,20 +67,44 @@
             this.valServeur = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelServer = new System.Windows.Forms.Label();
+            this.classe = new System.Windows.Forms.TabPage();
+            this.buttonSuppClasse = new System.Windows.Forms.Button();
+            this.buttonModifierClasse = new System.Windows.Forms.Button();
+            this.buttonAjouterClasse = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelCredit = new System.Windows.Forms.Label();
+            this.valCredit = new System.Windows.Forms.Label();
+            this.labelLibel = new System.Windows.Forms.Label();
+            this.valLibelleClasse = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonCancelClasse = new System.Windows.Forms.Button();
+            this.textBoxSearchClasse = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlSettings.SuspendLayout();
             this.panCategorie.SuspendLayout();
             this.panNews.SuspendLayout();
             this.panelListCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCategories)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.panEmail.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.classe.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlSettings
             // 
             this.tabControlSettings.Controls.Add(this.panCategorie);
-            this.tabControlSettings.Controls.Add(this.tabPage1);
+            this.tabControlSettings.Controls.Add(this.classe);
+            this.tabControlSettings.Controls.Add(this.panEmail);
             this.tabControlSettings.Location = new System.Drawing.Point(12, 12);
             this.tabControlSettings.Name = "tabControlSettings";
             this.tabControlSettings.SelectedIndex = 0;
@@ -326,23 +350,23 @@
             this.levelCol.ReadOnly = true;
             this.levelCol.Width = 114;
             // 
-            // tabPage1
+            // panEmail
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.buttonSave);
-            this.tabPage1.Controls.Add(this.labelInfo);
-            this.tabPage1.Controls.Add(this.valInfo);
-            this.tabPage1.Controls.Add(this.labelIdentifiant);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.labelConfiguration);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(566, 325);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Envoi e-mail";
+            this.panEmail.BackColor = System.Drawing.SystemColors.Control;
+            this.panEmail.Controls.Add(this.buttonSave);
+            this.panEmail.Controls.Add(this.labelInfo);
+            this.panEmail.Controls.Add(this.valInfo);
+            this.panEmail.Controls.Add(this.labelIdentifiant);
+            this.panEmail.Controls.Add(this.panel2);
+            this.panEmail.Controls.Add(this.labelConfiguration);
+            this.panEmail.Controls.Add(this.panel1);
+            this.panEmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panEmail.Location = new System.Drawing.Point(4, 22);
+            this.panEmail.Name = "panEmail";
+            this.panEmail.Padding = new System.Windows.Forms.Padding(3);
+            this.panEmail.Size = new System.Drawing.Size(566, 325);
+            this.panEmail.TabIndex = 0;
+            this.panEmail.Text = "Envoi e-mail";
             // 
             // buttonSave
             // 
@@ -491,6 +515,214 @@
             this.labelServer.TabIndex = 0;
             this.labelServer.Text = "Serveur SMTP :";
             // 
+            // classe
+            // 
+            this.classe.BackColor = System.Drawing.SystemColors.Control;
+            this.classe.Controls.Add(this.buttonSuppClasse);
+            this.classe.Controls.Add(this.buttonModifierClasse);
+            this.classe.Controls.Add(this.buttonAjouterClasse);
+            this.classe.Controls.Add(this.label2);
+            this.classe.Controls.Add(this.panel3);
+            this.classe.Controls.Add(this.label9);
+            this.classe.Controls.Add(this.panel4);
+            this.classe.Location = new System.Drawing.Point(4, 22);
+            this.classe.Name = "classe";
+            this.classe.Padding = new System.Windows.Forms.Padding(3);
+            this.classe.Size = new System.Drawing.Size(566, 325);
+            this.classe.TabIndex = 2;
+            this.classe.Text = "Classe";
+            // 
+            // buttonSuppClasse
+            // 
+            this.buttonSuppClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSuppClasse.Image = global::PixLogic.Properties.Resources.supprimer_icon;
+            this.buttonSuppClasse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSuppClasse.Location = new System.Drawing.Point(444, 288);
+            this.buttonSuppClasse.Name = "buttonSuppClasse";
+            this.buttonSuppClasse.Size = new System.Drawing.Size(93, 29);
+            this.buttonSuppClasse.TabIndex = 53;
+            this.buttonSuppClasse.Text = "Supprimer";
+            this.buttonSuppClasse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSuppClasse.UseVisualStyleBackColor = true;
+            // 
+            // buttonModifierClasse
+            // 
+            this.buttonModifierClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModifierClasse.Image = global::PixLogic.Properties.Resources.modifier_icon;
+            this.buttonModifierClasse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModifierClasse.Location = new System.Drawing.Point(358, 288);
+            this.buttonModifierClasse.Name = "buttonModifierClasse";
+            this.buttonModifierClasse.Size = new System.Drawing.Size(78, 29);
+            this.buttonModifierClasse.TabIndex = 52;
+            this.buttonModifierClasse.Text = "Modifier";
+            this.buttonModifierClasse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonModifierClasse.UseVisualStyleBackColor = true;
+            // 
+            // buttonAjouterClasse
+            // 
+            this.buttonAjouterClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterClasse.Image = global::PixLogic.Properties.Resources.ajouter_icon;
+            this.buttonAjouterClasse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjouterClasse.Location = new System.Drawing.Point(274, 288);
+            this.buttonAjouterClasse.Name = "buttonAjouterClasse";
+            this.buttonAjouterClasse.Size = new System.Drawing.Size(78, 29);
+            this.buttonAjouterClasse.TabIndex = 51;
+            this.buttonAjouterClasse.Text = "Ajouter";
+            this.buttonAjouterClasse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAjouterClasse.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(291, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Infos";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.labelCredit);
+            this.panel3.Controls.Add(this.valCredit);
+            this.panel3.Controls.Add(this.labelLibel);
+            this.panel3.Controls.Add(this.valLibelleClasse);
+            this.panel3.Location = new System.Drawing.Point(259, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(301, 78);
+            this.panel3.TabIndex = 49;
+            // 
+            // labelCredit
+            // 
+            this.labelCredit.AutoSize = true;
+            this.labelCredit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCredit.Location = new System.Drawing.Point(6, 49);
+            this.labelCredit.Name = "labelCredit";
+            this.labelCredit.Size = new System.Drawing.Size(48, 13);
+            this.labelCredit.TabIndex = 42;
+            this.labelCredit.Text = "Niveau :";
+            // 
+            // valCredit
+            // 
+            this.valCredit.AutoSize = true;
+            this.valCredit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valCredit.Location = new System.Drawing.Point(78, 47);
+            this.valCredit.Name = "valCredit";
+            this.valCredit.Size = new System.Drawing.Size(13, 17);
+            this.valCredit.TabIndex = 43;
+            this.valCredit.Text = "-";
+            this.valCredit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelLibel
+            // 
+            this.labelLibel.AutoSize = true;
+            this.labelLibel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLibel.Location = new System.Drawing.Point(6, 19);
+            this.labelLibel.Name = "labelLibel";
+            this.labelLibel.Size = new System.Drawing.Size(46, 13);
+            this.labelLibel.TabIndex = 6;
+            this.labelLibel.Text = "Libellé :";
+            // 
+            // valLibelleClasse
+            // 
+            this.valLibelleClasse.AutoSize = true;
+            this.valLibelleClasse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valLibelleClasse.Location = new System.Drawing.Point(78, 17);
+            this.valLibelleClasse.Name = "valLibelleClasse";
+            this.valLibelleClasse.Size = new System.Drawing.Size(13, 17);
+            this.valLibelleClasse.TabIndex = 39;
+            this.valLibelleClasse.Text = "-";
+            this.valLibelleClasse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 7);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 13);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "Liste des classes";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.buttonCancelClasse);
+            this.panel4.Controls.Add(this.textBoxSearchClasse);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Location = new System.Drawing.Point(6, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(247, 305);
+            this.panel4.TabIndex = 47;
+            // 
+            // buttonCancelClasse
+            // 
+            this.buttonCancelClasse.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelClasse.Location = new System.Drawing.Point(177, 16);
+            this.buttonCancelClasse.Name = "buttonCancelClasse";
+            this.buttonCancelClasse.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelClasse.TabIndex = 6;
+            this.buttonCancelClasse.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSearchClasse
+            // 
+            this.textBoxSearchClasse.Location = new System.Drawing.Point(77, 17);
+            this.textBoxSearchClasse.Name = "textBoxSearchClasse";
+            this.textBoxSearchClasse.Size = new System.Drawing.Size(96, 20);
+            this.textBoxSearchClasse.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Recherche :";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 49);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(247, 251);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Libellé";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Crédits";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 114;
+            // 
             // WindowSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,12 +743,19 @@
             this.panelListCategory.ResumeLayout(false);
             this.panelListCategory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCategories)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.panEmail.ResumeLayout(false);
+            this.panEmail.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.classe.ResumeLayout(false);
+            this.classe.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -524,7 +763,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControlSettings;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage panEmail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelConfiguration;
         private System.Windows.Forms.Label labelServer;
@@ -561,5 +800,24 @@
         private System.Windows.Forms.Label labelAccessLevel;
         public System.Windows.Forms.Label valLevel;
         public System.Windows.Forms.TabPage panCategorie;
+        private System.Windows.Forms.TabPage classe;
+        private System.Windows.Forms.Button buttonSuppClasse;
+        private System.Windows.Forms.Button buttonModifierClasse;
+        private System.Windows.Forms.Button buttonAjouterClasse;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labelCredit;
+        public System.Windows.Forms.Label valCredit;
+        private System.Windows.Forms.Label labelLibel;
+        public System.Windows.Forms.Label valLibelleClasse;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button buttonCancelClasse;
+        private System.Windows.Forms.TextBox textBoxSearchClasse;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
