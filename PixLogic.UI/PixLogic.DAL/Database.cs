@@ -104,6 +104,18 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_users").getAllUsers();
         }
+        public List<User> GetAllUserClass()
+        {
+            return container.get("get_userclass").getAllUsersClass();
+        }
+        public List<User> GetAllUsersClassByString(string search)
+        {
+            return container.get("get_userclass").getAllUsersClassByString(search);
+        }
+        public List<User> GetUserClassById(int id)
+        {
+            return container.get("get_userclass").getUserClassById(id);
+        }
         public List<User> GetAllUsersByString(string search)
         {
             return container.get("get_all_users").getAllUsersByString(search);
