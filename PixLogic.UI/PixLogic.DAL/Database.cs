@@ -120,6 +120,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_users").getAllUsersByString(search);
         }
+        public bool ContainUserClass(string search)
+        {
+            return container.get("contain_userclass").containUserClass(search);
+        }
         public void AddUser(string name, string nickname, string mail, string classe, string phoneNumber, Image image)
         {
             container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, classe, phoneNumber, image));
