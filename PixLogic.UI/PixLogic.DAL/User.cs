@@ -18,6 +18,7 @@ namespace PixLogic.DAL
         public byte[] image { get; set; }
         public int credits { get; set; }
 
+        public UserClass userClass { get; set; }
         public int UserId { get; set; }
     }
 }
