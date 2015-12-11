@@ -104,6 +104,18 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_users").getAllUsers();
         }
+        public List<User> GetAllUserClass()
+        {
+            return container.get("get_userclass").getAllUserClass();
+        }
+        public List<User> GetAllUserClassByString(string search)
+        {
+            return container.get("get_userclass").getAllUserClassByString(search);
+        }
+        public List<User> GetUserClassById(int id)
+        {
+            return container.get("get_userclass").getUserClassById(id);
+        }
         public List<User> GetAllUsersByString(string search)
         {
             return container.get("get_all_users").getAllUsersByString(search);
@@ -111,6 +123,22 @@ namespace PixLogic.DAL
         public void AddUser(string name, string nickname, string mail, string classe, string phoneNumber, Image image)
         {
             container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, classe, phoneNumber, image));
+        }
+        public void AddUserClass(string name,int credits)
+        {
+            container.get("add_userclass").addUserClass(new UserClass(name,credits));
+        }
+        public void AddUserClassToUser(int userId,int userClassId)
+        {
+            container.get("add_user").addUserClassToUser(userId,userClassId);
+        }
+        public void UpdateUserClass(int userClassId,string name,int credit)
+        {
+            container.get("update_userclass").updateUserClass(userClassId,name,credit);
+        }
+        public void DeleteUserClass(int userclassId)
+        {
+            container.get("delete_userclass").deleteUserClass(userclassId);
         }
         /*public User GetUserByName(string itemName)
         {

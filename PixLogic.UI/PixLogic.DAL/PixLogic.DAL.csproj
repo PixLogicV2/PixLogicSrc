@@ -64,6 +64,7 @@
     <Compile Include="AddItem.cs" />
     <Compile Include="AddReservation.cs" />
     <Compile Include="AddUser.cs" />
+    <Compile Include="AddUserClass.cs" />
     <Compile Include="ByteArrayToImage.cs" />
     <Compile Include="Categorie.cs" />
     <Compile Include="CategorieFactory.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="GetReservationById.cs" />
     <Compile Include="GetUserById.cs" />
     <Compile Include="GetUserByName.cs" />
+    <Compile Include="GetUserClass.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogFactory.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="UpdateReservation.cs" />
     <Compile Include="UpdateUser.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserClass.cs" />
     <Compile Include="UserFactory.cs" />
   </ItemGroup>
   <ItemGroup>
