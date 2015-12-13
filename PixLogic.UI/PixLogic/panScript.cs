@@ -16,6 +16,8 @@ namespace PixLogic
 {
     public partial class panScript : UserControl
     {
+        private DAL.Database database = Helper.database;
+
         public panScript()
         {
             InitializeComponent();
@@ -56,12 +58,39 @@ namespace PixLogic
 
         private void panScript_Load(object sender, EventArgs e)
         {
-            DAL.Database dt = new DAL.Database();
-            QueryListBox.DataSource = dt.GetAllRequete();
+            List<Requete> allRequest = database.GetAllRequete();
+
+            QueryListBox.DataSource = database.GetAllRequete();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            //string content = QueryRTB.Text;
+
+            //using (SaveFileDialog querySaveDialog = new SaveFileDialog())
+            //{
+            //    querySaveDialog.Filter = "Fichier SQL (*.sql)|*.sql";
+            //    querySaveDialog.FilterIndex = 2;
+            //    querySaveDialog.RestoreDirectory = true;
+
+            //    if(querySaveDialog.ShowDialog()==DialogResult.OK)
+            //    {
+            //        File.WriteAllText(querySaveDialog.FileName,  content);
+            //    }
+            //}
+            string content = QueryRTB.Text;
+
+            using (SaveFileDialog querySaveDialog = new SaveFileDialog())
+            {
+                querySaveDialog.Filter = "Fichier SQL (*.sql)|*.sql";
+                querySaveDialog.FilterIndex = 2;
+                querySaveDialog.RestoreDirectory = true;
+
+                if (querySaveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    database.AddRequete(Path.GetFileNameWithoutExtension(querySaveDialog.FileName), content);
+                }
+            }
 
         }
 

@@ -326,7 +326,7 @@ namespace PixLogic.DAL
         */
         public void AddRequete(string name, string text)
         {
-            container.get("add_requete").addCategorie(container.get("requete_factory").build(name, text));
+            container.get("add_requete").addRequete(container.get("requete_factory").Build(name, text));
         }
 
         public void DeleteRequete(string queryToDelete)
