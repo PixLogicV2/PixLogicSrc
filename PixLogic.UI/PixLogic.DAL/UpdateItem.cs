@@ -16,7 +16,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateItem(string nom, string newName, string des, bool disp, float prix, Image image, string refe, int quant)
+        public void updateItem(string nom, string newName, string des, bool disp, float prix, Image image, string refe, int quant,Categorie cat)
         {
                 Item item;
                 item = context.Items.Where(s => s.name == nom).FirstOrDefault<Item>();
@@ -31,6 +31,7 @@ namespace PixLogic.DAL
                 else item.image = null;
                 item.reference = refe;
                 item.quantity = quant;
+                item.categorie = cat;
                 context.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }

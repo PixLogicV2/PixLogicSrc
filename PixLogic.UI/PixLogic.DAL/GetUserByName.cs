@@ -14,10 +14,11 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public User getUserByName(string userName)
+        public User getUserByName(string userName,string userNickName)
         {
             IQueryable<User> userQuery = from User in context.Users
                                          where User.name == userName
+                                         where User.nickname==userNickName
                                          select User;
             List<User> list = new List<User>();
             foreach (var prod in userQuery)

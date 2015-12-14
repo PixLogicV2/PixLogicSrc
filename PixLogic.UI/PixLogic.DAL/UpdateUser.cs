@@ -15,7 +15,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateUser(int id, string name, string nickname, string mail, UserClass classe, string phoneNumber, Image image)
+        public void updateUser(int id, string name, string nickname, string mail, UserClass classe, string phoneNumber, Image image,UserClass userClass)
         {
             User user;
             user = context.Users.Where(u => u.UserId == id).FirstOrDefault<User>();
@@ -29,6 +29,7 @@ namespace PixLogic.DAL
                 user.phoneNumber = phoneNumber;
                 if (image != null) user.image = Helper.imageToByteArray(image);
                 else user.image = null;
+                user.userClass = userClass;
                 context.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }

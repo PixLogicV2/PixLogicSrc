@@ -42,7 +42,7 @@ namespace PixLogic
             this.idClasse = idClasse;
 
             UserClass c = database.GetUserClassById(idClasse);
-            valLibelle.Text = c.name;
+            valLibelleClasse.Text = c.name;
             valCredit.Text = c.credits.ToString();
         }
 
@@ -54,15 +54,14 @@ namespace PixLogic
         private void buttonValid_Click(object sender, EventArgs e)
         {
             string op = add ? Helper.ADD : Helper.SET;
-            if (!Helper.fieldsAreEmpty(true, valLibelle.Text)
+            if (!Helper.fieldsAreEmpty(true, valLibelleClasse.Text)
                 && Helper.AreNumbers(true, valCredit.Text)
-                && !Helper.userClassExist(true, valLibelle.Text)
                 && Helper.confirmation(op))
             {
-                if (add)
-                    database.AddUserClass(valLibelle.Text, (int)double.Parse(valCredit.Text),(int)double.Parse(valLevel.Text));
-                else
-                    database.UpdateUserClass(idClasse, valLibelle.Text, (int)double.Parse(valCredit.Text), (int)double.Parse(valLevel.Text));
+                if (add && !Helper.userClassExist(true, valLibelleClasse.Text))
+                    database.AddUserClass(valLibelleClasse.Text, (int)double.Parse(valCredit.Text),(int)double.Parse(valLevel.Text));
+                else if(!add && !Helper.userClassExistModif(true, valLibelleClasse.Text, settings.valLibelleClasse.Text))
+                    database.UpdateUserClass(idClasse, valLibelleClasse.Text, (int)double.Parse(valCredit.Text), (int)double.Parse(valLevel.Text));
 
                 if (!quickAdd)
                 {
@@ -70,7 +69,7 @@ namespace PixLogic
                 }
                 else
                 {
-
+                    settings.setTableUserClass(database.GetAllUserClass());
                 }
                 this.Close();
             }

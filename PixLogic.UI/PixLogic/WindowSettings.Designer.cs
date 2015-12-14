@@ -41,7 +41,7 @@
             this.valDescription = new System.Windows.Forms.TextBox();
             this.labelDescrip = new System.Windows.Forms.Label();
             this.labelLibelle = new System.Windows.Forms.Label();
-            this.valLibelle = new System.Windows.Forms.Label();
+            this.valLibelleCat = new System.Windows.Forms.Label();
             this.labelListCategory = new System.Windows.Forms.Label();
             this.panelListCategory = new System.Windows.Forms.Panel();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
@@ -57,8 +57,8 @@
             this.buttonAjouterClasse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.labelCredit = new System.Windows.Forms.Label();
-            this.valCredit = new System.Windows.Forms.Label();
+            this.labelAccessLevelClasse = new System.Windows.Forms.Label();
+            this.valNiveauAccesClasse = new System.Windows.Forms.Label();
             this.labelLibel = new System.Windows.Forms.Label();
             this.valLibelleClasse = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -67,9 +67,6 @@
             this.textBoxSearchClasse = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridUserClass = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panEmail = new System.Windows.Forms.TabPage();
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
@@ -86,6 +83,12 @@
             this.valServeur = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelServer = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccessLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelCreditClasse = new System.Windows.Forms.Label();
+            this.valCreditClasse = new System.Windows.Forms.Label();
             this.tabControlSettings.SuspendLayout();
             this.panCategorie.SuspendLayout();
             this.panNews.SuspendLayout();
@@ -189,7 +192,7 @@
             this.panNews.Controls.Add(this.valDescription);
             this.panNews.Controls.Add(this.labelDescrip);
             this.panNews.Controls.Add(this.labelLibelle);
-            this.panNews.Controls.Add(this.valLibelle);
+            this.panNews.Controls.Add(this.valLibelleCat);
             this.panNews.Location = new System.Drawing.Point(259, 14);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(301, 230);
@@ -247,16 +250,16 @@
             this.labelLibelle.TabIndex = 6;
             this.labelLibelle.Text = "Libellé :";
             // 
-            // valLibelle
+            // valLibelleCat
             // 
-            this.valLibelle.AutoSize = true;
-            this.valLibelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valLibelle.Location = new System.Drawing.Point(78, 17);
-            this.valLibelle.Name = "valLibelle";
-            this.valLibelle.Size = new System.Drawing.Size(13, 17);
-            this.valLibelle.TabIndex = 39;
-            this.valLibelle.Text = "-";
-            this.valLibelle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valLibelleCat.AutoSize = true;
+            this.valLibelleCat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valLibelleCat.Location = new System.Drawing.Point(78, 17);
+            this.valLibelleCat.Name = "valLibelleCat";
+            this.valLibelleCat.Size = new System.Drawing.Size(13, 17);
+            this.valLibelleCat.TabIndex = 39;
+            this.valLibelleCat.Text = "-";
+            this.valLibelleCat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelListCategory
             // 
@@ -421,35 +424,37 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.labelCredit);
-            this.panel3.Controls.Add(this.valCredit);
+            this.panel3.Controls.Add(this.labelCreditClasse);
+            this.panel3.Controls.Add(this.valCreditClasse);
+            this.panel3.Controls.Add(this.labelAccessLevelClasse);
+            this.panel3.Controls.Add(this.valNiveauAccesClasse);
             this.panel3.Controls.Add(this.labelLibel);
             this.panel3.Controls.Add(this.valLibelleClasse);
             this.panel3.Location = new System.Drawing.Point(259, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(301, 78);
+            this.panel3.Size = new System.Drawing.Size(301, 103);
             this.panel3.TabIndex = 49;
             // 
-            // labelCredit
+            // labelAccessLevelClasse
             // 
-            this.labelCredit.AutoSize = true;
-            this.labelCredit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCredit.Location = new System.Drawing.Point(6, 49);
-            this.labelCredit.Name = "labelCredit";
-            this.labelCredit.Size = new System.Drawing.Size(48, 13);
-            this.labelCredit.TabIndex = 42;
-            this.labelCredit.Text = "Niveau :";
+            this.labelAccessLevelClasse.AutoSize = true;
+            this.labelAccessLevelClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAccessLevelClasse.Location = new System.Drawing.Point(6, 77);
+            this.labelAccessLevelClasse.Name = "labelAccessLevelClasse";
+            this.labelAccessLevelClasse.Size = new System.Drawing.Size(88, 13);
+            this.labelAccessLevelClasse.TabIndex = 42;
+            this.labelAccessLevelClasse.Text = "Niveau d\'accès :";
             // 
-            // valCredit
+            // valNiveauAccesClasse
             // 
-            this.valCredit.AutoSize = true;
-            this.valCredit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valCredit.Location = new System.Drawing.Point(78, 47);
-            this.valCredit.Name = "valCredit";
-            this.valCredit.Size = new System.Drawing.Size(13, 17);
-            this.valCredit.TabIndex = 43;
-            this.valCredit.Text = "-";
-            this.valCredit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valNiveauAccesClasse.AutoSize = true;
+            this.valNiveauAccesClasse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valNiveauAccesClasse.Location = new System.Drawing.Point(116, 75);
+            this.valNiveauAccesClasse.Name = "valNiveauAccesClasse";
+            this.valNiveauAccesClasse.Size = new System.Drawing.Size(13, 17);
+            this.valNiveauAccesClasse.TabIndex = 43;
+            this.valNiveauAccesClasse.Text = "-";
+            this.valNiveauAccesClasse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelLibel
             // 
@@ -465,7 +470,7 @@
             // 
             this.valLibelleClasse.AutoSize = true;
             this.valLibelleClasse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valLibelleClasse.Location = new System.Drawing.Point(78, 17);
+            this.valLibelleClasse.Location = new System.Drawing.Point(116, 17);
             this.valLibelleClasse.Name = "valLibelleClasse";
             this.valLibelleClasse.Size = new System.Drawing.Size(13, 17);
             this.valLibelleClasse.TabIndex = 39;
@@ -502,6 +507,7 @@
             this.buttonCancelClasse.Size = new System.Drawing.Size(27, 23);
             this.buttonCancelClasse.TabIndex = 6;
             this.buttonCancelClasse.UseVisualStyleBackColor = true;
+            this.buttonCancelClasse.Click += new System.EventHandler(this.buttonCancelClasse_Click);
             // 
             // textBoxSearchClasse
             // 
@@ -509,6 +515,7 @@
             this.textBoxSearchClasse.Name = "textBoxSearchClasse";
             this.textBoxSearchClasse.Size = new System.Drawing.Size(96, 20);
             this.textBoxSearchClasse.TabIndex = 5;
+            this.textBoxSearchClasse.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearchClasse_KeyUp);
             // 
             // label10
             // 
@@ -530,7 +537,8 @@
             this.dataGridUserClass.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.AccessLevel});
             this.dataGridUserClass.Location = new System.Drawing.Point(-1, 49);
             this.dataGridUserClass.Name = "dataGridUserClass";
             this.dataGridUserClass.ReadOnly = true;
@@ -538,27 +546,8 @@
             this.dataGridUserClass.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridUserClass.Size = new System.Drawing.Size(247, 255);
             this.dataGridUserClass.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Libellé";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Crédits";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 114;
+            this.dataGridUserClass.Click += new System.EventHandler(this.dataGridUserClass_Click);
+            this.dataGridUserClass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridUserClass_KeyUp);
             // 
             // panEmail
             // 
@@ -725,6 +714,55 @@
             this.labelServer.TabIndex = 0;
             this.labelServer.Text = "Serveur SMTP :";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Libellé";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Crédits";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 50;
+            // 
+            // AccessLevel
+            // 
+            this.AccessLevel.HeaderText = "Niv. d\'accès";
+            this.AccessLevel.Name = "AccessLevel";
+            this.AccessLevel.ReadOnly = true;
+            this.AccessLevel.Width = 90;
+            // 
+            // labelCreditClasse
+            // 
+            this.labelCreditClasse.AutoSize = true;
+            this.labelCreditClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreditClasse.Location = new System.Drawing.Point(6, 49);
+            this.labelCreditClasse.Name = "labelCreditClasse";
+            this.labelCreditClasse.Size = new System.Drawing.Size(44, 13);
+            this.labelCreditClasse.TabIndex = 44;
+            this.labelCreditClasse.Text = "Crédit :";
+            // 
+            // valCreditClasse
+            // 
+            this.valCreditClasse.AutoSize = true;
+            this.valCreditClasse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valCreditClasse.Location = new System.Drawing.Point(116, 47);
+            this.valCreditClasse.Name = "valCreditClasse";
+            this.valCreditClasse.Size = new System.Drawing.Size(13, 17);
+            this.valCreditClasse.TabIndex = 45;
+            this.valCreditClasse.Text = "-";
+            this.valCreditClasse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // WindowSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -792,7 +830,7 @@
         private System.Windows.Forms.TextBox valDescription;
         private System.Windows.Forms.Label labelDescrip;
         private System.Windows.Forms.Label labelLibelle;
-        public System.Windows.Forms.Label valLibelle;
+        public System.Windows.Forms.Label valLibelleCat;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonAdd;
@@ -808,8 +846,8 @@
         private System.Windows.Forms.Button buttonAjouterClasse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label labelCredit;
-        public System.Windows.Forms.Label valCredit;
+        private System.Windows.Forms.Label labelAccessLevelClasse;
+        public System.Windows.Forms.Label valNiveauAccesClasse;
         private System.Windows.Forms.Label labelLibel;
         public System.Windows.Forms.Label valLibelleClasse;
         private System.Windows.Forms.Label label9;
@@ -818,8 +856,11 @@
         private System.Windows.Forms.TextBox textBoxSearchClasse;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridUserClass;
+        private System.Windows.Forms.Label labelCreditClasse;
+        public System.Windows.Forms.Label valCreditClasse;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccessLevel;
     }
 }

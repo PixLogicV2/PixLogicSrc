@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data.Entity;
 namespace PixLogic.DAL
 {
     class GetAllUsers
@@ -16,7 +16,7 @@ namespace PixLogic.DAL
         }
         public List<User> getAllUsers()
         {
-            IQueryable<User> itemQuery = from User in context.Users
+            IQueryable<User> itemQuery = from User in context.Users.Include(c => c.userClass)
                                          select User;
             List<User> list = new List<User>();
             foreach (var prod in itemQuery)

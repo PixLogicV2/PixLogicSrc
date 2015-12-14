@@ -56,13 +56,13 @@ namespace PixLogic
         {
             if (dataGridCategories.RowCount > 0)
             {
-                valLibelle.Text = dataGridCategories.CurrentRow.Cells[0].Value.ToString();
-                valLevel.Text = dataGridCategories.CurrentRow.Cells[1].Value.ToString();
-                valDescription.Text = dataGridCategories.CurrentRow.Cells[2].Value.ToString();
+                valLibelleCat.Text = dataGridCategories.CurrentRow.Cells[1].Value.ToString();
+                valLevel.Text = dataGridCategories.CurrentRow.Cells[2].Value.ToString();
+                valDescription.Text = database.GetCategorieById(int.Parse(dataGridCategories.CurrentRow.Cells[0].Value.ToString())).description;
             }
             else
             {
-                valLibelle.Text = "-";
+                valLibelleCat.Text = "-";
                 valLevel.Text = "-";
                 valDescription.Text = "-";
             }
@@ -89,7 +89,7 @@ namespace PixLogic
             //dataGridUsers.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
             foreach (var classe in list)
             {
-                dataGridUserClass.Rows.Add(classe.UserClassId, classe.name, classe.credits);
+                dataGridUserClass.Rows.Add(classe.UserClassId, classe.name, classe.credits, classe.level);
             }
 
             if (dataGridUserClass.RowCount > 0)
@@ -109,12 +109,14 @@ namespace PixLogic
             if (dataGridUserClass.RowCount > 0)
             {
                 valLibelleClasse.Text = dataGridUserClass.CurrentRow.Cells[1].Value.ToString();
-                valCredit.Text = dataGridUserClass.CurrentRow.Cells[2].Value.ToString();
+                valCreditClasse.Text = dataGridUserClass.CurrentRow.Cells[2].Value.ToString();
+                valNiveauAccesClasse.Text = dataGridUserClass.CurrentRow.Cells[3].Value.ToString();
             }
             else
             {
                 valLibelleClasse.Text = "-";
-                valCredit.Text = "-";
+                valNiveauAccesClasse.Text = "-";
+                valCreditClasse.Text = "-";
             }
         }
 
@@ -156,6 +158,7 @@ namespace PixLogic
 
         private void buttonCancelSearch_Click(object sender, EventArgs e)
         {
+            textBoxSearch.Text = string.Empty;
             setTableCategories(database.GetAllCategorie());
         }
 
@@ -182,6 +185,29 @@ namespace PixLogic
             int id = int.Parse(dataGridUserClass.CurrentRow.Cells[0].Value.ToString());
             WindowClasse winClasse = new WindowClasse(this, id);
             winClasse.ShowDialog();
+        }
+
+        private void dataGridUserClass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridUserClass.RowCount > 0)
+                setNewsUserClass();
+        }
+
+        private void dataGridUserClass_Click(object sender, EventArgs e)
+        {
+            if (dataGridUserClass.RowCount > 0)
+                setNewsUserClass();
+        }
+
+        private void textBoxSearchClasse_KeyUp(object sender, KeyEventArgs e)
+        {
+            setTableUserClass(database.GetAllUserClassByString(textBoxSearchClasse.Text));
+        }
+
+        private void buttonCancelClasse_Click(object sender, EventArgs e)
+        {
+            textBoxSearchClasse.Text = string.Empty;
+            setTableUserClass(database.GetAllUserClass());
         }
     }
 }
