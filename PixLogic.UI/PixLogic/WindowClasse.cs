@@ -69,7 +69,7 @@ namespace PixLogic
                 }
                 else
                 {
-                    settings.setTableUserClass(database.GetAllUserClass());
+                    //pani
                 }
                 this.Close();
             }

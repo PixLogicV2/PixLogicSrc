@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowUser));
             this.panelGeneral = new System.Windows.Forms.Panel();
+            this.comboBoxClasse = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.valTel = new System.Windows.Forms.TextBox();
             this.labelTel = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.valName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
-            this.comboBoxClasse = new System.Windows.Forms.ComboBox();
             this.panelGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
@@ -78,6 +78,17 @@
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Size = new System.Drawing.Size(286, 421);
             this.panelGeneral.TabIndex = 1;
+            // 
+            // comboBoxClasse
+            // 
+            this.comboBoxClasse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxClasse.FormattingEnabled = true;
+            this.comboBoxClasse.ItemHeight = 13;
+            this.comboBoxClasse.Location = new System.Drawing.Point(99, 270);
+            this.comboBoxClasse.Name = "comboBoxClasse";
+            this.comboBoxClasse.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxClasse.Sorted = true;
+            this.comboBoxClasse.TabIndex = 4;
             // 
             // label3
             // 
@@ -253,17 +264,6 @@
             this.pictureBoxItem.Size = new System.Drawing.Size(228, 167);
             this.pictureBoxItem.TabIndex = 0;
             this.pictureBoxItem.TabStop = false;
-            // 
-            // comboBoxClasse
-            // 
-            this.comboBoxClasse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxClasse.FormattingEnabled = true;
-            this.comboBoxClasse.ItemHeight = 13;
-            this.comboBoxClasse.Location = new System.Drawing.Point(99, 270);
-            this.comboBoxClasse.Name = "comboBoxClasse";
-            this.comboBoxClasse.Size = new System.Drawing.Size(156, 21);
-            this.comboBoxClasse.Sorted = true;
-            this.comboBoxClasse.TabIndex = 4;
             // 
             // WindowUser
             // 

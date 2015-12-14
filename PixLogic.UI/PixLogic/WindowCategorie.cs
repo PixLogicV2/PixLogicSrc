@@ -71,7 +71,6 @@ namespace PixLogic
                 }
                 else
                 {
-                    settings.setTableCategories(database.GetAllCategorie());
                 }
                 this.Close();
             }
