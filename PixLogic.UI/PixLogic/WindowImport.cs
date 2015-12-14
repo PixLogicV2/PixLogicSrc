@@ -60,7 +60,7 @@ namespace PixLogic
 
             foreach(User u in users)
             {
-                dataGridImport.Rows.Add(u.name, u.nickname, u.classe, u.mail, u.phoneNumber);
+                dataGridImport.Rows.Add(u.name, u.nickname, u.mail, u.phoneNumber);
             }
         }
 

@@ -124,9 +124,9 @@ namespace PixLogic.DAL
         {
             return container.get("contain_userclass").containUserClass(search);
         }
-        public void AddUser(string name, string nickname, string mail, string classe, string phoneNumber, Image image)
+        public void AddUser(string name, string nickname, string mail, string phoneNumber, Image image)
         {
-            container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, classe, phoneNumber, image));
+            container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, phoneNumber, image));
         }
         public void AddUserClass(string name,int credits,int level)
         {
@@ -282,7 +282,7 @@ namespace PixLogic.DAL
             Reservation reservation = GetReservationById(id);
             User user = GetUserById(reservation.user.UserId);
             Reservable reservable = GetReservableById(reservation.reservable.ReservableId);
-            AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname,user.mail,user.classe,user.phoneNumber,reservable.name);
+            AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname,user.mail,user.userClass.name,user.phoneNumber,reservable.name);
             container.get("delete_reservation").deleteReservation(reservation.ReservationId);
         }
         public List<Log> GetAllPackLogs(List<Log> list)

@@ -56,7 +56,7 @@ namespace PixLogic
                User user = database.GetUserById(Convert.ToInt32(valUserId.Text));
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
-                valClass.Text = user.classe;
+                valClass.Text = (user.userClass.name);
                 
                 Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
