@@ -75,19 +75,48 @@ namespace PixLogic
                 if(save.ShowDialog() == DialogResult.OK)
                 {
                     database.AddRequete(save.SelectedName, content);
-                    MessageBox.Show("Votre requete à été suvegardée.");
+                    MessageBox.Show("Votre requete à été sauvegardée.");
+                    queryDGV.DataSource = database.GetAllRequete();
                 }
             }
         }
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataGridViewRow rw = queryDGV.SelectedRows[0];
 
+                Requete query = rw.DataBoundItem as Requete;
+
+                QueryRTB.Text = query.text;
+            }
+
+            catch(ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Selectionez une requete.");
+            }
+            
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataGridViewRow rw = queryDGV.SelectedRows[0];
 
+                Requete query = rw.DataBoundItem as Requete;
+
+                database.DeleteRequete(query.RequeteId);
+
+                queryDGV.DataSource = database.GetAllRequete();
+
+                MessageBox.Show("La requete " + query.name + " a été supprimmée.");
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Selectionez une requete.");
+            }
         }
     }
 }

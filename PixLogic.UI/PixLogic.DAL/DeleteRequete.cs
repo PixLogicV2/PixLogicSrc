@@ -15,12 +15,13 @@ namespace PixLogic.DAL
             this.context = context;
         }
 
-        public void deleteRequete(string queryToDelete)
+        public void deleteRequete(int queryToDelete)
         {
             var requete = (from r in context.Requetes
-                           where r.name == queryToDelete
+                           where r.RequeteId == queryToDelete
                            select r).FirstOrDefault();
-            context.Entry(queryToDelete).State = System.Data.Entity.EntityState.Deleted;
+
+            context.Entry(requete).State = System.Data.Entity.EntityState.Deleted;
             context.SaveChanges();
         }
     }

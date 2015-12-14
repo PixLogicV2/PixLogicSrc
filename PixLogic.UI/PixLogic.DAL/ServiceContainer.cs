@@ -355,7 +355,7 @@ namespace PixLogic.DAL
 
                 case "delete_requete":
                     this.arrayContainer[serviceName] = new DeleteRequete();
-                    this.arrayContainer[serviceName].SetContext(this.get("data_context"));
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
 
                 case "update_requete":
