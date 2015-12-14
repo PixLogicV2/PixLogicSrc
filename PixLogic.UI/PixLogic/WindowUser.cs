@@ -106,7 +106,7 @@ namespace PixLogic
             {
                 if (add)
                 {
-                    database.AddUser(name, nickname, mail, classe, tel,img);
+                    database.AddUser(name, nickname, mail, tel,img);
                 }
                 else if (!add )
                 {

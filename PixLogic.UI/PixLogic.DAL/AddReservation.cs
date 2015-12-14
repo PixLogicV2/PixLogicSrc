@@ -20,6 +20,16 @@ namespace PixLogic.DAL
             context.Reservations.Add(reserv);
             context.SaveChanges();
         }
+        public bool creditSuffisant(User user,Reservable res)
+        {
+            if (user.credits > res.price) return true;
+            else return false;
+        }
+        public bool levelSuffisant(User user,Item i)
+        {
+            if (user.userClass.level > i.categorie.level) return true;
+            else return false;
+        }
 
     }
 }

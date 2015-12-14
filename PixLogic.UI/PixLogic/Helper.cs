@@ -468,8 +468,7 @@ namespace PixLogic
                                 
                             }
                             User u = new User();
-                            u.name = headers.ElementAt<string>(0); u.nickname = headers.ElementAt<string>(1);
-                            u.classe = headers.ElementAt<string>(2); ; u.mail = headers.ElementAt<string>(3); ; u.phoneNumber = headers.ElementAt<string>(4); ;
+                            u.name = headers.ElementAt<string>(0); u.nickname = headers.ElementAt<string>(1) ; u.mail = headers.ElementAt<string>(3); ; u.phoneNumber = headers.ElementAt<string>(4); ;
                             users.Add(u);
                             break;
                         }
@@ -488,7 +487,7 @@ namespace PixLogic
                             var mail = csv2.GetField(3);
                             var tel = csv2.GetField(4);
                             User u = new User();
-                            u.name = nom; u.nickname = prenom; u.classe = classe; u.mail = mail; u.phoneNumber = tel;
+                            u.name = nom; u.nickname = prenom; u.mail = mail; u.phoneNumber = tel;
                             users.Add(u);
                             //Console.WriteLine(id + " | " + nom + " | " + prenom);
                         }
@@ -562,7 +561,7 @@ namespace PixLogic
         {
             for (int i = 0; i < 500; i++)
             {
-                database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, "user" + i, null);
+                database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, null);
             }
             for (int k = 0; k < 5; k++)
             {
