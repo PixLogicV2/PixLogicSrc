@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
             this.valCategorie = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.panTableItem = new System.Windows.Forms.Panel();
             this.labelCat = new System.Windows.Forms.Label();
             this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
@@ -65,7 +66,6 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
@@ -125,7 +125,7 @@
             // 
             this.valPrice.AutoSize = true;
             this.valPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPrice.Location = new System.Drawing.Point(65, 41);
+            this.valPrice.Location = new System.Drawing.Point(81, 41);
             this.valPrice.Name = "valPrice";
             this.valPrice.Size = new System.Drawing.Size(13, 17);
             this.valPrice.TabIndex = 4;
@@ -157,9 +157,9 @@
             this.labelPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrice.Location = new System.Drawing.Point(0, 42);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(52, 13);
+            this.labelPrice.Size = new System.Drawing.Size(76, 13);
             this.labelPrice.TabIndex = 1;
-            this.labelPrice.Text = "Prix ( € ) :";
+            this.labelPrice.Text = "Prix (Crédits) :";
             // 
             // labelDispo
             // 
@@ -240,6 +240,16 @@
             this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
             this.comboBoxCategorie.Click += new System.EventHandler(this.comboBoxCategorie_Click);
             // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
+            // 
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(67, 17);
@@ -262,8 +272,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -376,9 +386,9 @@
             // pictureImporter
             // 
             this.pictureImporter.Image = ((System.Drawing.Image)(resources.GetObject("pictureImporter.Image")));
-            this.pictureImporter.Location = new System.Drawing.Point(437, 0);
+            this.pictureImporter.Location = new System.Drawing.Point(456, 0);
             this.pictureImporter.Name = "pictureImporter";
-            this.pictureImporter.Size = new System.Drawing.Size(30, 27);
+            this.pictureImporter.Size = new System.Drawing.Size(29, 27);
             this.pictureImporter.TabIndex = 51;
             this.pictureImporter.TabStop = false;
             this.pictureImporter.Click += new System.EventHandler(this.pictureImporter_Click);
@@ -387,7 +397,7 @@
             // pictureExport
             // 
             this.pictureExport.Image = ((System.Drawing.Image)(resources.GetObject("pictureExport.Image")));
-            this.pictureExport.Location = new System.Drawing.Point(403, 1);
+            this.pictureExport.Location = new System.Drawing.Point(422, 1);
             this.pictureExport.Name = "pictureExport";
             this.pictureExport.Size = new System.Drawing.Size(30, 27);
             this.pictureExport.TabIndex = 50;
@@ -475,16 +485,6 @@
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // pictureReserver
             // 

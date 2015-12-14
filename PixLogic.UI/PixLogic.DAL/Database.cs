@@ -77,9 +77,13 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_packs").getAllPacksByString(search);
         }
-        public List<Item> GetItemsInPack(string packName)
+        public List<Item> GetItemsInPack(int packId)
         {
-            return container.get("get_items_in_pack").getItemsInPack(packName);
+            return container.get("get_items_in_pack").getItemsInPack(packId);
+        }
+        public List<Item> GetItemsInPackByName(string name)
+        {
+            return container.get("get_items_in_pack_by_name").getItemsInPackByName(name);
         }
         public void UpdateItem(string nom,string newName, string des, bool disp, float prix, Image img, string refe, int quant)
         {
@@ -100,13 +104,45 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_users").getAllUsers();
         }
+        public List<UserClass> GetAllUserClass()
+        {
+            return container.get("get_userclass").getAllUserClass();
+        }
+        public List<UserClass> GetAllUserClassByString(string search)
+        {
+            return container.get("get_userclass").getAllUserClassByString(search);
+        }
+        public UserClass GetUserClassById(int id)
+        {
+            return container.get("get_userclass").getUserClassById(id);
+        }
         public List<User> GetAllUsersByString(string search)
         {
             return container.get("get_all_users").getAllUsersByString(search);
         }
-        public void AddUser(string name, string nickname, string mail, string classe, string phoneNumber, Image image)
+        public bool ContainUserClass(string search)
         {
-            container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, classe, phoneNumber, image));
+            return container.get("contain_userclass").containUserClass(search);
+        }
+        public void AddUser(string name, string nickname, string mail, string phoneNumber, Image image)
+        {
+            container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, phoneNumber, image));
+        }
+        public void AddUserClass(string name,int credits,int level)
+        {
+            container.get("add_userclass").addUserClass(container.get("userclass_factory").build(name,credits,level));
+        }
+        public void AddUserClassToUser(int userId,int userClassId)
+        {
+            container.get("add_user").addUserClassToUser(userId,userClassId);
+        }
+        public void UpdateUserClass(int userClassId,string name,int credit,int level)
+        {
+            container.get("update_userclass").updateUserClass(userClassId,name,credit,level);
+        }
+        public void DeleteUserClass(int userclassId)
+        {
+            container.get("delete_userclass").deleteUserClass(userclassId);
         }
         /*public User GetUserByName(string itemName)
         {
@@ -246,16 +282,16 @@ namespace PixLogic.DAL
             Reservation reservation = GetReservationById(id);
             User user = GetUserById(reservation.user.UserId);
             Reservable reservable = GetReservableById(reservation.reservable.ReservableId);
-            AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname,user.mail,user.classe,user.phoneNumber,reservable.name);
+            AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname,user.mail,user.userClass.name,user.phoneNumber,reservable.name);
             container.get("delete_reservation").deleteReservation(reservation.ReservationId);
         }
-        public List<Log> GetAllPackLogs()
+        public List<Log> GetAllPackLogs(List<Log> list)
         {
-            return container.get("get_all__pack_logs").getAllPackLogs();
+            return container.get("get_all_pack_logs").getAllPackLogs(list);
         }
-        public List<Log> GetAllItemLogs()
+        public List<Log> GetAllItemLogs(List<Log> list)
         {
-            return container.get("get_all_item_logs").getAllItemLogs();
+            return container.get("get_all_item_logs").getAllItemLogs(list);
         }
         /*
         *Categorie

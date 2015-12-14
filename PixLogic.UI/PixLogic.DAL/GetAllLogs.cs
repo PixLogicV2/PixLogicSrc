@@ -43,13 +43,14 @@ namespace PixLogic.DAL
         {
             IQueryable<Log> reservQuery = from Log
                                                   in context.Logs
-                                                  where DateTime.Compare(Log.beginDateEmprunt.Value, dateDebut) >= 0
-                                                  where DateTime.Compare(Log.endDateEmprunt.Value, dateFin) <= 0
+                                                 // where DateTime.Compare(Log.beginDateEmprunt.Value, dateDebut) >= 0
+                                                 // where DateTime.Compare(Log.endDateEmprunt.Value, dateFin) <= 0
                                                   orderby Log.beginDateEmprunt
                                                   select Log;
             List<Log> list = new List<Log>();
             foreach (var prod in reservQuery)
             {
+                if (DateTime.Compare(prod.beginDateEmprunt.Value.Date, dateDebut.Date) >= 0 && DateTime.Compare(prod.endDateEmprunt.Value.Date, dateFin.Date) <= 0)
                 list.Add(prod);
             }
 

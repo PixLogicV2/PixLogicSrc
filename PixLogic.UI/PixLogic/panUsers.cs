@@ -56,7 +56,7 @@ namespace PixLogic
                User user = database.GetUserById(Convert.ToInt32(valUserId.Text));
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
-                valClass.Text = user.classe;
+                valClass.Text = (user.userClass.name);
                 
                 Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
@@ -91,8 +91,11 @@ namespace PixLogic
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            WindowUser modif = new WindowUser(this, pictureBoxUser.Image, valUserName.Text,valUserNickName.Text,valMail.Text,valClass.Text,valTel.Text);
-            modif.ShowDialog(this);
+            if (Helper.existReservationUser(true, Convert.ToInt32(valUserId.Text)) == false)
+            {
+                WindowUser modif = new WindowUser(this, pictureBoxUser.Image, valUserName.Text, valUserNickName.Text, valMail.Text, valClass.Text, valTel.Text);
+                modif.ShowDialog(this);
+            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

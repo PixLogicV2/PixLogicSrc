@@ -54,15 +54,14 @@ namespace PixLogic
         private void buttonValid_Click(object sender, EventArgs e)
         {
             string op = add ? Helper.ADD : Helper.SET;
-            Console.WriteLine("oooooooooko");
+            string oldName = database.GetCategorieById(idCategorie).name;
             if(!Helper.fieldsAreEmpty(true, valLibelle.Text)
                 && Helper.AreNumbers(true, valLevel.Text)
-                && !Helper.categorieExist(true, valLibelle.Text)
                 && Helper.confirmation(op))
             {
-                if (add)
+                if (add && !Helper.categorieExist(true, valLibelle.Text))
                     database.AddCategorie(valLibelle.Text, (int)double.Parse(valLevel.Text), valDescription.Text);
-                else
+                else if(!add && !Helper.categorieExistModif(true, valLibelle.Text, oldName))
                     database.UpdateCategorie(idCategorie, valLibelle.Text, (int)double.Parse(valLevel.Text), valDescription.Text);
 
                 if (!quickAdd)
@@ -73,7 +72,7 @@ namespace PixLogic
                 }
                 else
                 {
-
+                    settings.setTableCategories(database.GetAllCategorie());
                 }
                 this.Close();
             }

@@ -30,6 +30,9 @@ namespace PixLogic.DAL
                 case "user_factory":
                     this.arrayContainer[serviceName] = new UserFactory();
                     break;
+                case "userclass_factory":
+                    this.arrayContainer[serviceName] = new UserClassFactory();
+                    break;
                 case "log_factory":
                     this.arrayContainer[serviceName] = new LogFactory();
                     break;
@@ -50,6 +53,14 @@ namespace PixLogic.DAL
                     break;
                 case "add_user":
                     this.arrayContainer[serviceName] = new AddUser();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "add_userclass":
+                    this.arrayContainer[serviceName] = new AddUserClass();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "add_userclass_to_user":
+                    this.arrayContainer[serviceName] = new AddUserClass();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_pack_logs":
@@ -169,12 +180,28 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new ContainItem();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "contain_userclass":
+                    this.arrayContainer[serviceName] = new ContainUserClass();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "update_item":
                     this.arrayContainer[serviceName] = new UpdateItem();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "update_user":
                     this.arrayContainer[serviceName] = new UpdateUser();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_userclass":
+                    this.arrayContainer[serviceName] = new GetUserClass();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "update_userclass":
+                    this.arrayContainer[serviceName] = new AddUserClass();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "delete_userclass":
+                    this.arrayContainer[serviceName] = new AddUserClass();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "update_pack":
@@ -202,6 +229,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_items_in_pack":
+                    this.arrayContainer[serviceName] = new GetItemsInPack();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_items_in_pack_by_name":
                     this.arrayContainer[serviceName] = new GetItemsInPack();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;

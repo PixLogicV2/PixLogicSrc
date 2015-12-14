@@ -29,7 +29,7 @@ namespace PixLogic
             valUserName.Text = r.user.name + " " + r.user.nickname;
             valMail.Text = r.user.mail;
             valTel.Text = r.user.phoneNumber;
-            valClass.Text = r.user.classe;
+            valClass.Text = r.user.userClass.name;
 
             Helper.putImageInBox(pictureBoxUser, database.ByteArrayToImage(r.user.image));
         }

@@ -65,12 +65,14 @@
     <Compile Include="AddRequete.cs" />
     <Compile Include="AddReservation.cs" />
     <Compile Include="AddUser.cs" />
+    <Compile Include="AddUserClass.cs" />
     <Compile Include="ByteArrayToImage.cs" />
     <Compile Include="Categorie.cs" />
     <Compile Include="CategorieFactory.cs" />
     <Compile Include="ContainCategorie.cs" />
     <Compile Include="ContainReservationByReservableId.cs" />
     <Compile Include="ContainReservationByUserId.cs" />
+    <Compile Include="ContainUserClass.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeleteCategorie.cs" />
     <Compile Include="DeletePack.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="GetReservationById.cs" />
     <Compile Include="GetUserById.cs" />
     <Compile Include="GetUserByName.cs" />
+    <Compile Include="GetUserClass.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogFactory.cs" />
@@ -135,6 +138,8 @@
     <Compile Include="UpdateReservation.cs" />
     <Compile Include="UpdateUser.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserClass.cs" />
+    <Compile Include="UserClassFactory.cs" />
     <Compile Include="UserFactory.cs" />
   </ItemGroup>
   <ItemGroup>

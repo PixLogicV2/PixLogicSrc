@@ -158,7 +158,7 @@ namespace PixLogic
             listBoxItem.Items.Clear();
             if(!namePack.Equals(""))
             {
-                List<Item> list = database.GetItemsInPack(namePack);
+                List<Item> list = database.GetItemsInPackByName(namePack);
 
                 foreach (var item in list)
                 {
@@ -245,13 +245,15 @@ namespace PixLogic
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, Convert.ToDouble(valPrice.Text), Convert.ToInt32(valQuantity.Text), valDescription.Text, valCategorie.Text);
-            modif.ShowDialog(this);
+            if(Helper.existReservationItem(true, Convert.ToInt32(valItemId.Text)) == false){
+                WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, Convert.ToDouble(valPrice.Text), Convert.ToInt32(valQuantity.Text), valDescription.Text, valCategorie.Text);
+                modif.ShowDialog(this);
+            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationReservable(true, Convert.ToInt32(valItemId.Text)) == false)
+            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationItem(true, Convert.ToInt32(valItemId.Text)) == false)
             {
                 database.DeleteItem(valItemName.Text);
                 setTableItem(database.GetAllItems());

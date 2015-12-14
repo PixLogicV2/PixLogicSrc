@@ -166,6 +166,18 @@ namespace PixLogic
 
         }
 
+        public static bool userClassExist(bool withMessageBox, string name)
+        {
+            if (database.ContainUserClass(name))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("Le nom de la classe renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+
+        }
+
         public static bool itemExistModif(bool withMessageBox, string name, string oldName)
         {
             if (database.ContainItem(name) && !name.Equals(oldName))
@@ -177,7 +189,18 @@ namespace PixLogic
             return false;
 
         }
-        
+        public static bool categorieExistModif(bool withMessageBox, string name, string oldName)
+        {
+            if (database.ContainItem(name) && !name.Equals(oldName))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("Le nom de la catégorie renseignée existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+
+        }
+
         public static void putImageInBox(PictureBox picBox, System.Drawing.Image image)
         {
             picBox.Image = image;
@@ -215,8 +238,8 @@ namespace PixLogic
         }
         public static bool isDispo(bool withMessageBox,Reservation reservation,DateTime dateDebut,DateTime dateFin)
         {
-            if ((reservation.endDateReservation.Value.Date <= dateDebut.Date) || 
-                (reservation.beginDateReservation.Value.Date >= dateFin.Date)/* ||
+            if ((reservation.endDateReservation.Value.Date < dateDebut.Date) || 
+                (reservation.beginDateReservation.Value.Date > dateFin.Date)/* ||
                 (reservation.endDateReservation.Value.Date>=dateDebut.Date && reservation.endDateReservation.Value.Date<=dateFin.Date) ||
                 (reservation.beginDateReservation.Value.Date >= dateDebut.Date && reservation.beginDateReservation.Value.Date <= dateFin.Date)*/)
             {
@@ -226,8 +249,8 @@ namespace PixLogic
         }
         public static bool isDispoEmprunt(bool withMessageBox, Reservation reservation, DateTime dateDebut, DateTime dateFin)
         {
-            if ((reservation.endDateEmprunt.Value.Date <= dateDebut.Date) ||
-                (reservation.beginDateEmprunt.Value.Date >= dateFin.Date)/* ||
+            if ((reservation.endDateEmprunt.Value.Date <dateDebut.Date) ||
+                (reservation.beginDateEmprunt.Value.Date > dateFin.Date)/* ||
                 (reservation.endDateReservation.Value.Date>=dateDebut.Date && reservation.endDateReservation.Value.Date<=dateFin.Date) ||
                 (reservation.beginDateReservation.Value.Date >= dateDebut.Date && reservation.beginDateReservation.Value.Date <= dateFin.Date)*/)
             {
@@ -264,7 +287,7 @@ namespace PixLogic
             if(res != null) { 
             if (res.isPack == true)
                 {
-                    List<Item> items = database.GetItemsInPack(res.reservable.name);
+                    List<Item> items = database.GetItemsInPack(res.reservable.ReservableId);
                     foreach (Item i in items)
                     {
                         List<Reservation> reser= database.GetAllReservationsByReservableId(i.ReservableId);
@@ -413,8 +436,9 @@ namespace PixLogic
             return true;
         }
 
-        public static bool importCSV(string path, bool virgule, bool entete)
+        public static List<User> importCSV(string path, bool virgule, bool entete)
         {
+            List<User> users = new List<User>();
             try
             {
                 using (System.IO.StreamReader file = new System.IO.StreamReader(path))
@@ -426,10 +450,16 @@ namespace PixLogic
                         csv.Configuration.Delimiter = virgule ? "," : ";";
                         while (csv.Read())
                         {
+                            List<String> headers = new List<string>();
                             foreach (string h in csv.FieldHeaders)
                             {
-                                Console.Write(h + " | ");
+                                //Console.Write(h + " | ");
+                                headers.Add(h);
+                                
                             }
+                            User u = new User();
+                            u.name = headers.ElementAt<string>(0); u.nickname = headers.ElementAt<string>(1) ; u.mail = headers.ElementAt<string>(3); ; u.phoneNumber = headers.ElementAt<string>(4); ;
+                            users.Add(u);
                             break;
                         }
                         csv.Dispose();
@@ -441,10 +471,15 @@ namespace PixLogic
                         csv2.Configuration.Delimiter = virgule ? "," : ";";
                         while (csv2.Read())
                         {
-                            var id = csv2.GetField(0);
-                            var nom = csv2.GetField(1);
-                            var prenom = csv2.GetField(2);
-                            Console.WriteLine(id + " | " + nom + " | " + prenom);
+                            var nom = csv2.GetField(0);
+                            var prenom = csv2.GetField(1);
+                            var classe = csv2.GetField(2);
+                            var mail = csv2.GetField(3);
+                            var tel = csv2.GetField(4);
+                            User u = new User();
+                            u.name = nom; u.nickname = prenom; u.mail = mail; u.phoneNumber = tel;
+                            users.Add(u);
+                            //Console.WriteLine(id + " | " + nom + " | " + prenom);
                         }
                         csv2.Dispose();
                     }
@@ -455,10 +490,10 @@ namespace PixLogic
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                
             }
 
-            return true;
+            return users;
         }
 
         public static bool existReservationUser(bool withMessageBox,int userId)
@@ -471,21 +506,52 @@ namespace PixLogic
                 return true;
             }
         }
-        public static bool existReservationReservable(bool withMessageBox, int reservableId)
+        public static bool existReservationItem(bool withMessageBox, int reservableId)
         {
             bool emp = database.ContainReservationByReservableId(reservableId);
-            if (emp == false) return false;
-            else
+            if (emp == true)
+            { 
+                if (withMessageBox) MessageBox.Show("Ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            Item item = database.GetItemById(reservableId);
+            if (item.pack != null)
+            {
+                bool empPack = database.ContainReservationByReservableId(item.pack.ReservableId);
+                if (empPack == true)
+                {
+                    if (withMessageBox) MessageBox.Show("Un pack contenant ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool existReservationPack(bool withMessageBox, int reservableId)
+        {
+            bool emp = database.ContainReservationByReservableId(reservableId);
+            if (emp == true)
             {
                 if (withMessageBox) MessageBox.Show("Ce matériel possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
+            Pack pack = database.GetPackById(reservableId);
+            List<Item> items = database.GetItemsInPack(reservableId);
+            foreach (Item i in items)
+            {
+                bool res = database.ContainReservationByReservableId(i.ReservableId);
+                if (res== true)
+                {
+                    if (withMessageBox) MessageBox.Show("Un materiel de ce pack possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
         }
         public static void initBase()
         {
             for (int i = 0; i < 500; i++)
             {
-                database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, "user" + i, null);
+                database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, null);
             }
             for (int k = 0; k < 5; k++)
             {
