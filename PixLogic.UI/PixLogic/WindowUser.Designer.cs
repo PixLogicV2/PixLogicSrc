@@ -41,13 +41,13 @@
             this.buttonValid = new System.Windows.Forms.Button();
             this.pictureBoxSelection = new System.Windows.Forms.PictureBox();
             this.labelMail = new System.Windows.Forms.Label();
-            this.valClass = new System.Windows.Forms.TextBox();
             this.labelClass = new System.Windows.Forms.Label();
             this.valNickName = new System.Windows.Forms.TextBox();
             this.labelFirstName = new System.Windows.Forms.Label();
             this.valName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
+            this.comboBoxClasse = new System.Windows.Forms.ComboBox();
             this.panelGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
@@ -55,6 +55,7 @@
             // 
             // panelGeneral
             // 
+            this.panelGeneral.Controls.Add(this.comboBoxClasse);
             this.panelGeneral.Controls.Add(this.label3);
             this.panelGeneral.Controls.Add(this.valTel);
             this.panelGeneral.Controls.Add(this.labelTel);
@@ -66,7 +67,6 @@
             this.panelGeneral.Controls.Add(this.buttonValid);
             this.panelGeneral.Controls.Add(this.pictureBoxSelection);
             this.panelGeneral.Controls.Add(this.labelMail);
-            this.panelGeneral.Controls.Add(this.valClass);
             this.panelGeneral.Controls.Add(this.labelClass);
             this.panelGeneral.Controls.Add(this.valNickName);
             this.panelGeneral.Controls.Add(this.labelFirstName);
@@ -199,14 +199,6 @@
             this.labelMail.TabIndex = 7;
             this.labelMail.Text = "E-Mail :";
             // 
-            // valClass
-            // 
-            this.valClass.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valClass.Location = new System.Drawing.Point(99, 267);
-            this.valClass.Name = "valClass";
-            this.valClass.Size = new System.Drawing.Size(156, 25);
-            this.valClass.TabIndex = 4;
-            // 
             // labelClass
             // 
             this.labelClass.AutoSize = true;
@@ -262,6 +254,17 @@
             this.pictureBoxItem.TabIndex = 0;
             this.pictureBoxItem.TabStop = false;
             // 
+            // comboBoxClasse
+            // 
+            this.comboBoxClasse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxClasse.FormattingEnabled = true;
+            this.comboBoxClasse.ItemHeight = 13;
+            this.comboBoxClasse.Location = new System.Drawing.Point(99, 270);
+            this.comboBoxClasse.Name = "comboBoxClasse";
+            this.comboBoxClasse.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxClasse.Sorted = true;
+            this.comboBoxClasse.TabIndex = 4;
+            // 
             // WindowUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,7 +294,6 @@
         private System.Windows.Forms.Button buttonValid;
         private System.Windows.Forms.PictureBox pictureBoxSelection;
         private System.Windows.Forms.Label labelMail;
-        private System.Windows.Forms.TextBox valClass;
         private System.Windows.Forms.Label labelClass;
         private System.Windows.Forms.TextBox valNickName;
         private System.Windows.Forms.Label labelFirstName;
@@ -302,5 +304,6 @@
         private System.Windows.Forms.Label labelTel;
         private System.Windows.Forms.TextBox valTel;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxClasse;
     }
 }

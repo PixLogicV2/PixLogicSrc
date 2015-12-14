@@ -25,6 +25,7 @@ namespace PixLogic
             pan = p;
             img = Properties.Resources.noprofil;
             Helper.putImageInBox(pictureBoxItem, img);
+            setComboBoxClasse();
             add = true;
         }
         public WindowUser(panUsers pa, Image image, string name, string nickname, string mail, string classe,string phone)
@@ -34,12 +35,40 @@ namespace PixLogic
             pan = pa;
             img = image;
             Helper.putImageInBox(pictureBoxItem, img);
+            setComboBoxClasse(classe);
             valName.Text = name;
             valNickName.Text =nickname;
-            valClass.Text= classe;
             valMail.Text = mail;
             valTel.Text = phone;
             add = false;
+        }
+
+        private void setComboBoxClasse(string nom = "")
+        {
+            comboBoxClasse.Items.Clear();
+            List<UserClass> list = database.GetAllUserClass();
+
+            comboBoxClasse.Items.Add("");
+            foreach (var classe in list)
+            {
+                comboBoxClasse.Items.Add(classe.name);
+            }
+            if (comboBoxClasse.Items.Count > 0)
+            {
+                if (add)
+                    comboBoxClasse.SelectedIndex = 0;
+                else
+                {
+                    int index = 0;
+                    foreach (var i in comboBoxClasse.Items)
+                    {
+                        if (i.Equals(nom))
+                            break;
+                        index++;
+                    }
+                    comboBoxClasse.SelectedIndex = index;
+                }
+            }
         }
 
         private void chooseImage()
@@ -69,7 +98,7 @@ namespace PixLogic
             string nickname = valNickName.Text;
             string mail = valMail.Text;
             string tel = valTel.Text;
-            string classe = valClass.Text;
+            string classe = comboBoxClasse.SelectedItem.ToString();
             string option = add ? Helper.ADD : Helper.SET;
 
             if (!Helper.fieldsAreEmpty(true, name, nickname, mail, classe)
@@ -81,7 +110,7 @@ namespace PixLogic
                 }
                 else if (!add )
                 {
-                    database.UpdateUser(Convert.ToInt32(pan.valUserId.Text), name, nickname, mail,tel,classe,img);
+                    database.UpdateUser(Convert.ToInt32(pan.valUserId.Text), name, nickname, mail,classe, tel,img);
                 }
                 //Helper.addSuccess();
                 pan.setTableUsers(database.GetAllUsers());

@@ -200,7 +200,17 @@ namespace PixLogic
             return false;
 
         }
+        public static bool userClassExistModif(bool withMessageBox, string name, string oldName)
+        {
+            if (database.ContainItem(name) && !name.Equals(oldName))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("Le nom de la classe renseignée existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
 
+        }
         public static void putImageInBox(PictureBox picBox, System.Drawing.Image image)
         {
             picBox.Image = image;

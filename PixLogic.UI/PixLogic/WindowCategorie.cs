@@ -54,14 +54,13 @@ namespace PixLogic
         private void buttonValid_Click(object sender, EventArgs e)
         {
             string op = add ? Helper.ADD : Helper.SET;
-            string oldName = database.GetCategorieById(idCategorie).name;
             if(!Helper.fieldsAreEmpty(true, valLibelle.Text)
                 && Helper.AreNumbers(true, valLevel.Text)
                 && Helper.confirmation(op))
             {
                 if (add && !Helper.categorieExist(true, valLibelle.Text))
                     database.AddCategorie(valLibelle.Text, (int)double.Parse(valLevel.Text), valDescription.Text);
-                else if(!add && !Helper.categorieExistModif(true, valLibelle.Text, oldName))
+                else if(!add && !Helper.categorieExistModif(true, valLibelle.Text, settings.valLibelleCat.Text))
                     database.UpdateCategorie(idCategorie, valLibelle.Text, (int)double.Parse(valLevel.Text), valDescription.Text);
 
                 if (!quickAdd)
