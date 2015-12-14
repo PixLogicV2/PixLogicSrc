@@ -60,9 +60,9 @@ namespace PixLogic
                 && Helper.confirmation(op))
             {
                 if (add)
-                    database.AddUserClass(valLibelle.Text, (int)double.Parse(valCredit.Text));
+                    database.AddUserClass(valLibelle.Text, (int)double.Parse(valCredit.Text),(int)double.Parse(valLevel.Text));
                 else
-                    database.UpdateUserClass(idClasse, valLibelle.Text, (int)double.Parse(valCredit.Text));
+                    database.UpdateUserClass(idClasse, valLibelle.Text, (int)double.Parse(valCredit.Text), (int)double.Parse(valLevel.Text));
 
                 if (!quickAdd)
                 {

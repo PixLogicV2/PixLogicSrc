@@ -39,7 +39,7 @@ namespace PixLogic.DAL
             context.Entry(user).State = System.Data.Entity.EntityState.Deleted;
             context.SaveChanges();
         }
-        public void updateUserClass(int id, string name, int credits)
+        public void updateUserClass(int id, string name, int credits,int level)
         {
             UserClass userClass;
             userClass = context.UserClasses.Where(u => u.UserClassId == id).FirstOrDefault<UserClass>();
@@ -48,6 +48,7 @@ namespace PixLogic.DAL
             {
                 userClass.name = name;
                 userClass.credits=credits;
+                userClass.level = level;
                 context.Entry(userClass).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }

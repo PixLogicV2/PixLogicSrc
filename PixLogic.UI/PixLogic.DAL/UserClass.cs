@@ -13,6 +13,7 @@ namespace PixLogic.DAL
             public string name { get; set; }
             public int credits { get; set; }
             public int UserClassId { get; set; }
-            
-        }
+            public int level { get; set; }
+
+    }
 }
