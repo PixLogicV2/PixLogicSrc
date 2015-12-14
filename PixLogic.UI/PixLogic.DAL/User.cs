@@ -13,7 +13,6 @@ namespace PixLogic.DAL
         public string name { get; set; }
         public string nickname { get; set; }
         public string mail { get; set; }
-        public string classe { get; set; }
         public string phoneNumber { get; set; }
         public byte[] image { get; set; }
         public int credits { get; set; }

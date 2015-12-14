@@ -13,7 +13,6 @@ namespace PixLogic.DAL
     {
         public String description { get; set; }
         public bool dispo { get; set; }
-        public float price { get; set; }
         public byte[] image { get; set; }
         public String reference { get; set; }
         public int quantity { get; set; }
