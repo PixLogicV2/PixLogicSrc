@@ -6,7 +6,7 @@ namespace PixLogic.DAL
 {
     public class ItemFactory
     {
-        public Item build(string name, string description, bool dispo, float price, Image image, string reference, int quantity)
+        public Item build(string name, string description, bool dispo, int price, Image image, string reference, int quantity)
         {
             Item item = new Item();
             item.name=name;

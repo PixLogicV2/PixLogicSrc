@@ -113,9 +113,9 @@ namespace PixLogic
                 && Helper.AreNumbers(true, price, quantity)
                 && Helper.confirmation(option))
             {
-                float nPrice;
+                int nPrice;
                 int nQuantity;
-                float.TryParse(price, out nPrice);
+                int.TryParse(price, out nPrice);
                 int.TryParse(quantity, out nQuantity);
                 if (add && !Helper.itemExist(true, name))
                 {

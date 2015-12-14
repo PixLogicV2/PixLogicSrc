@@ -17,13 +17,13 @@ namespace PixLogic.DAL
 
         //------- FONCTION PANNEAU MATERIEL --------//
 
-        public void AddItem(string name, string description, bool dispo, float price, Image image, string reference, int quantity,Categorie cat)
+        public void AddItem(string name, string description, bool dispo, int price, Image image, string reference, int quantity,Categorie cat)
         {
             Item item = container.get("item_factory").build(name, description, dispo, price, image, reference, quantity);
             container.get("add_item").addItem(item);
             container.get("add_categorie_to_item").addCategorieToItem(item.ReservableId, cat.CategorieId);
         }
-        public void AddPack(string name, string description, bool dispo, float price)
+        public void AddPack(string name, string description, bool dispo, int price)
         {
             container.get("add_pack").addPack(container.get("pack_factory").build(name, description, dispo, price));
         }
@@ -91,9 +91,9 @@ namespace PixLogic.DAL
         {
             container.get("update_item").updateItem(nom,newName, des, disp, prix, img, refe, quant,cat);
         }
-        public void UpdatePack(string nom, string newName, string des, bool disp, float prix)
+        public void UpdatePack(string nom, string newName, string des, bool disp)
         {
-            container.get("update_pack").updatePack(nom, newName, des, disp, prix);
+            container.get("update_pack").updatePack(nom, newName, des, disp);
         }
         public void DeletePack(string packName)
         {
@@ -176,6 +176,16 @@ namespace PixLogic.DAL
         {
             container.get("add_reservation").addReservation(container.get("reservation_factory").build(isPack, beginDateReservation, endDateReservation,
                                                                                                         beginDateEmprunt, endDateEmprunt, user, element, manager));
+            container.get("add_reservation").removeCredit(user, element.price);
+        }
+
+        public bool CreditSuffisant(User user, Reservable res)
+        {
+            return container.get("add_reservation").creditSuffisant(user, res);
+        }
+        public bool LevelSuffisant(User user, float level)
+        {
+            return container.get("add_reservation").levelSuffisant(user, level);
         }
         public List<Reservation> GetAllReservations()
         {

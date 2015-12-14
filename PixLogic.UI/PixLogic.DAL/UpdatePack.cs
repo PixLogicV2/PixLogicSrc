@@ -14,7 +14,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updatePack(string nom, string newName, string des, bool disp, float prix)
+        public void updatePack(string nom, string newName, string des, bool disp)
         {
             Pack pack;
             pack= context.Packs.Where(s => s.name == nom).FirstOrDefault<Pack>();
@@ -24,7 +24,6 @@ namespace PixLogic.DAL
                 pack.name = newName;
                 pack.description = des;
                 pack.dispo = disp;
-                pack.price = prix;
                 context.Entry(pack).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }
