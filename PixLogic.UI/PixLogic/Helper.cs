@@ -560,10 +560,11 @@ namespace PixLogic
         }
         public static void initBase()
         {
-            /*for (int i = 0; i < 500; i++)
+            database.AddUserClass("cm2", 100, 3);
+            for (int i = 0; i < 500; i++)
             {
-                database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, null);
-            }*/
+                database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, null,database.GetUserClassById(1));
+            }
             for (int k = 0; k < 5; k++)
             {
                 database.AddCategorie("categorie" + k, k, "des" + k);
@@ -572,13 +573,12 @@ namespace PixLogic
             {
                 database.AddPack("packname" + k, "des" + k,true,k);
             }
-            /*
+            
             for (int j = 0; j < 500; j++)
             {
-                database.AddItem("itemname" + j, "itemdes" + j, true, j, null, "ref" + j, 1);
-                database.AddCategorieToItem("itemname" + j, "categorie1");
+                database.AddItem("itemname" + j, "itemdes" + j, true, j, null, "ref" + j, 1,database.GetCategorieById(1));
             }
-            */
+            
         }
     }
 }
