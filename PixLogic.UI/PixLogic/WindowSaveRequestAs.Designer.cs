@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SelectedNamTextBox = new System.Windows.Forms.TextBox();
             this.ConfirmBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -42,12 +42,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Enregistrer la requete sous : ";
             // 
-            // textBox1
+            // SelectedNamTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 20);
-            this.textBox1.TabIndex = 1;
+            this.SelectedNamTextBox.Location = new System.Drawing.Point(12, 39);
+            this.SelectedNamTextBox.Name = "SelectedNamTextBox";
+            this.SelectedNamTextBox.Size = new System.Drawing.Size(258, 20);
+            this.SelectedNamTextBox.TabIndex = 1;
             // 
             // ConfirmBtn
             // 
@@ -58,6 +58,7 @@
             this.ConfirmBtn.TabIndex = 2;
             this.ConfirmBtn.Text = "Valider";
             this.ConfirmBtn.UseVisualStyleBackColor = true;
+            this.ConfirmBtn.Click += new System.EventHandler(this.ConfirmBtn_Click);
             // 
             // WindowSaveRequestAs
             // 
@@ -65,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 111);
             this.Controls.Add(this.ConfirmBtn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SelectedNamTextBox);
             this.Controls.Add(this.label1);
             this.Name = "WindowSaveRequestAs";
             this.Text = "WindowSaveRequestAs";
@@ -77,7 +78,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SelectedNamTextBox;
         private System.Windows.Forms.Button ConfirmBtn;
     }
 }

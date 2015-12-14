@@ -59,42 +59,33 @@ namespace PixLogic
         private void panScript_Load(object sender, EventArgs e)
         {
             List<Requete> allRequest = database.GetAllRequete();
-
-            QueryListBox.DataSource = database.GetAllRequete();
+           
+            queryDGV.DataSource = allRequest;
+            queryDGV.Columns[1].Visible = false;
+            queryDGV.Columns[2].Visible = false;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            //string content = QueryRTB.Text;
-
-            //using (SaveFileDialog querySaveDialog = new SaveFileDialog())
-            //{
-            //    querySaveDialog.Filter = "Fichier SQL (*.sql)|*.sql";
-            //    querySaveDialog.FilterIndex = 2;
-            //    querySaveDialog.RestoreDirectory = true;
-
-            //    if(querySaveDialog.ShowDialog()==DialogResult.OK)
-            //    {
-            //        File.WriteAllText(querySaveDialog.FileName,  content);
-            //    }
-            //}
             string content = QueryRTB.Text;
 
-            using (SaveFileDialog querySaveDialog = new SaveFileDialog())
+            using (WindowSaveRequestAs save = new WindowSaveRequestAs())
             {
-                querySaveDialog.Filter = "Fichier SQL (*.sql)|*.sql";
-                querySaveDialog.FilterIndex = 2;
-                querySaveDialog.RestoreDirectory = true;
-
-                if (querySaveDialog.ShowDialog() == DialogResult.OK)
+                
+                if(save.ShowDialog() == DialogResult.OK)
                 {
-                    database.AddRequete(Path.GetFileNameWithoutExtension(querySaveDialog.FileName), content);
+                    database.AddRequete(save.SelectedName, content);
+                    MessageBox.Show("Votre requete à été suvegardée.");
                 }
             }
-
         }
 
         private void LoadBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
         {
 
         }

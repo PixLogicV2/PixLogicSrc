@@ -12,9 +12,17 @@ namespace PixLogic
 {
     public partial class WindowSaveRequestAs : Form
     {
+        public string SelectedName { get; set; }
+
         public WindowSaveRequestAs()
         {
             InitializeComponent();
+        }
+
+        private void ConfirmBtn_Click(object sender, EventArgs e)
+        {
+            SelectedName = SelectedNamTextBox.Text;
+            DialogResult = DialogResult.OK;
         }
     }
 }
