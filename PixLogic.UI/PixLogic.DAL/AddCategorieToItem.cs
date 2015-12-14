@@ -14,12 +14,12 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void addCategorieToItem(string itemName, string catName)
+        public void addCategorieToItem(int itemId, int catId)
         {
             Item item;
             Categorie categorie;
-            item = context.Items.Where(s => s.name == itemName).FirstOrDefault();
-            categorie = context.Categories.Where(s => s.name == catName).FirstOrDefault<Categorie>();
+            item = context.Items.Where(s => s.ReservableId == itemId).FirstOrDefault();
+            categorie = context.Categories.Where(s => s.CategorieId == catId).FirstOrDefault<Categorie>();
             item.categorie = categorie;
             context.Entry(item).State = System.Data.Entity.EntityState.Modified;
             context.SaveChanges();

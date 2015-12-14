@@ -100,17 +100,17 @@ namespace PixLogic
             string tel = valTel.Text;
             string classe = comboBoxClasse.SelectedItem.ToString();
             string option = add ? Helper.ADD : Helper.SET;
-
+            UserClass userClass = database.GetUserClassByName(classe);
             if (!Helper.fieldsAreEmpty(true, name, nickname, mail, classe)
                 && Helper.confirmation(option))
             {
                 if (add)
                 {
-                    database.AddUser(name, nickname, mail, tel,img);
+                    database.AddUser(name, nickname, mail, tel,img,userClass);
                 }
                 else if (!add )
                 {
-                    database.UpdateUser(Convert.ToInt32(pan.valUserId.Text), name, nickname, mail,classe, tel,img);
+                    database.UpdateUser(Convert.ToInt32(pan.valUserId.Text), name, nickname, mail,classe, tel,img,userClass);
                 }
                 //Helper.addSuccess();
                 pan.setTableUsers(database.GetAllUsers());

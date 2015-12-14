@@ -223,7 +223,7 @@ namespace PixLogic
                     picBox.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
-
+        /*
         public static void testApp()
         {
             foreach (var item in database.GetAllItems())
@@ -235,6 +235,7 @@ namespace PixLogic
                 database.AddItem("NameItem " + i, "Description " + i, true, (i * 0.8f), Properties.Resources.camera_photo, "Reference " + 1, i + 1);
             }
         }
+        */
 
         public static bool reservationStartMinimumToday(bool withMessageBox, DateTime debut)
         {
@@ -559,10 +560,10 @@ namespace PixLogic
         }
         public static void initBase()
         {
-            for (int i = 0; i < 500; i++)
+            /*for (int i = 0; i < 500; i++)
             {
                 database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, null);
-            }
+            }*/
             for (int k = 0; k < 5; k++)
             {
                 database.AddCategorie("categorie" + k, k, "des" + k);
@@ -571,11 +572,13 @@ namespace PixLogic
             {
                 database.AddPack("packname" + k, "des" + k,true,k);
             }
+            /*
             for (int j = 0; j < 500; j++)
             {
                 database.AddItem("itemname" + j, "itemdes" + j, true, j, null, "ref" + j, 1);
                 database.AddCategorieToItem("itemname" + j, "categorie1");
             }
+            */
         }
     }
 }

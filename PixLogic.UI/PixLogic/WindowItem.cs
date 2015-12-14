@@ -107,6 +107,7 @@ namespace PixLogic
             string reference = "";
             string nameCategorie = comboBoxCategorie.SelectedItem.ToString();
             string option = add ? Helper.ADD : Helper.SET;
+            Categorie categorie = database.GetCategorieByName(nameCategorie);
 
             if (!Helper.fieldsAreEmpty(true, name, price, quantity, nameCategorie)
                 && Helper.AreNumbers(true, price, quantity)
@@ -118,13 +119,11 @@ namespace PixLogic
                 int.TryParse(quantity, out nQuantity);
                 if (add && !Helper.itemExist(true, name))
                 {
-                    database.AddItem(name, description, true, nPrice, img, reference, nQuantity);
-                    database.AddCategorieToItem(name, nameCategorie);
+                    database.AddItem(name, description, true, nPrice, img, reference, nQuantity,categorie);
                 }
                 else if(!add && !Helper.itemExistModif(true, name, pan.valItemName.Text))
                 {
-                    database.UpdateItem(pan.valItemName.Text, name, description, true, nPrice, img, reference, nQuantity);
-                    database.AddCategorieToItem(name, nameCategorie);
+                    database.UpdateItem(pan.valItemName.Text, name, description, true, nPrice, img, reference, nQuantity,categorie);
                 }
                 //Helper.addSuccess();
                 pan.setTableItem(database.GetAllItems());

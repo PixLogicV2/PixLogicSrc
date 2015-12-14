@@ -17,9 +17,11 @@ namespace PixLogic.DAL
 
         //------- FONCTION PANNEAU MATERIEL --------//
 
-        public void AddItem(string name, string description, bool dispo, float price, Image image, string reference, int quantity)
+        public void AddItem(string name, string description, bool dispo, float price, Image image, string reference, int quantity,Categorie cat)
         {
-            container.get("add_item").addItem(container.get("item_factory").build(name, description,dispo,price,image,reference,quantity));
+            Item item = container.get("item_factory").build(name, description, dispo, price, image, reference, quantity);
+            container.get("add_item").addItem(item);
+            container.get("add_categorie_to_item").addCategorieToItem(item.ReservableId, cat.CategorieId);
         }
         public void AddPack(string name, string description, bool dispo, float price)
         {
@@ -85,9 +87,9 @@ namespace PixLogic.DAL
         {
             return container.get("get_items_in_pack_by_name").getItemsInPackByName(name);
         }
-        public void UpdateItem(string nom,string newName, string des, bool disp, float prix, Image img, string refe, int quant)
+        public void UpdateItem(string nom,string newName, string des, bool disp, float prix, Image img, string refe, int quant,Categorie cat)
         {
-            container.get("update_item").updateItem(nom,newName, des, disp, prix, img, refe, quant);
+            container.get("update_item").updateItem(nom,newName, des, disp, prix, img, refe, quant,cat);
         }
         public void UpdatePack(string nom, string newName, string des, bool disp, float prix)
         {
@@ -116,6 +118,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_userclass").getUserClassById(id);
         }
+        public UserClass GetUserClassByName(string name)
+        {
+            return container.get("get_userclass").getUserClassByName(name);
+        }
         public List<User> GetAllUsersByString(string search)
         {
             return container.get("get_all_users").getAllUsersByString(search);
@@ -124,9 +130,11 @@ namespace PixLogic.DAL
         {
             return container.get("contain_userclass").containUserClass(search);
         }
-        public void AddUser(string name, string nickname, string mail, string phoneNumber, Image image)
+        public void AddUser(string name, string nickname, string mail, string phoneNumber, Image image,UserClass classe)
         {
-            container.get("add_user").addUser(container.get("user_factory").build(name, nickname, mail, phoneNumber, image));
+            User user = container.get("user_factory").build(name, nickname, mail, phoneNumber, image);
+            container.get("add_user").addUser(user);
+            container.get("add_userclass_to_user").addUserClassToUser(user.UserId, classe.UserClassId);
         }
         public void AddUserClass(string name,int credits,int level)
         {
@@ -152,9 +160,9 @@ namespace PixLogic.DAL
         {
             return container.get("get_user_by_id").getUserById(id);
         }
-        public void UpdateUser(int id, string name, string nickname, string mail, string classe, string phoneNumber, Image image)
+        public void UpdateUser(int id, string name, string nickname, string mail, string classe, string phoneNumber, Image image,UserClass userClass)
         {
-            container.get("update_user").updateUser(id,  name, nickname, mail, classe, phoneNumber, image);
+            container.get("update_user").updateUser(id,  name, nickname, mail, classe, phoneNumber, image,userClass);
         }
         public void DeleteUser(int id)
         {
@@ -300,9 +308,9 @@ namespace PixLogic.DAL
         {
             container.get("add_categorie").addCategorie(container.get("categorie_factory").build(name, level,description));
         }
-        public void AddCategorieToItem(string itemName, string catName)
+        public void AddCategorieToItem(int itemId, int catId)
         {
-            container.get("add_categorie_to_item").addCategorieToItem(itemName, catName);
+            container.get("add_categorie_to_item").addCategorieToItem(itemId, catId);
         }
         public void UpdateCategorie(int id,string nom,int lvl,string description)
         {
@@ -311,6 +319,10 @@ namespace PixLogic.DAL
         public Categorie GetCategorieById(int id)
         {
             return container.get("get_categorie_by_id").getCategorieById(id);
+        }
+        public Categorie GetCategorieByName(string name)
+        {
+            return container.get("get_categorie_by_id").getCategorieByName(name);
         }
         public List<Categorie>GetAllCategorie()
         {
