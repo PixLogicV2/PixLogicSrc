@@ -130,7 +130,7 @@ namespace PixLogic
         {
             if (Helper.existReservationPack(true, Convert.ToInt32(valPackId.Text)) == false)
             {
-                WindowPack winpack = new WindowPack(valNamePack.Text, valPrice.Text, valDescription.Text, pan, this);
+                WindowPack winpack = new WindowPack(valNamePack.Text, valDescription.Text, pan, this);
                 winpack.ShowDialog(this);
             }
         }

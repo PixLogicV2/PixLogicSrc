@@ -16,7 +16,7 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateItem(string nom, string newName, string des, bool disp, float prix, Image image, string refe, int quant,Categorie cat)
+        public void updateItem(string nom, string newName, string des, bool disp, int prix, Image image, string refe, int quant,Categorie cat)
         {
                 Item item;
                 item = context.Items.Where(s => s.name == nom).FirstOrDefault<Item>();

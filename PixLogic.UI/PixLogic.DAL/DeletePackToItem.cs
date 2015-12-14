@@ -18,8 +18,11 @@ namespace PixLogic.DAL
         {
             Item item;
             item = context.Items.Where(s => s.name == itemName).FirstOrDefault();
+            Pack pack = context.Packs.Where(s => s.name == item.pack.name).FirstOrDefault();
+            pack.price -= item.price;
             item.pack = null;
             context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+            context.Entry(pack).State = System.Data.Entity.EntityState.Modified;
             context.SaveChanges();
         }
     }

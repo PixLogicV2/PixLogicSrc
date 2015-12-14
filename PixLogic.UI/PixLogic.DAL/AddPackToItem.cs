@@ -21,7 +21,9 @@ namespace PixLogic.DAL
             item = context.Items.Where(s => s.name == itemName).FirstOrDefault();
             pack = context.Packs.Where(s => s.name == packName).FirstOrDefault<Pack>();
             item.pack = pack;
+            pack.price += item.price;
             context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+            context.Entry(pack).State = System.Data.Entity.EntityState.Modified;
             context.SaveChanges();
         }
     }

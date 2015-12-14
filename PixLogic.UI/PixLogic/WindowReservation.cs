@@ -128,14 +128,17 @@ namespace PixLogic
             {
                 elem = database.GetPackById(int.Parse(valIdReservable.Text.ToString()));
             }
+            User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
             if (Helper.reservationStartMinimumToday(true, debut)
                 && Helper.beginBeforeEndDate(true, debut, fin)
                 && Helper.getDispoReservableByDate(true, idElement, debut, fin)
                 && Helper.confirmationReservation(Helper.ADD))
             {
-                User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
-
+                if (database.CreditSuffisant(user, elem)
+                && database.LevelSuffisant(user, elem.price))
                 database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem,manag);
+                else MessageBox.Show("credits ou niveau d'accès insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
                 this.Close();
             }

@@ -27,12 +27,11 @@ namespace PixLogic
             add = true;
         }
 
-        public WindowPack(string name, string price, string description, panItemPack p, WindowPackManager w)
+        public WindowPack(string name,  string description, panItemPack p, WindowPackManager w)
         {
             InitializeComponent();
             this.Text = "Modification Pack";
             valName.Text = name;
-            valPrice.Text = price;
             valDescription.Text = description;
             panItemPack = p;
             winpackm = w;
@@ -43,16 +42,13 @@ namespace PixLogic
         {
             string option = add ? Helper.ADD : Helper.SET;
 
-            if (!Helper.fieldsAreEmpty(true, valName.Text, valPrice.Text)
-                && Helper.AreNumbers(true, valPrice.Text)
+            if (!Helper.fieldsAreEmpty(true, valName.Text)
                 && Helper.confirmation(option))
             {
-                float price;
-                float.TryParse(valPrice.Text, out price);
                 if (add)
-                    database.AddPack(valName.Text, valDescription.Text, true, price);
+                    database.AddPack(valName.Text, valDescription.Text, true, 0);
                 else
-                    database.UpdatePack(winpackm.valNamePack.Text, valName.Text, valDescription.Text, true, price);
+                    database.UpdatePack(winpackm.valNamePack.Text, valName.Text, valDescription.Text, true);
 
                 winpackm.setTablePacks(database.GetAllPacks());
                 panItemPack.setComboBoxPack();
