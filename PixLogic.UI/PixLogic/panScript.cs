@@ -16,6 +16,8 @@ namespace PixLogic
 {
     public partial class panScript : UserControl
     {
+        private DAL.Database database = Helper.database;
+
         public panScript()
         {
             InitializeComponent();
@@ -51,6 +53,69 @@ namespace PixLogic
             catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void panScript_Load(object sender, EventArgs e)
+        {
+            List<Requete> allRequest = database.GetAllRequete();
+           
+            queryDGV.DataSource = allRequest;
+            queryDGV.Columns[1].Visible = false;
+            queryDGV.Columns[2].Visible = false;
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            string content = QueryRTB.Text;
+
+            using (WindowSaveRequestAs save = new WindowSaveRequestAs())
+            {
+                
+                if(save.ShowDialog() == DialogResult.OK)
+                {
+                    database.AddRequete(save.SelectedName, content);
+                    MessageBox.Show("Votre requete à été sauvegardée.");
+                    queryDGV.DataSource = database.GetAllRequete();
+                }
+            }
+        }
+
+        private void LoadBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow rw = queryDGV.SelectedRows[0];
+
+                Requete query = rw.DataBoundItem as Requete;
+
+                QueryRTB.Text = query.text;
+            }
+
+            catch(ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Selectionez une requete.");
+            }
+            
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow rw = queryDGV.SelectedRows[0];
+
+                Requete query = rw.DataBoundItem as Requete;
+
+                database.DeleteRequete(query.RequeteId);
+
+                queryDGV.DataSource = database.GetAllRequete();
+
+                MessageBox.Show("La requete " + query.name + " a été supprimmée.");
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Selectionez une requete.");
             }
         }
     }

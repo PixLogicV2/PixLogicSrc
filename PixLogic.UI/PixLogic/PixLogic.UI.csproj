@@ -191,6 +191,12 @@
     <Compile Include="WindowReservation.Designer.cs">
       <DependentUpon>WindowReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowSaveRequestAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowSaveRequestAs.Designer.cs">
+      <DependentUpon>WindowSaveRequestAs.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowScriptResult.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowReservation.resx">
       <DependentUpon>WindowReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowSaveRequestAs.resx">
+      <DependentUpon>WindowSaveRequestAs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowScriptResult.resx">
       <DependentUpon>WindowScriptResult.cs</DependentUpon>
@@ -442,6 +451,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\importer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\the-floppy-disk-icon-must-go-away-105149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_file.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\emprunter.png" />
