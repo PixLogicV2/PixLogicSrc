@@ -558,6 +558,16 @@ namespace PixLogic
             }
             return false;
         }
+        public static bool dateReservationToday(int idReservation)
+        {
+            Reservation res = database.GetReservationById(idReservation);
+            if (res.beginDateReservation.Value.Date == DateTime.Today.Date) return true;
+            else
+            {
+                MessageBox.Show("Un materiel de ce pack possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
         public static void initBase()
         {
             database.AddUserClass("cm2", 100, 3);

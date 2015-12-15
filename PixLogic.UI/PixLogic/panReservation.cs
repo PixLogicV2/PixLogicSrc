@@ -88,11 +88,10 @@ namespace PixLogic
             }
 
         }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             int idReservation = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
-            if(Helper.confirmationEmprunt(idReservation))
+            if(Helper.confirmationEmprunt(idReservation)&& Helper.dateReservationToday(idReservation))
             {
                 database.EmpruntReservation(idReservation);
                 setTableReservations(database.GetAllReservations());
