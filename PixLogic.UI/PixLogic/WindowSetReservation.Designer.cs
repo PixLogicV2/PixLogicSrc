@@ -39,11 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelType = new System.Windows.Forms.Label();
             this.labelInfos = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelPresent = new System.Windows.Forms.Label();
-            this.dataGridReservAvenir = new System.Windows.Forms.DataGridView();
-            this.dateDebut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
@@ -53,10 +48,31 @@
             this.labelModifierDate = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonValid = new System.Windows.Forms.Button();
+            this.labelPresent = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxPrevious = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNext = new System.Windows.Forms.PictureBox();
+            this.labelLegendEm = new System.Windows.Forms.Label();
+            this.labelReserve = new System.Windows.Forms.Label();
+            this.panelLegendEm = new System.Windows.Forms.Panel();
+            this.panelLegendRe = new System.Windows.Forms.Panel();
+            this.monCalendar = new System.Windows.Forms.DataGridView();
+            this.monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonOk = new System.Windows.Forms.Button();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panelInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReservAvenir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrevious)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monCalendar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInfo
@@ -168,58 +184,6 @@
             this.labelInfos.TabIndex = 1;
             this.labelInfos.Text = "Infos";
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 141);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 136);
-            this.panel1.TabIndex = 3;
-            // 
-            // labelPresent
-            // 
-            this.labelPresent.AutoSize = true;
-            this.labelPresent.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPresent.Location = new System.Drawing.Point(27, 137);
-            this.labelPresent.Name = "labelPresent";
-            this.labelPresent.Size = new System.Drawing.Size(126, 13);
-            this.labelPresent.TabIndex = 4;
-            this.labelPresent.Text = "Réservations présentes";
-            // 
-            // dataGridReservAvenir
-            // 
-            this.dataGridReservAvenir.AllowUserToAddRows = false;
-            this.dataGridReservAvenir.AllowUserToDeleteRows = false;
-            this.dataGridReservAvenir.AllowUserToResizeRows = false;
-            this.dataGridReservAvenir.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridReservAvenir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridReservAvenir.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dateDebut,
-            this.dateFin});
-            this.dataGridReservAvenir.Location = new System.Drawing.Point(12, 161);
-            this.dataGridReservAvenir.MultiSelect = false;
-            this.dataGridReservAvenir.Name = "dataGridReservAvenir";
-            this.dataGridReservAvenir.ReadOnly = true;
-            this.dataGridReservAvenir.RowHeadersVisible = false;
-            this.dataGridReservAvenir.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridReservAvenir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridReservAvenir.Size = new System.Drawing.Size(379, 116);
-            this.dataGridReservAvenir.TabIndex = 0;
-            // 
-            // dateDebut
-            // 
-            this.dateDebut.HeaderText = "Date debut";
-            this.dateDebut.Name = "dateDebut";
-            this.dateDebut.ReadOnly = true;
-            this.dateDebut.Width = 188;
-            // 
-            // dateFin
-            // 
-            this.dateFin.HeaderText = "Date fin";
-            this.dateFin.Name = "dateFin";
-            this.dateFin.ReadOnly = true;
-            this.dateFin.Width = 188;
-            // 
             // pictureBoxItem
             // 
             this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -236,7 +200,7 @@
             this.panel2.Controls.Add(this.dateTimeBegin);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 291);
+            this.panel2.Location = new System.Drawing.Point(12, 329);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(379, 92);
             this.panel2.TabIndex = 5;
@@ -279,7 +243,7 @@
             // 
             this.labelModifierDate.AutoSize = true;
             this.labelModifierDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelModifierDate.Location = new System.Drawing.Point(28, 286);
+            this.labelModifierDate.Location = new System.Drawing.Point(28, 324);
             this.labelModifierDate.Name = "labelModifierDate";
             this.labelModifierDate.Size = new System.Drawing.Size(100, 13);
             this.labelModifierDate.TabIndex = 6;
@@ -290,7 +254,7 @@
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(206, 396);
+            this.buttonCancel.Location = new System.Drawing.Point(206, 434);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
             this.buttonCancel.TabIndex = 5;
@@ -304,7 +268,7 @@
             this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(112, 396);
+            this.buttonValid.Location = new System.Drawing.Point(112, 434);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
             this.buttonValid.TabIndex = 4;
@@ -313,18 +277,193 @@
             this.buttonValid.UseVisualStyleBackColor = true;
             this.buttonValid.Click += new System.EventHandler(this.buttonValid_Click);
             // 
+            // labelPresent
+            // 
+            this.labelPresent.AutoSize = true;
+            this.labelPresent.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPresent.Location = new System.Drawing.Point(28, 134);
+            this.labelPresent.Name = "labelPresent";
+            this.labelPresent.Size = new System.Drawing.Size(181, 13);
+            this.labelPresent.TabIndex = 31;
+            this.labelPresent.Text = "Réservations / Emprunts présents";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBoxPrevious);
+            this.panel1.Controls.Add(this.pictureBoxNext);
+            this.panel1.Controls.Add(this.labelLegendEm);
+            this.panel1.Controls.Add(this.labelReserve);
+            this.panel1.Controls.Add(this.panelLegendEm);
+            this.panel1.Controls.Add(this.panelLegendRe);
+            this.panel1.Controls.Add(this.monCalendar);
+            this.panel1.Controls.Add(this.buttonOk);
+            this.panel1.Controls.Add(this.dateTimePicker);
+            this.panel1.Location = new System.Drawing.Point(13, 138);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(379, 179);
+            this.panel1.TabIndex = 30;
+            // 
+            // pictureBoxPrevious
+            // 
+            this.pictureBoxPrevious.Image = global::PixLogic.Properties.Resources.previous;
+            this.pictureBoxPrevious.Location = new System.Drawing.Point(38, 21);
+            this.pictureBoxPrevious.Name = "pictureBoxPrevious";
+            this.pictureBoxPrevious.Size = new System.Drawing.Size(18, 17);
+            this.pictureBoxPrevious.TabIndex = 8;
+            this.pictureBoxPrevious.TabStop = false;
+            this.pictureBoxPrevious.Click += new System.EventHandler(this.pictureBoxPrevious_Click);
+            this.pictureBoxPrevious.MouseEnter += new System.EventHandler(this.pictureBoxPrevious_MouseEnter);
+            // 
+            // pictureBoxNext
+            // 
+            this.pictureBoxNext.Image = global::PixLogic.Properties.Resources.next;
+            this.pictureBoxNext.Location = new System.Drawing.Point(187, 21);
+            this.pictureBoxNext.Name = "pictureBoxNext";
+            this.pictureBoxNext.Size = new System.Drawing.Size(18, 17);
+            this.pictureBoxNext.TabIndex = 7;
+            this.pictureBoxNext.TabStop = false;
+            this.pictureBoxNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
+            this.pictureBoxNext.MouseEnter += new System.EventHandler(this.pictureBoxNext_MouseEnter);
+            // 
+            // labelLegendEm
+            // 
+            this.labelLegendEm.AutoSize = true;
+            this.labelLegendEm.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLegendEm.Location = new System.Drawing.Point(309, 66);
+            this.labelLegendEm.Name = "labelLegendEm";
+            this.labelLegendEm.Size = new System.Drawing.Size(60, 13);
+            this.labelLegendEm.TabIndex = 6;
+            this.labelLegendEm.Text = "Emprunté.";
+            // 
+            // labelReserve
+            // 
+            this.labelReserve.AutoSize = true;
+            this.labelReserve.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReserve.Location = new System.Drawing.Point(309, 46);
+            this.labelReserve.Name = "labelReserve";
+            this.labelReserve.Size = new System.Drawing.Size(49, 13);
+            this.labelReserve.TabIndex = 5;
+            this.labelReserve.Text = "Réservé.";
+            // 
+            // panelLegendEm
+            // 
+            this.panelLegendEm.BackColor = System.Drawing.Color.Red;
+            this.panelLegendEm.Location = new System.Drawing.Point(288, 67);
+            this.panelLegendEm.Name = "panelLegendEm";
+            this.panelLegendEm.Size = new System.Drawing.Size(15, 14);
+            this.panelLegendEm.TabIndex = 4;
+            // 
+            // panelLegendRe
+            // 
+            this.panelLegendRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelLegendRe.Location = new System.Drawing.Point(288, 47);
+            this.panelLegendRe.Name = "panelLegendRe";
+            this.panelLegendRe.Size = new System.Drawing.Size(15, 14);
+            this.panelLegendRe.TabIndex = 3;
+            // 
+            // monCalendar
+            // 
+            this.monCalendar.AllowUserToAddRows = false;
+            this.monCalendar.AllowUserToDeleteRows = false;
+            this.monCalendar.AllowUserToResizeColumns = false;
+            this.monCalendar.AllowUserToResizeRows = false;
+            this.monCalendar.BackgroundColor = System.Drawing.Color.White;
+            this.monCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.monCalendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.monday,
+            this.tuesday,
+            this.wednesday,
+            this.thursday,
+            this.friday,
+            this.saturday,
+            this.sunday});
+            this.monCalendar.Location = new System.Drawing.Point(-1, 45);
+            this.monCalendar.MultiSelect = false;
+            this.monCalendar.Name = "monCalendar";
+            this.monCalendar.ReadOnly = true;
+            this.monCalendar.RowHeadersVisible = false;
+            this.monCalendar.Size = new System.Drawing.Size(283, 133);
+            this.monCalendar.StandardTab = true;
+            this.monCalendar.TabIndex = 2;
+            // 
+            // monday
+            // 
+            this.monday.HeaderText = "Lun.";
+            this.monday.Name = "monday";
+            this.monday.ReadOnly = true;
+            this.monday.Width = 40;
+            // 
+            // tuesday
+            // 
+            this.tuesday.HeaderText = "Mar.";
+            this.tuesday.Name = "tuesday";
+            this.tuesday.ReadOnly = true;
+            this.tuesday.Width = 40;
+            // 
+            // wednesday
+            // 
+            this.wednesday.HeaderText = "Mer.";
+            this.wednesday.Name = "wednesday";
+            this.wednesday.ReadOnly = true;
+            this.wednesday.Width = 40;
+            // 
+            // thursday
+            // 
+            this.thursday.HeaderText = "Jeu.";
+            this.thursday.Name = "thursday";
+            this.thursday.ReadOnly = true;
+            this.thursday.Width = 40;
+            // 
+            // friday
+            // 
+            this.friday.HeaderText = "Ven.";
+            this.friday.Name = "friday";
+            this.friday.ReadOnly = true;
+            this.friday.Width = 40;
+            // 
+            // saturday
+            // 
+            this.saturday.HeaderText = "Sam.";
+            this.saturday.Name = "saturday";
+            this.saturday.ReadOnly = true;
+            this.saturday.Width = 40;
+            // 
+            // sunday
+            // 
+            this.sunday.HeaderText = "Dim.";
+            this.sunday.Name = "sunday";
+            this.sunday.ReadOnly = true;
+            this.sunday.Width = 40;
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.Image = global::PixLogic.Properties.Resources.valider_iconPetit;
+            this.buttonOk.Location = new System.Drawing.Point(257, 20);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(25, 20);
+            this.buttonOk.TabIndex = 1;
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(62, 18);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(118, 20);
+            this.dateTimePicker.TabIndex = 0;
+            // 
             // WindowSetReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 431);
+            this.ClientSize = new System.Drawing.Size(404, 465);
+            this.Controls.Add(this.labelPresent);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonValid);
             this.Controls.Add(this.labelModifierDate);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridReservAvenir);
-            this.Controls.Add(this.labelPresent);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBoxItem);
             this.Controls.Add(this.labelInfos);
             this.Controls.Add(this.panelInfo);
@@ -336,10 +475,14 @@
             this.Text = "Modification réservation";
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReservAvenir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrevious)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monCalendar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,11 +501,6 @@
         public System.Windows.Forms.Label valDateDebut;
         private System.Windows.Forms.Label valDateFin;
         private System.Windows.Forms.Label labelDateFin;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridReservAvenir;
-        private System.Windows.Forms.Label labelPresent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDebut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateFin;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dateTimeEnd;
         private System.Windows.Forms.DateTimePicker dateTimeBegin;
@@ -371,5 +509,23 @@
         private System.Windows.Forms.Label labelModifierDate;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonValid;
+        private System.Windows.Forms.Label labelPresent;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBoxPrevious;
+        private System.Windows.Forms.PictureBox pictureBoxNext;
+        private System.Windows.Forms.Label labelLegendEm;
+        private System.Windows.Forms.Label labelReserve;
+        private System.Windows.Forms.Panel panelLegendEm;
+        private System.Windows.Forms.Panel panelLegendRe;
+        private System.Windows.Forms.DataGridView monCalendar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tuesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wednesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thursday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn friday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saturday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sunday;
+        private System.Windows.Forms.Button buttonOk;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }

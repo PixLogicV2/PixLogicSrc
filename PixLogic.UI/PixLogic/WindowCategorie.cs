@@ -23,6 +23,7 @@ namespace PixLogic
         public WindowCategorie()
         {
             InitializeComponent();
+            this.Text = "Ajout d'une catégorie";
             add = true;
             quickAdd = true;
         }
@@ -30,6 +31,7 @@ namespace PixLogic
         public WindowCategorie(WindowSettings w, panItemPack pan)
         {
             InitializeComponent();
+            this.Text = "Ajout d'une catégorie";
             settings = w;
             panIP = pan;
             add = true;
@@ -38,6 +40,7 @@ namespace PixLogic
         public WindowCategorie(WindowSettings w, panItemPack pan, int idCategorie)
         {
             InitializeComponent();
+            this.Text = "Modification d'une catégorie";
             settings = w;
             add = false;
             quickAdd = false;

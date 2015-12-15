@@ -22,6 +22,7 @@ namespace PixLogic
         public WindowClasse()
         {
             InitializeComponent();
+            this.Text = "Ajout d'une classe";
             add = true;
             quickAdd = true;
         }
@@ -29,13 +30,16 @@ namespace PixLogic
         public WindowClasse(WindowSettings w)
         {
             InitializeComponent();
+            this.Text = "Ajout d'une classe";
             settings = w;
             add = true;
             quickAdd = false;
+            
         }
         public WindowClasse(WindowSettings w, int idClasse)
         {
             InitializeComponent();
+            this.Text = "Modification d'une classe";
             settings = w;
             add = false;
             quickAdd = false;

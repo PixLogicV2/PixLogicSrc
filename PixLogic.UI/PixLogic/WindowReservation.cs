@@ -53,8 +53,6 @@ namespace PixLogic
             dateTimePicker.CustomFormat = "MMMM/yyyy";
 
             monCalendar.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
-            monCalendar.DefaultCellStyle.SelectionBackColor = Color.Empty;
-            monCalendar.DefaultCellStyle.SelectionForeColor = Color.Blue;
         }
 
         private void setInfos()
