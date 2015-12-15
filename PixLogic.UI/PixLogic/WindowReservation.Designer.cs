@@ -37,12 +37,8 @@
             this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridReservAvenir = new System.Windows.Forms.DataGridView();
-            this.dateDebut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPresent = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.labelInfos = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.valIdReservable = new System.Windows.Forms.Label();
@@ -52,22 +48,42 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelType = new System.Windows.Forms.Label();
             this.panTableUsers = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridUsersReservation = new System.Windows.Forms.DataGridView();
             this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.monCalendar = new System.Windows.Forms.DataGridView();
+            this.monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelLegendRe = new System.Windows.Forms.Panel();
+            this.panelLegendEm = new System.Windows.Forms.Panel();
+            this.labelReserve = new System.Windows.Forms.Label();
+            this.labelLegendEm = new System.Windows.Forms.Label();
+            this.pictureBoxPrevious = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNext = new System.Windows.Forms.PictureBox();
+            this.buttonOk = new System.Windows.Forms.Button();
+            this.pictureBoxItem = new System.Windows.Forms.PictureBox();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonValid = new System.Windows.Forms.Button();
             this.panelGeneral.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReservAvenir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsersReservation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monCalendar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrevious)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             this.SuspendLayout();
             // 
             // panelGeneral
@@ -75,7 +91,6 @@
             this.panelGeneral.Controls.Add(this.labelListUsers);
             this.panelGeneral.Controls.Add(this.labelAjoutDate);
             this.panelGeneral.Controls.Add(this.panel2);
-            this.panelGeneral.Controls.Add(this.dataGridReservAvenir);
             this.panelGeneral.Controls.Add(this.labelPresent);
             this.panelGeneral.Controls.Add(this.panel1);
             this.panelGeneral.Controls.Add(this.pictureBoxItem);
@@ -87,7 +102,7 @@
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 0);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(590, 418);
+            this.panelGeneral.Size = new System.Drawing.Size(590, 448);
             this.panelGeneral.TabIndex = 2;
             // 
             // labelListUsers
@@ -104,7 +119,7 @@
             // 
             this.labelAjoutDate.AutoSize = true;
             this.labelAjoutDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAjoutDate.Location = new System.Drawing.Point(221, 259);
+            this.labelAjoutDate.Location = new System.Drawing.Point(221, 298);
             this.labelAjoutDate.Name = "labelAjoutDate";
             this.labelAjoutDate.Size = new System.Drawing.Size(130, 13);
             this.labelAjoutDate.TabIndex = 31;
@@ -117,7 +132,7 @@
             this.panel2.Controls.Add(this.dateTimeBegin);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(205, 264);
+            this.panel2.Location = new System.Drawing.Point(205, 303);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(379, 92);
             this.panel2.TabIndex = 30;
@@ -156,40 +171,6 @@
             this.label2.TabIndex = 53;
             this.label2.Text = "Date début :";
             // 
-            // dataGridReservAvenir
-            // 
-            this.dataGridReservAvenir.AllowUserToAddRows = false;
-            this.dataGridReservAvenir.AllowUserToDeleteRows = false;
-            this.dataGridReservAvenir.AllowUserToResizeRows = false;
-            this.dataGridReservAvenir.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridReservAvenir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridReservAvenir.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dateDebut,
-            this.dateFin});
-            this.dataGridReservAvenir.Location = new System.Drawing.Point(205, 134);
-            this.dataGridReservAvenir.MultiSelect = false;
-            this.dataGridReservAvenir.Name = "dataGridReservAvenir";
-            this.dataGridReservAvenir.ReadOnly = true;
-            this.dataGridReservAvenir.RowHeadersVisible = false;
-            this.dataGridReservAvenir.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridReservAvenir.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridReservAvenir.Size = new System.Drawing.Size(379, 116);
-            this.dataGridReservAvenir.TabIndex = 24;
-            // 
-            // dateDebut
-            // 
-            this.dateDebut.HeaderText = "Date debut";
-            this.dateDebut.Name = "dateDebut";
-            this.dateDebut.ReadOnly = true;
-            this.dateDebut.Width = 188;
-            // 
-            // dateFin
-            // 
-            this.dateFin.HeaderText = "Date fin";
-            this.dateFin.Name = "dateFin";
-            this.dateFin.ReadOnly = true;
-            this.dateFin.Width = 188;
-            // 
             // labelPresent
             // 
             this.labelPresent.AutoSize = true;
@@ -203,19 +184,19 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBoxPrevious);
+            this.panel1.Controls.Add(this.pictureBoxNext);
+            this.panel1.Controls.Add(this.labelLegendEm);
+            this.panel1.Controls.Add(this.labelReserve);
+            this.panel1.Controls.Add(this.panelLegendEm);
+            this.panel1.Controls.Add(this.panelLegendRe);
+            this.panel1.Controls.Add(this.monCalendar);
+            this.panel1.Controls.Add(this.buttonOk);
+            this.panel1.Controls.Add(this.dateTimePicker);
             this.panel1.Location = new System.Drawing.Point(205, 114);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 136);
+            this.panel1.Size = new System.Drawing.Size(379, 179);
             this.panel1.TabIndex = 28;
-            // 
-            // pictureBoxItem
-            // 
-            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxItem.Location = new System.Drawing.Point(450, 6);
-            this.pictureBoxItem.Name = "pictureBoxItem";
-            this.pictureBoxItem.Size = new System.Drawing.Size(135, 98);
-            this.pictureBoxItem.TabIndex = 27;
-            this.pictureBoxItem.TabStop = false;
             // 
             // labelInfos
             // 
@@ -313,18 +294,8 @@
             this.panTableUsers.Controls.Add(this.dataGridUsersReservation);
             this.panTableUsers.Location = new System.Drawing.Point(3, 6);
             this.panTableUsers.Name = "panTableUsers";
-            this.panTableUsers.Size = new System.Drawing.Size(196, 397);
+            this.panTableUsers.Size = new System.Drawing.Size(196, 423);
             this.panTableUsers.TabIndex = 23;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(165, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -362,7 +333,7 @@
             this.dataGridUsersReservation.RowHeadersVisible = false;
             this.dataGridUsersReservation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridUsersReservation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsersReservation.Size = new System.Drawing.Size(194, 349);
+            this.dataGridUsersReservation.Size = new System.Drawing.Size(194, 375);
             this.dataGridUsersReservation.TabIndex = 0;
             // 
             // IdUser
@@ -386,12 +357,180 @@
             this.NickNameUser.ReadOnly = true;
             this.NickNameUser.Width = 60;
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(62, 18);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(118, 20);
+            this.dateTimePicker.TabIndex = 0;
+            // 
+            // monCalendar
+            // 
+            this.monCalendar.AllowUserToAddRows = false;
+            this.monCalendar.AllowUserToDeleteRows = false;
+            this.monCalendar.AllowUserToResizeColumns = false;
+            this.monCalendar.AllowUserToResizeRows = false;
+            this.monCalendar.BackgroundColor = System.Drawing.Color.White;
+            this.monCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.monCalendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.monday,
+            this.tuesday,
+            this.wednesday,
+            this.thursday,
+            this.friday,
+            this.saturday,
+            this.sunday});
+            this.monCalendar.Location = new System.Drawing.Point(-1, 45);
+            this.monCalendar.MultiSelect = false;
+            this.monCalendar.Name = "monCalendar";
+            this.monCalendar.ReadOnly = true;
+            this.monCalendar.RowHeadersVisible = false;
+            this.monCalendar.Size = new System.Drawing.Size(283, 133);
+            this.monCalendar.StandardTab = true;
+            this.monCalendar.TabIndex = 2;
+            // 
+            // monday
+            // 
+            this.monday.HeaderText = "Lun.";
+            this.monday.Name = "monday";
+            this.monday.ReadOnly = true;
+            this.monday.Width = 40;
+            // 
+            // tuesday
+            // 
+            this.tuesday.HeaderText = "Mar.";
+            this.tuesday.Name = "tuesday";
+            this.tuesday.ReadOnly = true;
+            this.tuesday.Width = 40;
+            // 
+            // wednesday
+            // 
+            this.wednesday.HeaderText = "Mer.";
+            this.wednesday.Name = "wednesday";
+            this.wednesday.ReadOnly = true;
+            this.wednesday.Width = 40;
+            // 
+            // thursday
+            // 
+            this.thursday.HeaderText = "Jeu.";
+            this.thursday.Name = "thursday";
+            this.thursday.ReadOnly = true;
+            this.thursday.Width = 40;
+            // 
+            // friday
+            // 
+            this.friday.HeaderText = "Ven.";
+            this.friday.Name = "friday";
+            this.friday.ReadOnly = true;
+            this.friday.Width = 40;
+            // 
+            // saturday
+            // 
+            this.saturday.HeaderText = "Sam.";
+            this.saturday.Name = "saturday";
+            this.saturday.ReadOnly = true;
+            this.saturday.Width = 40;
+            // 
+            // sunday
+            // 
+            this.sunday.HeaderText = "Dim.";
+            this.sunday.Name = "sunday";
+            this.sunday.ReadOnly = true;
+            this.sunday.Width = 40;
+            // 
+            // panelLegendRe
+            // 
+            this.panelLegendRe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelLegendRe.Location = new System.Drawing.Point(288, 47);
+            this.panelLegendRe.Name = "panelLegendRe";
+            this.panelLegendRe.Size = new System.Drawing.Size(15, 14);
+            this.panelLegendRe.TabIndex = 3;
+            // 
+            // panelLegendEm
+            // 
+            this.panelLegendEm.BackColor = System.Drawing.Color.Red;
+            this.panelLegendEm.Location = new System.Drawing.Point(288, 67);
+            this.panelLegendEm.Name = "panelLegendEm";
+            this.panelLegendEm.Size = new System.Drawing.Size(15, 14);
+            this.panelLegendEm.TabIndex = 4;
+            // 
+            // labelReserve
+            // 
+            this.labelReserve.AutoSize = true;
+            this.labelReserve.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReserve.Location = new System.Drawing.Point(309, 46);
+            this.labelReserve.Name = "labelReserve";
+            this.labelReserve.Size = new System.Drawing.Size(49, 13);
+            this.labelReserve.TabIndex = 5;
+            this.labelReserve.Text = "Réservé.";
+            // 
+            // labelLegendEm
+            // 
+            this.labelLegendEm.AutoSize = true;
+            this.labelLegendEm.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLegendEm.Location = new System.Drawing.Point(309, 66);
+            this.labelLegendEm.Name = "labelLegendEm";
+            this.labelLegendEm.Size = new System.Drawing.Size(60, 13);
+            this.labelLegendEm.TabIndex = 6;
+            this.labelLegendEm.Text = "Emprunté.";
+            // 
+            // pictureBoxPrevious
+            // 
+            this.pictureBoxPrevious.Image = global::PixLogic.Properties.Resources.previous;
+            this.pictureBoxPrevious.Location = new System.Drawing.Point(38, 21);
+            this.pictureBoxPrevious.Name = "pictureBoxPrevious";
+            this.pictureBoxPrevious.Size = new System.Drawing.Size(18, 17);
+            this.pictureBoxPrevious.TabIndex = 8;
+            this.pictureBoxPrevious.TabStop = false;
+            this.pictureBoxPrevious.Click += new System.EventHandler(this.pictureBoxPrevious_Click);
+            this.pictureBoxPrevious.MouseEnter += new System.EventHandler(this.pictureBoxPrevious_MouseEnter);
+            // 
+            // pictureBoxNext
+            // 
+            this.pictureBoxNext.Image = global::PixLogic.Properties.Resources.next;
+            this.pictureBoxNext.Location = new System.Drawing.Point(187, 21);
+            this.pictureBoxNext.Name = "pictureBoxNext";
+            this.pictureBoxNext.Size = new System.Drawing.Size(18, 17);
+            this.pictureBoxNext.TabIndex = 7;
+            this.pictureBoxNext.TabStop = false;
+            this.pictureBoxNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
+            this.pictureBoxNext.MouseEnter += new System.EventHandler(this.pictureBoxNext_MouseEnter);
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.Image = global::PixLogic.Properties.Resources.valider_iconPetit;
+            this.buttonOk.Location = new System.Drawing.Point(257, 20);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(25, 20);
+            this.buttonOk.TabIndex = 1;
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            // 
+            // pictureBoxItem
+            // 
+            this.pictureBoxItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxItem.Location = new System.Drawing.Point(450, 6);
+            this.pictureBoxItem.Name = "pictureBoxItem";
+            this.pictureBoxItem.Size = new System.Drawing.Size(135, 98);
+            this.pictureBoxItem.TabIndex = 27;
+            this.pictureBoxItem.TabStop = false;
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(165, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
+            // 
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(393, 376);
+            this.buttonCancel.Location = new System.Drawing.Point(393, 412);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
             this.buttonCancel.TabIndex = 5;
@@ -405,7 +544,7 @@
             this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(299, 376);
+            this.buttonValid.Location = new System.Drawing.Point(299, 412);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
             this.buttonValid.TabIndex = 4;
@@ -418,7 +557,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 418);
+            this.ClientSize = new System.Drawing.Size(590, 448);
             this.Controls.Add(this.panelGeneral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -431,13 +570,17 @@
             this.panelGeneral.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReservAvenir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsersReservation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monCalendar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrevious)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,9 +605,6 @@
         private System.Windows.Forms.DateTimePicker dateTimeBegin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridReservAvenir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDebut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateFin;
         private System.Windows.Forms.Label labelPresent;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxItem;
@@ -476,5 +616,21 @@
         public System.Windows.Forms.Label valNomReservable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelType;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button buttonOk;
+        private System.Windows.Forms.DataGridView monCalendar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tuesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wednesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thursday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn friday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saturday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sunday;
+        private System.Windows.Forms.Label labelLegendEm;
+        private System.Windows.Forms.Label labelReserve;
+        private System.Windows.Forms.Panel panelLegendEm;
+        private System.Windows.Forms.Panel panelLegendRe;
+        private System.Windows.Forms.PictureBox pictureBoxNext;
+        private System.Windows.Forms.PictureBox pictureBoxPrevious;
     }
 }

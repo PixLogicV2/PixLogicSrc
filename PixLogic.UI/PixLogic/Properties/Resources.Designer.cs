@@ -323,6 +323,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap next {
+            get {
+                object obj = ResourceManager.GetObject("next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap noitem {
             get {
                 object obj = ResourceManager.GetObject("noitem", resourceCulture);
@@ -366,6 +376,16 @@ namespace PixLogic.Properties {
         internal static System.Drawing.Bitmap pdf_export {
             get {
                 object obj = ResourceManager.GetObject("pdf_export", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap previous {
+            get {
+                object obj = ResourceManager.GetObject("previous", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,6 +456,16 @@ namespace PixLogic.Properties {
         internal static System.Drawing.Bitmap valider_icon {
             get {
                 object obj = ResourceManager.GetObject("valider_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap valider_iconPetit {
+            get {
+                object obj = ResourceManager.GetObject("valider_iconPetit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
