@@ -564,7 +564,7 @@ namespace PixLogic
             if (res.beginDateReservation.Value.Date == DateTime.Today.Date) return true;
             else
             {
-                MessageBox.Show("Un materiel de ce pack possède une réservation active.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("la date de la réservation n'est pas la date du jour", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
