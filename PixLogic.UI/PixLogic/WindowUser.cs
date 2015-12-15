@@ -110,7 +110,7 @@ namespace PixLogic
                 }
                 else if (!add )
                 {
-                    database.UpdateUser(Convert.ToInt32(pan.valUserId.Text), name, nickname, mail,classe, tel,img,userClass);
+                    database.UpdateUser(Convert.ToInt32(pan.valUserId.Text), name, nickname, mail,tel,img,userClass);
                 }
                 //Helper.addSuccess();
                 pan.setTableUsers(database.GetAllUsers());
