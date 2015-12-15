@@ -47,8 +47,8 @@
             this.labelDelimiteur = new System.Windows.Forms.Label();
             this.labelOption = new System.Windows.Forms.Label();
             this.panelChamps = new System.Windows.Forms.Panel();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.valImport = new System.Windows.Forms.Label();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.champs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aCocher = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.buttonOk = new System.Windows.Forms.Button();
@@ -72,6 +72,7 @@
             this.buttonImporter.Text = "Importer";
             this.buttonImporter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonImporter.UseVisualStyleBackColor = true;
+            this.buttonImporter.Click += new System.EventHandler(this.buttonImporter_Click);
             // 
             // buttonCancel
             // 
@@ -257,6 +258,16 @@
             this.panelChamps.Size = new System.Drawing.Size(206, 139);
             this.panelChamps.TabIndex = 41;
             // 
+            // valImport
+            // 
+            this.valImport.AutoSize = true;
+            this.valImport.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valImport.Location = new System.Drawing.Point(2, 4);
+            this.valImport.Name = "valImport";
+            this.valImport.Size = new System.Drawing.Size(11, 13);
+            this.valImport.TabIndex = 1;
+            this.valImport.Text = "-";
+            // 
             // dataGrid
             // 
             this.dataGrid.AllowUserToAddRows = false;
@@ -271,16 +282,6 @@
             this.dataGrid.RowHeadersVisible = false;
             this.dataGrid.Size = new System.Drawing.Size(206, 114);
             this.dataGrid.TabIndex = 0;
-            // 
-            // valImport
-            // 
-            this.valImport.AutoSize = true;
-            this.valImport.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valImport.Location = new System.Drawing.Point(2, 4);
-            this.valImport.Name = "valImport";
-            this.valImport.Size = new System.Drawing.Size(11, 13);
-            this.valImport.TabIndex = 1;
-            this.valImport.Text = "-";
             // 
             // champs
             // 
