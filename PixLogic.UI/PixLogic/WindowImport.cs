@@ -14,6 +14,18 @@ namespace PixLogic
 {
     public partial class WindowImport : Form
     {
+
+        private int nbColumns;
+        private Database database = Helper.database;
+        private panUsers pan;
+
+        public WindowImport(panUsers p)
+        {
+            InitializeComponent();
+            pan = p;
+            init();
+            setForUser();
+        }
         public WindowImport()
         {
             InitializeComponent();
@@ -36,6 +48,7 @@ namespace PixLogic
             dataGrid.Rows.Add( "Classe", true);
             dataGrid.Rows.Add("E-mail", true);
             dataGrid.Rows.Add( "Tel", false);
+            nbColumns = 5;
             dataGrid.Rows[dataGrid.Rows.Count-1].Cells[dataGrid.ColumnCount-1].ReadOnly = false;
         }
 
@@ -57,11 +70,23 @@ namespace PixLogic
         {
             List<User> users = us;
             dataGridImport.Rows.Clear();
-
-            foreach(User u in users)
+            if (dataGridImport.Columns.Count < nbColumns)
             {
-                dataGridImport.Rows.Add(u.name, u.nickname, u.mail, u.phoneNumber);
+                foreach (User u in users)
+                {
+                    dataGridImport.Rows.Add(u.name, u.nickname, u.userClass.name, u.mail);
+                }
             }
+            else
+            {
+                foreach (User u in users)
+                {
+                    dataGridImport.Rows.Add(u.name, u.nickname, u.userClass.name, u.mail, u.phoneNumber);
+                }
+            }
+            //dataGridImport.Rows[]
+            
+
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
@@ -78,6 +103,54 @@ namespace PixLogic
                 i++;
             }
             dataGridImport.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void buttonImporter_Click(object sender, EventArgs e)
+        {
+            if(dataGridImport.Columns.Count < nbColumns)
+            {
+                UserClass classe = new UserClass();
+                for (int i = 0; i < dataGridImport.Rows.Count - 1; i++)
+                {
+                    DataGridViewRow row = dataGridImport.Rows[i];
+                    classe = database.GetUserClassByName(row.Cells[2].Value.ToString());
+                    Image img = Properties.Resources.noprofil;
+                    database.AddUser(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), "", img, classe);
+                }
+                /*foreach (DataGridViewRow row in dataGridImport.Rows)
+                {
+                    classe = database.GetUserClassByName(row.Cells[2].Value.ToString());
+                    Image img = Properties.Resources.noprofil;
+                    database.AddUser(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), "", img, classe);
+                }*/
+            }
+            else if(dataGridImport.Columns.Count == nbColumns)
+            {
+                for(int i = 0; i < dataGridImport.Rows.Count-1; i++)
+                {
+                    DataGridViewRow row = dataGridImport.Rows[i];
+                    UserClass userClass = database.GetUserClassByName(row.Cells[2].Value.ToString());
+
+                    Image img = Properties.Resources.noprofil;
+                    database.AddUser(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString(), img, userClass);
+
+                }
+                /*foreach (DataGridViewRow row in dataGridImport.Rows)
+                {
+                    UserClass userClass = database.GetUserClassByName(row.Cells[2].Value.ToString());
+
+                    Image img = Properties.Resources.noprofil;
+                    database.AddUser(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[3].Value.ToString(), row.Cells[4].Value.ToString(), img, userClass);
+
+                }*/
+            }
+
+            MessageBox.Show("La liste a été bien importée.");
+            try
+            {
+                pan.setTableUsers(database.GetAllUsers());
+            }catch(Exception ex) { }
+            this.Close();
         }
     }
 }

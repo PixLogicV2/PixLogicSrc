@@ -469,7 +469,9 @@ namespace PixLogic
                                 
                             }
                             User u = new User();
-                            u.name = headers.ElementAt<string>(0); u.nickname = headers.ElementAt<string>(1) ; u.mail = headers.ElementAt<string>(3); ; u.phoneNumber = headers.ElementAt<string>(4); ;
+                            u.name = headers.ElementAt<string>(0); u.nickname = headers.ElementAt<string>(1) ;
+                            u.userClass = new UserClass(); u.userClass.name = headers.ElementAt<string>(2);
+                            u.mail = headers.ElementAt<string>(3); ; u.phoneNumber = headers.ElementAt<string>(4);
                             users.Add(u);
                             break;
                         }
@@ -488,6 +490,8 @@ namespace PixLogic
                             var mail = csv2.GetField(3);
                             var tel = csv2.GetField(4);
                             User u = new User();
+                            u.userClass = new UserClass();
+                            u.userClass.name = classe.ToString();
                             u.name = nom; u.nickname = prenom; u.mail = mail; u.phoneNumber = tel;
                             users.Add(u);
                             //Console.WriteLine(id + " | " + nom + " | " + prenom);
@@ -571,7 +575,7 @@ namespace PixLogic
         public static void initBase()
         {
             database.AddUserClass("cm2", 100, 3);
-            for (int i = 0; i < 500; i++)
+            for (int i = 0; i < 20; i++)
             {
                 database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, null,database.GetUserClassById(1));
             }
@@ -584,7 +588,7 @@ namespace PixLogic
                 database.AddPack("packname" + k, "des" + k,true,k);
             }
             
-            for (int j = 0; j < 500; j++)
+            for (int j = 0; j < 20; j++)
             {
                 database.AddItem("itemname" + j, "itemdes" + j, true, j, null, "ref" + j, 1,database.GetCategorieById(1));
             }
