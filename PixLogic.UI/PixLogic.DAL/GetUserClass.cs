@@ -31,12 +31,7 @@ namespace PixLogic.DAL
             IQueryable<UserClass> itemQuery = from UserClass in context.UserClasses
                                               where UserClass.name == name
                                               select UserClass;
-            List<UserClass> list = new List<UserClass>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return itemQuery.First();
         }
         public List<UserClass> getAllUserClass()
         {

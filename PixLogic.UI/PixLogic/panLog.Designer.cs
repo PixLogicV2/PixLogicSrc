@@ -566,9 +566,9 @@
             this.labelListEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelListEmprunt.Location = new System.Drawing.Point(27, 101);
             this.labelListEmprunt.Name = "labelListEmprunt";
-            this.labelListEmprunt.Size = new System.Drawing.Size(105, 13);
+            this.labelListEmprunt.Size = new System.Drawing.Size(61, 13);
             this.labelListEmprunt.TabIndex = 63;
-            this.labelListEmprunt.Text = "Liste des emprunts";
+            this.labelListEmprunt.Text = "Historique";
             // 
             // panLog
             // 
@@ -580,7 +580,7 @@
             this.Controls.Add(this.labelNews);
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableLogs);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "panLog";
             this.Size = new System.Drawing.Size(686, 450);
             this.panFiltres.ResumeLayout(false);
