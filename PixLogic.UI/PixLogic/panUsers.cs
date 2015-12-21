@@ -163,7 +163,15 @@ namespace PixLogic
 
         private void pictureReserver_Click(object sender, EventArgs e)
         {
+            WindowReservationUser r = new WindowReservationUser();
+            r.ShowDialog();
         }
-        
+
+        private void pictureReserver_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureReserver, "Créer réservation/Emprunt.");
+            pictureReserver.Cursor = Cursors.Hand;
+        }
     }
 }

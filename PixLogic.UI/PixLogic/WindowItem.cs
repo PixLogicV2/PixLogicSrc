@@ -29,7 +29,7 @@ namespace PixLogic
             add = true;
             setComboBoxCategorie(cat);
         }
-        public WindowItem(panItemPack pa, Image image, string name, double price, int quantity, string descrip, string ca)
+        public WindowItem(panItemPack pa, Image image, string name, double price, string descrip, string ca)
         {
             InitializeComponent();
             this.Text = "Modifier matériel";
@@ -38,7 +38,6 @@ namespace PixLogic
             Helper.putImageInBox(pictureBoxItem, img);
             valName.Text = name;
             valPrice.Text = Convert.ToString(price);
-            valQuantity.Text = Convert.ToString(quantity);
             valDescription.Text = descrip;
             add = false;
             this.cat = ca;

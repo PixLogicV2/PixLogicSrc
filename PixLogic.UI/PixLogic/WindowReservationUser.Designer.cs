@@ -31,25 +31,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelListItemDispo = new System.Windows.Forms.Panel();
-            this.labelItemDispo = new System.Windows.Forms.Label();
-            this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
-            this.labelDebut = new System.Windows.Forms.Label();
-            this.labelFin = new System.Windows.Forms.Label();
-            this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
-            this.buttonOk = new System.Windows.Forms.Button();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.valNom = new System.Windows.Forms.Label();
-            this.valPrenom = new System.Windows.Forms.Label();
-            this.valClasse = new System.Windows.Forms.Label();
-            this.buttonTransfert = new System.Windows.Forms.Button();
             this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonOk = new System.Windows.Forms.Button();
+            this.labelFin = new System.Windows.Forms.Label();
+            this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
+            this.labelDebut = new System.Windows.Forms.Label();
+            this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
+            this.labelItemDispo = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.valCrédits = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.valClasse = new System.Windows.Forms.Label();
+            this.valPrenom = new System.Windows.Forms.Label();
+            this.valNom = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonTransfert = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridListeUser = new System.Windows.Forms.DataGridView();
@@ -85,61 +85,6 @@
             this.panelListItemDispo.Size = new System.Drawing.Size(245, 477);
             this.panelListItemDispo.TabIndex = 0;
             // 
-            // labelItemDispo
-            // 
-            this.labelItemDispo.AutoSize = true;
-            this.labelItemDispo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemDispo.Location = new System.Drawing.Point(29, 7);
-            this.labelItemDispo.Name = "labelItemDispo";
-            this.labelItemDispo.Size = new System.Drawing.Size(118, 13);
-            this.labelItemDispo.TabIndex = 1;
-            this.labelItemDispo.Text = "Matériels disponibles";
-            // 
-            // dateTimeBegin
-            // 
-            this.dateTimeBegin.Location = new System.Drawing.Point(57, 21);
-            this.dateTimeBegin.Name = "dateTimeBegin";
-            this.dateTimeBegin.Size = new System.Drawing.Size(179, 20);
-            this.dateTimeBegin.TabIndex = 0;
-            // 
-            // labelDebut
-            // 
-            this.labelDebut.AutoSize = true;
-            this.labelDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDebut.Location = new System.Drawing.Point(6, 23);
-            this.labelDebut.Name = "labelDebut";
-            this.labelDebut.Size = new System.Drawing.Size(45, 13);
-            this.labelDebut.TabIndex = 1;
-            this.labelDebut.Text = "Début :";
-            // 
-            // labelFin
-            // 
-            this.labelFin.AutoSize = true;
-            this.labelFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFin.Location = new System.Drawing.Point(6, 51);
-            this.labelFin.Name = "labelFin";
-            this.labelFin.Size = new System.Drawing.Size(29, 13);
-            this.labelFin.TabIndex = 3;
-            this.labelFin.Text = "Fin :";
-            // 
-            // dateTimeEnd
-            // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(57, 49);
-            this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(179, 20);
-            this.dateTimeEnd.TabIndex = 2;
-            // 
-            // buttonOk
-            // 
-            this.buttonOk.Image = global::PixLogic.Properties.Resources.valider_iconPetit;
-            this.buttonOk.Location = new System.Drawing.Point(207, 73);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(29, 20);
-            this.buttonOk.TabIndex = 4;
-            this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
-            this.buttonOk.MouseEnter += new System.EventHandler(this.buttonOk_MouseEnter);
-            // 
             // dataGridItem
             // 
             this.dataGridItem.AllowUserToAddRows = false;
@@ -162,6 +107,74 @@
             this.dataGridItem.Size = new System.Drawing.Size(245, 377);
             this.dataGridItem.TabIndex = 5;
             // 
+            // NameItem
+            // 
+            this.NameItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameItem.HeaderText = "Libellé";
+            this.NameItem.Name = "NameItem";
+            this.NameItem.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Prix ( Crédits )";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.Image = global::PixLogic.Properties.Resources.valider_iconPetit;
+            this.buttonOk.Location = new System.Drawing.Point(207, 73);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(29, 20);
+            this.buttonOk.TabIndex = 4;
+            this.buttonOk.UseVisualStyleBackColor = true;
+            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            this.buttonOk.MouseEnter += new System.EventHandler(this.buttonOk_MouseEnter);
+            // 
+            // labelFin
+            // 
+            this.labelFin.AutoSize = true;
+            this.labelFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFin.Location = new System.Drawing.Point(6, 51);
+            this.labelFin.Name = "labelFin";
+            this.labelFin.Size = new System.Drawing.Size(29, 13);
+            this.labelFin.TabIndex = 3;
+            this.labelFin.Text = "Fin :";
+            // 
+            // dateTimeEnd
+            // 
+            this.dateTimeEnd.Location = new System.Drawing.Point(57, 49);
+            this.dateTimeEnd.Name = "dateTimeEnd";
+            this.dateTimeEnd.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeEnd.TabIndex = 2;
+            // 
+            // labelDebut
+            // 
+            this.labelDebut.AutoSize = true;
+            this.labelDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDebut.Location = new System.Drawing.Point(6, 23);
+            this.labelDebut.Name = "labelDebut";
+            this.labelDebut.Size = new System.Drawing.Size(45, 13);
+            this.labelDebut.TabIndex = 1;
+            this.labelDebut.Text = "Début :";
+            // 
+            // dateTimeBegin
+            // 
+            this.dateTimeBegin.Location = new System.Drawing.Point(57, 21);
+            this.dateTimeBegin.Name = "dateTimeBegin";
+            this.dateTimeBegin.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeBegin.TabIndex = 0;
+            // 
+            // labelItemDispo
+            // 
+            this.labelItemDispo.AutoSize = true;
+            this.labelItemDispo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelItemDispo.Location = new System.Drawing.Point(29, 7);
+            this.labelItemDispo.Name = "labelItemDispo";
+            this.labelItemDispo.Size = new System.Drawing.Size(118, 13);
+            this.labelItemDispo.TabIndex = 1;
+            this.labelItemDispo.Text = "Matériels disponibles";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.valCrédits);
@@ -179,90 +192,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Infos utilisateur";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nom :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Prénom :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Classe :";
-            // 
-            // valNom
-            // 
-            this.valNom.AutoSize = true;
-            this.valNom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valNom.Location = new System.Drawing.Point(94, 19);
-            this.valNom.Name = "valNom";
-            this.valNom.Size = new System.Drawing.Size(11, 13);
-            this.valNom.TabIndex = 5;
-            this.valNom.Text = "-";
-            // 
-            // valPrenom
-            // 
-            this.valPrenom.AutoSize = true;
-            this.valPrenom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPrenom.Location = new System.Drawing.Point(94, 47);
-            this.valPrenom.Name = "valPrenom";
-            this.valPrenom.Size = new System.Drawing.Size(11, 13);
-            this.valPrenom.TabIndex = 6;
-            this.valPrenom.Text = "-";
-            // 
-            // valClasse
-            // 
-            this.valClasse.AutoSize = true;
-            this.valClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valClasse.Location = new System.Drawing.Point(94, 77);
-            this.valClasse.Name = "valClasse";
-            this.valClasse.Size = new System.Drawing.Size(11, 13);
-            this.valClasse.TabIndex = 7;
-            this.valClasse.Text = "-";
-            // 
-            // buttonTransfert
-            // 
-            this.buttonTransfert.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTransfert.ForeColor = System.Drawing.Color.Blue;
-            this.buttonTransfert.Location = new System.Drawing.Point(265, 275);
-            this.buttonTransfert.Name = "buttonTransfert";
-            this.buttonTransfert.Size = new System.Drawing.Size(31, 23);
-            this.buttonTransfert.TabIndex = 3;
-            this.buttonTransfert.Text = ">>";
-            this.buttonTransfert.UseVisualStyleBackColor = true;
-            // 
-            // NameItem
-            // 
-            this.NameItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NameItem.HeaderText = "Libellé";
-            this.NameItem.Name = "NameItem";
-            this.NameItem.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Prix ( Crédits )";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
             // 
             // valCrédits
             // 
@@ -284,11 +213,82 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Crédits :";
             // 
+            // valClasse
+            // 
+            this.valClasse.AutoSize = true;
+            this.valClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valClasse.Location = new System.Drawing.Point(94, 77);
+            this.valClasse.Name = "valClasse";
+            this.valClasse.Size = new System.Drawing.Size(11, 13);
+            this.valClasse.TabIndex = 7;
+            this.valClasse.Text = "-";
+            // 
+            // valPrenom
+            // 
+            this.valPrenom.AutoSize = true;
+            this.valPrenom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valPrenom.Location = new System.Drawing.Point(94, 47);
+            this.valPrenom.Name = "valPrenom";
+            this.valPrenom.Size = new System.Drawing.Size(11, 13);
+            this.valPrenom.TabIndex = 6;
+            this.valPrenom.Text = "-";
+            // 
+            // valNom
+            // 
+            this.valNom.AutoSize = true;
+            this.valNom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valNom.Location = new System.Drawing.Point(94, 19);
+            this.valNom.Name = "valNom";
+            this.valNom.Size = new System.Drawing.Size(11, 13);
+            this.valNom.TabIndex = 5;
+            this.valNom.Text = "-";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Classe :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Prénom :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nom :";
+            // 
+            // buttonTransfert
+            // 
+            this.buttonTransfert.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTransfert.ForeColor = System.Drawing.Color.Blue;
+            this.buttonTransfert.Location = new System.Drawing.Point(260, 275);
+            this.buttonTransfert.Name = "buttonTransfert";
+            this.buttonTransfert.Size = new System.Drawing.Size(31, 23);
+            this.buttonTransfert.TabIndex = 3;
+            this.buttonTransfert.Text = ">>";
+            this.buttonTransfert.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(322, 174);
+            this.label4.Location = new System.Drawing.Point(312, 174);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 13);
             this.label4.TabIndex = 5;
@@ -298,7 +298,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dataGridListeUser);
-            this.panel1.Location = new System.Drawing.Point(305, 179);
+            this.panel1.Location = new System.Drawing.Point(295, 179);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(276, 201);
             this.panel1.TabIndex = 4;
@@ -343,7 +343,7 @@
             this.radioButtonReserver.AutoSize = true;
             this.radioButtonReserver.Checked = true;
             this.radioButtonReserver.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonReserver.Location = new System.Drawing.Point(337, 146);
+            this.radioButtonReserver.Location = new System.Drawing.Point(327, 146);
             this.radioButtonReserver.Name = "radioButtonReserver";
             this.radioButtonReserver.Size = new System.Drawing.Size(68, 17);
             this.radioButtonReserver.TabIndex = 6;
@@ -355,7 +355,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(442, 146);
+            this.radioButton2.Location = new System.Drawing.Point(432, 146);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(79, 17);
             this.radioButton2.TabIndex = 7;
@@ -364,7 +364,7 @@
             // 
             // buttonEnlever
             // 
-            this.buttonEnlever.Location = new System.Drawing.Point(305, 386);
+            this.buttonEnlever.Location = new System.Drawing.Point(295, 386);
             this.buttonEnlever.Name = "buttonEnlever";
             this.buttonEnlever.Size = new System.Drawing.Size(75, 23);
             this.buttonEnlever.TabIndex = 8;
@@ -375,7 +375,7 @@
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(439, 391);
+            this.labelTotal.Location = new System.Drawing.Point(429, 391);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(37, 13);
             this.labelTotal.TabIndex = 9;
@@ -386,7 +386,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Blue;
-            this.label6.Location = new System.Drawing.Point(501, 390);
+            this.label6.Location = new System.Drawing.Point(491, 390);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 17);
             this.label6.TabIndex = 10;
@@ -396,7 +396,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(328, 425);
+            this.label7.Location = new System.Drawing.Point(318, 425);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 13);
             this.label7.TabIndex = 11;
@@ -407,7 +407,7 @@
             this.valCreditsRestants.AutoSize = true;
             this.valCreditsRestants.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valCreditsRestants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.valCreditsRestants.Location = new System.Drawing.Point(501, 422);
+            this.valCreditsRestants.Location = new System.Drawing.Point(491, 422);
             this.valCreditsRestants.Name = "valCreditsRestants";
             this.valCreditsRestants.Size = new System.Drawing.Size(13, 17);
             this.valCreditsRestants.TabIndex = 12;

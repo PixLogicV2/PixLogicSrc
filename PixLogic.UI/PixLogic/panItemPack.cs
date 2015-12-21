@@ -73,8 +73,7 @@ namespace PixLogic
                 listBoxItem.AllowDrop = true;
                 buttonTransfert.Enabled = true;
                 valItemName.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
-                valQuantity.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
-                valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
+                valPrice.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
                 Item item = database.GetItemByName(valItemName.Text);
 
                 valItemId.Text = item.ReservableId.ToString();
@@ -90,7 +89,6 @@ namespace PixLogic
                 listBoxItem.AllowDrop = false;
                 buttonTransfert.Enabled = false;
                 valItemName.Text = "-";
-                valQuantity.Text = "-";
                 valPrice.Text = "-";
                 valDispo.Text = "-";
                 valDescription.Text = "-";
@@ -246,7 +244,7 @@ namespace PixLogic
         private void buttonModify_Click(object sender, EventArgs e)
         {
             if(Helper.existReservationItem(true, Convert.ToInt32(valItemId.Text)) == false){
-                WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, Convert.ToDouble(valPrice.Text), Convert.ToInt32(valQuantity.Text), valDescription.Text, valCategorie.Text);
+                WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, double.Parse(valPrice.Text), valDescription.Text, valCategorie.Text);
                 modif.ShowDialog(this);
             }
         }
