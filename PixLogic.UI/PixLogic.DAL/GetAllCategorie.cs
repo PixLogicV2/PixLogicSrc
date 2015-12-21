@@ -18,12 +18,7 @@ namespace PixLogic.DAL
         {
             IQueryable<Categorie> itemQuery = from Categorie in context.Categories
                                          select Categorie;
-            List<Categorie> list = new List<Categorie>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return itemQuery.ToList();
         }
         public List<Categorie> getAllCategorieByString(string search)
         {
