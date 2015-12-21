@@ -23,9 +23,9 @@ namespace PixLogic.DAL
             container.get("add_item").addItem(item);
             container.get("add_categorie_to_item").addCategorieToItem(item.ReservableId, cat.CategorieId);
         }
-        public void AddPack(string name, string description, bool dispo, int price)
+        public void AddPack(string name, string description, bool dispo, int price,bool temp)
         {
-            container.get("add_pack").addPack(container.get("pack_factory").build(name, description, dispo, price));
+            container.get("add_pack").addPack(container.get("pack_factory").build(name, description, dispo, price,temp));
         }
         public void AddItemToPack(string itemName,string packName)
         {
@@ -132,7 +132,7 @@ namespace PixLogic.DAL
         }
         public void AddUser(string name, string nickname, string mail, string phoneNumber, Image image,UserClass classe)
         {
-            User user = container.get("user_factory").build(name, nickname, mail, phoneNumber, image);
+            User user = container.get("user_factory").build(name, nickname, mail, phoneNumber, image,classe.credits);
             container.get("add_user").addUser(user);
             container.get("add_userclass_to_user").addUserClassToUser(user.UserId, classe.UserClassId);
         }

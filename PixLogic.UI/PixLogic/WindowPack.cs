@@ -46,7 +46,7 @@ namespace PixLogic
                 && Helper.confirmation(option))
             {
                 if (add)
-                    database.AddPack(valName.Text, valDescription.Text, true, 0);
+                    database.AddPack(valName.Text, valDescription.Text, true, 0,false);
                 else
                     database.UpdatePack(winpackm.valNamePack.Text, valName.Text, valDescription.Text, true);
 

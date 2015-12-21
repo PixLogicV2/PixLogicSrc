@@ -585,7 +585,7 @@ namespace PixLogic
             }
             for (int k = 0; k < 20; k++)
             {
-                database.AddPack("packname" + k, "des" + k,true,k);
+                database.AddPack("packname" + k, "des" + k,true,k,false);
             }
             
             for (int j = 0; j < 20; j++)

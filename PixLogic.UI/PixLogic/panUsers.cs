@@ -53,11 +53,13 @@ namespace PixLogic
                 valUserName.Text = dataGridUsers.CurrentRow.Cells[1].Value.ToString();
                 valUserNickName.Text = dataGridUsers.CurrentRow.Cells[2].Value.ToString();
                 valUserId.Text = dataGridUsers.CurrentRow.Cells[0].Value.ToString();
+                
                User user = database.GetUserById(Convert.ToInt32(valUserId.Text));
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
                 valClass.Text = (user.userClass.name);
-                
+                valUserCredits.Text = Convert.ToString(user.credits);
+
                 Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
                
@@ -69,6 +71,7 @@ namespace PixLogic
                 valClass.Text = "-";
                 valTel.Text = "-";
                 valMail.Text = "-";
+                valUserCredits.Text = "-";
                 valUserNickName.Text = "-";
                 pictureBoxUser.Image = null;
                 valUserId.Text = "-";
@@ -157,5 +160,10 @@ namespace PixLogic
             info.SetToolTip(pictureImporter, "Importer une liste.");
             pictureImporter.Cursor = Cursors.Hand;
         }
+
+        private void pictureReserver_Click(object sender, EventArgs e)
+        {
+        }
+        
     }
 }

@@ -10,7 +10,7 @@ namespace PixLogic.DAL
 {
     class UserFactory
     {
-        public User build(string name, string nickname, string mail,  string phoneNumber, Image image)
+        public User build(string name, string nickname, string mail,  string phoneNumber, Image image,int credits)
         {
             User user = new User();
             user.name = name;
@@ -20,7 +20,7 @@ namespace PixLogic.DAL
             if (image != null) user.image = Helper.imageToByteArray(image);
             else user.image = null;
 
-            user.credits = 100;
+            user.credits = credits;
             return user;
         }
     }
