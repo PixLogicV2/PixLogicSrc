@@ -59,7 +59,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.buttonEnlever = new System.Windows.Forms.Button();
             this.labelTotal = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.valTotal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.valCreditsRestants = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -283,6 +283,7 @@
             this.buttonTransfert.TabIndex = 3;
             this.buttonTransfert.Text = ">>";
             this.buttonTransfert.UseVisualStyleBackColor = true;
+            this.buttonTransfert.Click += new System.EventHandler(this.buttonTransfert_Click);
             // 
             // label4
             // 
@@ -370,6 +371,7 @@
             this.buttonEnlever.TabIndex = 8;
             this.buttonEnlever.Text = "Enlever";
             this.buttonEnlever.UseVisualStyleBackColor = true;
+            this.buttonEnlever.Click += new System.EventHandler(this.buttonEnlever_Click);
             // 
             // labelTotal
             // 
@@ -381,16 +383,16 @@
             this.labelTotal.TabIndex = 9;
             this.labelTotal.Text = "Total :";
             // 
-            // label6
+            // valTotal
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Blue;
-            this.label6.Location = new System.Drawing.Point(491, 390);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 17);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "-";
+            this.valTotal.AutoSize = true;
+            this.valTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valTotal.ForeColor = System.Drawing.Color.Blue;
+            this.valTotal.Location = new System.Drawing.Point(491, 390);
+            this.valTotal.Name = "valTotal";
+            this.valTotal.Size = new System.Drawing.Size(13, 17);
+            this.valTotal.TabIndex = 10;
+            this.valTotal.Text = "-";
             // 
             // label7
             // 
@@ -448,7 +450,7 @@
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.valCreditsRestants);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.valTotal);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.buttonEnlever);
             this.Controls.Add(this.radioButton2);
@@ -507,7 +509,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button buttonEnlever;
         private System.Windows.Forms.Label labelTotal;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label valTotal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label valCreditsRestants;
         private System.Windows.Forms.Button buttonCancel;

@@ -340,7 +340,7 @@ namespace PixLogic
             List<Item> res = new List<Item>();
             foreach (Item i in items)
             {
-                if (getDispoReservableByDate(true, i.ReservableId, debut, fin) == false) res.Add(i);
+                if (getDispoReservableByDate(true, i.ReservableId, debut, fin) == true) res.Add(i);
             }
             return res;
         }

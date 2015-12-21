@@ -163,8 +163,17 @@ namespace PixLogic
 
         private void pictureReserver_Click(object sender, EventArgs e)
         {
-            WindowReservationUser r = new WindowReservationUser();
-            r.ShowDialog();
+            if(dataGridUsers.RowCount == 0)
+            {
+                MessageBox.Show("Vous devez sélectionner un utilisateur.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int idU = int.Parse(valUserId.Text);
+                WindowReservationUser r = new WindowReservationUser(idU);
+                r.ShowDialog();
+            }
+            
         }
 
         private void pictureReserver_MouseEnter(object sender, EventArgs e)
