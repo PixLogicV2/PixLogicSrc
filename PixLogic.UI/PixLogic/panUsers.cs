@@ -95,7 +95,7 @@ namespace PixLogic
         private void buttonModify_Click(object sender, EventArgs e)
         {
             if (Helper.existReservationUser(true, Convert.ToInt32(valUserId.Text)) == false)
-            {
+            {  
                 WindowUser modif = new WindowUser(this, pictureBoxUser.Image, valUserName.Text, valUserNickName.Text, valMail.Text, valClass.Text, valTel.Text);
                 modif.ShowDialog(this);
             }

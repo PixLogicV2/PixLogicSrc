@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using PixLogic;
 namespace PixLogic.DAL
 {
     public class GetAllItems
@@ -16,12 +17,7 @@ namespace PixLogic.DAL
         {
             IQueryable<Item> itemQuery = from Item in context.Items.Include(c => c.pack).Include(c => c.categorie)
                                          select Item;
-            List<Item> list = new List<Item>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return itemQuery.ToList();
         }
         public List<Item> getAllItemsByString(string search)
         {
