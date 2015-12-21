@@ -21,12 +21,7 @@ namespace PixLogic.DAL
                                                   where Reservation.beginDateReservation == null
                                                   where Reservation.dateRendu == null
                                                   select Reservation;
-            List<Reservation> list = new List<Reservation>();
-            foreach (var prod in reservQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return reservQuery.ToList();
         }
         public List<Reservation> getAllEmpruntsByDate(DateTime dateDebut, DateTime dateFin)
         {

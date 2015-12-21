@@ -19,12 +19,7 @@ namespace PixLogic.DAL
             IQueryable<Log> reservQuery = from Log
                                                   in context.Logs
                                                   select Log;
-            List<Log> list = new List<Log>();
-            foreach (var prod in reservQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return reservQuery.ToList();
         }
         public List<Log> getAllLogsByString(string search)
         {
