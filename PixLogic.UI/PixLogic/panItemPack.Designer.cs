@@ -33,10 +33,8 @@
             this.panNews = new System.Windows.Forms.Panel();
             this.valCategorie = new System.Windows.Forms.Label();
             this.labelCategorie = new System.Windows.Forms.Label();
-            this.valQuantity = new System.Windows.Forms.Label();
             this.valPrice = new System.Windows.Forms.Label();
             this.valDispo = new System.Windows.Forms.Label();
-            this.labelQuantity = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelDispo = new System.Windows.Forms.Label();
             this.valDescription = new System.Windows.Forms.TextBox();
@@ -49,9 +47,6 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
-            this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNews = new System.Windows.Forms.Label();
             this.listBoxItem = new System.Windows.Forms.ListBox();
             this.comboBoxPack = new System.Windows.Forms.ComboBox();
@@ -67,6 +62,8 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
+            this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -81,10 +78,8 @@
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panNews.Controls.Add(this.valCategorie);
             this.panNews.Controls.Add(this.labelCategorie);
-            this.panNews.Controls.Add(this.valQuantity);
             this.panNews.Controls.Add(this.valPrice);
             this.panNews.Controls.Add(this.valDispo);
-            this.panNews.Controls.Add(this.labelQuantity);
             this.panNews.Controls.Add(this.labelPrice);
             this.panNews.Controls.Add(this.labelDispo);
             this.panNews.Location = new System.Drawing.Point(335, 200);
@@ -96,30 +91,21 @@
             // 
             this.valCategorie.AutoSize = true;
             this.valCategorie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valCategorie.Location = new System.Drawing.Point(65, 94);
+            this.valCategorie.Location = new System.Drawing.Point(65, 70);
             this.valCategorie.Name = "valCategorie";
-            this.valCategorie.Size = new System.Drawing.Size(0, 13);
+            this.valCategorie.Size = new System.Drawing.Size(11, 13);
             this.valCategorie.TabIndex = 7;
+            this.valCategorie.Text = "-";
             // 
             // labelCategorie
             // 
             this.labelCategorie.AutoSize = true;
             this.labelCategorie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategorie.Location = new System.Drawing.Point(0, 95);
+            this.labelCategorie.Location = new System.Drawing.Point(0, 71);
             this.labelCategorie.Name = "labelCategorie";
             this.labelCategorie.Size = new System.Drawing.Size(63, 13);
             this.labelCategorie.TabIndex = 6;
             this.labelCategorie.Text = "Catégorie :";
-            // 
-            // valQuantity
-            // 
-            this.valQuantity.AutoSize = true;
-            this.valQuantity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valQuantity.Location = new System.Drawing.Point(65, 66);
-            this.valQuantity.Name = "valQuantity";
-            this.valQuantity.Size = new System.Drawing.Size(13, 17);
-            this.valQuantity.TabIndex = 5;
-            this.valQuantity.Text = "-";
             // 
             // valPrice
             // 
@@ -140,16 +126,6 @@
             this.valDispo.Size = new System.Drawing.Size(11, 13);
             this.valDispo.TabIndex = 3;
             this.valDispo.Text = "-";
-            // 
-            // labelQuantity
-            // 
-            this.labelQuantity.AutoSize = true;
-            this.labelQuantity.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantity.Location = new System.Drawing.Point(0, 69);
-            this.labelQuantity.Name = "labelQuantity";
-            this.labelQuantity.Size = new System.Drawing.Size(58, 13);
-            this.labelQuantity.TabIndex = 2;
-            this.labelQuantity.Text = "Quantité :";
             // 
             // labelPrice
             // 
@@ -280,7 +256,6 @@
             this.dataGridItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameItem,
-            this.Quantity,
             this.Price});
             this.dataGridItem.Location = new System.Drawing.Point(0, 76);
             this.dataGridItem.MultiSelect = false;
@@ -293,27 +268,6 @@
             this.dataGridItem.TabIndex = 0;
             this.dataGridItem.Click += new System.EventHandler(this.dataGridItem_Click);
             this.dataGridItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridItem_KeyUp);
-            // 
-            // NameItem
-            // 
-            this.NameItem.HeaderText = "Libellé";
-            this.NameItem.Name = "NameItem";
-            this.NameItem.ReadOnly = true;
-            this.NameItem.Width = 77;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantité";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 60;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Prix ( € )";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 60;
             // 
             // labelNews
             // 
@@ -498,6 +452,20 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
+            // NameItem
+            // 
+            this.NameItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameItem.HeaderText = "Libellé";
+            this.NameItem.Name = "NameItem";
+            this.NameItem.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Prix ( Crédits )";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 90;
+            // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,10 +521,8 @@
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridItem;
         private System.Windows.Forms.Label labelNews;
-        private System.Windows.Forms.Label valQuantity;
         private System.Windows.Forms.Label valPrice;
         private System.Windows.Forms.Label valDispo;
-        private System.Windows.Forms.Label labelQuantity;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelDispo;
         private System.Windows.Forms.ListBox listBoxItem;
@@ -566,9 +532,6 @@
         private System.Windows.Forms.Button buttonManagePack;
         private System.Windows.Forms.PictureBox pictureBoxItem;
         private System.Windows.Forms.Button buttonRemoveItemInPack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         public System.Windows.Forms.Label valItemName;
         public System.Windows.Forms.Label valItemId;
         private System.Windows.Forms.PictureBox pictureReserver;
@@ -578,5 +541,7 @@
         private System.Windows.Forms.ComboBox comboBoxCategorie;
         private System.Windows.Forms.PictureBox pictureExport;
         private System.Windows.Forms.PictureBox pictureImporter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }
