@@ -334,7 +334,7 @@ namespace PixLogic
             }
             return true;     
         }
-        public List<Item> getAllItemsDispoByDate(DateTime debut, DateTime fin)
+        public static List<Item> getAllItemsDispoByDate(DateTime debut, DateTime fin)
         {
             List<Item> items = database.GetAllItems();
             List<Item> res = new List<Item>();
