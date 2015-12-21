@@ -334,8 +334,18 @@ namespace PixLogic
             }
             return true;     
         }
+        public List<Item> getAllItemsDispoByDate(DateTime debut, DateTime fin)
+        {
+            List<Item> items = database.GetAllItems();
+            List<Item> res = new List<Item>();
+            foreach (Item i in items)
+            {
+                if (getDispoReservableByDate(true, i.ReservableId, debut, fin) == false) res.Add(i);
+            }
+            return res;
+        }
 
-        
+
         public static bool getDispoReservableByDateForModif(bool withMessageBox, int idReservable, int idReservation, DateTime dateDebut, DateTime dateFin)
         {
             List<Reservation> reservations = database.GetAllReservationsByReservableId(idReservable);
