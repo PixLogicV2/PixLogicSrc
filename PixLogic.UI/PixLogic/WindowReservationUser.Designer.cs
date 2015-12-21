@@ -462,6 +462,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowReservationUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Réservation";
             this.panelListItemDispo.ResumeLayout(false);
             this.panelListItemDispo.PerformLayout();
