@@ -59,6 +59,7 @@
     <Compile Include="AddCategorieToItem.cs" />
     <Compile Include="AddLog.cs" />
     <Compile Include="AddMailConfig.cs" />
+    <Compile Include="AddManager.cs" />
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
     <Compile Include="AddItem.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="LogFactory.cs" />
     <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="ManagerFactory.cs" />
     <Compile Include="Requete.cs" />
     <Compile Include="RequeteFactory.cs" />
     <Compile Include="Reservation.cs" />
