@@ -247,9 +247,12 @@ namespace PixLogic
 
         private void dataGridEmprunts_DoubleClick(object sender, EventArgs e)
         {
-            int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
-            WindowMail wMail = new WindowMail(idReservation);
-            wMail.ShowDialog();
+            if (dataGridEmprunts.RowCount > 0)
+            {
+                int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
+                WindowMail wMail = new WindowMail(idReservation);
+                wMail.ShowDialog();
+            }
         }
 
        

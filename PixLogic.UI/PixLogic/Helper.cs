@@ -314,12 +314,12 @@ namespace PixLogic
                     {
                     if (existReservation(i.ReservableId, dateDebut, dateFin))
                     {
-                        if (withMessageBox) MessageBox.Show("Un item du pack est réservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (withMessageBox) MessageBox.Show("Un matériel du pack est réservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     if (existEmprunt(i.ReservableId, dateDebut, dateFin))
                     {
-                        if (withMessageBox) MessageBox.Show("un item du pack est emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (withMessageBox) MessageBox.Show("un matériel du pack est emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     }
@@ -331,12 +331,12 @@ namespace PixLogic
                     {
                     if (existReservation(i.pack.ReservableId, dateDebut, dateFin))
                     {
-                        if (withMessageBox) MessageBox.Show("Un pack contenant cet item est deja reservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (withMessageBox) MessageBox.Show("Un pack contenant ce matériel est déjà reservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     if (existEmprunt(i.pack.ReservableId, dateDebut, dateFin))
                     {
-                        if (withMessageBox) MessageBox.Show("Un pack contenant cet item est deja emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (withMessageBox) MessageBox.Show("Un pack contenant ce matériel est déjà emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     }
