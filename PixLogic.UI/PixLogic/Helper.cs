@@ -298,12 +298,12 @@ namespace PixLogic
         {
             if (existReservation(idReservable, dateDebut, dateFin))
             {
-                MessageBox.Show("Une reservation est deja présente à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(withMessageBox)MessageBox.Show("Une reservation est deja présente à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (existEmprunt(idReservable, dateDebut, dateFin))
             {
-                MessageBox.Show("Un Emprunt est deja présent à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (withMessageBox) MessageBox.Show("Un Emprunt est deja présent à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             Reservable res = database.GetReservableById(idReservable);
@@ -314,12 +314,12 @@ namespace PixLogic
                     {
                     if (existReservation(i.ReservableId, dateDebut, dateFin))
                     {
-                        MessageBox.Show("Un item du pack est réservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (withMessageBox) MessageBox.Show("Un item du pack est réservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     if (existEmprunt(i.ReservableId, dateDebut, dateFin))
                     {
-                        MessageBox.Show("un item du pack est emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (withMessageBox) MessageBox.Show("un item du pack est emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     }
@@ -331,12 +331,12 @@ namespace PixLogic
                     {
                     if (existReservation(i.pack.ReservableId, dateDebut, dateFin))
                     {
-                        MessageBox.Show("Un pack contenant cet item est deja reservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (withMessageBox) MessageBox.Show("Un pack contenant cet item est deja reservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     if (existEmprunt(i.pack.ReservableId, dateDebut, dateFin))
                     {
-                        MessageBox.Show("Un pack contenant cet item est deja emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (withMessageBox) MessageBox.Show("Un pack contenant cet item est deja emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     }
@@ -349,7 +349,7 @@ namespace PixLogic
             List<Item> res = new List<Item>();
             foreach (Item i in items)
             {
-                if (getDispoReservableByDate(true, i.ReservableId, debut, fin) == true) res.Add(i);
+                if (getDispoReservableByDate(false, i.ReservableId, debut, fin) == true) res.Add(i);
             }
             return res;
         }
