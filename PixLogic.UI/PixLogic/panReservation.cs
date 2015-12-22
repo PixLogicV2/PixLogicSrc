@@ -7,6 +7,7 @@ using System.Data;
 using System.Reflection;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using System.Drawing;
 
 namespace PixLogic
 {
@@ -255,6 +256,29 @@ namespace PixLogic
             ToolTip info = new ToolTip();
             info.SetToolTip(pictureExport, "Exporter la liste.");
             pictureExport.Cursor = Cursors.Hand;
+        }
+
+        private void dataGridReservations_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                DataGridViewCell cell = dataGridReservations[e.ColumnIndex, e.RowIndex];
+                int id = int.Parse(dataGridReservations.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Reservation reservation = database.GetReservationById(id);
+                string materiels = "Liste matériels du pack "+reservation.reservable.name+":\n";
+                if (reservation.isPack)
+                {
+                    
+                    foreach(Item i in database.GetItemsInPack(reservation.reservable.ReservableId))
+                    {
+                        materiels += ("\t- " + i.name + "\n");
+                    }
+                }
+                cell.ToolTipText = materiels;
+            }
+            
+            
+            
         }
     }
 }

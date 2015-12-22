@@ -185,6 +185,7 @@
             this.dataGridReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridReservations.Size = new System.Drawing.Size(412, 234);
             this.dataGridReservations.TabIndex = 0;
+            this.dataGridReservations.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridReservations_CellMouseEnter);
             this.dataGridReservations.Click += new System.EventHandler(this.dataGridReservations_Click);
             this.dataGridReservations.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridReservations_KeyUp);
             // 
@@ -600,7 +601,7 @@
             this.Controls.Add(this.labelListReservation);
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.panTableUsers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "panReservation";
             this.Size = new System.Drawing.Size(686, 450);
             this.panTableUsers.ResumeLayout(false);
