@@ -19,12 +19,7 @@ namespace PixLogic.DAL
             IQueryable<UserClass> itemQuery = from UserClass in context.UserClasses
                                               where UserClass.UserClassId == id
                                               select UserClass;
-            List<UserClass> list = new List<UserClass>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return itemQuery.First();
         }
         public UserClass getUserClassByName(string name)
         {
@@ -37,12 +32,7 @@ namespace PixLogic.DAL
         {
             IQueryable<UserClass> itemQuery = from UserClass in context.UserClasses
                                               select UserClass;
-            List<UserClass> list = new List<UserClass>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return itemQuery.ToList();
         }
         public List<UserClass> getAllUserClassByString(string search)
         {

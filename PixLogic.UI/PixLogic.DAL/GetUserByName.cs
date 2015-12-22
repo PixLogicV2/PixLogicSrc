@@ -20,12 +20,7 @@ namespace PixLogic.DAL
                                          where User.name == userName
                                          where User.nickname==userNickName
                                          select User;
-            List<User> list = new List<User>();
-            foreach (var prod in userQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return userQuery.First();
         }
     }
 }

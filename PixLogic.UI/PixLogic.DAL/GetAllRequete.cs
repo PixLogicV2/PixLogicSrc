@@ -19,12 +19,7 @@ namespace PixLogic.DAL
         {
             IQueryable<Requete> requeteQuery = from Requete in context.Requetes
                                                select Requete;
-            List<Requete> list = new List<Requete>();
-            foreach (var prod in requeteQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return requeteQuery.ToList();
         }
     }
 }

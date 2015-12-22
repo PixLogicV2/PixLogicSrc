@@ -18,12 +18,7 @@ namespace PixLogic.DAL
         {
             IQueryable<User> itemQuery = from User in context.Users.Include(c => c.userClass)
                                          select User;
-            List<User> list = new List<User>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return itemQuery.ToList();
         }
         public List<User> getAllUsersByString(string search)
         {

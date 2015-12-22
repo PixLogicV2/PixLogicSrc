@@ -19,12 +19,7 @@ namespace PixLogic.DAL
             IQueryable<Log> itemQuery = from Log in context.Logs
                                          where Log.LogId == id
                                          select Log;
-            List<Log> list = new List<Log>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return itemQuery.First();
         }
     }
 }

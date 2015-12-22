@@ -19,12 +19,7 @@ namespace PixLogic.DAL
             IQueryable<User> userQuery = from User in context.Users
                                          where User.UserId == id
                                          select User;
-            List<User> list = new List<User>();
-            foreach (var prod in userQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return userQuery.First();
         }
     }
 }

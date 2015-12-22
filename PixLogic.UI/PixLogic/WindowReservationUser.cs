@@ -105,7 +105,6 @@ namespace PixLogic
                 MessageBox.Show("Vous devez sélectionner un matériel à enlever.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void calcul()
         {
             double totalMateriels = 0;
@@ -116,7 +115,6 @@ namespace PixLogic
             valTotal.Text = totalMateriels.ToString();
             valCreditsRestants.Text = (double.Parse(valCrédits.Text) - totalMateriels).ToString();
         }
-
         private void buttonValider_Click(object sender, EventArgs e)
         {
             int last = database.GetLastPackId();

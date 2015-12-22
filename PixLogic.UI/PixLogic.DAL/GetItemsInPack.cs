@@ -19,12 +19,7 @@ namespace PixLogic.DAL
             IQueryable<Item> itemQuery = from Item in context.Items
                                          where Item.pack.ReservableId==packId
                                          select Item;
-            List<Item> list = new List<Item>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return itemQuery.ToList();
 
         }
         public List<Item> getItemsInPackByName(string name)
@@ -32,12 +27,7 @@ namespace PixLogic.DAL
             IQueryable<Item> itemQuery = from Item in context.Items
                                          where Item.pack.name == name
                                          select Item;
-            List<Item> list = new List<Item>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return itemQuery.ToList();
 
         }
     }
