@@ -81,6 +81,10 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName] = new GetAllPackLogs();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
+                case "switch_dispo":
+                    this.arrayContainer[serviceName] = new SwitchDispo();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "add_reservation":
                     this.arrayContainer[serviceName] = new AddReservation();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));

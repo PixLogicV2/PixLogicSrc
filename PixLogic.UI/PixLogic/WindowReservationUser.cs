@@ -124,7 +124,7 @@ namespace PixLogic
             Pack pack = database.GetPackById(last + 1);
             for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
             {
-                database.AddItemToPack(dataGridItem.Rows[i].Cells[0].Value.ToString(), pack.name);
+                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[0].Value.ToString(), pack.name);
             }
             database.AddReservation(true, dateTimeBegin.Value.Date, dateTimeEnd.Value.Date, null, null, database.GetUserById(idUser), pack, null);
             this.Close();

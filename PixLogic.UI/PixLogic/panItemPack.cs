@@ -300,7 +300,7 @@ namespace PixLogic
         }
 
         private void pictureReserver_Click(object sender, EventArgs e)
-        {
+        { 
             WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text), false);
             windowRes.ShowDialog(this);
         }
@@ -355,6 +355,11 @@ namespace PixLogic
             ToolTip info = new ToolTip();
             info.SetToolTip(pictureImporter, "Importer une liste.");
             pictureImporter.Cursor = Cursors.Hand;
+        }
+
+        private void buttonPanne_Click(object sender, EventArgs e)
+        {
+            database.SwitchDispo(Convert.ToInt32(valItemId.Text));
         }
     }
 }

@@ -320,9 +320,21 @@ namespace PixLogic.DAL
             Reservation reservation = GetReservationById(id);
             User user = GetUserById(reservation.user.UserId);
             Reservable reservable = GetReservableById(reservation.reservable.ReservableId);
-            AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname,user.mail,user.userClass.name,user.phoneNumber,reservable.name);
+            if (reservable.temp == true && reservable.isPack == true)
+            {
+                List<Item> items = GetItemsInPack(reservable.ReservableId);
+                foreach (Item i in items) AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, i.name);
+                DeletePack(reservable.name);
+            }
+            else
+            {
+                AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, reservable.name);
+            }
             container.get("delete_reservation").deleteReservation(reservation.ReservationId);
-            if (reservable.temp == true && reservable.isPack == true) DeletePack(reservable.name);
+        }
+        public void SwitchDispo(int id)
+        {
+            container.get("switch_dispo").switchDispo(id);
         }
         public List<Log> GetAllPackLogs(List<Log> list)
         {
