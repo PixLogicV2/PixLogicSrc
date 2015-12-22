@@ -133,6 +133,7 @@
     <Compile Include="PackFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservable.cs" />
+    <Compile Include="SwitchDispo.cs" />
     <Compile Include="UpdateCategorie.cs" />
     <Compile Include="UpdateItem.cs" />
     <Compile Include="UpdateMailConfig.cs" />

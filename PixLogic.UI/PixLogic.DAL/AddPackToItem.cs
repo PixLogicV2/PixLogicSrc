@@ -22,6 +22,7 @@ namespace PixLogic.DAL
             pack = context.Packs.Where(s => s.name == packName).FirstOrDefault<Pack>();
             item.pack = pack;
             pack.price += item.price;
+            pack.dispo = item.dispo;
             context.Entry(item).State = System.Data.Entity.EntityState.Modified;
             context.Entry(pack).State = System.Data.Entity.EntityState.Modified;
             context.SaveChanges();
