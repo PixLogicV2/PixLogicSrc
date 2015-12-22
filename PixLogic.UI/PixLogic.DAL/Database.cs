@@ -322,6 +322,7 @@ namespace PixLogic.DAL
             Reservable reservable = GetReservableById(reservation.reservable.ReservableId);
             AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname,user.mail,user.userClass.name,user.phoneNumber,reservable.name);
             container.get("delete_reservation").deleteReservation(reservation.ReservationId);
+            if (reservable.temp == true && reservable.isPack == true) DeletePack(reservable.name);
         }
         public List<Log> GetAllPackLogs(List<Log> list)
         {

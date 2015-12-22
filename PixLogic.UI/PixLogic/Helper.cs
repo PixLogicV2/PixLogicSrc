@@ -593,7 +593,7 @@ namespace PixLogic
         }
         public static void initBase()
         {
-            database.AddUserClass("cm2", 100, 3);
+            database.AddUserClass("cm2", 1000, 100);
             for (int i = 0; i < 20; i++)
             {
                 database.AddUser("user" + i, "user" + i, "user" + i, "user" + i, null,database.GetUserClassById(1));

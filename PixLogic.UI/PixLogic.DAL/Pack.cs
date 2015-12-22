@@ -9,6 +9,5 @@ namespace PixLogic.DAL
     {
             public String description { get; set; }
             public bool dispo { get; set; }
-            public bool temp { get; set; }
     }
 }
