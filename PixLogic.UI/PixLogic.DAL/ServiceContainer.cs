@@ -21,6 +21,9 @@ namespace PixLogic.DAL
                 case "item_factory":
                     this.arrayContainer[serviceName] = new ItemFactory();
                     break;
+                case "is_pack":
+                    this.arrayContainer[serviceName] = new IsPack();
+                    break;
                 case "manager_factory":
                     this.arrayContainer[serviceName] = new ManagerFactory();
                     break;

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PixLogic
 {
-    public partial class WindowSetReservation : Form
+    public partial class  WindowSetReservation : Form
     {
         private int idReservable;
         private int idReservation;

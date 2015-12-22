@@ -16,6 +16,7 @@ namespace PixLogic.DAL
             pack.dispo = dispo;
             pack.price = price;
             pack.temp = temp;
+            pack.isPack = true;
             return pack;
         }
     }

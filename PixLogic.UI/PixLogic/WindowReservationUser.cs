@@ -18,6 +18,7 @@ namespace PixLogic
         private int idUser;
         private List<string> materiels;
 
+
         public WindowReservationUser(int id)
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace PixLogic
         {
             List<Item> list = Helper.getAllItemsDispoByDate(dateTimeBegin.Value.Date, dateTimeEnd.Value.Date);
             setTableItem(list);
-            dataGridListeUser.Rows.Clear();
+            dataGridListeItem.Rows.Clear();
             materiels.Clear();
             calcul();
         }
@@ -79,7 +80,7 @@ namespace PixLogic
                 if (!materiels.Contains(libelle))
                 {
                     materiels.Add(libelle);
-                    dataGridListeUser.Rows.Add(libelle, prix);
+                    dataGridListeItem.Rows.Add(libelle, prix);
                 }
                 calcul();
 
@@ -92,10 +93,10 @@ namespace PixLogic
 
         private void buttonEnlever_Click(object sender, EventArgs e)
         {
-            if(dataGridListeUser.RowCount > 0)
+            if(dataGridListeItem.RowCount > 0)
             {
-                string libelle = dataGridListeUser.CurrentRow.Cells[0].Value.ToString();
-                dataGridListeUser.Rows.Remove(dataGridListeUser.CurrentRow);
+                string libelle = dataGridListeItem.CurrentRow.Cells[0].Value.ToString();
+                dataGridListeItem.Rows.Remove(dataGridListeItem.CurrentRow);
                 materiels.Remove(libelle);
                 calcul();
             }
@@ -108,12 +109,25 @@ namespace PixLogic
         private void calcul()
         {
             double totalMateriels = 0;
-            foreach(DataGridViewRow r in dataGridListeUser.Rows)
+            foreach(DataGridViewRow r in dataGridListeItem.Rows)
             {
                 totalMateriels += double.Parse(r.Cells[1].Value.ToString());
             }
             valTotal.Text = totalMateriels.ToString();
             valCreditsRestants.Text = (double.Parse(valCrédits.Text) - totalMateriels).ToString();
+        }
+
+        private void buttonValider_Click(object sender, EventArgs e)
+        {
+            int last = database.GetLastPackId();
+            database.AddPack("Eph."+Convert.ToString(last+1), "reservation de " + valNom.Text,false,0,true);
+            Pack pack = database.GetPackById(last + 1);
+            for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
+            {
+                database.AddItemToPack(dataGridItem.Rows[i].Cells[0].Value.ToString(), pack.name);
+            }
+            database.AddReservation(true, dateTimeBegin.Value.Date, dateTimeEnd.Value.Date, null, null, database.GetUserById(idUser), pack, null);
+            this.Close();
         }
     }
 }

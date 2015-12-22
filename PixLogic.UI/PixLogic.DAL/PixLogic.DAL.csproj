@@ -110,6 +110,7 @@
     <Compile Include="GetUserByName.cs" />
     <Compile Include="GetUserClass.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="IsPack.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogFactory.cs" />
     <Compile Include="MailConfig.cs" />

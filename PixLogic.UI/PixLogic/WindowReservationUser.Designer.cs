@@ -52,7 +52,7 @@
             this.buttonTransfert = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridListeUser = new System.Windows.Forms.DataGridView();
+            this.dataGridListeItem = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radioButtonReserver = new System.Windows.Forms.RadioButton();
@@ -68,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridListeUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridListeItem)).BeginInit();
             this.SuspendLayout();
             // 
             // panelListItemDispo
@@ -80,9 +80,10 @@
             this.panelListItemDispo.Controls.Add(this.dateTimeEnd);
             this.panelListItemDispo.Controls.Add(this.labelDebut);
             this.panelListItemDispo.Controls.Add(this.dateTimeBegin);
-            this.panelListItemDispo.Location = new System.Drawing.Point(12, 12);
+            this.panelListItemDispo.Location = new System.Drawing.Point(16, 15);
+            this.panelListItemDispo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelListItemDispo.Name = "panelListItemDispo";
-            this.panelListItemDispo.Size = new System.Drawing.Size(245, 477);
+            this.panelListItemDispo.Size = new System.Drawing.Size(326, 587);
             this.panelListItemDispo.TabIndex = 0;
             // 
             // dataGridItem
@@ -98,13 +99,14 @@
             this.dataGridItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameItem,
             this.Price});
-            this.dataGridItem.Location = new System.Drawing.Point(-1, 99);
+            this.dataGridItem.Location = new System.Drawing.Point(-1, 122);
+            this.dataGridItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridItem.Name = "dataGridItem";
             this.dataGridItem.ReadOnly = true;
             this.dataGridItem.RowHeadersVisible = false;
             this.dataGridItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridItem.Size = new System.Drawing.Size(245, 377);
+            this.dataGridItem.Size = new System.Drawing.Size(327, 464);
             this.dataGridItem.TabIndex = 5;
             // 
             // NameItem
@@ -123,9 +125,10 @@
             // buttonOk
             // 
             this.buttonOk.Image = global::PixLogic.Properties.Resources.valider_iconPetit;
-            this.buttonOk.Location = new System.Drawing.Point(207, 73);
+            this.buttonOk.Location = new System.Drawing.Point(276, 90);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(29, 20);
+            this.buttonOk.Size = new System.Drawing.Size(39, 25);
             this.buttonOk.TabIndex = 4;
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
@@ -135,43 +138,48 @@
             // 
             this.labelFin.AutoSize = true;
             this.labelFin.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFin.Location = new System.Drawing.Point(6, 51);
+            this.labelFin.Location = new System.Drawing.Point(8, 63);
+            this.labelFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFin.Name = "labelFin";
-            this.labelFin.Size = new System.Drawing.Size(29, 13);
+            this.labelFin.Size = new System.Drawing.Size(34, 19);
             this.labelFin.TabIndex = 3;
             this.labelFin.Text = "Fin :";
             // 
             // dateTimeEnd
             // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(57, 49);
+            this.dateTimeEnd.Location = new System.Drawing.Point(76, 60);
+            this.dateTimeEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeEnd.Size = new System.Drawing.Size(237, 22);
             this.dateTimeEnd.TabIndex = 2;
             // 
             // labelDebut
             // 
             this.labelDebut.AutoSize = true;
             this.labelDebut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDebut.Location = new System.Drawing.Point(6, 23);
+            this.labelDebut.Location = new System.Drawing.Point(8, 28);
+            this.labelDebut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDebut.Name = "labelDebut";
-            this.labelDebut.Size = new System.Drawing.Size(45, 13);
+            this.labelDebut.Size = new System.Drawing.Size(54, 19);
             this.labelDebut.TabIndex = 1;
             this.labelDebut.Text = "Début :";
             // 
             // dateTimeBegin
             // 
-            this.dateTimeBegin.Location = new System.Drawing.Point(57, 21);
+            this.dateTimeBegin.Location = new System.Drawing.Point(76, 26);
+            this.dateTimeBegin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimeBegin.Name = "dateTimeBegin";
-            this.dateTimeBegin.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeBegin.Size = new System.Drawing.Size(237, 22);
             this.dateTimeBegin.TabIndex = 0;
             // 
             // labelItemDispo
             // 
             this.labelItemDispo.AutoSize = true;
             this.labelItemDispo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItemDispo.Location = new System.Drawing.Point(29, 7);
+            this.labelItemDispo.Location = new System.Drawing.Point(39, 9);
+            this.labelItemDispo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelItemDispo.Name = "labelItemDispo";
-            this.labelItemDispo.Size = new System.Drawing.Size(118, 13);
+            this.labelItemDispo.Size = new System.Drawing.Size(151, 19);
             this.labelItemDispo.TabIndex = 1;
             this.labelItemDispo.Text = "Matériels disponibles";
             // 
@@ -186,9 +194,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(265, 5);
+            this.groupBox1.Location = new System.Drawing.Point(353, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 130);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(427, 160);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Infos utilisateur";
@@ -197,9 +207,10 @@
             // 
             this.valCrédits.AutoSize = true;
             this.valCrédits.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valCrédits.Location = new System.Drawing.Point(94, 107);
+            this.valCrédits.Location = new System.Drawing.Point(125, 132);
+            this.valCrédits.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valCrédits.Name = "valCrédits";
-            this.valCrédits.Size = new System.Drawing.Size(11, 13);
+            this.valCrédits.Size = new System.Drawing.Size(15, 19);
             this.valCrédits.TabIndex = 9;
             this.valCrédits.Text = "-";
             // 
@@ -207,9 +218,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 107);
+            this.label5.Location = new System.Drawing.Point(20, 132);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(59, 19);
             this.label5.TabIndex = 8;
             this.label5.Text = "Crédits :";
             // 
@@ -217,9 +229,10 @@
             // 
             this.valClasse.AutoSize = true;
             this.valClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valClasse.Location = new System.Drawing.Point(94, 77);
+            this.valClasse.Location = new System.Drawing.Point(125, 95);
+            this.valClasse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valClasse.Name = "valClasse";
-            this.valClasse.Size = new System.Drawing.Size(11, 13);
+            this.valClasse.Size = new System.Drawing.Size(15, 19);
             this.valClasse.TabIndex = 7;
             this.valClasse.Text = "-";
             // 
@@ -227,9 +240,10 @@
             // 
             this.valPrenom.AutoSize = true;
             this.valPrenom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPrenom.Location = new System.Drawing.Point(94, 47);
+            this.valPrenom.Location = new System.Drawing.Point(125, 58);
+            this.valPrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valPrenom.Name = "valPrenom";
-            this.valPrenom.Size = new System.Drawing.Size(11, 13);
+            this.valPrenom.Size = new System.Drawing.Size(15, 19);
             this.valPrenom.TabIndex = 6;
             this.valPrenom.Text = "-";
             // 
@@ -237,9 +251,10 @@
             // 
             this.valNom.AutoSize = true;
             this.valNom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valNom.Location = new System.Drawing.Point(94, 19);
+            this.valNom.Location = new System.Drawing.Point(125, 23);
+            this.valNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valNom.Name = "valNom";
-            this.valNom.Size = new System.Drawing.Size(11, 13);
+            this.valNom.Size = new System.Drawing.Size(15, 19);
             this.valNom.TabIndex = 5;
             this.valNom.Text = "-";
             // 
@@ -247,9 +262,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 77);
+            this.label3.Location = new System.Drawing.Point(20, 95);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(54, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Classe :";
             // 
@@ -257,9 +273,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 47);
+            this.label2.Location = new System.Drawing.Point(20, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(64, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "Prénom :";
             // 
@@ -267,19 +284,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 19);
+            this.label1.Location = new System.Drawing.Point(20, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(46, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nom :";
             // 
             // buttonTransfert
             // 
-            this.buttonTransfert.Font = new System.Drawing.Font("Adobe Caslon Pro Bold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTransfert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTransfert.ForeColor = System.Drawing.Color.Blue;
-            this.buttonTransfert.Location = new System.Drawing.Point(260, 275);
+            this.buttonTransfert.Location = new System.Drawing.Point(347, 338);
+            this.buttonTransfert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonTransfert.Name = "buttonTransfert";
-            this.buttonTransfert.Size = new System.Drawing.Size(31, 23);
+            this.buttonTransfert.Size = new System.Drawing.Size(41, 28);
             this.buttonTransfert.TabIndex = 3;
             this.buttonTransfert.Text = ">>";
             this.buttonTransfert.UseVisualStyleBackColor = true;
@@ -289,42 +308,45 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(312, 174);
+            this.label4.Location = new System.Drawing.Point(416, 214);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 13);
+            this.label4.Size = new System.Drawing.Size(144, 19);
             this.label4.TabIndex = 5;
             this.label4.Text = "Matériels à réserver";
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dataGridListeUser);
-            this.panel1.Location = new System.Drawing.Point(295, 179);
+            this.panel1.Controls.Add(this.dataGridListeItem);
+            this.panel1.Location = new System.Drawing.Point(393, 220);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(276, 201);
+            this.panel1.Size = new System.Drawing.Size(367, 247);
             this.panel1.TabIndex = 4;
             // 
-            // dataGridListeUser
+            // dataGridListeItem
             // 
-            this.dataGridListeUser.AllowUserToAddRows = false;
-            this.dataGridListeUser.AllowUserToDeleteRows = false;
+            this.dataGridListeItem.AllowUserToAddRows = false;
+            this.dataGridListeItem.AllowUserToDeleteRows = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridListeUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridListeUser.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridListeUser.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridListeUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridListeUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridListeUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridListeItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridListeItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridListeItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridListeItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridListeItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridListeItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dataGridListeUser.Location = new System.Drawing.Point(-1, 18);
-            this.dataGridListeUser.Name = "dataGridListeUser";
-            this.dataGridListeUser.ReadOnly = true;
-            this.dataGridListeUser.RowHeadersVisible = false;
-            this.dataGridListeUser.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridListeUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridListeUser.Size = new System.Drawing.Size(276, 182);
-            this.dataGridListeUser.TabIndex = 5;
+            this.dataGridListeItem.Location = new System.Drawing.Point(-1, 22);
+            this.dataGridListeItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridListeItem.Name = "dataGridListeItem";
+            this.dataGridListeItem.ReadOnly = true;
+            this.dataGridListeItem.RowHeadersVisible = false;
+            this.dataGridListeItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridListeItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridListeItem.Size = new System.Drawing.Size(368, 224);
+            this.dataGridListeItem.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -344,9 +366,10 @@
             this.radioButtonReserver.AutoSize = true;
             this.radioButtonReserver.Checked = true;
             this.radioButtonReserver.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonReserver.Location = new System.Drawing.Point(327, 146);
+            this.radioButtonReserver.Location = new System.Drawing.Point(436, 180);
+            this.radioButtonReserver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonReserver.Name = "radioButtonReserver";
-            this.radioButtonReserver.Size = new System.Drawing.Size(68, 17);
+            this.radioButtonReserver.Size = new System.Drawing.Size(82, 23);
             this.radioButtonReserver.TabIndex = 6;
             this.radioButtonReserver.TabStop = true;
             this.radioButtonReserver.Text = "Réserver";
@@ -356,18 +379,20 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(432, 146);
+            this.radioButton2.Location = new System.Drawing.Point(576, 180);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 17);
+            this.radioButton2.Size = new System.Drawing.Size(95, 23);
             this.radioButton2.TabIndex = 7;
             this.radioButton2.Text = "Emprunter";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // buttonEnlever
             // 
-            this.buttonEnlever.Location = new System.Drawing.Point(295, 386);
+            this.buttonEnlever.Location = new System.Drawing.Point(393, 475);
+            this.buttonEnlever.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEnlever.Name = "buttonEnlever";
-            this.buttonEnlever.Size = new System.Drawing.Size(75, 23);
+            this.buttonEnlever.Size = new System.Drawing.Size(100, 28);
             this.buttonEnlever.TabIndex = 8;
             this.buttonEnlever.Text = "Enlever";
             this.buttonEnlever.UseVisualStyleBackColor = true;
@@ -377,9 +402,10 @@
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(429, 391);
+            this.labelTotal.Location = new System.Drawing.Point(572, 481);
+            this.labelTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(37, 13);
+            this.labelTotal.Size = new System.Drawing.Size(46, 19);
             this.labelTotal.TabIndex = 9;
             this.labelTotal.Text = "Total :";
             // 
@@ -388,9 +414,10 @@
             this.valTotal.AutoSize = true;
             this.valTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valTotal.ForeColor = System.Drawing.Color.Blue;
-            this.valTotal.Location = new System.Drawing.Point(491, 390);
+            this.valTotal.Location = new System.Drawing.Point(655, 480);
+            this.valTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valTotal.Name = "valTotal";
-            this.valTotal.Size = new System.Drawing.Size(13, 17);
+            this.valTotal.Size = new System.Drawing.Size(17, 23);
             this.valTotal.TabIndex = 10;
             this.valTotal.Text = "-";
             // 
@@ -398,9 +425,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(318, 425);
+            this.label7.Location = new System.Drawing.Point(424, 523);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 13);
+            this.label7.Size = new System.Drawing.Size(176, 19);
             this.label7.TabIndex = 11;
             this.label7.Text = "Crédits restants utilisateur :";
             // 
@@ -409,9 +437,10 @@
             this.valCreditsRestants.AutoSize = true;
             this.valCreditsRestants.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valCreditsRestants.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.valCreditsRestants.Location = new System.Drawing.Point(491, 422);
+            this.valCreditsRestants.Location = new System.Drawing.Point(655, 519);
+            this.valCreditsRestants.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.valCreditsRestants.Name = "valCreditsRestants";
-            this.valCreditsRestants.Size = new System.Drawing.Size(13, 17);
+            this.valCreditsRestants.Size = new System.Drawing.Size(17, 23);
             this.valCreditsRestants.TabIndex = 12;
             this.valCreditsRestants.Text = "-";
             // 
@@ -420,9 +449,10 @@
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(438, 462);
+            this.buttonCancel.Location = new System.Drawing.Point(584, 569);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(84, 27);
+            this.buttonCancel.Size = new System.Drawing.Size(112, 33);
             this.buttonCancel.TabIndex = 14;
             this.buttonCancel.Text = "Annuler";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -433,19 +463,21 @@
             this.buttonValider.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValider.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValider.Location = new System.Drawing.Point(333, 462);
+            this.buttonValider.Location = new System.Drawing.Point(444, 569);
+            this.buttonValider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonValider.Name = "buttonValider";
-            this.buttonValider.Size = new System.Drawing.Size(84, 27);
+            this.buttonValider.Size = new System.Drawing.Size(112, 33);
             this.buttonValider.TabIndex = 13;
             this.buttonValider.Text = "Valider";
             this.buttonValider.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
             // WindowReservationUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 497);
+            this.ClientSize = new System.Drawing.Size(793, 612);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.valCreditsRestants);
@@ -461,6 +493,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelItemDispo);
             this.Controls.Add(this.panelListItemDispo);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowReservationUser";
@@ -472,7 +505,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridListeUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridListeItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,7 +535,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridListeUser;
+        private System.Windows.Forms.DataGridView dataGridListeItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.RadioButton radioButtonReserver;

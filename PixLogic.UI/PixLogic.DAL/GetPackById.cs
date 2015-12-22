@@ -19,12 +19,14 @@ namespace PixLogic.DAL
             IQueryable<Pack> itemQuery = from Pack in context.Packs
                                          where Pack.ReservableId == id
                                          select Pack;
-            List<Pack> list = new List<Pack>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return itemQuery.First();
+        }
+        public int getLastPackId()
+        {
+            IQueryable<int> query = from Reservable in context.Reservables
+                                    orderby Reservable.ReservableId descending
+                                    select Reservable.ReservableId;
+            return query.First();
         }
     }
 }

@@ -71,6 +71,14 @@ namespace PixLogic.DAL
         {
             return container.get("get_pack_by_id").getPackById(itemId);
         }
+        public int GetLastPackId()
+        {
+            return container.get("get_pack_by_id").getLastPackId();
+        }
+        public bool IsPack(Reservable res)
+        {
+            return container.get("is_pack").isPack(res);
+        }
         public Pack GetPackByName(string packName)
         {
             return container.get("get_pack_by_name").getPackByName(packName);
