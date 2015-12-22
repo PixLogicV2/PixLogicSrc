@@ -348,7 +348,7 @@
             // 
             this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
             this.pictureReserver.Image = ((System.Drawing.Image)(resources.GetObject("pictureReserver.Image")));
-            this.pictureReserver.Location = new System.Drawing.Point(468, 316);
+            this.pictureReserver.Location = new System.Drawing.Point(468, 307);
             this.pictureReserver.Name = "pictureReserver";
             this.pictureReserver.Size = new System.Drawing.Size(23, 23);
             this.pictureReserver.TabIndex = 53;
@@ -442,7 +442,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.pictureReserver);
             this.Controls.Add(this.pictureImporter);
             this.Controls.Add(this.pictureExport);
             this.Controls.Add(this.labelNews);
@@ -455,7 +454,8 @@
             this.Controls.Add(this.panNews);
             this.Controls.Add(this.valUserName);
             this.Controls.Add(this.panTableUsers);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.pictureReserver);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "panUsers";
             this.Size = new System.Drawing.Size(688, 452);
             this.panTableUsers.ResumeLayout(false);
