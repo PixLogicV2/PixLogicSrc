@@ -118,7 +118,7 @@ namespace PixLogic
         private void buttonValider_Click(object sender, EventArgs e)
         {
             int last = database.GetLastPackId();
-            database.AddPack("Eph."+Convert.ToString(last+1), "reservation de " + valNom.Text,false,0,true);
+            database.AddPack("[Eph]. Pack "+Convert.ToString(last+1), "reservation de " + valNom.Text,false,0,true);
             Pack pack = database.GetPackById(last + 1);
             for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
             {

@@ -280,5 +280,16 @@ namespace PixLogic
             
             
         }
+
+        private void dataGridReservations_DoubleClick(object sender, EventArgs e)
+        {
+            if(dataGridReservations.RowCount > 0)
+            {
+                int idReservation = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
+                WindowMail wMail = new WindowMail(idReservation);
+                wMail.ShowDialog();
+            }
+            
+        }
     }
 }

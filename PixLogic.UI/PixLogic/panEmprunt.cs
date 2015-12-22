@@ -247,9 +247,12 @@ namespace PixLogic
 
         private void dataGridEmprunts_DoubleClick(object sender, EventArgs e)
         {
-            int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
-            WindowMail wMail = new WindowMail(idReservation);
-            wMail.ShowDialog();
+            if (dataGridEmprunts.RowCount > 0)
+            {
+                int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
+                WindowMail wMail = new WindowMail(idReservation);
+                wMail.ShowDialog();
+            }
         }
 
        
@@ -271,6 +274,26 @@ namespace PixLogic
             ToolTip info = new ToolTip();
             info.SetToolTip(pictureExport, "Exporter la liste.");
             pictureExport.Cursor = Cursors.Hand;
+        }
+
+        private void dataGridEmprunts_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                DataGridViewCell cell = dataGridEmprunts[e.ColumnIndex, e.RowIndex];
+                int id = int.Parse(dataGridEmprunts.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Reservation reservation = database.GetReservationById(id);
+                string materiels = "Liste matériels du pack " + reservation.reservable.name + ":\n";
+                if (reservation.isPack)
+                {
+
+                    foreach (Item i in database.GetItemsInPack(reservation.reservable.ReservableId))
+                    {
+                        materiels += ("\t- " + i.name + "\n");
+                    }
+                }
+                cell.ToolTipText = materiels;
+            }
         }
     }
 }

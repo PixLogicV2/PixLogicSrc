@@ -517,6 +517,7 @@
             this.dataGridEmprunts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridEmprunts.Size = new System.Drawing.Size(412, 234);
             this.dataGridEmprunts.TabIndex = 0;
+            this.dataGridEmprunts.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEmprunts_CellMouseEnter);
             this.dataGridEmprunts.Click += new System.EventHandler(this.dataGridEmprunts_Click);
             this.dataGridEmprunts.DoubleClick += new System.EventHandler(this.dataGridEmprunts_DoubleClick);
             this.dataGridEmprunts.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridEmprunts_KeyUp_1);

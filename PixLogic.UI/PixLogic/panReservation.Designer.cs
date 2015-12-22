@@ -187,6 +187,7 @@
             this.dataGridReservations.TabIndex = 0;
             this.dataGridReservations.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridReservations_CellMouseEnter);
             this.dataGridReservations.Click += new System.EventHandler(this.dataGridReservations_Click);
+            this.dataGridReservations.DoubleClick += new System.EventHandler(this.dataGridReservations_DoubleClick);
             this.dataGridReservations.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridReservations_KeyUp);
             // 
             // IdReservation
