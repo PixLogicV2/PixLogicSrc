@@ -18,5 +18,6 @@ namespace PixLogic.DAL
         public string name { get; set; }
         public int price { get; set; }
         public bool isPack { get; set; }
+        public bool temp { get; set; }
     }
 }

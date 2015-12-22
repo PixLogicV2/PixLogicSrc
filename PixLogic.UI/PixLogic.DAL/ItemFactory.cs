@@ -18,6 +18,7 @@ namespace PixLogic.DAL
             item.reference = reference;
             item.quantity=quantity;
             item.isPack = false;
+            item.temp = false;
 
             return item;
         }
