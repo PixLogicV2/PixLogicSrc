@@ -564,7 +564,7 @@
             // 
             this.labelListEmprunt.AutoSize = true;
             this.labelListEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListEmprunt.Location = new System.Drawing.Point(27, 101);
+            this.labelListEmprunt.Location = new System.Drawing.Point(27, 100);
             this.labelListEmprunt.Name = "labelListEmprunt";
             this.labelListEmprunt.Size = new System.Drawing.Size(61, 13);
             this.labelListEmprunt.TabIndex = 63;

@@ -75,15 +75,23 @@ namespace PixLogic
         {
             if(dataGridItem.RowCount > 0)
             {
-                string libelle = dataGridItem.CurrentRow.Cells[0].Value.ToString();
-                string prix = dataGridItem.CurrentRow.Cells[1].Value.ToString();
-                if (!materiels.Contains(libelle))
+                int selectedRowCount = dataGridItem.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                if (selectedRowCount > 0)
                 {
-                    materiels.Add(libelle);
-                    dataGridListeItem.Rows.Add(libelle, prix);
+                    List<string> items = new List<string>();
+                    for (int i = 0; i < selectedRowCount; i++)
+                    {
+                        string libelle = dataGridItem.SelectedRows[i].Cells[0].Value.ToString();
+                        string prix = dataGridItem.SelectedRows[i].Cells[1].Value.ToString();
+                        if (!materiels.Contains(libelle))
+                        {
+                            materiels.Add(libelle);
+                            dataGridListeItem.Rows.Add(libelle, prix);
+                        }
+                    }
+                    
                 }
                 calcul();
-
             }
             else
             {
@@ -95,9 +103,21 @@ namespace PixLogic
         {
             if(dataGridListeItem.RowCount > 0)
             {
-                string libelle = dataGridListeItem.CurrentRow.Cells[0].Value.ToString();
+                int selectedRowCount = dataGridListeItem.Rows.GetRowCount(DataGridViewElementStates.Selected);
+                if (selectedRowCount > 0)
+                {
+                    for (int i = 0; i < selectedRowCount; i++)
+                    {
+                        string libelle = dataGridListeItem.SelectedRows[i].Cells[0].Value.ToString();
+                        dataGridListeItem.Rows[dataGridListeItem.SelectedRows[i].Index].Selected = true;
+                        dataGridListeItem.Rows.Remove(dataGridListeItem.CurrentRow);
+                        materiels.Remove(libelle);
+                    }
+
+                }
+               /* string libelle = dataGridListeItem.CurrentRow.Cells[0].Value.ToString();
                 dataGridListeItem.Rows.Remove(dataGridListeItem.CurrentRow);
-                materiels.Remove(libelle);
+                materiels.Remove(libelle);*/
                 calcul();
             }
             else
