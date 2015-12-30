@@ -19,12 +19,7 @@ namespace PixLogic.DAL
             IQueryable<Item> itemQuery = from Item in context.Items
                                          where Item.ReservableId == id
                                          select Item;
-            List<Item> list = new List<Item>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return itemQuery.First();
         }
     }
 }

@@ -22,12 +22,7 @@ namespace PixLogic.DAL
                                                   where Reservation.beginDateEmprunt ==null
                                                   where Reservation.endDateReservation>=DateTime.Today
                                                   select Reservation;
-            List<Reservation> list = new List<Reservation>();
-            foreach (var prod in reservQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return reservQuery.ToList();
         }
         public List<Reservation> getAllReservationsByString(string search)
         {

@@ -22,12 +22,7 @@ namespace PixLogic.DAL
                                                   where Reservation.reservable.ReservableId == id
                                                   orderby(Reservation.beginDateReservation)
                                                   select Reservation;
-            List<Reservation> list = new List<Reservation>();
-            foreach (var prod in reservQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return reservQuery.ToList();
         }
     }
 }

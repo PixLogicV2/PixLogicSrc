@@ -18,12 +18,7 @@ namespace PixLogic.DAL
         {
             IQueryable<Pack> itemQuery = from Pack in context.Packs
                                          select Pack;
-            List<Pack> list = new List<Pack>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
+            return itemQuery.ToList();
 
         }
         public List<Pack> getAllPacksByString(string search)

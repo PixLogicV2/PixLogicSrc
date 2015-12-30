@@ -19,12 +19,7 @@ namespace PixLogic.DAL
             IQueryable<Pack> itemQuery = from Pack in context.Packs
                                          where Pack.name == packName
                                          select Pack;
-            List<Pack> list = new List<Pack>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return itemQuery.First();
         }
     }
 }

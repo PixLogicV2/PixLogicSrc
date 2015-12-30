@@ -19,12 +19,7 @@ namespace PixLogic.DAL
             IQueryable<MailConfig> userQuery =  from MailConfig 
                                                 in context.MailConfigs
                                                 select MailConfig;
-            List<MailConfig> list = new List<MailConfig>();
-            foreach (var prod in userQuery)
-            {
-                list.Add(prod);
-            }
-            return list.First();
+            return userQuery.First();
         }
     }
 }
