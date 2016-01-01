@@ -65,6 +65,24 @@ namespace PixLogic
             }
         }
 
+        private void setTableListItems(Dictionary<string, int> entrees)
+        {
+            dataGridListeItem.Rows.Clear();
+
+            foreach (KeyValuePair<string, int> e in entrees)
+            {
+                dataGridListeItem.Rows.Add(e.Key, e.Value);
+            }
+
+            if (dataGridListeItem.RowCount > 0)
+            {
+                dataGridListeItem.FirstDisplayedScrollingRowIndex = 0;
+                dataGridListeItem.Refresh();
+                dataGridListeItem.CurrentCell = dataGridListeItem.Rows[0].Cells[0];
+                dataGridListeItem.Rows[0].Selected = true;
+            }
+        }
+
         private void buttonOk_MouseEnter(object sender, EventArgs e)
         {
             ToolTip info = new ToolTip();
@@ -79,7 +97,7 @@ namespace PixLogic
                 if (selectedRowCount > 0)
                 {
                     List<string> items = new List<string>();
-                    for (int i = 0; i < selectedRowCount; i++)
+                    for (int i = selectedRowCount - 1; i >= 0; i--)
                     {
                         string libelle = dataGridItem.SelectedRows[i].Cells[0].Value.ToString();
                         string prix = dataGridItem.SelectedRows[i].Cells[1].Value.ToString();
@@ -103,21 +121,22 @@ namespace PixLogic
         {
             if(dataGridListeItem.RowCount > 0)
             {
-                int selectedRowCount = dataGridListeItem.Rows.GetRowCount(DataGridViewElementStates.Selected);
-                if (selectedRowCount > 0)
+                Dictionary<string, int> entrees = new Dictionary<string, int>();
+                foreach (DataGridViewRow r in dataGridListeItem.Rows)
                 {
-                    for (int i = 0; i < selectedRowCount; i++)
+                    string libelle = r.Cells[0].Value.ToString();
+                    int credits = int.Parse(r.Cells[1].Value.ToString());
+                    if (r.Selected)
                     {
-                        string libelle = dataGridListeItem.SelectedRows[i].Cells[0].Value.ToString();
-                        dataGridListeItem.Rows[dataGridListeItem.SelectedRows[i].Index].Selected = true;
-                        dataGridListeItem.Rows.Remove(dataGridListeItem.CurrentRow);
                         materiels.Remove(libelle);
                     }
-
+                    else
+                    {
+                        entrees.Add(libelle, credits);
+                    }
                 }
-               /* string libelle = dataGridListeItem.CurrentRow.Cells[0].Value.ToString();
-                dataGridListeItem.Rows.Remove(dataGridListeItem.CurrentRow);
-                materiels.Remove(libelle);*/
+                setTableListItems(entrees);
+
                 calcul();
             }
             else
