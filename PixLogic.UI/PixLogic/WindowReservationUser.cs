@@ -42,6 +42,7 @@ namespace PixLogic
             foreach(Item i in list)
             {
                 if (i.categorie.level > (database.GetUserById(idUser).userClass.level)) list.Remove(i);
+                if (i.dispo == false)list.Remove(i);
             }
             setTableItem(list);
             dataGridListeItem.Rows.Clear();

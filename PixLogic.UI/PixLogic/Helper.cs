@@ -121,6 +121,23 @@ namespace PixLogic
             return result;
         }
 
+        public static bool getDispoReservable(int idElement,bool isPack)
+        {
+            if (isPack == false)
+            {
+                Item elem;
+                elem = database.GetItemById(idElement);
+                if(elem.dispo==false)MessageBox.Show("matériel indisponible", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return elem.dispo;
+            }
+            else
+            {
+                Pack p;
+                p = database.GetPackById(idElement);
+                if (p.dispo == false) MessageBox.Show("pack indisponible", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return p.dispo;
+            }
+        }
         public static bool confirmationRemise(int idReservation)
         {
             bool result = false;
