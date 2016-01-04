@@ -57,6 +57,8 @@
             this.buttonAjouterClasse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.labelCreditClasse = new System.Windows.Forms.Label();
+            this.valCreditClasse = new System.Windows.Forms.Label();
             this.labelAccessLevelClasse = new System.Windows.Forms.Label();
             this.valNiveauAccesClasse = new System.Windows.Forms.Label();
             this.labelLibel = new System.Windows.Forms.Label();
@@ -67,6 +69,10 @@
             this.textBoxSearchClasse = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridUserClass = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AccessLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panEmail = new System.Windows.Forms.TabPage();
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
@@ -83,12 +89,29 @@
             this.valServeur = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelServer = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AccessLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelCreditClasse = new System.Windows.Forms.Label();
-            this.valCreditClasse = new System.Windows.Forms.Label();
+            this.manager = new System.Windows.Forms.TabPage();
+            this.labelListManager = new System.Windows.Forms.Label();
+            this.panelManager = new System.Windows.Forms.Panel();
+            this.buttonCancelManager = new System.Windows.Forms.Button();
+            this.textBoxSearchManager = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.valPrenomManager = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.valTelManager = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.valNomManager = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.valPseudoManager = new System.Windows.Forms.Label();
+            this.buttonSuppManager = new System.Windows.Forms.Button();
+            this.buttonModifierManager = new System.Windows.Forms.Button();
+            this.buttonAjouterManager = new System.Windows.Forms.Button();
             this.tabControlSettings.SuspendLayout();
             this.panCategorie.SuspendLayout();
             this.panNews.SuspendLayout();
@@ -101,6 +124,10 @@
             this.panEmail.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.manager.SuspendLayout();
+            this.panelManager.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlSettings
@@ -108,6 +135,7 @@
             this.tabControlSettings.Controls.Add(this.panCategorie);
             this.tabControlSettings.Controls.Add(this.classe);
             this.tabControlSettings.Controls.Add(this.panEmail);
+            this.tabControlSettings.Controls.Add(this.manager);
             this.tabControlSettings.Location = new System.Drawing.Point(12, 12);
             this.tabControlSettings.Name = "tabControlSettings";
             this.tabControlSettings.SelectedIndex = 0;
@@ -435,6 +463,27 @@
             this.panel3.Size = new System.Drawing.Size(301, 103);
             this.panel3.TabIndex = 49;
             // 
+            // labelCreditClasse
+            // 
+            this.labelCreditClasse.AutoSize = true;
+            this.labelCreditClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreditClasse.Location = new System.Drawing.Point(6, 49);
+            this.labelCreditClasse.Name = "labelCreditClasse";
+            this.labelCreditClasse.Size = new System.Drawing.Size(44, 13);
+            this.labelCreditClasse.TabIndex = 44;
+            this.labelCreditClasse.Text = "Crédit :";
+            // 
+            // valCreditClasse
+            // 
+            this.valCreditClasse.AutoSize = true;
+            this.valCreditClasse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valCreditClasse.Location = new System.Drawing.Point(116, 47);
+            this.valCreditClasse.Name = "valCreditClasse";
+            this.valCreditClasse.Size = new System.Drawing.Size(13, 17);
+            this.valCreditClasse.TabIndex = 45;
+            this.valCreditClasse.Text = "-";
+            this.valCreditClasse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // labelAccessLevelClasse
             // 
             this.labelAccessLevelClasse.AutoSize = true;
@@ -548,6 +597,34 @@
             this.dataGridUserClass.TabIndex = 0;
             this.dataGridUserClass.Click += new System.EventHandler(this.dataGridUserClass_Click);
             this.dataGridUserClass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridUserClass_KeyUp);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Libellé";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Crédits";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 50;
+            // 
+            // AccessLevel
+            // 
+            this.AccessLevel.HeaderText = "Niv. d\'accès";
+            this.AccessLevel.Name = "AccessLevel";
+            this.AccessLevel.ReadOnly = true;
+            this.AccessLevel.Width = 90;
             // 
             // panEmail
             // 
@@ -714,54 +791,257 @@
             this.labelServer.TabIndex = 0;
             this.labelServer.Text = "Serveur SMTP :";
             // 
-            // dataGridViewTextBoxColumn1
+            // manager
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 30;
+            this.manager.BackColor = System.Drawing.SystemColors.Control;
+            this.manager.Controls.Add(this.buttonSuppManager);
+            this.manager.Controls.Add(this.buttonModifierManager);
+            this.manager.Controls.Add(this.buttonAjouterManager);
+            this.manager.Controls.Add(this.label4);
+            this.manager.Controls.Add(this.panel5);
+            this.manager.Controls.Add(this.labelListManager);
+            this.manager.Controls.Add(this.panelManager);
+            this.manager.Location = new System.Drawing.Point(4, 22);
+            this.manager.Name = "manager";
+            this.manager.Size = new System.Drawing.Size(566, 325);
+            this.manager.TabIndex = 3;
+            this.manager.Text = "Manager";
             // 
-            // dataGridViewTextBoxColumn2
+            // labelListManager
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Libellé";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 74;
+            this.labelListManager.AutoSize = true;
+            this.labelListManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListManager.Location = new System.Drawing.Point(23, 8);
+            this.labelListManager.Name = "labelListManager";
+            this.labelListManager.Size = new System.Drawing.Size(106, 13);
+            this.labelListManager.TabIndex = 50;
+            this.labelListManager.Text = "Liste des managers";
             // 
-            // dataGridViewTextBoxColumn3
+            // panelManager
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Crédits";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 50;
+            this.panelManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelManager.Controls.Add(this.buttonCancelManager);
+            this.panelManager.Controls.Add(this.textBoxSearchManager);
+            this.panelManager.Controls.Add(this.label5);
+            this.panelManager.Controls.Add(this.dataGridView1);
+            this.panelManager.Location = new System.Drawing.Point(6, 12);
+            this.panelManager.Name = "panelManager";
+            this.panelManager.Size = new System.Drawing.Size(247, 305);
+            this.panelManager.TabIndex = 49;
             // 
-            // AccessLevel
+            // buttonCancelManager
             // 
-            this.AccessLevel.HeaderText = "Niv. d\'accès";
-            this.AccessLevel.Name = "AccessLevel";
-            this.AccessLevel.ReadOnly = true;
-            this.AccessLevel.Width = 90;
+            this.buttonCancelManager.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelManager.Location = new System.Drawing.Point(177, 16);
+            this.buttonCancelManager.Name = "buttonCancelManager";
+            this.buttonCancelManager.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelManager.TabIndex = 6;
+            this.buttonCancelManager.UseVisualStyleBackColor = true;
             // 
-            // labelCreditClasse
+            // textBoxSearchManager
             // 
-            this.labelCreditClasse.AutoSize = true;
-            this.labelCreditClasse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreditClasse.Location = new System.Drawing.Point(6, 49);
-            this.labelCreditClasse.Name = "labelCreditClasse";
-            this.labelCreditClasse.Size = new System.Drawing.Size(44, 13);
-            this.labelCreditClasse.TabIndex = 44;
-            this.labelCreditClasse.Text = "Crédit :";
+            this.textBoxSearchManager.Location = new System.Drawing.Point(77, 17);
+            this.textBoxSearchManager.Name = "textBoxSearchManager";
+            this.textBoxSearchManager.Size = new System.Drawing.Size(96, 20);
+            this.textBoxSearchManager.TabIndex = 5;
             // 
-            // valCreditClasse
+            // label5
             // 
-            this.valCreditClasse.AutoSize = true;
-            this.valCreditClasse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valCreditClasse.Location = new System.Drawing.Point(116, 47);
-            this.valCreditClasse.Name = "valCreditClasse";
-            this.valCreditClasse.Size = new System.Drawing.Size(13, 17);
-            this.valCreditClasse.TabIndex = 45;
-            this.valCreditClasse.Text = "-";
-            this.valCreditClasse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Recherche :";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.name,
+            this.prenom});
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 49);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(247, 255);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 30;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Nom";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // prenom
+            // 
+            this.prenom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.prenom.HeaderText = "Prénom";
+            this.prenom.Name = "prenom";
+            this.prenom.ReadOnly = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(292, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Infos";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.valPseudoManager);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.valPrenomManager);
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.valTelManager);
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.valNomManager);
+            this.panel5.Location = new System.Drawing.Point(260, 12);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(301, 132);
+            this.panel5.TabIndex = 51;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Prénom :";
+            // 
+            // valPrenomManager
+            // 
+            this.valPrenomManager.AutoSize = true;
+            this.valPrenomManager.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valPrenomManager.Location = new System.Drawing.Point(116, 71);
+            this.valPrenomManager.Name = "valPrenomManager";
+            this.valPrenomManager.Size = new System.Drawing.Size(13, 17);
+            this.valPrenomManager.TabIndex = 45;
+            this.valPrenomManager.Text = "-";
+            this.valPrenomManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 101);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 13);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "Tel :";
+            // 
+            // valTelManager
+            // 
+            this.valTelManager.AutoSize = true;
+            this.valTelManager.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valTelManager.Location = new System.Drawing.Point(116, 99);
+            this.valTelManager.Name = "valTelManager";
+            this.valTelManager.Size = new System.Drawing.Size(13, 17);
+            this.valTelManager.TabIndex = 43;
+            this.valTelManager.Text = "-";
+            this.valTelManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 43);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Nom :";
+            // 
+            // valNomManager
+            // 
+            this.valNomManager.AutoSize = true;
+            this.valNomManager.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valNomManager.Location = new System.Drawing.Point(116, 41);
+            this.valNomManager.Name = "valNomManager";
+            this.valNomManager.Size = new System.Drawing.Size(13, 17);
+            this.valNomManager.TabIndex = 39;
+            this.valNomManager.Text = "-";
+            this.valNomManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "Pseudo :";
+            // 
+            // valPseudoManager
+            // 
+            this.valPseudoManager.AutoSize = true;
+            this.valPseudoManager.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valPseudoManager.Location = new System.Drawing.Point(116, 13);
+            this.valPseudoManager.Name = "valPseudoManager";
+            this.valPseudoManager.Size = new System.Drawing.Size(13, 17);
+            this.valPseudoManager.TabIndex = 47;
+            this.valPseudoManager.Text = "-";
+            this.valPseudoManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonSuppManager
+            // 
+            this.buttonSuppManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSuppManager.Image = global::PixLogic.Properties.Resources.supprimer_icon;
+            this.buttonSuppManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSuppManager.Location = new System.Drawing.Point(450, 288);
+            this.buttonSuppManager.Name = "buttonSuppManager";
+            this.buttonSuppManager.Size = new System.Drawing.Size(93, 29);
+            this.buttonSuppManager.TabIndex = 56;
+            this.buttonSuppManager.Text = "Supprimer";
+            this.buttonSuppManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSuppManager.UseVisualStyleBackColor = true;
+            // 
+            // buttonModifierManager
+            // 
+            this.buttonModifierManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModifierManager.Image = global::PixLogic.Properties.Resources.modifier_icon;
+            this.buttonModifierManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModifierManager.Location = new System.Drawing.Point(364, 288);
+            this.buttonModifierManager.Name = "buttonModifierManager";
+            this.buttonModifierManager.Size = new System.Drawing.Size(78, 29);
+            this.buttonModifierManager.TabIndex = 55;
+            this.buttonModifierManager.Text = "Modifier";
+            this.buttonModifierManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonModifierManager.UseVisualStyleBackColor = true;
+            // 
+            // buttonAjouterManager
+            // 
+            this.buttonAjouterManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterManager.Image = global::PixLogic.Properties.Resources.ajouter_icon;
+            this.buttonAjouterManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjouterManager.Location = new System.Drawing.Point(280, 288);
+            this.buttonAjouterManager.Name = "buttonAjouterManager";
+            this.buttonAjouterManager.Size = new System.Drawing.Size(78, 29);
+            this.buttonAjouterManager.TabIndex = 54;
+            this.buttonAjouterManager.Text = "Ajouter";
+            this.buttonAjouterManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAjouterManager.UseVisualStyleBackColor = true;
             // 
             // WindowSettings
             // 
@@ -796,6 +1076,13 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.manager.ResumeLayout(false);
+            this.manager.PerformLayout();
+            this.panelManager.ResumeLayout(false);
+            this.panelManager.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -862,5 +1149,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn AccessLevel;
+        private System.Windows.Forms.TabPage manager;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.Label valPseudoManager;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label valPrenomManager;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label valTelManager;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label valNomManager;
+        private System.Windows.Forms.Label labelListManager;
+        private System.Windows.Forms.Panel panelManager;
+        private System.Windows.Forms.Button buttonCancelManager;
+        private System.Windows.Forms.TextBox textBoxSearchManager;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
+        private System.Windows.Forms.Button buttonSuppManager;
+        private System.Windows.Forms.Button buttonModifierManager;
+        private System.Windows.Forms.Button buttonAjouterManager;
     }
 }
