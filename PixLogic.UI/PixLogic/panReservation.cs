@@ -261,8 +261,9 @@ namespace PixLogic
                     {
                         materiels += ("\t- " + i.name + "\n");
                     }
+                    cell.ToolTipText = materiels;
                 }
-                cell.ToolTipText = materiels;
+                
             }
             
             

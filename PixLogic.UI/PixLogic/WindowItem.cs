@@ -106,12 +106,13 @@ namespace PixLogic
             string reference = "";
             string nameCategorie = comboBoxCategorie.SelectedItem.ToString();
             string option = add ? Helper.ADD : Helper.SET;
-            Categorie categorie = database.GetCategorieByName(nameCategorie);
+            
 
             if (!Helper.fieldsAreEmpty(true, name, price, quantity, nameCategorie)
                 && Helper.AreNumbers(true, price, quantity)
                 && Helper.confirmation(option))
             {
+                Categorie categorie = database.GetCategorieByName(nameCategorie);
                 int nPrice;
                 int nQuantity;
                 int.TryParse(price, out nPrice);

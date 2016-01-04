@@ -328,7 +328,7 @@ namespace PixLogic
         private void pictureReserver_MouseEnter(object sender, EventArgs e)
         {
             ToolTip info = new ToolTip();
-            info.SetToolTip(pictureReserver, "Réserver ce matériel.");
+            info.SetToolTip(pictureReserver, "Créer réservation/emprunt.");
             pictureReserver.Cursor = Cursors.Hand;
         }
 

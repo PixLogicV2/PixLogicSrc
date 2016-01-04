@@ -85,13 +85,11 @@ namespace PixLogic
             {
                 buttonModify.Enabled = true;
                 buttonDelete.Enabled = true;
-                pictureReserver.Enabled = true;
             }
             else
             {
                 buttonModify.Enabled = false;
                 buttonDelete.Enabled = false;
-                pictureReserver.Enabled = false;
             }
         }
 
@@ -163,9 +161,15 @@ namespace PixLogic
 
         private void pictureReserver_Click(object sender, EventArgs e)
         {
-            if (Helper.getDispoReservable(Convert.ToInt32(valPackId.Text), true)) { 
-            WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valPackId.Text), true);
-            windowRes.ShowDialog(this);
+            if(dataGridPack.Rows.Count == 0)
+            {
+                MessageBox.Show("Vous devez sélectionner un pack.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(Helper.getDispoReservable(Convert.ToInt32(valPackId.Text), true))
+            { 
+                WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valPackId.Text), true);
+                windowRes.ShowDialog(this);
             }
         }
         private void pictureReserver_MouseEnter(object sender, EventArgs e)

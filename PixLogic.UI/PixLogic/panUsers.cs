@@ -62,7 +62,7 @@ namespace PixLogic
                 valMail.Text = user.mail;
                 valTel.Text = user.phoneNumber;
                 valClass.Text = (user.userClass.name);
-                valUserCredits.Text = Convert.ToString(user.credits);
+                valUserCredits.Text = Convert.ToString(user.credits)+"/"+user.userClass.credits;
 
                 Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
@@ -170,7 +170,7 @@ namespace PixLogic
         private void pictureReserver_MouseEnter(object sender, EventArgs e)
         {
             ToolTip info = new ToolTip();
-            info.SetToolTip(pictureReserver, "Créer réservation/Emprunt.");
+            info.SetToolTip(pictureReserver, "Créer réservation/emprunt.");
             pictureReserver.Cursor = Cursors.Hand;
         }
 

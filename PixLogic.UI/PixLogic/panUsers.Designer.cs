@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panUsers));
             this.panTableUsers = new System.Windows.Forms.Panel();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
@@ -115,8 +115,8 @@
             // 
             this.dataGridUsers.AllowUserToAddRows = false;
             this.dataGridUsers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -228,10 +228,10 @@
             this.valUserCredits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.valUserCredits.AutoSize = true;
-            this.valUserCredits.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valUserCredits.Location = new System.Drawing.Point(202, 13);
+            this.valUserCredits.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valUserCredits.Location = new System.Drawing.Point(198, 18);
             this.valUserCredits.Name = "valUserCredits";
-            this.valUserCredits.Size = new System.Drawing.Size(13, 17);
+            this.valUserCredits.Size = new System.Drawing.Size(11, 13);
             this.valUserCredits.TabIndex = 41;
             this.valUserCredits.Text = "-";
             this.valUserCredits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,7 +266,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.valClass.AutoSize = true;
             this.valClass.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valClass.Location = new System.Drawing.Point(72, 92);
+            this.valClass.Location = new System.Drawing.Point(49, 92);
             this.valClass.Name = "valClass";
             this.valClass.Size = new System.Drawing.Size(13, 17);
             this.valClass.TabIndex = 5;
@@ -278,7 +278,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.valUserId.AutoSize = true;
             this.valUserId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valUserId.Location = new System.Drawing.Point(72, 14);
+            this.valUserId.Location = new System.Drawing.Point(49, 14);
             this.valUserId.Name = "valUserId";
             this.valUserId.Size = new System.Drawing.Size(13, 17);
             this.valUserId.TabIndex = 39;
@@ -291,7 +291,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.valTel.AutoSize = true;
             this.valTel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valTel.Location = new System.Drawing.Point(72, 66);
+            this.valTel.Location = new System.Drawing.Point(49, 66);
             this.valTel.Name = "valTel";
             this.valTel.Size = new System.Drawing.Size(13, 17);
             this.valTel.TabIndex = 4;
@@ -303,7 +303,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.valMail.AutoSize = true;
             this.valMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valMail.Location = new System.Drawing.Point(72, 41);
+            this.valMail.Location = new System.Drawing.Point(49, 41);
             this.valMail.Name = "valMail";
             this.valMail.Size = new System.Drawing.Size(13, 17);
             this.valMail.TabIndex = 3;

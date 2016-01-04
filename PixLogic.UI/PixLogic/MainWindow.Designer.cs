@@ -121,7 +121,7 @@
             this.panMenu.Controls.Add(this.boutonReservation);
             this.panMenu.Controls.Add(this.boutonMateriel);
             this.panMenu.Controls.Add(this.boutonUtilisateur);
-            this.panMenu.Location = new System.Drawing.Point(0, 61);
+            this.panMenu.Location = new System.Drawing.Point(0, 63);
             this.panMenu.Name = "panMenu";
             this.panMenu.Size = new System.Drawing.Size(140, 458);
             this.panMenu.TabIndex = 1;
@@ -282,9 +282,9 @@
             this.panelAllPan.Controls.Add(this.panEmprunt1);
             this.panelAllPan.Controls.Add(this.panReservation1);
             this.panelAllPan.Controls.Add(this.panItemPack1);
-            this.panelAllPan.Location = new System.Drawing.Point(137, 64);
+            this.panelAllPan.Location = new System.Drawing.Point(137, 63);
             this.panelAllPan.Name = "panelAllPan";
-            this.panelAllPan.Size = new System.Drawing.Size(690, 454);
+            this.panelAllPan.Size = new System.Drawing.Size(690, 455);
             this.panelAllPan.TabIndex = 3;
             // 
             // boutonEmprunt
@@ -380,13 +380,13 @@
             this.panUsers1.Location = new System.Drawing.Point(0, 2);
             this.panUsers1.Margin = new System.Windows.Forms.Padding(2);
             this.panUsers1.Name = "panUsers1";
-            this.panUsers1.Size = new System.Drawing.Size(688, 452);
+            this.panUsers1.Size = new System.Drawing.Size(688, 453);
             this.panUsers1.TabIndex = 7;
             // 
             // panLog1
             // 
             this.panLog1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panLog1.Location = new System.Drawing.Point(3, 2);
+            this.panLog1.Location = new System.Drawing.Point(2, 2);
             this.panLog1.Margin = new System.Windows.Forms.Padding(2);
             this.panLog1.Name = "panLog1";
             this.panLog1.Size = new System.Drawing.Size(687, 452);
@@ -438,6 +438,7 @@
             this.Controls.Add(this.panelAllPan);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.barreDeMenu;
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "CE3P Reservation";
             this.barreDeMenu.ResumeLayout(false);
