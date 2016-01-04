@@ -20,6 +20,14 @@ namespace PixLogic.DAL
             context.Managers.Add(manag);
             context.SaveChanges();
         }
+        public bool containPseudoManager(string pseudo)
+        {
+            IQueryable<Manager> itemQuery = from Manager in context.Managers
+                                         where Manager.pseudo == pseudo
+                                         select Manager;
+            if (itemQuery.Any()) return true;
+            return false;
+    }
         public void deleteManager(string managerName)
         {
             var item = (from s in context.Managers
@@ -29,7 +37,7 @@ namespace PixLogic.DAL
             context.Entry(item).State = System.Data.Entity.EntityState.Deleted;
             context.SaveChanges();
         }
-        public void updateManager(int id, string name, string mdp)
+        public void updateManager(int id, string name,string nickname, string mdp,int phone,string pseudo)
         {
             Manager user;
             user = context.Managers.Where(u => u.ManagerId == id).FirstOrDefault<Manager>();
@@ -38,6 +46,9 @@ namespace PixLogic.DAL
             {
                 user.name = name;
                 user.mdp = mdp;
+                user.nickname = nickname;
+                user.phone = phone;
+                user.pseudo = pseudo;
                 context.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }
