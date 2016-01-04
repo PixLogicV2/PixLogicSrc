@@ -135,9 +135,13 @@ namespace PixLogic.DAL
                 case "get_all_reservations_by_date_debut":
                     this.arrayContainer[serviceName] = new GetAllReservationsByDate();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
-                    break;
+                    break; 
                 case "get_reservable_by_id":
                     this.arrayContainer[serviceName] = new GetReservableById();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+                case "get_manager_by_id":
+                    this.arrayContainer[serviceName] = new GetManagerById();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
                 case "get_all_reservations_by_reservable_id":

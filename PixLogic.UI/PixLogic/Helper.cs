@@ -200,9 +200,31 @@ namespace PixLogic
         {
             if (database.ContainUserClass(name))
             {
-                if (withMessageBox)
-                    MessageBox.Show("Le nom de la classe renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (withMessageBox) MessageBox.Show("Le pseudo choisi existe déjà, veuillez renseigner un autre.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Le nom de la classe renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
+            }
+            return false;
+
+        }
+        public static bool ManagerExist(bool withMessageBox, string pseudo)
+        {
+            if (database.ContainPseudoManager(pseudo))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("Le pseudo choisi existe déjà, veuillez renseigner un autre.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+
+        }
+        public static bool ManagerExistModif(bool withMessageBox, int idM, string newPseudo)
+        {
+            Manager m = database.GetManagerById(idM);
+            if (database.ContainItem(newPseudo) && !newPseudo.Equals(m.pseudo))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("Le pseudo choisi existe déjà, veuillez renseigner un autre.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return false;
 

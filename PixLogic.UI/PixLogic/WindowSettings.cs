@@ -104,6 +104,63 @@ namespace PixLogic
             checkEnableButtonClasse();
         }
 
+        public void setTableManagers(List<Manager> l)
+        {
+            List<Manager> list = l;
+            dataGridManagers.Rows.Clear();
+
+            foreach (var manager in list)
+            {
+                dataGridManagers.Rows.Add(manager.ManagerId, manager.name, manager.nickname);
+            }
+
+            if (dataGridManagers.RowCount > 0)
+            {
+                dataGridManagers.FirstDisplayedScrollingRowIndex = 0;
+                dataGridManagers.Refresh();
+                dataGridManagers.CurrentCell = dataGridManagers.Rows[0].Cells[0];
+                dataGridManagers.Rows[0].Selected = true;
+            }
+
+            setNewsUserClass();
+            checkEnableButtonClasse();
+        }
+
+        private void setNewsManager()
+        {
+            if (dataGridManagers.RowCount > 0)
+            {
+                int id = int.Parse(dataGridManagers.CurrentRow.Cells[0].Value.ToString());
+                Manager m = database.GetManagerById(id);
+
+                valPseudoManager.Text = m.pseudo;
+                valNomManager.Text = dataGridManagers.CurrentRow.Cells[1].Value.ToString();
+                valPrenomManager.Text = dataGridManagers.CurrentRow.Cells[2].Value.ToString();
+                valTelManager.Text = m.phone;
+            }
+            else
+            {
+                valPseudoManager.Text = "-";
+                valNomManager.Text = "-";
+                valPrenomManager.Text = "-";
+                valTelManager.Text = "-";
+            }
+        }
+
+        private void checkEnableButtonManager()
+        {
+            if (dataGridManagers.RowCount > 0)
+            {
+                buttonModifierManager.Enabled = true;
+                buttonSuppManager.Enabled = true;
+            }
+            else
+            {
+                buttonModifierManager.Enabled = false;
+                buttonSuppManager.Enabled = false;
+            }
+        }
+
         private void setNewsUserClass()
         {
             if (dataGridUserClass.RowCount > 0)
@@ -208,6 +265,12 @@ namespace PixLogic
         {
             textBoxSearchClasse.Text = string.Empty;
             setTableUserClass(database.GetAllUserClass());
+        }
+
+        private void buttonAjouterManager_Click(object sender, EventArgs e)
+        {
+            WindowManager window = new WindowManager(this);
+            window.Show();
         }
     }
 }

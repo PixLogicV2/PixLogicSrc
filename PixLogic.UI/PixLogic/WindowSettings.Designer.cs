@@ -90,28 +90,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelServer = new System.Windows.Forms.Label();
             this.manager = new System.Windows.Forms.TabPage();
-            this.labelListManager = new System.Windows.Forms.Label();
-            this.panelManager = new System.Windows.Forms.Panel();
-            this.buttonCancelManager = new System.Windows.Forms.Button();
-            this.textBoxSearchManager = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSuppManager = new System.Windows.Forms.Button();
+            this.buttonModifierManager = new System.Windows.Forms.Button();
+            this.buttonAjouterManager = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.valPseudoManager = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.valPrenomManager = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.valTelManager = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.valNomManager = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.valPseudoManager = new System.Windows.Forms.Label();
-            this.buttonSuppManager = new System.Windows.Forms.Button();
-            this.buttonModifierManager = new System.Windows.Forms.Button();
-            this.buttonAjouterManager = new System.Windows.Forms.Button();
+            this.labelListManager = new System.Windows.Forms.Label();
+            this.panelManager = new System.Windows.Forms.Panel();
+            this.buttonCancelManager = new System.Windows.Forms.Button();
+            this.textBoxSearchManager = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridManagers = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlSettings.SuspendLayout();
             this.panCategorie.SuspendLayout();
             this.panNews.SuspendLayout();
@@ -125,9 +125,9 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.manager.SuspendLayout();
-            this.panelManager.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panelManager.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridManagers)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlSettings
@@ -807,92 +807,45 @@
             this.manager.TabIndex = 3;
             this.manager.Text = "Manager";
             // 
-            // labelListManager
+            // buttonSuppManager
             // 
-            this.labelListManager.AutoSize = true;
-            this.labelListManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListManager.Location = new System.Drawing.Point(23, 8);
-            this.labelListManager.Name = "labelListManager";
-            this.labelListManager.Size = new System.Drawing.Size(106, 13);
-            this.labelListManager.TabIndex = 50;
-            this.labelListManager.Text = "Liste des managers";
+            this.buttonSuppManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSuppManager.Image = global::PixLogic.Properties.Resources.supprimer_icon;
+            this.buttonSuppManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSuppManager.Location = new System.Drawing.Point(450, 288);
+            this.buttonSuppManager.Name = "buttonSuppManager";
+            this.buttonSuppManager.Size = new System.Drawing.Size(93, 29);
+            this.buttonSuppManager.TabIndex = 56;
+            this.buttonSuppManager.Text = "Supprimer";
+            this.buttonSuppManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSuppManager.UseVisualStyleBackColor = true;
             // 
-            // panelManager
+            // buttonModifierManager
             // 
-            this.panelManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelManager.Controls.Add(this.buttonCancelManager);
-            this.panelManager.Controls.Add(this.textBoxSearchManager);
-            this.panelManager.Controls.Add(this.label5);
-            this.panelManager.Controls.Add(this.dataGridView1);
-            this.panelManager.Location = new System.Drawing.Point(6, 12);
-            this.panelManager.Name = "panelManager";
-            this.panelManager.Size = new System.Drawing.Size(247, 305);
-            this.panelManager.TabIndex = 49;
+            this.buttonModifierManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModifierManager.Image = global::PixLogic.Properties.Resources.modifier_icon;
+            this.buttonModifierManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModifierManager.Location = new System.Drawing.Point(364, 288);
+            this.buttonModifierManager.Name = "buttonModifierManager";
+            this.buttonModifierManager.Size = new System.Drawing.Size(78, 29);
+            this.buttonModifierManager.TabIndex = 55;
+            this.buttonModifierManager.Text = "Modifier";
+            this.buttonModifierManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonModifierManager.UseVisualStyleBackColor = true;
             // 
-            // buttonCancelManager
+            // buttonAjouterManager
             // 
-            this.buttonCancelManager.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelManager.Location = new System.Drawing.Point(177, 16);
-            this.buttonCancelManager.Name = "buttonCancelManager";
-            this.buttonCancelManager.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelManager.TabIndex = 6;
-            this.buttonCancelManager.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSearchManager
-            // 
-            this.textBoxSearchManager.Location = new System.Drawing.Point(77, 17);
-            this.textBoxSearchManager.Name = "textBoxSearchManager";
-            this.textBoxSearchManager.Size = new System.Drawing.Size(96, 20);
-            this.textBoxSearchManager.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Recherche :";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.name,
-            this.prenom});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 49);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(247, 255);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 30;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Nom";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // prenom
-            // 
-            this.prenom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prenom.HeaderText = "Prénom";
-            this.prenom.Name = "prenom";
-            this.prenom.ReadOnly = true;
+            this.buttonAjouterManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjouterManager.Image = global::PixLogic.Properties.Resources.ajouter_icon;
+            this.buttonAjouterManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjouterManager.Location = new System.Drawing.Point(280, 288);
+            this.buttonAjouterManager.Name = "buttonAjouterManager";
+            this.buttonAjouterManager.Size = new System.Drawing.Size(78, 29);
+            this.buttonAjouterManager.TabIndex = 54;
+            this.buttonAjouterManager.Text = "Ajouter";
+            this.buttonAjouterManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAjouterManager.UseVisualStyleBackColor = true;
+            this.buttonAjouterManager.Click += new System.EventHandler(this.buttonAjouterManager_Click);
             // 
             // label4
             // 
@@ -919,6 +872,27 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(301, 132);
             this.panel5.TabIndex = 51;
+            // 
+            // valPseudoManager
+            // 
+            this.valPseudoManager.AutoSize = true;
+            this.valPseudoManager.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valPseudoManager.Location = new System.Drawing.Point(116, 13);
+            this.valPseudoManager.Name = "valPseudoManager";
+            this.valPseudoManager.Size = new System.Drawing.Size(13, 17);
+            this.valPseudoManager.TabIndex = 47;
+            this.valPseudoManager.Text = "-";
+            this.valPseudoManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "Pseudo :";
             // 
             // label6
             // 
@@ -983,65 +957,92 @@
             this.valNomManager.Text = "-";
             this.valNomManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // labelListManager
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Pseudo :";
+            this.labelListManager.AutoSize = true;
+            this.labelListManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListManager.Location = new System.Drawing.Point(23, 8);
+            this.labelListManager.Name = "labelListManager";
+            this.labelListManager.Size = new System.Drawing.Size(106, 13);
+            this.labelListManager.TabIndex = 50;
+            this.labelListManager.Text = "Liste des managers";
             // 
-            // valPseudoManager
+            // panelManager
             // 
-            this.valPseudoManager.AutoSize = true;
-            this.valPseudoManager.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPseudoManager.Location = new System.Drawing.Point(116, 13);
-            this.valPseudoManager.Name = "valPseudoManager";
-            this.valPseudoManager.Size = new System.Drawing.Size(13, 17);
-            this.valPseudoManager.TabIndex = 47;
-            this.valPseudoManager.Text = "-";
-            this.valPseudoManager.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panelManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelManager.Controls.Add(this.buttonCancelManager);
+            this.panelManager.Controls.Add(this.textBoxSearchManager);
+            this.panelManager.Controls.Add(this.label5);
+            this.panelManager.Controls.Add(this.dataGridManagers);
+            this.panelManager.Location = new System.Drawing.Point(6, 12);
+            this.panelManager.Name = "panelManager";
+            this.panelManager.Size = new System.Drawing.Size(247, 305);
+            this.panelManager.TabIndex = 49;
             // 
-            // buttonSuppManager
+            // buttonCancelManager
             // 
-            this.buttonSuppManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSuppManager.Image = global::PixLogic.Properties.Resources.supprimer_icon;
-            this.buttonSuppManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSuppManager.Location = new System.Drawing.Point(450, 288);
-            this.buttonSuppManager.Name = "buttonSuppManager";
-            this.buttonSuppManager.Size = new System.Drawing.Size(93, 29);
-            this.buttonSuppManager.TabIndex = 56;
-            this.buttonSuppManager.Text = "Supprimer";
-            this.buttonSuppManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonSuppManager.UseVisualStyleBackColor = true;
+            this.buttonCancelManager.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelManager.Location = new System.Drawing.Point(177, 16);
+            this.buttonCancelManager.Name = "buttonCancelManager";
+            this.buttonCancelManager.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelManager.TabIndex = 6;
+            this.buttonCancelManager.UseVisualStyleBackColor = true;
             // 
-            // buttonModifierManager
+            // textBoxSearchManager
             // 
-            this.buttonModifierManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModifierManager.Image = global::PixLogic.Properties.Resources.modifier_icon;
-            this.buttonModifierManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModifierManager.Location = new System.Drawing.Point(364, 288);
-            this.buttonModifierManager.Name = "buttonModifierManager";
-            this.buttonModifierManager.Size = new System.Drawing.Size(78, 29);
-            this.buttonModifierManager.TabIndex = 55;
-            this.buttonModifierManager.Text = "Modifier";
-            this.buttonModifierManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonModifierManager.UseVisualStyleBackColor = true;
+            this.textBoxSearchManager.Location = new System.Drawing.Point(77, 17);
+            this.textBoxSearchManager.Name = "textBoxSearchManager";
+            this.textBoxSearchManager.Size = new System.Drawing.Size(96, 20);
+            this.textBoxSearchManager.TabIndex = 5;
             // 
-            // buttonAjouterManager
+            // label5
             // 
-            this.buttonAjouterManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAjouterManager.Image = global::PixLogic.Properties.Resources.ajouter_icon;
-            this.buttonAjouterManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAjouterManager.Location = new System.Drawing.Point(280, 288);
-            this.buttonAjouterManager.Name = "buttonAjouterManager";
-            this.buttonAjouterManager.Size = new System.Drawing.Size(78, 29);
-            this.buttonAjouterManager.TabIndex = 54;
-            this.buttonAjouterManager.Text = "Ajouter";
-            this.buttonAjouterManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonAjouterManager.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Recherche :";
+            // 
+            // dataGridManagers
+            // 
+            this.dataGridManagers.AllowUserToAddRows = false;
+            this.dataGridManagers.AllowUserToDeleteRows = false;
+            this.dataGridManagers.AllowUserToResizeRows = false;
+            this.dataGridManagers.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridManagers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridManagers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.name,
+            this.prenom});
+            this.dataGridManagers.Location = new System.Drawing.Point(-1, 49);
+            this.dataGridManagers.Name = "dataGridManagers";
+            this.dataGridManagers.ReadOnly = true;
+            this.dataGridManagers.RowHeadersVisible = false;
+            this.dataGridManagers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridManagers.Size = new System.Drawing.Size(247, 255);
+            this.dataGridManagers.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 30;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Nom";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // prenom
+            // 
+            this.prenom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.prenom.HeaderText = "Prénom";
+            this.prenom.Name = "prenom";
+            this.prenom.ReadOnly = true;
             // 
             // WindowSettings
             // 
@@ -1078,11 +1079,11 @@
             this.panel1.PerformLayout();
             this.manager.ResumeLayout(false);
             this.manager.PerformLayout();
-            this.panelManager.ResumeLayout(false);
-            this.panelManager.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panelManager.ResumeLayout(false);
+            this.panelManager.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridManagers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1165,7 +1166,7 @@
         private System.Windows.Forms.Button buttonCancelManager;
         private System.Windows.Forms.TextBox textBoxSearchManager;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridManagers;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
