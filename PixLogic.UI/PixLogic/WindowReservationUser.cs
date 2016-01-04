@@ -39,6 +39,10 @@ namespace PixLogic
         private void buttonOk_Click(object sender, EventArgs e)
         {
             List<Item> list = Helper.getAllItemsDispoByDate(dateTimeBegin.Value.Date, dateTimeEnd.Value.Date);
+            foreach(Item i in list)
+            {
+                if (i.categorie.level > (database.GetUserById(idUser).userClass.level)) list.Remove(i);
+            }
             setTableItem(list);
             dataGridListeItem.Rows.Clear();
             materiels.Clear();
@@ -156,15 +160,19 @@ namespace PixLogic
         }
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            int last = database.GetLastPackId();
-            database.AddPack("[Eph]. Pack "+Convert.ToString(last+1), "reservation de " + valNom.Text,false,0,true);
-            Pack pack = database.GetPackById(last + 1);
-            for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
+            if (Convert.ToInt32(valCreditsRestants.Text) > 0)
             {
-                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[0].Value.ToString(), pack.name);
+                int last = database.GetLastPackId();
+                database.AddPack("[Eph]. Pack " + Convert.ToString(last + 1), "reservation de " + valNom.Text, false, 0, true);
+                Pack pack = database.GetPackById(last + 1);
+                for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
+                {
+                    database.AddItemToPack(dataGridListeItem.Rows[i].Cells[0].Value.ToString(), pack.name);
+                }
+                database.AddReservation(true, dateTimeBegin.Value.Date, dateTimeEnd.Value.Date, null, null, database.GetUserById(idUser), pack, null);
+                this.Close();
             }
-            database.AddReservation(true, dateTimeBegin.Value.Date, dateTimeEnd.Value.Date, null, null, database.GetUserById(idUser), pack, null);
-            this.Close();
+            else MessageBox.Show("Credits insuffisants", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
