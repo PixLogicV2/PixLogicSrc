@@ -39,6 +39,10 @@ namespace PixLogic.DAL
         {
             container.get("add_manager").deleteManager(name);
         }
+        public Manager GetManagerById(int id)
+        {
+            return container.get("get_manager_by_id").getManagerById(id);
+        }
         public bool ContainPseudoManager(string pseudo)
         {
             return container.get("add_manager").containPseudoManager(pseudo);
