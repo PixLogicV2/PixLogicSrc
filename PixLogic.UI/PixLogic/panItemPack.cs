@@ -310,9 +310,11 @@ namespace PixLogic
         }
 
         private void pictureReserver_Click(object sender, EventArgs e)
-        { 
-            WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text), false);
-            windowRes.ShowDialog(this);
+        {
+            if (Helper.getDispoReservable(Convert.ToInt32(valItemId.Text), false)){
+                WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text), false);
+                windowRes.ShowDialog(this);
+            }
         }
 
         private void pictureReserver_MouseEnter(object sender, EventArgs e)
