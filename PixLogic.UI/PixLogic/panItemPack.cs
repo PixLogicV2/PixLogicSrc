@@ -60,13 +60,11 @@ namespace PixLogic
             {
                 buttonModify.Enabled = true;
                 buttonDelete.Enabled = true;
-                pictureReserver.Enabled = true;
             }
             else
             {
                 buttonModify.Enabled = false;
                 buttonDelete.Enabled = false;
-                pictureReserver.Enabled = false;
             }
         }
 
@@ -159,10 +157,10 @@ namespace PixLogic
             {
                 comboBoxCategorie.Items.Add(pack.name);
             }
-            if (comboBoxCategorie.Items.Count > 0)
+            /*if (comboBoxCategorie.Items.Count > 0)
             {
                 comboBoxCategorie.SelectedIndex = 0;
-            }
+            }*/
         }
 
         private void setListBoxItemsOfPack(string namePack)
@@ -315,7 +313,13 @@ namespace PixLogic
 
         private void pictureReserver_Click(object sender, EventArgs e)
         {
-            if (Helper.getDispoReservable(Convert.ToInt32(valItemId.Text), false)){
+            if(dataGridItem.Rows.Count == 0)
+            {
+                MessageBox.Show("Vous devez sélectionner un matériel.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(Helper.getDispoReservable(Convert.ToInt32(valItemId.Text), false))
+            {
                 WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text), false);
                 windowRes.ShowDialog(this);
             }

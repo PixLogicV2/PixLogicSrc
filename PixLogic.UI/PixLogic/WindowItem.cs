@@ -146,5 +146,12 @@ namespace PixLogic
         {
             setComboBoxCategorie();
         }
+
+        private void pictureBoxSelection_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureBoxSelection, "Sélectionner une image.");
+            pictureBoxSelection.Cursor = Cursors.Hand;
+        }
     }
 }

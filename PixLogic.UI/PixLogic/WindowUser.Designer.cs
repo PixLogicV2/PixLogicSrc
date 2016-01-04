@@ -199,6 +199,7 @@
             this.pictureBoxSelection.TabIndex = 9;
             this.pictureBoxSelection.TabStop = false;
             this.pictureBoxSelection.Click += new System.EventHandler(this.pictureBoxSelection_Click_1);
+            this.pictureBoxSelection.MouseEnter += new System.EventHandler(this.pictureBoxSelection_MouseEnter);
             // 
             // labelMail
             // 
