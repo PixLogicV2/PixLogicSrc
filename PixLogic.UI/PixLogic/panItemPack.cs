@@ -77,6 +77,16 @@ namespace PixLogic
                 Item item = database.GetItemByName(valItemName.Text);
 
                 valItemId.Text = item.ReservableId.ToString();
+                if(item.dispo)
+                {
+                    valDispo.ForeColor = Color.DarkBlue;
+                    valDispo.Text = "OUI";
+                }
+                else
+                {
+                    valDispo.ForeColor = Color.DarkRed;
+                    valDispo.Text = "NON";
+                }
                 valDispo.Text = item.dispo ? "OUI" : "NON";
                 valDescription.Text = item.description;
                 valCategorie.Text = item.categorie.name;
