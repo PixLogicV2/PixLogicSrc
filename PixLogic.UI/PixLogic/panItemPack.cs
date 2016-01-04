@@ -342,6 +342,11 @@ namespace PixLogic
             export.ShowDialog();
         }
 
+        public DataGridView getTable()
+        {
+            return dataGridItem;
+        }
+
         private void pictureExport_MouseEnter(object sender, EventArgs e)
         {
             ToolTip info = new ToolTip();

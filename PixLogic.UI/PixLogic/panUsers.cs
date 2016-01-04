@@ -182,5 +182,10 @@ namespace PixLogic
             info.SetToolTip(pictureReserver, "Créer réservation/Emprunt.");
             pictureReserver.Cursor = Cursors.Hand;
         }
+
+        public DataGridView getTable()
+        {
+            return dataGridUsers;
+        }
     }
 }

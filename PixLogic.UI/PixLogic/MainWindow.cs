@@ -98,5 +98,38 @@ namespace PixLogic
             WindowSettings settings = new WindowSettings(panItemPack1);
             settings.ShowDialog();
         }
+
+        private void toolButtonExport_Click(object sender, EventArgs e)
+        {
+            string title = "";
+            DataGridView table = new DataGridView();
+            switch (button.NameButton)
+            {
+                case "boutonUtilisateur":
+                    title = "Liste des utilisateurs";
+                    table = panUsers1.getTable();
+                    break;
+                case "boutonMateriel":
+                    title = "Liste des matériels";
+                    table = panItemPack1.getTable();
+                    break;
+                case "boutonReservation":
+                    title = "Liste des réservations";
+                    table = panReservation1.getTable();
+                    break;
+                case "boutonEmprunt":
+                    title = "Liste des emprunts";
+                    table = panEmprunt1.getTable();
+                    break;
+                case "boutonHistorique":
+                    title = "Historique";
+                    table = panLog1.getTable();
+                    break;
+                //case "boutonScript": namePan = "panScript1"; break;
+            }
+            
+            WindowExport export = new WindowExport(table, title);
+            export.ShowDialog();
+        }
     }
 }

@@ -213,6 +213,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap deconnexion {
+            get {
+                object obj = ResourceManager.GetObject("deconnexion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap emprunter {
             get {
                 object obj = ResourceManager.GetObject("emprunter", resourceCulture);
