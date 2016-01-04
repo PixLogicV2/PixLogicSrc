@@ -10,6 +10,9 @@ namespace PixLogic.DAL
     {
         public int ManagerId { get; set; }
         public string name { get; set; }
+        public string nickname { get; set; }
+        public int phone { get; set; }
+        public string pseudo { get; set; }
         public string mdp { get; set; }
 
     }
