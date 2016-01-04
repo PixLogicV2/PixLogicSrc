@@ -102,7 +102,7 @@
             this.paramètresToolStripMenuItem.Image = global::PixLogic.Properties.Resources.parametres_icon;
             this.paramètresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.paramètresToolStripMenuItem.Text = "Paramètres";
             this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
@@ -195,14 +195,14 @@
             this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user_icon;
             this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(167, 40);
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(142, 40);
             this.utilisateurToolStripMenuItem.Text = "Utilisateur";
             // 
             // matérielToolStripMenuItem
             // 
             this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
-            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(167, 40);
+            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(142, 40);
             this.matérielToolStripMenuItem.Text = "Matériel";
             // 
             // toolStripSeparator1
@@ -284,7 +284,7 @@
             this.panelAllPan.Controls.Add(this.panItemPack1);
             this.panelAllPan.Location = new System.Drawing.Point(137, 64);
             this.panelAllPan.Name = "panelAllPan";
-            this.panelAllPan.Size = new System.Drawing.Size(690, 455);
+            this.panelAllPan.Size = new System.Drawing.Size(690, 454);
             this.panelAllPan.TabIndex = 3;
             // 
             // boutonEmprunt
@@ -380,7 +380,7 @@
             this.panUsers1.Location = new System.Drawing.Point(0, 2);
             this.panUsers1.Margin = new System.Windows.Forms.Padding(2);
             this.panUsers1.Name = "panUsers1";
-            this.panUsers1.Size = new System.Drawing.Size(688, 453);
+            this.panUsers1.Size = new System.Drawing.Size(688, 452);
             this.panUsers1.TabIndex = 7;
             // 
             // panLog1
@@ -431,7 +431,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 519);
+            this.ClientSize = new System.Drawing.Size(827, 518);
             this.Controls.Add(this.barreDoutils);
             this.Controls.Add(this.panMenu);
             this.Controls.Add(this.barreDeMenu);

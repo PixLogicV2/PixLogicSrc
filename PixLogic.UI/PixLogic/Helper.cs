@@ -37,7 +37,7 @@ namespace PixLogic
                 {
                     result = true;
                     if(withMessageBox)
-                        MessageBox.Show("Tous les champs obligatoires (*) n'ont pas été rempli!", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tous les champs obligatoires (*) n'ont pas été rempli.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 }
             }
@@ -52,7 +52,7 @@ namespace PixLogic
             else
             {
                 if(withMessageBox)
-                    MessageBox.Show("La date de debut est supérieure à celle de fin!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("La date de debut est supérieure à celle de fin.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             
@@ -101,6 +101,15 @@ namespace PixLogic
         {
             bool result = false;
             DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment " + op + " cette réservation ?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = (resultBox == DialogResult.Yes) ? true : false;
+
+            return result;
+        }
+        public static bool confirmationManager(string op)
+        {
+            bool result = false;
+            DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment " + op + " ce manager ?",
                 "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             result = (resultBox == DialogResult.Yes) ? true : false;
 

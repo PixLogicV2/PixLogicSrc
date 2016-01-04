@@ -33,6 +33,13 @@ namespace PixLogic
             settings = s;
             add = false;
             idManager = idM;
+            Manager m = database.GetManagerById(idManager);
+            valNom.Text = m.name;
+            valPrenom.Text = m.nickname;
+            valTel.Text = m.phone;
+            valPseudo.Text = m.pseudo;
+            valMdp.Text = m.mdp;
+            valMdpConfirm.Text = m.mdp;
             this.Text = "Modification Manager";
         }
 
@@ -41,17 +48,31 @@ namespace PixLogic
         {
             if (!Helper.fieldsAreEmpty(true, valNom.Text, valPseudo.Text, valMdp.Text, valMdpConfirm.Text))
             {
-                if(add && !Helper.ManagerExist(true, valPseudo.Text))
+                if(valMdp.Text.Equals(valMdpConfirm.Text))
                 {
-                    database.AddManager(valNom.Text, valMdp.Text, valPrenom.Text, valTel.Text, valPseudo.Text);
-                    
-                    this.Close();
+                    string op = add ? Helper.ADD : Helper.SET;
+                    if(Helper.confirmationManager(op))
+                    {
+                        if (add && !Helper.ManagerExist(true, valPseudo.Text))
+                        {
+                            database.AddManager(valNom.Text, valMdp.Text, valPrenom.Text, valTel.Text, valPseudo.Text);
+                            settings.setTableManagers(database.GetAllManagers());
+                            this.Close();
+                        }
+                        else if (!add && !Helper.ManagerExistModif(true, idManager, valPseudo.Text))
+                        {
+                            database.UpdateManager(idManager, valNom.Text, valMdp.Text, valTel.Text, valPseudo.Text, valPrenom.Text);
+                            settings.setTableManagers(database.GetAllManagers());
+                            this.Close();
+                        }
+                    }
+                   
                 }
-                else if(!add && !Helper.ManagerExistModif(true, idManager, valPseudo.Text))
+                else
                 {
-                    database.UpdateManager(idManager, valNom.Text, valMdp.Text, valTel.Text, valPseudo.Text, valPrenom.Text);
-                    this.Close();
+                    MessageBox.Show("Les deux mots de passe ne correspondent pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
                 
             }
         }

@@ -832,6 +832,7 @@
             this.buttonModifierManager.Text = "Modifier";
             this.buttonModifierManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonModifierManager.UseVisualStyleBackColor = true;
+            this.buttonModifierManager.Click += new System.EventHandler(this.buttonModifierManager_Click);
             // 
             // buttonAjouterManager
             // 

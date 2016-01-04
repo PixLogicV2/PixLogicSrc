@@ -22,6 +22,7 @@ namespace PixLogic
             pan = p;
             setTableCategories(database.GetAllCategorie());
             setTableUserClass(database.GetAllUserClass());
+            setTableManagers(database.GetAllManagers());
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -122,7 +123,7 @@ namespace PixLogic
                 dataGridManagers.Rows[0].Selected = true;
             }
 
-            setNewsUserClass();
+            setNewsManager();
             checkEnableButtonClasse();
         }
 
@@ -270,7 +271,14 @@ namespace PixLogic
         private void buttonAjouterManager_Click(object sender, EventArgs e)
         {
             WindowManager window = new WindowManager(this);
-            window.Show();
+            window.ShowDialog();
+        }
+
+        private void buttonModifierManager_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridManagers.CurrentRow.Cells[0].Value.ToString());
+            Password window = new Password(id, this);
+            window.ShowDialog();
         }
     }
 }

@@ -65,7 +65,7 @@
             this.valPseudo.Location = new System.Drawing.Point(114, 128);
             this.valPseudo.Name = "valPseudo";
             this.valPseudo.Size = new System.Drawing.Size(156, 25);
-            this.valPseudo.TabIndex = 32;
+            this.valPseudo.TabIndex = 4;
             // 
             // label3
             // 
@@ -83,7 +83,7 @@
             this.valPrenom.Location = new System.Drawing.Point(114, 52);
             this.valPrenom.Name = "valPrenom";
             this.valPrenom.Size = new System.Drawing.Size(156, 25);
-            this.valPrenom.TabIndex = 31;
+            this.valPrenom.TabIndex = 2;
             // 
             // labelNbCredit
             // 
@@ -112,7 +112,7 @@
             this.valNom.Location = new System.Drawing.Point(114, 21);
             this.valNom.Name = "valNom";
             this.valNom.Size = new System.Drawing.Size(156, 25);
-            this.valNom.TabIndex = 30;
+            this.valNom.TabIndex = 1;
             // 
             // labelLibelle
             // 
@@ -132,7 +132,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(161, 240);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 34;
+            this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Annuler";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             this.buttonValid.Location = new System.Drawing.Point(67, 240);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
-            this.buttonValid.TabIndex = 33;
+            this.buttonValid.TabIndex = 7;
             this.buttonValid.Text = "Valider";
             this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonValid.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             this.valTel.Location = new System.Drawing.Point(114, 83);
             this.valTel.Name = "valTel";
             this.valTel.Size = new System.Drawing.Size(156, 25);
-            this.valTel.TabIndex = 41;
+            this.valTel.TabIndex = 3;
             // 
             // label5
             // 
@@ -187,7 +187,8 @@
             this.valMdp.Location = new System.Drawing.Point(114, 159);
             this.valMdp.Name = "valMdp";
             this.valMdp.Size = new System.Drawing.Size(156, 25);
-            this.valMdp.TabIndex = 44;
+            this.valMdp.TabIndex = 5;
+            this.valMdp.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -216,7 +217,8 @@
             this.valMdpConfirm.Location = new System.Drawing.Point(114, 190);
             this.valMdpConfirm.Name = "valMdpConfirm";
             this.valMdpConfirm.Size = new System.Drawing.Size(156, 25);
-            this.valMdpConfirm.TabIndex = 47;
+            this.valMdpConfirm.TabIndex = 6;
+            this.valMdpConfirm.UseSystemPasswordChar = true;
             // 
             // label9
             // 
@@ -251,7 +253,10 @@
             this.Controls.Add(this.labelObligatoire);
             this.Controls.Add(this.valNom);
             this.Controls.Add(this.labelLibelle);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WindowManager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nouveau manager";
             this.ResumeLayout(false);
             this.PerformLayout();
