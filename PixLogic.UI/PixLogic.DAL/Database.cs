@@ -31,6 +31,10 @@ namespace PixLogic.DAL
         {
             container.get("add_manager").addManager(container.get("manager_factory").build(name,nickname, mdp,phone,pseudo));
         }
+        public List<Manager> GetAllManagers()
+        {
+            return container.get("add_manager").getAllManagers();
+        }
         public void UpdateManager(int id,string name,string mdp,string phone,string pseudo,string nickname)
         {
             container.get("add_manager").udateManager(id, name,nickname, mdp,phone,pseudo);

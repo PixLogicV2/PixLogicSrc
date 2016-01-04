@@ -28,6 +28,12 @@ namespace PixLogic.DAL
             if (itemQuery.Any()) return true;
             return false;
     }
+        public List<Manager> getAllManagers()
+        {
+            IQueryable<Manager> itemQuery = from Manager in context.Managers
+                                         select Manager;
+            return itemQuery.ToList();
+        }
         public void deleteManager(string managerName)
         {
             var item = (from s in context.Managers
