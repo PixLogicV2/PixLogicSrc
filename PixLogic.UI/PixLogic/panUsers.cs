@@ -20,10 +20,14 @@ namespace PixLogic
             if (MainWindow.START)
             {
                 database = Helper.database;
-                setTableUsers(database.GetAllUsers());
+                refresh();
             }
         }
 
+        public void refresh()
+        {
+            setTableUsers(database.GetAllUsers());
+        }
         public void setTableUsers(List<User> l)
         {
             List<User> list = l;
@@ -31,7 +35,7 @@ namespace PixLogic
             //dataGridUsers.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
             foreach (var user in list)
             {
-                dataGridUsers.Rows.Add(user.UserId,user.name,user.nickname);
+                dataGridUsers.Rows.Add(user.UserId,user.name,user.nickname, user.mail, user.phoneNumber, user.userClass.name, user.credits);
             }
 
             if (dataGridUsers.RowCount > 0)
@@ -140,25 +144,12 @@ namespace PixLogic
             WindowExport export = new WindowExport(dataGridUsers, title);
             export.ShowDialog();
         }
-
-        private void pictureExport_MouseEnter(object sender, EventArgs e)
-        {
-            ToolTip info = new ToolTip();
-            info.SetToolTip(pictureExport, "Exporter la liste.");
-            pictureExport.Cursor = Cursors.Hand;
-        }
+        
 
         private void pictureImporter_Click(object sender, EventArgs e)
         {
             WindowImport import = new WindowImport(this);
             import.ShowDialog();
-        }
-
-        private void pictureImporter_MouseEnter(object sender, EventArgs e)
-        {
-            ToolTip info = new ToolTip();
-            info.SetToolTip(pictureImporter, "Importer une liste.");
-            pictureImporter.Cursor = Cursors.Hand;
         }
 
         private void pictureReserver_Click(object sender, EventArgs e)

@@ -21,11 +21,11 @@ namespace PixLogic
             if (MainWindow.START)
             {
                 database = Helper.database;
-                start();
+                refresh();
             }
         }
 
-        private void start()
+        public void refresh()
         {
             setRadioButton();
             setTableEmprunts(database.GetAllEmprunts());
@@ -205,18 +205,6 @@ namespace PixLogic
             }
         }
 
-        private void pictureReinit_MouseEnter(object sender, EventArgs e)
-        {
-            ToolTip info = new ToolTip();
-            info.SetToolTip(pictureReinit, "Réinitialiser le filtre.");
-            pictureReinit.Cursor = Cursors.Hand;
-        }
-
-        private void pictureReinit_Click(object sender, EventArgs e)
-        {
-            start();
-        }
-
         private void buttonCancelSearch_Click(object sender, EventArgs e)
         {
             textBoxSearch.Text = "";
@@ -272,12 +260,6 @@ namespace PixLogic
         public DataGridView getTable()
         {
             return dataGridEmprunts;
-        }
-        private void pictureExport_MouseEnter(object sender, EventArgs e)
-        {
-            ToolTip info = new ToolTip();
-            info.SetToolTip(pictureExport, "Exporter la liste.");
-            pictureExport.Cursor = Cursors.Hand;
         }
 
         private void dataGridEmprunts_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

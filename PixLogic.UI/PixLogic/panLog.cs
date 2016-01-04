@@ -24,10 +24,10 @@ namespace PixLogic
             if (MainWindow.START)
             {
                 database = Helper.database;
-                start();
+                refresh();
             }
         }
-        private void start()
+        public void refresh()
         {
             setRadioButton();
             setTableLogs(database.GetAllLogs());
@@ -144,11 +144,7 @@ namespace PixLogic
         {
             setTableLogs(database.GetAllLogsByString(textBoxSearch.Text));
         }
-
-        private void pictureReinit_Click(object sender, EventArgs e)
-        {
-            start();
-        }
+        
         private void filtrer()
         {
             DateTime debut = new DateTime();
@@ -209,12 +205,6 @@ namespace PixLogic
         {
             return dataGridLogs;
         }
-
-        private void pictureExport_MouseEnter(object sender, EventArgs e)
-        {
-            ToolTip info = new ToolTip();
-            info.SetToolTip(pictureExport, "Exporter la liste.");
-            pictureExport.Cursor = Cursors.Hand;
-        }
+        
     }
 }

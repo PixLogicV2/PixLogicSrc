@@ -32,33 +32,33 @@
             this.barreDeMenu = new System.Windows.Forms.MenuStrip();
             this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panMenu = new System.Windows.Forms.Panel();
             this.buttonMenu = new System.Windows.Forms.Panel();
             this.labelMainMenu = new System.Windows.Forms.Label();
             this.labelFleche = new System.Windows.Forms.Label();
-            this.barreDoutils = new System.Windows.Forms.ToolStrip();
-            this.panelAllPan = new System.Windows.Forms.Panel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.BoutonActionBO = new System.Windows.Forms.ToolStripDropDownButton();
-            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.packToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.réservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolButtonExport = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.boutonEmprunt = new PixLogic.MenuButton();
             this.boutonScript = new PixLogic.MenuButton();
             this.boutonHistorique = new PixLogic.MenuButton();
             this.boutonReservation = new PixLogic.MenuButton();
             this.boutonMateriel = new PixLogic.MenuButton();
             this.boutonUtilisateur = new PixLogic.MenuButton();
+            this.barreDoutils = new System.Windows.Forms.ToolStrip();
+            this.BoutonActionBO = new System.Windows.Forms.ToolStripDropDownButton();
+            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.packToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.réservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolButtonExport = new System.Windows.Forms.ToolStripButton();
+            this.toolButtonImport = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolButtonRefresh = new System.Windows.Forms.ToolStripButton();
+            this.panelAllPan = new System.Windows.Forms.Panel();
             this.panUsers1 = new PixLogic.panUsers();
             this.panLog1 = new PixLogic.panLog();
             this.panScript1 = new PixLogic.panScript();
@@ -98,6 +98,15 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // paramètresToolStripMenuItem
+            // 
+            this.paramètresToolStripMenuItem.Image = global::PixLogic.Properties.Resources.parametres_icon;
+            this.paramètresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
+            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.paramètresToolStripMenuItem.Text = "Paramètres";
+            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -151,155 +160,6 @@
             this.labelFleche.Size = new System.Drawing.Size(16, 20);
             this.labelFleche.TabIndex = 1;
             this.labelFleche.Text = "^";
-            // 
-            // barreDoutils
-            // 
-            this.barreDoutils.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.barreDoutils.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BoutonActionBO,
-            this.toolStripSeparator1,
-            this.toolButtonExport,
-            this.toolStripButton1,
-            this.toolStripSeparator2,
-            this.toolStripLabel1,
-            this.toolStripButton3,
-            this.toolStripSeparator3,
-            this.toolStripButton4});
-            this.barreDoutils.Location = new System.Drawing.Point(0, 24);
-            this.barreDoutils.Name = "barreDoutils";
-            this.barreDoutils.Size = new System.Drawing.Size(827, 42);
-            this.barreDoutils.TabIndex = 2;
-            this.barreDoutils.Text = "barreDoutils";
-            // 
-            // panelAllPan
-            // 
-            this.panelAllPan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelAllPan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelAllPan.Controls.Add(this.panUsers1);
-            this.panelAllPan.Controls.Add(this.panLog1);
-            this.panelAllPan.Controls.Add(this.panScript1);
-            this.panelAllPan.Controls.Add(this.panEmprunt1);
-            this.panelAllPan.Controls.Add(this.panReservation1);
-            this.panelAllPan.Controls.Add(this.panItemPack1);
-            this.panelAllPan.Location = new System.Drawing.Point(137, 64);
-            this.panelAllPan.Name = "panelAllPan";
-            this.panelAllPan.Size = new System.Drawing.Size(690, 455);
-            this.panelAllPan.TabIndex = 3;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 42);
-            // 
-            // BoutonActionBO
-            // 
-            this.BoutonActionBO.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.utilisateurToolStripMenuItem,
-            this.matérielToolStripMenuItem,
-            this.packToolStripMenuItem,
-            this.réservationToolStripMenuItem});
-            this.BoutonActionBO.Image = ((System.Drawing.Image)(resources.GetObject("BoutonActionBO.Image")));
-            this.BoutonActionBO.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BoutonActionBO.Name = "BoutonActionBO";
-            this.BoutonActionBO.Size = new System.Drawing.Size(68, 39);
-            this.BoutonActionBO.Text = "Nouveau";
-            this.BoutonActionBO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // utilisateurToolStripMenuItem
-            // 
-            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user_icon;
-            this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
-            this.utilisateurToolStripMenuItem.Text = "Utilisateur";
-            // 
-            // matérielToolStripMenuItem
-            // 
-            this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
-            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
-            this.matérielToolStripMenuItem.Text = "Matériel";
-            // 
-            // packToolStripMenuItem
-            // 
-            this.packToolStripMenuItem.Name = "packToolStripMenuItem";
-            this.packToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
-            this.packToolStripMenuItem.Text = "Pack";
-            // 
-            // réservationToolStripMenuItem
-            // 
-            this.réservationToolStripMenuItem.Name = "réservationToolStripMenuItem";
-            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
-            this.réservationToolStripMenuItem.Text = "Réservation";
-            // 
-            // toolButtonExport
-            // 
-            this.toolButtonExport.Image = global::PixLogic.Properties.Resources.exporter;
-            this.toolButtonExport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButtonExport.Name = "toolButtonExport";
-            this.toolButtonExport.Size = new System.Drawing.Size(54, 39);
-            this.toolButtonExport.Text = "Exporter";
-            this.toolButtonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolButtonExport.ToolTipText = "Exporter La liste du panneau actuel";
-            this.toolButtonExport.Click += new System.EventHandler(this.toolButtonExport_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::PixLogic.Properties.Resources.importer;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(57, 39);
-            this.toolStripButton1.Text = "Importer";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.ToolTipText = "Importer des éléments dans le panneau actuel";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(80, 39);
-            this.toolStripButton3.Text = "Déconnexion";
-            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton3.ToolTipText = "Se déconnecter";
-            // 
-            // paramètresToolStripMenuItem
-            // 
-            this.paramètresToolStripMenuItem.Image = global::PixLogic.Properties.Resources.parametres_icon;
-            this.paramètresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.paramètresToolStripMenuItem.Text = "Paramètres";
-            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(442, 39);
-            this.toolStripLabel1.Text = "                                                                                 " +
-    "                                                                ";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 42);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(61, 39);
-            this.toolStripButton4.Text = "Rafraichir";
-            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton4.ToolTipText = "Rafraichir le panneau";
             // 
             // boutonEmprunt
             // 
@@ -384,6 +244,148 @@
             this.boutonUtilisateur.Text = "         UTILISATEUR";
             this.boutonUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.boutonUtilisateur.UseCompatibleTextRendering = true;
+            // 
+            // barreDoutils
+            // 
+            this.barreDoutils.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.barreDoutils.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BoutonActionBO,
+            this.toolStripSeparator1,
+            this.toolButtonExport,
+            this.toolButtonImport,
+            this.toolStripSeparator2,
+            this.toolStripLabel1,
+            this.toolStripButton3,
+            this.toolStripSeparator3,
+            this.toolButtonRefresh});
+            this.barreDoutils.Location = new System.Drawing.Point(0, 24);
+            this.barreDoutils.Name = "barreDoutils";
+            this.barreDoutils.Size = new System.Drawing.Size(827, 42);
+            this.barreDoutils.TabIndex = 2;
+            this.barreDoutils.Text = "barreDoutils";
+            // 
+            // BoutonActionBO
+            // 
+            this.BoutonActionBO.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.utilisateurToolStripMenuItem,
+            this.matérielToolStripMenuItem,
+            this.packToolStripMenuItem,
+            this.réservationToolStripMenuItem});
+            this.BoutonActionBO.Image = ((System.Drawing.Image)(resources.GetObject("BoutonActionBO.Image")));
+            this.BoutonActionBO.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BoutonActionBO.Name = "BoutonActionBO";
+            this.BoutonActionBO.Size = new System.Drawing.Size(68, 39);
+            this.BoutonActionBO.Text = "Nouveau";
+            this.BoutonActionBO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // utilisateurToolStripMenuItem
+            // 
+            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user_icon;
+            this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.utilisateurToolStripMenuItem.Text = "Utilisateur";
+            // 
+            // matérielToolStripMenuItem
+            // 
+            this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
+            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.matérielToolStripMenuItem.Text = "Matériel";
+            // 
+            // packToolStripMenuItem
+            // 
+            this.packToolStripMenuItem.Name = "packToolStripMenuItem";
+            this.packToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.packToolStripMenuItem.Text = "Pack";
+            // 
+            // réservationToolStripMenuItem
+            // 
+            this.réservationToolStripMenuItem.Name = "réservationToolStripMenuItem";
+            this.réservationToolStripMenuItem.Size = new System.Drawing.Size(150, 40);
+            this.réservationToolStripMenuItem.Text = "Réservation";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
+            // 
+            // toolButtonExport
+            // 
+            this.toolButtonExport.Image = global::PixLogic.Properties.Resources.exporter;
+            this.toolButtonExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButtonExport.Name = "toolButtonExport";
+            this.toolButtonExport.Size = new System.Drawing.Size(54, 39);
+            this.toolButtonExport.Text = "Exporter";
+            this.toolButtonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolButtonExport.ToolTipText = "Exporter La liste du panneau actuel";
+            this.toolButtonExport.Click += new System.EventHandler(this.toolButtonExport_Click);
+            // 
+            // toolButtonImport
+            // 
+            this.toolButtonImport.Image = global::PixLogic.Properties.Resources.importer;
+            this.toolButtonImport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButtonImport.Name = "toolButtonImport";
+            this.toolButtonImport.Size = new System.Drawing.Size(57, 39);
+            this.toolButtonImport.Text = "Importer";
+            this.toolButtonImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolButtonImport.ToolTipText = "Importer des éléments dans le panneau actuel";
+            this.toolButtonImport.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 42);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(442, 39);
+            this.toolStripLabel1.Text = "                                                                                 " +
+    "                                                                ";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(80, 39);
+            this.toolStripButton3.Text = "Déconnexion";
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.ToolTipText = "Se déconnecter";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 42);
+            // 
+            // toolButtonRefresh
+            // 
+            this.toolButtonRefresh.Image = global::PixLogic.Properties.Resources.reinit_icon;
+            this.toolButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButtonRefresh.Name = "toolButtonRefresh";
+            this.toolButtonRefresh.Size = new System.Drawing.Size(61, 39);
+            this.toolButtonRefresh.Text = "Rafraichir";
+            this.toolButtonRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolButtonRefresh.ToolTipText = "Rafraichir le panneau";
+            this.toolButtonRefresh.Click += new System.EventHandler(this.toolButtonRefresh_Click);
+            // 
+            // panelAllPan
+            // 
+            this.panelAllPan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAllPan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAllPan.Controls.Add(this.panUsers1);
+            this.panelAllPan.Controls.Add(this.panLog1);
+            this.panelAllPan.Controls.Add(this.panScript1);
+            this.panelAllPan.Controls.Add(this.panEmprunt1);
+            this.panelAllPan.Controls.Add(this.panReservation1);
+            this.panelAllPan.Controls.Add(this.panItemPack1);
+            this.panelAllPan.Location = new System.Drawing.Point(137, 64);
+            this.panelAllPan.Name = "panelAllPan";
+            this.panelAllPan.Size = new System.Drawing.Size(690, 455);
+            this.panelAllPan.TabIndex = 3;
             // 
             // panUsers1
             // 
@@ -499,12 +501,12 @@
         private panLog panLog1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolButtonExport;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolButtonImport;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton toolButtonRefresh;
     }
 }
 

@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panReservation));
             this.panTableUsers = new System.Windows.Forms.Panel();
-            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
@@ -59,7 +58,6 @@
             this.labelListReservation = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
-            this.pictureReinit = new System.Windows.Forms.PictureBox();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
@@ -77,17 +75,14 @@
             this.buttonModif = new System.Windows.Forms.Button();
             this.buttonPret = new System.Windows.Forms.Button();
             this.panTableUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
             this.panFiltres.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.SuspendLayout();
             // 
             // panTableUsers
             // 
             this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panTableUsers.Controls.Add(this.pictureExport);
             this.panTableUsers.Controls.Add(this.buttonCancelSearch);
             this.panTableUsers.Controls.Add(this.textBoxSearch);
             this.panTableUsers.Controls.Add(this.labelSearch);
@@ -96,17 +91,6 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(412, 285);
             this.panTableUsers.TabIndex = 23;
-            // 
-            // pictureExport
-            // 
-            this.pictureExport.Image = global::PixLogic.Properties.Resources.exporter;
-            this.pictureExport.Location = new System.Drawing.Point(382, 6);
-            this.pictureExport.Name = "pictureExport";
-            this.pictureExport.Size = new System.Drawing.Size(25, 25);
-            this.pictureExport.TabIndex = 49;
-            this.pictureExport.TabStop = false;
-            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
-            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
             // 
             // buttonCancelSearch
             // 
@@ -380,7 +364,6 @@
             // panFiltres
             // 
             this.panFiltres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panFiltres.Controls.Add(this.pictureReinit);
             this.panFiltres.Controls.Add(this.buttonFilter);
             this.panFiltres.Controls.Add(this.checkBoxPack);
             this.panFiltres.Controls.Add(this.labelTypeElementFiltre);
@@ -397,17 +380,6 @@
             this.panFiltres.Name = "panFiltres";
             this.panFiltres.Size = new System.Drawing.Size(256, 285);
             this.panFiltres.TabIndex = 43;
-            // 
-            // pictureReinit
-            // 
-            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
-            this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
-            this.pictureReinit.TabIndex = 48;
-            this.pictureReinit.TabStop = false;
-            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
-            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
             // 
             // buttonFilter
             // 
@@ -607,13 +579,11 @@
             this.Size = new System.Drawing.Size(686, 450);
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
             this.panFiltres.ResumeLayout(false);
             this.panFiltres.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -657,12 +627,10 @@
         public System.Windows.Forms.Label valNomUser;
         private System.Windows.Forms.Label labelTypeElementFiltre;
         private System.Windows.Forms.Button buttonFilter;
-        private System.Windows.Forms.PictureBox pictureReinit;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn debutResersation;
         private System.Windows.Forms.DataGridViewTextBoxColumn finReservation;
-        private System.Windows.Forms.PictureBox pictureExport;
     }
 }

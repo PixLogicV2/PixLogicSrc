@@ -23,19 +23,23 @@ namespace PixLogic
             if (MainWindow.START)
             {
                 database = Helper.database;
-                setTableItem(database.GetAllItems());
-                setComboBoxPack();
-                setComboBoxCategorie();
+                refresh();
             }
         }
 
+        public void refresh()
+        {
+            setTableItem(database.GetAllItems());
+            setComboBoxPack();
+            setComboBoxCategorie();
+        }
         public void setTableItem(List<Item> l)
         {
             List<Item> list = l;
             dataGridItem.Rows.Clear();
             foreach(var item in list)
             {
-                dataGridItem.Rows.Add(item.name, item.quantity, item.price);
+                dataGridItem.Rows.Add(item.name, item.price, item.categorie.name, item.dispo?"OUI":"NON");
             }
 
             if(dataGridItem.RowCount > 0)
@@ -348,13 +352,7 @@ namespace PixLogic
         {
             return dataGridItem;
         }
-
-        private void pictureExport_MouseEnter(object sender, EventArgs e)
-        {
-            ToolTip info = new ToolTip();
-            info.SetToolTip(pictureExport, "Exporter la liste.");
-            pictureExport.Cursor = Cursors.Hand;
-        }
+        
 
         private void comboBoxCategorie_Click(object sender, EventArgs e)
         {
@@ -366,14 +364,7 @@ namespace PixLogic
             WindowImport import = new WindowImport();
             import.ShowDialog();
         }
-
-        private void pictureImporter_MouseEnter(object sender, EventArgs e)
-        {
-            ToolTip info = new ToolTip();
-            info.SetToolTip(pictureImporter, "Importer une liste.");
-            pictureImporter.Cursor = Cursors.Hand;
-        }
-
+        
         private void buttonPanne_Click(object sender, EventArgs e)
         {
             database.SwitchDispo(Convert.ToInt32(valItemId.Text));

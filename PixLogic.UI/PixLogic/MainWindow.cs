@@ -131,5 +131,43 @@ namespace PixLogic
             WindowExport export = new WindowExport(table, title);
             export.ShowDialog();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            switch (button.NameButton)
+            {
+                case "boutonUtilisateur":
+                    break;
+                case "boutonMateriel":
+                    break;
+                default:
+                    MessageBox.Show("Vous ne pouvez pas importer des informations dans ce panneau.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                    //case "boutonScript": namePan = "panScript1"; break;
+            }
+        }
+
+        private void toolButtonRefresh_Click(object sender, EventArgs e)
+        {
+            switch (button.NameButton)
+            {
+                case "boutonUtilisateur":
+                    panUsers1.refresh();
+                    break;
+                case "boutonMateriel":
+                    panItemPack1.refresh();
+                    break;
+                case "boutonReservation":
+                    panReservation1.refresh();
+                    break;
+                case "boutonEmprunt":
+                    panEmprunt1.refresh();
+                    break;
+                case "boutonHistorique":
+                    panLog1.refresh();
+                    break;
+                    //case "boutonScript": namePan = "panScript1"; break;
+            }
+        }
     }
 }

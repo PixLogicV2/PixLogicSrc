@@ -38,6 +38,10 @@
             this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valUserName = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
             this.valUserCredits = new System.Windows.Forms.Label();
@@ -54,8 +58,6 @@
             this.labelListUser = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
-            this.pictureImporter = new System.Windows.Forms.PictureBox();
-            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonModify = new System.Windows.Forms.Button();
@@ -64,8 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureImporter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +126,11 @@
             this.dataGridUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdUser,
             this.NameUser,
-            this.NickNameUser});
+            this.NickNameUser,
+            this.email,
+            this.tel,
+            this.classe,
+            this.credits});
             this.dataGridUsers.Location = new System.Drawing.Point(0, 47);
             this.dataGridUsers.MultiSelect = false;
             this.dataGridUsers.Name = "dataGridUsers";
@@ -158,6 +162,34 @@
             this.NickNameUser.Name = "NickNameUser";
             this.NickNameUser.ReadOnly = true;
             this.NickNameUser.Width = 75;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "E-Mail";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 160;
+            // 
+            // tel
+            // 
+            this.tel.HeaderText = "Tel";
+            this.tel.Name = "tel";
+            this.tel.ReadOnly = true;
+            this.tel.Width = 80;
+            // 
+            // classe
+            // 
+            this.classe.HeaderText = "Classe";
+            this.classe.Name = "classe";
+            this.classe.ReadOnly = true;
+            this.classe.Width = 80;
+            // 
+            // credits
+            // 
+            this.credits.HeaderText = "Crédits";
+            this.credits.Name = "credits";
+            this.credits.ReadOnly = true;
+            this.credits.Width = 75;
             // 
             // valUserName
             // 
@@ -356,28 +388,6 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
-            // pictureImporter
-            // 
-            this.pictureImporter.Image = ((System.Drawing.Image)(resources.GetObject("pictureImporter.Image")));
-            this.pictureImporter.Location = new System.Drawing.Point(552, 1);
-            this.pictureImporter.Name = "pictureImporter";
-            this.pictureImporter.Size = new System.Drawing.Size(29, 27);
-            this.pictureImporter.TabIndex = 52;
-            this.pictureImporter.TabStop = false;
-            this.pictureImporter.Click += new System.EventHandler(this.pictureImporter_Click);
-            this.pictureImporter.MouseEnter += new System.EventHandler(this.pictureImporter_MouseEnter);
-            // 
-            // pictureExport
-            // 
-            this.pictureExport.Image = global::PixLogic.Properties.Resources.exporter;
-            this.pictureExport.Location = new System.Drawing.Point(521, 1);
-            this.pictureExport.Name = "pictureExport";
-            this.pictureExport.Size = new System.Drawing.Size(25, 26);
-            this.pictureExport.TabIndex = 50;
-            this.pictureExport.TabStop = false;
-            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
-            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
-            // 
             // buttonDelete
             // 
             this.buttonDelete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -442,8 +452,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.pictureImporter);
-            this.Controls.Add(this.pictureExport);
             this.Controls.Add(this.labelNews);
             this.Controls.Add(this.labelListUser);
             this.Controls.Add(this.buttonDelete);
@@ -464,8 +472,6 @@
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureImporter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -496,13 +502,15 @@
         private System.Windows.Forms.Label labelListUser;
         private System.Windows.Forms.Label labelNews;
         private System.Windows.Forms.Label labelIdentifiant;
-        private System.Windows.Forms.PictureBox pictureExport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NickNameUser;
-        private System.Windows.Forms.PictureBox pictureImporter;
         private System.Windows.Forms.PictureBox pictureReserver;
         public System.Windows.Forms.Label valUserCredits;
         private System.Windows.Forms.Label labelCredits;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NickNameUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn credits;
     }
 }

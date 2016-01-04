@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelFiltres = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
-            this.pictureReinit = new System.Windows.Forms.PictureBox();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.labelNameUser = new System.Windows.Forms.Label();
             this.labelTel = new System.Windows.Forms.Label();
             this.panTableLogs = new System.Windows.Forms.Panel();
-            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
@@ -76,10 +74,8 @@
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelListEmprunt = new System.Windows.Forms.Label();
             this.panFiltres.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.panNews.SuspendLayout();
             this.panTableLogs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLogs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +92,6 @@
             // panFiltres
             // 
             this.panFiltres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panFiltres.Controls.Add(this.pictureReinit);
             this.panFiltres.Controls.Add(this.buttonFilter);
             this.panFiltres.Controls.Add(this.checkBoxPack);
             this.panFiltres.Controls.Add(this.labelTypeElementFiltre);
@@ -113,16 +108,6 @@
             this.panFiltres.Name = "panFiltres";
             this.panFiltres.Size = new System.Drawing.Size(674, 90);
             this.panFiltres.TabIndex = 60;
-            // 
-            // pictureReinit
-            // 
-            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(635, 3);
-            this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
-            this.pictureReinit.TabIndex = 48;
-            this.pictureReinit.TabStop = false;
-            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
             // 
             // buttonFilter
             // 
@@ -418,7 +403,6 @@
             // panTableLogs
             // 
             this.panTableLogs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panTableLogs.Controls.Add(this.pictureExport);
             this.panTableLogs.Controls.Add(this.buttonCancelSearch);
             this.panTableLogs.Controls.Add(this.textBoxSearch);
             this.panTableLogs.Controls.Add(this.labelSearch);
@@ -427,17 +411,6 @@
             this.panTableLogs.Name = "panTableLogs";
             this.panTableLogs.Size = new System.Drawing.Size(674, 229);
             this.panTableLogs.TabIndex = 56;
-            // 
-            // pictureExport
-            // 
-            this.pictureExport.Image = global::PixLogic.Properties.Resources.exporter;
-            this.pictureExport.Location = new System.Drawing.Point(635, 10);
-            this.pictureExport.Name = "pictureExport";
-            this.pictureExport.Size = new System.Drawing.Size(25, 26);
-            this.pictureExport.TabIndex = 50;
-            this.pictureExport.TabStop = false;
-            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
-            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
             // 
             // buttonCancelSearch
             // 
@@ -585,12 +558,10 @@
             this.Size = new System.Drawing.Size(686, 450);
             this.panFiltres.ResumeLayout(false);
             this.panFiltres.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
             this.panTableLogs.ResumeLayout(false);
             this.panTableLogs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLogs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -601,7 +572,6 @@
 
         private System.Windows.Forms.Label labelFiltres;
         private System.Windows.Forms.Panel panFiltres;
-        private System.Windows.Forms.PictureBox pictureReinit;
         private System.Windows.Forms.Button buttonFilter;
         private System.Windows.Forms.CheckBox checkBoxPack;
         private System.Windows.Forms.Label labelTypeElementFiltre;
@@ -629,7 +599,6 @@
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridLogs;
         private System.Windows.Forms.Label labelListEmprunt;
-        private System.Windows.Forms.PictureBox pictureExport;
         private System.Windows.Forms.Label labelUserPhone;
         private System.Windows.Forms.Label labelDebutEmprunt;
         public System.Windows.Forms.Label valDebutEmprunt;

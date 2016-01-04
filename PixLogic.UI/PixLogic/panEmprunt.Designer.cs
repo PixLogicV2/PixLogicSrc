@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelFiltres = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
-            this.pictureReinit = new System.Windows.Forms.PictureBox();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.checkBoxPack = new System.Windows.Forms.CheckBox();
             this.labelTypeElementFiltre = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.labelTel = new System.Windows.Forms.Label();
             this.labelDateRetour = new System.Windows.Forms.Label();
             this.panTableUsers = new System.Windows.Forms.Panel();
-            this.pictureExport = new System.Windows.Forms.PictureBox();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
@@ -74,10 +72,8 @@
             this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panFiltres.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).BeginInit();
             this.panNews.SuspendLayout();
             this.panTableUsers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmprunts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +90,6 @@
             // panFiltres
             // 
             this.panFiltres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panFiltres.Controls.Add(this.pictureReinit);
             this.panFiltres.Controls.Add(this.buttonFilter);
             this.panFiltres.Controls.Add(this.checkBoxPack);
             this.panFiltres.Controls.Add(this.labelTypeElementFiltre);
@@ -111,17 +106,6 @@
             this.panFiltres.Name = "panFiltres";
             this.panFiltres.Size = new System.Drawing.Size(256, 285);
             this.panFiltres.TabIndex = 51;
-            // 
-            // pictureReinit
-            // 
-            this.pictureReinit.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.pictureReinit.Location = new System.Drawing.Point(221, 6);
-            this.pictureReinit.Name = "pictureReinit";
-            this.pictureReinit.Size = new System.Drawing.Size(25, 21);
-            this.pictureReinit.TabIndex = 48;
-            this.pictureReinit.TabStop = false;
-            this.pictureReinit.Click += new System.EventHandler(this.pictureReinit_Click);
-            this.pictureReinit.MouseEnter += new System.EventHandler(this.pictureReinit_MouseEnter);
             // 
             // buttonFilter
             // 
@@ -419,7 +403,6 @@
             // panTableUsers
             // 
             this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panTableUsers.Controls.Add(this.pictureExport);
             this.panTableUsers.Controls.Add(this.buttonCancelSearch);
             this.panTableUsers.Controls.Add(this.textBoxSearch);
             this.panTableUsers.Controls.Add(this.labelSearch);
@@ -428,17 +411,6 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(412, 285);
             this.panTableUsers.TabIndex = 47;
-            // 
-            // pictureExport
-            // 
-            this.pictureExport.Image = global::PixLogic.Properties.Resources.exporter;
-            this.pictureExport.Location = new System.Drawing.Point(382, 6);
-            this.pictureExport.Name = "pictureExport";
-            this.pictureExport.Size = new System.Drawing.Size(25, 25);
-            this.pictureExport.TabIndex = 50;
-            this.pictureExport.TabStop = false;
-            this.pictureExport.Click += new System.EventHandler(this.pictureExport_Click);
-            this.pictureExport.MouseEnter += new System.EventHandler(this.pictureExport_MouseEnter);
             // 
             // buttonCancelSearch
             // 
@@ -472,19 +444,19 @@
             // 
             this.dataGridEmprunts.AllowUserToAddRows = false;
             this.dataGridEmprunts.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridEmprunts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.dataGridEmprunts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridEmprunts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridEmprunts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridEmprunts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEmprunts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmprunts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridEmprunts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridEmprunts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdReservation,
@@ -492,26 +464,26 @@
             this.NameReservable,
             this.dateEmprunt,
             this.dateRetour});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridEmprunts.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridEmprunts.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridEmprunts.Location = new System.Drawing.Point(-1, 47);
             this.dataGridEmprunts.MultiSelect = false;
             this.dataGridEmprunts.Name = "dataGridEmprunts";
             this.dataGridEmprunts.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEmprunts.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmprunts.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridEmprunts.RowHeadersVisible = false;
             this.dataGridEmprunts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridEmprunts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -573,12 +545,10 @@
             this.Size = new System.Drawing.Size(684, 448);
             this.panFiltres.ResumeLayout(false);
             this.panFiltres.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReinit)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureExport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmprunts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -589,7 +559,6 @@
 
         private System.Windows.Forms.Label labelFiltres;
         private System.Windows.Forms.Panel panFiltres;
-        private System.Windows.Forms.PictureBox pictureReinit;
         private System.Windows.Forms.Button buttonFilter;
         private System.Windows.Forms.CheckBox checkBoxPack;
         private System.Windows.Forms.Label labelTypeElementFiltre;
@@ -627,6 +596,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
-        private System.Windows.Forms.PictureBox pictureExport;
     }
 }
