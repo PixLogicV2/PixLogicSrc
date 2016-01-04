@@ -27,11 +27,11 @@ namespace PixLogic.DAL
         {
             container.get("add_pack").addPack(container.get("pack_factory").build(name, description, dispo, price,temp));
         }
-        public void AddManager(string name,string mdp,string nickname,int phone,string pseudo)
+        public void AddManager(string name,string mdp,string nickname,string phone,string pseudo)
         {
             container.get("add_manager").addManager(container.get("manager_factory").build(name,nickname, mdp,phone,pseudo));
         }
-        public void UpdateManager(int id,string name,string mdp,int phone,string pseudo,string nickname)
+        public void UpdateManager(int id,string name,string mdp,string phone,string pseudo,string nickname)
         {
             container.get("add_manager").udateManager(id, name,nickname, mdp,phone,pseudo);
         }

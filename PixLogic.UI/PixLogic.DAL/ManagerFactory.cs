@@ -15,7 +15,7 @@ namespace PixLogic.DAL
             this.context = context;
         }
 
-        public Manager build(string name, string nickname, string mdp,int phone,string pseudo)
+        public Manager build(string name, string nickname, string mdp,string phone,string pseudo)
         {
             Manager manag=new Manager();
             manag.name = name;

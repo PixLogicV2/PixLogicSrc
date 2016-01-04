@@ -37,7 +37,7 @@ namespace PixLogic.DAL
             context.Entry(item).State = System.Data.Entity.EntityState.Deleted;
             context.SaveChanges();
         }
-        public void updateManager(int id, string name,string nickname, string mdp,int phone,string pseudo)
+        public void updateManager(int id, string name,string nickname, string mdp,string phone,string pseudo)
         {
             Manager user;
             user = context.Managers.Where(u => u.ManagerId == id).FirstOrDefault<Manager>();
