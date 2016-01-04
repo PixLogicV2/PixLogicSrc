@@ -16,11 +16,15 @@ namespace PixLogic
 {
     public partial class panScript : UserControl
     {
-        private DAL.Database database = Helper.database;
+        private DAL.Database database;
 
         public panScript()
         {
             InitializeComponent();
+            if(MainWindow.START)
+            {
+                database = Helper.database;
+            }
         }
 
         private void ExecuteBtn_Click(object sender, EventArgs e)
@@ -58,7 +62,12 @@ namespace PixLogic
 
         private void panScript_Load(object sender, EventArgs e)
         {
-            List<Requete> allRequest = database.GetAllRequete();
+            List<Requete> allRequest = new List<Requete>();
+            if (MainWindow.START)
+            {
+                allRequest = database.GetAllRequete();
+            }
+            
            
             queryDGV.DataSource = allRequest;
             queryDGV.Columns[1].Visible = false;

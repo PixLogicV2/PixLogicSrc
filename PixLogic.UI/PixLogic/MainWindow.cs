@@ -9,13 +9,18 @@ namespace PixLogic
     {
         private MenuButton button = null;
         public static bool START = false;
-        private Database database = Helper.database;
+        private Database database;
 
         public MainWindow()
         {
             InitializeComponent();
-            addEventsOnButtonItem();
-            setPanUserVisible();
+            if(START)
+            {
+                database = Helper.database;
+                addEventsOnButtonItem();
+                setPanUserVisible();
+            }
+            
         }
 
 
