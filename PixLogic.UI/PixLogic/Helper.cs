@@ -121,6 +121,18 @@ namespace PixLogic
             return result;
         }
 
+        public static bool confirmationEmpruntDirectPack(User user)
+        {
+            bool result = false;
+            string u = user.name + " " + user.nickname;
+
+            DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment prêter le pack à l'utilisateur " + u.ToUpper() + " ?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = (resultBox == DialogResult.Yes) ? true : false;
+
+            return result;
+        }
+
         public static bool confirmationRemise(int idReservation)
         {
             bool result = false;

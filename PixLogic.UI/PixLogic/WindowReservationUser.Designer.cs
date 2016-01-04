@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelListItemDispo = new System.Windows.Forms.Panel();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
             this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radioButtonReserver = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonEmprunter = new System.Windows.Forms.RadioButton();
             this.buttonEnlever = new System.Windows.Forms.Button();
             this.labelTotal = new System.Windows.Forms.Label();
             this.valTotal = new System.Windows.Forms.Label();
@@ -89,8 +89,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -308,8 +308,8 @@
             // 
             this.dataGridListeItem.AllowUserToAddRows = false;
             this.dataGridListeItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dataGridListeItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dataGridListeItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridListeItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridListeItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridListeItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -342,26 +342,24 @@
             // radioButtonReserver
             // 
             this.radioButtonReserver.AutoSize = true;
-            this.radioButtonReserver.Checked = true;
             this.radioButtonReserver.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonReserver.Location = new System.Drawing.Point(327, 146);
             this.radioButtonReserver.Name = "radioButtonReserver";
             this.radioButtonReserver.Size = new System.Drawing.Size(68, 17);
             this.radioButtonReserver.TabIndex = 6;
-            this.radioButtonReserver.TabStop = true;
             this.radioButtonReserver.Text = "Réserver";
             this.radioButtonReserver.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonEmprunter
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(432, 146);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 17);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.Text = "Emprunter";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonEmprunter.AutoSize = true;
+            this.radioButtonEmprunter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonEmprunter.Location = new System.Drawing.Point(432, 146);
+            this.radioButtonEmprunter.Name = "radioButtonEmprunter";
+            this.radioButtonEmprunter.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonEmprunter.TabIndex = 7;
+            this.radioButtonEmprunter.Text = "Emprunter";
+            this.radioButtonEmprunter.UseVisualStyleBackColor = true;
             // 
             // buttonEnlever
             // 
@@ -454,7 +452,7 @@
             this.Controls.Add(this.valTotal);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.buttonEnlever);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButtonEmprunter);
             this.Controls.Add(this.radioButtonReserver);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -507,7 +505,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.RadioButton radioButtonReserver;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButtonEmprunter;
         private System.Windows.Forms.Button buttonEnlever;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label valTotal;

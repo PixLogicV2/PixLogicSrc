@@ -160,19 +160,49 @@ namespace PixLogic
         }
         private void buttonValider_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(valCreditsRestants.Text) > 0)
+            if (dataGridListeItem.Rows.Count == 0)
             {
-                int last = database.GetLastPackId();
-                database.AddPack("[Eph]. Pack " + Convert.ToString(last + 1), "reservation de " + valNom.Text, false, 0, true);
-                Pack pack = database.GetPackById(last + 1);
-                for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
+                MessageBox.Show("Aucun matériel n'est désigné!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!radioButtonReserver.Checked && !radioButtonEmprunter.Checked)
+            {
+                MessageBox.Show("Vous devez choisir l'opération (Reservation ou Emprunt) à effectuer sur la liste des matériels!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (Convert.ToInt32(valCreditsRestants.Text) >= 0)
+            {
+                User user = database.GetUserById(idUser);
+
+                if (radioButtonReserver.Checked && Helper.confirmationReservation(Helper.ADD))
                 {
-                    database.AddItemToPack(dataGridListeItem.Rows[i].Cells[0].Value.ToString(), pack.name);
+                    createPackEph(true);
+                    this.Close();
                 }
-                database.AddReservation(true, dateTimeBegin.Value.Date, dateTimeEnd.Value.Date, null, null, database.GetUserById(idUser), pack, null);
-                this.Close();
+
+                else if (radioButtonEmprunter.Checked && Helper.confirmationEmpruntDirectPack(user))
+                {
+                    createPackEph(false);
+                    this.Close();
+                }
             }
             else MessageBox.Show("Credits insuffisants", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void createPackEph(bool reserv)
+        {
+            int last = database.GetLastPackId();
+            database.AddPack("[Eph]. Pack " + Convert.ToString(last + 1), "reservation de " + valNom.Text, false, 0, true);
+            Pack pack = database.GetPackById(last + 1);
+            for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
+            {
+                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[0].Value.ToString(), pack.name);
+            }
+
+            if(reserv)
+                database.AddReservation(true, dateTimeBegin.Value.Date, dateTimeEnd.Value.Date, null, null, database.GetUserById(idUser), pack, null);
+            else
+                database.AddReservation(true, null, null, dateTimeBegin.Value.Date, dateTimeEnd.Value.Date, database.GetUserById(idUser), pack, null);
         }
     }
 }

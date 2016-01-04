@@ -496,6 +496,7 @@
             this.NameUser,
             this.NickNameUser});
             this.dataGridUsersReservation.Location = new System.Drawing.Point(0, 47);
+            this.dataGridUsersReservation.MultiSelect = false;
             this.dataGridUsersReservation.Name = "dataGridUsersReservation";
             this.dataGridUsersReservation.ReadOnly = true;
             this.dataGridUsersReservation.RowHeadersVisible = false;
