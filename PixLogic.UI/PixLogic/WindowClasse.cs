@@ -48,6 +48,7 @@ namespace PixLogic
             UserClass c = database.GetUserClassById(idClasse);
             valLibelleClasse.Text = c.name;
             valCredit.Text = c.credits.ToString();
+            valLevel.Text = c.level.ToString();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -58,15 +59,14 @@ namespace PixLogic
         private void buttonValid_Click(object sender, EventArgs e)
         {
             string op = add ? Helper.ADD : Helper.SET;
-            if (!Helper.fieldsAreEmpty(true, valLibelleClasse.Text)
+            if (!Helper.fieldsAreEmpty(true, valLibelleClasse.Text, valCredit.Text, valLevel.Text)
                 && Helper.AreNumbers(true, valCredit.Text)
                 && Helper.confirmation(op))
             {
                 if (add && !Helper.userClassExist(true, valLibelleClasse.Text))
                     database.AddUserClass(valLibelleClasse.Text, (int)double.Parse(valCredit.Text),(int)double.Parse(valLevel.Text));
                 else if(!add && !Helper.userClassExistModif(true, valLibelleClasse.Text, settings.valLibelleClasse.Text))
-                    database.UpdateUserClass(idClasse, valLibelleClasse.Text, (int)double.Parse(valCredit.Text), (int)double.Parse(valLevel.Text));
-
+                    database.UpdateUserClass(idClasse, valLibelleClasse.Text, int.Parse(valCredit.Text), int.Parse(valLevel.Text));
                 if (!quickAdd)
                 {
                     settings.setTableUserClass(database.GetAllUserClass());
