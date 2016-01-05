@@ -737,7 +737,15 @@ namespace PixLogic
                 return false;
             }
         }
-
+        public static bool isNotConnected(int id)
+        {
+            if (Helper.manager.ManagerId == id)
+            {
+                MessageBox.Show("Le manager est actuellement connecté", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else return true;
+        }
         public string DecryptString(string inputString, int dwKeySize, string xmlString)
         {
             RSACryptoServiceProvider rsaCryptoServiceProvider

@@ -34,10 +34,10 @@ namespace PixLogic.DAL
                                          select Manager;
             return itemQuery.ToList();
         }
-        public void deleteManager(string managerName)
+        public void deleteManager(int id)
         {
             var item = (from s in context.Managers
-                        where s.name == managerName
+                        where s.ManagerId == id
                         select s).FirstOrDefault();
 
             context.Entry(item).State = System.Data.Entity.EntityState.Deleted;
