@@ -137,7 +137,7 @@
             this.tabControlSettings.Controls.Add(this.panEmail);
             this.tabControlSettings.Controls.Add(this.manager);
             this.tabControlSettings.Location = new System.Drawing.Point(16, 15);
-            this.tabControlSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControlSettings.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlSettings.Name = "tabControlSettings";
             this.tabControlSettings.SelectedIndex = 0;
             this.tabControlSettings.Size = new System.Drawing.Size(765, 432);
@@ -155,9 +155,9 @@
             this.panCategorie.Controls.Add(this.panelListCategory);
             this.panCategorie.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panCategorie.Location = new System.Drawing.Point(4, 25);
-            this.panCategorie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panCategorie.Margin = new System.Windows.Forms.Padding(4);
             this.panCategorie.Name = "panCategorie";
-            this.panCategorie.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panCategorie.Padding = new System.Windows.Forms.Padding(4);
             this.panCategorie.Size = new System.Drawing.Size(757, 403);
             this.panCategorie.TabIndex = 1;
             this.panCategorie.Text = "Catégorie";
@@ -168,7 +168,7 @@
             this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDelete.Location = new System.Drawing.Point(592, 357);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(124, 36);
             this.buttonDelete.TabIndex = 46;
@@ -183,7 +183,7 @@
             this.buttonModify.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModify.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonModify.Location = new System.Drawing.Point(477, 357);
-            this.buttonModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModify.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(104, 36);
             this.buttonModify.TabIndex = 45;
@@ -198,7 +198,7 @@
             this.buttonAdd.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAdd.Location = new System.Drawing.Point(365, 357);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(104, 36);
             this.buttonAdd.TabIndex = 44;
@@ -228,7 +228,7 @@
             this.panNews.Controls.Add(this.labelLibelle);
             this.panNews.Controls.Add(this.valLibelleCat);
             this.panNews.Location = new System.Drawing.Point(345, 17);
-            this.panNews.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panNews.Margin = new System.Windows.Forms.Padding(4);
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(401, 283);
             this.panNews.TabIndex = 42;
@@ -259,7 +259,7 @@
             // valDescription
             // 
             this.valDescription.Location = new System.Drawing.Point(112, 101);
-            this.valDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valDescription.Margin = new System.Windows.Forms.Padding(4);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
@@ -321,7 +321,7 @@
             this.panelListCategory.Controls.Add(this.labelSearch);
             this.panelListCategory.Controls.Add(this.dataGridCategories);
             this.panelListCategory.Location = new System.Drawing.Point(8, 17);
-            this.panelListCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelListCategory.Margin = new System.Windows.Forms.Padding(4);
             this.panelListCategory.Name = "panelListCategory";
             this.panelListCategory.Size = new System.Drawing.Size(329, 375);
             this.panelListCategory.TabIndex = 0;
@@ -330,7 +330,7 @@
             // 
             this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancelSearch.Location = new System.Drawing.Point(236, 20);
-            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancelSearch.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelSearch.Name = "buttonCancelSearch";
             this.buttonCancelSearch.Size = new System.Drawing.Size(36, 28);
             this.buttonCancelSearch.TabIndex = 6;
@@ -340,7 +340,7 @@
             // textBoxSearch
             // 
             this.textBoxSearch.Location = new System.Drawing.Point(103, 21);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(127, 26);
             this.textBoxSearch.TabIndex = 5;
@@ -369,7 +369,7 @@
             this.libelleCol,
             this.levelCol});
             this.dataGridCategories.Location = new System.Drawing.Point(-1, 60);
-            this.dataGridCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridCategories.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridCategories.Name = "dataGridCategories";
             this.dataGridCategories.ReadOnly = true;
             this.dataGridCategories.RowHeadersVisible = false;
@@ -411,9 +411,9 @@
             this.classe.Controls.Add(this.label9);
             this.classe.Controls.Add(this.panel4);
             this.classe.Location = new System.Drawing.Point(4, 25);
-            this.classe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.classe.Margin = new System.Windows.Forms.Padding(4);
             this.classe.Name = "classe";
-            this.classe.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.classe.Padding = new System.Windows.Forms.Padding(4);
             this.classe.Size = new System.Drawing.Size(757, 403);
             this.classe.TabIndex = 2;
             this.classe.Text = "Classe";
@@ -424,7 +424,7 @@
             this.buttonSuppClasse.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonSuppClasse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSuppClasse.Location = new System.Drawing.Point(592, 354);
-            this.buttonSuppClasse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSuppClasse.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSuppClasse.Name = "buttonSuppClasse";
             this.buttonSuppClasse.Size = new System.Drawing.Size(124, 36);
             this.buttonSuppClasse.TabIndex = 53;
@@ -439,7 +439,7 @@
             this.buttonModifierClasse.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModifierClasse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonModifierClasse.Location = new System.Drawing.Point(477, 354);
-            this.buttonModifierClasse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModifierClasse.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModifierClasse.Name = "buttonModifierClasse";
             this.buttonModifierClasse.Size = new System.Drawing.Size(104, 36);
             this.buttonModifierClasse.TabIndex = 52;
@@ -454,7 +454,7 @@
             this.buttonAjouterClasse.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAjouterClasse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAjouterClasse.Location = new System.Drawing.Point(365, 354);
-            this.buttonAjouterClasse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAjouterClasse.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAjouterClasse.Name = "buttonAjouterClasse";
             this.buttonAjouterClasse.Size = new System.Drawing.Size(104, 36);
             this.buttonAjouterClasse.TabIndex = 51;
@@ -484,7 +484,7 @@
             this.panel3.Controls.Add(this.labelLibel);
             this.panel3.Controls.Add(this.valLibelleClasse);
             this.panel3.Location = new System.Drawing.Point(345, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(401, 126);
             this.panel3.TabIndex = 49;
@@ -577,7 +577,7 @@
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.dataGridUserClass);
             this.panel4.Location = new System.Drawing.Point(8, 15);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(329, 375);
             this.panel4.TabIndex = 47;
@@ -586,7 +586,7 @@
             // 
             this.buttonCancelClasse.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancelClasse.Location = new System.Drawing.Point(236, 20);
-            this.buttonCancelClasse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancelClasse.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelClasse.Name = "buttonCancelClasse";
             this.buttonCancelClasse.Size = new System.Drawing.Size(36, 28);
             this.buttonCancelClasse.TabIndex = 6;
@@ -596,7 +596,7 @@
             // textBoxSearchClasse
             // 
             this.textBoxSearchClasse.Location = new System.Drawing.Point(103, 21);
-            this.textBoxSearchClasse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearchClasse.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSearchClasse.Name = "textBoxSearchClasse";
             this.textBoxSearchClasse.Size = new System.Drawing.Size(127, 22);
             this.textBoxSearchClasse.TabIndex = 5;
@@ -626,7 +626,7 @@
             this.dataGridViewTextBoxColumn3,
             this.AccessLevel});
             this.dataGridUserClass.Location = new System.Drawing.Point(-1, 60);
-            this.dataGridUserClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridUserClass.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridUserClass.Name = "dataGridUserClass";
             this.dataGridUserClass.ReadOnly = true;
             this.dataGridUserClass.RowHeadersVisible = false;
@@ -676,9 +676,9 @@
             this.panEmail.Controls.Add(this.panel1);
             this.panEmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panEmail.Location = new System.Drawing.Point(4, 25);
-            this.panEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panEmail.Margin = new System.Windows.Forms.Padding(4);
             this.panEmail.Name = "panEmail";
-            this.panEmail.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panEmail.Padding = new System.Windows.Forms.Padding(4);
             this.panEmail.Size = new System.Drawing.Size(757, 403);
             this.panEmail.TabIndex = 0;
             this.panEmail.Text = "Envoi e-mail";
@@ -689,7 +689,7 @@
             this.buttonSave.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSave.Location = new System.Drawing.Point(296, 359);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(124, 33);
             this.buttonSave.TabIndex = 11;
@@ -739,7 +739,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.labelEmail);
             this.panel2.Location = new System.Drawing.Point(8, 167);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(738, 125);
             this.panel2.TabIndex = 2;
@@ -747,7 +747,7 @@
             // valPassword
             // 
             this.valPassword.Location = new System.Drawing.Point(140, 68);
-            this.valPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valPassword.Margin = new System.Windows.Forms.Padding(4);
             this.valPassword.Name = "valPassword";
             this.valPassword.Size = new System.Drawing.Size(285, 26);
             this.valPassword.TabIndex = 3;
@@ -756,7 +756,7 @@
             // valEmailAdress
             // 
             this.valEmailAdress.Location = new System.Drawing.Point(140, 26);
-            this.valEmailAdress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valEmailAdress.Margin = new System.Windows.Forms.Padding(4);
             this.valEmailAdress.Name = "valEmailAdress";
             this.valEmailAdress.Size = new System.Drawing.Size(285, 26);
             this.valEmailAdress.TabIndex = 2;
@@ -802,7 +802,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labelServer);
             this.panel1.Location = new System.Drawing.Point(8, 18);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(738, 125);
             this.panel1.TabIndex = 0;
@@ -810,7 +810,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(140, 68);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(285, 26);
             this.textBox1.TabIndex = 3;
@@ -818,7 +818,7 @@
             // valServeur
             // 
             this.valServeur.Location = new System.Drawing.Point(140, 26);
-            this.valServeur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valServeur.Margin = new System.Windows.Forms.Padding(4);
             this.valServeur.Name = "valServeur";
             this.valServeur.Size = new System.Drawing.Size(285, 26);
             this.valServeur.TabIndex = 2;
@@ -856,7 +856,7 @@
             this.manager.Controls.Add(this.labelListManager);
             this.manager.Controls.Add(this.panelManager);
             this.manager.Location = new System.Drawing.Point(4, 25);
-            this.manager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.manager.Margin = new System.Windows.Forms.Padding(4);
             this.manager.Name = "manager";
             this.manager.Size = new System.Drawing.Size(757, 403);
             this.manager.TabIndex = 3;
@@ -868,13 +868,14 @@
             this.buttonSuppManager.Image = global::PixLogic.Properties.Resources.supprimer_icon;
             this.buttonSuppManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSuppManager.Location = new System.Drawing.Point(600, 354);
-            this.buttonSuppManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSuppManager.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSuppManager.Name = "buttonSuppManager";
             this.buttonSuppManager.Size = new System.Drawing.Size(124, 36);
             this.buttonSuppManager.TabIndex = 56;
             this.buttonSuppManager.Text = "Supprimer";
             this.buttonSuppManager.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonSuppManager.UseVisualStyleBackColor = true;
+            this.buttonSuppManager.Click += new System.EventHandler(this.buttonSuppManager_Click);
             // 
             // buttonModifierManager
             // 
@@ -882,7 +883,7 @@
             this.buttonModifierManager.Image = global::PixLogic.Properties.Resources.modifier_icon;
             this.buttonModifierManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonModifierManager.Location = new System.Drawing.Point(485, 354);
-            this.buttonModifierManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModifierManager.Margin = new System.Windows.Forms.Padding(4);
             this.buttonModifierManager.Name = "buttonModifierManager";
             this.buttonModifierManager.Size = new System.Drawing.Size(104, 36);
             this.buttonModifierManager.TabIndex = 55;
@@ -897,7 +898,7 @@
             this.buttonAjouterManager.Image = global::PixLogic.Properties.Resources.ajouter_icon;
             this.buttonAjouterManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAjouterManager.Location = new System.Drawing.Point(373, 354);
-            this.buttonAjouterManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAjouterManager.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAjouterManager.Name = "buttonAjouterManager";
             this.buttonAjouterManager.Size = new System.Drawing.Size(104, 36);
             this.buttonAjouterManager.TabIndex = 54;
@@ -929,7 +930,7 @@
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.valNomManager);
             this.panel5.Location = new System.Drawing.Point(347, 15);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(401, 162);
             this.panel5.TabIndex = 51;
@@ -1045,7 +1046,7 @@
             this.panelManager.Controls.Add(this.label5);
             this.panelManager.Controls.Add(this.dataGridManagers);
             this.panelManager.Location = new System.Drawing.Point(8, 15);
-            this.panelManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelManager.Margin = new System.Windows.Forms.Padding(4);
             this.panelManager.Name = "panelManager";
             this.panelManager.Size = new System.Drawing.Size(329, 375);
             this.panelManager.TabIndex = 49;
@@ -1054,7 +1055,7 @@
             // 
             this.buttonCancelManager.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancelManager.Location = new System.Drawing.Point(236, 20);
-            this.buttonCancelManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancelManager.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelManager.Name = "buttonCancelManager";
             this.buttonCancelManager.Size = new System.Drawing.Size(36, 28);
             this.buttonCancelManager.TabIndex = 6;
@@ -1063,7 +1064,7 @@
             // textBoxSearchManager
             // 
             this.textBoxSearchManager.Location = new System.Drawing.Point(103, 21);
-            this.textBoxSearchManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSearchManager.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSearchManager.Name = "textBoxSearchManager";
             this.textBoxSearchManager.Size = new System.Drawing.Size(127, 22);
             this.textBoxSearchManager.TabIndex = 5;
@@ -1091,7 +1092,7 @@
             this.name,
             this.prenom});
             this.dataGridManagers.Location = new System.Drawing.Point(-1, 60);
-            this.dataGridManagers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridManagers.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridManagers.Name = "dataGridManagers";
             this.dataGridManagers.ReadOnly = true;
             this.dataGridManagers.RowHeadersVisible = false;
@@ -1126,7 +1127,7 @@
             this.ClientSize = new System.Drawing.Size(797, 462);
             this.Controls.Add(this.tabControlSettings);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowSettings";

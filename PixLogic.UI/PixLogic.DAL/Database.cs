@@ -39,9 +39,9 @@ namespace PixLogic.DAL
         {
             container.get("add_manager").updateManager(id, name,nickname, mdp,phone,pseudo);
         }
-        public void DeleteManager(string name)
+        public void DeleteManager(int id)
         {
-            container.get("add_manager").deleteManager(name);
+            container.get("add_manager").deleteManager(id);
         }
         public Manager GetManagerById(int id)
         {
