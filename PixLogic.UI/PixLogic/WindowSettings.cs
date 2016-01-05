@@ -201,9 +201,9 @@ namespace PixLogic
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if(Helper.confirmation(Helper.DELETE))
-            {
-                int id = int.Parse(dataGridCategories.CurrentRow.Cells[0].Value.ToString());
+            int id = int.Parse(dataGridCategories.CurrentRow.Cells[0].Value.ToString());
+            if (Helper.confirmation(Helper.DELETE) && Helper.existItemInCategorie(id)== false)
+            { 
                 database.DeleteCategorie(id);
                 setTableCategories(database.GetAllCategorie());
             }
@@ -279,6 +279,16 @@ namespace PixLogic
             int id = int.Parse(dataGridManagers.CurrentRow.Cells[0].Value.ToString());
             Password window = new Password(id, this);
             window.ShowDialog();
+        }
+
+        private void buttonSuppClasse_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridUserClass.CurrentRow.Cells[0].Value.ToString());
+            if (Helper.confirmation(Helper.DELETE) && Helper.existUserInUserClass(id) == false)
+            {
+                database.DeleteUserClass(id);
+                setTableUserClass(database.GetAllUserClass());
+            }
         }
     }
 }

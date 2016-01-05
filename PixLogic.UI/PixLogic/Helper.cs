@@ -642,6 +642,34 @@ namespace PixLogic
             }
             return false;
         }
+        public static bool existItemInCategorie(int idCategorie)
+        {
+            Categorie cat = database.GetCategorieById(idCategorie);
+            List<Item> items = database.GetAllItems();
+            foreach(Item i in items)
+            {
+                if (i.categorie == cat)
+                {
+                    MessageBox.Show("Il existe un materiel dans la categorie", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool existUserInUserClass(int idUserclass)
+        {
+            UserClass userclass = database.GetUserClassById(idUserclass);
+            List<User> users = database.GetAllUsers();
+            foreach (User u in users)
+            {
+                if (u.userClass == userclass)
+                {
+                    MessageBox.Show("il existe un utilisateur dans cette classe", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
+        }
         public static bool dateReservationToday(int idReservation)
         {
             Reservation res = database.GetReservationById(idReservation);
