@@ -24,6 +24,7 @@ namespace PixLogic
             fen.StartPosition = FormStartPosition.CenterScreen;
             Application.Run(fen);
             
+            
         }
     }
 }
