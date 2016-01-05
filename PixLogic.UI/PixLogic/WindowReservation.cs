@@ -110,7 +110,7 @@ namespace PixLogic
             DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
             DateTime? debutEmprunt = null;
             DateTime? endEmprunt= null;
-            Manager manag = null;
+            Manager manag = Helper.manager;
             Reservable elem;
             if (isPack == false)
             {

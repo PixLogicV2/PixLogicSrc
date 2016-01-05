@@ -18,7 +18,7 @@ namespace PixLogic
     class Helper
     {
         public static Database database = new Database();
-
+        public static Manager manager = new Manager();
         public static readonly string ADD = "ajouter";
         public static readonly string DELETE = "supprimer";
         public static readonly string SET = "modifier";
