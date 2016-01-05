@@ -124,7 +124,7 @@ namespace PixLogic
             }
 
             setNewsManager();
-            checkEnableButtonClasse();
+            checkEnableButtonManager();
         }
 
         private void setNewsManager()
