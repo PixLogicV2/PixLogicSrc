@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace PixLogic
 {
@@ -55,12 +56,22 @@ namespace PixLogic
                     {
                         if (add && !Helper.ManagerExist(true, valPseudo.Text))
                         {
+                            /*string mdp = "";
+                            using (MD5 md5Hash = MD5.Create())
+                            {
+                                mdp = Helper.GetMd5Hash(md5Hash, valMdp.Text);
+                            }*/
                             database.AddManager(valNom.Text, valMdp.Text, valPrenom.Text, valTel.Text, valPseudo.Text);
                             settings.setTableManagers(database.GetAllManagers());
                             this.Close();
                         }
                         else if (!add && !Helper.ManagerExistModif(true, idManager, valPseudo.Text))
                         {
+                            /*string mdp = "";
+                            using (MD5 md5Hash = MD5.Create())
+                            {
+                                mdp = Helper.GetMd5Hash(md5Hash, valMdp.Text);
+                            }*/
                             database.UpdateManager(idManager, valNom.Text, valMdp.Text, valTel.Text, valPseudo.Text, valPrenom.Text);
                             settings.setTableManagers(database.GetAllManagers());
                             this.Close();
