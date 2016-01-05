@@ -171,5 +171,12 @@ namespace PixLogic
                     //case "boutonScript": namePan = "panScript1"; break;
             }
         }
+
+        private void toolButtonDeconnexion_Click(object sender, EventArgs e)
+        {
+            Helper.manager = null;
+            WindowConnexion con = new WindowConnexion();
+            con.ShowDialog();
+        }
     }
 }

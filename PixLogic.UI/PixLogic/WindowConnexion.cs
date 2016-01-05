@@ -41,7 +41,6 @@ namespace PixLogic
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            closing = true;
             Application.Exit();
         }
 
@@ -60,6 +59,7 @@ namespace PixLogic
                 {
                     if (m.pseudo.Equals(pseudo) && m.mdp.Equals(valMdp.Text))
                     {
+                        closing = true;
                         Helper.manager = m;
                         this.Dispose();
                         return;
@@ -67,15 +67,24 @@ namespace PixLogic
                 }
             }
             MessageBox.Show("Pseudonyme ou mot de passe erroné.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+            valMdp.Text = string.Empty;
         }
 
         private void WindowConnexion_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(closing)
+            if (closing)
                 e.Cancel = false;
             else
-                e.Cancel = true;
+            {
+                var window = MessageBox.Show("Voulez-vous quitter l'application ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (window == DialogResult.No)
+                    e.Cancel = true;
+                else
+                {
+                    e.Cancel = false;
+                    Application.Exit();
+                }
+            }
         }
     }
 }
