@@ -212,8 +212,8 @@ namespace PixLogic
         {
             if (database.ContainUserClass(name))
             {
-                if (withMessageBox) MessageBox.Show("Le pseudo choisi existe déjà, veuillez renseigner un autre.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show("Le nom de la classe renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (withMessageBox)
+                    MessageBox.Show("Le nom de la classe renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             return false;
@@ -533,9 +533,10 @@ namespace PixLogic
         public static List<User> importCSV(string path, bool virgule, bool entete)
         {
             List<User> users = new List<User>();
+            Encoding encod = GetFileEncoding(path);
             try
             {
-                using (System.IO.StreamReader file = new System.IO.StreamReader(path))
+                using (System.IO.StreamReader file = new System.IO.StreamReader(path, encod))
                 {
                     
                     if(!entete)
@@ -552,30 +553,57 @@ namespace PixLogic
                                 
                             }
                             User u = new User();
-                            u.name = headers.ElementAt<string>(0); u.nickname = headers.ElementAt<string>(1) ;
-                            u.userClass = new UserClass(); u.userClass.name = headers.ElementAt<string>(2);
-                            u.mail = headers.ElementAt<string>(3); ; u.phoneNumber = headers.ElementAt<string>(4);
+                            u.userClass = new UserClass();
+                            u.userClass.name = headers.ElementAt<string>(0);
+                            u.name = headers.ElementAt<string>(1);
+                            u.nickname = headers.ElementAt<string>(2) ;
+                            try
+                            {
+                                u.mail = headers.ElementAt<string>(3);
+                            }
+                            catch (Exception e) { }
+                            try
+                            {
+                                u.phoneNumber = headers.ElementAt<string>(4);
+                            }
+                            catch(Exception e) { }
+                            
                             users.Add(u);
                             break;
                         }
                         csv.Dispose();
                     }
                     
-                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path))
+                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path, encod))
                     {
                         var csv2 = new CsvReader(fi);
                         csv2.Configuration.Delimiter = virgule ? "," : ";";
                         while (csv2.Read())
                         {
-                            var nom = csv2.GetField(0);
-                            var prenom = csv2.GetField(1);
-                            var classe = csv2.GetField(2);
-                            var mail = csv2.GetField(3);
-                            var tel = csv2.GetField(4);
                             User u = new User();
+                            var classe = csv2.GetField(0);
+                            var nom = csv2.GetField(1);
+                            var prenom = csv2.GetField(2);
+                            
+                            try
+                            {
+                                var mail = csv2.GetField(3);
+                                u.mail = mail;
+                            }
+                            catch (Exception e) { }
+                            try
+                            {
+                                var tel = csv2.GetField(4);
+                                u.phoneNumber = tel;
+                            }
+                            catch (Exception e) { }
+
+
                             u.userClass = new UserClass();
                             u.userClass.name = classe.ToString();
-                            u.name = nom; u.nickname = prenom; u.mail = mail; u.phoneNumber = tel;
+                            u.name = nom;
+                            u.nickname = prenom;
+                            
                             users.Add(u);
                             //Console.WriteLine(id + " | " + nom + " | " + prenom);
                         }
@@ -645,6 +673,37 @@ namespace PixLogic
             }
             return false;
         }
+
+        public static Encoding GetFileEncoding(string srcFile)
+        {
+            // *** Use Default of Encoding.Default (Ansi CodePage)
+            Encoding enc = Encoding.Default;
+
+            // *** Detect byte order mark if any - otherwise assume default
+            byte[] buffer = new byte[5];
+            FileStream file = new FileStream(srcFile, FileMode.Open);
+            file.Read(buffer, 0, 5);
+            file.Close();
+
+            if (buffer[0] == 0xef && buffer[1] == 0xbb && buffer[2] == 0xbf)
+                enc = Encoding.UTF8;
+            else if (buffer[0] == 0xfe && buffer[1] == 0xff)
+                enc = Encoding.Unicode;
+            else if (buffer[0] == 0 && buffer[1] == 0 && buffer[2] == 0xfe && buffer[3] == 0xff)
+                enc = Encoding.UTF32;
+            else if (buffer[0] == 0x2b && buffer[1] == 0x2f && buffer[2] == 0x76)
+                enc = Encoding.UTF7;
+            else if (buffer[0] == 0xFE && buffer[1] == 0xFF)
+                // 1201 unicodeFFFE Unicode (Big-Endian)
+                enc = Encoding.GetEncoding(1201);
+            else if (buffer[0] == 0xFF && buffer[1] == 0xFE)
+                // 1200 utf-16 Unicode
+                enc = Encoding.GetEncoding(1200);
+
+
+            return enc;
+        }
+
         public static bool existItemInCategorie(int idCategorie)
         {
             Categorie cat = database.GetCategorieById(idCategorie);

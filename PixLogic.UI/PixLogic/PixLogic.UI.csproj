@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Champs.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="MenuButton.cs">
       <SubType>UserControl</SubType>
@@ -514,6 +515,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

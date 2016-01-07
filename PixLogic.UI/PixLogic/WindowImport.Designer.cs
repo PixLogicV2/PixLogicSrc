@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonImporter = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowImport));
             this.labelListToImport = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridImport = new System.Windows.Forms.DataGridView();
@@ -51,47 +50,24 @@
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.champs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aCocher = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.buttonOk = new System.Windows.Forms.Button();
+            this.pictureBoxInfo = new System.Windows.Forms.PictureBox();
+            this.buttonValider = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonImporter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridImport)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panelChamps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonImporter
-            // 
-            this.buttonImporter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImporter.Image = global::PixLogic.Properties.Resources.valider_icon;
-            this.buttonImporter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImporter.Location = new System.Drawing.Point(162, 510);
-            this.buttonImporter.Name = "buttonImporter";
-            this.buttonImporter.Size = new System.Drawing.Size(84, 27);
-            this.buttonImporter.TabIndex = 10;
-            this.buttonImporter.Text = "Importer";
-            this.buttonImporter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonImporter.UseVisualStyleBackColor = true;
-            this.buttonImporter.Click += new System.EventHandler(this.buttonImporter_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(256, 510);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 11;
-            this.buttonCancel.Text = "Annuler";
-            this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // labelListToImport
             // 
             this.labelListToImport.AutoSize = true;
             this.labelListToImport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListToImport.Location = new System.Drawing.Point(26, 295);
+            this.labelListToImport.Location = new System.Drawing.Point(26, 328);
             this.labelListToImport.Name = "labelListToImport";
             this.labelListToImport.Size = new System.Drawing.Size(88, 13);
             this.labelListToImport.TabIndex = 32;
@@ -101,19 +77,25 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dataGridImport);
-            this.panel1.Location = new System.Drawing.Point(12, 299);
+            this.panel1.Location = new System.Drawing.Point(12, 333);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(469, 205);
+            this.panel1.Size = new System.Drawing.Size(469, 209);
             this.panel1.TabIndex = 31;
             // 
             // dataGridImport
             // 
+            this.dataGridImport.AllowUserToAddRows = false;
+            this.dataGridImport.AllowUserToDeleteRows = false;
+            this.dataGridImport.AllowUserToResizeRows = false;
             this.dataGridImport.BackgroundColor = System.Drawing.Color.White;
             this.dataGridImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridImport.Location = new System.Drawing.Point(-1, 21);
+            this.dataGridImport.MultiSelect = false;
             this.dataGridImport.Name = "dataGridImport";
+            this.dataGridImport.ReadOnly = true;
             this.dataGridImport.RowHeadersVisible = false;
-            this.dataGridImport.Size = new System.Drawing.Size(469, 183);
+            this.dataGridImport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridImport.Size = new System.Drawing.Size(469, 187);
             this.dataGridImport.TabIndex = 0;
             // 
             // labelChemin
@@ -253,9 +235,9 @@
             this.panelChamps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelChamps.Controls.Add(this.valImport);
             this.panelChamps.Controls.Add(this.dataGrid);
-            this.panelChamps.Location = new System.Drawing.Point(12, 153);
+            this.panelChamps.Location = new System.Drawing.Point(127, 150);
             this.panelChamps.Name = "panelChamps";
-            this.panelChamps.Size = new System.Drawing.Size(206, 139);
+            this.panelChamps.Size = new System.Drawing.Size(249, 148);
             this.panelChamps.TabIndex = 41;
             // 
             // valImport
@@ -280,15 +262,15 @@
             this.dataGrid.Location = new System.Drawing.Point(-1, 24);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersVisible = false;
-            this.dataGrid.Size = new System.Drawing.Size(206, 114);
+            this.dataGrid.Size = new System.Drawing.Size(249, 123);
             this.dataGrid.TabIndex = 0;
             // 
             // champs
             // 
+            this.champs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.champs.HeaderText = "Champs";
             this.champs.Name = "champs";
             this.champs.ReadOnly = true;
-            this.champs.Width = 103;
             // 
             // aCocher
             // 
@@ -296,22 +278,64 @@
             this.aCocher.Name = "aCocher";
             this.aCocher.ReadOnly = true;
             // 
-            // buttonOk
+            // pictureBoxInfo
             // 
-            this.buttonOk.Location = new System.Drawing.Point(225, 269);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(49, 23);
-            this.buttonOk.TabIndex = 42;
-            this.buttonOk.Text = "Ok";
-            this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            this.pictureBoxInfo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfo.Image")));
+            this.pictureBoxInfo.Location = new System.Drawing.Point(416, 293);
+            this.pictureBoxInfo.Name = "pictureBoxInfo";
+            this.pictureBoxInfo.Size = new System.Drawing.Size(33, 34);
+            this.pictureBoxInfo.TabIndex = 43;
+            this.pictureBoxInfo.TabStop = false;
+            this.pictureBoxInfo.Click += new System.EventHandler(this.pictureBoxInfo_Click);
+            this.pictureBoxInfo.MouseEnter += new System.EventHandler(this.pictureBoxInfo_MouseEnter);
+            // 
+            // buttonValider
+            // 
+            this.buttonValider.Image = global::PixLogic.Properties.Resources.valider_icon;
+            this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonValider.Location = new System.Drawing.Point(224, 304);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(49, 23);
+            this.buttonValider.TabIndex = 42;
+            this.buttonValider.Text = "Ok";
+            this.buttonValider.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonOk_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCancel.Location = new System.Drawing.Point(256, 548);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(84, 27);
+            this.buttonCancel.TabIndex = 11;
+            this.buttonCancel.Text = "Annuler";
+            this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonImporter
+            // 
+            this.buttonImporter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImporter.Image = global::PixLogic.Properties.Resources.valider_icon;
+            this.buttonImporter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonImporter.Location = new System.Drawing.Point(162, 548);
+            this.buttonImporter.Name = "buttonImporter";
+            this.buttonImporter.Size = new System.Drawing.Size(84, 27);
+            this.buttonImporter.TabIndex = 10;
+            this.buttonImporter.Text = "Importer";
+            this.buttonImporter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonImporter.UseVisualStyleBackColor = true;
+            this.buttonImporter.Click += new System.EventHandler(this.buttonImporter_Click);
             // 
             // WindowImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 549);
-            this.Controls.Add(this.buttonOk);
+            this.ClientSize = new System.Drawing.Size(493, 580);
+            this.Controls.Add(this.pictureBoxInfo);
+            this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.panelChamps);
             this.Controls.Add(this.labelOption);
             this.Controls.Add(this.panel2);
@@ -336,6 +360,7 @@
             this.panelChamps.ResumeLayout(false);
             this.panelChamps.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,8 +388,9 @@
         private System.Windows.Forms.Panel panelChamps;
         private System.Windows.Forms.Label valImport;
         private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.Button buttonValider;
         private System.Windows.Forms.DataGridViewTextBoxColumn champs;
         private System.Windows.Forms.DataGridViewCheckBoxColumn aCocher;
-        private System.Windows.Forms.Button buttonOk;
+        private System.Windows.Forms.PictureBox pictureBoxInfo;
     }
 }

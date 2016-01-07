@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowUser));
             this.panelGeneral = new System.Windows.Forms.Panel();
             this.comboBoxClasse = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.valTel = new System.Windows.Forms.TextBox();
             this.labelTel = new System.Windows.Forms.Label();
             this.valMail = new System.Windows.Forms.TextBox();
@@ -56,7 +55,6 @@
             // panelGeneral
             // 
             this.panelGeneral.Controls.Add(this.comboBoxClasse);
-            this.panelGeneral.Controls.Add(this.label3);
             this.panelGeneral.Controls.Add(this.valTel);
             this.panelGeneral.Controls.Add(this.labelTel);
             this.panelGeneral.Controls.Add(this.valMail);
@@ -89,17 +87,6 @@
             this.comboBoxClasse.Size = new System.Drawing.Size(156, 21);
             this.comboBoxClasse.Sorted = true;
             this.comboBoxClasse.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(261, 301);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "*";
             // 
             // valTel
             // 
@@ -304,7 +291,6 @@
         private System.Windows.Forms.TextBox valMail;
         private System.Windows.Forms.Label labelTel;
         private System.Windows.Forms.TextBox valTel;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxClasse;
     }
 }

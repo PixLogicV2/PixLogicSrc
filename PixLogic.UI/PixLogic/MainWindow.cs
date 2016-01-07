@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using PixLogic.DAL;
 using System.Security.Cryptography;
+using System.Collections.Generic;
 
 namespace PixLogic
 {
@@ -139,6 +140,15 @@ namespace PixLogic
             switch (button.NameButton)
             {
                 case "boutonUtilisateur":
+                    List<Champs> list = new List<Champs>();
+                    list.Add(new Champs { Nom = "Classe", Coche = true, Oblige = true });
+                    list.Add(new Champs { Nom = "Nom", Coche = true, Oblige = true });
+                    list.Add(new Champs { Nom = "Prénom", Coche = true, Oblige = true });
+                    list.Add(new Champs { Nom = "E-mail", Coche = false, Oblige = false });
+                    list.Add(new Champs { Nom = "Tel", Coche = false, Oblige = false });
+
+                    WindowImport import = new WindowImport(panUsers1, list, true);
+                    import.ShowDialog();
                     break;
                 case "boutonMateriel":
                     break;

@@ -144,13 +144,6 @@ namespace PixLogic
             WindowExport export = new WindowExport(dataGridUsers, title);
             export.ShowDialog();
         }
-        
-
-        private void pictureImporter_Click(object sender, EventArgs e)
-        {
-            WindowImport import = new WindowImport(this);
-            import.ShowDialog();
-        }
 
         private void pictureReserver_Click(object sender, EventArgs e)
         {
