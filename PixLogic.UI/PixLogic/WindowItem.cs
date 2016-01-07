@@ -103,12 +103,12 @@ namespace PixLogic
             string price = valPrice.Text;
             string quantity = valQuantity.Text;
             string description = valDescription.Text;
-            string reference = "";
+            string reference = valReference.Text;
             string nameCategorie = comboBoxCategorie.SelectedItem.ToString();
             string option = add ? Helper.ADD : Helper.SET;
             
 
-            if (!Helper.fieldsAreEmpty(true, name, price, quantity, nameCategorie)
+            if (!Helper.fieldsAreEmpty(true, name, price, quantity, nameCategorie,reference)
                 && Helper.AreNumbers(true, price, quantity)
                 && Helper.confirmation(option))
             {

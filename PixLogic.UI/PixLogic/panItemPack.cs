@@ -39,7 +39,7 @@ namespace PixLogic
             dataGridItem.Rows.Clear();
             foreach(var item in list)
             {
-                dataGridItem.Rows.Add(item.name, item.price, item.categorie.name, item.dispo?"OUI":"NON");
+                dataGridItem.Rows.Add(item.reference, item.name, item.price, item.categorie.name, item.dispo?"OUI":"NON");
             }
 
             if(dataGridItem.RowCount > 0)
@@ -74,12 +74,13 @@ namespace PixLogic
             {
                 listBoxItem.AllowDrop = true;
                 buttonTransfert.Enabled = true;
-                valItemName.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
-                valPrice.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
+                valItemRef.Text = dataGridItem.CurrentRow.Cells[0].Value.ToString();
+                valItemName.Text = dataGridItem.CurrentRow.Cells[1].Value.ToString();
+                valPrice.Text = dataGridItem.CurrentRow.Cells[2].Value.ToString();
                 Item item = database.GetItemByName(valItemName.Text);
 
-                valItemId.Text = item.ReservableId.ToString();
-                if(item.dispo)
+                
+                if (item.dispo)
                 {
                     valDispo.ForeColor = Color.DarkBlue;
                     valDispo.Text = "OUI";
@@ -105,7 +106,7 @@ namespace PixLogic
                 valDispo.Text = "-";
                 valDescription.Text = "-";
                 pictureBoxItem.Image = null;
-                valItemId.Text = "-";
+                valItemRef.Text = "-";
             }
 
             checkTransfert();
@@ -255,7 +256,7 @@ namespace PixLogic
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            if(Helper.existReservationItem(true, Convert.ToInt32(valItemId.Text)) == false){
+            if(Helper.existReservationItem(true, Convert.ToInt32(valItemRef.Text)) == false){
                 WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, double.Parse(valPrice.Text), valDescription.Text, valCategorie.Text);
                 modif.ShowDialog(this);
             }
@@ -263,7 +264,7 @@ namespace PixLogic
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationItem(true, Convert.ToInt32(valItemId.Text)) == false)
+            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationItem(true, Convert.ToInt32(valItemRef.Text)) == false)
             {
                 database.DeleteItem(valItemName.Text);
                 setTableItem(database.GetAllItems());
@@ -318,9 +319,9 @@ namespace PixLogic
                 MessageBox.Show("Vous devez sélectionner un matériel.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if(Helper.getDispoReservable(Convert.ToInt32(valItemId.Text), false))
+            if(Helper.getDispoReservable(Convert.ToInt32(valItemRef.Text), false))
             {
-                WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemId.Text), false);
+                WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemRef.Text), false);
                 windowRes.ShowDialog(this);
             }
         }
@@ -371,7 +372,7 @@ namespace PixLogic
         
         private void buttonPanne_Click(object sender, EventArgs e)
         {
-            database.SwitchDispo(Convert.ToInt32(valItemId.Text));
+            database.SwitchDispo(Convert.ToInt32(valItemRef.Text));
         }
     }
 }

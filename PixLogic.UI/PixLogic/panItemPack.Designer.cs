@@ -47,16 +47,12 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
-            this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disponibilite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNews = new System.Windows.Forms.Label();
             this.listBoxItem = new System.Windows.Forms.ListBox();
             this.comboBoxPack = new System.Windows.Forms.ComboBox();
             this.labelPack = new System.Windows.Forms.Label();
             this.buttonTransfert = new System.Windows.Forms.Button();
-            this.valItemId = new System.Windows.Forms.Label();
+            this.valItemRef = new System.Windows.Forms.Label();
             this.buttonRemoveItemInPack = new System.Windows.Forms.Button();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
             this.buttonManagePack = new System.Windows.Forms.Button();
@@ -65,6 +61,11 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
             this.buttonPanne = new System.Windows.Forms.Button();
+            this.reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disponibilite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -256,6 +257,7 @@
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.reference,
             this.NameItem,
             this.Price,
             this.categorie,
@@ -271,34 +273,6 @@
             this.dataGridItem.TabIndex = 0;
             this.dataGridItem.Click += new System.EventHandler(this.dataGridItem_Click);
             this.dataGridItem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridItem_KeyUp);
-            // 
-            // NameItem
-            // 
-            this.NameItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NameItem.HeaderText = "Libellé";
-            this.NameItem.Name = "NameItem";
-            this.NameItem.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Prix ( Crédits )";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 90;
-            // 
-            // categorie
-            // 
-            this.categorie.HeaderText = "Catégorie";
-            this.categorie.Name = "categorie";
-            this.categorie.ReadOnly = true;
-            this.categorie.Visible = false;
-            // 
-            // disponibilite
-            // 
-            this.disponibilite.HeaderText = "Disponibilité";
-            this.disponibilite.Name = "disponibilite";
-            this.disponibilite.ReadOnly = true;
-            this.disponibilite.Visible = false;
             // 
             // labelNews
             // 
@@ -357,16 +331,16 @@
             this.buttonTransfert.UseVisualStyleBackColor = true;
             this.buttonTransfert.Click += new System.EventHandler(this.buttonTransfert_Click);
             // 
-            // valItemId
+            // valItemRef
             // 
-            this.valItemId.AutoSize = true;
-            this.valItemId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valItemId.Location = new System.Drawing.Point(349, 2);
-            this.valItemId.Name = "valItemId";
-            this.valItemId.Size = new System.Drawing.Size(25, 21);
-            this.valItemId.TabIndex = 39;
-            this.valItemId.Text = "Id";
-            this.valItemId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.valItemRef.AutoSize = true;
+            this.valItemRef.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valItemRef.Location = new System.Drawing.Point(349, 2);
+            this.valItemRef.Name = "valItemRef";
+            this.valItemRef.Size = new System.Drawing.Size(25, 21);
+            this.valItemRef.TabIndex = 39;
+            this.valItemRef.Text = "Id";
+            this.valItemRef.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonRemoveItemInPack
             // 
@@ -474,13 +448,48 @@
             this.buttonPanne.UseVisualStyleBackColor = true;
             this.buttonPanne.Click += new System.EventHandler(this.buttonPanne_Click);
             // 
+            // reference
+            // 
+            this.reference.HeaderText = "Réf";
+            this.reference.Name = "reference";
+            this.reference.ReadOnly = true;
+            this.reference.Width = 50;
+            // 
+            // NameItem
+            // 
+            this.NameItem.HeaderText = "Libellé";
+            this.NameItem.Name = "NameItem";
+            this.NameItem.ReadOnly = true;
+            this.NameItem.Width = 85;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Prix (Crds)";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 75;
+            // 
+            // categorie
+            // 
+            this.categorie.HeaderText = "Catégorie";
+            this.categorie.Name = "categorie";
+            this.categorie.ReadOnly = true;
+            this.categorie.Visible = false;
+            // 
+            // disponibilite
+            // 
+            this.disponibilite.HeaderText = "Disponibilité";
+            this.disponibilite.Name = "disponibilite";
+            this.disponibilite.ReadOnly = true;
+            this.disponibilite.Visible = false;
+            // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.buttonPanne);
-            this.Controls.Add(this.valItemId);
+            this.Controls.Add(this.valItemRef);
             this.Controls.Add(this.buttonRemoveItemInPack);
             this.Controls.Add(this.pictureBoxItem);
             this.Controls.Add(this.buttonManagePack);
@@ -538,13 +547,14 @@
         private System.Windows.Forms.PictureBox pictureBoxItem;
         private System.Windows.Forms.Button buttonRemoveItemInPack;
         public System.Windows.Forms.Label valItemName;
-        public System.Windows.Forms.Label valItemId;
+        public System.Windows.Forms.Label valItemRef;
         private System.Windows.Forms.PictureBox pictureReserver;
         private System.Windows.Forms.Label valCategorie;
         private System.Windows.Forms.Label labelCategorie;
         private System.Windows.Forms.Label labelCat;
         private System.Windows.Forms.ComboBox comboBoxCategorie;
         private System.Windows.Forms.Button buttonPanne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reference;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn categorie;
