@@ -118,6 +118,11 @@
     <Compile Include="MailConfig.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="ManagerFactory.cs" />
+    <Compile Include="Migrations\201512150827391_InitialCreate.cs" />
+    <Compile Include="Migrations\201512150827391_InitialCreate.Designer.cs">
+      <DependentUpon>201512150827391_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Requete.cs" />
     <Compile Include="RequeteFactory.cs" />
     <Compile Include="Reservation.cs" />
@@ -151,6 +156,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512150827391_InitialCreate.resx">
+      <DependentUpon>201512150827391_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
