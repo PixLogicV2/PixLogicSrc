@@ -19,6 +19,7 @@ namespace PixLogic
         private Database database = Helper.database;
         private panUsers pan;
         private List<User> users;
+        private List<Item> items;
         private List<Champs> listChamps;
         private List<int> indexWrongRows;
         private bool user;
@@ -29,7 +30,11 @@ namespace PixLogic
             pan = p;
             listChamps = c;
             user = u;
-            users = new List<User>();
+            if (user)
+                users = new List<User>();
+            else
+                items = new List<Item>();
+
             indexWrongRows = new List<int>();
             init();
             setTableChamps();
@@ -72,13 +77,14 @@ namespace PixLogic
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 valChemin.Text = openFileDialog.FileName;
-                if(user)
-                    users = Helper.importCSV(valChemin.Text, radioVirgule.Checked, radioYes.Checked);
-                
+                if (user)
+                    users = Helper.importCSVuser(valChemin.Text, radioVirgule.Checked, radioYes.Checked);
+                else
+                    items = Helper.importCSVitem(valChemin.Text, radioVirgule.Checked, radioYes.Checked);
             }
         }
 
-        private void setTableImport(List<User> us)
+        private void setTableImportUser(List<User> us)
         {
             List<User> users = us;
             indexWrongRows = new List<int>();
@@ -95,7 +101,7 @@ namespace PixLogic
                     {
                         dataGridImport.Rows.Add(u.userClass.name, u.name, u.nickname, u.mail, u.phoneNumber);
                     }
-                    if (rowIsCorrect(u.userClass.name, u.name, u.nickname))
+                    if (rowUserIsCorrect(u.userClass.name, u.name, u.nickname))
                         dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.White;
                     else
                     {
@@ -122,13 +128,63 @@ namespace PixLogic
 
         }
 
-        private bool rowIsCorrect(string classe, string nom, string prenom)
+        private void setTableImportItem(List<Item> i)
+        {
+            List<Item> items = i;
+            indexWrongRows = new List<int>();
+            dataGridImport.Rows.Clear();
+            if (dataGridImport.Columns.Count < nbColumns)
+            {
+                foreach (Item u in items)
+                {
+                    if (dataGridImport.Columns.Count == 5)
+                    {
+                        dataGridImport.Rows.Add(u.reference, u.name, u.categorie.name, u.price, u.quantity);
+                    }
+                    if (rowItemIsCorrect(u.reference, u.name, u.categorie.name))
+                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.White;
+                    else
+                    {
+                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
+                        indexWrongRows.Add(dataGridImport.Rows[dataGridImport.RowCount - 1].Index);
+                    }
+                }
+
+                if (indexWrongRows.Count > 0)
+                {
+                    MessageBox.Show("Il y'a " + indexWrongRows.Count + " lignes qui ne respectent pas les valeurs attendues.\nCes lignes ne seront pas importées.\n\nMerci de lire les valeurs attendues dans les informations sur l'import.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                foreach (Item u in items)
+                {
+                    dataGridImport.Rows.Add(u.reference, u.name, u.categorie.name, u.price, u.quantity, u.description);
+                }
+            }
+            //dataGridImport.Rows[]
+
+
+        }
+
+        private bool rowUserIsCorrect(string classe, string nom, string prenom)
         {
             bool result = true;
 
             if (Helper.fieldsAreEmpty(false, classe, nom, prenom))
                 return false;
             if (!Helper.userClassExist(false, classe))
+                return false;
+
+            return result;
+        }
+        private bool rowItemIsCorrect(string reference, string nom, string categorie)
+        {
+            bool result = true;
+
+            if (Helper.fieldsAreEmpty(false, reference, nom, categorie))
+                return false;
+            if (!Helper.categorieExist(false, categorie))
                 return false;
 
             return result;
@@ -151,8 +207,11 @@ namespace PixLogic
                 }
                 i++;
             }
-            if(user)
-                setTableImport(users);
+            if (user)
+                setTableImportUser(users);
+            else
+                setTableImportItem(items);
+                
         }
 
         private void buttonImporter_Click(object sender, EventArgs e)
@@ -206,6 +265,11 @@ namespace PixLogic
                 info += "\n\n Autres champs : \n\t* Les autres champs sont facultatifs.";
                 MessageBox.Show(info, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

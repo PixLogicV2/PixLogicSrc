@@ -147,10 +147,20 @@ namespace PixLogic
                     list.Add(new Champs { Nom = "E-mail", Coche = false, Oblige = false });
                     list.Add(new Champs { Nom = "Tel", Coche = false, Oblige = false });
 
-                    WindowImport import = new WindowImport(panUsers1, list, true);
-                    import.ShowDialog();
+                    WindowImport importU = new WindowImport(panUsers1, list, true);
+                    importU.ShowDialog();
                     break;
                 case "boutonMateriel":
+                    List<Champs> listM = new List<Champs>();
+                    listM.Add(new Champs { Nom = "Référence", Coche = true, Oblige = true });
+                    listM.Add(new Champs { Nom = "Nom", Coche = true, Oblige = true });
+                    listM.Add(new Champs { Nom = "Catégorie", Coche = true, Oblige = true });
+                    listM.Add(new Champs { Nom = "Prix(crd)", Coche = true, Oblige = true });
+                    listM.Add(new Champs { Nom = "Qté", Coche = true, Oblige = true });
+                    listM.Add(new Champs { Nom = "Descript", Coche = false, Oblige = false });
+
+                    WindowImport importM = new WindowImport(panUsers1, listM, false);
+                    importM.ShowDialog();
                     break;
                 default:
                     MessageBox.Show("Vous ne pouvez pas importer des informations dans ce panneau.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -182,11 +192,20 @@ namespace PixLogic
             }
         }
 
-        private void toolButtonDeconnexion_Click(object sender, EventArgs e)
+        private void deconnexion()
         {
             Helper.manager = null;
             WindowConnexion con = new WindowConnexion();
             con.ShowDialog();
+        }
+        private void toolButtonDeconnexion_Click(object sender, EventArgs e)
+        {
+            deconnexion();
+        }
+
+        private void seDéconnecterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deconnexion();
         }
     }
 }

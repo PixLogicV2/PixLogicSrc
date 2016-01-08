@@ -63,6 +63,7 @@
             this.panEmprunt1 = new PixLogic.panEmprunt();
             this.panReservation1 = new PixLogic.panReservation();
             this.panItemPack1 = new PixLogic.panItemPack();
+            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barreDeMenu.SuspendLayout();
             this.panMenu.SuspendLayout();
             this.buttonMenu.SuspendLayout();
@@ -85,6 +86,8 @@
             // 
             // connexionToolStripMenuItem
             // 
+            this.connexionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seDéconnecterToolStripMenuItem});
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
             this.connexionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.connexionToolStripMenuItem.Text = "Connexion";
@@ -428,6 +431,14 @@
             this.panItemPack1.Size = new System.Drawing.Size(690, 453);
             this.panItemPack1.TabIndex = 8;
             // 
+            // seDéconnecterToolStripMenuItem
+            // 
+            this.seDéconnecterToolStripMenuItem.Image = global::PixLogic.Properties.Resources.deconnexion;
+            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
+            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
+            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,6 +502,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolButtonRefresh;
+        private System.Windows.Forms.ToolStripMenuItem seDéconnecterToolStripMenuItem;
     }
 }
 
