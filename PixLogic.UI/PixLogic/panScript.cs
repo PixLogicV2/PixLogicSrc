@@ -67,11 +67,11 @@ namespace PixLogic
             {
                 allRequest = database.GetAllRequete();
             }
-            
-           
+         
             queryDGV.DataSource = allRequest;
             queryDGV.Columns[1].Visible = false;
             queryDGV.Columns[2].Visible = false;
+            queryDGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -92,20 +92,18 @@ namespace PixLogic
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
-            try
+            int queryID = Convert.ToInt32(queryDGV.CurrentRow.Cells[2].Value.ToString());
+
+            if (queryDGV.RowCount > 0)
             {
-                DataGridViewRow rw = queryDGV.SelectedRows[0];
-
-                Requete query = rw.DataBoundItem as Requete;
-
-                QueryRTB.Text = query.text;
+                Requete selectedQuery = database.GetRequeteById(queryID);
+                QueryRTB.Text = selectedQuery.text;
+            }
+            else
+            {
+                MessageBox.Show("Sélectionner une requete.");
             }
 
-            catch(ArgumentOutOfRangeException)
-            {
-                MessageBox.Show("Selectionez une requete.");
-            }
-            
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)

@@ -36,10 +36,12 @@
             // 
             // ResultDGV
             // 
+            this.ResultDGV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ResultDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultDGV.Location = new System.Drawing.Point(12, 12);
             this.ResultDGV.Name = "ResultDGV";
             this.ResultDGV.ReadOnly = true;
+            this.ResultDGV.RowHeadersVisible = false;
             this.ResultDGV.Size = new System.Drawing.Size(671, 500);
             this.ResultDGV.TabIndex = 6;
             // 

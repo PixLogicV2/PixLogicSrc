@@ -105,6 +105,7 @@
     <Compile Include="GetManagerById.cs" />
     <Compile Include="GetPackById.cs" />
     <Compile Include="GetPackByName.cs" />
+    <Compile Include="GetRequeteById.cs" />
     <Compile Include="GetReservableById.cs" />
     <Compile Include="GetReservationById.cs" />
     <Compile Include="GetUserById.cs" />
