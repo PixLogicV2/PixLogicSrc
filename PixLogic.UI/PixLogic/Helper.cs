@@ -407,6 +407,55 @@ namespace PixLogic
                 }
             return true;     
         }
+        public static int getDispoReservableByDateCalendar(bool withMessageBox, int idReservable, DateTime dateDebut, DateTime dateFin)
+        {
+            if (existReservation(idReservable, dateDebut, dateFin))
+            {
+                if (withMessageBox) MessageBox.Show("Une reservation est deja présente à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 1;
+            }
+            if (existEmprunt(idReservable, dateDebut, dateFin))
+            {
+                if (withMessageBox) MessageBox.Show("Un Emprunt est deja présent à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 2;
+            }
+            Reservable res = database.GetReservableById(idReservable);
+            if (res.isPack == true)
+            {
+                List<Item> items = database.GetItemsInPack(res.ReservableId);
+                foreach (Item i in items)
+                {
+                    if (existReservation(i.ReservableId, dateDebut, dateFin))
+                    {
+                        if (withMessageBox) MessageBox.Show("Un matériel du pack est réservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 1;
+                    }
+                    if (existEmprunt(i.ReservableId, dateDebut, dateFin))
+                    {
+                        if (withMessageBox) MessageBox.Show("un matériel du pack est emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 2;
+                    }
+                }
+            }
+            if (res.isPack == false)
+            {
+                Item i = database.GetItemById(res.ReservableId);
+                if (i.pack != null)
+                {
+                    if (existReservation(i.pack.ReservableId, dateDebut, dateFin))
+                    {
+                        if (withMessageBox) MessageBox.Show("Un pack contenant ce matériel est déjà reservé à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 1;
+                    }
+                    if (existEmprunt(i.pack.ReservableId, dateDebut, dateFin))
+                    {
+                        if (withMessageBox) MessageBox.Show("Un pack contenant ce matériel est déjà emprunté à cette date.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return 2;
+                    }
+                }
+            }
+            return 0;
+        }
         public static List<Item> getAllItemsDispoByDate(DateTime debut, DateTime fin)
         {
             List<Item> items = database.GetAllItems();
