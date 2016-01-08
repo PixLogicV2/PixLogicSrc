@@ -74,6 +74,8 @@
             this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonValid = new System.Windows.Forms.Button();
+            this.radioButtonEmprunter = new System.Windows.Forms.RadioButton();
+            this.radioButtonReserver = new System.Windows.Forms.RadioButton();
             this.panelGeneral.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,7 +104,7 @@
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 0);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(590, 448);
+            this.panelGeneral.Size = new System.Drawing.Size(590, 473);
             this.panelGeneral.TabIndex = 2;
             // 
             // labelListUsers
@@ -121,32 +123,34 @@
             this.labelAjoutDate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAjoutDate.Location = new System.Drawing.Point(221, 298);
             this.labelAjoutDate.Name = "labelAjoutDate";
-            this.labelAjoutDate.Size = new System.Drawing.Size(130, 13);
+            this.labelAjoutDate.Size = new System.Drawing.Size(180, 13);
             this.labelAjoutDate.TabIndex = 31;
-            this.labelAjoutDate.Text = "Ajouter une réservation";
+            this.labelAjoutDate.Text = "Ajouter une réservation/emprunt";
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.radioButtonEmprunter);
+            this.panel2.Controls.Add(this.radioButtonReserver);
             this.panel2.Controls.Add(this.dateTimeEnd);
             this.panel2.Controls.Add(this.dateTimeBegin);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(205, 303);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(379, 92);
+            this.panel2.Size = new System.Drawing.Size(379, 127);
             this.panel2.TabIndex = 30;
             // 
             // dateTimeEnd
             // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(92, 57);
+            this.dateTimeEnd.Location = new System.Drawing.Point(92, 89);
             this.dateTimeEnd.Name = "dateTimeEnd";
             this.dateTimeEnd.Size = new System.Drawing.Size(179, 20);
             this.dateTimeEnd.TabIndex = 3;
             // 
             // dateTimeBegin
             // 
-            this.dateTimeBegin.Location = new System.Drawing.Point(92, 21);
+            this.dateTimeBegin.Location = new System.Drawing.Point(92, 53);
             this.dateTimeBegin.Name = "dateTimeBegin";
             this.dateTimeBegin.Size = new System.Drawing.Size(179, 20);
             this.dateTimeBegin.TabIndex = 2;
@@ -155,7 +159,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 60);
+            this.label3.Location = new System.Drawing.Point(3, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 54;
@@ -165,7 +169,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 23);
+            this.label2.Location = new System.Drawing.Point(3, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 53;
@@ -452,7 +456,7 @@
             this.panTableUsers.Controls.Add(this.dataGridUsersReservation);
             this.panTableUsers.Location = new System.Drawing.Point(3, 6);
             this.panTableUsers.Name = "panTableUsers";
-            this.panTableUsers.Size = new System.Drawing.Size(196, 423);
+            this.panTableUsers.Size = new System.Drawing.Size(196, 455);
             this.panTableUsers.TabIndex = 23;
             // 
             // buttonCancelSearch
@@ -502,7 +506,7 @@
             this.dataGridUsersReservation.RowHeadersVisible = false;
             this.dataGridUsersReservation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridUsersReservation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsersReservation.Size = new System.Drawing.Size(194, 375);
+            this.dataGridUsersReservation.Size = new System.Drawing.Size(194, 407);
             this.dataGridUsersReservation.TabIndex = 0;
             // 
             // IdUser
@@ -531,7 +535,7 @@
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(393, 412);
+            this.buttonCancel.Location = new System.Drawing.Point(393, 436);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
             this.buttonCancel.TabIndex = 5;
@@ -545,7 +549,7 @@
             this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(299, 412);
+            this.buttonValid.Location = new System.Drawing.Point(299, 436);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
             this.buttonValid.TabIndex = 4;
@@ -554,11 +558,33 @@
             this.buttonValid.UseVisualStyleBackColor = true;
             this.buttonValid.Click += new System.EventHandler(this.buttonValid_Click);
             // 
+            // radioButtonEmprunter
+            // 
+            this.radioButtonEmprunter.AutoSize = true;
+            this.radioButtonEmprunter.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonEmprunter.Location = new System.Drawing.Point(203, 17);
+            this.radioButtonEmprunter.Name = "radioButtonEmprunter";
+            this.radioButtonEmprunter.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonEmprunter.TabIndex = 56;
+            this.radioButtonEmprunter.Text = "Emprunter";
+            this.radioButtonEmprunter.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonReserver
+            // 
+            this.radioButtonReserver.AutoSize = true;
+            this.radioButtonReserver.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonReserver.Location = new System.Drawing.Point(98, 17);
+            this.radioButtonReserver.Name = "radioButtonReserver";
+            this.radioButtonReserver.Size = new System.Drawing.Size(68, 17);
+            this.radioButtonReserver.TabIndex = 55;
+            this.radioButtonReserver.Text = "Réserver";
+            this.radioButtonReserver.UseVisualStyleBackColor = true;
+            // 
             // WindowReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 448);
+            this.ClientSize = new System.Drawing.Size(590, 473);
             this.Controls.Add(this.panelGeneral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -633,5 +659,7 @@
         private System.Windows.Forms.Panel panelLegendRe;
         private System.Windows.Forms.PictureBox pictureBoxNext;
         private System.Windows.Forms.PictureBox pictureBoxPrevious;
+        private System.Windows.Forms.RadioButton radioButtonEmprunter;
+        private System.Windows.Forms.RadioButton radioButtonReserver;
     }
 }

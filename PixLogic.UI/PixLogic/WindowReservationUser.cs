@@ -205,5 +205,10 @@ namespace PixLogic
             else
                 database.AddReservation(true, null, null, dateTimeBegin.Value.Date, dateTimeEnd.Value.Date, database.GetUserById(idUser), pack, null);
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

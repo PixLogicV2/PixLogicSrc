@@ -60,7 +60,7 @@ namespace PixLogic
             switch (buttonName)
             {
                 case "boutonUtilisateur": namePan = "panUsers1"; break;
-                case "boutonMateriel": namePan = "panItemPack1"; break;
+                case "boutonMateriel": namePan = "panItemPack1"; panItemPack1.setComboBoxPack(); break;
                 case "boutonReservation": namePan = "panReservation1";panReservation1.setTableReservations(database.GetAllReservations()); break;
                 case "boutonEmprunt": namePan = "panEmprunt1"; panEmprunt1.setTableEmprunts(database.GetAllEmprunts()); break;
                 case "boutonHistorique": namePan = "panLog1"; panLog1.setTableLogs(database.GetAllLogs()); break;
