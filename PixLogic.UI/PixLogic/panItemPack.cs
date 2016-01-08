@@ -256,7 +256,8 @@ namespace PixLogic
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            if(Helper.existReservationItem(true, Convert.ToInt32(valItemRef.Text)) == false){
+
+            if(Helper.existReservationItem(true, int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString())) == false){
                 WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, double.Parse(valPrice.Text), valDescription.Text, valCategorie.Text);
                 modif.ShowDialog(this);
             }
@@ -264,7 +265,8 @@ namespace PixLogic
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationItem(true, Convert.ToInt32(valItemRef.Text)) == false)
+            int id = int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString());
+            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationItem(true, id) == false)
             {
                 database.DeleteItem(valItemName.Text);
                 setTableItem(database.GetAllItems());

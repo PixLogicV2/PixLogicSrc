@@ -106,33 +106,71 @@ namespace PixLogic
         }
         private void buttonValid_Click(object sender, EventArgs e)
         {
-            DateTime debut = DateTime.Parse(dateTimeBegin.Value.ToString());
-            DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
-            DateTime? debutEmprunt = null;
-            DateTime? endEmprunt= null;
+            
             Manager manag = Helper.manager;
             Reservable elem;
-            if (isPack == false)
+            if (!radioButtonReserver.Checked && !radioButtonEmprunter.Checked)
             {
-                elem = database.GetItemById(int.Parse(valIdReservable.Text.ToString()));
+                MessageBox.Show("Vous devez choisir l'opération (Reservation ou Emprunt) à effectuer sur la liste des matériels!", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (radioButtonReserver.Checked)
+            {
+                DateTime debut = DateTime.Parse(dateTimeBegin.Value.ToString());
+                DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
+                DateTime ? debutEmprunt = null;
+                DateTime ? endEmprunt = null;
+                if (isPack == false)
+                {
+                    elem = database.GetItemById(int.Parse(valIdReservable.Text.ToString()));
+                }
+                else
+                {
+                    elem = database.GetPackById(int.Parse(valIdReservable.Text.ToString()));
+                }
+                User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
+                if (Helper.reservationStartMinimumToday(true, debut)
+                    && Helper.beginBeforeEndDate(true, debut, fin)
+                    && Helper.getDispoReservableByDate(true, idElement, debut, fin)
+                    && Helper.confirmationReservation(Helper.ADD))
+                {
+                    if (database.CreditSuffisant(user, elem)
+                    && database.LevelSuffisant(user, elem.price))
+                        database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem, manag);
+                    else MessageBox.Show("credits ou niveau d'accès insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                    this.Close();
+                }
             }
             else
             {
-                elem = database.GetPackById(int.Parse(valIdReservable.Text.ToString()));
-            }
-            User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
-            if (Helper.reservationStartMinimumToday(true, debut)
-                && Helper.beginBeforeEndDate(true, debut, fin)
-                && Helper.getDispoReservableByDate(true, idElement, debut, fin)
-                && Helper.confirmationReservation(Helper.ADD))
-            {
-                if (database.CreditSuffisant(user, elem)
-                && database.LevelSuffisant(user, elem.price))
-                database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem,manag);
-                else MessageBox.Show("credits ou niveau d'accès insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DateTime debutEmprunt = DateTime.Parse(dateTimeBegin.Value.ToString());
+                DateTime endEmprunt = DateTime.Parse(dateTimeEnd.Value.ToString());
+                DateTime? debut = null;
+                DateTime? fin = null;
+                if (isPack == false)
+                {
+                    elem = database.GetItemById(int.Parse(valIdReservable.Text.ToString()));
+                }
+                else
+                {
+                    elem = database.GetPackById(int.Parse(valIdReservable.Text.ToString()));
+                }
+                User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
+                if (Helper.reservationStartMinimumToday(true, debutEmprunt)
+                    && Helper.beginBeforeEndDate(true, debutEmprunt, endEmprunt)
+                    && Helper.getDispoReservableByDate(true, idElement, debutEmprunt, endEmprunt)
+                    && Helper.confirmationReservation(Helper.ADD))
+                {
+                    if (database.CreditSuffisant(user, elem)
+                    && database.LevelSuffisant(user, elem.price))
+                        database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem, manag);
+                    else MessageBox.Show("credits ou niveau d'accès insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
-                this.Close();
+                    this.Close();
+                }
             }
         }
 
