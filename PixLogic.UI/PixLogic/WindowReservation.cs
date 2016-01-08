@@ -228,6 +228,12 @@ namespace PixLogic
                     monCalendar.Rows[iRow].Cells[iCell].Style.BackColor = Color.Red;
                 }
             }
+
+            int index = Helper.getDispoReservableByDateCalendar(false, idElement, day.Date, day.Date);
+            if (index == 1)
+                monCalendar.Rows[iRow].Cells[iCell].Style.BackColor = Color.Orange;
+            else if(index == 2)
+                monCalendar.Rows[iRow].Cells[iCell].Style.BackColor = Color.Red;
         }
 
         private void pictureBoxNext_Click(object sender, EventArgs e)
