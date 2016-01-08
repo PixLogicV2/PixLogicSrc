@@ -39,7 +39,7 @@ namespace PixLogic
             dataGridItem.Rows.Clear();
             foreach(var item in list)
             {
-                dataGridItem.Rows.Add(item.reference, item.name, item.price, item.categorie.name, item.dispo?"OUI":"NON");
+                dataGridItem.Rows.Add(item.reference, item.name, item.price, item.categorie.name, item.dispo?"OUI":"NON", item.ReservableId);
             }
 
             if(dataGridItem.RowCount > 0)
@@ -319,9 +319,10 @@ namespace PixLogic
                 MessageBox.Show("Vous devez sélectionner un matériel.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if(Helper.getDispoReservable(Convert.ToInt32(valItemRef.Text), false))
+            int id = int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString());
+            if(Helper.getDispoReservable(id, false))
             {
-                WindowReservation windowRes = new WindowReservation(this, Convert.ToInt32(valItemRef.Text), false);
+                WindowReservation windowRes = new WindowReservation(this, id, false);
                 windowRes.ShowDialog(this);
             }
         }
