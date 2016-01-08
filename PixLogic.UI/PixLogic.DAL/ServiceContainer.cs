@@ -386,6 +386,11 @@ namespace PixLogic.DAL
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
                     break;
 
+                case "get_requete_by_id":
+                    this.arrayContainer[serviceName] = new GetRequeteById();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
+
                 default:
                     throw new System.Exception();
 

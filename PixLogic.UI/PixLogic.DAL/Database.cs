@@ -446,5 +446,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_requete").getAllRequete();
         }
+
+        public Requete GetRequeteById(int id)
+        {
+            return container.get("get_requete_by_id").getRequeteById(id);
+        }
     }
 }

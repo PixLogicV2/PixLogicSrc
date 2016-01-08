@@ -34,10 +34,10 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.panTableUsers = new System.Windows.Forms.Panel();
+            this.queryDGV = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.ExecuteBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
-            this.queryDGV = new System.Windows.Forms.DataGridView();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.queryDGV)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,17 @@
             this.panTableUsers.Size = new System.Drawing.Size(236, 379);
             this.panTableUsers.TabIndex = 23;
             // 
+            // queryDGV
+            // 
+            this.queryDGV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.queryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.queryDGV.Enabled = false;
+            this.queryDGV.Location = new System.Drawing.Point(-1, 40);
+            this.queryDGV.Name = "queryDGV";
+            this.queryDGV.RowHeadersVisible = false;
+            this.queryDGV.Size = new System.Drawing.Size(236, 338);
+            this.queryDGV.TabIndex = 0;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -128,14 +139,6 @@
             this.DeleteBtn.TabIndex = 24;
             this.DeleteBtn.UseVisualStyleBackColor = true;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
-            // 
-            // queryDGV
-            // 
-            this.queryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.queryDGV.Location = new System.Drawing.Point(-1, 40);
-            this.queryDGV.Name = "queryDGV";
-            this.queryDGV.Size = new System.Drawing.Size(236, 338);
-            this.queryDGV.TabIndex = 0;
             // 
             // panScript
             // 
