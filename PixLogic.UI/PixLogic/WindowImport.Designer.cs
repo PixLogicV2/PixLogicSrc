@@ -54,6 +54,8 @@
             this.buttonValider = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonImporter = new System.Windows.Forms.Button();
+            this.pictureBoxLegend = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridImport)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,6 +63,7 @@
             this.panelChamps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLegend)).BeginInit();
             this.SuspendLayout();
             // 
             // labelListToImport
@@ -235,7 +238,7 @@
             this.panelChamps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelChamps.Controls.Add(this.valImport);
             this.panelChamps.Controls.Add(this.dataGrid);
-            this.panelChamps.Location = new System.Drawing.Point(127, 150);
+            this.panelChamps.Location = new System.Drawing.Point(105, 150);
             this.panelChamps.Name = "panelChamps";
             this.panelChamps.Size = new System.Drawing.Size(249, 148);
             this.panelChamps.TabIndex = 41;
@@ -293,7 +296,7 @@
             // 
             this.buttonValider.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValider.Location = new System.Drawing.Point(224, 304);
+            this.buttonValider.Location = new System.Drawing.Point(202, 304);
             this.buttonValider.Name = "buttonValider";
             this.buttonValider.Size = new System.Drawing.Size(49, 23);
             this.buttonValider.TabIndex = 42;
@@ -330,11 +333,33 @@
             this.buttonImporter.UseVisualStyleBackColor = true;
             this.buttonImporter.Click += new System.EventHandler(this.buttonImporter_Click);
             // 
+            // pictureBoxLegend
+            // 
+            this.pictureBoxLegend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pictureBoxLegend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxLegend.Location = new System.Drawing.Point(362, 163);
+            this.pictureBoxLegend.Name = "pictureBoxLegend";
+            this.pictureBoxLegend.Size = new System.Drawing.Size(15, 13);
+            this.pictureBoxLegend.TabIndex = 44;
+            this.pictureBoxLegend.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(377, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Champs obligatoires";
+            // 
             // WindowImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 580);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBoxLegend);
             this.Controls.Add(this.pictureBoxInfo);
             this.Controls.Add(this.buttonValider);
             this.Controls.Add(this.panelChamps);
@@ -362,6 +387,7 @@
             this.panelChamps.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLegend)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,5 +419,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn champs;
         private System.Windows.Forms.DataGridViewCheckBoxColumn aCocher;
         private System.Windows.Forms.PictureBox pictureBoxInfo;
+        private System.Windows.Forms.PictureBox pictureBoxLegend;
+        private System.Windows.Forms.Label label1;
     }
 }

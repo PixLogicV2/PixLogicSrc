@@ -52,6 +52,8 @@ namespace PixLogic
             radioYes.Checked = true;
             if (user)
                 valImport.Text = "Import d'utilisateurs";
+            else
+                valImport.Text = "Import de matériels";
         }
 
         private void setTableChamps()
@@ -63,6 +65,8 @@ namespace PixLogic
                 dataGrid.Rows.Add(champ.Nom, champ.Coche);
                 if (!champ.Oblige)
                     dataGrid.Rows[dataGrid.Rows.Count - 1].Cells[dataGrid.ColumnCount - 1].ReadOnly = false;
+                else
+                    dataGrid.Rows[dataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Aquamarine;
             }
 
             //--------------------
@@ -77,10 +81,12 @@ namespace PixLogic
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 valChemin.Text = openFileDialog.FileName;
+                Cursor.Current = Cursors.WaitCursor;
                 if (user)
                     users = Helper.importCSVuser(valChemin.Text, radioVirgule.Checked, radioYes.Checked);
                 else
                     items = Helper.importCSVitem(valChemin.Text, radioVirgule.Checked, radioYes.Checked);
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -260,8 +266,17 @@ namespace PixLogic
             if(user)
             {
                 string info = "- Classe : \n\t* Vous devez préalablement créer les classes avec les noms indiqués dans votre fichier si celles-ci n'existent pas.";
-                info += "\n\t* La valeur du nom de la classe doit être non nul.";
+                info += "\n\t* La valeur du nom de la classe dans votre fichier doit être non nul.";
                 info += "\n\n- Nom et Prénom : \n\t* Le nom et le prénom de chaque utilisateur doivent être non nuls.";
+                info += "\n\n Autres champs : \n\t* Les autres champs sont facultatifs.";
+                MessageBox.Show(info, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                string info = "- Catégorie : \n\t* Vous devez préalablement créer les catégories avec les noms indiqués dans votre fichier si celles-ci n'existent pas.";
+                info += "\n\t* La valeur du nom de la catégorie dans votre fichier doit être non nul.";
+                info += "\n\n- Nom du matériel et Référence : \n\t* Le nom et la référence de chaque matériel doivent être non nuls.";
+                info += "\n\n- Prix et Quantité : \n\t* Le prix et la quantité de chaque matériel doivent être des entiers non nuls.";
                 info += "\n\n Autres champs : \n\t* Les autres champs sont facultatifs.";
                 MessageBox.Show(info, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
