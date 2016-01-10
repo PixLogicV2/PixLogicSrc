@@ -56,6 +56,8 @@
             this.buttonImporter = new System.Windows.Forms.Button();
             this.pictureBoxLegend = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.valWrongLine = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridImport)).BeginInit();
             this.panel2.SuspendLayout();
@@ -284,7 +286,7 @@
             // pictureBoxInfo
             // 
             this.pictureBoxInfo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInfo.Image")));
-            this.pictureBoxInfo.Location = new System.Drawing.Point(416, 293);
+            this.pictureBoxInfo.Location = new System.Drawing.Point(448, 249);
             this.pictureBoxInfo.Name = "pictureBoxInfo";
             this.pictureBoxInfo.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxInfo.TabIndex = 43;
@@ -353,11 +355,34 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Champs obligatoires";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(303, 309);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Nb lignes érronées :";
+            // 
+            // valWrongLine
+            // 
+            this.valWrongLine.AutoSize = true;
+            this.valWrongLine.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valWrongLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.valWrongLine.Location = new System.Drawing.Point(419, 309);
+            this.valWrongLine.Name = "valWrongLine";
+            this.valWrongLine.Size = new System.Drawing.Size(12, 15);
+            this.valWrongLine.TabIndex = 47;
+            this.valWrongLine.Text = "-";
+            // 
             // WindowImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 580);
+            this.Controls.Add(this.valWrongLine);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxLegend);
             this.Controls.Add(this.pictureBoxInfo);
@@ -421,5 +446,7 @@
         private System.Windows.Forms.PictureBox pictureBoxInfo;
         private System.Windows.Forms.PictureBox pictureBoxLegend;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label valWrongLine;
     }
 }

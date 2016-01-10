@@ -82,9 +82,11 @@ namespace PixLogic
                 else
                 {
                     e.Cancel = false;
+                    closing = true;
                     Application.Exit();
                 }
             }
         }
+        
     }
 }

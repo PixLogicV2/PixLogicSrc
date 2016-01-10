@@ -147,7 +147,7 @@ namespace PixLogic
                     list.Add(new Champs { Nom = "E-mail", Coche = false, Oblige = false });
                     list.Add(new Champs { Nom = "Tel", Coche = false, Oblige = false });
 
-                    WindowImport importU = new WindowImport(panUsers1, list, true);
+                    WindowImport importU = new WindowImport(panUsers1, panItemPack1, list, true);
                     importU.ShowDialog();
                     break;
                 case "boutonMateriel":
@@ -159,7 +159,7 @@ namespace PixLogic
                     listM.Add(new Champs { Nom = "Qté", Coche = true, Oblige = true });
                     listM.Add(new Champs { Nom = "Descript", Coche = false, Oblige = false });
 
-                    WindowImport importM = new WindowImport(panUsers1, listM, false);
+                    WindowImport importM = new WindowImport(panUsers1, panItemPack1, listM, false);
                     importM.ShowDialog();
                     break;
                 default:
