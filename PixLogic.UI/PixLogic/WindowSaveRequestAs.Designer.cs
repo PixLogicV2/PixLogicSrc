@@ -30,15 +30,17 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.SelectedNamTextBox = new System.Windows.Forms.TextBox();
-            this.ConfirmBtn = new System.Windows.Forms.Button();
+            this.buttonValid = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 13);
+            this.label1.Size = new System.Drawing.Size(151, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enregistrer la requete sous : ";
             // 
@@ -49,26 +51,47 @@
             this.SelectedNamTextBox.Size = new System.Drawing.Size(258, 20);
             this.SelectedNamTextBox.TabIndex = 1;
             // 
-            // ConfirmBtn
+            // buttonValid
             // 
-            this.ConfirmBtn.Location = new System.Drawing.Point(12, 76);
-            this.ConfirmBtn.Name = "ConfirmBtn";
-            this.ConfirmBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ConfirmBtn.Size = new System.Drawing.Size(75, 23);
-            this.ConfirmBtn.TabIndex = 2;
-            this.ConfirmBtn.Text = "Valider";
-            this.ConfirmBtn.UseVisualStyleBackColor = true;
-            this.ConfirmBtn.Click += new System.EventHandler(this.ConfirmBtn_Click);
+            this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
+            this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonValid.Location = new System.Drawing.Point(55, 71);
+            this.buttonValid.Name = "buttonValid";
+            this.buttonValid.Size = new System.Drawing.Size(84, 27);
+            this.buttonValid.TabIndex = 8;
+            this.buttonValid.Text = "Valider";
+            this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonValid.UseVisualStyleBackColor = true;
+            this.buttonValid.Click += new System.EventHandler(this.buttonValid_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCancel.Location = new System.Drawing.Point(145, 71);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(84, 27);
+            this.buttonCancel.TabIndex = 9;
+            this.buttonCancel.Text = "Annuler";
+            this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // WindowSaveRequestAs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 111);
-            this.Controls.Add(this.ConfirmBtn);
+            this.ClientSize = new System.Drawing.Size(284, 105);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonValid);
             this.Controls.Add(this.SelectedNamTextBox);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WindowSaveRequestAs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "WindowSaveRequestAs";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -79,6 +102,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox SelectedNamTextBox;
-        private System.Windows.Forms.Button ConfirmBtn;
+        private System.Windows.Forms.Button buttonValid;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

@@ -67,11 +67,22 @@ namespace PixLogic
 
         private void buttonValid_Click(object sender, EventArgs e)
         {
+
             string chemin = valChemin.Text;
+            if(chemin.Equals(""))
+            {
+                MessageBox.Show("Vous devez entrer le nom du document en selectionnant le type de fichier pour l'export.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Cursor = Cursors.WaitCursor;
+
             if (chemin.EndsWith(".pdf") || chemin.EndsWith(".PDF"))
                 Helper.exportPDF(table, valChemin.Text, title);
             else
                 Helper.exportCSV(table, valChemin.Text);
+
+            Cursor = Cursors.Default;
 
             Process process = new Process();
             if (checkBoxOpen.Checked)

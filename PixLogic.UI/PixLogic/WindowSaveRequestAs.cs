@@ -19,10 +19,15 @@ namespace PixLogic
             InitializeComponent();
         }
 
-        private void ConfirmBtn_Click(object sender, EventArgs e)
+        private void buttonValid_Click(object sender, EventArgs e)
         {
             SelectedName = SelectedNamTextBox.Text;
             DialogResult = DialogResult.OK;
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

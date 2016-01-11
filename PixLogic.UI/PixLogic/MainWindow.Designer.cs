@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.barreDeMenu = new System.Windows.Forms.MenuStrip();
             this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.panEmprunt1 = new PixLogic.panEmprunt();
             this.panReservation1 = new PixLogic.panReservation();
             this.panItemPack1 = new PixLogic.panItemPack();
-            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barreDeMenu.SuspendLayout();
             this.panMenu.SuspendLayout();
             this.buttonMenu.SuspendLayout();
@@ -91,6 +91,14 @@
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
             this.connexionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.connexionToolStripMenuItem.Text = "Connexion";
+            // 
+            // seDéconnecterToolStripMenuItem
+            // 
+            this.seDéconnecterToolStripMenuItem.Image = global::PixLogic.Properties.Resources.deconnexion;
+            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
+            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
+            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -364,9 +372,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAllPan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAllPan.Controls.Add(this.panScript1);
             this.panelAllPan.Controls.Add(this.panUsers1);
             this.panelAllPan.Controls.Add(this.panLog1);
-            this.panelAllPan.Controls.Add(this.panScript1);
             this.panelAllPan.Controls.Add(this.panEmprunt1);
             this.panelAllPan.Controls.Add(this.panReservation1);
             this.panelAllPan.Controls.Add(this.panItemPack1);
@@ -398,7 +406,8 @@
             // 
             // panScript1
             // 
-            this.panScript1.Location = new System.Drawing.Point(4, 5);
+            this.panScript1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panScript1.Location = new System.Drawing.Point(0, 2);
             this.panScript1.Margin = new System.Windows.Forms.Padding(4);
             this.panScript1.Name = "panScript1";
             this.panScript1.Size = new System.Drawing.Size(690, 452);
@@ -430,14 +439,6 @@
             this.panItemPack1.Name = "panItemPack1";
             this.panItemPack1.Size = new System.Drawing.Size(690, 453);
             this.panItemPack1.TabIndex = 8;
-            // 
-            // seDéconnecterToolStripMenuItem
-            // 
-            this.seDéconnecterToolStripMenuItem.Image = global::PixLogic.Properties.Resources.deconnexion;
-            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
-            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
-            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
             // 
             // MainWindow
             // 

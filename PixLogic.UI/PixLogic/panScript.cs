@@ -24,6 +24,32 @@ namespace PixLogic
             if(MainWindow.START)
             {
                 database = Helper.database;
+                refresh();
+            }
+        }
+
+        public void refresh()
+        {
+            setTableRequete(database.GetAllRequete());
+            QueryRTB.Text = "";
+        }
+
+        private void setTableRequete(List<Requete> r)
+        {
+            List<Requete> requetes = r;
+            dataGridRequetes.Rows.Clear();
+
+            foreach(Requete req in requetes)
+            {
+                dataGridRequetes.Rows.Add(req.RequeteId, req.name);
+            }
+
+            if (dataGridRequetes.RowCount > 0)
+            {
+                dataGridRequetes.FirstDisplayedScrollingRowIndex = 0;
+                dataGridRequetes.Refresh();
+                dataGridRequetes.CurrentCell = dataGridRequetes.Rows[0].Cells[1];
+                dataGridRequetes.Rows[0].Selected = true;
             }
         }
 
@@ -60,69 +86,72 @@ namespace PixLogic
             }
         }
 
-        private void panScript_Load(object sender, EventArgs e)
-        {
-            List<Requete> allRequest = new List<Requete>();
-            if (MainWindow.START)
-            {
-                allRequest = database.GetAllRequete();
-            }
-         
-            queryDGV.DataSource = allRequest;
-            queryDGV.Columns[1].Visible = false;
-            queryDGV.Columns[2].Visible = false;
-            queryDGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
-
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             string content = QueryRTB.Text;
 
-            using (WindowSaveRequestAs save = new WindowSaveRequestAs())
+            if(!QueryRTB.Text.Equals(""))
             {
-                
-                if(save.ShowDialog() == DialogResult.OK)
+                using (WindowSaveRequestAs save = new WindowSaveRequestAs())
                 {
-                    database.AddRequete(save.SelectedName, content);
-                    MessageBox.Show("Votre requete à été sauvegardée.");
-                    queryDGV.DataSource = database.GetAllRequete();
+                    if (save.ShowDialog() == DialogResult.OK)
+                    {
+                        database.AddRequete(save.SelectedName, content);
+                        MessageBox.Show("Votre requête a bien été sauvegardée.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        setTableRequete(database.GetAllRequete());
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("le champs de requête est vide.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
-            int queryID = Convert.ToInt32(queryDGV.CurrentRow.Cells[2].Value.ToString());
-
-            if (queryDGV.RowCount > 0)
+            if (dataGridRequetes.RowCount > 0)
             {
-                Requete selectedQuery = database.GetRequeteById(queryID);
-                QueryRTB.Text = selectedQuery.text;
+                bool result = false;
+                DialogResult resultBox = MessageBox.Show("Voulez-vous charger cette requête ?",
+                    "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                result = (resultBox == DialogResult.Yes) ? true : false;
+
+                if(result)
+                {
+                    int queryID = Convert.ToInt32(dataGridRequetes.CurrentRow.Cells[0].Value.ToString());
+                    Requete selectedQuery = database.GetRequeteById(queryID);
+                    QueryRTB.Text = selectedQuery.text;
+                }
+                
             }
             else
             {
-                MessageBox.Show("Sélectionner une requete.");
+                MessageBox.Show("Sélectionnez une requête.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
-        private void DeleteBtn_Click(object sender, EventArgs e)
+        private void buttonSupp_Click(object sender, EventArgs e)
         {
-            try
+            if (dataGridRequetes.RowCount > 0)
             {
-                DataGridViewRow rw = queryDGV.SelectedRows[0];
+                bool result = false;
+                DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment supprimer cette requête ?",
+                    "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                result = (resultBox == DialogResult.Yes) ? true : false;
 
-                Requete query = rw.DataBoundItem as Requete;
+                if (result)
+                {
+                    int queryID = Convert.ToInt32(dataGridRequetes.CurrentRow.Cells[0].Value.ToString());
+                    database.DeleteRequete(queryID);
+                    setTableRequete(database.GetAllRequete());
+                }
 
-                database.DeleteRequete(query.RequeteId);
-
-                queryDGV.DataSource = database.GetAllRequete();
-
-                MessageBox.Show("La requete " + query.name + " a été supprimmée.");
             }
-            catch(ArgumentOutOfRangeException)
+            else
             {
-                MessageBox.Show("Selectionez une requete.");
+                MessageBox.Show("Sélectionnez une requête.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

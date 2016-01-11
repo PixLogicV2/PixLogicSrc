@@ -30,10 +30,15 @@ namespace PixLogic
             ResultDGV.DataSource = Queryresult;
         }
 
-        private void ExportBtn_Click(object sender, EventArgs e)
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exportBtn_Click(object sender, EventArgs e)
         {
             WindowExport export = new WindowExport(ResultDGV, "Export du résutat de la requete");
-            export.ShowDialog();    
+            export.ShowDialog();
         }
     }
 }
