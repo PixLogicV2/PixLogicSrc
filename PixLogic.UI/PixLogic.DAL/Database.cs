@@ -261,7 +261,11 @@ namespace PixLogic.DAL
         }
         public void DeleteReservation(int id)
         {
+            Reservation res = GetReservationById(id);
+            Pack pack = GetPackById(res.reservable.ReservableId);
             container.get("delete_reservation").deleteReservation(id);
+            if (pack.temp == true) DeletePack(pack.name);
+            
         }
         public void UpdateReservation(int id,DateTime? DateDebut,DateTime? DateFin)
         {
@@ -323,9 +327,9 @@ namespace PixLogic.DAL
         {
             return container.get("get_log_by_id").getLogById(id);
         }
-        public void AddLog(bool isPack,DateTime? beginDateEmprunt, DateTime? endDateEmprunt,string userName,string userNickname ,string userMail,string userClasse,string userPhoneNumber,string reservableName)
+        public void AddLog(bool isPack,DateTime? beginDateEmprunt, DateTime? endDateEmprunt,string userName,string userNickname ,string userMail,string userClasse,string userPhoneNumber,string reservableName,string managerName)
         {
-            container.get("add_log").addLog(container.get("log_factory").build(isPack, beginDateEmprunt, endDateEmprunt,userName,userNickname,userMail,userClasse,userPhoneNumber,reservableName));
+            container.get("add_log").addLog(container.get("log_factory").build(isPack, beginDateEmprunt, endDateEmprunt,userName,userNickname,userMail,userClasse,userPhoneNumber,reservableName,managerName));
         }
         public void RetourEmprunt(int id, DateTime? retour)
         {

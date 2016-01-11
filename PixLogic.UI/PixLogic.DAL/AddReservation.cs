@@ -35,9 +35,9 @@ namespace PixLogic.DAL
             if (user.credits > res.price) return true;
             else return false;
         }
-        public bool levelSuffisant(User user,float level)
+        public bool levelSuffisant(User user,Item elem)
         {
-            if (user.userClass.level > level) return true;
+            if (user.userClass.level > elem.categorie.level) return true;
             else return false;
         }
 

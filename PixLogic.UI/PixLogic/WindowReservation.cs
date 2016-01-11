@@ -120,24 +120,29 @@ namespace PixLogic
                 DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
                 DateTime ? debutEmprunt = null;
                 DateTime ? endEmprunt = null;
+                User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
                 if (isPack == false)
                 {
                     elem = database.GetItemById(int.Parse(valIdReservable.Text.ToString()));
+                    Item item = database.GetItemById(int.Parse(valIdReservable.Text.ToString()));
+                    if (database.LevelSuffisant(user, item.categorie.level) == false)
+                    {
+                        MessageBox.Show("level insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Close();
+                    }
                 }
                 else
                 {
                     elem = database.GetPackById(int.Parse(valIdReservable.Text.ToString()));
                 }
-                User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
                 if (Helper.reservationStartMinimumToday(true, debut)
                     && Helper.beginBeforeEndDate(true, debut, fin)
                     && Helper.getDispoReservableByDate(true, idElement, debut, fin)
                     && Helper.confirmationReservation(Helper.ADD))
                 {
-                    if (database.CreditSuffisant(user, elem)
-                    && database.LevelSuffisant(user, elem.price))
+                    if (database.CreditSuffisant(user, elem))
                         database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem, manag);
-                    else MessageBox.Show("credits ou niveau d'accès insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show("credits insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
                     this.Close();
