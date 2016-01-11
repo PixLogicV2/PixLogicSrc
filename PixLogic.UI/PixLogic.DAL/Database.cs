@@ -215,9 +215,9 @@ namespace PixLogic.DAL
         {
             return container.get("add_reservation").creditSuffisant(user, res);
         }
-        public bool LevelSuffisant(User user, float level)
+        public bool LevelSuffisant(User user, Item item)
         {
-            return container.get("add_reservation").levelSuffisant(user, level);
+            return container.get("add_reservation").levelSuffisant(user, item);
         }
         public List<Reservation> GetAllReservations()
         {
@@ -261,7 +261,11 @@ namespace PixLogic.DAL
         }
         public void DeleteReservation(int id)
         {
+            Reservation res = GetReservationById(id);
+            Pack pack = GetPackById(res.reservable.ReservableId);
             container.get("delete_reservation").deleteReservation(id);
+            if (pack.temp == true) DeletePack(pack.name);
+            
         }
         public void UpdateReservation(int id,DateTime? DateDebut,DateTime? DateFin)
         {
@@ -323,9 +327,9 @@ namespace PixLogic.DAL
         {
             return container.get("get_log_by_id").getLogById(id);
         }
-        public void AddLog(bool isPack,DateTime? beginDateEmprunt, DateTime? endDateEmprunt,string userName,string userNickname ,string userMail,string userClasse,string userPhoneNumber,string reservableName)
+        public void AddLog(bool isPack,DateTime? beginDateEmprunt, DateTime? endDateEmprunt,string userName,string userNickname ,string userMail,string userClasse,string userPhoneNumber,string reservableName,string managerName)
         {
-            container.get("add_log").addLog(container.get("log_factory").build(isPack, beginDateEmprunt, endDateEmprunt,userName,userNickname,userMail,userClasse,userPhoneNumber,reservableName));
+            container.get("add_log").addLog(container.get("log_factory").build(isPack, beginDateEmprunt, endDateEmprunt,userName,userNickname,userMail,userClasse,userPhoneNumber,reservableName,managerName));
         }
         public void RetourEmprunt(int id, DateTime? retour)
         {
@@ -335,12 +339,12 @@ namespace PixLogic.DAL
             if (reservable.temp == true && reservable.isPack == true)
             {
                 List<Item> items = GetItemsInPack(reservable.ReservableId);
-                foreach (Item i in items) AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, i.name);
+                foreach (Item i in items) AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, i.name,reservation.manager.name);
                 DeletePack(reservable.name);
             }
             else
             {
-                AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, reservable.name);
+                AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, reservable.name,reservation.manager.name);
             }
             container.get("delete_reservation").deleteReservation(reservation.ReservationId);
         }

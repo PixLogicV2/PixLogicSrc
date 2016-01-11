@@ -15,7 +15,7 @@ namespace PixLogic.DAL
             this.context = context;
         }
 
-        public Log build(bool isPack, DateTime? beginDateEmprunt, DateTime? endDateEmprunt, string userName, string userNickname, string userMail, string userClasse, string userPhoneNumber, string reservableName)
+        public Log build(bool isPack, DateTime? beginDateEmprunt, DateTime? endDateEmprunt, string userName, string userNickname, string userMail, string userClasse, string userPhoneNumber, string reservableName,string managerName)
         {
             Log reservation = new Log();
 
@@ -28,6 +28,7 @@ namespace PixLogic.DAL
             reservation.userClasse = userClasse;
             reservation.userPhoneNumber = userPhoneNumber;
             reservation.reservableName =reservableName;
+            reservation.managerName = managerName;
 
             return reservation;
         }

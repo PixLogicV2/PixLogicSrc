@@ -22,6 +22,7 @@ namespace PixLogic.DAL
         public string userMail { get; set; }
         public string userClasse { get; set; }
         public string userPhoneNumber { get; set; }
+        public string managerName { get; set; }
 
         public string reservableName { get; set; }
         
