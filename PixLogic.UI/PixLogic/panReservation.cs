@@ -37,7 +37,7 @@ namespace PixLogic
             foreach (Reservation reser in list)
             {
                 dataGridReservations.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name,
-                    reser.beginDateReservation.Value.ToString("d"), reser.endDateReservation.Value.ToString("d"));
+                    reser.beginDateReservation.Value.ToString("d"), reser.endDateReservation.Value.ToString("d"), reser.manager.name);
             }
 
             if (dataGridReservations.RowCount > 0)
@@ -78,6 +78,7 @@ namespace PixLogic
                 valNomUser.Text = reservation.user.name;
                 valNomReservable.Text = reservation.reservable.name;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
+                valManager.Text = reservation.manager.pseudo;
             }
             else
             {
@@ -86,17 +87,26 @@ namespace PixLogic
                 valNomUser.Text = "-";
                 valNomReservable.Text = "-";
                 valType.Text = "-";
+                valManager.Text = "-";
             }
 
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            int idReservation = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
-            if(Helper.confirmationEmprunt(idReservation)&& Helper.dateReservationToday(idReservation))
+            if (dataGridReservations.RowCount > 0)
             {
-                database.EmpruntReservation(idReservation);
-                setTableReservations(database.GetAllReservations());
+                int idReservation = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
+                if (Helper.confirmationEmprunt(idReservation) && Helper.dateReservationToday(idReservation))
+                {
+                    database.EmpruntReservation(idReservation);
+                    setTableReservations(database.GetAllReservations());
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous devez sélectionner un élément dans la table.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             
         }
 
@@ -203,21 +213,38 @@ namespace PixLogic
 
         private void buttonModif_Click(object sender, EventArgs e)
         {
-            int idReservation = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
-            Reservation reservation = database.GetReservationById(idReservation);
-            int idReservable = reservation.reservable.ReservableId;
+            if (dataGridReservations.RowCount > 0)
+            {
+                int idReservation = int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString());
+                Reservation reservation = database.GetReservationById(idReservation);
+                int idReservable = reservation.reservable.ReservableId;
 
-            WindowSetReservation set = new WindowSetReservation(idReservation, idReservable, this);
-            set.ShowDialog(this);
+                WindowSetReservation set = new WindowSetReservation(idReservation, idReservable, this);
+                set.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Vous devez sélectionner un élément dans la table.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void buttonCancelReserv_Click(object sender, EventArgs e)
         {
-            if (Helper.confirmationReservation(Helper.CANCEL))
+            if (dataGridReservations.RowCount > 0)
             {
-                database.DeleteReservation(int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString()));
-                setTableReservations(database.GetAllReservations());
+                if (Helper.confirmationReservation(Helper.CANCEL))
+                {
+                    database.DeleteReservation(int.Parse(dataGridReservations.CurrentRow.Cells[0].Value.ToString()));
+                    setTableReservations(database.GetAllReservations());
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous devez sélectionner un élément dans la table.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         
 

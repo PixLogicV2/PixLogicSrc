@@ -103,6 +103,7 @@ namespace PixLogic
                 buttonTransfert.Enabled = false;
                 valItemName.Text = "-";
                 valPrice.Text = "-";
+                valCategorie.Text = "-";
                 valDispo.Text = "-";
                 valDescription.Text = "-";
                 pictureBoxItem.Image = null;
@@ -258,7 +259,8 @@ namespace PixLogic
         {
 
             if(Helper.existReservationItem(true, int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString())) == false){
-                WindowItem modif = new WindowItem(this, pictureBoxItem.Image, valItemName.Text, double.Parse(valPrice.Text), valDescription.Text, valCategorie.Text);
+                Item i = database.GetItemById(int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString()));
+                WindowItem modif = new WindowItem(this, i);
                 modif.ShowDialog(this);
             }
         }

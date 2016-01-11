@@ -136,11 +136,15 @@ namespace PixLogic
                 {
                     if (database.CreditSuffisant(user, elem)
                     && database.LevelSuffisant(user, elem.price))
+                    {
                         database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem, manag);
-                    else MessageBox.Show("credits ou niveau d'accès insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("credits ou niveau d'accès insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
-                    this.Close();
+                    
                 }
             }
             else

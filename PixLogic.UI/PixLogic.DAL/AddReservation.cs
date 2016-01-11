@@ -32,12 +32,12 @@ namespace PixLogic.DAL
         }
         public bool creditSuffisant(User user,Reservable res)
         {
-            if (user.credits > res.price) return true;
+            if (user.credits >= res.price) return true;
             else return false;
         }
         public bool levelSuffisant(User user,float level)
         {
-            if (user.userClass.level > level) return true;
+            if (user.userClass.level >= level) return true;
             else return false;
         }
 

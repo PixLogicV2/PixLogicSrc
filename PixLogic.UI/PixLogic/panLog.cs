@@ -78,11 +78,7 @@ namespace PixLogic
                 string typ = reser.isPack ? Helper.PACK : Helper.ITEM;
                 dataGridLogs.Rows.Add(reser.LogId, reser.userName, reser.reservableName,
                     typ, reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"));
-
-                if (reser.endDateEmprunt.Value.Date < DateTime.Today.Date)
-                    dataGridLogs.Rows[dataGridLogs.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
-                else
-                    dataGridLogs.Rows[dataGridLogs.RowCount - 1].DefaultCellStyle.BackColor = Color.White;
+              
             }
 
             if (dataGridLogs.RowCount > 0)
@@ -103,7 +99,7 @@ namespace PixLogic
 
                 valDebutEmprunt.Text = ((DateTime)reservation.beginDateEmprunt).ToString("D");
                 valFinEmprunt.Text = ((DateTime)reservation.endDateEmprunt).ToString("D");
-                valPhone.Text = (reservation.userPhoneNumber);
+                
 
                 valNomUser.Text = reservation.userName +" "+reservation.userNickname;
                 valNomReservable.Text = reservation.reservableName;
@@ -113,7 +109,6 @@ namespace PixLogic
             {
                 valDebutEmprunt.Text = "-";
                 valFinEmprunt.Text = "-";
-                valPhone.Text = "-";
                 valNomUser.Text = "-";
                 valNomReservable.Text = "-";
                 valType.Text = "-";
