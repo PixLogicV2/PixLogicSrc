@@ -21,8 +21,8 @@ namespace PixLogic
                 database = Helper.database;
                 addEventsOnButtonItem();
                 setPanUserVisible();
-                WindowConnexion con = new WindowConnexion();
-                con.ShowDialog();
+                /*WindowConnexion con = new WindowConnexion();
+                con.ShowDialog();*/
             }
         }
 

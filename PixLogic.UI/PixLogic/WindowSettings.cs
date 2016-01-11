@@ -23,6 +23,10 @@ namespace PixLogic
             setTableCategories(database.GetAllCategorie());
             setTableUserClass(database.GetAllUserClass());
             setTableManagers(database.GetAllManagers());
+            valServeur.Enabled = false;
+            valPort.Enabled = false;
+            valEmailAdress.Enabled = false;
+            valPasswordMail.Enabled = false;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -298,6 +302,50 @@ namespace PixLogic
             {
                 database.DeleteManager(id);
                 setTableManagers(database.GetAllManagers());
+            }
+        }
+
+        private void checkBoxEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxEdit.Checked)
+            {
+                valServeur.Enabled = true;
+                valPort.Enabled = true;
+                valEmailAdress.Enabled = true;
+                valPasswordMail.Enabled = true;
+            }
+            else
+            {
+                valServeur.Enabled = false;
+                valPort.Enabled = false;
+                valEmailAdress.Enabled = false;
+                valPasswordMail.Enabled = false;
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if(!Helper.fieldsAreEmpty(true, valServeur.Text, valPort.Text, valEmailAdress.Text, valPasswordMail.Text))
+            {
+                if(Helper.AreNumbers(true, valPort.Text))
+                {
+                    bool result = false;
+                    DialogResult resultBox = MessageBox.Show("Voulez-vous enregistrer les paramètres entrés ?",
+                        "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    result = (resultBox == DialogResult.Yes) ? true : false;
+                    if(result)
+                    {
+                        MailConfig config = new MailConfig();
+                        config.email = valEmailAdress.Text;
+                        config.serveurStmp = valServeur.Text;
+                        config.port = int.Parse(valPort.Text);
+                        config.mdp = valPasswordMail.Text;
+                        database.AddMailConfig(config);
+                        MessageBox.Show("Les paramètres ont bien été enregistré.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    
+                }
             }
         }
     }

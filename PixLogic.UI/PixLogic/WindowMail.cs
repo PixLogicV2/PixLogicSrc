@@ -22,6 +22,16 @@ namespace PixLogic
             this.idReservation = idReservation;
             setNewsUser();
         }
+        public WindowMail(User user)
+        {
+            InitializeComponent();
+            valUserName.Text = user.name + " " + user.nickname;
+            valMail.Text = user.mail;
+            valTel.Text = user.phoneNumber;
+            valClass.Text = user.userClass.name;
+
+            Helper.putImageInBox(pictureBoxUser, database.ByteArrayToImage(user.image));
+        }
 
         private void setNewsUser()
         {

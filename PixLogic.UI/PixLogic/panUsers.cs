@@ -171,5 +171,21 @@ namespace PixLogic
         {
             return dataGridUsers;
         }
+
+        private void buttonSendMail_Click(object sender, EventArgs e)
+        {
+            if(dataGridUsers.RowCount > 0)
+            {
+                int idU = int.Parse(valUserId.Text);
+                User u = database.GetUserById(idU);
+                WindowMail mail = new WindowMail(u);
+                mail.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez sélectionner un utilisateur.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+        }
     }
 }
