@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelFiltres = new System.Windows.Forms.Label();
             this.panFiltres = new System.Windows.Forms.Panel();
             this.buttonFilter = new System.Windows.Forms.Button();
@@ -71,6 +71,9 @@
             this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.valManager = new System.Windows.Forms.Label();
             this.panFiltres.SuspendLayout();
             this.panNews.SuspendLayout();
             this.panTableUsers.SuspendLayout();
@@ -271,6 +274,8 @@
             // panNews
             // 
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panNews.Controls.Add(this.valManager);
+            this.panNews.Controls.Add(this.label2);
             this.panNews.Controls.Add(this.valType);
             this.panNews.Controls.Add(this.valNomReservable);
             this.panNews.Controls.Add(this.valNomUser);
@@ -444,46 +449,47 @@
             // 
             this.dataGridEmprunts.AllowUserToAddRows = false;
             this.dataGridEmprunts.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dataGridEmprunts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridEmprunts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridEmprunts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridEmprunts.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridEmprunts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEmprunts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmprunts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridEmprunts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridEmprunts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdReservation,
             this.NameUserReservation,
             this.NameReservable,
             this.dateEmprunt,
-            this.dateRetour});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridEmprunts.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dateRetour,
+            this.admin});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridEmprunts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridEmprunts.Location = new System.Drawing.Point(-1, 47);
             this.dataGridEmprunts.MultiSelect = false;
             this.dataGridEmprunts.Name = "dataGridEmprunts";
             this.dataGridEmprunts.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEmprunts.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEmprunts.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridEmprunts.RowHeadersVisible = false;
             this.dataGridEmprunts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridEmprunts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -499,35 +505,62 @@
             this.IdReservation.HeaderText = "Id";
             this.IdReservation.Name = "IdReservation";
             this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 40;
+            this.IdReservation.Width = 35;
             // 
             // NameUserReservation
             // 
             this.NameUserReservation.HeaderText = "Utilisateur";
             this.NameUserReservation.Name = "NameUserReservation";
             this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 80;
+            this.NameUserReservation.Width = 70;
             // 
             // NameReservable
             // 
             this.NameReservable.HeaderText = "Réservable";
             this.NameReservable.Name = "NameReservable";
             this.NameReservable.ReadOnly = true;
-            this.NameReservable.Width = 80;
+            this.NameReservable.Width = 70;
             // 
             // dateEmprunt
             // 
             this.dateEmprunt.HeaderText = "Date Emprunt";
             this.dateEmprunt.Name = "dateEmprunt";
             this.dateEmprunt.ReadOnly = true;
-            this.dateEmprunt.Width = 105;
+            this.dateEmprunt.Width = 85;
             // 
             // dateRetour
             // 
             this.dateRetour.HeaderText = "Date Retour";
             this.dateRetour.Name = "dateRetour";
             this.dateRetour.ReadOnly = true;
-            this.dateRetour.Width = 105;
+            this.dateRetour.Width = 85;
+            // 
+            // admin
+            // 
+            this.admin.HeaderText = "Admin";
+            this.admin.Name = "admin";
+            this.admin.ReadOnly = true;
+            this.admin.Width = 70;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(355, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Manager :";
+            // 
+            // valManager
+            // 
+            this.valManager.AutoSize = true;
+            this.valManager.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valManager.Location = new System.Drawing.Point(472, 67);
+            this.valManager.Name = "valManager";
+            this.valManager.Size = new System.Drawing.Size(13, 17);
+            this.valManager.TabIndex = 47;
+            this.valManager.Text = "-";
             // 
             // panEmprunt
             // 
@@ -591,10 +624,13 @@
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridEmprunts;
+        private System.Windows.Forms.Label valManager;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn admin;
     }
 }

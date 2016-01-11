@@ -48,8 +48,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
-            this.valPhone = new System.Windows.Forms.Label();
-            this.labelUserPhone = new System.Windows.Forms.Label();
             this.labelDebutEmprunt = new System.Windows.Forms.Label();
             this.valDebutEmprunt = new System.Windows.Forms.Label();
             this.valFinEmprunt = new System.Windows.Forms.Label();
@@ -66,13 +64,16 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridLogs = new System.Windows.Forms.DataGridView();
+            this.labelListEmprunt = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.valManager = new System.Windows.Forms.Label();
             this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelListEmprunt = new System.Windows.Forms.Label();
+            this.manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panFiltres.SuspendLayout();
             this.panNews.SuspendLayout();
             this.panTableLogs.SuspendLayout();
@@ -249,8 +250,8 @@
             // panNews
             // 
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panNews.Controls.Add(this.valPhone);
-            this.panNews.Controls.Add(this.labelUserPhone);
+            this.panNews.Controls.Add(this.valManager);
+            this.panNews.Controls.Add(this.label2);
             this.panNews.Controls.Add(this.labelDebutEmprunt);
             this.panNews.Controls.Add(this.valDebutEmprunt);
             this.panNews.Controls.Add(this.valFinEmprunt);
@@ -266,26 +267,6 @@
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(674, 104);
             this.panNews.TabIndex = 57;
-            // 
-            // valPhone
-            // 
-            this.valPhone.AutoSize = true;
-            this.valPhone.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPhone.Location = new System.Drawing.Point(488, 68);
-            this.valPhone.Name = "valPhone";
-            this.valPhone.Size = new System.Drawing.Size(11, 13);
-            this.valPhone.TabIndex = 51;
-            this.valPhone.Text = "-";
-            // 
-            // labelUserPhone
-            // 
-            this.labelUserPhone.AutoSize = true;
-            this.labelUserPhone.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserPhone.Location = new System.Drawing.Point(381, 68);
-            this.labelUserPhone.Name = "labelUserPhone";
-            this.labelUserPhone.Size = new System.Drawing.Size(26, 13);
-            this.labelUserPhone.TabIndex = 50;
-            this.labelUserPhone.Text = "Tel :";
             // 
             // labelDebutEmprunt
             // 
@@ -463,7 +444,8 @@
             this.NameReservable,
             this.typeReservable,
             this.dateEmprunt,
-            this.dateRetour});
+            this.dateRetour,
+            this.manager});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -493,12 +475,42 @@
             this.dataGridLogs.DoubleClick += new System.EventHandler(this.dataGridLogs_DoubleClick);
             this.dataGridLogs.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridLogs_KeyUp);
             // 
+            // labelListEmprunt
+            // 
+            this.labelListEmprunt.AutoSize = true;
+            this.labelListEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListEmprunt.Location = new System.Drawing.Point(27, 100);
+            this.labelListEmprunt.Name = "labelListEmprunt";
+            this.labelListEmprunt.Size = new System.Drawing.Size(61, 13);
+            this.labelListEmprunt.TabIndex = 63;
+            this.labelListEmprunt.Text = "Historique";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(381, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Manager :";
+            // 
+            // valManager
+            // 
+            this.valManager.AutoSize = true;
+            this.valManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valManager.Location = new System.Drawing.Point(488, 68);
+            this.valManager.Name = "valManager";
+            this.valManager.Size = new System.Drawing.Size(11, 13);
+            this.valManager.TabIndex = 51;
+            this.valManager.Text = "-";
+            // 
             // IdReservation
             // 
             this.IdReservation.HeaderText = "Id";
             this.IdReservation.Name = "IdReservation";
             this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 40;
+            this.IdReservation.Width = 50;
             // 
             // NameUserReservation
             // 
@@ -524,24 +536,20 @@
             this.dateEmprunt.HeaderText = "Date Emprunt";
             this.dateEmprunt.Name = "dateEmprunt";
             this.dateEmprunt.ReadOnly = true;
-            this.dateEmprunt.Width = 105;
+            this.dateEmprunt.Width = 110;
             // 
             // dateRetour
             // 
             this.dateRetour.HeaderText = "Date Retour";
             this.dateRetour.Name = "dateRetour";
             this.dateRetour.ReadOnly = true;
-            this.dateRetour.Width = 105;
+            this.dateRetour.Width = 110;
             // 
-            // labelListEmprunt
+            // manager
             // 
-            this.labelListEmprunt.AutoSize = true;
-            this.labelListEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListEmprunt.Location = new System.Drawing.Point(27, 100);
-            this.labelListEmprunt.Name = "labelListEmprunt";
-            this.labelListEmprunt.Size = new System.Drawing.Size(61, 13);
-            this.labelListEmprunt.TabIndex = 63;
-            this.labelListEmprunt.Text = "Historique";
+            this.manager.HeaderText = "Manager";
+            this.manager.Name = "manager";
+            this.manager.ReadOnly = true;
             // 
             // panLog
             // 
@@ -599,17 +607,18 @@
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridLogs;
         private System.Windows.Forms.Label labelListEmprunt;
-        private System.Windows.Forms.Label labelUserPhone;
         private System.Windows.Forms.Label labelDebutEmprunt;
         public System.Windows.Forms.Label valDebutEmprunt;
         private System.Windows.Forms.Label valFinEmprunt;
         private System.Windows.Forms.Label labelFinEmprunt;
-        private System.Windows.Forms.Label valPhone;
+        private System.Windows.Forms.Label valManager;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameUserReservation;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manager;
     }
 }

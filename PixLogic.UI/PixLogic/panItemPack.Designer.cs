@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
             this.valCategorie = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disponibilite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNews = new System.Windows.Forms.Label();
             this.listBoxItem = new System.Windows.Forms.ListBox();
             this.comboBoxPack = new System.Windows.Forms.ComboBox();
@@ -65,8 +66,7 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
-            this.buttonPanne = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -77,22 +77,24 @@
             // panNews
             // 
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panNews.Controls.Add(this.label1);
             this.panNews.Controls.Add(this.valCategorie);
             this.panNews.Controls.Add(this.labelCategorie);
             this.panNews.Controls.Add(this.valPrice);
             this.panNews.Controls.Add(this.valDispo);
             this.panNews.Controls.Add(this.labelPrice);
             this.panNews.Controls.Add(this.labelDispo);
-            this.panNews.Location = new System.Drawing.Point(335, 200);
+            this.panNews.Controls.Add(this.valDescription);
+            this.panNews.Location = new System.Drawing.Point(212, 200);
             this.panNews.Name = "panNews";
-            this.panNews.Size = new System.Drawing.Size(140, 115);
+            this.panNews.Size = new System.Drawing.Size(263, 128);
             this.panNews.TabIndex = 26;
             // 
             // valCategorie
             // 
             this.valCategorie.AutoSize = true;
             this.valCategorie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valCategorie.Location = new System.Drawing.Point(65, 70);
+            this.valCategorie.Location = new System.Drawing.Point(65, 61);
             this.valCategorie.Name = "valCategorie";
             this.valCategorie.Size = new System.Drawing.Size(11, 13);
             this.valCategorie.TabIndex = 7;
@@ -102,7 +104,7 @@
             // 
             this.labelCategorie.AutoSize = true;
             this.labelCategorie.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategorie.Location = new System.Drawing.Point(0, 71);
+            this.labelCategorie.Location = new System.Drawing.Point(0, 61);
             this.labelCategorie.Name = "labelCategorie";
             this.labelCategorie.Size = new System.Drawing.Size(63, 13);
             this.labelCategorie.TabIndex = 6;
@@ -112,7 +114,7 @@
             // 
             this.valPrice.AutoSize = true;
             this.valPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valPrice.Location = new System.Drawing.Point(81, 41);
+            this.valPrice.Location = new System.Drawing.Point(81, 34);
             this.valPrice.Name = "valPrice";
             this.valPrice.Size = new System.Drawing.Size(13, 17);
             this.valPrice.TabIndex = 4;
@@ -122,7 +124,7 @@
             // 
             this.valDispo.AutoSize = true;
             this.valDispo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDispo.Location = new System.Drawing.Point(80, 16);
+            this.valDispo.Location = new System.Drawing.Point(80, 9);
             this.valDispo.Name = "valDispo";
             this.valDispo.Size = new System.Drawing.Size(11, 13);
             this.valDispo.TabIndex = 3;
@@ -132,7 +134,7 @@
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(0, 42);
+            this.labelPrice.Location = new System.Drawing.Point(0, 35);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(76, 13);
             this.labelPrice.TabIndex = 1;
@@ -142,7 +144,7 @@
             // 
             this.labelDispo.AutoSize = true;
             this.labelDispo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDispo.Location = new System.Drawing.Point(0, 16);
+            this.labelDispo.Location = new System.Drawing.Point(0, 9);
             this.labelDispo.Name = "labelDispo";
             this.labelDispo.Size = new System.Drawing.Size(79, 13);
             this.labelDispo.TabIndex = 0;
@@ -151,12 +153,12 @@
             // valDescription
             // 
             this.valDescription.BackColor = System.Drawing.Color.White;
-            this.valDescription.Location = new System.Drawing.Point(211, 200);
+            this.valDescription.Location = new System.Drawing.Point(78, 85);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ReadOnly = true;
             this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.valDescription.Size = new System.Drawing.Size(118, 115);
+            this.valDescription.Size = new System.Drawing.Size(180, 37);
             this.valDescription.TabIndex = 25;
             // 
             // valItemName
@@ -249,8 +251,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -311,11 +313,18 @@
             this.disponibilite.ReadOnly = true;
             this.disponibilite.Visible = false;
             // 
+            // id
+            // 
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
             // labelNews
             // 
             this.labelNews.AutoSize = true;
             this.labelNews.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNews.Location = new System.Drawing.Point(353, 195);
+            this.labelNews.Location = new System.Drawing.Point(230, 195);
             this.labelNews.Name = "labelNews";
             this.labelNews.Size = new System.Drawing.Size(33, 13);
             this.labelNews.TabIndex = 0;
@@ -464,7 +473,7 @@
             // 
             this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
             this.pictureReserver.Image = ((System.Drawing.Image)(resources.GetObject("pictureReserver.Image")));
-            this.pictureReserver.Location = new System.Drawing.Point(452, 311);
+            this.pictureReserver.Location = new System.Drawing.Point(452, 326);
             this.pictureReserver.Name = "pictureReserver";
             this.pictureReserver.Size = new System.Drawing.Size(23, 23);
             this.pictureReserver.TabIndex = 41;
@@ -472,32 +481,21 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
-            // buttonPanne
+            // label1
             // 
-            this.buttonPanne.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPanne.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPanne.Location = new System.Drawing.Point(212, 321);
-            this.buttonPanne.Name = "buttonPanne";
-            this.buttonPanne.Size = new System.Drawing.Size(93, 45);
-            this.buttonPanne.TabIndex = 52;
-            this.buttonPanne.Text = "Dispo du matériel";
-            this.buttonPanne.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonPanne.UseVisualStyleBackColor = true;
-            this.buttonPanne.Click += new System.EventHandler(this.buttonPanne_Click);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Description :";
             // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.buttonPanne);
             this.Controls.Add(this.valItemRef);
             this.Controls.Add(this.buttonRemoveItemInPack);
             this.Controls.Add(this.pictureBoxItem);
@@ -511,7 +509,6 @@
             this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.panNews);
-            this.Controls.Add(this.valDescription);
             this.Controls.Add(this.valItemName);
             this.Controls.Add(this.labelListItem);
             this.Controls.Add(this.panTableItem);
@@ -562,12 +559,12 @@
         private System.Windows.Forms.Label labelCategorie;
         private System.Windows.Forms.Label labelCat;
         private System.Windows.Forms.ComboBox comboBoxCategorie;
-        private System.Windows.Forms.Button buttonPanne;
         private System.Windows.Forms.DataGridViewTextBoxColumn reference;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn categorie;
         private System.Windows.Forms.DataGridViewTextBoxColumn disponibilite;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.Label label1;
     }
 }

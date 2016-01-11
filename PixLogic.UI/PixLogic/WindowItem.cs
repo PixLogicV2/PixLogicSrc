@@ -29,18 +29,20 @@ namespace PixLogic
             add = true;
             setComboBoxCategorie(cat);
         }
-        public WindowItem(panItemPack pa, Image image, string name, double price, string descrip, string ca)
+        public WindowItem(panItemPack pa, Item i)
         {
             InitializeComponent();
             this.Text = "Modifier matériel";
             pan = pa;
-            img = image;
+            img = database.ByteArrayToImage(i.image);
             Helper.putImageInBox(pictureBoxItem, img);
-            valName.Text = name;
-            valPrice.Text = Convert.ToString(price);
-            valDescription.Text = descrip;
+            valName.Text = i.name;
+            valPrice.Text = Convert.ToString(i.price);
+            valDescription.Text = i.description;
+            valQuantity.Text = Convert.ToString(i.quantity);
+            valReference.Text = i.reference;
             add = false;
-            this.cat = ca;
+            this.cat = i.categorie.name;
             setComboBoxCategorie(cat);
         }
 

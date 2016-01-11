@@ -38,11 +38,6 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridReservations = new System.Windows.Forms.DataGridView();
-            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debutResersation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panNews = new System.Windows.Forms.Panel();
             this.valType = new System.Windows.Forms.Label();
             this.valNomReservable = new System.Windows.Forms.Label();
@@ -74,6 +69,14 @@
             this.buttonCancelReserv = new System.Windows.Forms.Button();
             this.buttonModif = new System.Windows.Forms.Button();
             this.buttonPret = new System.Windows.Forms.Button();
+            this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debutResersation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.valManager = new System.Windows.Forms.Label();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservations)).BeginInit();
             this.panNews.SuspendLayout();
@@ -143,7 +146,8 @@
             this.NameUserReservation,
             this.NameReservable,
             this.debutResersation,
-            this.finReservation});
+            this.finReservation,
+            this.admin});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,44 +178,11 @@
             this.dataGridReservations.DoubleClick += new System.EventHandler(this.dataGridReservations_DoubleClick);
             this.dataGridReservations.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridReservations_KeyUp);
             // 
-            // IdReservation
-            // 
-            this.IdReservation.HeaderText = "Id";
-            this.IdReservation.Name = "IdReservation";
-            this.IdReservation.ReadOnly = true;
-            this.IdReservation.Width = 40;
-            // 
-            // NameUserReservation
-            // 
-            this.NameUserReservation.HeaderText = "Utilisateur";
-            this.NameUserReservation.Name = "NameUserReservation";
-            this.NameUserReservation.ReadOnly = true;
-            this.NameUserReservation.Width = 82;
-            // 
-            // NameReservable
-            // 
-            this.NameReservable.HeaderText = "Réservable";
-            this.NameReservable.Name = "NameReservable";
-            this.NameReservable.ReadOnly = true;
-            this.NameReservable.Width = 90;
-            // 
-            // debutResersation
-            // 
-            this.debutResersation.HeaderText = "Début Réservation";
-            this.debutResersation.Name = "debutResersation";
-            this.debutResersation.ReadOnly = true;
-            this.debutResersation.Width = 105;
-            // 
-            // finReservation
-            // 
-            this.finReservation.HeaderText = "Fin Réservation";
-            this.finReservation.Name = "finReservation";
-            this.finReservation.ReadOnly = true;
-            this.finReservation.Width = 95;
-            // 
             // panNews
             // 
             this.panNews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panNews.Controls.Add(this.valManager);
+            this.panNews.Controls.Add(this.label2);
             this.panNews.Controls.Add(this.valType);
             this.panNews.Controls.Add(this.valNomReservable);
             this.panNews.Controls.Add(this.valNomUser);
@@ -560,6 +531,68 @@
             this.buttonPret.UseVisualStyleBackColor = true;
             this.buttonPret.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // IdReservation
+            // 
+            this.IdReservation.HeaderText = "Id";
+            this.IdReservation.Name = "IdReservation";
+            this.IdReservation.ReadOnly = true;
+            this.IdReservation.Width = 30;
+            // 
+            // NameUserReservation
+            // 
+            this.NameUserReservation.HeaderText = "Utilisateur";
+            this.NameUserReservation.Name = "NameUserReservation";
+            this.NameUserReservation.ReadOnly = true;
+            this.NameUserReservation.Width = 60;
+            // 
+            // NameReservable
+            // 
+            this.NameReservable.HeaderText = "Réservable";
+            this.NameReservable.Name = "NameReservable";
+            this.NameReservable.ReadOnly = true;
+            this.NameReservable.Width = 67;
+            // 
+            // debutResersation
+            // 
+            this.debutResersation.HeaderText = "Début Réservation";
+            this.debutResersation.Name = "debutResersation";
+            this.debutResersation.ReadOnly = true;
+            this.debutResersation.Width = 105;
+            // 
+            // finReservation
+            // 
+            this.finReservation.HeaderText = "Fin Réservation";
+            this.finReservation.Name = "finReservation";
+            this.finReservation.ReadOnly = true;
+            this.finReservation.Width = 95;
+            // 
+            // admin
+            // 
+            this.admin.HeaderText = "Admin";
+            this.admin.Name = "admin";
+            this.admin.ReadOnly = true;
+            this.admin.Width = 75;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(365, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "Manager :";
+            // 
+            // valManager
+            // 
+            this.valManager.AutoSize = true;
+            this.valManager.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valManager.Location = new System.Drawing.Point(455, 65);
+            this.valManager.Name = "valManager";
+            this.valManager.Size = new System.Drawing.Size(13, 17);
+            this.valManager.TabIndex = 47;
+            this.valManager.Text = "-";
+            // 
             // panReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,5 +665,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NameReservable;
         private System.Windows.Forms.DataGridViewTextBoxColumn debutResersation;
         private System.Windows.Forms.DataGridViewTextBoxColumn finReservation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn admin;
+        private System.Windows.Forms.Label valManager;
+        private System.Windows.Forms.Label label2;
     }
 }

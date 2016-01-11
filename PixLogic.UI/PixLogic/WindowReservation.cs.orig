@@ -140,13 +140,20 @@ namespace PixLogic
                     && Helper.getDispoReservableByDate(true, idElement, debut, fin)
                     && Helper.confirmationReservation(Helper.ADD))
                 {
+<<<<<<< HEAD
                     if (database.CreditSuffisant(user, elem))
+                        database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem, manag);
+                    else MessageBox.Show("credits insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+=======
+                    if (database.CreditSuffisant(user, elem)
+                    && database.LevelSuffisant(user, elem.price))
                     {
                         database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem, manag);
                         this.Close();
                     }
                     else
                         MessageBox.Show("credits ou niveau d'accès insuffisant", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
+>>>>>>> 770c9b03ceca2c44dc35c97b511de4210f73eb07
 
 
                     

@@ -37,7 +37,7 @@ namespace PixLogic
             foreach (Reservation reser in list)
             {
                 dataGridEmprunts.Rows.Add(reser.ReservationId, reser.user.name, reser.reservable.name,
-                    reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"));
+                    reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"), reser.manager.name);
 
                 if (reser.endDateEmprunt.Value.Date < DateTime.Today.Date)
                     dataGridEmprunts.Rows[dataGridEmprunts.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
@@ -79,6 +79,7 @@ namespace PixLogic
                 valNomUser.Text = reservation.user.name;
                 valNomReservable.Text = reservation.reservable.name;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
+                valManager.Text = reservation.manager.pseudo;
             }
             else
             {
@@ -87,6 +88,7 @@ namespace PixLogic
                 valNomUser.Text = "-";
                 valNomReservable.Text = "-";
                 valType.Text = "-";
+                valManager.Text = "-";
             }
 
         }
@@ -224,12 +226,20 @@ namespace PixLogic
 
         private void buttonRendre_Click(object sender, EventArgs e)
         {
-            int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
-            if(Helper.confirmationRemise(idReservation))
+            if(dataGridEmprunts.RowCount > 0)
             {
-                database.RetourEmprunt(idReservation, DateTime.Today.Date);
-                setTableEmprunts(database.GetAllEmprunts());
+                int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
+                if (Helper.confirmationRemise(idReservation))
+                {
+                    database.RetourEmprunt(idReservation, DateTime.Today.Date);
+                    setTableEmprunts(database.GetAllEmprunts());
+                }
             }
+            else
+            {
+                MessageBox.Show("Vous devez sélectionner un élément dans la table.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             
         }
 
