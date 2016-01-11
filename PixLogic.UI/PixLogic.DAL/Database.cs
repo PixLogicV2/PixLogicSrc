@@ -215,9 +215,9 @@ namespace PixLogic.DAL
         {
             return container.get("add_reservation").creditSuffisant(user, res);
         }
-        public bool LevelSuffisant(User user, float level)
+        public bool LevelSuffisant(User user, Item item)
         {
-            return container.get("add_reservation").levelSuffisant(user, level);
+            return container.get("add_reservation").levelSuffisant(user, item);
         }
         public List<Reservation> GetAllReservations()
         {
@@ -339,12 +339,12 @@ namespace PixLogic.DAL
             if (reservable.temp == true && reservable.isPack == true)
             {
                 List<Item> items = GetItemsInPack(reservable.ReservableId);
-                foreach (Item i in items) AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, i.name);
+                foreach (Item i in items) AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, i.name,reservation.manager.name);
                 DeletePack(reservable.name);
             }
             else
             {
-                AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, reservable.name);
+                AddLog(reservation.isPack, reservation.beginDateEmprunt, reservation.endDateEmprunt, user.name, user.nickname, user.mail, user.userClass.name, user.phoneNumber, reservable.name,reservation.manager.name);
             }
             container.get("delete_reservation").deleteReservation(reservation.ReservationId);
         }

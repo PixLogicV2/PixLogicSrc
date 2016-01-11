@@ -122,6 +122,18 @@
     <Compile Include="Migrations\201512150827391_InitialCreate.Designer.cs">
       <DependentUpon>201512150827391_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601110924401_AddManagerInLog.cs" />
+    <Compile Include="Migrations\201601110924401_AddManagerInLog.Designer.cs">
+      <DependentUpon>201601110924401_AddManagerInLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601110935167_ChampsPack.cs" />
+    <Compile Include="Migrations\201601110935167_ChampsPack.Designer.cs">
+      <DependentUpon>201601110935167_ChampsPack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601110946263_ManagerUpdate.cs" />
+    <Compile Include="Migrations\201601110946263_ManagerUpdate.Designer.cs">
+      <DependentUpon>201601110946263_ManagerUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Requete.cs" />
     <Compile Include="RequeteFactory.cs" />
@@ -160,6 +172,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512150827391_InitialCreate.resx">
       <DependentUpon>201512150827391_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110924401_AddManagerInLog.resx">
+      <DependentUpon>201601110924401_AddManagerInLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110935167_ChampsPack.resx">
+      <DependentUpon>201601110935167_ChampsPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110946263_ManagerUpdate.resx">
+      <DependentUpon>201601110946263_ManagerUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
