@@ -20,5 +20,12 @@ namespace PixLogic.DAL
             context.MailConfigs.Add(mailconfig);
             context.SaveChanges();
         }
+        public bool existMailConfig()
+        {
+            IQueryable<MailConfig> itemQuery = from MailConfig in context.MailConfigs
+                                         select MailConfig;
+            if (itemQuery.Any()) return true;
+            return false;
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace PixLogic
         [STAThread]
         static void Main()
         {
-          Helper.initBase();
+          //Helper.initBase();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
