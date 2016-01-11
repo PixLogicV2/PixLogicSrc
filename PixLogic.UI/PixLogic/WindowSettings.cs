@@ -34,12 +34,16 @@ namespace PixLogic
 
         private void setNewsMailConfig()
         {
-            MailConfig config = database.GetMailConfig();
+            if(database.ExistMailConfig())
+            {
+                MailConfig config = database.GetMailConfig();
 
-            valServeur.Text = config.serveurStmp;
-            valPort.Text = Convert.ToString(config.port);
-            valEmailAdress.Text = config.email;
-            valPasswordMail.Text = config.mdp;
+                valServeur.Text = config.serveurStmp;
+                valPort.Text = Convert.ToString(config.port);
+                valEmailAdress.Text = config.email;
+                valPasswordMail.Text = config.mdp;
+            }
+            
 
             valServeur.Enabled = false;
             valPort.Enabled = false;
@@ -152,8 +156,8 @@ namespace PixLogic
                 Manager m = database.GetManagerById(id);
 
                 valPseudoManager.Text = m.pseudo;
-                valNomManager.Text = dataGridManagers.CurrentRow.Cells[1].Value.ToString();
-                valPrenomManager.Text = dataGridManagers.CurrentRow.Cells[2].Value.ToString();
+                valNomManager.Text = m.name;
+                valPrenomManager.Text = m.nickname;
                 valTelManager.Text = m.phone;
             }
             else

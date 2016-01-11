@@ -100,10 +100,10 @@ namespace PixLogic
             string tel = valTel.Text;
             string classe = comboBoxClasse.SelectedItem.ToString();
             string option = add ? Helper.ADD : Helper.SET;
-            UserClass userClass = database.GetUserClassByName(classe);
             if (!Helper.fieldsAreEmpty(true, name, nickname, classe)
                 && Helper.confirmation(option))
             {
+                UserClass userClass = database.GetUserClassByName(classe);
                 if (add)
                 {
                     database.AddUser(name, nickname, mail, tel,img,userClass);

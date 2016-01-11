@@ -98,8 +98,8 @@ namespace PixLogic
                 }
                 this.Cursor = Cursors.Default;
                 success();
-                valSubject.Enabled = false;
-                valMessage.Enabled = false;
+                valSubject.ReadOnly = true;
+                valMessage.ReadOnly = true;
                 buttonCancel.Enabled = false;
                 buttonSend.Enabled = false;
                 this.TopMost = true;

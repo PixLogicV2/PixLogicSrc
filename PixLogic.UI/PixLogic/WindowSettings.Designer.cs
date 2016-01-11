@@ -74,17 +74,22 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccessLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panEmail = new System.Windows.Forms.TabPage();
+            this.checkBoxEdit = new System.Windows.Forms.CheckBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelInfo = new System.Windows.Forms.Label();
             this.valInfo = new System.Windows.Forms.Label();
             this.labelIdentifiant = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.valPasswordMail = new System.Windows.Forms.TextBox();
             this.valEmailAdress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelConfiguration = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelObligatoire = new System.Windows.Forms.Label();
             this.valPort = new System.Windows.Forms.TextBox();
             this.valServeur = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -112,11 +117,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelObligatoire = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.checkBoxEdit = new System.Windows.Forms.CheckBox();
             this.tabControlSettings.SuspendLayout();
             this.panCategorie.SuspendLayout();
             this.panNews.SuspendLayout();
@@ -160,7 +160,7 @@
             this.panCategorie.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panCategorie.Location = new System.Drawing.Point(4, 22);
             this.panCategorie.Name = "panCategorie";
-            this.panCategorie.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panCategorie.Padding = new System.Windows.Forms.Padding(3);
             this.panCategorie.Size = new System.Drawing.Size(566, 325);
             this.panCategorie.TabIndex = 1;
             this.panCategorie.Text = "Catégorie";
@@ -398,7 +398,7 @@
             this.classe.Controls.Add(this.panel4);
             this.classe.Location = new System.Drawing.Point(4, 22);
             this.classe.Name = "classe";
-            this.classe.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.classe.Padding = new System.Windows.Forms.Padding(3);
             this.classe.Size = new System.Drawing.Size(566, 325);
             this.classe.TabIndex = 2;
             this.classe.Text = "Classe";
@@ -646,10 +646,21 @@
             this.panEmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panEmail.Location = new System.Drawing.Point(4, 22);
             this.panEmail.Name = "panEmail";
-            this.panEmail.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panEmail.Padding = new System.Windows.Forms.Padding(3);
             this.panEmail.Size = new System.Drawing.Size(566, 325);
             this.panEmail.TabIndex = 0;
             this.panEmail.Text = "Envoi e-mail";
+            // 
+            // checkBoxEdit
+            // 
+            this.checkBoxEdit.AutoSize = true;
+            this.checkBoxEdit.Location = new System.Drawing.Point(476, 8);
+            this.checkBoxEdit.Name = "checkBoxEdit";
+            this.checkBoxEdit.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxEdit.TabIndex = 12;
+            this.checkBoxEdit.Text = "Editer";
+            this.checkBoxEdit.UseVisualStyleBackColor = true;
+            this.checkBoxEdit.CheckedChanged += new System.EventHandler(this.checkBoxEdit_CheckedChanged);
             // 
             // buttonSave
             // 
@@ -710,6 +721,28 @@
             this.panel2.Size = new System.Drawing.Size(554, 102);
             this.panel2.TabIndex = 2;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.Control;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(326, 55);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(12, 13);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "*";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.Control;
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(326, 21);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(12, 13);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "*";
+            // 
             // valPasswordMail
             // 
             this.valPasswordMail.Location = new System.Drawing.Point(105, 55);
@@ -768,6 +801,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(554, 102);
             this.panel1.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Control;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(326, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(12, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "*";
+            // 
+            // labelObligatoire
+            // 
+            this.labelObligatoire.AutoSize = true;
+            this.labelObligatoire.BackColor = System.Drawing.SystemColors.Control;
+            this.labelObligatoire.ForeColor = System.Drawing.Color.Red;
+            this.labelObligatoire.Location = new System.Drawing.Point(326, 21);
+            this.labelObligatoire.Name = "labelObligatoire";
+            this.labelObligatoire.Size = new System.Drawing.Size(12, 13);
+            this.labelObligatoire.TabIndex = 13;
+            this.labelObligatoire.Text = "*";
             // 
             // valPort
             // 
@@ -1058,61 +1113,6 @@
             this.prenom.Name = "prenom";
             this.prenom.ReadOnly = true;
             // 
-            // labelObligatoire
-            // 
-            this.labelObligatoire.AutoSize = true;
-            this.labelObligatoire.BackColor = System.Drawing.SystemColors.Control;
-            this.labelObligatoire.ForeColor = System.Drawing.Color.Red;
-            this.labelObligatoire.Location = new System.Drawing.Point(326, 21);
-            this.labelObligatoire.Name = "labelObligatoire";
-            this.labelObligatoire.Size = new System.Drawing.Size(12, 13);
-            this.labelObligatoire.TabIndex = 13;
-            this.labelObligatoire.Text = "*";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.Control;
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(326, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(12, 13);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "*";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.Control;
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(326, 21);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(12, 13);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "*";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.Control;
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(326, 55);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(12, 13);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "*";
-            // 
-            // checkBoxEdit
-            // 
-            this.checkBoxEdit.AutoSize = true;
-            this.checkBoxEdit.Location = new System.Drawing.Point(476, 8);
-            this.checkBoxEdit.Name = "checkBoxEdit";
-            this.checkBoxEdit.Size = new System.Drawing.Size(56, 17);
-            this.checkBoxEdit.TabIndex = 12;
-            this.checkBoxEdit.Text = "Editer";
-            this.checkBoxEdit.UseVisualStyleBackColor = true;
-            this.checkBoxEdit.CheckedChanged += new System.EventHandler(this.checkBoxEdit_CheckedChanged);
-            // 
             // WindowSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1236,9 +1236,6 @@
         private System.Windows.Forms.TextBox textBoxSearchManager;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridManagers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
         private System.Windows.Forms.Button buttonSuppManager;
         private System.Windows.Forms.Button buttonModifierManager;
         private System.Windows.Forms.Button buttonAjouterManager;
@@ -1247,5 +1244,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label labelObligatoire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
     }
 }

@@ -53,7 +53,7 @@
             // 
             this.QueryRTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.QueryRTB.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QueryRTB.Location = new System.Drawing.Point(292, 26);
+            this.QueryRTB.Location = new System.Drawing.Point(292, 19);
             this.QueryRTB.Name = "QueryRTB";
             this.QueryRTB.Size = new System.Drawing.Size(387, 379);
             this.QueryRTB.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(289, 10);
+            this.label1.Location = new System.Drawing.Point(289, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 1;
@@ -73,9 +73,9 @@
             // 
             this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panTableUsers.Controls.Add(this.dataGridRequetes);
-            this.panTableUsers.Location = new System.Drawing.Point(5, 26);
+            this.panTableUsers.Location = new System.Drawing.Point(5, 7);
             this.panTableUsers.Name = "panTableUsers";
-            this.panTableUsers.Size = new System.Drawing.Size(280, 379);
+            this.panTableUsers.Size = new System.Drawing.Size(280, 391);
             this.panTableUsers.TabIndex = 23;
             // 
             // dataGridRequetes
@@ -92,7 +92,7 @@
             this.dataGridRequetes.Name = "dataGridRequetes";
             this.dataGridRequetes.ReadOnly = true;
             this.dataGridRequetes.RowHeadersVisible = false;
-            this.dataGridRequetes.Size = new System.Drawing.Size(280, 358);
+            this.dataGridRequetes.Size = new System.Drawing.Size(280, 370);
             this.dataGridRequetes.TabIndex = 0;
             // 
             // id
@@ -113,7 +113,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 19);
+            this.label2.Location = new System.Drawing.Point(22, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 1;
