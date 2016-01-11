@@ -125,9 +125,7 @@ namespace PixLogic
 
         private void dataGridLogs_DoubleClick(object sender, EventArgs e)
         {
-            int idReservation = int.Parse(dataGridLogs.CurrentRow.Cells[0].Value.ToString());
-            WindowMail wMail = new WindowMail(idReservation);
-            wMail.ShowDialog();
+            
         }
 
         private void dataGridLogs_KeyUp(object sender, KeyEventArgs e)

@@ -253,6 +253,7 @@ namespace PixLogic
             return false;
 
         }
+
         public static bool categorieExistModif(bool withMessageBox, string name, string oldName)
         {
             if (database.ContainItem(name) && !name.Equals(oldName))

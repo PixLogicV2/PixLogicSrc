@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PixLogic.DAL;
+using System.Threading;
 
 namespace PixLogic
 {
     public partial class panUsers : UserControl
     {
         Database database;
+        private WindowMail mail;
+        private Thread thread;
+
         public panUsers()
         {
             InitializeComponent();
@@ -176,10 +180,20 @@ namespace PixLogic
         {
             if(dataGridUsers.RowCount > 0)
             {
-                int idU = int.Parse(valUserId.Text);
-                User u = database.GetUserById(idU);
-                WindowMail mail = new WindowMail(u);
-                mail.ShowDialog();
+                if(valMail.Text.Equals(""))
+                {
+                    MessageBox.Show("Cet utilisateur n'a pas d'adresse e-mail.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if(database.ExistMailConfig())
+                {
+                    thread = new Thread(new ThreadStart(openWindowMail));
+                    thread.Start();
+                }
+                else
+                {
+                    MessageBox.Show("Vous ne pouvez pas envoyer de mail.\nVous devez préalablement configurer les paramètres d'envoi dans:\nOptions->Paramètres->Envoi email.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -187,5 +201,14 @@ namespace PixLogic
             }
             
         }
+        private void openWindowMail()
+        {
+            int idU = int.Parse(valUserId.Text);
+            User u = database.GetUserById(idU);
+            mail = new WindowMail(u);
+            mail.ShowDialog();
+            
+        }
+        
     }
 }

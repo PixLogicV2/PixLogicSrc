@@ -23,16 +23,29 @@ namespace PixLogic
             setTableCategories(database.GetAllCategorie());
             setTableUserClass(database.GetAllUserClass());
             setTableManagers(database.GetAllManagers());
-            valServeur.Enabled = false;
-            valPort.Enabled = false;
-            valEmailAdress.Enabled = false;
-            valPasswordMail.Enabled = false;
+            setNewsMailConfig();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             WindowCategorie categorie = new WindowCategorie(this, pan);
             categorie.Show(this);
+        }
+
+        private void setNewsMailConfig()
+        {
+            MailConfig config = database.GetMailConfig();
+
+            valServeur.Text = config.serveurStmp;
+            valPort.Text = Convert.ToString(config.port);
+            valEmailAdress.Text = config.email;
+            valPasswordMail.Text = config.mdp;
+
+            valServeur.Enabled = false;
+            valPort.Enabled = false;
+            valEmailAdress.Enabled = false;
+            valPasswordMail.Enabled = false;
+            checkBoxEdit.Checked = false;
         }
 
         public void setTableCategories(List<Categorie> l)
@@ -340,7 +353,13 @@ namespace PixLogic
                         config.serveurStmp = valServeur.Text;
                         config.port = int.Parse(valPort.Text);
                         config.mdp = valPasswordMail.Text;
-                        database.AddMailConfig(config);
+
+                        if(!database.ExistMailConfig())
+                            database.AddMailConfig(config);
+                        else
+                            database.UpdateMailConfig(config.serveurStmp, config.port, config.email, config.mdp);
+
+                        setNewsMailConfig();
                         MessageBox.Show("Les paramètres ont bien été enregistré.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
