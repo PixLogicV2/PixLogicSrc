@@ -26,5 +26,18 @@ namespace PixLogic.DAL
                                          select Mail;
             return itemQuery.ToList();
         }
+        public List<Mail> getAllMailsByString(string search)
+        {
+            search.ToLower();
+            List<Mail> mails = getAllMails();
+            List<Mail> results = mails.FindAll(
+            delegate (Mail mail)
+            {
+                if (mail.nameUser.ToLower().Contains(search)) return mail.nameUser.ToLower().Contains(search);
+                else return mail.nicknameUser.ToLower().Contains(search);
+            }
+            );
+            return results;
+        }
     }
 }
