@@ -209,6 +209,17 @@ namespace PixLogic
             mail.ShowDialog();
             
         }
-        
+
+        private void dataGridUsers_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridUsers.RowCount > 0)
+                setNewsUsers();
+        }
+
+        private void buttonMailSent_Click(object sender, EventArgs e)
+        {
+            WindowMailsSent mailSent = new WindowMailsSent();
+            mailSent.Show();
+        }
     }
 }
