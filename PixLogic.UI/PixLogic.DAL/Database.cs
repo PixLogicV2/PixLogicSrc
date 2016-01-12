@@ -427,9 +427,9 @@ namespace PixLogic.DAL
         {
             return container.get("add_mail").getAllMails();
         }
-        public List<Mail> GetAllMAilsByString()
+        public List<Mail> GetAllMAilsByString(string search)
         {
-            return container.get("add_mail").getAllMailsByString();
+            return container.get("add_mail").getAllMailsByString(search);
         }
         public void UpdateMailConfig(string serveurStmp, int port, string email, string mdp)
         {
