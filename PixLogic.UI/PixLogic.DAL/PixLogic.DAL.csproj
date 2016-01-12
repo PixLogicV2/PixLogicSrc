@@ -58,6 +58,7 @@
     <Compile Include="AddCategorie.cs" />
     <Compile Include="AddCategorieToItem.cs" />
     <Compile Include="AddLog.cs" />
+    <Compile Include="AddMail.cs" />
     <Compile Include="AddMailConfig.cs" />
     <Compile Include="AddManager.cs" />
     <Compile Include="AddPack.cs" />
@@ -115,7 +116,9 @@
     <Compile Include="IsPack.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogFactory.cs" />
+    <Compile Include="Mail.cs" />
     <Compile Include="MailConfig.cs" />
+    <Compile Include="MailFactory.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="ManagerFactory.cs" />
     <Compile Include="Migrations\201512150827391_InitialCreate.cs" />
@@ -133,6 +136,10 @@
     <Compile Include="Migrations\201601110946263_ManagerUpdate.cs" />
     <Compile Include="Migrations\201601110946263_ManagerUpdate.Designer.cs">
       <DependentUpon>201601110946263_ManagerUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601120821267_addTableMail.cs" />
+    <Compile Include="Migrations\201601120821267_addTableMail.Designer.cs">
+      <DependentUpon>201601120821267_addTableMail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Requete.cs" />
@@ -181,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601110946263_ManagerUpdate.resx">
       <DependentUpon>201601110946263_ManagerUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601120821267_addTableMail.resx">
+      <DependentUpon>201601120821267_addTableMail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -48,7 +48,13 @@ namespace PixLogic.DAL
                 case "requete_factory":
                     this.arrayContainer[serviceName] = new RequeteFactory();
                     break;
-
+                case "mail_factory":
+                    this.arrayContainer[serviceName] = new MailFactory();
+                    break;
+                case "add_mail":
+                    this.arrayContainer[serviceName] = new AddMail();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "add_item":
                     this.arrayContainer[serviceName] = new AddItem();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
