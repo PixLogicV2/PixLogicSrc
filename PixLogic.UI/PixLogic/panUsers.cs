@@ -215,5 +215,11 @@ namespace PixLogic
             if (dataGridUsers.RowCount > 0)
                 setNewsUsers();
         }
+
+        private void buttonMailSent_Click(object sender, EventArgs e)
+        {
+            WindowMailsSent mailSent = new WindowMailsSent();
+            mailSent.Show();
+        }
     }
 }

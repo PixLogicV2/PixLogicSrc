@@ -54,9 +54,9 @@ namespace PixLogic
 
                 valNom.Text = mail.nameUser;
                 valPrenom.Text = mail.nicknameUser;
-                valDate.Text = mail.date.Date.ToString("F");
+                valDate.Text = mail.date.ToString("F");
                 valMail.Text = mail.mailUser;
-                //valSujet.Text = mail.su
+                valSujet.Text = mail.subject;
                 valMessage.Text = mail.text;
             }
             else
@@ -65,7 +65,7 @@ namespace PixLogic
                 valPrenom.Text = "-";
                 valDate.Text = "-";
                 valMail.Text = "-";
-                //valSujet.Text = mail.su
+                valSujet.Text = "-";
                 valMessage.Text = "-";
             }
         }

@@ -18,6 +18,7 @@ namespace PixLogic
         private int idReservation;
         private Database database = Helper.database;
         private MailConfig config;
+        private string name, prenom;
 
         public WindowMail(int idReservation)
         {
@@ -33,6 +34,7 @@ namespace PixLogic
             config = database.GetMailConfig();
             this.StartPosition = FormStartPosition.CenterScreen;
             valUserName.Text = user.name + " " + user.nickname;
+            name = user.name; prenom = user.nickname;
             valMail.Text = user.mail;
             valTel.Text = user.phoneNumber;
             valClass.Text = user.userClass.name;
@@ -98,6 +100,7 @@ namespace PixLogic
                 }
                 this.Cursor = Cursors.Default;
                 success();
+                database.AddMail(name, prenom, valMail.Text, valMessage.Text, DateTime.Now, valSubject.Text);
                 valSubject.ReadOnly = true;
                 valMessage.ReadOnly = true;
                 buttonCancel.Enabled = false;

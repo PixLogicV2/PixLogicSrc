@@ -35,10 +35,6 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridUsersMail = new System.Windows.Forms.DataGridView();
-            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelInfos = new System.Windows.Forms.Panel();
             this.valDate = new System.Windows.Forms.Label();
             this.valPrenom = new System.Windows.Forms.Label();
@@ -53,6 +49,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.valMail = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
+            this.IdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NickNameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsersMail)).BeginInit();
             this.panelInfos.SuspendLayout();
@@ -138,35 +138,6 @@
             this.dataGridUsersMail.Click += new System.EventHandler(this.dataGridUsersMail_Click);
             this.dataGridUsersMail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridUsersMail_KeyUp);
             // 
-            // IdUser
-            // 
-            this.IdUser.HeaderText = "Id";
-            this.IdUser.Name = "IdUser";
-            this.IdUser.ReadOnly = true;
-            this.IdUser.Visible = false;
-            this.IdUser.Width = 60;
-            // 
-            // NameUser
-            // 
-            this.NameUser.HeaderText = "Nom";
-            this.NameUser.Name = "NameUser";
-            this.NameUser.ReadOnly = true;
-            this.NameUser.Width = 75;
-            // 
-            // NickNameUser
-            // 
-            this.NickNameUser.HeaderText = "Prenom";
-            this.NickNameUser.Name = "NickNameUser";
-            this.NickNameUser.ReadOnly = true;
-            this.NickNameUser.Width = 75;
-            // 
-            // dateT
-            // 
-            this.dateT.HeaderText = "Date";
-            this.dateT.Name = "dateT";
-            this.dateT.ReadOnly = true;
-            this.dateT.Width = 160;
-            // 
             // panelInfos
             // 
             this.panelInfos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -223,6 +194,7 @@
             this.valMessage.Multiline = true;
             this.valMessage.Name = "valMessage";
             this.valMessage.ReadOnly = true;
+            this.valMessage.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.valMessage.Size = new System.Drawing.Size(306, 159);
             this.valMessage.TabIndex = 6;
             // 
@@ -314,6 +286,35 @@
             this.email.TabIndex = 10;
             this.email.Text = "E-mail :";
             // 
+            // IdUser
+            // 
+            this.IdUser.HeaderText = "Id";
+            this.IdUser.Name = "IdUser";
+            this.IdUser.ReadOnly = true;
+            this.IdUser.Visible = false;
+            this.IdUser.Width = 60;
+            // 
+            // NameUser
+            // 
+            this.NameUser.HeaderText = "Nom";
+            this.NameUser.Name = "NameUser";
+            this.NameUser.ReadOnly = true;
+            this.NameUser.Width = 75;
+            // 
+            // NickNameUser
+            // 
+            this.NickNameUser.HeaderText = "Prenom";
+            this.NickNameUser.Name = "NickNameUser";
+            this.NickNameUser.ReadOnly = true;
+            this.NickNameUser.Width = 65;
+            // 
+            // dateT
+            // 
+            this.dateT.HeaderText = "Date";
+            this.dateT.Name = "dateT";
+            this.dateT.ReadOnly = true;
+            this.dateT.Width = 70;
+            // 
             // WindowMailsSent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +326,7 @@
             this.Controls.Add(this.panTableUsers);
             this.MaximizeBox = false;
             this.Name = "WindowMailsSent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Liste des mails envoyés";
             this.panTableUsers.ResumeLayout(false);
             this.panTableUsers.PerformLayout();
@@ -344,10 +346,6 @@
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.DataGridView dataGridUsersMail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NickNameUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateT;
         private System.Windows.Forms.Panel panelInfos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelNom;
@@ -362,5 +360,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label valMail;
         private System.Windows.Forms.Label email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NickNameUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateT;
     }
 }
