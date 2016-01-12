@@ -26,10 +26,19 @@ namespace PixLogic.DAL
             List<Item>results = items.FindAll(
             delegate (Item item)
             {
-                return item.name.ToLower().Contains(search);
+                if (item.name.ToLower().Contains(search)) return item.name.ToLower().Contains(search);
+                else return item.reference.ToLower().Contains(search);
             }
             );
             return results;
+        }
+        public bool existReference(string reference)
+        {
+            IQueryable<Item> itemQuery = from Item in context.Items
+                                         where Item.reference == reference
+                                         select Item;
+            if (itemQuery.Any()) return true;
+            return false;
         }
     }
 }

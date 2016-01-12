@@ -412,6 +412,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_id_categorie").getIdCategorie(name);
         }
+        public bool ExistReference(string reference)
+        {
+            return container.get("get_all_items").existReference(reference);
+        }
         /*
         *mailconfig
         */
