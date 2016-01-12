@@ -219,6 +219,17 @@ namespace PixLogic
             return false;
 
         }
+        public static bool referenceExist(bool withMessageBox, string name)
+        {
+            if (database.ExistReference(name))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("La référence entrée existe déjà.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+
+        }
         public static bool ManagerExist(bool withMessageBox, string pseudo)
         {
             if (database.ContainPseudoManager(pseudo))
@@ -248,6 +259,18 @@ namespace PixLogic
             {
                 if (withMessageBox)
                     MessageBox.Show("Le nom du matériel renseigné existe déjà !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            return false;
+
+        }
+
+        public static bool referenceExistModif(bool withMessageBox, string name, string oldName)
+        {
+            if (database.ExistReference(name) && !name.Equals(oldName))
+            {
+                if (withMessageBox)
+                    MessageBox.Show("La référence entrée existe déjà.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             return false;
