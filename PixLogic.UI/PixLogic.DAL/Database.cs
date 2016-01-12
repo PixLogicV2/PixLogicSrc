@@ -419,6 +419,10 @@ namespace PixLogic.DAL
         {
             container.get("add_mail_config").addMailConfig(mailConfig);
         }
+        public List<Mail> GetAllMails()
+        {
+            return container.get("add_mail").getAllMails();
+        }
         public void UpdateMailConfig(string serveurStmp, int port, string email, string mdp)
         {
             container.get("update_mail_config").updateMailConfig(serveurStmp,port,email,mdp);

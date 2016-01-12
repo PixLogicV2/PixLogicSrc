@@ -20,5 +20,11 @@ namespace PixLogic.DAL
             context.Mails.Add(mail);
             context.SaveChanges();
         }
+        public List<Mail> getAllMails()
+        {
+            IQueryable<Mail> itemQuery = from Mail in context.Mails
+                                         select Mail;
+            return itemQuery.ToList();
+        }
     }
 }
