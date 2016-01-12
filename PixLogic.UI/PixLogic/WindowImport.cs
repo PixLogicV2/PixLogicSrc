@@ -68,7 +68,10 @@ namespace PixLogic
                 if (!champ.Oblige)
                     dataGrid.Rows[dataGrid.Rows.Count - 1].Cells[dataGrid.ColumnCount - 1].ReadOnly = false;
                 else
+                {
                     dataGrid.Rows[dataGrid.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Aquamarine;
+                    dataGrid.Rows[dataGrid.Rows.Count - 1].Cells[dataGrid.ColumnCount - 1].ReadOnly = true;
+                }
             }
 
             //--------------------

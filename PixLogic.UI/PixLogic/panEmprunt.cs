@@ -8,6 +8,7 @@ using System.Data;
 using System.Reflection;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
+using System.Threading;
 
 namespace PixLogic
 {
@@ -247,13 +248,25 @@ namespace PixLogic
         {
             if (dataGridEmprunts.RowCount > 0)
             {
-                int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
-                WindowMail wMail = new WindowMail(idReservation);
-                wMail.ShowDialog();
+                int id = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
+                User u = database.GetUserById(id);
+                if (u.mail.Equals(""))
+                {
+                    MessageBox.Show("Cet utilisateur n'a pas d'adresse e-mail.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                Thread thread = new Thread(new ThreadStart(openWindowMail));
+                thread.Start();
             }
         }
+        private void openWindowMail()
+        {
+            int idReservation = int.Parse(dataGridEmprunts.CurrentRow.Cells[0].Value.ToString());
+            WindowMail wMail = new WindowMail(idReservation);
+            wMail.ShowDialog();
 
-       
+        }
+
         private void dataGridEmprunts_KeyUp_1(object sender, KeyEventArgs e)
         {
             if (dataGridEmprunts.RowCount > 0)

@@ -40,13 +40,16 @@
             this.labelMail = new System.Windows.Forms.Label();
             this.labelSendTo = new System.Windows.Forms.Label();
             this.panelEmail = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.valMessage = new System.Windows.Forms.TextBox();
             this.labelMessage = new System.Windows.Forms.Label();
             this.valSubject = new System.Windows.Forms.TextBox();
             this.labelSubject = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSend = new System.Windows.Forms.Button();
+            this.labelObligatoire = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelInfo = new System.Windows.Forms.Label();
             this.panelInfos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.panelEmail.SuspendLayout();
@@ -172,7 +175,9 @@
             // panelEmail
             // 
             this.panelEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelEmail.Controls.Add(this.textBox1);
+            this.panelEmail.Controls.Add(this.label1);
+            this.panelEmail.Controls.Add(this.labelObligatoire);
+            this.panelEmail.Controls.Add(this.valMessage);
             this.panelEmail.Controls.Add(this.labelMessage);
             this.panelEmail.Controls.Add(this.valSubject);
             this.panelEmail.Controls.Add(this.labelSubject);
@@ -181,16 +186,16 @@
             this.panelEmail.Size = new System.Drawing.Size(401, 230);
             this.panelEmail.TabIndex = 57;
             // 
-            // textBox1
+            // valMessage
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(91, 68);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(296, 150);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.WordWrap = false;
+            this.valMessage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valMessage.Location = new System.Drawing.Point(81, 68);
+            this.valMessage.Multiline = true;
+            this.valMessage.Name = "valMessage";
+            this.valMessage.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.valMessage.Size = new System.Drawing.Size(296, 150);
+            this.valMessage.TabIndex = 3;
+            this.valMessage.WordWrap = false;
             // 
             // labelMessage
             // 
@@ -205,7 +210,7 @@
             // valSubject
             // 
             this.valSubject.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valSubject.Location = new System.Drawing.Point(91, 24);
+            this.valSubject.Location = new System.Drawing.Point(81, 24);
             this.valSubject.Name = "valSubject";
             this.valSubject.Size = new System.Drawing.Size(296, 25);
             this.valSubject.TabIndex = 2;
@@ -235,7 +240,7 @@
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(220, 394);
+            this.buttonCancel.Location = new System.Drawing.Point(220, 411);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
             this.buttonCancel.TabIndex = 5;
@@ -249,19 +254,53 @@
             this.buttonSend.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSend.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonSend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSend.Location = new System.Drawing.Point(126, 394);
+            this.buttonSend.Location = new System.Drawing.Point(126, 411);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(84, 27);
             this.buttonSend.TabIndex = 4;
             this.buttonSend.Text = "Envoyer";
             this.buttonSend.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
+            // 
+            // labelObligatoire
+            // 
+            this.labelObligatoire.AutoSize = true;
+            this.labelObligatoire.BackColor = System.Drawing.SystemColors.Control;
+            this.labelObligatoire.ForeColor = System.Drawing.Color.Red;
+            this.labelObligatoire.Location = new System.Drawing.Point(383, 24);
+            this.labelObligatoire.Name = "labelObligatoire";
+            this.labelObligatoire.Size = new System.Drawing.Size(11, 13);
+            this.labelObligatoire.TabIndex = 50;
+            this.labelObligatoire.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(385, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "*";
+            // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInfo.Location = new System.Drawing.Point(12, 390);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(11, 13);
+            this.labelInfo.TabIndex = 59;
+            this.labelInfo.Text = "-";
             // 
             // WindowMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 429);
+            this.ClientSize = new System.Drawing.Size(425, 445);
+            this.Controls.Add(this.labelInfo);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.labelEmail);
@@ -269,7 +308,6 @@
             this.Controls.Add(this.labelSendTo);
             this.Controls.Add(this.panelInfos);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "WindowMail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Envoi e-mail";
@@ -298,11 +336,14 @@
         private System.Windows.Forms.Label labelMail;
         private System.Windows.Forms.Panel panelEmail;
         private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox valMessage;
         private System.Windows.Forms.Label labelMessage;
         private System.Windows.Forms.TextBox valSubject;
         private System.Windows.Forms.Label labelSubject;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSend;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelObligatoire;
+        private System.Windows.Forms.Label labelInfo;
     }
 }

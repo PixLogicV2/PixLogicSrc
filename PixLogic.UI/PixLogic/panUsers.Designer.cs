@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panUsers));
             this.panTableUsers = new System.Windows.Forms.Panel();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
@@ -57,16 +57,17 @@
             this.valUserNickName = new System.Windows.Forms.Label();
             this.labelListUser = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
-            this.pictureReserver = new System.Windows.Forms.PictureBox();
+            this.buttonSendMail = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.pictureReserver = new System.Windows.Forms.PictureBox();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).BeginInit();
             this.SuspendLayout();
             // 
             // panTableUsers
@@ -115,8 +116,8 @@
             // 
             this.dataGridUsers.AllowUserToAddRows = false;
             this.dataGridUsers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -229,7 +230,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.valUserCredits.AutoSize = true;
             this.valUserCredits.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valUserCredits.Location = new System.Drawing.Point(198, 18);
+            this.valUserCredits.Location = new System.Drawing.Point(198, 17);
             this.valUserCredits.Name = "valUserCredits";
             this.valUserCredits.Size = new System.Drawing.Size(11, 13);
             this.valUserCredits.TabIndex = 41;
@@ -303,7 +304,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.valMail.AutoSize = true;
             this.valMail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valMail.Location = new System.Drawing.Point(49, 41);
+            this.valMail.Location = new System.Drawing.Point(49, 40);
             this.valMail.Name = "valMail";
             this.valMail.Size = new System.Drawing.Size(13, 17);
             this.valMail.TabIndex = 3;
@@ -376,17 +377,20 @@
             this.labelNews.TabIndex = 41;
             this.labelNews.Text = "Infos";
             // 
-            // pictureReserver
+            // buttonSendMail
             // 
-            this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
-            this.pictureReserver.Image = ((System.Drawing.Image)(resources.GetObject("pictureReserver.Image")));
-            this.pictureReserver.Location = new System.Drawing.Point(468, 307);
-            this.pictureReserver.Name = "pictureReserver";
-            this.pictureReserver.Size = new System.Drawing.Size(23, 23);
-            this.pictureReserver.TabIndex = 53;
-            this.pictureReserver.TabStop = false;
-            this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
-            this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
+            this.buttonSendMail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonSendMail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSendMail.Image = global::PixLogic.Properties.Resources.envoyer_color;
+            this.buttonSendMail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSendMail.Location = new System.Drawing.Point(511, 25);
+            this.buttonSendMail.Name = "buttonSendMail";
+            this.buttonSendMail.Size = new System.Drawing.Size(162, 43);
+            this.buttonSendMail.TabIndex = 54;
+            this.buttonSendMail.Text = "Envoyer un message";
+            this.buttonSendMail.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonSendMail.UseVisualStyleBackColor = true;
+            this.buttonSendMail.Click += new System.EventHandler(this.buttonSendMail_Click);
             // 
             // buttonDelete
             // 
@@ -447,11 +451,24 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // pictureReserver
+            // 
+            this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
+            this.pictureReserver.Image = ((System.Drawing.Image)(resources.GetObject("pictureReserver.Image")));
+            this.pictureReserver.Location = new System.Drawing.Point(468, 307);
+            this.pictureReserver.Name = "pictureReserver";
+            this.pictureReserver.Size = new System.Drawing.Size(23, 23);
+            this.pictureReserver.TabIndex = 53;
+            this.pictureReserver.TabStop = false;
+            this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
+            this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
+            // 
             // panUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.buttonSendMail);
             this.Controls.Add(this.labelNews);
             this.Controls.Add(this.labelListUser);
             this.Controls.Add(this.buttonDelete);
@@ -471,8 +488,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
             this.panNews.ResumeLayout(false);
             this.panNews.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -512,5 +529,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tel;
         private System.Windows.Forms.DataGridViewTextBoxColumn classe;
         private System.Windows.Forms.DataGridViewTextBoxColumn credits;
+        private System.Windows.Forms.Button buttonSendMail;
     }
 }

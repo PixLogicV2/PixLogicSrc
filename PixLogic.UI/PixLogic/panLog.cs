@@ -99,8 +99,8 @@ namespace PixLogic
 
                 valDebutEmprunt.Text = ((DateTime)reservation.beginDateEmprunt).ToString("D");
                 valFinEmprunt.Text = ((DateTime)reservation.endDateEmprunt).ToString("D");
-                
 
+                valManager.Text = reservation.managerName;
                 valNomUser.Text = reservation.userName +" "+reservation.userNickname;
                 valNomReservable.Text = reservation.reservableName;
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
@@ -112,6 +112,7 @@ namespace PixLogic
                 valNomUser.Text = "-";
                 valNomReservable.Text = "-";
                 valType.Text = "-";
+                valManager.Text = "-";
             }
 
         }
@@ -124,9 +125,7 @@ namespace PixLogic
 
         private void dataGridLogs_DoubleClick(object sender, EventArgs e)
         {
-            int idReservation = int.Parse(dataGridLogs.CurrentRow.Cells[0].Value.ToString());
-            WindowMail wMail = new WindowMail(idReservation);
-            wMail.ShowDialog();
+            
         }
 
         private void dataGridLogs_KeyUp(object sender, KeyEventArgs e)

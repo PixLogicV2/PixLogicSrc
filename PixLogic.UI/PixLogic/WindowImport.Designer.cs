@@ -259,6 +259,7 @@
             // 
             this.dataGrid.AllowUserToAddRows = false;
             this.dataGrid.AllowUserToDeleteRows = false;
+            this.dataGrid.AllowUserToResizeRows = false;
             this.dataGrid.BackgroundColor = System.Drawing.Color.White;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -275,13 +276,11 @@
             this.champs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.champs.HeaderText = "Champs";
             this.champs.Name = "champs";
-            this.champs.ReadOnly = true;
             // 
             // aCocher
             // 
             this.aCocher.HeaderText = "Pris en compte";
             this.aCocher.Name = "aCocher";
-            this.aCocher.ReadOnly = true;
             // 
             // pictureBoxInfo
             // 
