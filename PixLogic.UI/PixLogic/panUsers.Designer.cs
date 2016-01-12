@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panUsers));
             this.panTableUsers = new System.Windows.Forms.Panel();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
@@ -62,7 +63,6 @@
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
@@ -84,6 +84,16 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(212, 428);
             this.panTableUsers.TabIndex = 22;
+            // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -107,8 +117,8 @@
             // 
             this.dataGridUsers.AllowUserToAddRows = false;
             this.dataGridUsers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -133,6 +143,7 @@
             this.dataGridUsers.Size = new System.Drawing.Size(211, 379);
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.Click += new System.EventHandler(this.dataGridUsers_Click);
+            this.dataGridUsers.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridUsers_KeyUp);
             // 
             // IdUser
             // 
@@ -455,16 +466,6 @@
             this.buttonAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // pictureReserver
             // 
