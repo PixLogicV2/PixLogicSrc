@@ -15,6 +15,7 @@ namespace PixLogic.DAL
         public string mailUser { get; set; }
         public string text { get; set; }
         public DateTime date { get; set; }
+        public string subject { get; set; }
 
         public int MailId { get; set; }
     }

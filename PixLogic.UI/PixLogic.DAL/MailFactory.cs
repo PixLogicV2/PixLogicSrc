@@ -15,7 +15,7 @@ namespace PixLogic.DAL
             this.context = context;
         }
 
-        public Mail build(string nameUser,string nicknameUser,string mailUser,string text, DateTime date)
+        public Mail build(string nameUser,string nicknameUser,string mailUser,string text, DateTime date,string subject)
         {
             Mail mail = new Mail();
             mail.nameUser = nameUser;
@@ -23,7 +23,7 @@ namespace PixLogic.DAL
             mail.mailUser = mailUser;
             mail.text = text;
             mail.date = date;
-
+            mail.subject = subject;
             return mail;
         }
     }

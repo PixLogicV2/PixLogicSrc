@@ -439,9 +439,9 @@ namespace PixLogic.DAL
         {
             return container.get("get_mail_config").getMailConfig();
         }
-        public void AddMail(string nameUser, string nicknameUser, string mailUser, string text, DateTime date)
+        public void AddMail(string nameUser, string nicknameUser, string mailUser, string text, DateTime date,string subject)
         {
-            container.get("add_mail").addMail(container.get("mail_factory").build(nameUser, nicknameUser, mailUser, text, date));
+            container.get("add_mail").addMail(container.get("mail_factory").build(nameUser, nicknameUser, mailUser, text, date,subject));
         }
         /*
         *Requete

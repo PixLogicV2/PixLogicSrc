@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201601120821267_addTableMail.Designer.cs">
       <DependentUpon>201601120821267_addTableMail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601121000286_addSubjectMaik.cs" />
+    <Compile Include="Migrations\201601121000286_addSubjectMaik.Designer.cs">
+      <DependentUpon>201601121000286_addSubjectMaik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Requete.cs" />
     <Compile Include="RequeteFactory.cs" />
@@ -191,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601120821267_addTableMail.resx">
       <DependentUpon>201601120821267_addTableMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601121000286_addSubjectMaik.resx">
+      <DependentUpon>201601121000286_addSubjectMaik.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
