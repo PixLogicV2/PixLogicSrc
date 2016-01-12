@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelListUser = new System.Windows.Forms.Label();
             this.panTableUsers = new System.Windows.Forms.Panel();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
@@ -90,6 +90,7 @@
             this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
             this.buttonCancelSearch.TabIndex = 3;
             this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -113,8 +114,8 @@
             // 
             this.dataGridUsersMail.AllowUserToAddRows = false;
             this.dataGridUsersMail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.dataGridUsersMail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.dataGridUsersMail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridUsersMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridUsersMail.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;

@@ -207,5 +207,17 @@ namespace PixLogic
         {
             deconnexion();
         }
+
+        private void utilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowUser user = new WindowUser(panUsers1);
+            user.ShowDialog();
+        }
+
+        private void matérielToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowItem item = new WindowItem(panItemPack1);
+            item.ShowDialog();
+        }
     }
 }

@@ -14,12 +14,10 @@ namespace PixLogic
     public partial class WindowMailsSent : Form
     {
         private Database database = Helper.database;
-        private Dictionary<int, Mail> listMails;
 
         public WindowMailsSent()
         {
             InitializeComponent();
-            listMails = new Dictionary<int, Mail>();
             setTableUserMail(database.GetAllMails());
         }
 
@@ -30,7 +28,6 @@ namespace PixLogic
 
             foreach (Mail mail in mails)
             {
-                listMails.Add(mail.MailId, mail);
                 dataGridUsersMail.Rows.Add(mail.MailId, mail.nameUser, mail.nicknameUser, mail.date.Date.ToString());
             }
 
@@ -72,18 +69,18 @@ namespace PixLogic
 
         private Mail getMailById(int id)
         {
-            foreach(KeyValuePair<int, Mail> value in listMails)
+            foreach(Mail m in database.GetAllMails())
             {
-                if(value.Key == id)
+                if(m.MailId == id)
                 {
-                    return value.Value;
+                    return m;
                 }
             }
             return new Mail();
         }
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            //setTableUserMail(database.GetAllUsersByString(textBoxSearch.Text));
+            setTableUserMail(database.GetAllMAilsByString(textBoxSearch.Text));
         }
 
         private void dataGridUsersMail_Click(object sender, EventArgs e)
@@ -96,6 +93,12 @@ namespace PixLogic
         {
             if (dataGridUsersMail.RowCount > 0)
                 setNewsUsersMail();
+        }
+
+        private void buttonCancelSearch_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Text = "";
+            setTableUserMail(database.GetAllMails());
         }
     }
 }
