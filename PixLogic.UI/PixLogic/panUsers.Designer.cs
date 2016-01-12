@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panUsers));
             this.panTableUsers = new System.Windows.Forms.Panel();
-            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridUsers = new System.Windows.Forms.DataGridView();
@@ -57,11 +56,13 @@
             this.valUserNickName = new System.Windows.Forms.Label();
             this.labelListUser = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
+            this.buttonMailSent = new System.Windows.Forms.Button();
             this.buttonSendMail = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
@@ -83,16 +84,6 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(212, 428);
             this.panTableUsers.TabIndex = 22;
-            // 
-            // buttonCancelSearch
-            // 
-            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
-            this.buttonCancelSearch.Name = "buttonCancelSearch";
-            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
-            this.buttonCancelSearch.TabIndex = 3;
-            this.buttonCancelSearch.UseVisualStyleBackColor = true;
-            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -116,8 +107,8 @@
             // 
             this.dataGridUsers.AllowUserToAddRows = false;
             this.dataGridUsers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
-            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(230)))), ((int)(((byte)(231)))));
+            this.dataGridUsers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -377,6 +368,20 @@
             this.labelNews.TabIndex = 41;
             this.labelNews.Text = "Infos";
             // 
+            // buttonMailSent
+            // 
+            this.buttonMailSent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonMailSent.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMailSent.Image = global::PixLogic.Properties.Resources.envoyer_color_success;
+            this.buttonMailSent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMailSent.Location = new System.Drawing.Point(511, 85);
+            this.buttonMailSent.Name = "buttonMailSent";
+            this.buttonMailSent.Size = new System.Drawing.Size(162, 43);
+            this.buttonMailSent.TabIndex = 55;
+            this.buttonMailSent.Text = "Liste mails envoyés";
+            this.buttonMailSent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonMailSent.UseVisualStyleBackColor = true;
+            // 
             // buttonSendMail
             // 
             this.buttonSendMail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -451,6 +456,16 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // buttonCancelSearch
+            // 
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(167, 16);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 3;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
+            // 
             // pictureReserver
             // 
             this.pictureReserver.BackColor = System.Drawing.Color.Transparent;
@@ -468,6 +483,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.buttonMailSent);
             this.Controls.Add(this.buttonSendMail);
             this.Controls.Add(this.labelNews);
             this.Controls.Add(this.labelListUser);
@@ -530,5 +546,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn classe;
         private System.Windows.Forms.DataGridViewTextBoxColumn credits;
         private System.Windows.Forms.Button buttonSendMail;
+        private System.Windows.Forms.Button buttonMailSent;
     }
 }

@@ -186,6 +186,12 @@
     <Compile Include="WindowMail.Designer.cs">
       <DependentUpon>WindowMail.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowMailsSent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowMailsSent.Designer.cs">
+      <DependentUpon>WindowMailsSent.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowMail.resx">
       <DependentUpon>WindowMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowMailsSent.resx">
+      <DependentUpon>WindowMailsSent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowManager.resx">
       <DependentUpon>WindowManager.cs</DependentUpon>
@@ -527,6 +536,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\envoyer_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envoyer_color_success.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
