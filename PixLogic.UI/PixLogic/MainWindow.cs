@@ -227,5 +227,16 @@ namespace PixLogic
             WindowItem item = new WindowItem(panItemPack1);
             item.ShowDialog();
         }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var window = MessageBox.Show("Voulez-vous quitter l'application ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (window == DialogResult.No)
+                e.Cancel = true;
+            else
+            {
+                e.Cancel = false;
+            }
+        }
     }
 }
