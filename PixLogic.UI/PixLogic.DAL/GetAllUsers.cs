@@ -27,7 +27,8 @@ namespace PixLogic.DAL
             List<User> results = users.FindAll(
             delegate (User user)
             {
-                return user.name.ToLower().Contains(search);
+                if (user.name.ToLower().Contains(search)) return user.name.ToLower().Contains(search);
+                else return user.nickname.ToLower().Contains(search);
             }
             );
             return results;

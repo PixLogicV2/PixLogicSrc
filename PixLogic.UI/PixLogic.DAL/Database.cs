@@ -288,9 +288,13 @@ namespace PixLogic.DAL
         public void DeleteReservation(int id)
         {
             Reservation res = GetReservationById(id);
-            Pack pack = GetPackById(res.reservable.ReservableId);
+            if (res.isPack == true)
+            {
+                Pack pack = GetPackById(res.reservable.ReservableId);
+                if (pack.temp == true) DeletePack(pack.name);
+            }
             container.get("delete_reservation").deleteReservation(id);
-            if (pack.temp == true) DeletePack(pack.name);
+            
             
         }
         public void UpdateReservation(int id,DateTime? DateDebut,DateTime? DateFin)

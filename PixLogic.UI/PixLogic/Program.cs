@@ -14,7 +14,7 @@ namespace PixLogic
         [STAThread]
         static void Main()
         {
-            //Helper.initBase();
+            Helper.initBase();
             if (Helper.database.ExistManager()==false)
             {
                 Helper.database.AddManager("admin", "admin", "admin", "0000000000", "admin");

@@ -77,7 +77,7 @@ namespace PixLogic
             {
                 string typ = reser.isPack ? Helper.PACK : Helper.ITEM;
                 dataGridLogs.Rows.Add(reser.LogId, reser.userName, reser.reservableName,
-                    typ, reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"));
+                    typ, reser.beginDateEmprunt.Value.ToString("d"), reser.endDateEmprunt.Value.ToString("d"),reser.managerName);
               
             }
 
