@@ -35,5 +35,17 @@ namespace PixLogic.DAL
             }
 
         }
+        public void addCredits(int idUser,int ajout)
+        {
+            User user;
+            user = context.Users.Where(u => u.UserId == idUser).FirstOrDefault<User>();
+
+            if (user != null)
+            {
+                user.credits += ajout;
+                context.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
     }
 }
