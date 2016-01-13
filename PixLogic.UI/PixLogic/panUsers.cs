@@ -238,7 +238,8 @@ namespace PixLogic
                 result = (resultBox == DialogResult.Yes) ? true : false;
                 if(result)
                 {
-
+                    database.ResetAllUsersCredits();
+                    refresh();
                 }
             }
             else
@@ -251,7 +252,9 @@ namespace PixLogic
         {
             if(dataGridUsers.RowCount > 0)
             {
-
+                int idU = int.Parse(valUserId.Text);
+                WindowAddCredit addCredit = new WindowAddCredit(idU, this);
+                addCredit.ShowDialog();
             }
             else
             {

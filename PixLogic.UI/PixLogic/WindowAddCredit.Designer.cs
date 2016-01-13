@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.valCredit = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.valCreditToAdd = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonValid = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -88,12 +88,12 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Crédit à ajouter :";
             // 
-            // textBox1
+            // valCreditToAdd
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 5;
+            this.valCreditToAdd.Location = new System.Drawing.Point(115, 83);
+            this.valCreditToAdd.Name = "valCreditToAdd";
+            this.valCreditToAdd.Size = new System.Drawing.Size(167, 20);
+            this.valCreditToAdd.TabIndex = 5;
             // 
             // buttonCancel
             // 
@@ -127,10 +127,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 162);
+            this.ClientSize = new System.Drawing.Size(290, 162);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonValid);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.valCreditToAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.valCredit);
             this.Controls.Add(this.label1);
@@ -153,7 +153,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label valCredit;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox valCreditToAdd;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonValid;
     }
