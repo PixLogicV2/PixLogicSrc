@@ -57,10 +57,10 @@ namespace PixLogic.DAL
                 foreach (User u in user)
                 {
                     u.credits =u.userClass.credits;
+
+                    context.Entry(u).State = System.Data.Entity.EntityState.Modified;
                 }
             }
-
-            context.Entry(user).State = System.Data.Entity.EntityState.Modified;
             context.SaveChanges();
         }
     }
