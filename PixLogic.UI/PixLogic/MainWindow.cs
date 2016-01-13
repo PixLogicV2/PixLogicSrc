@@ -194,9 +194,17 @@ namespace PixLogic
 
         private void deconnexion()
         {
-            Helper.manager = null;
-            WindowConnexion con = new WindowConnexion();
-            con.ShowDialog();
+            bool result = false;
+            DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment vous déconnecter ?",
+                "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = (resultBox == DialogResult.Yes) ? true : false;
+            if(result)
+            {
+                Helper.manager = null;
+                WindowConnexion con = new WindowConnexion();
+                con.ShowDialog();
+            }
+            
         }
         private void toolButtonDeconnexion_Click(object sender, EventArgs e)
         {
