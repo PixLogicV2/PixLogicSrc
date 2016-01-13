@@ -218,6 +218,10 @@ namespace PixLogic.DAL
         {
             container.get("update_user").addCredits(id, ajout);
         }
+        public void ResetAllUsersCredits()
+        {
+            container.get("update_user").resetAllUsersCredits();
+        }
         public void DeleteUser(int id)
         {
             container.get("delete_user").deleteUser(id);
