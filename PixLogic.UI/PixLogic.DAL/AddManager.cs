@@ -27,7 +27,14 @@ namespace PixLogic.DAL
                                          select Manager;
             if (itemQuery.Any()) return true;
             return false;
-    }
+        }
+        public bool existManager()
+        {
+            IQueryable<Manager> itemQuery = from Manager in context.Managers
+                                            select Manager;
+            if (itemQuery.Any()) return true;
+            return false;
+        }
         public List<Manager> getAllManagers()
         {
             IQueryable<Manager> itemQuery = from Manager in context.Managers

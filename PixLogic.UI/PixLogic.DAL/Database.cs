@@ -51,6 +51,24 @@ namespace PixLogic.DAL
         {
             return container.get("add_manager").containPseudoManager(pseudo);
         }
+        public bool ExistManager()
+        {
+            return container.get("add_manager").existManager();
+        }
+        public bool ExistReservationManager(string pseudo)
+        {
+            List<Reservation> res = GetAllReservations();
+            List<Reservation> emp = GetAllEmprunts();
+            foreach(Reservation r in res)
+            {
+                if (r.manager.pseudo == pseudo) return true;
+            }
+            foreach (Reservation r in emp)
+            {
+                if (r.manager.pseudo == pseudo) return true;
+            }
+            return false;
+        }
         public void AddItemToPack(string itemName,string packName)
         {
             container.get("add_pack_to_item").addPackToItem(itemName, packName);

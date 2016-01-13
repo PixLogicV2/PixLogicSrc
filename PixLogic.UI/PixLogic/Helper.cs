@@ -602,7 +602,15 @@ namespace PixLogic
             
             return true;
         }
-
+        public static bool existReservationManager(string pseudo)
+        {
+            if (database.ExistReservationManager(pseudo) == true)
+            {
+                MessageBox.Show("Ce manager posséde une reservation active", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else return false;
+        }
         public static List<Item> importCSVitem(string path, bool virgule, bool entete)
         {
             List<Item> items = new List<Item>();
