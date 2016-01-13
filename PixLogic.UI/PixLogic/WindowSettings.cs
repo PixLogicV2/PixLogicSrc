@@ -315,7 +315,7 @@ namespace PixLogic
         private void buttonSuppManager_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dataGridManagers.CurrentRow.Cells[0].Value.ToString());
-            if (Helper.confirmation(Helper.DELETE) && Helper.isNotConnected(id))
+            if (Helper.confirmation(Helper.DELETE) && Helper.isNotConnected(id) && Helper.existReservationManager(database.GetManagerById(id).pseudo)==false)
             {
                 database.DeleteManager(id);
                 setTableManagers(database.GetAllManagers());
