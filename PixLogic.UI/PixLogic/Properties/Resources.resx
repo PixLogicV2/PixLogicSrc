@@ -136,14 +136,17 @@
   <data name="envoyer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\envoyer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add_item_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_item_icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Bouton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bouton2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="envoyer_color_success" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\envoyer_color_success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="deconnexion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deconnexion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nouveau" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nouveau3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +163,8 @@
   <data name="noprofil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noprofil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="open_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open_file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="annuler_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\annuler_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="aa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\aa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -174,6 +177,9 @@
   </data>
   <data name="script_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\script_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rebase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rebase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="envoyer_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\envoyer_color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -192,9 +198,6 @@
   </data>
   <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="annuler_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\annuler_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="noitem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\noitem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +223,8 @@
   <data name="emprunter2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emprunter2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_item_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_item_icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="open_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open_file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ajouter_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ajouter_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,14 +241,17 @@
   <data name="reinit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reinit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add_item" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="modifier_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modifier_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="parametres_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\parametres_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="envoyer_color_success" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\envoyer_color_success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="reservation_icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reservation_icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,7 +280,7 @@
   <data name="general_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\general_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_item" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_credit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_credit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

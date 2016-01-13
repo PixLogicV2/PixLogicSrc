@@ -57,6 +57,8 @@
             this.valUserNickName = new System.Windows.Forms.Label();
             this.labelListUser = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
+            this.buttonAjoutCredit = new System.Windows.Forms.Button();
+            this.buttonReinitCredit = new System.Windows.Forms.Button();
             this.buttonMailSent = new System.Windows.Forms.Button();
             this.buttonSendMail = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -379,13 +381,44 @@
             this.labelNews.TabIndex = 41;
             this.labelNews.Text = "Infos";
             // 
+            // buttonAjoutCredit
+            // 
+            this.buttonAjoutCredit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAjoutCredit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAjoutCredit.Image = global::PixLogic.Properties.Resources.add_credit;
+            this.buttonAjoutCredit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAjoutCredit.Location = new System.Drawing.Point(511, 252);
+            this.buttonAjoutCredit.Name = "buttonAjoutCredit";
+            this.buttonAjoutCredit.Size = new System.Drawing.Size(162, 43);
+            this.buttonAjoutCredit.TabIndex = 57;
+            this.buttonAjoutCredit.Text = "Ajouter crédit utilisateur";
+            this.buttonAjoutCredit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAjoutCredit.UseVisualStyleBackColor = true;
+            this.buttonAjoutCredit.Click += new System.EventHandler(this.buttonAjoutCredit_Click);
+            // 
+            // buttonReinitCredit
+            // 
+            this.buttonReinitCredit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonReinitCredit.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReinitCredit.Image = global::PixLogic.Properties.Resources.rebase;
+            this.buttonReinitCredit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReinitCredit.Location = new System.Drawing.Point(511, 197);
+            this.buttonReinitCredit.Name = "buttonReinitCredit";
+            this.buttonReinitCredit.Size = new System.Drawing.Size(162, 43);
+            this.buttonReinitCredit.TabIndex = 56;
+            this.buttonReinitCredit.Text = "Réinitialiser les crédits";
+            this.buttonReinitCredit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonReinitCredit.UseVisualStyleBackColor = true;
+            this.buttonReinitCredit.Click += new System.EventHandler(this.buttonReinitCredit_Click);
+            this.buttonReinitCredit.MouseEnter += new System.EventHandler(this.buttonReinitCredit_MouseEnter);
+            // 
             // buttonMailSent
             // 
             this.buttonMailSent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonMailSent.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMailSent.Image = global::PixLogic.Properties.Resources.envoyer_color_success;
             this.buttonMailSent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMailSent.Location = new System.Drawing.Point(511, 85);
+            this.buttonMailSent.Location = new System.Drawing.Point(511, 78);
             this.buttonMailSent.Name = "buttonMailSent";
             this.buttonMailSent.Size = new System.Drawing.Size(162, 43);
             this.buttonMailSent.TabIndex = 55;
@@ -485,6 +518,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.buttonAjoutCredit);
+            this.Controls.Add(this.buttonReinitCredit);
             this.Controls.Add(this.buttonMailSent);
             this.Controls.Add(this.buttonSendMail);
             this.Controls.Add(this.labelNews);
@@ -549,5 +584,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn credits;
         private System.Windows.Forms.Button buttonSendMail;
         private System.Windows.Forms.Button buttonMailSent;
+        private System.Windows.Forms.Button buttonReinitCredit;
+        private System.Windows.Forms.Button buttonAjoutCredit;
     }
 }

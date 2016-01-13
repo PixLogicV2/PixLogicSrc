@@ -132,6 +132,12 @@
     <Compile Include="TestWindow.Designer.cs">
       <DependentUpon>TestWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowAddCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowAddCredit.Designer.cs">
+      <DependentUpon>WindowAddCredit.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowCategorie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </Compile>
     <EmbeddedResource Include="TestWindow.resx">
       <DependentUpon>TestWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowAddCredit.resx">
+      <DependentUpon>WindowAddCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowCategorie.resx">
       <DependentUpon>WindowCategorie.cs</DependentUpon>
@@ -533,6 +542,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rebase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_credit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

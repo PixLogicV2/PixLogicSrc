@@ -73,6 +73,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_credit {
+            get {
+                object obj = ResourceManager.GetObject("add_credit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_item {
             get {
                 object obj = ResourceManager.GetObject("add_item", resourceCulture);
@@ -486,6 +496,16 @@ namespace PixLogic.Properties {
         internal static System.Drawing.Bitmap previous {
             get {
                 object obj = ResourceManager.GetObject("previous", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rebase {
+            get {
+                object obj = ResourceManager.GetObject("rebase", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -221,5 +221,42 @@ namespace PixLogic
             WindowMailsSent mailSent = new WindowMailsSent();
             mailSent.Show();
         }
+
+        private void buttonReinitCredit_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(buttonReinitCredit, "Réinitialiser tous les crédits des utilisateurs.");
+        }
+
+        private void buttonReinitCredit_Click(object sender, EventArgs e)
+        {
+            if(dataGridUsers.RowCount > 0)
+            {
+                bool result = false;
+                DialogResult resultBox = MessageBox.Show("Voulez-vous vraiment réinitialiser les crédits de tous les utilisateurs aux crédits de bases ?",
+                    "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                result = (resultBox == DialogResult.Yes) ? true : false;
+                if(result)
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Il n'ya aucun utilisateur présent.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonAjoutCredit_Click(object sender, EventArgs e)
+        {
+            if(dataGridUsers.RowCount > 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Vous devez sélectionner un utilisateur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
