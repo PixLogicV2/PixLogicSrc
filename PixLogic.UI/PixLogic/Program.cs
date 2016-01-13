@@ -21,6 +21,7 @@ namespace PixLogic
                 {
                     Helper.database.AddManager("admin", "admin", "admin", "0000000000", "admin");
                 }
+                Helper.createUserSelectOnly();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 

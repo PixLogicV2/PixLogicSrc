@@ -15,6 +15,7 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Configuration;
 using System.Collections;
+using System.Data.SqlClient;
 
 namespace PixLogic
 {
@@ -1010,5 +1011,41 @@ namespace PixLogic
             return Encoding.UTF32.GetString(arrayList.ToArray(
                                       Type.GetType("System.Byte")) as byte[]);
         }
+
+        public static void createUserSelectOnly()
+        {
+            string connectionString = @"Server=(localdb)\MSSQLLocalDB;Database=PixLogic.DAL.DataContext;Trusted_Connection=True;";
+            string query = @"if not exists(select * from sys.sql_logins where name = N'SelectOnly')
+                            begin
+                                create login SelectOnly
+                                    with password = 'a'
+                            end
+                            
+
+                            use[PixLogic.DAL.DataContext]
+
+                            IF NOT EXISTS(SELECT * FROM sys.database_principals WHERE name = N'SelectOnlyUser')
+                            begin
+                                create user SelectOnlyUser
+                                    for login SelectOnly
+                            end
+                            
+
+                            grant select to SelectOnlyUser
+                            ";
+            using (SqlConnection connect = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlDataReader reader;
+
+                cmd.CommandText = query;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = connect;
+
+                connect.Open();
+                reader = cmd.ExecuteReader();
+            }
+
+            }
     }
 }
