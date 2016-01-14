@@ -77,7 +77,13 @@ namespace PixLogic
                 valDateFin.Text = ((DateTime)reservation.endDateReservation).ToString("D");
                 valDateDebut.Text = ((DateTime)reservation.beginDateReservation).ToString("D");
                 valNomUser.Text = reservation.user.name;
-                valNomReservable.Text = reservation.reservable.name;
+
+                string nomReservable = reservation.reservable.name; ;
+                if (reservation.isPack)
+                    valNomReservable.Text = nomReservable;
+                else
+                    valNomReservable.Text = nomReservable+ " (Ref: " + ((Item)reservation.reservable).reference+")";
+
                 valType.Text = reservation.isPack ? Helper.PACK : Helper.ITEM;
                 valManager.Text = reservation.manager.pseudo;
             }

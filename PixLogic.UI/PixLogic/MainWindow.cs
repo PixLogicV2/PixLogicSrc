@@ -23,6 +23,7 @@ namespace PixLogic
                 setPanUserVisible();
                 WindowConnexion con = new WindowConnexion();
                 con.ShowDialog();
+                Helper.CLOSING = false;
             }
         }
 
@@ -230,12 +231,17 @@ namespace PixLogic
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var window = MessageBox.Show("Voulez-vous quitter l'application ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (window == DialogResult.No)
-                e.Cancel = true;
+            if (Helper.CLOSING)
+                e.Cancel = false;
             else
             {
-                e.Cancel = false;
+                var window = MessageBox.Show("Voulez-vous quitter l'application ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (window == DialogResult.No)
+                    e.Cancel = true;
+                else
+                {
+                    e.Cancel = false;
+                }
             }
         }
     }

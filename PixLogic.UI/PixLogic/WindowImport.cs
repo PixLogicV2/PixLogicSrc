@@ -88,9 +88,10 @@ namespace PixLogic
                 valChemin.Text = openFileDialog.FileName;
                 Cursor.Current = Cursors.WaitCursor;
                 if (user)
-                    users = Helper.importCSVuser(valChemin.Text, radioVirgule.Checked, radioYes.Checked);
+                    users = Helper.importCSVuser(valChemin, radioVirgule.Checked, radioYes.Checked);
                 else
-                    items = Helper.importCSVitem(valChemin.Text, radioVirgule.Checked, radioYes.Checked);
+                    items = Helper.importCSVitem(valChemin, radioVirgule.Checked, radioYes.Checked);
+
                 Cursor.Current = Cursors.Default;
             }
         }

@@ -34,7 +34,6 @@
             this.valPseudo = new System.Windows.Forms.TextBox();
             this.valMdp = new System.Windows.Forms.TextBox();
             this.buttonValid = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +82,7 @@
             this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(61, 190);
+            this.buttonValid.Location = new System.Drawing.Point(111, 185);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
             this.buttonValid.TabIndex = 2;
@@ -91,20 +90,6 @@
             this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonValid.UseVisualStyleBackColor = true;
             this.buttonValid.Click += new System.EventHandler(this.buttonValid_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
-            this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(151, 190);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 3;
-            this.buttonCancel.Text = "Annuler";
-            this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // pictureBoxLogo
             // 
@@ -122,7 +107,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 224);
             this.Controls.Add(this.pictureBoxLogo);
-            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonValid);
             this.Controls.Add(this.valMdp);
             this.Controls.Add(this.valPseudo);
@@ -148,7 +132,6 @@
         private System.Windows.Forms.TextBox valPseudo;
         private System.Windows.Forms.TextBox valMdp;
         private System.Windows.Forms.Button buttonValid;
-        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }

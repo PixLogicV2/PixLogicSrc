@@ -30,6 +30,7 @@ namespace PixLogic
         public static readonly string CANCEL = "annuler";
         public static readonly string PACK = "Pack";
         public static readonly string ITEM = "Matériel";
+        public static bool CLOSING;
 
         public static bool fieldsAreEmpty(bool withMessageBox, params string[] args)
         {
@@ -612,13 +613,13 @@ namespace PixLogic
             }
             else return false;
         }
-        public static List<Item> importCSVitem(string path, bool virgule, bool entete)
+        public static List<Item> importCSVitem(TextBox path, bool virgule, bool entete)
         {
             List<Item> items = new List<Item>();
-            Encoding encod = GetFileEncoding(path);
             try
             {
-                using (System.IO.StreamReader file = new System.IO.StreamReader(path, encod))
+                Encoding encod = GetFileEncoding(path.Text);
+                using (System.IO.StreamReader file = new System.IO.StreamReader(path.Text, encod))
                 {
                     
                     if(!entete)
@@ -646,6 +647,7 @@ namespace PixLogic
                             }
                             catch (Exception e) {
                                 MessageBox.Show("Le fichier importé ne correspond pas à celui attendu. Vérifiez que tous les champs obligatoires sont bien renseignés dans votre fichier et qu'ils correspondent bien aux types attendus.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                path.Text = "";
                                 return new List<Item>();
                             }
                             try
@@ -660,7 +662,7 @@ namespace PixLogic
                         csv.Dispose();
                     }
                     
-                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path, encod))
+                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path.Text, encod))
                     {
                         var csv2 = new CsvReader(fi);
                         csv2.Configuration.Delimiter = virgule ? "," : ";";
@@ -679,6 +681,7 @@ namespace PixLogic
                             catch (Exception e)
                             {
                                 MessageBox.Show("Le fichier importé ne correspond pas à celui attendu. Vérifiez que tous les champs obligatoires sont bien renseignés dans votre fichier et qu'ils correspondent bien aux types attendus.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                path.Text = "";
                                 return new List<Item>();
                             }
                             try
@@ -699,19 +702,20 @@ namespace PixLogic
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                path.Text = "";
             }
 
             return items;
         }
 
-        public static List<User> importCSVuser(string path, bool virgule, bool entete)
+        public static List<User> importCSVuser(TextBox path, bool virgule, bool entete)
         {
             List<User> users = new List<User>();
-            Encoding encod = GetFileEncoding(path);
+            
             try
             {
-                using (System.IO.StreamReader file = new System.IO.StreamReader(path, encod))
+                Encoding encod = GetFileEncoding(path.Text);
+                using (System.IO.StreamReader file = new System.IO.StreamReader(path.Text, encod))
                 {
 
                     if (!entete)
@@ -737,6 +741,7 @@ namespace PixLogic
                             }
                             catch(Exception e) {
                                 MessageBox.Show("Le fichier importé ne correspond pas à celui attendu.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                path.Text = "";
                                 return new List<User>();
                             }
                             
@@ -757,7 +762,7 @@ namespace PixLogic
                         csv.Dispose();
                     }
 
-                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path, encod))
+                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path.Text, encod))
                     {
                         var csv2 = new CsvReader(fi);
                         csv2.Configuration.Delimiter = virgule ? "," : ";";
@@ -774,6 +779,7 @@ namespace PixLogic
                             catch (Exception e)
                             {
                                 MessageBox.Show("Le fichier importé ne correspond pas à celui attendu.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                path.Text = "";
                                 return new List<User>();
                             }
 
@@ -802,7 +808,7 @@ namespace PixLogic
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                path.Text = "";
             }
 
             return users;

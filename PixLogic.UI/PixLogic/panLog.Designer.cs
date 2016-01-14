@@ -48,6 +48,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.labelNews = new System.Windows.Forms.Label();
             this.panNews = new System.Windows.Forms.Panel();
+            this.valManager = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.labelDebutEmprunt = new System.Windows.Forms.Label();
             this.valDebutEmprunt = new System.Windows.Forms.Label();
             this.valFinEmprunt = new System.Windows.Forms.Label();
@@ -64,9 +66,6 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridLogs = new System.Windows.Forms.DataGridView();
-            this.labelListEmprunt = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.valManager = new System.Windows.Forms.Label();
             this.IdReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameUserReservation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameReservable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +73,7 @@
             this.dateEmprunt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelListEmprunt = new System.Windows.Forms.Label();
             this.panFiltres.SuspendLayout();
             this.panNews.SuspendLayout();
             this.panTableLogs.SuspendLayout();
@@ -212,9 +212,9 @@
             this.labelListeFiltre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelListeFiltre.Location = new System.Drawing.Point(59, 3);
             this.labelListeFiltre.Name = "labelListeFiltre";
-            this.labelListeFiltre.Size = new System.Drawing.Size(118, 15);
+            this.labelListeFiltre.Size = new System.Drawing.Size(71, 15);
             this.labelListeFiltre.TabIndex = 3;
-            this.labelListeFiltre.Text = "Liste des emprunts :";
+            this.labelListeFiltre.Text = "Historique :";
             // 
             // radioToday
             // 
@@ -267,6 +267,26 @@
             this.panNews.Name = "panNews";
             this.panNews.Size = new System.Drawing.Size(674, 104);
             this.panNews.TabIndex = 57;
+            // 
+            // valManager
+            // 
+            this.valManager.AutoSize = true;
+            this.valManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valManager.Location = new System.Drawing.Point(488, 68);
+            this.valManager.Name = "valManager";
+            this.valManager.Size = new System.Drawing.Size(11, 13);
+            this.valManager.TabIndex = 51;
+            this.valManager.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(381, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Manager :";
             // 
             // labelDebutEmprunt
             // 
@@ -475,36 +495,6 @@
             this.dataGridLogs.DoubleClick += new System.EventHandler(this.dataGridLogs_DoubleClick);
             this.dataGridLogs.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridLogs_KeyUp);
             // 
-            // labelListEmprunt
-            // 
-            this.labelListEmprunt.AutoSize = true;
-            this.labelListEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListEmprunt.Location = new System.Drawing.Point(27, 100);
-            this.labelListEmprunt.Name = "labelListEmprunt";
-            this.labelListEmprunt.Size = new System.Drawing.Size(61, 13);
-            this.labelListEmprunt.TabIndex = 63;
-            this.labelListEmprunt.Text = "Historique";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(381, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Manager :";
-            // 
-            // valManager
-            // 
-            this.valManager.AutoSize = true;
-            this.valManager.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valManager.Location = new System.Drawing.Point(488, 68);
-            this.valManager.Name = "valManager";
-            this.valManager.Size = new System.Drawing.Size(11, 13);
-            this.valManager.TabIndex = 51;
-            this.valManager.Text = "-";
-            // 
             // IdReservation
             // 
             this.IdReservation.HeaderText = "Id";
@@ -550,6 +540,16 @@
             this.manager.HeaderText = "Manager";
             this.manager.Name = "manager";
             this.manager.ReadOnly = true;
+            // 
+            // labelListEmprunt
+            // 
+            this.labelListEmprunt.AutoSize = true;
+            this.labelListEmprunt.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListEmprunt.Location = new System.Drawing.Point(27, 100);
+            this.labelListEmprunt.Name = "labelListEmprunt";
+            this.labelListEmprunt.Size = new System.Drawing.Size(61, 13);
+            this.labelListEmprunt.TabIndex = 63;
+            this.labelListEmprunt.Text = "Historique";
             // 
             // panLog
             // 
