@@ -288,6 +288,10 @@ namespace PixLogic.DAL
                 case "get_all_logs_by_date":
                     this.arrayContainer[serviceName] = this.get("get_all_logs");
                     break;
+                case "delete_log":
+                    this.arrayContainer[serviceName] = new DeleteLog();
+                    this.arrayContainer[serviceName].setContext(this.get("data_context"));
+                    break;
                 case "emprunt_reservation":
                     this.arrayContainer[serviceName] = new EmpruntReservation();
                     this.arrayContainer[serviceName].setContext(this.get("data_context"));
