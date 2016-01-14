@@ -24,8 +24,12 @@ namespace PixLogic.DAL
         public void deleteLogByDate(DateTime debut, DateTime fin)
         {
             List<Log> logs;
-            logs = context.Logs.Where(s => s.beginDateEmprunt.Value.Date >= debut.Date).Where(s => s.endDateEmprunt.Value.Date <= fin.Date).ToList();
-            foreach (Log l in logs) context.Entry(l).State = System.Data.Entity.EntityState.Deleted;
+            logs = context.Logs.ToList();
+            foreach (Log l in logs)
+            {
+                if(l.beginDateEmprunt.Value.Date>debut.Date && l.endDateEmprunt.Value.Date<fin.Date)
+                context.Entry(l).State = System.Data.Entity.EntityState.Deleted;
+            }
             context.SaveChanges();
         }
         public void deleteLogById(int id)
