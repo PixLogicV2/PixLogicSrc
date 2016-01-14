@@ -33,7 +33,7 @@ namespace PixLogic
             }
             catch(Exception ex)
             {
-                MessageBox.Show(""+ex, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             

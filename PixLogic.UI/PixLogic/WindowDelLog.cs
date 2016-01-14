@@ -108,9 +108,9 @@ namespace PixLogic
                 }
                 else if (radioBetween.Checked)
                 {
-                    if (Helper.beginBeforeEndDate(true, dateTimeDebut.Value, dateTimeFin.Value))
+                    if (Helper.beginBeforeEndDate(true, dateTimeDebut.Value.Date, dateTimeFin.Value.Date))
                     {
-                        database.DeleteLogByDate(dateTimeDebut.Value, dateTimeFin.Value);
+                        database.DeleteLogByDate(dateTimeDebut.Value.Date, dateTimeFin.Value.Date);
                         pan.refresh();
                         this.Close();
                     }
