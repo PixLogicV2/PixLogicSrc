@@ -77,6 +77,7 @@
     <Compile Include="ContainUserClass.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DeleteCategorie.cs" />
+    <Compile Include="DeleteLog.cs" />
     <Compile Include="DeletePack.cs" />
     <Compile Include="DeleteRequete.cs" />
     <Compile Include="DeleteReservation.cs" />

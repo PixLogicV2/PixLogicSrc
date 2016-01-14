@@ -337,6 +337,18 @@ namespace PixLogic.DAL
         /*
         *LOG
         */
+        public void DeleteLogByReservableName(string name)
+        {
+            container.get("delete_log").deleteLogByReservableName(name);
+        }
+        public void DeleteLogById(int id)
+        {
+            container.get("delete_log").deleteLogById(id);
+        }
+        public void DeleteLogByDate(DateTime debut, DateTime fin)
+        {
+            container.get("delete_log").deleteLogByDate(debut, fin);
+        }
         public List<Log> GetAllLogs()
         {
             return container.get("get_all_logs").getAllLogs();
