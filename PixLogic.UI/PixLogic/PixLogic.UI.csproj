@@ -156,6 +156,12 @@
     <Compile Include="WindowConnexion.Designer.cs">
       <DependentUpon>WindowConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowDelLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowDelLog.Designer.cs">
+      <DependentUpon>WindowDelLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowExport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WindowConnexion.resx">
       <DependentUpon>WindowConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowDelLog.resx">
+      <DependentUpon>WindowDelLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowExport.resx">
       <DependentUpon>WindowExport.cs</DependentUpon>

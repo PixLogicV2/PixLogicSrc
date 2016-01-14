@@ -74,6 +74,7 @@
             this.dateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelListEmprunt = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.panFiltres.SuspendLayout();
             this.panNews.SuspendLayout();
             this.panTableLogs.SuspendLayout();
@@ -404,6 +405,7 @@
             // panTableLogs
             // 
             this.panTableLogs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panTableLogs.Controls.Add(this.buttonDelete);
             this.panTableLogs.Controls.Add(this.buttonCancelSearch);
             this.panTableLogs.Controls.Add(this.textBoxSearch);
             this.panTableLogs.Controls.Add(this.labelSearch);
@@ -551,6 +553,20 @@
             this.labelListEmprunt.TabIndex = 63;
             this.labelListEmprunt.Text = "Historique";
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Image = global::PixLogic.Properties.Resources.supprimer_icon;
+            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDelete.Location = new System.Drawing.Point(466, 11);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(100, 28);
+            this.buttonDelete.TabIndex = 48;
+            this.buttonDelete.Text = "Supprimer...";
+            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // panLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,5 +636,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEmprunt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateRetour;
         private System.Windows.Forms.DataGridViewTextBoxColumn manager;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

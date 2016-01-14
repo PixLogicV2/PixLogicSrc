@@ -457,6 +457,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.barreDeMenu;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(843, 557);
+            this.MinimumSize = new System.Drawing.Size(843, 557);
             this.Name = "MainWindow";
             this.Text = "CE3P Reservation";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);

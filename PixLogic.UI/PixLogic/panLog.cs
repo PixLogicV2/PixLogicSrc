@@ -199,6 +199,19 @@ namespace PixLogic
         {
             return dataGridLogs;
         }
-        
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if(dataGridLogs.RowCount > 0)
+            {
+                int id = int.Parse(dataGridLogs.CurrentRow.Cells[0].Value.ToString());
+                WindowDelLog delLog = new WindowDelLog(id, this);
+                delLog.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vous devez sélectionner une ligne.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
