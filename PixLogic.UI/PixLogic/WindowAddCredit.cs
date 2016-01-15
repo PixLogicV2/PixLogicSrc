@@ -36,7 +36,7 @@ namespace PixLogic
         {
             if(!Helper.fieldsAreEmpty(true, valCreditToAdd.Text) && Helper.AreNumbers(true, valCreditToAdd.Text))
             {
-                int creditAjout = int.Parse(valCreditToAdd.Text);
+                int creditAjout = (int)double.Parse(valCreditToAdd.Text);
                 int creditTotal = user.credits + creditAjout;
                 if(creditTotal > user.userClass.credits)
                 {
