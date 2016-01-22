@@ -119,14 +119,13 @@ namespace PixLogic
                 int nQuantity;
                 int.TryParse(price, out nPrice);
                 int.TryParse(quantity, out nQuantity);
-                if (add && !Helper.itemExist(true, name) && !Helper.referenceExist(true, reference))
+                if (add && !Helper.referenceExist(true, reference))
                 {
                     database.AddItem(name, description, true, nPrice, img, reference, nQuantity,categorie);
                     pan.setTableItem(database.GetAllItems());
                     this.Close();
                 }
-                else if(!add && !Helper.itemExistModif(true, name, pan.valItemName.Text)
-                    && !Helper.referenceExistModif(true, reference, pan.valItemRef.Text))
+                else if(!add && !Helper.referenceExistModif(true, reference, pan.valItemRef.Text))
                 {
                     database.UpdateItem(pan.valItemName.Text, name, description, true, nPrice, img, reference, nQuantity,categorie);
                     pan.setTableItem(database.GetAllItems());

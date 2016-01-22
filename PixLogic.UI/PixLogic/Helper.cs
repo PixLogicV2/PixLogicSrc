@@ -990,7 +990,7 @@ namespace PixLogic
         }
         public static bool isNotConnected(int id)
         {
-            if (Helper.manager.ManagerId == id)
+            if (manager.ManagerId == id)
             {
                 MessageBox.Show("Le manager est actuellement connecté", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

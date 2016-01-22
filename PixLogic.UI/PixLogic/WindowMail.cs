@@ -79,19 +79,22 @@ namespace PixLogic
             if(!Helper.fieldsAreEmpty(true, valSubject.Text, valMessage.Text))
             {
                 encours();
-                MailMessage mail = new MailMessage(config.email, valMail.Text, valSubject.Text, valMessage.Text);
+                try
+                {
+                    MailMessage mail = new MailMessage(config.email, valMail.Text, valSubject.Text, valMessage.Text);
                 SmtpClient client = new SmtpClient(config.serveurStmp);
                 client.Port = config.port;
                 client.Credentials = new NetworkCredential(config.email, config.mdp);
                 client.EnableSsl = true;
                 this.Cursor = Cursors.WaitCursor;
-                try
-                {
+                
                     client.Send(mail);
                 }
                 catch (Exception ex)
                 {
+                    
                     this.Cursor = Cursors.Default;
+                    MessageBox.Show(ex.Message);
                     echec();
                     this.TopMost = true;
                     this.Activate();

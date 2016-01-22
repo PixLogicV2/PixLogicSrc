@@ -121,6 +121,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_items").getAllItemsByString(search);
         }
+        public List<Item> GetAllItemsByString(string search, List<Item> list)
+        {
+            return container.get("get_all_items").getAllItemsByString(search, list);
+        }
         public List<Pack> GetAllPacks()
         {
             return container.get("get_all_packs").getAllPacks();

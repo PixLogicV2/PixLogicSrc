@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PixLogic.DAL;
 
@@ -58,7 +52,7 @@ namespace PixLogic
 
             foreach(Item item in list)
             {
-                dataGridItem.Rows.Add(item.name, item.price);
+                dataGridItem.Rows.Add(item.reference, item.name, item.price);
             }
 
             if (dataGridItem.RowCount > 0)
@@ -104,12 +98,13 @@ namespace PixLogic
                     List<string> items = new List<string>();
                     for (int i = selectedRowCount - 1; i >= 0; i--)
                     {
-                        string libelle = dataGridItem.SelectedRows[i].Cells[0].Value.ToString();
-                        string prix = dataGridItem.SelectedRows[i].Cells[1].Value.ToString();
-                        if (!materiels.Contains(libelle))
+                        string reference = dataGridItem.SelectedRows[i].Cells[0].Value.ToString();
+                        string libelle = dataGridItem.SelectedRows[i].Cells[1].Value.ToString();
+                        string prix = dataGridItem.SelectedRows[i].Cells[2].Value.ToString();
+                        if (!materiels.Contains(reference))
                         {
-                            materiels.Add(libelle);
-                            dataGridListeItem.Rows.Add(libelle, prix);
+                            materiels.Add(reference);
+                            dataGridListeItem.Rows.Add(reference, libelle, prix);
                         }
                     }
                     
@@ -154,7 +149,7 @@ namespace PixLogic
             double totalMateriels = 0;
             foreach(DataGridViewRow r in dataGridListeItem.Rows)
             {
-                totalMateriels += double.Parse(r.Cells[1].Value.ToString());
+                totalMateriels += double.Parse(r.Cells[2].Value.ToString());
             }
             valTotal.Text = totalMateriels.ToString();
             valCreditsRestants.Text = (double.Parse(valCrédits.Text) - totalMateriels).ToString();
@@ -197,7 +192,8 @@ namespace PixLogic
             Pack pack = database.GetPackById(last + 1);
             for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
             {
-                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[0].Value.ToString(), pack.name);
+                //A modifier
+                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[1].Value.ToString(), pack.name);
             }
 
             if(reserv)

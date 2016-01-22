@@ -493,6 +493,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pocket_icon {
+            get {
+                object obj = ResourceManager.GetObject("pocket_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap previous {
             get {
                 object obj = ResourceManager.GetObject("previous", resourceCulture);

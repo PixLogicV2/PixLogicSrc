@@ -32,6 +32,19 @@ namespace PixLogic.DAL
             );
             return results;
         }
+        public List<Item> getAllItemsByString(string search, List<Item> list)
+        {
+            search.ToLower();
+            List<Item> items = list;
+            List<Item> results = items.FindAll(
+            delegate (Item item)
+            {
+                if (item.name.ToLower().Contains(search)) return item.name.ToLower().Contains(search);
+                else return item.reference.ToLower().Contains(search);
+            }
+            );
+            return results;
+        }
         public bool existReference(string reference)
         {
             IQueryable<Item> itemQuery = from Item in context.Items

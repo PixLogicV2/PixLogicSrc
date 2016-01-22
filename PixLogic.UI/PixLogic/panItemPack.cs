@@ -17,6 +17,7 @@ namespace PixLogic
     public partial class panItemPack : UserControl
     {
         Database database;
+        private List<Item> listInTable;
         public panItemPack()
         {
             InitializeComponent();
@@ -29,7 +30,8 @@ namespace PixLogic
 
         public void refresh()
         {
-            setTableItem(database.GetAllItems());
+            listInTable = database.GetAllItems();
+            setTableItem(listInTable);
             setComboBoxPack();
             setComboBoxCategorie();
         }
@@ -290,7 +292,7 @@ namespace PixLogic
 
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            setTableItem(database.GetAllItemsByString(textBoxSearch.Text));
+            setTableItem(database.GetAllItemsByString(textBoxSearch.Text, listInTable));
         }
 
         private void buttonCancelSearch_Click(object sender, EventArgs e)
@@ -344,10 +346,14 @@ namespace PixLogic
             if (!comboBoxCategorie.SelectedItem.ToString().Equals(""))
             {
                 idCat = database.GetIdCategorie(comboBoxCategorie.SelectedItem.ToString());
-                setTableItem(database.GetAllItemsInCategorie(idCat));
+                listInTable = database.GetAllItemsInCategorie(idCat);
+                setTableItem(listInTable);
             }
             else
-                setTableItem(database.GetAllItems());
+            {
+                listInTable = database.GetAllItems();
+                setTableItem(listInTable);
+            }
 
         }
 
