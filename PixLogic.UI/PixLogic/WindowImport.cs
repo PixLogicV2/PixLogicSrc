@@ -33,9 +33,15 @@ namespace PixLogic
             listChamps = c;
             user = u;
             if (user)
+            {
                 users = new List<User>();
+                Text = "Import - Utilisateurs";
+            }
             else
+            {
                 items = new List<Item>();
+                Text = "Import - Matériels";
+            }
 
             indexWrongRows = new List<int>();
             init();

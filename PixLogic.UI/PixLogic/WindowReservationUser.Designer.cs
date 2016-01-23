@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelListItemDispo = new System.Windows.Forms.Panel();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
+            this.reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonOk = new System.Windows.Forms.Button();
             this.labelFin = new System.Windows.Forms.Label();
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
@@ -51,6 +54,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridListeItem = new System.Windows.Forms.DataGridView();
+            this.referenceList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radioButtonReserver = new System.Windows.Forms.RadioButton();
             this.radioButtonEmprunter = new System.Windows.Forms.RadioButton();
             this.buttonEnlever = new System.Windows.Forms.Button();
@@ -60,12 +66,10 @@
             this.valCreditsRestants = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonValider = new System.Windows.Forms.Button();
-            this.reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenceList = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelCat = new System.Windows.Forms.Label();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.labelSearch = new System.Windows.Forms.Label();
             this.panelListItemDispo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -76,6 +80,10 @@
             // panelListItemDispo
             // 
             this.panelListItemDispo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelListItemDispo.Controls.Add(this.labelCat);
+            this.panelListItemDispo.Controls.Add(this.comboBoxCategorie);
+            this.panelListItemDispo.Controls.Add(this.textBoxSearch);
+            this.panelListItemDispo.Controls.Add(this.labelSearch);
             this.panelListItemDispo.Controls.Add(this.dataGridItem);
             this.panelListItemDispo.Controls.Add(this.buttonOk);
             this.panelListItemDispo.Controls.Add(this.labelFin);
@@ -91,8 +99,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -101,22 +109,46 @@
             this.reference,
             this.NameItem,
             this.Price});
-            this.dataGridItem.Location = new System.Drawing.Point(-1, 99);
+            this.dataGridItem.Location = new System.Drawing.Point(-1, 153);
             this.dataGridItem.Name = "dataGridItem";
             this.dataGridItem.ReadOnly = true;
             this.dataGridItem.RowHeadersVisible = false;
             this.dataGridItem.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridItem.Size = new System.Drawing.Size(245, 377);
+            this.dataGridItem.Size = new System.Drawing.Size(245, 323);
             this.dataGridItem.TabIndex = 5;
+            // 
+            // reference
+            // 
+            this.reference.HeaderText = "Référence";
+            this.reference.Name = "reference";
+            this.reference.ReadOnly = true;
+            this.reference.Width = 70;
+            // 
+            // NameItem
+            // 
+            this.NameItem.HeaderText = "Libellé";
+            this.NameItem.Name = "NameItem";
+            this.NameItem.ReadOnly = true;
+            this.NameItem.Width = 95;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Prix ( Crédits )";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 80;
             // 
             // buttonOk
             // 
             this.buttonOk.Image = global::PixLogic.Properties.Resources.valider_iconPetit;
-            this.buttonOk.Location = new System.Drawing.Point(207, 73);
+            this.buttonOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonOk.Location = new System.Drawing.Point(131, 72);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(29, 20);
+            this.buttonOk.Size = new System.Drawing.Size(40, 22);
             this.buttonOk.TabIndex = 4;
+            this.buttonOk.Text = "Ok";
+            this.buttonOk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             this.buttonOk.MouseEnter += new System.EventHandler(this.buttonOk_MouseEnter);
@@ -133,9 +165,9 @@
             // 
             // dateTimeEnd
             // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(57, 49);
+            this.dateTimeEnd.Location = new System.Drawing.Point(70, 49);
             this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeEnd.Size = new System.Drawing.Size(166, 20);
             this.dateTimeEnd.TabIndex = 2;
             // 
             // labelDebut
@@ -150,9 +182,9 @@
             // 
             // dateTimeBegin
             // 
-            this.dateTimeBegin.Location = new System.Drawing.Point(57, 21);
+            this.dateTimeBegin.Location = new System.Drawing.Point(70, 21);
             this.dateTimeBegin.Name = "dateTimeBegin";
-            this.dateTimeBegin.Size = new System.Drawing.Size(179, 20);
+            this.dateTimeBegin.Size = new System.Drawing.Size(166, 20);
             this.dateTimeBegin.TabIndex = 0;
             // 
             // labelItemDispo
@@ -298,8 +330,8 @@
             // 
             this.dataGridListeItem.AllowUserToAddRows = false;
             this.dataGridListeItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dataGridListeItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            this.dataGridListeItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridListeItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridListeItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridListeItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -316,6 +348,24 @@
             this.dataGridListeItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridListeItem.Size = new System.Drawing.Size(276, 182);
             this.dataGridListeItem.TabIndex = 5;
+            // 
+            // referenceList
+            // 
+            this.referenceList.HeaderText = "Référence";
+            this.referenceList.Name = "referenceList";
+            this.referenceList.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Libellé";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Prix ( Crédits )";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // radioButtonReserver
             // 
@@ -419,44 +469,45 @@
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
-            // reference
+            // labelCat
             // 
-            this.reference.HeaderText = "Référence";
-            this.reference.Name = "reference";
-            this.reference.ReadOnly = true;
-            this.reference.Width = 70;
+            this.labelCat.AutoSize = true;
+            this.labelCat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCat.Location = new System.Drawing.Point(6, 129);
+            this.labelCat.Name = "labelCat";
+            this.labelCat.Size = new System.Drawing.Size(63, 13);
+            this.labelCat.TabIndex = 39;
+            this.labelCat.Text = "Catégorie :";
             // 
-            // NameItem
+            // comboBoxCategorie
             // 
-            this.NameItem.HeaderText = "Libellé";
-            this.NameItem.Name = "NameItem";
-            this.NameItem.ReadOnly = true;
-            this.NameItem.Width = 95;
+            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.ItemHeight = 13;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(71, 126);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(165, 21);
+            this.comboBoxCategorie.Sorted = true;
+            this.comboBoxCategorie.TabIndex = 38;
+            this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
             // 
-            // Price
+            // textBoxSearch
             // 
-            this.Price.HeaderText = "Prix ( Crédits )";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 80;
+            this.textBoxSearch.Location = new System.Drawing.Point(71, 100);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(165, 20);
+            this.textBoxSearch.TabIndex = 36;
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
             // 
-            // referenceList
+            // labelSearch
             // 
-            this.referenceList.HeaderText = "Référence";
-            this.referenceList.Name = "referenceList";
-            this.referenceList.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Libellé";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Prix ( Crédits )";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.Location = new System.Drawing.Point(6, 102);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(66, 13);
+            this.labelSearch.TabIndex = 35;
+            this.labelSearch.Text = "Recherche :";
             // 
             // WindowReservationUser
             // 
@@ -533,5 +584,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn referenceList;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label labelCat;
+        private System.Windows.Forms.ComboBox comboBoxCategorie;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Label labelSearch;
     }
 }

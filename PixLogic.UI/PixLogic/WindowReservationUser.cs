@@ -11,13 +11,14 @@ namespace PixLogic
         private Database database = Helper.database;
         private int idUser;
         private List<string> materiels;
-
+        private List<Item> listInTable;
 
         public WindowReservationUser(int id)
         {
             InitializeComponent();
             idUser = id;
             materiels = new List<string>();
+            listInTable = new List<Item>();
             setInfosUser();
         }
 
@@ -38,7 +39,8 @@ namespace PixLogic
                 if (i.categorie.level > (database.GetUserById(idUser).userClass.level)) list.Remove(i);
                 if (i.dispo == false)list.Remove(i);
             }
-            setTableItem(list);
+            listInTable = list;
+            setTableItem(listInTable);
             dataGridListeItem.Rows.Clear();
             materiels.Clear();
             calcul();
@@ -205,6 +207,27 @@ namespace PixLogic
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            setTableItem(database.GetAllItemsByString(textBoxSearch.Text, listInTable));
+        }
+
+        private void comboBoxCategorie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*int idCat;
+            if (!comboBoxCategorie.SelectedItem.ToString().Equals(""))
+            {
+                idCat = database.GetIdCategorie(comboBoxCategorie.SelectedItem.ToString());
+                listInTable = database.GetAllItemsInCategorie(idCat);
+                setTableItem(listInTable);
+            }
+            else
+            {
+                listInTable = database.GetAllItems();
+                setTableItem(listInTable);
+            }*/
         }
     }
 }
