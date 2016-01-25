@@ -433,6 +433,10 @@ namespace PixLogic.DAL
         {
             return container.get("get_all_categorie").getAllCategorie();
         }
+        public List<Categorie> GetAllCategorieByListItem(List<Item> items)
+        {
+            return container.get("get_all_categorie").getAllCategorieByListItem(items);
+        }
         public List<Categorie> GetAllCategorieByString(string text)
         {
             return container.get("get_all_categorie").getAllCategorieByString(text);

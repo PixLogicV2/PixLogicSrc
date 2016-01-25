@@ -17,7 +17,7 @@ namespace PixLogic.DAL
         public List<Categorie> getAllCategorie()
         {
             IQueryable<Categorie> itemQuery = from Categorie in context.Categories
-                                         select Categorie;
+                                              select Categorie;
             return itemQuery.ToList();
         }
         public List<Categorie> getAllCategorieByString(string search)
@@ -30,6 +30,19 @@ namespace PixLogic.DAL
                 return item.name.ToLower().Contains(search);
             }
             );
+            return results;
+        }
+        public List<Categorie> getAllCategorieByListItem(List<Item> items)
+        {
+            List<Categorie> cat = getAllCategorie();
+            List<Categorie> results = new List<Categorie>();
+            foreach(Categorie c in cat)
+            {
+                foreach (Item i in items)
+                {
+                    if( c.name.Equals(i.categorie.name))results.Add(c);
+                }
+            }
             return results;
         }
     }
