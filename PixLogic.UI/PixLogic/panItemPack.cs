@@ -318,8 +318,8 @@ namespace PixLogic
         {
             if (Helper.confirmation(Helper.REMOVE))
             {
-                string refItem = listBoxItem.CurrentRow.Cells[0].Value.ToString();
-                database.DeleteItemToPack(refItem);
+                int id= int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString());
+                database.DeleteItemToPack(id);
                 setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
             }
         }
