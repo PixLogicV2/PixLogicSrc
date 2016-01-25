@@ -69,9 +69,9 @@ namespace PixLogic.DAL
             }
             return false;
         }
-        public void AddItemToPack(string itemName,string packName)
+        public void AddItemToPack(string itemRef,int packId)
         {
-            container.get("add_pack_to_item").addPackToItem(itemName, packName);
+            container.get("add_pack_to_item").addPackToItem(itemRef, packId);
         }
         public Image ByteArrayToImage(byte[] byteArray)
         {

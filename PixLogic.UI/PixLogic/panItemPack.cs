@@ -220,14 +220,14 @@ namespace PixLogic
             addingItemInPack(itemName);
         }
 
-        private void addingItemInPack(string itemName)
+        private void addingItemInPack()
         {
             if (comboBoxPack.Items.Count > 0)
             {
                 string packName = comboBoxPack.SelectedItem.ToString();
                 if (!Helper.IsInListBox(itemName, listBoxItem))
                 {
-                    database.AddItemToPack(itemName, packName);
+                    database.AddItemToPack(valItemRef.Text, packName);
                     setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
 
                     checkButtonRemoveItem(listBoxItem.Items.Count - 1);
