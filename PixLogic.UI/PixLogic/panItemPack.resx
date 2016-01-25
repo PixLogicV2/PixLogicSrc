@@ -163,4 +163,10 @@
         Hs8zM+tKRO4XswbvNbMG7y0gfwP7NwfGmC06TgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="refe.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="libellee.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

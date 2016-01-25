@@ -169,14 +169,14 @@ namespace PixLogic
 
         private void setListBoxItemsOfPack(string namePack)
         {
-            listBoxItem.Items.Clear();
+            listBoxItem.Rows.Clear();
             if(!namePack.Equals(""))
             {
                 List<Item> list = database.GetItemsInPackByName(namePack);
 
                 foreach (var item in list)
                 {
-                    listBoxItem.Items.Add(item.name);
+                    listBoxItem.Rows.Add(item.reference, item.name);
                 }
                 checkButtonRemoveItem(0);
             }
@@ -185,9 +185,13 @@ namespace PixLogic
 
         private void checkButtonRemoveItem(int index)
         {
-            if (listBoxItem.Items.Count > 0)
+            if (listBoxItem.RowCount > 0)
             {
-                listBoxItem.SelectedIndex = index;
+                listBoxItem.FirstDisplayedScrollingRowIndex = 0;
+                listBoxItem.Refresh();
+                listBoxItem.CurrentCell = listBoxItem.Rows[index].Cells[index];
+                listBoxItem.Rows[index].Selected = true;
+
                 buttonRemoveItemInPack.Enabled = true;
             }
             else
@@ -197,7 +201,7 @@ namespace PixLogic
         }
         private void pictureBoxItem_MouseDown(object sender, MouseEventArgs e)
         {
-            listBoxItem.DoDragDrop(valItemName.Text, DragDropEffects.Copy | DragDropEffects.Move);
+            listBoxItem.DoDragDrop(valItemRef.Text, DragDropEffects.Copy | DragDropEffects.Move);
         }
 
         private void listBoxItem_DragEnter(object sender, DragEventArgs e)
@@ -216,21 +220,22 @@ namespace PixLogic
 
         private void listBoxItem_DragDrop(object sender, DragEventArgs e)
         {
-            string itemName = e.Data.GetData(DataFormats.Text).ToString();
-            addingItemInPack(itemName);
+            string refItem = e.Data.GetData(DataFormats.Text).ToString();
+            addingItemInPack(refItem);
         }
 
-        private void addingItemInPack()
+        private void addingItemInPack(string refItem)
         {
             if (comboBoxPack.Items.Count > 0)
             {
                 string packName = comboBoxPack.SelectedItem.ToString();
-                if (!Helper.IsInListBox(itemName, listBoxItem))
+                Pack pack = database.GetPackByName(packName);
+                if (!Helper.IsInListBox(refItem, pack.ReservableId))
                 {
-                    database.AddItemToPack(valItemRef.Text, packName);
+                    database.AddItemToPack(refItem, pack.ReservableId);
                     setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
 
-                    checkButtonRemoveItem(listBoxItem.Items.Count - 1);
+                    checkButtonRemoveItem(listBoxItem.RowCount - 1);
                 }
             }
             
@@ -313,7 +318,8 @@ namespace PixLogic
         {
             if (Helper.confirmation(Helper.REMOVE))
             {
-                database.DeleteItemToPack(listBoxItem.SelectedItem.ToString());
+                string refItem = listBoxItem.CurrentRow.Cells[0].Value.ToString();
+                database.DeleteItemToPack(refItem);
                 setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
             }
         }

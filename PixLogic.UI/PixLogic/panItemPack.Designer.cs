@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +55,6 @@
             this.disponibilite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNews = new System.Windows.Forms.Label();
-            this.listBoxItem = new System.Windows.Forms.ListBox();
             this.comboBoxPack = new System.Windows.Forms.ComboBox();
             this.labelPack = new System.Windows.Forms.Label();
             this.buttonTransfert = new System.Windows.Forms.Button();
@@ -67,11 +66,15 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
+            this.listBoxItem = new System.Windows.Forms.DataGridView();
+            this.refe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.libellee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxItem)).BeginInit();
             this.SuspendLayout();
             // 
             // panNews
@@ -261,8 +264,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -339,19 +342,6 @@
             this.labelNews.Size = new System.Drawing.Size(33, 13);
             this.labelNews.TabIndex = 0;
             this.labelNews.Text = "Infos";
-            // 
-            // listBoxItem
-            // 
-            this.listBoxItem.AllowDrop = true;
-            this.listBoxItem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxItem.FormattingEnabled = true;
-            this.listBoxItem.Location = new System.Drawing.Point(530, 55);
-            this.listBoxItem.Name = "listBoxItem";
-            this.listBoxItem.ScrollAlwaysVisible = true;
-            this.listBoxItem.Size = new System.Drawing.Size(150, 199);
-            this.listBoxItem.TabIndex = 30;
-            this.listBoxItem.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBoxItem_DragDrop);
-            this.listBoxItem.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBoxItem_DragEnter);
             // 
             // comboBoxPack
             // 
@@ -491,11 +481,42 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
+            // listBoxItem
+            // 
+            this.listBoxItem.AllowUserToAddRows = false;
+            this.listBoxItem.AllowUserToDeleteRows = false;
+            this.listBoxItem.BackgroundColor = System.Drawing.Color.White;
+            this.listBoxItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listBoxItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.refe,
+            this.libellee});
+            this.listBoxItem.Location = new System.Drawing.Point(530, 56);
+            this.listBoxItem.Name = "listBoxItem";
+            this.listBoxItem.ReadOnly = true;
+            this.listBoxItem.RowHeadersVisible = false;
+            this.listBoxItem.Size = new System.Drawing.Size(150, 193);
+            this.listBoxItem.TabIndex = 42;
+            // 
+            // refe
+            // 
+            this.refe.HeaderText = "Réf";
+            this.refe.Name = "refe";
+            this.refe.ReadOnly = true;
+            this.refe.Width = 50;
+            // 
+            // libellee
+            // 
+            this.libellee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.libellee.HeaderText = "Libellé";
+            this.libellee.Name = "libellee";
+            this.libellee.ReadOnly = true;
+            // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.listBoxItem);
             this.Controls.Add(this.valItemRef);
             this.Controls.Add(this.buttonRemoveItemInPack);
             this.Controls.Add(this.pictureBoxItem);
@@ -503,7 +524,6 @@
             this.Controls.Add(this.buttonTransfert);
             this.Controls.Add(this.labelPack);
             this.Controls.Add(this.comboBoxPack);
-            this.Controls.Add(this.listBoxItem);
             this.Controls.Add(this.labelNews);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonModify);
@@ -522,6 +542,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureReserver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,7 +566,6 @@
         private System.Windows.Forms.Label valDispo;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelDispo;
-        private System.Windows.Forms.ListBox listBoxItem;
         private System.Windows.Forms.ComboBox comboBoxPack;
         private System.Windows.Forms.Label labelPack;
         private System.Windows.Forms.Button buttonTransfert;
@@ -566,5 +586,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn disponibilite;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView listBoxItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn refe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn libellee;
     }
 }

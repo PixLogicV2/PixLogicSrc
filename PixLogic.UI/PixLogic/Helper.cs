@@ -69,11 +69,12 @@ namespace PixLogic
             
         }
 
-        public static bool IsInListBox(string name, ListBox list)
+        public static bool IsInListBox(string refItem, int idPack)
         {
-            foreach(string n in list.Items)
+            List<Item> items = database.GetItemsInPack(idPack);
+            foreach(Item it in items)
             {
-                if (n.Equals(name))
+                if (it.reference.Equals(refItem))
                     return true;
             }
 
