@@ -195,7 +195,7 @@ namespace PixLogic
             for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
             {
                 //A modifier
-                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[1].Value.ToString(), pack.ReservableId);
+                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[0].Value.ToString(), pack.ReservableId);
             }
 
             if(reserv)

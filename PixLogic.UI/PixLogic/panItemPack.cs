@@ -136,7 +136,8 @@ namespace PixLogic
 
             foreach (var pack in listPacks)
             {
-                comboBoxPack.Items.Add(pack.name);
+                if(!pack.temp)
+                    comboBoxPack.Items.Add(pack.name);
             }
             if (comboBoxPack.Items.Count > 0)
             {
@@ -176,7 +177,7 @@ namespace PixLogic
 
                 foreach (var item in list)
                 {
-                    listBoxItem.Rows.Add(item.reference, item.name);
+                    listBoxItem.Rows.Add(item.reference, item.name, item.ReservableId);
                 }
                 checkButtonRemoveItem(0);
             }
@@ -189,8 +190,8 @@ namespace PixLogic
             {
                 listBoxItem.FirstDisplayedScrollingRowIndex = 0;
                 listBoxItem.Refresh();
-                listBoxItem.CurrentCell = listBoxItem.Rows[index].Cells[index];
-                listBoxItem.Rows[index].Selected = true;
+                listBoxItem.CurrentCell = listBoxItem.Rows[0].Cells[0];
+                listBoxItem.Rows[0].Selected = true;
 
                 buttonRemoveItemInPack.Enabled = true;
             }
@@ -291,8 +292,8 @@ namespace PixLogic
 
         private void buttonTransfert_Click(object sender, EventArgs e)
         {
-            string itemName = valItemName.Text;
-            addingItemInPack(itemName);
+            string refItem = valItemRef.Text;
+            addingItemInPack(refItem);
         }
 
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
@@ -318,7 +319,7 @@ namespace PixLogic
         {
             if (Helper.confirmation(Helper.REMOVE))
             {
-                int id= int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString());
+                int id= int.Parse(listBoxItem.CurrentRow.Cells[2].Value.ToString());
                 database.DeleteItemToPack(id);
                 setListBoxItemsOfPack(comboBoxPack.SelectedItem.ToString());
             }
