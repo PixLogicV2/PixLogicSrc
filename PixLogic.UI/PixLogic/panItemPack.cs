@@ -277,7 +277,7 @@ namespace PixLogic
             int id = int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString());
             if(!Helper.existReservationItem(true, id) && Helper.confirmation(Helper.DELETE))
             {
-                database.DeleteItem(valItemName.Text);
+                database.DeleteItem(id);
                 setTableItem(database.GetAllItems());
                 setComboBoxPack();
             }

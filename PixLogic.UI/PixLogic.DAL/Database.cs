@@ -81,9 +81,9 @@ namespace PixLogic.DAL
         {
            return container.get("contain_item").containItem(itemName);
         }
-        public void DeleteItem(string nameToDelete)
+        public void DeleteItem(int id)
         {
-            container.get("delete_item").deleteItem(nameToDelete);
+            container.get("delete_item").deleteItem(id);
         }
         public void DeleteItemToPack(string itemName)
         {
