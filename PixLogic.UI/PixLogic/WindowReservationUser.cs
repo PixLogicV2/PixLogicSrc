@@ -12,6 +12,7 @@ namespace PixLogic
         private int idUser;
         private List<string> materiels;
         private List<Item> listInTable;
+        private List<Item> bigList;
 
         public WindowReservationUser(int id)
         {
@@ -19,8 +20,22 @@ namespace PixLogic
             idUser = id;
             materiels = new List<string>();
             listInTable = new List<Item>();
+            bigList = new List<Item>();
             setInfosUser();
         }
+
+        private void setComboBoxCategorie()
+        {
+            comboBoxCategorie.Items.Clear();
+            List<Categorie> list = database.GetAllCategorieByListItem(listInTable);
+
+            comboBoxCategorie.Items.Add("");
+            foreach (var cat in list)
+            {
+                comboBoxCategorie.Items.Add(cat.name);
+            }
+        }
+
 
         private void setInfosUser()
         {
@@ -31,18 +46,26 @@ namespace PixLogic
             valCrédits.Text = u.credits.ToString();
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        private List<Item> listFiltree()
         {
             List<Item> list = Helper.getAllItemsDispoByDate(dateTimeBegin.Value.Date, dateTimeEnd.Value.Date);
-            foreach(Item i in list)
+            foreach (Item i in list)
             {
                 if (i.categorie.level > (database.GetUserById(idUser).userClass.level)) list.Remove(i);
-                if (i.dispo == false)list.Remove(i);
+                if (i.dispo == false) list.Remove(i);
             }
-            listInTable = list;
+
+            return list;
+        }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            bigList = listFiltree();
+            listInTable = listFiltree();
             setTableItem(listInTable);
             dataGridListeItem.Rows.Clear();
             materiels.Clear();
+            setComboBoxCategorie();
             calcul();
         }
 
@@ -195,7 +218,7 @@ namespace PixLogic
             for (int i = 0; i < dataGridListeItem.Rows.Count; i++)
             {
                 //A modifier
-                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[1].Value.ToString(), pack.ReservableId);
+                database.AddItemToPack(dataGridListeItem.Rows[i].Cells[0].Value.ToString(), pack.ReservableId);
             }
 
             if(reserv)
@@ -216,18 +239,34 @@ namespace PixLogic
 
         private void comboBoxCategorie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*int idCat;
+            int idCat;
             if (!comboBoxCategorie.SelectedItem.ToString().Equals(""))
             {
                 idCat = database.GetIdCategorie(comboBoxCategorie.SelectedItem.ToString());
-                listInTable = database.GetAllItemsInCategorie(idCat);
+                listInTable = getAllItemsInCategorieByList(idCat, bigList);
                 setTableItem(listInTable);
             }
             else
             {
-                listInTable = database.GetAllItems();
+                listInTable = bigList;
                 setTableItem(listInTable);
-            }*/
+            }
+        }
+
+        private List<Item> getAllItemsInCategorieByList(int idCat, List<Item> l)
+        {
+            List<Item> items = new List<Item>();
+            Categorie categorie = database.GetCategorieById(idCat);
+
+            foreach(Item item in l)
+            {
+                if(item.categorie.CategorieId == idCat)
+                {
+                    items.Add(item);
+                }
+            }
+
+            return items;
         }
     }
 }

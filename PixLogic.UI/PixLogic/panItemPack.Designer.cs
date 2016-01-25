@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,6 +69,7 @@
             this.listBoxItem = new System.Windows.Forms.DataGridView();
             this.refe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.libellee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -264,8 +265,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -483,19 +484,25 @@
             // 
             // listBoxItem
             // 
+            this.listBoxItem.AllowDrop = true;
             this.listBoxItem.AllowUserToAddRows = false;
             this.listBoxItem.AllowUserToDeleteRows = false;
+            this.listBoxItem.AllowUserToResizeRows = false;
             this.listBoxItem.BackgroundColor = System.Drawing.Color.White;
             this.listBoxItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listBoxItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.refe,
-            this.libellee});
+            this.libellee,
+            this.idL});
             this.listBoxItem.Location = new System.Drawing.Point(530, 56);
             this.listBoxItem.Name = "listBoxItem";
             this.listBoxItem.ReadOnly = true;
             this.listBoxItem.RowHeadersVisible = false;
+            this.listBoxItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listBoxItem.Size = new System.Drawing.Size(150, 193);
             this.listBoxItem.TabIndex = 42;
+            this.listBoxItem.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBoxItem_DragDrop);
+            this.listBoxItem.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBoxItem_DragEnter);
             // 
             // refe
             // 
@@ -510,6 +517,13 @@
             this.libellee.HeaderText = "Libellé";
             this.libellee.Name = "libellee";
             this.libellee.ReadOnly = true;
+            // 
+            // idL
+            // 
+            this.idL.HeaderText = "Id";
+            this.idL.Name = "idL";
+            this.idL.ReadOnly = true;
+            this.idL.Visible = false;
             // 
             // panItemPack
             // 
@@ -589,5 +603,6 @@
         private System.Windows.Forms.DataGridView listBoxItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn refe;
         private System.Windows.Forms.DataGridViewTextBoxColumn libellee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idL;
     }
 }
