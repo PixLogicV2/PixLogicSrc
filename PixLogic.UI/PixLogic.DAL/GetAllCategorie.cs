@@ -40,7 +40,7 @@ namespace PixLogic.DAL
             {
                 foreach (Item i in items)
                 {
-                    if( c.name.Equals(i.categorie.name))results.Add(c);
+                    if( c.name.Equals(i.categorie.name) && (!results.Contains(c)))results.Add(c);
                 }
             }
             return results;
