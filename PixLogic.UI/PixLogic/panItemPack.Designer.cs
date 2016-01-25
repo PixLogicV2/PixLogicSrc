@@ -426,7 +426,7 @@
             // 
             // buttonManagePack
             // 
-            this.buttonManagePack.Image = global::PixLogic.Properties.Resources.general_icon;
+            this.buttonManagePack.Image = global::PixLogic.Properties.Resources._params;
             this.buttonManagePack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonManagePack.Location = new System.Drawing.Point(543, 401);
             this.buttonManagePack.Name = "buttonManagePack";

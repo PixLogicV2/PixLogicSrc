@@ -32,6 +32,12 @@ namespace PixLogic
         public static readonly string ITEM = "Matériel";
         public static bool CLOSING;
 
+        public static void help()
+        {
+            database.AddUserClass("1EREA", 20, 5);
+            database.AddUserClass("TER B", 20, 5);
+        }
+
         public static bool fieldsAreEmpty(bool withMessageBox, params string[] args)
         {
             bool result = false;
@@ -572,15 +578,21 @@ namespace PixLogic
         }
         public static bool exportCSV(DataGridView table, string path)
         {
+            
             try
             {
+
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, false, Encoding.Unicode))
                 {
                     //string line = "";
                     var csv = new CsvWriter(file);
+                    csv.Configuration.Delimiter = ";";
                     foreach (DataGridViewColumn col in table.Columns)
                     {
-                        csv.WriteField(col.HeaderText.ToString());
+                        if (col.HeaderText != null)
+                            csv.WriteField(col.HeaderText.ToString());
+                        else
+                            csv.WriteField("");
                     }
                     csv.NextRecord();
 
@@ -589,21 +601,24 @@ namespace PixLogic
                         //line = "";
                         foreach (DataGridViewCell cell in row.Cells)
                         {
-                            csv.WriteField(cell.Value.ToString());
+                            if (cell.Value != null)
+                                csv.WriteField(cell.Value.ToString());
+                            else
+                                csv.WriteField("");
                         }
                         csv.NextRecord();
                     }
                 }
-
             }
             catch(Exception e)
             {
-                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Export: "+e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             
             return true;
         }
+
         public static bool existReservationManager(string pseudo)
         {
             if (database.ExistReservationManager(pseudo) == true)
@@ -613,205 +628,46 @@ namespace PixLogic
             }
             else return false;
         }
-        public static List<Item> importCSVitem(TextBox path, bool virgule, bool entete)
+
+
+        public static List<string[]> importCSV(TextBox path, bool virgule, bool entete)
         {
-            List<Item> items = new List<Item>();
+            List<string[]> infos = new List<string[]>();
+            bool firstRound = false;
+
             try
             {
                 Encoding encod = GetFileEncoding(path.Text);
                 using (System.IO.StreamReader file = new System.IO.StreamReader(path.Text, encod))
                 {
-                    
-                    if(!entete)
+                    var csv = new CsvReader(file);
+                    csv.Configuration.Delimiter = virgule ? "," : ";";
+
+                    while (csv.Read())
                     {
-                        var csv = new CsvReader(file);
-                        csv.Configuration.Delimiter = virgule ? "," : ";";
-                        while (csv.Read())
+                        if (!entete && !firstRound)
+                            infos.Add(csv.FieldHeaders);
+
+                        string[] record = new string[csv.FieldHeaders.Count()];
+                        for (int i = 0; i < record.Count(); i++)
                         {
-                            List<String> headers = new List<string>();
-                            foreach (string h in csv.FieldHeaders)
-                            {
-                                //Console.Write(h + " | ");
-                                headers.Add(h);
-                                
-                            }
-                            Item u = new Item();
-                            try
-                            {
-                                u.reference = headers.ElementAt<string>(0);
-                                u.name = headers.ElementAt<string>(1);
-                                u.categorie = new Categorie();
-                                u.categorie.name = headers.ElementAt<string>(2);
-                                u.price = int.Parse(headers.ElementAt<string>(3));
-                                u.quantity = int.Parse(headers.ElementAt<string>(4));
-                            }
-                            catch (Exception e) {
-                                MessageBox.Show("Le fichier importé ne correspond pas à celui attendu. Vérifiez que tous les champs obligatoires sont bien renseignés dans votre fichier et qu'ils correspondent bien aux types attendus.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                path.Text = "";
-                                return new List<Item>();
-                            }
-                            try
-                            {
-                                u.description = headers.ElementAt<string>(5);
-                            }
-                            catch (Exception e) { }
-                            
-                            items.Add(u);
-                            break;
+                            record[i] = csv.GetField(i).ToString();
                         }
-                        csv.Dispose();
-                    }
-                    
-                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path.Text, encod))
-                    {
-                        var csv2 = new CsvReader(fi);
-                        csv2.Configuration.Delimiter = virgule ? "," : ";";
-                        while (csv2.Read())
-                        {
-                            Item u = new Item();
-                            try
-                            {
-                                u.reference = csv2.GetField(0);
-                                u.name = csv2.GetField(1);
-                                u.categorie = new Categorie();
-                                u.categorie.name = csv2.GetField(2);
-                                u.price = int.Parse(csv2.GetField(3).ToString());
-                                u.quantity = int.Parse(csv2.GetField(4).ToString());
-                            }
-                            catch (Exception e)
-                            {
-                                MessageBox.Show("Le fichier importé ne correspond pas à celui attendu. Vérifiez que tous les champs obligatoires sont bien renseignés dans votre fichier et qu'ils correspondent bien aux types attendus.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                path.Text = "";
-                                return new List<Item>();
-                            }
-                            try
-                            {
-                                u.description = csv2.GetField(5).ToString();
-                            }
-                            catch (Exception e) { }
+                        infos.Add(record);
 
-                            items.Add(u);
-                            //Console.WriteLine(id + " | " + nom + " | " + prenom);
-                        }
-                        csv2.Dispose();
-                    }
-                    
-                }
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                path.Text = "";
-            }
-
-            return items;
-        }
-
-        public static List<User> importCSVuser(TextBox path, bool virgule, bool entete)
-        {
-            List<User> users = new List<User>();
-            
-            try
-            {
-                Encoding encod = GetFileEncoding(path.Text);
-                using (System.IO.StreamReader file = new System.IO.StreamReader(path.Text, encod))
-                {
-
-                    if (!entete)
-                    {
-                        var csv = new CsvReader(file);
-                        csv.Configuration.Delimiter = virgule ? "," : ";";
-                        while (csv.Read())
-                        {
-                            List<String> headers = new List<string>();
-                            foreach (string h in csv.FieldHeaders)
-                            {
-                                //Console.Write(h + " | ");
-                                headers.Add(h);
-
-                            }
-                            User u = new User();
-                            try
-                            {
-                                u.userClass = new UserClass();
-                                u.userClass.name = headers.ElementAt<string>(0);
-                                u.name = headers.ElementAt<string>(1);
-                                u.nickname = headers.ElementAt<string>(2);
-                            }
-                            catch(Exception e) {
-                                MessageBox.Show("Le fichier importé ne correspond pas à celui attendu.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                path.Text = "";
-                                return new List<User>();
-                            }
-                            
-                            try
-                            {
-                                u.mail = headers.ElementAt<string>(3);
-                            }
-                            catch (Exception e) { }
-                            try
-                            {
-                                u.phoneNumber = headers.ElementAt<string>(4);
-                            }
-                            catch (Exception e) { }
-
-                            users.Add(u);
-                            break;
-                        }
-                        csv.Dispose();
+                        firstRound = true;
                     }
 
-                    using (System.IO.StreamReader fi = new System.IO.StreamReader(path.Text, encod))
-                    {
-                        var csv2 = new CsvReader(fi);
-                        csv2.Configuration.Delimiter = virgule ? "," : ";";
-                        while (csv2.Read())
-                        {
-                            User u = new User();
-                            try
-                            {
-                                u.userClass = new UserClass();
-                                u.userClass.name = csv2.GetField(0).ToString();
-                                u.name = csv2.GetField(1).ToString();
-                                u.nickname = csv2.GetField(2).ToString();
-                            }
-                            catch (Exception e)
-                            {
-                                MessageBox.Show("Le fichier importé ne correspond pas à celui attendu.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                path.Text = "";
-                                return new List<User>();
-                            }
-
-                            try
-                            {
-                                var mail = csv2.GetField(3);
-                                u.mail = mail;
-                            }
-                            catch (Exception e) { }
-                            try
-                            {
-                                var tel = csv2.GetField(4);
-                                u.phoneNumber = tel;
-                            }
-                            catch (Exception e) { }
-
-                            users.Add(u);
-                            //Console.WriteLine(id + " | " + nom + " | " + prenom);
-                        }
-                        csv2.Dispose();
-                    }
+                    csv.Dispose();
 
                 }
-
-            }
-            catch (Exception e)
+            }catch(Exception ex)
             {
-                MessageBox.Show(e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                path.Text = "";
+                MessageBox.Show(ex.Message+".", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                path.Text = string.Empty;
             }
 
-            return users;
+            return infos;
         }
 
         public static bool existReservationUser(bool withMessageBox,int userId)

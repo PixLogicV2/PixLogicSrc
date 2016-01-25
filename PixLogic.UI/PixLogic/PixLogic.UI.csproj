@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
@@ -560,6 +561,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pocket_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\script2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utilisateur2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\params.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camcorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

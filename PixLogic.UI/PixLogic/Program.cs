@@ -15,6 +15,7 @@ namespace PixLogic
         static void Main()
         {
             //Helper.initBase();
+            
             try
             {
                 if (Helper.database.ExistManager() == false)
@@ -22,6 +23,7 @@ namespace PixLogic
                     Helper.database.AddManager("admin", "admin", "admin", "0000000000", "admin");
                 }
                 Helper.createUserSelectOnly();
+                Helper.help();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 

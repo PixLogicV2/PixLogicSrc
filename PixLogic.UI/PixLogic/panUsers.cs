@@ -111,7 +111,7 @@ namespace PixLogic
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            if (Helper.confirmation(Helper.DELETE) && Helper.existReservationUser(true, Convert.ToInt32(valUserId.Text)) == false)
+            if (!Helper.existReservationUser(true, Convert.ToInt32(valUserId.Text)) && Helper.confirmation(Helper.DELETE))
             {
                     database.DeleteUser(Convert.ToInt32(valUserId.Text));
                     setTableUsers(database.GetAllUsers());

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CsvHelper;
 using PixLogic.DAL;
+using System.Configuration;
+using System.IO;
 
 namespace PixLogic
 {
@@ -19,10 +21,11 @@ namespace PixLogic
         private Database database = Helper.database;
         private panUsers panU;
         private panItemPack panI;
-        private List<User> users;
-        private List<Item> items;
+        private List<string[]> informations;
         private List<Champs> listChamps;
         private List<int> indexWrongRows;
+        DataGridView wrong = new DataGridView();
+        DataGridView good = new DataGridView();
         private bool user;
 
         public WindowImport(panUsers p, panItemPack pi, List<Champs> c, bool u)
@@ -34,15 +37,13 @@ namespace PixLogic
             user = u;
             if (user)
             {
-                users = new List<User>();
                 Text = "Import - Utilisateurs";
             }
             else
             {
-                items = new List<Item>();
                 Text = "Import - Matériels";
             }
-
+            informations = new List<string[]>();
             indexWrongRows = new List<int>();
             init();
             setTableChamps();
@@ -93,133 +94,116 @@ namespace PixLogic
             {
                 valChemin.Text = openFileDialog.FileName;
                 Cursor.Current = Cursors.WaitCursor;
-                if (user)
-                    users = Helper.importCSVuser(valChemin, radioVirgule.Checked, radioYes.Checked);
-                else
-                    items = Helper.importCSVitem(valChemin, radioVirgule.Checked, radioYes.Checked);
+                informations = Helper.importCSV(valChemin, radioVirgule.Checked, radioYes.Checked);
 
                 Cursor.Current = Cursors.Default;
             }
         }
 
-        private void setTableImportUser(List<User> us)
+        private void setTableImport(List<string[]> inf)
         {
-            List<User> users = us;
+            List<string[]> infos = inf;
             indexWrongRows = new List<int>();
             dataGridImport.Rows.Clear();
-            if (dataGridImport.Columns.Count < nbColumns)
-            {
-                for (int i = 0; i < users.Count; i++)
-                {
-                    User u = users.ElementAt(i);
-                    if (dataGridImport.Columns.Count == 3)
-                    {
-                        dataGridImport.Rows.Add(u.userClass.name, u.name, u.nickname);
-                    }
-                    else if (dataGridImport.Columns.Count == 4)
-                    {
-                        dataGridImport.Rows.Add(u.userClass.name, u.name, u.nickname, u.mail);
-                    }
-                    if (rowUserIsCorrect(u.userClass.name, u.name, u.nickname))
-                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.White;
-                    else
-                    {
-                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
-                        indexWrongRows.Add(i);
-                    }
-                }
-            }
-            else
-            {
-                for (int i = 0; i < users.Count; i++)
-                {
-                    User u = users.ElementAt(i);
-                    dataGridImport.Rows.Add(u.userClass.name, u.name, u.nickname, u.mail, u.phoneNumber);
-                    if (rowUserIsCorrect(u.userClass.name, u.name, u.nickname))
-                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.White;
-                    else
-                    {
-                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
-                        indexWrongRows.Add(i);
-                    }
-                }
-            }
 
+            int nbChampsTable = dataGridImport.ColumnCount;
+            for (int i = 0; i < infos.Count; i++)
+            {
+                string[] info = new string[nbChampsTable];
+                for(int j = 0; j < nbChampsTable; j++)
+                {
+                    if (infos.ElementAt(i).Count() > j)
+                        info[j] = infos.ElementAt(i)[j];
+                    else
+                        info[j] = string.Empty;
+                }
+                dataGridImport.Rows.Insert(i, info);
+                if (user)
+                    checkRowUser(info);
+                else
+                    checkRowItem(info);
+            }
             if (indexWrongRows.Count > 0)
             {
                 MessageBox.Show("Il y'a " + indexWrongRows.Count + " lignes qui ne respectent pas les valeurs attendues.\nCes lignes ne seront pas importées.\n\nMerci de lire les valeurs attendues dans les informations sur l'import.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-
         }
 
-        private void setTableImportItem(List<Item> it)
+        private void checkRowUser(string[] info)
         {
-            List<Item> items = it;
-            indexWrongRows = new List<int>();
-            dataGridImport.Rows.Clear();
-            if (dataGridImport.Columns.Count < nbColumns)
+            bool wrong = false;
+            //Classe, Nom, Prénom, email, tel
+            //Vérification des champs vides....
+            int indexLastRow = dataGridImport.RowCount - 1;
+            for (int i = 0; i < info.Count(); i++)
             {
-                for (int i = 0; i < items.Count; i++)
+                if(Helper.fieldsAreEmpty(false, info[i]) && (i < listChamps.Count(c => c.Oblige)))
                 {
-                    Item u = items.ElementAt(i);
-                    if (dataGridImport.Columns.Count == 5)
-                    {
-                        dataGridImport.Rows.Add(u.reference, u.name, u.categorie.name, u.price, u.quantity);
-                    }
-                    if (rowItemIsCorrect(u.reference, u.name, u.categorie.name))
-                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.White;
-                    else
-                    {
-                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
-                        indexWrongRows.Add(i);
-                    }
+                    dataGridImport.Rows[indexLastRow].Cells[i].Style.BackColor = Color.Red;
+                    wrong = true;
                 }
             }
-            else
+            //Vérification de l'existance de la classe...
+            if(!Helper.userClassExist(false, info[0]))
             {
-                for (int i = 0; i < items.Count; i++)
+                dataGridImport.Rows[indexLastRow].Cells[0].Style.BackColor = Color.Red;
+                wrong = true;
+            }
+
+            if(wrong)
+                indexWrongRows.Add(indexLastRow);
+        }
+
+        private void checkRowItem(string[] info)
+        {
+            bool wrong = false;
+            //Réf, Nom, Categorie, prix, qté, desc
+            //Vérification des champs vides....
+            int indexLastRow = dataGridImport.RowCount - 1;
+            for (int i = 0; i < info.Count(); i++)
+            {
+                if (Helper.fieldsAreEmpty(false, info[i]) && (i < listChamps.Count(c => c.Oblige)))
                 {
-                    Item u = items.ElementAt(i);
-                    dataGridImport.Rows.Add(u.reference, u.name, u.categorie.name, u.price, u.quantity, u.description);
-                    if (rowItemIsCorrect(u.reference, u.name, u.categorie.name))
-                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.White;
-                    else
-                    {
-                        dataGridImport.Rows[dataGridImport.RowCount - 1].DefaultCellStyle.BackColor = Color.Red;
-                        indexWrongRows.Add(i);
-                    }
+                    dataGridImport.Rows[indexLastRow].Cells[i].Style.BackColor = Color.Red;
+                    wrong = true;
                 }
             }
 
-            if (indexWrongRows.Count > 0)
+            //Vérification de l'existance de la référence...
+            if (Helper.referenceExist(false, info[0]))
             {
-                MessageBox.Show("Il y'a " + indexWrongRows.Count + " lignes qui ne respectent pas les valeurs attendues.\nCes lignes ne seront pas importées.\n\nMerci de lire les valeurs attendues dans les informations sur l'import.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dataGridImport.Rows[indexLastRow].Cells[0].Style.BackColor = Color.Red;
+                wrong = true;
             }
+
+            //Vérification de l'existance de la catégorie...
+            if (!Helper.categorieExist(false, info[2]))
+            {
+                dataGridImport.Rows[indexLastRow].Cells[2].Style.BackColor = Color.Red;
+                wrong = true;
+            }
+
+            //Vérification du type nombre dans les champs concernés
+            int valeur = 0;
+            bool resultOfPrice = int.TryParse(info[3], out valeur);
+            bool resultOfQty = int.TryParse(info[4], out valeur);
+
+            if(!resultOfPrice)
+            {
+                dataGridImport.Rows[indexLastRow].Cells[3].Style.BackColor = Color.Red;
+                wrong = true;
+            }
+            if (!resultOfQty)
+            {
+                dataGridImport.Rows[indexLastRow].Cells[4].Style.BackColor = Color.Red;
+                wrong = true;
+            }
+
+            if (wrong)
+                indexWrongRows.Add(indexLastRow);
         }
 
-        private bool rowUserIsCorrect(string classe, string nom, string prenom)
-        {
-            bool result = true;
-
-            if (Helper.fieldsAreEmpty(false, classe, nom, prenom))
-                return false;
-            if (!Helper.userClassExist(false, classe))
-                return false;
-
-            return result;
-        }
-        private bool rowItemIsCorrect(string reference, string nom, string categorie)
-        {
-            bool result = true;
-
-            if (Helper.fieldsAreEmpty(false, reference, nom, categorie))
-                return false;
-            if (!Helper.categorieExist(false, categorie))
-                return false;
-
-            return result;
-        }
         private void buttonOk_Click(object sender, EventArgs e)
         {
             if(valChemin.Text.Equals(string.Empty))
@@ -239,17 +223,14 @@ namespace PixLogic
                 }
                 i++;
             }
-            if (user)
-                setTableImportUser(users);
-            else
-                setTableImportItem(items);
-
+            setTableImport(informations);
             valWrongLine.Text = indexWrongRows.Count + " / " + dataGridImport.Rows.Count;
             Cursor = Cursors.Default;
         }
 
         private void buttonImporter_Click(object sender, EventArgs e)
         {
+
             if(dataGridImport.Rows.Count > 0)
             {
                 if(dataGridImport.Rows.Count == indexWrongRows.Count)
@@ -259,48 +240,59 @@ namespace PixLogic
                 }
                 else
                 {
-                    bool result = false;
-                    DialogResult resultBox = MessageBox.Show("Il ya des lignes erronées dans la liste d'éléments. Seules les lignes valides seront importées.\nVoulez-vous continuer l'import ?",
+                    bool result = true;
+                    if(indexWrongRows.Count > 0)
+                    {
+                        DialogResult resultBox = MessageBox.Show("Il ya des lignes erronées dans la liste d'éléments. Seules les lignes valides seront importées.\nVoulez-vous continuer l'import ?",
                         "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    result = (resultBox == DialogResult.Yes) ? true : false;
+                        result = (resultBox == DialogResult.Yes) ? true : false;
+                    }
+                    
 
                     if(result)
                     {
                         Cursor = Cursors.WaitCursor;
-                        if (user)
+                        if (user) //Classe, Nom, Prénom, email, tel
                         {
-                            for (int i = 0; i < users.Count; i++)
+                            for (int i = 0; i < informations.Count; i++)
                             {
                                 if (!indexWrongRows.Contains(i))
                                 {
-                                    User u = users.ElementAt(i);
-                                    Image img = Properties.Resources.noprofil;
-                                    u.userClass = database.GetUserClassByName(u.userClass.name);
-                                    if (dataGridImport.ColumnCount == 3)
-                                    {
-                                        u.mail = "";
-                                        u.phoneNumber = "";
-                                    }
-                                    else if (dataGridImport.ColumnCount == 4)
-                                        u.phoneNumber = "";
+                                    string[] info = informations.ElementAt(i);
 
-                                    database.AddUser(u.name, u.nickname, u.mail, u.phoneNumber, img, u.userClass);
+                                    UserClass classe = database.GetUserClassByName(info[0]);
+                                    string nameUser = info[1];
+                                    string nickNameUser = info[2];
+                                    string email;
+                                    string tel;
+                                    try { email = info[3]; }catch(Exception ex) { email = ""; }
+                                    try { tel = info[4]; } catch (Exception ex) { tel = ""; }
+
+                                    Image img = Properties.Resources.noprofil;
+
+                                    database.AddUser(nameUser, nickNameUser, email, tel, img, classe);
                                 }
                             }
                         }
-                        else
+                        else //Réf, Nom, Categorie, prix, qté, desc
                         {
-                            for (int i = 0; i < items.Count; i++)
+                            for (int i = 0; i < informations.Count; i++)
                             {
                                 if (!indexWrongRows.Contains(i))
                                 {
-                                    Item u = items.ElementAt(i);
+                                    string[] info = informations.ElementAt(i);
+
+                                    string reference = info[0];
+                                    string nameItem = info[1];
+                                    Categorie categorie = database.GetCategorieByName(info[2]);
                                     Image img = Properties.Resources.noitem;
-                                    u.categorie = database.GetCategorieByName(u.categorie.name);
-                                    if (dataGridImport.ColumnCount == 5)
-                                        u.description = "";
-                                    u.dispo = true;
-                                    database.AddItem(u.name, u.description, u.dispo, u.price, img, u.reference, u.quantity, u.categorie);
+                                    int price = int.Parse(info[3]);
+                                    int qte = int.Parse(info[4]);
+                                    bool dispo = true;
+                                    string desc;
+                                    try { desc = info[4]; } catch (Exception ex) { desc = ""; }
+
+                                    database.AddItem(nameItem, desc, dispo, price, img, reference, qte, categorie);
                                 }
 
                             }
@@ -312,7 +304,9 @@ namespace PixLogic
                             panU.setTableUsers(database.GetAllUsers());
                         else
                             panI.setTableItem(database.GetAllItems());
+                        generateFiles();
                         this.Close();
+                        
                     }
                 }
                 
@@ -321,8 +315,6 @@ namespace PixLogic
             {
                 MessageBox.Show("Il n'ya aucun élément à importer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
         }
 
         private void pictureBoxInfo_MouseEnter(object sender, EventArgs e)
@@ -346,11 +338,74 @@ namespace PixLogic
             {
                 string info = "- Catégorie : \n\t* Vous devez préalablement créer les catégories avec les noms indiqués dans votre fichier si celles-ci n'existent pas.";
                 info += "\n\t* La valeur du nom de la catégorie dans votre fichier doit être non nul.";
-                info += "\n\n- Nom du matériel et Référence : \n\t* Le nom et la référence de chaque matériel doivent être non nuls.";
+                info += "\n\n- Nom du matériel et Référence : \n\t* Le nom et la référence de chaque matériel doivent être non nuls. La référence doit être unique.";
                 info += "\n\n- Prix et Quantité : \n\t* Le prix et la quantité de chaque matériel doivent être des entiers non nuls.";
                 info += "\n\n Autres champs : \n\t* Les autres champs sont facultatifs.";
                 MessageBox.Show(info, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void generateFiles()
+        {
+            wrong = new DataGridView();
+            good = new DataGridView();
+
+            int num = 0;
+            foreach(DataGridViewColumn c in dataGridImport.Columns)
+            {
+                wrong.Columns.Add("w"+num, c.HeaderText);
+                good.Columns.Add("g"+num, c.HeaderText);
+                num++;
+            }
+
+            for(int i = 0; i < dataGridImport.RowCount; i++)
+            {
+                string[] info = new string[dataGridImport.Rows[i].Cells.Count];
+                for (int j = 0; j < dataGridImport.Rows[i].Cells.Count; j++)
+                {
+                    info[j] = dataGridImport.Rows[i].Cells[j].Value.ToString();
+                }
+
+                if (indexWrongRows.Contains(i))
+                {
+                    wrong.Rows.Add(info);
+                }
+                else
+                {
+                    good.Rows.Add(info);
+                }
+            }
+            
+            try
+            {
+
+                string nomRepPrinc;
+                if(user)
+                    nomRepPrinc = ConfigurationManager.AppSettings["nomRepImportUser"];
+                else
+                    nomRepPrinc = ConfigurationManager.AppSettings["nomRepImportItem"];
+
+                if (!Directory.Exists(nomRepPrinc))
+                    Directory.CreateDirectory(nomRepPrinc);
+
+                string nomRepCourant = Path.Combine(nomRepPrinc, DateTime.Now.ToString("dd MMM yyyy. HH-mm-ss"));
+                if (!Directory.Exists(nomRepCourant))
+                    Directory.CreateDirectory(nomRepCourant);
+
+                string nomWrongFile = ConfigurationManager.AppSettings["nomMauvaisFichier"];
+                string nomGoodFile = ConfigurationManager.AppSettings["nomBonFichier"];
+
+                string pathWrong = nomRepCourant + "\\" + nomWrongFile + ".csv";
+                string pathGood = nomRepCourant + "\\" + nomGoodFile + ".csv"; ;
+
+                Helper.exportCSV(wrong, pathWrong);
+                Helper.exportCSV(good, pathGood);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

@@ -31,32 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.barreDeMenu = new System.Windows.Forms.MenuStrip();
             this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panMenu = new System.Windows.Forms.Panel();
             this.buttonMenu = new System.Windows.Forms.Panel();
             this.labelMainMenu = new System.Windows.Forms.Label();
             this.labelFleche = new System.Windows.Forms.Label();
-            this.boutonEmprunt = new PixLogic.MenuButton();
-            this.boutonScript = new PixLogic.MenuButton();
-            this.boutonHistorique = new PixLogic.MenuButton();
-            this.boutonReservation = new PixLogic.MenuButton();
-            this.boutonMateriel = new PixLogic.MenuButton();
-            this.boutonUtilisateur = new PixLogic.MenuButton();
             this.barreDoutils = new System.Windows.Forms.ToolStrip();
-            this.BoutonActionBO = new System.Windows.Forms.ToolStripDropDownButton();
-            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolButtonExport = new System.Windows.Forms.ToolStripButton();
-            this.toolButtonImport = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolButtonDeconnexion = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolButtonRefresh = new System.Windows.Forms.ToolStripButton();
             this.panelAllPan = new System.Windows.Forms.Panel();
             this.panScript1 = new PixLogic.panScript();
             this.panUsers1 = new PixLogic.panUsers();
@@ -64,6 +49,21 @@
             this.panEmprunt1 = new PixLogic.panEmprunt();
             this.panReservation1 = new PixLogic.panReservation();
             this.panItemPack1 = new PixLogic.panItemPack();
+            this.BoutonActionBO = new System.Windows.Forms.ToolStripDropDownButton();
+            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolButtonExport = new System.Windows.Forms.ToolStripButton();
+            this.toolButtonImport = new System.Windows.Forms.ToolStripButton();
+            this.toolButtonDeconnexion = new System.Windows.Forms.ToolStripButton();
+            this.toolButtonRefresh = new System.Windows.Forms.ToolStripButton();
+            this.boutonEmprunt = new PixLogic.MenuButton();
+            this.boutonScript = new PixLogic.MenuButton();
+            this.boutonHistorique = new PixLogic.MenuButton();
+            this.boutonReservation = new PixLogic.MenuButton();
+            this.boutonMateriel = new PixLogic.MenuButton();
+            this.boutonUtilisateur = new PixLogic.MenuButton();
+            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barreDeMenu.SuspendLayout();
             this.panMenu.SuspendLayout();
             this.buttonMenu.SuspendLayout();
@@ -92,14 +92,6 @@
             this.connexionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.connexionToolStripMenuItem.Text = "Connexion";
             // 
-            // seDéconnecterToolStripMenuItem
-            // 
-            this.seDéconnecterToolStripMenuItem.Image = global::PixLogic.Properties.Resources.deconnexion;
-            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
-            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
-            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
-            // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -107,15 +99,6 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // paramètresToolStripMenuItem
-            // 
-            this.paramètresToolStripMenuItem.Image = global::PixLogic.Properties.Resources.parametres_icon;
-            this.paramètresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.paramètresToolStripMenuItem.Text = "Paramètres";
-            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -170,90 +153,6 @@
             this.labelFleche.TabIndex = 1;
             this.labelFleche.Text = "^";
             // 
-            // boutonEmprunt
-            // 
-            this.boutonEmprunt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonEmprunt.BackgroundImage")));
-            this.boutonEmprunt.Image = global::PixLogic.Properties.Resources.aa;
-            this.boutonEmprunt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonEmprunt.Location = new System.Drawing.Point(0, 213);
-            this.boutonEmprunt.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonEmprunt.Name = "boutonEmprunt";
-            this.boutonEmprunt.Size = new System.Drawing.Size(140, 70);
-            this.boutonEmprunt.TabIndex = 5;
-            this.boutonEmprunt.Text = "         EMPRUNT";
-            this.boutonEmprunt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonEmprunt.UseCompatibleTextRendering = true;
-            // 
-            // boutonScript
-            // 
-            this.boutonScript.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonScript.BackgroundImage")));
-            this.boutonScript.Image = global::PixLogic.Properties.Resources.script_icon2;
-            this.boutonScript.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonScript.Location = new System.Drawing.Point(0, 353);
-            this.boutonScript.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonScript.Name = "boutonScript";
-            this.boutonScript.Size = new System.Drawing.Size(140, 70);
-            this.boutonScript.TabIndex = 4;
-            this.boutonScript.Text = "         SCRIPT";
-            this.boutonScript.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonScript.UseCompatibleTextRendering = true;
-            // 
-            // boutonHistorique
-            // 
-            this.boutonHistorique.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonHistorique.BackgroundImage")));
-            this.boutonHistorique.Image = global::PixLogic.Properties.Resources.historique_icon2;
-            this.boutonHistorique.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonHistorique.Location = new System.Drawing.Point(0, 283);
-            this.boutonHistorique.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonHistorique.Name = "boutonHistorique";
-            this.boutonHistorique.Size = new System.Drawing.Size(140, 70);
-            this.boutonHistorique.TabIndex = 3;
-            this.boutonHistorique.Text = "         HISTORIQUE";
-            this.boutonHistorique.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonHistorique.UseCompatibleTextRendering = true;
-            // 
-            // boutonReservation
-            // 
-            this.boutonReservation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonReservation.BackgroundImage")));
-            this.boutonReservation.Image = global::PixLogic.Properties.Resources.reservation_icon2;
-            this.boutonReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonReservation.Location = new System.Drawing.Point(0, 143);
-            this.boutonReservation.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonReservation.Name = "boutonReservation";
-            this.boutonReservation.Size = new System.Drawing.Size(140, 70);
-            this.boutonReservation.TabIndex = 2;
-            this.boutonReservation.Text = "         RESERVATION";
-            this.boutonReservation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonReservation.UseCompatibleTextRendering = true;
-            // 
-            // boutonMateriel
-            // 
-            this.boutonMateriel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMateriel.BackgroundImage")));
-            this.boutonMateriel.Image = global::PixLogic.Properties.Resources.camera_photo_icon;
-            this.boutonMateriel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonMateriel.Location = new System.Drawing.Point(0, 73);
-            this.boutonMateriel.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonMateriel.Name = "boutonMateriel";
-            this.boutonMateriel.Size = new System.Drawing.Size(140, 70);
-            this.boutonMateriel.TabIndex = 1;
-            this.boutonMateriel.Text = "         MATERIEL";
-            this.boutonMateriel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonMateriel.UseCompatibleTextRendering = true;
-            // 
-            // boutonUtilisateur
-            // 
-            this.boutonUtilisateur.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonUtilisateur.BackgroundImage")));
-            this.boutonUtilisateur.Image = global::PixLogic.Properties.Resources.client_icon2;
-            this.boutonUtilisateur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boutonUtilisateur.Location = new System.Drawing.Point(0, 3);
-            this.boutonUtilisateur.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonUtilisateur.Name = "boutonUtilisateur";
-            this.boutonUtilisateur.Size = new System.Drawing.Size(140, 70);
-            this.boutonUtilisateur.TabIndex = 0;
-            this.boutonUtilisateur.Text = "         UTILISATEUR";
-            this.boutonUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.boutonUtilisateur.UseCompatibleTextRendering = true;
-            // 
             // barreDoutils
             // 
             this.barreDoutils.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -273,64 +172,10 @@
             this.barreDoutils.TabIndex = 2;
             this.barreDoutils.Text = "barreDoutils";
             // 
-            // BoutonActionBO
-            // 
-            this.BoutonActionBO.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.utilisateurToolStripMenuItem,
-            this.matérielToolStripMenuItem});
-            this.BoutonActionBO.Image = ((System.Drawing.Image)(resources.GetObject("BoutonActionBO.Image")));
-            this.BoutonActionBO.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BoutonActionBO.Name = "BoutonActionBO";
-            this.BoutonActionBO.Size = new System.Drawing.Size(68, 39);
-            this.BoutonActionBO.Text = "Nouveau";
-            this.BoutonActionBO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // utilisateurToolStripMenuItem
-            // 
-            this.utilisateurToolStripMenuItem.AutoSize = false;
-            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user;
-            this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
-            this.utilisateurToolStripMenuItem.Text = "Utilisateur";
-            this.utilisateurToolStripMenuItem.Click += new System.EventHandler(this.utilisateurToolStripMenuItem_Click);
-            // 
-            // matérielToolStripMenuItem
-            // 
-            this.matérielToolStripMenuItem.AutoSize = false;
-            this.matérielToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_item;
-            this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
-            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
-            this.matérielToolStripMenuItem.Text = "Matériel";
-            this.matérielToolStripMenuItem.Click += new System.EventHandler(this.matérielToolStripMenuItem_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
-            // 
-            // toolButtonExport
-            // 
-            this.toolButtonExport.Image = global::PixLogic.Properties.Resources.exporter;
-            this.toolButtonExport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButtonExport.Name = "toolButtonExport";
-            this.toolButtonExport.Size = new System.Drawing.Size(54, 39);
-            this.toolButtonExport.Text = "Exporter";
-            this.toolButtonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolButtonExport.ToolTipText = "Exporter La liste du panneau actuel";
-            this.toolButtonExport.Click += new System.EventHandler(this.toolButtonExport_Click);
-            // 
-            // toolButtonImport
-            // 
-            this.toolButtonImport.Image = global::PixLogic.Properties.Resources.importer;
-            this.toolButtonImport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButtonImport.Name = "toolButtonImport";
-            this.toolButtonImport.Size = new System.Drawing.Size(57, 39);
-            this.toolButtonImport.Text = "Importer";
-            this.toolButtonImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolButtonImport.ToolTipText = "Importer des éléments dans le panneau actuel";
-            this.toolButtonImport.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator2
             // 
@@ -344,32 +189,10 @@
             this.toolStripLabel1.Text = "                                                                                 " +
     "                                                                ";
             // 
-            // toolButtonDeconnexion
-            // 
-            this.toolButtonDeconnexion.Image = ((System.Drawing.Image)(resources.GetObject("toolButtonDeconnexion.Image")));
-            this.toolButtonDeconnexion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButtonDeconnexion.Name = "toolButtonDeconnexion";
-            this.toolButtonDeconnexion.Size = new System.Drawing.Size(80, 39);
-            this.toolButtonDeconnexion.Text = "Déconnexion";
-            this.toolButtonDeconnexion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolButtonDeconnexion.ToolTipText = "Se déconnecter";
-            this.toolButtonDeconnexion.Click += new System.EventHandler(this.toolButtonDeconnexion_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 42);
-            // 
-            // toolButtonRefresh
-            // 
-            this.toolButtonRefresh.Image = global::PixLogic.Properties.Resources.reinit_icon;
-            this.toolButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButtonRefresh.Name = "toolButtonRefresh";
-            this.toolButtonRefresh.Size = new System.Drawing.Size(61, 39);
-            this.toolButtonRefresh.Text = "Rafraichir";
-            this.toolButtonRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolButtonRefresh.ToolTipText = "Rafraichir le panneau";
-            this.toolButtonRefresh.Click += new System.EventHandler(this.toolButtonRefresh_Click);
             // 
             // panelAllPan
             // 
@@ -444,6 +267,183 @@
             this.panItemPack1.Name = "panItemPack1";
             this.panItemPack1.Size = new System.Drawing.Size(690, 453);
             this.panItemPack1.TabIndex = 8;
+            // 
+            // BoutonActionBO
+            // 
+            this.BoutonActionBO.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.utilisateurToolStripMenuItem,
+            this.matérielToolStripMenuItem});
+            this.BoutonActionBO.Image = ((System.Drawing.Image)(resources.GetObject("BoutonActionBO.Image")));
+            this.BoutonActionBO.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BoutonActionBO.Name = "BoutonActionBO";
+            this.BoutonActionBO.Size = new System.Drawing.Size(68, 39);
+            this.BoutonActionBO.Text = "Nouveau";
+            this.BoutonActionBO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // utilisateurToolStripMenuItem
+            // 
+            this.utilisateurToolStripMenuItem.AutoSize = false;
+            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user;
+            this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.utilisateurToolStripMenuItem.Text = "Utilisateur";
+            this.utilisateurToolStripMenuItem.Click += new System.EventHandler(this.utilisateurToolStripMenuItem_Click);
+            // 
+            // matérielToolStripMenuItem
+            // 
+            this.matérielToolStripMenuItem.AutoSize = false;
+            this.matérielToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_item;
+            this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
+            this.matérielToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.matérielToolStripMenuItem.Text = "Matériel";
+            this.matérielToolStripMenuItem.Click += new System.EventHandler(this.matérielToolStripMenuItem_Click);
+            // 
+            // toolButtonExport
+            // 
+            this.toolButtonExport.Image = global::PixLogic.Properties.Resources.exporter;
+            this.toolButtonExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButtonExport.Name = "toolButtonExport";
+            this.toolButtonExport.Size = new System.Drawing.Size(54, 39);
+            this.toolButtonExport.Text = "Exporter";
+            this.toolButtonExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolButtonExport.ToolTipText = "Exporter La liste du panneau actuel";
+            this.toolButtonExport.Click += new System.EventHandler(this.toolButtonExport_Click);
+            // 
+            // toolButtonImport
+            // 
+            this.toolButtonImport.Image = global::PixLogic.Properties.Resources.importer;
+            this.toolButtonImport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButtonImport.Name = "toolButtonImport";
+            this.toolButtonImport.Size = new System.Drawing.Size(57, 39);
+            this.toolButtonImport.Text = "Importer";
+            this.toolButtonImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolButtonImport.ToolTipText = "Importer des éléments dans le panneau actuel";
+            this.toolButtonImport.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolButtonDeconnexion
+            // 
+            this.toolButtonDeconnexion.Image = ((System.Drawing.Image)(resources.GetObject("toolButtonDeconnexion.Image")));
+            this.toolButtonDeconnexion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButtonDeconnexion.Name = "toolButtonDeconnexion";
+            this.toolButtonDeconnexion.Size = new System.Drawing.Size(80, 39);
+            this.toolButtonDeconnexion.Text = "Déconnexion";
+            this.toolButtonDeconnexion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolButtonDeconnexion.ToolTipText = "Se déconnecter";
+            this.toolButtonDeconnexion.Click += new System.EventHandler(this.toolButtonDeconnexion_Click);
+            // 
+            // toolButtonRefresh
+            // 
+            this.toolButtonRefresh.Image = global::PixLogic.Properties.Resources.reinit_icon;
+            this.toolButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButtonRefresh.Name = "toolButtonRefresh";
+            this.toolButtonRefresh.Size = new System.Drawing.Size(61, 39);
+            this.toolButtonRefresh.Text = "Rafraichir";
+            this.toolButtonRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolButtonRefresh.ToolTipText = "Rafraichir le panneau";
+            this.toolButtonRefresh.Click += new System.EventHandler(this.toolButtonRefresh_Click);
+            // 
+            // boutonEmprunt
+            // 
+            this.boutonEmprunt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonEmprunt.BackgroundImage")));
+            this.boutonEmprunt.Image = global::PixLogic.Properties.Resources.aa;
+            this.boutonEmprunt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonEmprunt.Location = new System.Drawing.Point(0, 213);
+            this.boutonEmprunt.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonEmprunt.Name = "boutonEmprunt";
+            this.boutonEmprunt.Size = new System.Drawing.Size(140, 70);
+            this.boutonEmprunt.TabIndex = 5;
+            this.boutonEmprunt.Text = "         EMPRUNT";
+            this.boutonEmprunt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonEmprunt.UseCompatibleTextRendering = true;
+            // 
+            // boutonScript
+            // 
+            this.boutonScript.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonScript.BackgroundImage")));
+            this.boutonScript.Image = ((System.Drawing.Image)(resources.GetObject("boutonScript.Image")));
+            this.boutonScript.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonScript.Location = new System.Drawing.Point(0, 353);
+            this.boutonScript.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonScript.Name = "boutonScript";
+            this.boutonScript.Size = new System.Drawing.Size(140, 70);
+            this.boutonScript.TabIndex = 4;
+            this.boutonScript.Text = "         SCRIPT";
+            this.boutonScript.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonScript.UseCompatibleTextRendering = true;
+            // 
+            // boutonHistorique
+            // 
+            this.boutonHistorique.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonHistorique.BackgroundImage")));
+            this.boutonHistorique.Image = global::PixLogic.Properties.Resources.historique_icon2;
+            this.boutonHistorique.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonHistorique.Location = new System.Drawing.Point(0, 283);
+            this.boutonHistorique.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonHistorique.Name = "boutonHistorique";
+            this.boutonHistorique.Size = new System.Drawing.Size(140, 70);
+            this.boutonHistorique.TabIndex = 3;
+            this.boutonHistorique.Text = "         HISTORIQUE";
+            this.boutonHistorique.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonHistorique.UseCompatibleTextRendering = true;
+            // 
+            // boutonReservation
+            // 
+            this.boutonReservation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonReservation.BackgroundImage")));
+            this.boutonReservation.Image = global::PixLogic.Properties.Resources.reservation_icon2;
+            this.boutonReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonReservation.Location = new System.Drawing.Point(0, 143);
+            this.boutonReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonReservation.Name = "boutonReservation";
+            this.boutonReservation.Size = new System.Drawing.Size(140, 70);
+            this.boutonReservation.TabIndex = 2;
+            this.boutonReservation.Text = "         RESERVATION";
+            this.boutonReservation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonReservation.UseCompatibleTextRendering = true;
+            // 
+            // boutonMateriel
+            // 
+            this.boutonMateriel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonMateriel.BackgroundImage")));
+            this.boutonMateriel.Image = ((System.Drawing.Image)(resources.GetObject("boutonMateriel.Image")));
+            this.boutonMateriel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonMateriel.Location = new System.Drawing.Point(0, 73);
+            this.boutonMateriel.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonMateriel.Name = "boutonMateriel";
+            this.boutonMateriel.Size = new System.Drawing.Size(140, 70);
+            this.boutonMateriel.TabIndex = 1;
+            this.boutonMateriel.Text = "         MATERIEL";
+            this.boutonMateriel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonMateriel.UseCompatibleTextRendering = true;
+            // 
+            // boutonUtilisateur
+            // 
+            this.boutonUtilisateur.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("boutonUtilisateur.BackgroundImage")));
+            this.boutonUtilisateur.Image = global::PixLogic.Properties.Resources.utilisateur2;
+            this.boutonUtilisateur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boutonUtilisateur.Location = new System.Drawing.Point(0, 3);
+            this.boutonUtilisateur.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonUtilisateur.Name = "boutonUtilisateur";
+            this.boutonUtilisateur.Size = new System.Drawing.Size(140, 70);
+            this.boutonUtilisateur.TabIndex = 0;
+            this.boutonUtilisateur.Text = "         UTILISATEUR";
+            this.boutonUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.boutonUtilisateur.UseCompatibleTextRendering = true;
+            // 
+            // seDéconnecterToolStripMenuItem
+            // 
+            this.seDéconnecterToolStripMenuItem.Image = global::PixLogic.Properties.Resources.deconnexion;
+            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
+            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
+            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
+            // 
+            // paramètresToolStripMenuItem
+            // 
+            this.paramètresToolStripMenuItem.Image = global::PixLogic.Properties.Resources.parametres_icon;
+            this.paramètresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
+            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.paramètresToolStripMenuItem.Text = "Paramètres";
+            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
             // MainWindow
             // 

@@ -304,7 +304,7 @@ namespace PixLogic
 
                     foreach (Item i in database.GetItemsInPack(reservation.reservable.ReservableId))
                     {
-                        materiels += ("\t- " + i.name + "\n");
+                        materiels += ("\t- " + i.name + " (Ref: " + i.reference + ")\n");
                     }
                 }
                 cell.ToolTipText = materiels;

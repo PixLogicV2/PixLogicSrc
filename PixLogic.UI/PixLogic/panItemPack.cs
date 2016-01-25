@@ -270,7 +270,7 @@ namespace PixLogic
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dataGridItem.CurrentRow.Cells[5].Value.ToString());
-            if(Helper.confirmation(Helper.DELETE) && Helper.existReservationItem(true, id) == false)
+            if(!Helper.existReservationItem(true, id) && Helper.confirmation(Helper.DELETE))
             {
                 database.DeleteItem(valItemName.Text);
                 setTableItem(database.GetAllItems());
