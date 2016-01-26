@@ -43,12 +43,6 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.panelAllPan = new System.Windows.Forms.Panel();
-            this.panScript1 = new PixLogic.panScript();
-            this.panUsers1 = new PixLogic.panUsers();
-            this.panLog1 = new PixLogic.panLog();
-            this.panEmprunt1 = new PixLogic.panEmprunt();
-            this.panReservation1 = new PixLogic.panReservation();
-            this.panItemPack1 = new PixLogic.panItemPack();
             this.BoutonActionBO = new System.Windows.Forms.ToolStripDropDownButton();
             this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.matérielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,14 +50,20 @@
             this.toolButtonImport = new System.Windows.Forms.ToolStripButton();
             this.toolButtonDeconnexion = new System.Windows.Forms.ToolStripButton();
             this.toolButtonRefresh = new System.Windows.Forms.ToolStripButton();
+            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boutonEmprunt = new PixLogic.MenuButton();
             this.boutonScript = new PixLogic.MenuButton();
             this.boutonHistorique = new PixLogic.MenuButton();
             this.boutonReservation = new PixLogic.MenuButton();
             this.boutonMateriel = new PixLogic.MenuButton();
             this.boutonUtilisateur = new PixLogic.MenuButton();
-            this.seDéconnecterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panScript1 = new PixLogic.panScript();
+            this.panUsers1 = new PixLogic.panUsers();
+            this.panLog1 = new PixLogic.panLog();
+            this.panEmprunt1 = new PixLogic.panEmprunt();
+            this.panReservation1 = new PixLogic.panReservation();
+            this.panItemPack1 = new PixLogic.panItemPack();
             this.barreDeMenu.SuspendLayout();
             this.panMenu.SuspendLayout();
             this.buttonMenu.SuspendLayout();
@@ -211,63 +211,6 @@
             this.panelAllPan.Size = new System.Drawing.Size(690, 455);
             this.panelAllPan.TabIndex = 3;
             // 
-            // panScript1
-            // 
-            this.panScript1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panScript1.Location = new System.Drawing.Point(0, 2);
-            this.panScript1.Margin = new System.Windows.Forms.Padding(4);
-            this.panScript1.Name = "panScript1";
-            this.panScript1.Size = new System.Drawing.Size(690, 452);
-            this.panScript1.TabIndex = 11;
-            // 
-            // panUsers1
-            // 
-            this.panUsers1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panUsers1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panUsers1.Location = new System.Drawing.Point(0, 2);
-            this.panUsers1.Margin = new System.Windows.Forms.Padding(2);
-            this.panUsers1.Name = "panUsers1";
-            this.panUsers1.Size = new System.Drawing.Size(688, 453);
-            this.panUsers1.TabIndex = 7;
-            // 
-            // panLog1
-            // 
-            this.panLog1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panLog1.Location = new System.Drawing.Point(2, 2);
-            this.panLog1.Margin = new System.Windows.Forms.Padding(2);
-            this.panLog1.Name = "panLog1";
-            this.panLog1.Size = new System.Drawing.Size(687, 452);
-            this.panLog1.TabIndex = 12;
-            // 
-            // panEmprunt1
-            // 
-            this.panEmprunt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panEmprunt1.Location = new System.Drawing.Point(2, 2);
-            this.panEmprunt1.Margin = new System.Windows.Forms.Padding(2);
-            this.panEmprunt1.Name = "panEmprunt1";
-            this.panEmprunt1.Size = new System.Drawing.Size(687, 451);
-            this.panEmprunt1.TabIndex = 10;
-            // 
-            // panReservation1
-            // 
-            this.panReservation1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panReservation1.Location = new System.Drawing.Point(2, 2);
-            this.panReservation1.Margin = new System.Windows.Forms.Padding(2);
-            this.panReservation1.Name = "panReservation1";
-            this.panReservation1.Size = new System.Drawing.Size(688, 453);
-            this.panReservation1.TabIndex = 9;
-            // 
-            // panItemPack1
-            // 
-            this.panItemPack1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panItemPack1.Location = new System.Drawing.Point(2, 2);
-            this.panItemPack1.Margin = new System.Windows.Forms.Padding(4);
-            this.panItemPack1.Name = "panItemPack1";
-            this.panItemPack1.Size = new System.Drawing.Size(690, 453);
-            this.panItemPack1.TabIndex = 8;
-            // 
             // BoutonActionBO
             // 
             this.BoutonActionBO.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -283,7 +226,7 @@
             // utilisateurToolStripMenuItem
             // 
             this.utilisateurToolStripMenuItem.AutoSize = false;
-            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_user;
+            this.utilisateurToolStripMenuItem.Image = global::PixLogic.Properties.Resources.utilisateur_add;
             this.utilisateurToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
             this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
@@ -293,7 +236,7 @@
             // matérielToolStripMenuItem
             // 
             this.matérielToolStripMenuItem.AutoSize = false;
-            this.matérielToolStripMenuItem.Image = global::PixLogic.Properties.Resources.add_item;
+            this.matérielToolStripMenuItem.Image = global::PixLogic.Properties.Resources.camcorder_add;
             this.matérielToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.matérielToolStripMenuItem.Name = "matérielToolStripMenuItem";
             this.matérielToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
@@ -343,6 +286,23 @@
             this.toolButtonRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolButtonRefresh.ToolTipText = "Rafraichir le panneau";
             this.toolButtonRefresh.Click += new System.EventHandler(this.toolButtonRefresh_Click);
+            // 
+            // seDéconnecterToolStripMenuItem
+            // 
+            this.seDéconnecterToolStripMenuItem.Image = global::PixLogic.Properties.Resources.deconnexion;
+            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
+            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
+            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
+            // 
+            // paramètresToolStripMenuItem
+            // 
+            this.paramètresToolStripMenuItem.Image = global::PixLogic.Properties.Resources.parametre3;
+            this.paramètresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
+            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.paramètresToolStripMenuItem.Text = "Paramètres";
+            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
             // 
             // boutonEmprunt
             // 
@@ -428,22 +388,62 @@
             this.boutonUtilisateur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.boutonUtilisateur.UseCompatibleTextRendering = true;
             // 
-            // seDéconnecterToolStripMenuItem
+            // panScript1
             // 
-            this.seDéconnecterToolStripMenuItem.Image = global::PixLogic.Properties.Resources.deconnexion;
-            this.seDéconnecterToolStripMenuItem.Name = "seDéconnecterToolStripMenuItem";
-            this.seDéconnecterToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.seDéconnecterToolStripMenuItem.Text = "Se déconnecter";
-            this.seDéconnecterToolStripMenuItem.Click += new System.EventHandler(this.seDéconnecterToolStripMenuItem_Click);
+            this.panScript1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panScript1.Location = new System.Drawing.Point(0, 2);
+            this.panScript1.Margin = new System.Windows.Forms.Padding(4);
+            this.panScript1.Name = "panScript1";
+            this.panScript1.Size = new System.Drawing.Size(690, 452);
+            this.panScript1.TabIndex = 11;
             // 
-            // paramètresToolStripMenuItem
+            // panUsers1
             // 
-            this.paramètresToolStripMenuItem.Image = global::PixLogic.Properties.Resources.parametres_icon;
-            this.paramètresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.paramètresToolStripMenuItem.Text = "Paramètres";
-            this.paramètresToolStripMenuItem.Click += new System.EventHandler(this.paramètresToolStripMenuItem_Click);
+            this.panUsers1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panUsers1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panUsers1.Location = new System.Drawing.Point(0, 2);
+            this.panUsers1.Margin = new System.Windows.Forms.Padding(2);
+            this.panUsers1.Name = "panUsers1";
+            this.panUsers1.Size = new System.Drawing.Size(688, 453);
+            this.panUsers1.TabIndex = 7;
+            // 
+            // panLog1
+            // 
+            this.panLog1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panLog1.Location = new System.Drawing.Point(2, 2);
+            this.panLog1.Margin = new System.Windows.Forms.Padding(2);
+            this.panLog1.Name = "panLog1";
+            this.panLog1.Size = new System.Drawing.Size(687, 452);
+            this.panLog1.TabIndex = 12;
+            // 
+            // panEmprunt1
+            // 
+            this.panEmprunt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panEmprunt1.Location = new System.Drawing.Point(2, 2);
+            this.panEmprunt1.Margin = new System.Windows.Forms.Padding(2);
+            this.panEmprunt1.Name = "panEmprunt1";
+            this.panEmprunt1.Size = new System.Drawing.Size(687, 451);
+            this.panEmprunt1.TabIndex = 10;
+            // 
+            // panReservation1
+            // 
+            this.panReservation1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panReservation1.Location = new System.Drawing.Point(2, 2);
+            this.panReservation1.Margin = new System.Windows.Forms.Padding(2);
+            this.panReservation1.Name = "panReservation1";
+            this.panReservation1.Size = new System.Drawing.Size(688, 453);
+            this.panReservation1.TabIndex = 9;
+            // 
+            // panItemPack1
+            // 
+            this.panItemPack1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panItemPack1.Location = new System.Drawing.Point(2, 2);
+            this.panItemPack1.Margin = new System.Windows.Forms.Padding(4);
+            this.panItemPack1.Name = "panItemPack1";
+            this.panItemPack1.Size = new System.Drawing.Size(690, 453);
+            this.panItemPack1.TabIndex = 8;
             // 
             // MainWindow
             // 

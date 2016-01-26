@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelListItemDispo = new System.Windows.Forms.Panel();
+            this.labelCat = new System.Windows.Forms.Label();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.labelSearch = new System.Windows.Forms.Label();
             this.dataGridItem = new System.Windows.Forms.DataGridView();
             this.reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,10 +70,7 @@
             this.valCreditsRestants = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonValider = new System.Windows.Forms.Button();
-            this.labelCat = new System.Windows.Forms.Label();
-            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.labelSearch = new System.Windows.Forms.Label();
+            this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.panelListItemDispo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,6 +81,7 @@
             // panelListItemDispo
             // 
             this.panelListItemDispo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelListItemDispo.Controls.Add(this.buttonCancelSearch);
             this.panelListItemDispo.Controls.Add(this.labelCat);
             this.panelListItemDispo.Controls.Add(this.comboBoxCategorie);
             this.panelListItemDispo.Controls.Add(this.textBoxSearch);
@@ -95,12 +97,52 @@
             this.panelListItemDispo.Size = new System.Drawing.Size(245, 477);
             this.panelListItemDispo.TabIndex = 0;
             // 
+            // labelCat
+            // 
+            this.labelCat.AutoSize = true;
+            this.labelCat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCat.Location = new System.Drawing.Point(6, 129);
+            this.labelCat.Name = "labelCat";
+            this.labelCat.Size = new System.Drawing.Size(63, 13);
+            this.labelCat.TabIndex = 39;
+            this.labelCat.Text = "Catégorie :";
+            // 
+            // comboBoxCategorie
+            // 
+            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.ItemHeight = 13;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(71, 126);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(165, 21);
+            this.comboBoxCategorie.Sorted = true;
+            this.comboBoxCategorie.TabIndex = 38;
+            this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(71, 100);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(132, 20);
+            this.textBoxSearch.TabIndex = 36;
+            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.Location = new System.Drawing.Point(6, 102);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(66, 13);
+            this.labelSearch.TabIndex = 35;
+            this.labelSearch.Text = "Recherche :";
+            // 
             // dataGridItem
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -330,8 +372,8 @@
             // 
             this.dataGridListeItem.AllowUserToAddRows = false;
             this.dataGridListeItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            this.dataGridListeItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataGridListeItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridListeItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridListeItem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridListeItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -469,45 +511,15 @@
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
-            // labelCat
+            // buttonCancelSearch
             // 
-            this.labelCat.AutoSize = true;
-            this.labelCat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCat.Location = new System.Drawing.Point(6, 129);
-            this.labelCat.Name = "labelCat";
-            this.labelCat.Size = new System.Drawing.Size(63, 13);
-            this.labelCat.TabIndex = 39;
-            this.labelCat.Text = "Catégorie :";
-            // 
-            // comboBoxCategorie
-            // 
-            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCategorie.FormattingEnabled = true;
-            this.comboBoxCategorie.ItemHeight = 13;
-            this.comboBoxCategorie.Location = new System.Drawing.Point(71, 126);
-            this.comboBoxCategorie.Name = "comboBoxCategorie";
-            this.comboBoxCategorie.Size = new System.Drawing.Size(165, 21);
-            this.comboBoxCategorie.Sorted = true;
-            this.comboBoxCategorie.TabIndex = 38;
-            this.comboBoxCategorie.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategorie_SelectedIndexChanged);
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.Location = new System.Drawing.Point(71, 100);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(165, 20);
-            this.textBoxSearch.TabIndex = 36;
-            this.textBoxSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyUp);
-            // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(6, 102);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(66, 13);
-            this.labelSearch.TabIndex = 35;
-            this.labelSearch.Text = "Recherche :";
+            this.buttonCancelSearch.Image = global::PixLogic.Properties.Resources.cancel_icon;
+            this.buttonCancelSearch.Location = new System.Drawing.Point(209, 98);
+            this.buttonCancelSearch.Name = "buttonCancelSearch";
+            this.buttonCancelSearch.Size = new System.Drawing.Size(27, 23);
+            this.buttonCancelSearch.TabIndex = 40;
+            this.buttonCancelSearch.UseVisualStyleBackColor = true;
+            this.buttonCancelSearch.Click += new System.EventHandler(this.buttonCancelSearch_Click);
             // 
             // WindowReservationUser
             // 
@@ -588,5 +600,6 @@
         private System.Windows.Forms.ComboBox comboBoxCategorie;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.Button buttonCancelSearch;
     }
 }

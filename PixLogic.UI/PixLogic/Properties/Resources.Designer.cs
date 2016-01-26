@@ -203,6 +203,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap camcorder_add {
+            get {
+                object obj = ResourceManager.GetObject("camcorder_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap camera_photo {
             get {
                 object obj = ResourceManager.GetObject("camera-photo", resourceCulture);
@@ -503,6 +513,16 @@ namespace PixLogic.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap parametre3 {
+            get {
+                object obj = ResourceManager.GetObject("parametre3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap parametres_icon {
             get {
                 object obj = ResourceManager.GetObject("parametres_icon", resourceCulture);
@@ -626,6 +646,16 @@ namespace PixLogic.Properties {
         internal static System.Drawing.Bitmap supprimer_icon {
             get {
                 object obj = ResourceManager.GetObject("supprimer_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap utilisateur_add {
+            get {
+                object obj = ResourceManager.GetObject("utilisateur_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

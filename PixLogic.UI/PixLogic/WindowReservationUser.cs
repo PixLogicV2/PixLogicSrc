@@ -268,5 +268,14 @@ namespace PixLogic
 
             return items;
         }
+
+        private void buttonCancelSearch_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Text = "";
+            if (comboBoxCategorie.Items.Count > 0)
+                comboBoxCategorie.SelectedIndex = 0;
+
+            setTableItem(bigList);
+        }
     }
 }
