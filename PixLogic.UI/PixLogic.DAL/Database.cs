@@ -238,8 +238,7 @@ namespace PixLogic.DAL
         {
             container.get("add_reservation").addReservation(container.get("reservation_factory").build(isPack, beginDateReservation, endDateReservation,
                                                                                                         beginDateEmprunt, endDateEmprunt, user, element, manager));
-            container.get("add_reservation").removeCredit(user, element.price);
-        }
+            container.get("add_reservation").removeCredit(user, element.price);        }
 
         public bool CreditSuffisant(User user, Reservable res)
         {
