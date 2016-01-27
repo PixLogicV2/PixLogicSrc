@@ -374,6 +374,7 @@ namespace PixLogic
                 info += "\n\n- Nom du matériel et Référence : \n\t* Le nom et la référence de chaque matériel doivent être non nuls. La référence doit être unique.";
                 info += "\n\n- Prix et Quantité : \n\t* Le prix et la quantité de chaque matériel doivent être des entiers non nuls.";
                 info += "\n\n Autres champs : \n\t* Les autres champs sont facultatifs.";
+                info += "\n\n Forcer l'import : \n\t* les lignes qui pourront être forcées seront des lignes qui n'auront pour défaut que leur champs catégorie.";
                 MessageBox.Show(info, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
