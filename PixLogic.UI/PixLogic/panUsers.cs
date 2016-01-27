@@ -15,6 +15,7 @@ namespace PixLogic
     public partial class panUsers : UserControl
     {
         Database database;
+        private List<User> listInTable;
         private WindowMail mail;
         private Thread thread;
 
@@ -30,8 +31,24 @@ namespace PixLogic
 
         public void refresh()
         {
-            setTableUsers(database.GetAllUsers());
+            listInTable = database.GetAllUsers();
+            setTableUsers(listInTable);
+            setComboBoxClasse();
         }
+
+        private void setComboBoxClasse()
+        {
+            comboBoxClasse.Items.Clear();
+            List<UserClass> list = database.GetAllUserClass();
+
+            comboBoxClasse.Items.Add("");
+            foreach (var classe in list)
+            {
+                if(!comboBoxClasse.Items.Contains(classe.name))
+                    comboBoxClasse.Items.Add(classe.name);
+            }
+        }
+
         public void setTableUsers(List<User> l)
         {
             List<User> list = l;
@@ -70,7 +87,7 @@ namespace PixLogic
 
                 Image img = database.ByteArrayToImage(user.image);
                Helper.putImageInBox(pictureBoxUser, img);
-               
+                valNbElements.Text = Convert.ToString(dataGridUsers.RowCount);
             }
             else
             {
@@ -83,6 +100,7 @@ namespace PixLogic
                 valUserNickName.Text = "-";
                 pictureBoxUser.Image = null;
                 valUserId.Text = "-";
+                valNbElements.Text = "-";
             }
 
         }
@@ -133,7 +151,7 @@ namespace PixLogic
 
         private void textBoxSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            setTableUsers(database.GetAllUsersByString(textBoxSearch.Text));
+            setTableUsers(database.GetAllUsersByString(textBoxSearch.Text, listInTable));
         }
 
         private void buttonCancelSearch_Click(object sender, EventArgs e)
@@ -260,6 +278,27 @@ namespace PixLogic
             {
                 MessageBox.Show("Vous devez sélectionner un utilisateur.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void comboBoxClasse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboBoxClasse.SelectedItem.ToString().Equals(""))
+            {
+                UserClass classe = database.GetUserClassByName(comboBoxClasse.SelectedItem.ToString());
+                listInTable = getAllUserInClass(classe.UserClassId);
+                setTableUsers(listInTable);
+            }
+            else
+            {
+                listInTable = database.GetAllUsers();
+                setTableUsers(listInTable);
+            }
+        }
+
+        private List<User> getAllUserInClass(int idClass)
+        {
+            var users = database.GetAllUsers().Where(u => u.userClass.UserClassId == idClass);
+            return users.ToList();
         }
     }
 }

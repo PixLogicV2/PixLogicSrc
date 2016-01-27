@@ -116,8 +116,8 @@ namespace PixLogic
             }
             if (radioButtonReserver.Checked)
             {
-                DateTime debut = DateTime.Parse(dateTimeBegin.Value.ToString());
-                DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString());
+                DateTime debut = DateTime.Parse(dateTimeBegin.Value.ToString()).Date;
+                DateTime fin = DateTime.Parse(dateTimeEnd.Value.ToString()).Date;
                 DateTime ? debutEmprunt = null;
                 DateTime ? endEmprunt = null;
                 User user = database.GetUserById(int.Parse(dataGridUsersReservation.CurrentRow.Cells[0].Value.ToString()));
@@ -151,9 +151,9 @@ namespace PixLogic
             }
             else
             {
-                DateTime debutEmprunt = DateTime.Parse(dateTimeBegin.Value.ToString());
-                DateTime endEmprunt = DateTime.Parse(dateTimeEnd.Value.ToString());
-                if (debutEmprunt.Date != DateTime.Today)
+                DateTime debutEmprunt = DateTime.Parse(dateTimeBegin.Value.ToString()).Date;
+                DateTime endEmprunt = DateTime.Parse(dateTimeEnd.Value.ToString()).Date;
+                if (debutEmprunt.Date != DateTime.Today.Date)
                 {
                     MessageBox.Show("La date de début d'emprunt n'est pas la date du jour !", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
@@ -183,7 +183,7 @@ namespace PixLogic
                         && Helper.confirmationReservation(Helper.ADD))
                     {
                         if (database.CreditSuffisant(user, elem))
-                            database.AddReservation(isPack, debut, fin, debutEmprunt, endEmprunt, user, elem, manag);
+                            database.AddReservation(isPack, debut, fin, debutEmprunt.Date, endEmprunt.Date, user, elem, manag);
                         else MessageBox.Show("credits insuffisants", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 

@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.valWrongLine = new System.Windows.Forms.Label();
+            this.checkBoxForce = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridImport)).BeginInit();
             this.panel2.SuspendLayout();
@@ -375,11 +376,23 @@
             this.valWrongLine.TabIndex = 47;
             this.valWrongLine.Text = "-";
             // 
+            // checkBoxForce
+            // 
+            this.checkBoxForce.AutoSize = true;
+            this.checkBoxForce.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxForce.Location = new System.Drawing.Point(12, 551);
+            this.checkBoxForce.Name = "checkBoxForce";
+            this.checkBoxForce.Size = new System.Drawing.Size(101, 17);
+            this.checkBoxForce.TabIndex = 48;
+            this.checkBoxForce.Text = "Forcer l\'import";
+            this.checkBoxForce.UseVisualStyleBackColor = true;
+            // 
             // WindowImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 580);
+            this.Controls.Add(this.checkBoxForce);
             this.Controls.Add(this.valWrongLine);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -447,5 +460,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label valWrongLine;
+        private System.Windows.Forms.CheckBox checkBoxForce;
     }
 }

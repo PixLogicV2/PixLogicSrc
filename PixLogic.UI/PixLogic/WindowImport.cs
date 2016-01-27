@@ -38,6 +38,7 @@ namespace PixLogic
             if (user)
             {
                 Text = "Import - Utilisateurs";
+                checkBoxForce.Visible = false;
             }
             else
             {
@@ -228,10 +229,39 @@ namespace PixLogic
             Cursor = Cursors.Default;
         }
 
+        private void checkForceImport()
+        {
+            for(int i = 0; i < indexWrongRows.Count; i++)
+            {
+                if(dataGridImport.Rows[indexWrongRows.ElementAt(i)].Cells[2].Style.BackColor == Color.Red)
+                {
+                    if(nbOfWrong(dataGridImport.Rows[indexWrongRows.ElementAt(i)]) == 1)
+                    {
+                        string nomCat = dataGridImport.Rows[indexWrongRows.ElementAt(i)].Cells[2].Value.ToString();
+                        database.AddCategorie(nomCat, 1, "Une description");
+                        indexWrongRows.RemoveAt(i);
+                    }
+                }
+            }
+        }
+
+        private int nbOfWrong(DataGridViewRow row)
+        {
+            int result = 0;
+            foreach(DataGridViewCell c in row.Cells)
+            {
+                if (c.Style.BackColor == Color.Red)
+                    result++;
+            }
+            return result;
+        }
+
         private void buttonImporter_Click(object sender, EventArgs e)
         {
+            if (checkBoxForce.Checked)
+                checkForceImport();
 
-            if(dataGridImport.Rows.Count > 0)
+            if (dataGridImport.Rows.Count > 0)
             {
                 if(dataGridImport.Rows.Count == indexWrongRows.Count)
                 {
@@ -243,7 +273,7 @@ namespace PixLogic
                     bool result = true;
                     if(indexWrongRows.Count > 0)
                     {
-                        DialogResult resultBox = MessageBox.Show("Il ya des lignes erronées dans la liste d'éléments. Seules les lignes valides seront importées.\nVoulez-vous continuer l'import ?",
+                        DialogResult resultBox = MessageBox.Show("Il ya des lignes erronées dans la liste d'éléments. Seules les lignes valides (ou celles repondant aux attentes du forcage) seront importées.\nVoulez-vous continuer l'import ?",
                         "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         result = (resultBox == DialogResult.Yes) ? true : false;
                     }
@@ -252,6 +282,7 @@ namespace PixLogic
                     if(result)
                     {
                         Cursor = Cursors.WaitCursor;
+
                         if (user) //Classe, Nom, Prénom, email, tel
                         {
                             for (int i = 0; i < informations.Count; i++)
@@ -324,6 +355,8 @@ namespace PixLogic
             pictureBoxInfo.Cursor = Cursors.Hand;
         }
 
+        
+
         private void pictureBoxInfo_Click(object sender, EventArgs e)
         {
             if(user)
@@ -336,7 +369,7 @@ namespace PixLogic
             }
             else
             {
-                string info = "- Catégorie : \n\t* Vous devez préalablement créer les catégories avec les noms indiqués dans votre fichier si celles-ci n'existent pas.";
+                string info = "- Catégorie : \n\t* Vous devez préalablement créer les catégories avec les noms indiqués dans votre fichier si celles-ci n'existent pas. Celles-ci peuvent aussi être importées par le forcage.";
                 info += "\n\t* La valeur du nom de la catégorie dans votre fichier doit être non nul.";
                 info += "\n\n- Nom du matériel et Référence : \n\t* Le nom et la référence de chaque matériel doivent être non nuls. La référence doit être unique.";
                 info += "\n\n- Prix et Quantité : \n\t* Le prix et la quantité de chaque matériel doivent être des entiers non nuls.";

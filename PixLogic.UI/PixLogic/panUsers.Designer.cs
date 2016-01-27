@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panUsers));
             this.panTableUsers = new System.Windows.Forms.Panel();
+            this.comboBoxClasse = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelSearch = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
@@ -66,6 +68,8 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureReserver = new System.Windows.Forms.PictureBox();
+            this.valNbElements = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panTableUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).BeginInit();
             this.panNews.SuspendLayout();
@@ -78,6 +82,8 @@
             this.panTableUsers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panTableUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panTableUsers.Controls.Add(this.comboBoxClasse);
+            this.panTableUsers.Controls.Add(this.label1);
             this.panTableUsers.Controls.Add(this.buttonCancelSearch);
             this.panTableUsers.Controls.Add(this.textBoxSearch);
             this.panTableUsers.Controls.Add(this.labelSearch);
@@ -86,6 +92,28 @@
             this.panTableUsers.Name = "panTableUsers";
             this.panTableUsers.Size = new System.Drawing.Size(212, 428);
             this.panTableUsers.TabIndex = 22;
+            // 
+            // comboBoxClasse
+            // 
+            this.comboBoxClasse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxClasse.FormattingEnabled = true;
+            this.comboBoxClasse.ItemHeight = 13;
+            this.comboBoxClasse.Location = new System.Drawing.Point(67, 48);
+            this.comboBoxClasse.Name = "comboBoxClasse";
+            this.comboBoxClasse.Size = new System.Drawing.Size(127, 21);
+            this.comboBoxClasse.Sorted = true;
+            this.comboBoxClasse.TabIndex = 34;
+            this.comboBoxClasse.SelectedIndexChanged += new System.EventHandler(this.comboBoxClasse_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Classe :";
             // 
             // buttonCancelSearch
             // 
@@ -135,14 +163,14 @@
             this.tel,
             this.classe,
             this.credits});
-            this.dataGridUsers.Location = new System.Drawing.Point(0, 47);
+            this.dataGridUsers.Location = new System.Drawing.Point(0, 74);
             this.dataGridUsers.MultiSelect = false;
             this.dataGridUsers.Name = "dataGridUsers";
             this.dataGridUsers.ReadOnly = true;
             this.dataGridUsers.RowHeadersVisible = false;
             this.dataGridUsers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsers.Size = new System.Drawing.Size(211, 379);
+            this.dataGridUsers.Size = new System.Drawing.Size(211, 352);
             this.dataGridUsers.TabIndex = 0;
             this.dataGridUsers.Click += new System.EventHandler(this.dataGridUsers_Click);
             this.dataGridUsers.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridUsers_KeyUp);
@@ -513,11 +541,31 @@
             this.pictureReserver.Click += new System.EventHandler(this.pictureReserver_Click);
             this.pictureReserver.MouseEnter += new System.EventHandler(this.pictureReserver_MouseEnter);
             // 
+            // valNbElements
+            // 
+            this.valNbElements.AutoSize = true;
+            this.valNbElements.Location = new System.Drawing.Point(65, 434);
+            this.valNbElements.Name = "valNbElements";
+            this.valNbElements.Size = new System.Drawing.Size(10, 13);
+            this.valNbElements.TabIndex = 59;
+            this.valNbElements.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 434);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Elements :";
+            // 
             // panUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.valNbElements);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAjoutCredit);
             this.Controls.Add(this.buttonReinitCredit);
             this.Controls.Add(this.buttonMailSent);
@@ -586,5 +634,9 @@
         private System.Windows.Forms.Button buttonMailSent;
         private System.Windows.Forms.Button buttonReinitCredit;
         private System.Windows.Forms.Button buttonAjoutCredit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxClasse;
+        private System.Windows.Forms.Label valNbElements;
+        private System.Windows.Forms.Label label2;
     }
 }

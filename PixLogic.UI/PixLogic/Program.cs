@@ -15,23 +15,25 @@ namespace PixLogic
         static void Main()
         {
             //Helper.initBase();
-            if (Helper.database.ExistManager() == false)
-            {
-                Helper.database.AddManager("admin", "admin", "admin", "0000000000", "admin");
-            }
-            Helper.createUserSelectOnly();
-            Helper.help();
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            MainWindow.START = true;
-            MainWindow fen = new MainWindow();
-
-            fen.StartPosition = FormStartPosition.CenterScreen;
-            Application.Run(fen);
+            //Helper.initCreateDatabase();
+            
             try
             {
-                
+                if (Helper.database.ExistManager() == false)
+                {
+                    Helper.database.AddManager("admin", "admin", "admin", "0000000000", "admin");
+                }
+                //Helper.initCreateDatabase();
+                Helper.createUserSelectOnly();
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+
+                MainWindow.START = true;
+                MainWindow fen = new MainWindow();
+
+                fen.StartPosition = FormStartPosition.CenterScreen;
+                Application.Run(fen);
             }
             catch(Exception ex)
             {

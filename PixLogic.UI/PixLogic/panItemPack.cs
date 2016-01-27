@@ -96,6 +96,8 @@ namespace PixLogic
                 valDescription.Text = item.description;
                 valCategorie.Text = item.categorie.name;
 
+                valNbElements.Text = Convert.ToString(dataGridItem.RowCount);
+
                 System.Drawing.Image img = database.ByteArrayToImage(item.image);
                 Helper.putImageInBox(pictureBoxItem, img);
             }
@@ -110,6 +112,7 @@ namespace PixLogic
                 valDescription.Text = "-";
                 pictureBoxItem.Image = null;
                 valItemRef.Text = "-";
+                valNbElements.Text = "-";
             }
 
             checkTransfert();
@@ -158,9 +161,10 @@ namespace PixLogic
             List<Categorie> list = database.GetAllCategorie();
 
             comboBoxCategorie.Items.Add("");
-            foreach (var pack in list)
+            foreach (var cat in list)
             {
-                comboBoxCategorie.Items.Add(pack.name);
+                if(!comboBoxCategorie.Items.Contains(cat.name))
+                    comboBoxCategorie.Items.Add(cat.name);
             }
             /*if (comboBoxCategorie.Items.Count > 0)
             {

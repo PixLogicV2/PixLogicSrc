@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panItemPack));
             this.panNews = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,6 +70,8 @@
             this.refe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.libellee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.valNbElements = new System.Windows.Forms.Label();
             this.panNews.SuspendLayout();
             this.panTableItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridItem)).BeginInit();
@@ -265,8 +267,8 @@
             // 
             this.dataGridItem.AllowUserToAddRows = false;
             this.dataGridItem.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -525,11 +527,31 @@
             this.idL.ReadOnly = true;
             this.idL.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 432);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Elements :";
+            // 
+            // valNbElements
+            // 
+            this.valNbElements.AutoSize = true;
+            this.valNbElements.Location = new System.Drawing.Point(65, 432);
+            this.valNbElements.Name = "valNbElements";
+            this.valNbElements.Size = new System.Drawing.Size(10, 13);
+            this.valNbElements.TabIndex = 44;
+            this.valNbElements.Text = "-";
+            // 
             // panItemPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.valNbElements);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxItem);
             this.Controls.Add(this.valItemRef);
             this.Controls.Add(this.buttonRemoveItemInPack);
@@ -604,5 +626,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn refe;
         private System.Windows.Forms.DataGridViewTextBoxColumn libellee;
         private System.Windows.Forms.DataGridViewTextBoxColumn idL;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label valNbElements;
     }
 }

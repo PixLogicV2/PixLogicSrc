@@ -82,11 +82,11 @@ namespace PixLogic
                 try
                 {
                     MailMessage mail = new MailMessage(config.email, valMail.Text, valSubject.Text, valMessage.Text);
-                SmtpClient client = new SmtpClient(config.serveurStmp);
-                client.Port = config.port;
-                client.Credentials = new NetworkCredential(config.email, config.mdp);
-                client.EnableSsl = true;
-                this.Cursor = Cursors.WaitCursor;
+                    SmtpClient client = new SmtpClient(config.serveurStmp);
+                    client.Port = config.port;
+                    client.Credentials = new NetworkCredential(config.email, config.mdp);
+                    client.EnableSsl = true;
+                    this.Cursor = Cursors.WaitCursor;
                 
                     client.Send(mail);
                 }

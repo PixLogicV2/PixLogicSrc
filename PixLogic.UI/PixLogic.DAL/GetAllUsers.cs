@@ -33,5 +33,18 @@ namespace PixLogic.DAL
             );
             return results;
         }
+        public List<User> getAllUsersByString(string search, List<User> list)
+        {
+            search.ToLower();
+            List<User> users = list;
+            List<User> results = users.FindAll(
+            delegate (User user)
+            {
+                if (user.name.ToLower().Contains(search)) return user.name.ToLower().Contains(search);
+                else return user.nickname.ToLower().Contains(search);
+            }
+            );
+            return results;
+        }
     }
 }
