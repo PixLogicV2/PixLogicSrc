@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Data.Entity;
+using PixLogic;
 namespace PixLogic.DAL
 {
     public class GetAllItems
@@ -16,26 +15,43 @@ namespace PixLogic.DAL
         }
         public List<Item> getAllItems()
         {
-            IQueryable<Item> itemQuery = from Item in context.Items
+            IQueryable<Item> itemQuery = from Item in context.Items.Include(c => c.pack).Include(c => c.categorie)
                                          select Item;
-            List<Item> list = new List<Item>();
-            foreach (var prod in itemQuery)
-            {
-                list.Add(prod);
-            }
-            return list;
-
+            return itemQuery.ToList();
         }
         public List<Item> getAllItemsByString(string search)
         {
+            search.ToLower();
             List<Item> items = getAllItems();
             List<Item>results = items.FindAll(
             delegate (Item item)
             {
-                return item.name.Contains(search);
+                if (item.name.ToLower().Contains(search)) return item.name.ToLower().Contains(search);
+                else return item.reference.ToLower().Contains(search);
             }
             );
             return results;
+        }
+        public List<Item> getAllItemsByString(string search, List<Item> list)
+        {
+            search.ToLower();
+            List<Item> items = list;
+            List<Item> results = items.FindAll(
+            delegate (Item item)
+            {
+                if (item.name.ToLower().Contains(search)) return item.name.ToLower().Contains(search);
+                else return item.reference.ToLower().Contains(search);
+            }
+            );
+            return results;
+        }
+        public bool existReference(string reference)
+        {
+            IQueryable<Item> itemQuery = from Item in context.Items
+                                         where Item.reference == reference
+                                         select Item;
+            if (itemQuery.Any()) return true;
+            return false;
         }
     }
 }

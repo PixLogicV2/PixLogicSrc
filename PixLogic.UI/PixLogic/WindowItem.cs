@@ -13,24 +13,65 @@ namespace PixLogic
 {
     public partial class WindowItem : Form
     {
-        Database database = new Database();
-        panItemPack pan;
-        Image img = null;
+        private Database database = Helper.database;
+        private panItemPack pan;
+        private Image img = null;
+        private bool add;
+        private string cat = "";
 
         public WindowItem(panItemPack p)
         {
             InitializeComponent();
             this.Text = "Nouveau matériel";
             pan = p;
+            img = Properties.Resources.noitem;
+            Helper.putImageInBox(pictureBoxItem, img);
+            add = true;
+            setComboBoxCategorie(cat);
         }
-        public WindowItem(string image, string name, double price, int quantity, string descrip)
+        public WindowItem(panItemPack pa, Item i)
         {
             InitializeComponent();
             this.Text = "Modifier matériel";
-            valName.Text = name;
-            valPrice.Text = Convert.ToString(price);
-            valQuantity.Text = Convert.ToString(quantity);
-            valDescription.Text = descrip;
+            pan = pa;
+            img = database.ByteArrayToImage(i.image);
+            Helper.putImageInBox(pictureBoxItem, img);
+            valName.Text = i.name;
+            valPrice.Text = Convert.ToString(i.price);
+            valDescription.Text = i.description;
+            valQuantity.Text = Convert.ToString(i.quantity);
+            valReference.Text = i.reference;
+            add = false;
+            this.cat = i.categorie.name;
+            setComboBoxCategorie(cat);
+        }
+
+        private void setComboBoxCategorie(string cat = "")
+        {
+            comboBoxCategorie.Items.Clear();
+            List<Categorie> list= database.GetAllCategorie();
+
+            comboBoxCategorie.Items.Add("");
+            foreach (var pack in list)
+            {
+                comboBoxCategorie.Items.Add(pack.name);
+            }
+            if (comboBoxCategorie.Items.Count > 0)
+            {
+                if (add)
+                    comboBoxCategorie.SelectedIndex = 0;
+                else
+                {
+                    int index = 0;
+                    foreach(var i in comboBoxCategorie.Items)
+                    {
+                        if (i.Equals(cat))
+                            break;
+                        index++;
+                    }
+                    comboBoxCategorie.SelectedIndex = index;
+                }
+            }
         }
 
         private void pictureBoxSelection_Click(object sender, EventArgs e)
@@ -45,16 +86,10 @@ namespace PixLogic
                 OpenFileDialog f = new OpenFileDialog();
                 f.InitialDirectory = "Images/";
                 f.Filter = "Image Files |*.jpg;*.jpeg;*.png;*.gif;";
-                f.FilterIndex = 1;
                 if (f.ShowDialog() == DialogResult.OK)
                 {
                     img = Image.FromFile(f.FileName);
-                    pictureBoxItem.Image = img;
-                    if (img.Size.Height < pictureBoxItem.Size.Height
-                        && img.Size.Width < pictureBoxItem.Size.Width)
-                        pictureBoxItem.SizeMode = PictureBoxSizeMode.CenterImage;
-                    else
-                        pictureBoxItem.SizeMode = PictureBoxSizeMode.Zoom;
+                    Helper.putImageInBox(pictureBoxItem, img);
                 }
             }catch(Exception e) { MessageBox.Show("Error :" + e); }
         }
@@ -70,23 +105,59 @@ namespace PixLogic
             string price = valPrice.Text;
             string quantity = valQuantity.Text;
             string description = valDescription.Text;
-            string reference = "";
+            string reference = valReference.Text;
+            string nameCategorie = comboBoxCategorie.SelectedItem.ToString();
+            string option = add ? Helper.ADD : Helper.SET;
+            
 
-            if (!Helper.fieldsAreEmpty(true, name, price, quantity)
+            if (!Helper.fieldsAreEmpty(true, name, price, quantity, nameCategorie,reference)
                 && Helper.AreNumbers(true, price, quantity)
-                && Helper.wantToAdd())
+                && Helper.confirmation(option))
             {
-                float nPrice;
+                Categorie categorie = database.GetCategorieByName(nameCategorie);
+                int nPrice;
                 int nQuantity;
-                float.TryParse(price, out nPrice);
+                int.TryParse(price, out nPrice);
                 int.TryParse(quantity, out nQuantity);
-
-                database.addItem(name, description, true, nPrice, img, reference, nQuantity);
-                Helper.addSuccess();
-                pan.setTableItem();
-
-                this.Close();
+                if (add && !Helper.referenceExist(true, reference))
+                {
+                    database.AddItem(name, description, true, nPrice, img, reference, nQuantity,categorie);
+                    pan.setTableItem(database.GetAllItems());
+                    this.Close();
+                }
+                else if(!add && !Helper.referenceExistModif(true, reference, pan.valItemRef.Text))
+                {
+                    database.UpdateItem(pan.valItemName.Text, name, description, true, nPrice, img, reference, nQuantity,categorie);
+                    pan.setTableItem(database.GetAllItems());
+                    this.Close();
+                }
+                //Helper.addSuccess();
+                
             }
+        }
+
+        private void buttonAddCategorie_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(buttonAddCategorie, "Ajouter une catégorie.");
+        }
+
+        private void buttonAddCategorie_Click(object sender, EventArgs e)
+        {
+            WindowCategorie addCat = new WindowCategorie();
+            addCat.ShowDialog();
+        }
+
+        private void comboBoxCategorie_Click(object sender, EventArgs e)
+        {
+            setComboBoxCategorie();
+        }
+
+        private void pictureBoxSelection_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip info = new ToolTip();
+            info.SetToolTip(pictureBoxSelection, "Sélectionner une image.");
+            pictureBoxSelection.Cursor = Cursors.Hand;
         }
     }
 }

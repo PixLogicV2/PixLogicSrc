@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,13 +55,102 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategorie.cs" />
+    <Compile Include="AddCategorieToItem.cs" />
+    <Compile Include="AddLog.cs" />
+    <Compile Include="AddMail.cs" />
+    <Compile Include="AddMailConfig.cs" />
+    <Compile Include="AddManager.cs" />
     <Compile Include="AddPack.cs" />
     <Compile Include="AddPackToItem.cs" />
     <Compile Include="AddItem.cs" />
+    <Compile Include="AddRequete.cs" />
+    <Compile Include="AddReservation.cs" />
+    <Compile Include="AddUser.cs" />
+    <Compile Include="AddUserClass.cs" />
     <Compile Include="ByteArrayToImage.cs" />
+    <Compile Include="Categorie.cs" />
+    <Compile Include="CategorieFactory.cs" />
+    <Compile Include="ContainCategorie.cs" />
+    <Compile Include="ContainReservationByReservableId.cs" />
+    <Compile Include="ContainReservationByUserId.cs" />
+    <Compile Include="ContainUserClass.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="DeleteCategorie.cs" />
+    <Compile Include="DeleteLog.cs" />
+    <Compile Include="DeletePack.cs" />
+    <Compile Include="DeleteRequete.cs" />
+    <Compile Include="DeleteReservation.cs" />
+    <Compile Include="DeleteUser.cs" />
+    <Compile Include="EmpruntReservation.cs" />
+    <Compile Include="GetAllCategorie.cs" />
+    <Compile Include="GetAllEmprunts.cs" />
+    <Compile Include="GetAllItemReservations.cs" />
+    <Compile Include="GetAllItemsEmprunts.cs" />
+    <Compile Include="GetAllItemsInCategorie.cs" />
+    <Compile Include="GetAllLogs.cs" />
+    <Compile Include="GetAllPackLogs.cs" />
+    <Compile Include="GetAllPackReservations.cs" />
     <Compile Include="GetAllPacks.cs" />
+    <Compile Include="GetAllPacksEmprunts.cs" />
+    <Compile Include="GetAllRequete.cs" />
+    <Compile Include="GetAllReservations.cs" />
+    <Compile Include="GetAllReservationsByDate.cs" />
+    <Compile Include="GetAllReservationsByReservableId.cs" />
+    <Compile Include="GetAllUsers.cs" />
+    <Compile Include="GetCategorieById.cs" />
+    <Compile Include="GetIdCategorie.cs" />
+    <Compile Include="GetItemById.cs" />
     <Compile Include="GetItemByName.cs" />
+    <Compile Include="GetLogById.cs" />
+    <Compile Include="GetMailConfig.cs" />
+    <Compile Include="GetManagerById.cs" />
+    <Compile Include="GetPackById.cs" />
+    <Compile Include="GetPackByName.cs" />
+    <Compile Include="GetRequeteById.cs" />
+    <Compile Include="GetReservableById.cs" />
+    <Compile Include="GetReservationById.cs" />
+    <Compile Include="GetUserById.cs" />
+    <Compile Include="GetUserByName.cs" />
+    <Compile Include="GetUserClass.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="IsPack.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="LogFactory.cs" />
+    <Compile Include="Mail.cs" />
+    <Compile Include="MailConfig.cs" />
+    <Compile Include="MailFactory.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="ManagerFactory.cs" />
+    <Compile Include="Migrations\201512150827391_InitialCreate.cs" />
+    <Compile Include="Migrations\201512150827391_InitialCreate.Designer.cs">
+      <DependentUpon>201512150827391_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601110924401_AddManagerInLog.cs" />
+    <Compile Include="Migrations\201601110924401_AddManagerInLog.Designer.cs">
+      <DependentUpon>201601110924401_AddManagerInLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601110935167_ChampsPack.cs" />
+    <Compile Include="Migrations\201601110935167_ChampsPack.Designer.cs">
+      <DependentUpon>201601110935167_ChampsPack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601110946263_ManagerUpdate.cs" />
+    <Compile Include="Migrations\201601110946263_ManagerUpdate.Designer.cs">
+      <DependentUpon>201601110946263_ManagerUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601120821267_addTableMail.cs" />
+    <Compile Include="Migrations\201601120821267_addTableMail.Designer.cs">
+      <DependentUpon>201601120821267_addTableMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601121000286_addSubjectMaik.cs" />
+    <Compile Include="Migrations\201601121000286_addSubjectMaik.Designer.cs">
+      <DependentUpon>201601121000286_addSubjectMaik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Requete.cs" />
+    <Compile Include="RequeteFactory.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ReservationFactory.cs" />
     <Compile Include="ServiceContainer.cs" />
     <Compile Include="ContainItem.cs" />
     <Compile Include="DataContext.cs" />
@@ -71,11 +164,42 @@
     <Compile Include="PackFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservable.cs" />
+    <Compile Include="SwitchDispo.cs" />
+    <Compile Include="UpdateCategorie.cs" />
     <Compile Include="UpdateItem.cs" />
+    <Compile Include="UpdateMailConfig.cs" />
+    <Compile Include="UpdatePack.cs" />
+    <Compile Include="UpdateRequete.cs" />
+    <Compile Include="UpdateReservation.cs" />
+    <Compile Include="UpdateUser.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserClass.cs" />
+    <Compile Include="UserClassFactory.cs" />
+    <Compile Include="UserFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512150827391_InitialCreate.resx">
+      <DependentUpon>201512150827391_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110924401_AddManagerInLog.resx">
+      <DependentUpon>201601110924401_AddManagerInLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110935167_ChampsPack.resx">
+      <DependentUpon>201601110935167_ChampsPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601110946263_ManagerUpdate.resx">
+      <DependentUpon>201601110946263_ManagerUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601120821267_addTableMail.resx">
+      <DependentUpon>201601120821267_addTableMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601121000286_addSubjectMaik.resx">
+      <DependentUpon>201601121000286_addSubjectMaik.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

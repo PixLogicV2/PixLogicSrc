@@ -25,6 +25,10 @@ namespace PixLogic
             ActiveEffectButton();
         }
 
+        public string NameButton
+        {
+            get { return this.Name; }
+        }
         private void ClickItemButton(object sender, EventArgs e)
         {
             Console.WriteLine("Boutonnnnnnnnnnn");
@@ -58,6 +62,7 @@ namespace PixLogic
             labelName.MouseEnter -= HoverItemButton;
             this.MouseLeave -= LeaveItemButton;
             labelName.MouseLeave -= LeaveItemButton;
+            this.BackgroundImage = Properties.Resources.Bouton2;
         }
 
 

@@ -16,31 +16,27 @@ namespace PixLogic.DAL
         {
             this.context = context;
         }
-        public void updateItem(String nom, String des, bool disp, float prix, Image image, String refe, int quant)
+        public void updateItem(string nom, string newName, string des, bool disp, int prix, Image image, string refe, int quant,Categorie cat)
         {
-            Item item;
-            item = context.Items.Where(s => s.name == nom).FirstOrDefault<Item>();
+                Item item;
+                item = context.Items.Where(s => s.name == nom).FirstOrDefault<Item>();
 
             if (item != null)
             {
-                item.name = nom;
+                item.name = newName;
                 item.description = des;
                 item.dispo = disp;
                 item.price = prix;
-                if (image != null) item.image = imageToByteArray(image);
+                if (image != null) item.image = Helper.imageToByteArray(image);
                 else item.image = null;
                 item.reference = refe;
                 item.quantity = quant;
+                item.categorie = cat;
                 context.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }
 
         }
-        public byte[] imageToByteArray(System.Drawing.Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-            return ms.ToArray();
-        }
+        
     }
 }

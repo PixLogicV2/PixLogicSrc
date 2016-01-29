@@ -14,12 +14,32 @@ namespace PixLogic
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            MainWindow fen = new MainWindow();
+            //Helper.initBase();
+            //Helper.initCreateDatabase();
             
-            fen.StartPosition = FormStartPosition.CenterScreen;
-            Application.Run(fen);
+            try
+            {
+                if (Helper.database.ExistManager() == false)
+                {
+                    Helper.database.AddManager("admin", "admin", "admin", "0000000000", "admin");
+                }
+                Helper.createUserSelectOnly();
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+
+                MainWindow.START = true;
+                MainWindow fen = new MainWindow();
+
+                fen.StartPosition = FormStartPosition.CenterScreen;
+                Application.Run(fen);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("" + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            
             
         }
     }

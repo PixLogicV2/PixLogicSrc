@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WindowItem));
             this.panelGeneral = new System.Windows.Forms.Panel();
+            this.buttonAddCategorie = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
+            this.labelCategorie = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelObligatoire = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonValid = new System.Windows.Forms.Button();
             this.pictureBoxSelection = new System.Windows.Forms.PictureBox();
@@ -41,9 +49,9 @@
             this.valName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBoxItem = new System.Windows.Forms.PictureBox();
-            this.labelObligatoire = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.valReference = new System.Windows.Forms.TextBox();
+            this.labelRef = new System.Windows.Forms.Label();
             this.panelGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSelection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem)).BeginInit();
@@ -51,6 +59,13 @@
             // 
             // panelGeneral
             // 
+            this.panelGeneral.Controls.Add(this.label4);
+            this.panelGeneral.Controls.Add(this.valReference);
+            this.panelGeneral.Controls.Add(this.labelRef);
+            this.panelGeneral.Controls.Add(this.buttonAddCategorie);
+            this.panelGeneral.Controls.Add(this.label3);
+            this.panelGeneral.Controls.Add(this.comboBoxCategorie);
+            this.panelGeneral.Controls.Add(this.labelCategorie);
             this.panelGeneral.Controls.Add(this.label2);
             this.panelGeneral.Controls.Add(this.label1);
             this.panelGeneral.Controls.Add(this.labelObligatoire);
@@ -69,18 +84,95 @@
             this.panelGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGeneral.Location = new System.Drawing.Point(0, 0);
             this.panelGeneral.Name = "panelGeneral";
-            this.panelGeneral.Size = new System.Drawing.Size(284, 446);
+            this.panelGeneral.Size = new System.Drawing.Size(302, 517);
             this.panelGeneral.TabIndex = 0;
+            // 
+            // buttonAddCategorie
+            // 
+            this.buttonAddCategorie.Image = global::PixLogic.Properties.Resources.categorie_racAdd;
+            this.buttonAddCategorie.Location = new System.Drawing.Point(274, 333);
+            this.buttonAddCategorie.Name = "buttonAddCategorie";
+            this.buttonAddCategorie.Size = new System.Drawing.Size(22, 21);
+            this.buttonAddCategorie.TabIndex = 7;
+            this.buttonAddCategorie.UseVisualStyleBackColor = true;
+            this.buttonAddCategorie.Click += new System.EventHandler(this.buttonAddCategorie_Click);
+            this.buttonAddCategorie.MouseEnter += new System.EventHandler(this.buttonAddCategorie_MouseEnter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(261, 333);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "*";
+            // 
+            // comboBoxCategorie
+            // 
+            this.comboBoxCategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.ItemHeight = 13;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(99, 333);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxCategorie.Sorted = true;
+            this.comboBoxCategorie.TabIndex = 6;
+            this.comboBoxCategorie.Click += new System.EventHandler(this.comboBoxCategorie_Click);
+            // 
+            // labelCategorie
+            // 
+            this.labelCategorie.AutoSize = true;
+            this.labelCategorie.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCategorie.Location = new System.Drawing.Point(10, 333);
+            this.labelCategorie.Name = "labelCategorie";
+            this.labelCategorie.Size = new System.Drawing.Size(73, 17);
+            this.labelCategorie.TabIndex = 15;
+            this.labelCategorie.Text = "Catégorie :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(261, 270);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(261, 239);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "*";
+            // 
+            // labelObligatoire
+            // 
+            this.labelObligatoire.AutoSize = true;
+            this.labelObligatoire.BackColor = System.Drawing.SystemColors.Control;
+            this.labelObligatoire.ForeColor = System.Drawing.Color.Red;
+            this.labelObligatoire.Location = new System.Drawing.Point(261, 208);
+            this.labelObligatoire.Name = "labelObligatoire";
+            this.labelObligatoire.Size = new System.Drawing.Size(11, 13);
+            this.labelObligatoire.TabIndex = 12;
+            this.labelObligatoire.Text = "*";
             // 
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = global::PixLogic.Properties.Resources.cancel_icon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(145, 413);
+            this.buttonCancel.Location = new System.Drawing.Point(181, 479);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(84, 27);
-            this.buttonCancel.TabIndex = 11;
+            this.buttonCancel.TabIndex = 10;
             this.buttonCancel.Text = "Annuler";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -91,10 +183,10 @@
             this.buttonValid.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValid.Image = global::PixLogic.Properties.Resources.valider_icon;
             this.buttonValid.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValid.Location = new System.Drawing.Point(51, 413);
+            this.buttonValid.Location = new System.Drawing.Point(87, 479);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(84, 27);
-            this.buttonValid.TabIndex = 10;
+            this.buttonValid.TabIndex = 9;
             this.buttonValid.Text = "Valider";
             this.buttonValid.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonValid.UseVisualStyleBackColor = true;
@@ -111,22 +203,24 @@
             this.pictureBoxSelection.TabIndex = 9;
             this.pictureBoxSelection.TabStop = false;
             this.pictureBoxSelection.Click += new System.EventHandler(this.pictureBoxSelection_Click);
+            this.pictureBoxSelection.MouseEnter += new System.EventHandler(this.pictureBoxSelection_MouseEnter);
             // 
             // valDescription
             // 
             this.valDescription.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valDescription.Location = new System.Drawing.Point(99, 298);
+            this.valDescription.Location = new System.Drawing.Point(99, 364);
             this.valDescription.Multiline = true;
             this.valDescription.Name = "valDescription";
             this.valDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.valDescription.Size = new System.Drawing.Size(156, 98);
             this.valDescription.TabIndex = 8;
+            this.valDescription.WordWrap = false;
             // 
             // labelDescrip
             // 
             this.labelDescrip.AutoSize = true;
             this.labelDescrip.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDescrip.Location = new System.Drawing.Point(12, 301);
+            this.labelDescrip.Location = new System.Drawing.Point(10, 367);
             this.labelDescrip.Name = "labelDescrip";
             this.labelDescrip.Size = new System.Drawing.Size(83, 17);
             this.labelDescrip.TabIndex = 7;
@@ -138,13 +232,13 @@
             this.valQuantity.Location = new System.Drawing.Point(99, 267);
             this.valQuantity.Name = "valQuantity";
             this.valQuantity.Size = new System.Drawing.Size(156, 25);
-            this.valQuantity.TabIndex = 6;
+            this.valQuantity.TabIndex = 4;
             // 
             // labelQuantity
             // 
             this.labelQuantity.AutoSize = true;
             this.labelQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantity.Location = new System.Drawing.Point(12, 270);
+            this.labelQuantity.Location = new System.Drawing.Point(10, 270);
             this.labelQuantity.Name = "labelQuantity";
             this.labelQuantity.Size = new System.Drawing.Size(68, 17);
             this.labelQuantity.TabIndex = 5;
@@ -156,17 +250,17 @@
             this.valPrice.Location = new System.Drawing.Point(99, 236);
             this.valPrice.Name = "valPrice";
             this.valPrice.Size = new System.Drawing.Size(156, 25);
-            this.valPrice.TabIndex = 4;
+            this.valPrice.TabIndex = 3;
             // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
             this.labelPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(12, 239);
+            this.labelPrice.Location = new System.Drawing.Point(10, 239);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(65, 17);
+            this.labelPrice.Size = new System.Drawing.Size(92, 17);
             this.labelPrice.TabIndex = 3;
-            this.labelPrice.Text = "Prix ( € ) :";
+            this.labelPrice.Text = "Prix (Crédits) :";
             // 
             // valName
             // 
@@ -180,7 +274,7 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(12, 208);
+            this.labelName.Location = new System.Drawing.Point(10, 208);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(45, 17);
             this.labelName.TabIndex = 1;
@@ -195,49 +289,46 @@
             this.pictureBoxItem.TabIndex = 0;
             this.pictureBoxItem.TabStop = false;
             // 
-            // labelObligatoire
+            // label4
             // 
-            this.labelObligatoire.AutoSize = true;
-            this.labelObligatoire.BackColor = System.Drawing.SystemColors.Control;
-            this.labelObligatoire.ForeColor = System.Drawing.Color.Red;
-            this.labelObligatoire.Location = new System.Drawing.Point(261, 208);
-            this.labelObligatoire.Name = "labelObligatoire";
-            this.labelObligatoire.Size = new System.Drawing.Size(11, 13);
-            this.labelObligatoire.TabIndex = 12;
-            this.labelObligatoire.Text = "*";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(261, 301);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 13);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "*";
             // 
-            // label1
+            // valReference
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(261, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "*";
+            this.valReference.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valReference.Location = new System.Drawing.Point(99, 298);
+            this.valReference.Name = "valReference";
+            this.valReference.Size = new System.Drawing.Size(156, 25);
+            this.valReference.TabIndex = 5;
             // 
-            // label2
+            // labelRef
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(261, 270);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "*";
+            this.labelRef.AutoSize = true;
+            this.labelRef.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRef.Location = new System.Drawing.Point(10, 301);
+            this.labelRef.Name = "labelRef";
+            this.labelRef.Size = new System.Drawing.Size(74, 17);
+            this.labelRef.TabIndex = 35;
+            this.labelRef.Text = "Référence :";
             // 
             // WindowItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 446);
+            this.ClientSize = new System.Drawing.Size(302, 517);
             this.Controls.Add(this.panelGeneral);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowItem";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nouveau matériel";
             this.panelGeneral.ResumeLayout(false);
             this.panelGeneral.PerformLayout();
@@ -250,7 +341,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelGeneral;
-        private System.Windows.Forms.PictureBox pictureBoxItem;
         private System.Windows.Forms.TextBox valDescription;
         private System.Windows.Forms.Label labelDescrip;
         private System.Windows.Forms.TextBox valQuantity;
@@ -259,11 +349,19 @@
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.TextBox valName;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.PictureBox pictureBoxSelection;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonValid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelObligatoire;
+        private System.Windows.Forms.PictureBox pictureBoxSelection;
+        private System.Windows.Forms.PictureBox pictureBoxItem;
+        private System.Windows.Forms.Label labelCategorie;
+        private System.Windows.Forms.ComboBox comboBoxCategorie;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonAddCategorie;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox valReference;
+        private System.Windows.Forms.Label labelRef;
     }
 }

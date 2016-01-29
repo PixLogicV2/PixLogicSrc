@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.13.5.0\lib\net40-client\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -41,9 +45,19 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Champs.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="MenuButton.cs">
       <SubType>UserControl</SubType>
@@ -68,19 +83,127 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="panEmprunt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panEmprunt.Designer.cs">
+      <DependentUpon>panEmprunt.cs</DependentUpon>
+    </Compile>
     <Compile Include="panItemPack.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="panItemPack.Designer.cs">
       <DependentUpon>panItemPack.cs</DependentUpon>
     </Compile>
+    <Compile Include="panLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panLog.Designer.cs">
+      <DependentUpon>panLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panReservation.Designer.cs">
+      <DependentUpon>panReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panScript.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panScript.Designer.cs">
+      <DependentUpon>panScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="panUsers.Designer.cs">
+      <DependentUpon>panUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestWindow.Designer.cs">
+      <DependentUpon>TestWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowAddCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowAddCredit.Designer.cs">
+      <DependentUpon>WindowAddCredit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowCategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowCategorie.Designer.cs">
+      <DependentUpon>WindowCategorie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowClasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowClasse.Designer.cs">
+      <DependentUpon>WindowClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowConnexion.Designer.cs">
+      <DependentUpon>WindowConnexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowDelLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowDelLog.Designer.cs">
+      <DependentUpon>WindowDelLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowExport.Designer.cs">
+      <DependentUpon>WindowExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowImport.Designer.cs">
+      <DependentUpon>WindowImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowItem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WindowItem.Designer.cs">
       <DependentUpon>WindowItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowMail.Designer.cs">
+      <DependentUpon>WindowMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowMailsSent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowMailsSent.Designer.cs">
+      <DependentUpon>WindowMailsSent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowManager.Designer.cs">
+      <DependentUpon>WindowManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowPack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowPack.Designer.cs">
+      <DependentUpon>WindowPack.cs</DependentUpon>
     </Compile>
     <Compile Include="WindowPackManager.cs">
       <SubType>Form</SubType>
@@ -88,14 +211,74 @@
     <Compile Include="WindowPackManager.Designer.cs">
       <DependentUpon>WindowPackManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowReservation.Designer.cs">
+      <DependentUpon>WindowReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowReservationUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowReservationUser.Designer.cs">
+      <DependentUpon>WindowReservationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowSaveRequestAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowSaveRequestAs.Designer.cs">
+      <DependentUpon>WindowSaveRequestAs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowScriptResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowScriptResult.Designer.cs">
+      <DependentUpon>WindowScriptResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowSetReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowSetReservation.Designer.cs">
+      <DependentUpon>WindowSetReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowSettings.Designer.cs">
+      <DependentUpon>WindowSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowUser.Designer.cs">
+      <DependentUpon>WindowUser.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MenuButton.resx">
       <DependentUpon>MenuButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="panEmprunt.resx">
+      <DependentUpon>panEmprunt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="panItemPack.resx">
       <DependentUpon>panItemPack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panLog.resx">
+      <DependentUpon>panLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panReservation.resx">
+      <DependentUpon>panReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panScript.resx">
+      <DependentUpon>panScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panUsers.resx">
+      <DependentUpon>panUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,11 +290,68 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TestWindow.resx">
+      <DependentUpon>TestWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowAddCredit.resx">
+      <DependentUpon>WindowAddCredit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowCategorie.resx">
+      <DependentUpon>WindowCategorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowClasse.resx">
+      <DependentUpon>WindowClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowConnexion.resx">
+      <DependentUpon>WindowConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowDelLog.resx">
+      <DependentUpon>WindowDelLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowExport.resx">
+      <DependentUpon>WindowExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowImport.resx">
+      <DependentUpon>WindowImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WindowItem.resx">
       <DependentUpon>WindowItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WindowMail.resx">
+      <DependentUpon>WindowMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowMailsSent.resx">
+      <DependentUpon>WindowMailsSent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowManager.resx">
+      <DependentUpon>WindowManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowPack.resx">
+      <DependentUpon>WindowPack.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WindowPackManager.resx">
       <DependentUpon>WindowPackManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowReservation.resx">
+      <DependentUpon>WindowReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowReservationUser.resx">
+      <DependentUpon>WindowReservationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowSaveRequestAs.resx">
+      <DependentUpon>WindowSaveRequestAs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowScriptResult.resx">
+      <DependentUpon>WindowScriptResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowSetReservation.resx">
+      <DependentUpon>WindowSetReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowSettings.resx">
+      <DependentUpon>WindowSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowUser.resx">
+      <DependentUpon>WindowUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -216,6 +456,135 @@
       <Project>{95677f4e-77d9-4603-ac81-54bbb20a7320}</Project>
       <Name>PixLogic.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noprofil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noitem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emprunter2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reinit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reserver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rendre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parametres_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf_export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\csv_export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categorie_racAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xlsx_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\importer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\the-floppy-disk-icon-must-go-away-105149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emprunter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\valider_iconPetit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deconnexion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envoyer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envoyer_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\envoyer_color_success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rebase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_credit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pocket_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\script2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utilisateur2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\params.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camcorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utilisateur_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camcorder_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parametre3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
