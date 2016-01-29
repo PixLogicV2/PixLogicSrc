@@ -157,6 +157,7 @@ namespace PixLogic
         private void buttonCancelSearch_Click(object sender, EventArgs e)
         {
             textBoxSearch.Text = "";
+            comboBoxClasse.SelectedIndex = 0;
             setTableUsers(database.GetAllUsers());
         }
 

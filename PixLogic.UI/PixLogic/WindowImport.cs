@@ -24,6 +24,7 @@ namespace PixLogic
         private List<string[]> informations;
         private List<Champs> listChamps;
         private List<int> indexWrongRows;
+        private List<int> indexHelp;
         DataGridView wrong = new DataGridView();
         DataGridView good = new DataGridView();
         private bool user;
@@ -46,6 +47,7 @@ namespace PixLogic
             }
             informations = new List<string[]>();
             indexWrongRows = new List<int>();
+            indexHelp = new List<int>();
             init();
             setTableChamps();
         }
@@ -152,8 +154,11 @@ namespace PixLogic
                 wrong = true;
             }
 
-            if(wrong)
+            if (wrong)
+            {
                 indexWrongRows.Add(indexLastRow);
+                indexHelp.Add(indexLastRow);
+            }
         }
 
         private void checkRowItem(string[] info)
@@ -202,7 +207,10 @@ namespace PixLogic
             }
 
             if (wrong)
+            {
                 indexWrongRows.Add(indexLastRow);
+                indexHelp.Add(indexLastRow);
+            }
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
@@ -228,7 +236,7 @@ namespace PixLogic
             valWrongLine.Text = indexWrongRows.Count + " / " + dataGridImport.Rows.Count;
             Cursor = Cursors.Default;
         }
-
+        
         private void checkForceImport()
         {
             for(int i = 0; i < indexWrongRows.Count; i++)
@@ -237,12 +245,15 @@ namespace PixLogic
                 {
                     if(nbOfWrong(dataGridImport.Rows[indexWrongRows.ElementAt(i)]) == 1)
                     {
+                        
                         string nomCat = dataGridImport.Rows[indexWrongRows.ElementAt(i)].Cells[2].Value.ToString();
-                        database.AddCategorie(nomCat, 1, "Une description");
-                        indexWrongRows.RemoveAt(i);
+                        if(!Helper.categorieExist(false, nomCat))
+                            database.AddCategorie(nomCat, 1, "Une description");
+                        indexHelp.Remove(indexWrongRows.ElementAt(i));
                     }
                 }
             }
+            indexWrongRows = indexHelp;
         }
 
         private int nbOfWrong(DataGridViewRow row)
@@ -263,6 +274,7 @@ namespace PixLogic
 
             if (dataGridImport.Rows.Count > 0)
             {
+                
                 if(dataGridImport.Rows.Count == indexWrongRows.Count)
                 {
                     MessageBox.Show("Il n'ya aucun élément à importer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -271,7 +283,7 @@ namespace PixLogic
                 else
                 {
                     bool result = true;
-                    if(indexWrongRows.Count > 0)
+                    if(indexWrongRows.Count > 0 || checkBoxForce.Checked)
                     {
                         DialogResult resultBox = MessageBox.Show("Il ya des lignes erronées dans la liste d'éléments. Seules les lignes valides (ou celles repondant aux attentes du forcage) seront importées.\nVoulez-vous continuer l'import ?",
                         "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -307,6 +319,7 @@ namespace PixLogic
                         }
                         else //Réf, Nom, Categorie, prix, qté, desc
                         {
+                            long timenow = (DateTime.Now.Hour * 3600 * 1000) + (DateTime.Now.Minute * 60 * 1000)+ (DateTime.Now.Second * 1000);
                             for (int i = 0; i < informations.Count; i++)
                             {
                                 if (!indexWrongRows.Contains(i))
@@ -322,7 +335,13 @@ namespace PixLogic
                                     bool dispo = true;
                                     string desc;
                                     try { desc = info[4]; } catch (Exception ex) { desc = ""; }
-
+                                    //long realTime = (DateTime.Now.Hour * 3600 * 1000) + (DateTime.Now.Minute * 60 * 1000) + (DateTime.Now.Second * 1000);
+                                    //Console.WriteLine("SOUSTRACT : "+(realTime-timenow));
+                                    /*if(realTime - timenow > 6000)
+                                    {
+                                        System.Threading.Thread.Sleep(1500);
+                                        timenow += 6000;
+                                    }*/
                                     database.AddItem(nameItem, desc, dispo, price, img, reference, qte, categorie);
                                 }
 

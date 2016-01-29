@@ -19,12 +19,10 @@ namespace PixLogic
             
             try
             {
-                Helper.initCreateDatabase();
                 if (Helper.database.ExistManager() == false)
                 {
                     Helper.database.AddManager("admin", "admin", "admin", "0000000000", "admin");
                 }
-                //Helper.initCreateDatabase();
                 Helper.createUserSelectOnly();
 
                 Application.EnableVisualStyles();
